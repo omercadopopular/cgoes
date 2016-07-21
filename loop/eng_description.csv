@@ -1,0 +1,724 @@
+Code ,eng_description
+0,General Index
+1,Food and beverage
+2,Housing
+3,Household items
+4,Clothing
+5,Transportation
+6,Health and personal care
+7,Personal expenses
+8,Education
+9,Communication
+11,Food at home
+12,Food away from home
+21,Charges and maintenance
+22,Fuel and energy
+31,Furniture and fixtures
+32,Electronic appliances
+33,Repairs and maintenance
+41,Clothes
+42,Shoes and accessories
+43,Jewels and jewelery
+44,Fabrics and haberdashery
+51,Transportation
+61,Pharmaceutical and optical products
+62,Health services
+63,Personal Care
+71,Personal services
+72,"Recreation, tobacco and movies"
+72,"Recreation, tobacco and photography"
+81,"Courses, reading and stationery"
+91,Communication
+1101,"Cereals, pulses and oilseeds"
+1102,"Flours, starches and pasta"
+1103,"Tubers, roots and vegetables"
+1104,Sugars and derivatives
+1105,Vegetables and greens
+1106,Fruits
+1107,Meats
+1108,Fished
+1109,Meat and processed fish
+1110,Poultry and eggs
+1111,Milk and dairy products
+1112,Bakery
+1113,Oils and fats
+1114,Drinks and infusions
+1115,Canned and preserved foods
+1116,Salt and spices
+1117,Foodservice
+1201,Food away from home
+2101,Rent and rates
+2103,Repairs
+2104,Articles for cleaning
+2201,Fuels (domestic)
+2202,Residential electricity
+3101,Furniture
+3102,Utensils and ornaments
+3103,"Bed, bath and table"
+3201,Appliances and equipment
+3202,"TV, stereo and computer"
+3301,Repairs and maintenance
+4101,Menswear
+4102,Women's clothes
+4103,Children wear
+4201,Shoes and accessories
+4301,Jewels and jewelery
+4401,Fabrics and haberdashery
+5101,Public transport
+5102,Personal transport
+5104,Fuels (vehicles)
+6101,Pharmaceuticals
+6102,Optical products
+6102,Glasses and lenses
+6201,Medical and dental services
+6202,Laboratory and hospital services
+6203,Health Plan
+6301,Personal hygiene
+7101,Personal services
+7201,Recreation
+7202,Smoke
+7203,Photography and filming
+8101,Courses
+8101,Regular courses
+8102,Reading
+8103,Stationery
+8104,Several courses
+9101,Communication
+1101002,Rice
+1101051,Pinto beans
+1101052,Black beans
+1101053,Cowpea (black-eyed)
+1101064,Jalo beans (enxofrão)
+1101068,Purple beans
+1101073,Carioca beans (brindle)
+1101073,Carioca beans (brindle))
+1101079,Maize grain
+1101080,Corn on the cob
+1101084,Fava
+1102001,Rice flour
+1102002,Rolled oats
+1102006,Macaroni
+1102008,Corn meal
+1102009,Corn starch
+1102010,Corn flakes
+1102012,Flour
+1102013,Vitamin enriched flour
+1102016,Cereal flakes
+1102022,Cassava starch
+1102023,Cassava flour
+1102028,Cremogema
+1102029,Mass semipreparada
+1102038,Dough for pizza
+1102040,Mass for pastel
+1102043,Dough for lasagna
+1103002,Sweet potato
+1103003,Batatainglesa
+1103004,Yam
+1103005,Cassava (manioc)
+1103017,Squash
+1103020,Zucchini
+1103021,Chuchu
+1103022,Jiló
+1103025,Cucumber
+1103026,Pepper
+1103027,Okra
+1103028,Tomato
+1103029,Haricot vert
+1103042,Beet
+1103043,Onion
+1103044,Carrot
+1103046,Batatabaroa
+1103046,Manioc (batatabaroa)
+1103048,Manioc (batataaipo)
+1104003,Refined sugar
+1104004,Crystal sugar
+1104014,Rapadura
+1104018,Bullets
+1104018,"Candy, chewing gum, etc."
+1104023,Chocolate bar
+1104023,Chocolate bars and candy
+1104024,Candy
+1104027,Fruit jam
+1104028,Gelatin
+1104028,Fruit jelly powder
+1104029,Jelly mocotó
+1104031,Honey bee
+1104032,Ice cream
+1104052,Chocolate powder
+1104052,Chocolate and chocolate powder
+1104059,Fresh fruit in syrup
+1104060,Sweet fruit paste
+1104064,Pamonha
+1104066,Sweet milk
+1104069,Artificial sweetener
+1104075,Dried fruit
+1104095,Beiju
+1104096,Schimier fruit
+1105001,Lettuce
+1105003,Chicory
+1105004,Coriander
+1105005,Kale
+1105006,Cauliflower
+1105010,Cabbage
+1105012,Cheiroverde
+1105013,Watercress
+1105017,Almeirão
+1105018,Chives
+1105019,Broccoli
+1106001,Bananadaterra
+1106003,Pineapple
+1106004,Avocado
+1106005,Banana d'agua
+1106006,Apple banana
+1106008,Banana Silver
+1106011,Orange Bay
+1106012,Orange lime
+1106013,Orange Select
+1106015,Lemon
+1106017,Apple
+1106018,Papaya
+1106019,Mango
+1106020,Passionflower
+1106021,Watermelon
+1106022,Melon
+1106023,Pear
+1106024,Peach
+1106026,Acerola
+1106027,Tangerine
+1106028,Grape
+1106034,Plum
+1106039,Orange Pear
+1106051,Strawberry
+1106084,Guava
+1106097,Cupuaçú
+1107008,Tripe and tripe
+1107009,Liver
+1107010,Other viscera
+1107018,Pork
+1107031,Mutton
+1107081,Termite
+1107084,Contrafilé
+1107085,Filémignon
+1107087,Topside
+1107088,Rump
+1107089,Duckling
+1107090,Round Lizard
+1107091,Common lizard
+1107091,Lizard plan
+1107093,Muscle
+1107094,Shovel
+1107095,Chuck
+1107096,Chest
+1107097,Cover steak
+1107099,Rib
+1108001,Fish fillet
+1108002,Anchovy fish
+1108003,Whiting fish
+1108004,Croaker fish
+1108005,Mackerel fish
+1108006,Fish
+1108009,Whiting fish
+1108011,Mullet fish
+1108012,Fish sardines
+1108013,Shrimp
+1108015,Red fish
+1108019,Mackerel
+1108020,Cocoroca fish
+1108024,Pacu fish
+1108025,Sole fish
+1108028,Goldfish
+1108029,Fying fish
+1108031,Hake fish
+1108032,Saw Fish
+1108033,Snapper fish
+1108035,Pompano fish
+1108038,Hake fish
+1108044,Fish red snapper
+1108045,Crab
+1108047,Fish stingray
+1108048,Xerelete fish
+1108049,Brown fish
+1108053,Piramutaba fish
+1108057,Catfish fish
+1108058,Fish albacore
+1108064,Siri
+1108075,Salmon fish
+1108076,Discus fish
+1108080,Tilapia fish
+1108083,Fish tucunaré
+1108088,Golden fish
+1108092,Fillhote fish
+1108096,Peroá fish
+1108112,Painted Fish
+1109002,Ham
+1109004,Bacon
+1109007,Sausage
+1109007,And andouille sausage
+1109008,Sausage
+1109010,Mortadella
+1109012,Salami
+1109012,Salami and pepperoni
+1109023,Cod
+1109024,Dried salted shrimp
+1109027,Salted fish Arapaima
+1109056,Biltong
+1109056,Carneseca and sun
+1109058,Meat salted and smoked pork
+1109088,Hamburger meat
+1109088,Hamburger
+1110009,Chicken
+1110009,Whole Chicken
+1110010,Chicken pieces
+1110011,Chicken breast
+1110012,Chicken thigh
+1110014,Chicken wing
+1110044,Chicken egg
+1111004,Long life milk
+1111004,Pasteurized milk
+1111008,Condensed milk
+1111009,Milk powder
+1111011,Cheese
+1111012,Cream
+1111019,Yogurt
+1111019,Yogurt and milk drinks
+1111021,Cream cheese
+1111023,Queijodeminas
+1111024,Cheese platter
+1111025,Parmesan
+1111026,Mozzarella cheese
+1111031,Butter
+1111038,Fermented milk
+1111040,Kingdom cheese
+1111046,Sour cream
+1111051,Flavored milk
+1112003,Cookie
+1112012,Corn Bread
+1112015,French bread
+1112017,Sweet bread
+1112018,Loaf of bread
+1112019,Cake
+1112021,Dough for cheese bread
+1112025,Cheese bread
+1112034,Sweet thread
+1112040,Sweet pie
+1113013,Soybean oil
+1113014,Olive oil
+1113040,Margarine
+1114001,Fruit juice
+1114004,Acai (emulsion)
+1114004,Acai pulp
+1114022,Ground coffee
+1114023,Instant coffee
+1114029,Tea
+1114029,Mate
+1114083,Coolant
+1114083,Soda and mineral water
+1114084,Beer
+1114085,Other alcoholic beverages
+1114087,Wine
+1114096,Mineral water
+1115004,Shredded coconut
+1115006,Canned peas
+1115008,Feijoada pickled
+1115008,Feijoada canned
+1115013,Children's Soup
+1115016,Canned palm hearts
+1115017,Pickle
+1115039,Canned sardines
+1115050,Pickled Sausage
+1115050,Canned sausage
+1115051,Corned Beef
+1115051,Canned meat
+1115053,Pate
+1115056,Dehydrated soup
+1115057,Olive
+1115058,Milhoverde pickled
+1115058,Milhoverde canned
+1115059,Canned mushroom
+1115075,Canned tuna
+1116001,Coconut milk
+1116005,Atomatado
+1116005,Tomato paste
+1116010,Garlic
+1116013,Sal
+1116013,Refined salt
+1116022,Paprika
+1116023,Broth tucupi
+1116026,Yeast
+1116033,Mayonnaise
+1116041,Vinegar
+1116048,Concentrated broth
+1116055,Cumin
+1116062,Black pepper
+1116071,Mixed spice
+1116095,Soy sauce
+1117001,Ready Meal
+1117012,Snack takeaway
+1201001,Meal
+1201003,Snack
+1201005,Breakfast
+1201007,Coolant
+1201007,Soda and mineral water
+1201009,Coffee
+1201032,Broths
+1201048,Beer
+1201049,Chopp
+1201050,Brandy
+1201051,Other alcoholic beverages
+1201061,Sweets
+2101001,Residential rent
+2101002,Condominium
+2101003,Property tax
+2101004,Rate water and sewer
+2101008,Purchase of water
+2101012,Change
+2103005,Hardware
+2103008,Material electricity
+2103009,Paint material
+2103012,Glassware
+2103012,Glass
+2103014,Ink
+2103031,Tools
+2103032,Tile and flooring
+2103032,Floor covering and wall
+2103039,Cement
+2103040,Brick
+2103041,Cementitious material
+2103042,Workforce
+2103048,Sand
+2103049,Stones
+2103055,Tile
+2104002,Broom
+2104003,Trash bag
+2104005,Bleach
+2104008,Detergent
+2104009,Washing powder
+2104012,Disinfectant
+2104013,Insecticide
+2104014,Floor wax
+2104015,Soap bar
+2104016,Cleaning sponge
+2104018,Environmental Deodorant
+2104020,Cleaner with ammonia
+2104032,Softener
+2104032,"Softener, bleach"
+2104035,Metal polish
+2104041,Paper towel
+2104056,Furniture polish
+2201003,Charcoal
+2201004,Bottled gas
+2201005,Piped gas
+2202003,Residential electricity
+3101002,Room for mobile
+3101003,Moving to fourth
+3101015,For mobile pantry and kitchen
+3101016,Children's Mobile
+3101017,Mattress
+3101060,Network
+3102004,Alarm Clock
+3102005,Carpet
+3102006,Curtain
+3102007,Metal utensils
+3102007,Pantry and kitchen utensils for metal
+3102009,Glassware and crockery
+3102009,Pantry and kitchen utensils crockery
+3102009,Pantry and kitchen utensils for glass and crockery
+3102010,Plastic products
+3102010,Plastic utensils
+3102012,Thermoses
+3102014,Glass cup
+3102015,Bottle
+3102016,Plug empty gas
+3102032,Pacifier and Nipple
+3102034,Water Filter
+3102035,Natural flowers
+3102036,Gardening Articles
+3102037,Matches
+3102039,Candle lighting
+3102040,Various utensils
+3102070,Mirror
+3102072,Blinds
+3102088,Filter paper
+3102089,Paper napkins
+3102090,Foil
+3103001,Linen
+3103002,Table linen
+3103003,Swimwear
+3201001,Refrigerator
+3201002,Arcondicionado
+3201002,Air conditioner
+3201003,Sewing Machine
+3201006,Washer
+3201007,Electric iron
+3201008,Dryer
+3201012,Blender
+3201013,Fan
+3201021,Stove
+3201027,Lamp
+3201029,Pile
+3201033,Freezer
+3201034,Dishwasher
+3201036,Mixer
+3201042,Ozonator
+3201044,Vacuum Cleaner
+3201050,Electric shower
+3201065,Microwave
+3202001,TV
+3202003,Stereo
+3202005,DVD Player
+3202005,VCR
+3202008,Video game
+3202013,Antenna
+3202028,Microcomputer
+3301002,Repair refrigerator
+3301002,Repair of refrigerator and freezer
+3301006,Repair TV
+3301009,Repairing stereo
+3301012,VCR Repair
+3301015,Repair washing machine
+3301015,Repair washing machine / dryer
+3301021,Repair air conditioner
+3301022,Reform of upholstered
+3301023,Repair of water pump
+3301024,"Maintenance of water tank, septic tank, etc."
+3301044,Maintenance of microcomputer
+4101002,Trousers male
+4101004,Suit
+4101005,Men tracksuit
+4101006,Short shorts and male
+4101008,Underwear
+4101009,Men's shirt / shirt
+4101009,Men's shirt
+4101010,Guys Tee
+4101011,Male half
+4101015,Male sporting group
+4101021,Rental menswear
+4102002,Female trousers
+4102003,Female sweater
+4102004,Break out
+4102005,Dress
+4102008,Blouse
+4102009,Female half
+4102010,Lingerie
+4102011,Nightwear female
+4102012,Women's Swimwear
+4102013,Bermuda shorts and feminine
+4102014,Female sporting group
+4102050,T-Shirt
+4103001,Uniform
+4103001,School uniform
+4103002,Children's trousers
+4103005,Children's tracksuit
+4103007,Children's Dress
+4103008,Bermuda shorts and children
+4103011,Shirt / shirt child
+4103011,Infant Shirt
+4103012,Kids T-Shirt
+4103013,Children half
+4103014,Children's Lingerie
+4103017,Diaper
+4103020,Children's sporting group
+4103021,Children's underwear
+4103022,Infant Overalls
+4103031,Set short and infant shirt
+4103031,Children Set
+4103040,Set of skirt and blouse child
+4103051,Clothing infant bath
+4201002,Male shoe
+4201003,Female shoe
+4201004,Child shoe
+4201006,Sandal / men slipper
+4201007,Sandal / Ladies Slipper
+4201008,Sandal / slipper child
+4201015,Purse
+4201015,Purse and wallet female
+4201029,Men's bag and wallet
+4201063,Tennis
+4301001,Jewelry
+4301002,Joia
+4301004,Wristwatch
+4401001,Fabric
+4401002,Articles of haberdashery
+4401005,Curtained (mosquito net)
+5101001,City Bus
+5101002,Cab
+5101004,Train
+5101006,Intercity bus
+5101007,Interstate bus
+5101009,Ferryboat
+5101010,Flights
+5101011,Subway
+5101020,Ship
+5101022,Boat
+5101022,Water transport
+5101026,School transport
+5102001,New car
+5102004,License plate and license
+5102005,Voluntary insurance of vehicle
+5102006,Fine
+5102007,Lubricating oil
+5102009,Accessories and Parts
+5102010,Tire
+5102010,Tire and câmaradear
+5102011,Car repair
+5102013,Parking
+5102015,Toll
+5102019,Greasing and washing
+5102020,Used car
+5102020,Buying used vehicle
+5102033,Trailer
+5102037,Painting vehicle
+5102051,Car Rental
+5102053,Motorcycle
+5102054,Coach
+5104001,Gasoline
+5104002,Ethanol
+5104003,Diesel
+5104005,Autogas
+6101001,Antiseptic and antibiotic
+6101002,Analgesic and antipyretic
+6101003,Anti-inflammatory and antirheumatic
+6101004,Influenza and antitussive
+6101005,Hepatoprotective
+6101006,Parasiticidal and antifungal
+6101006,Dermatological
+6101007,Antiallergic and bronchodilator
+6101009,Gastroprotective
+6101010,Vitamin and tonic
+6101011,Contraceptive and hormone
+6101011,Hormone
+6101013,Anorexigenic and psychotropic
+6101014,Hypotensive and hypocholesterolemic
+6101016,Dressing materials
+6101051,Ophthalmological
+6101064,Antidiabetic
+6102001,Degree lens
+6102002,Eyeglasses frame
+6102003,Glasses without degree
+6102008,Contact lens
+6102011,Eyeglass and Contact
+6201002,Physician
+6201003,Dentist
+6201005,Braces
+6201006,Orthopedic
+6201007,Physiotherapist
+6201008,Psychological and physical therapy
+6201010,Psychologist
+6202003,Laboratory test
+6202004,Hospitalization and surgery
+6202006,Electrodiagnostic
+6202006,Imaging test
+6202008,Asylum
+6202013,Radiography
+6203001,Health Plan
+6301001,Product for hair
+6301002,Disposable diaper
+6301004,Razor blade
+6301004,Product shaving
+6301006,Skin cream and sunscreen
+6301006,Skincare product
+6301007,Cream and floss
+6301007,Product for oral hygiene
+6301010,Product for nail
+6301011,Perfume
+6301013,Product for skin cleansing
+6301014,Deodorant
+6301015,Sanitary napkin
+6301016,Soap
+6301017,Toilet paper
+6301020,Articles of makeup
+7101001,Seamstress
+7101004,Dry cleaning and laundry
+7101005,Manicure
+7101005,Manicure and pedicure
+7101008,Barber
+7101009,Hairdresser
+7101010,Domestic servant
+7101014,Hair Removal
+7101018,Massage and sauna
+7101034,Notary
+7101036,Broker
+7101038,Funeral Service
+7101051,Tailor
+7101076,Banking service
+7101090,Class council
+7201001,Cinema
+7201002,CD and DVD
+7201003,Ticket to game
+7201006,Club
+7201008,Disco
+7201008,CD
+7201010,Musical instrument
+7201018,Buy and treatment of animals
+7201018,Treatment of animals
+7201019,Bicycle
+7201020,Feed
+7201020,Food for dogs
+7201023,Toy
+7201051,Theatre
+7201052,DVD rental and video-cassette
+7201052,Rent a VCR tape
+7201052,DVD rentals
+7201054,Nightclub and Disco
+7201054,"Disco, disco and disco"
+7201063,Gambling
+7201063,Lotteries
+7201066,Video game rental tape
+7201068,Motel
+7201069,Ergometer
+7201083,Sporting goods
+7201084,Telesena
+7201085,Video tape recording
+7201088,Bingo
+7201090,Hotel
+7201091,Firearm
+7201095,Tour
+7201097,Food for animals (except dogs)
+7202041,Cigarette
+7203001,Camera
+7203002,Film and disposable flash
+7203003,Revelation and copy
+7203004,Camcorder
+7203006,Blank video tape
+8101001,Creche
+8101002,Preschool course
+8101002,Childhood education
+8101003,First degree course
+8101003,Elementary school
+8101004,High school course
+8101004,Secondary school
+8101005,Third degree course
+8101005,Higher education
+8101006,Postgraduate
+8101008,Supplementary course
+8101014,Several courses
+8101018,Textbook
+8101024,Book and magazine technical
+8102001,Daily Newspaper
+8102002,Newspaper subscription
+8102004,Magazine
+8102004,Non-technical magazine
+8102005,Book
+8102005,No textbook
+8103001,Notebook
+8103002,Photocopy
+8103014,Stationery
+8104001,Preparatory course
+8104002,Technical course
+8104003,Language course
+8104004,Computer course
+8104005,Driving school
+8104006,Physical Atiividades
+8104006,Gymnastics
+8104007,Swimming
+8104008,Ballet
+8104009,School for sport
+9101001,Post Office
+9101002,Phone
+9101003,Payphone
+9101008,Cell phone
+9101010,Cable
+9101018,Internet access
+9101019,Handset
+9101021,Phone with internet package
+9101022,Cable TV with internet
