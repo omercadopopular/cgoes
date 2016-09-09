@@ -49,9 +49,9 @@ ax.set_zlim3d((0,1))
 
 ax.scatter(
            x, z, y,  
-           color='red',                           
-           marker='o',                               
-           s=5                                      
+           marker='o',
+           s=8,                                  
+           color='red'
            )
 ax.grid(True)
 
