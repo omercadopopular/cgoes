@@ -1,4 +1,5 @@
-# Coded by Carlos Góes (www.mercadopopular.org)
+# Escrito por Carlos Góes
+# Pesquisador-Chefe do IMP (www.mercadopopular.org)
 
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
@@ -30,45 +31,57 @@ y2 = ( 1 / (1 + np.exp( - ( ( z - mu) / s) ) ) )
 y = y1 * y2
       
 
-fig = plt.figure()
-ax = fig.gca(projection='3d')
+fig = plt.figure(facecolor='#F2F2F2')
+ax = fig.gca(projection='3d', axisbg='#F2F2F2')
 
+plt.style.use('ggplot')
 ax.set_title('Uma teoria sobre o impeachment', loc='left')
 ax.set_xlabel('Circunstância Política')
 ax.set_ylabel('Justificativa Jurídica')
 ax.set_zlabel('Probabilidade de Impeachment')
 
-ax.view_init(elev=22, azim=-118)              # elevation and angle
-ax.dist=10                                  # distance
+ax.view_init(elev=22, azim=-118)             
+ax.dist=10                                  
 
 ax.set_ylim3d((0,1))
 ax.set_xlim3d((0,1))
 ax.set_zlim3d((0,1))
 
 ax.scatter(
-           x, z, y,  # data
-           color='red',                            # marker colour
-           marker='o',                                # marker shape
-           s=5                                       # marker size
+           x, z, y,  
+           color='red',                           
+           marker='o',                               
+           s=5                                      
            )
 ax.grid(True)
 
+fig.savefig('fig1.png', facecolor='#F2F2F2', bbox_inches='tight')
 
-fig2 = plt.figure()
+
+
+fig2 = plt.figure(facecolor='#F2F2F2')
 
 plt.plot(x, y, 'ro', alpha=0.75)
+plt.style.use('ggplot')
+plt.title('Probabilidade de Impeachment condicional à política e o direito', loc='left')
 plt.xlabel('Circunstância Política ou Justificativa Jurídica')
 plt.ylabel('Probabilidade de Impeachment')
 plt.axis([0, 1, 0, 1])
 plt.grid(True)
 
+fig2.savefig('fig2.png', facecolor='#F2F2F2', bbox_inches='tight')
 
-fig3 = plt.figure()
+
+fig3 = plt.figure(facecolor='#F2F2F2')
 
 plt.plot(z,x, 'ro', alpha=0.75)
+plt.style.use('ggplot')
+plt.title('Correlação entre política e direito', loc='left')
 plt.xlabel('Circunstância Política')
 plt.ylabel('Justificativa Jurídica')
 plt.axis([0, 1, 0, 1])
 plt.grid(True)
 
-plt.show()                                      
+plt.show()       
+
+fig3.savefig('fig3.png', facecolor='#F2F2F2', bbox_inches='tight')
