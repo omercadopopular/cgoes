@@ -1,3 +1,5 @@
+** Download the TXT files here: http://www.ibge.gov.br/home/estatistica/populacao/trabalhoerendimento/pnad2014/microdados.shtm
+
 dictionary using "Q:\DATA\S1\BRA\Inequality\PNAD\2014\DOM2014.txt"
 {
 	_column(00001) float  V0101          %4f          "Ano de refer믣ia"
