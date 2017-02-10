@@ -1,0 +1,34 @@
+--------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\cgoes\Desktop\Macroeconometrics\Stata\Taylor Rule\brazilta
+> ylor.log
+  log type:  text
+ opened on:  27 Jan 2014, 17:21:28
+
+. 
+end of do-file
+
+. save "C:\Users\cgoes\Desktop\Macroeconometrics\Stata\Output gap\brazilgap.dta"
+file C:\Users\cgoes\Desktop\Macroeconometrics\Stata\Output gap\brazilgap.dta sav
+> ed
+
+. do "C:\Users\cgoes\AppData\Local\Temp\1\STD00000000.tmp"
+
+. /*
+> 
+> /// Do-file written by Carlos Goes (andregoes@gmail.com)
+> /// for use at Dr Prakash Loungani's Macroeconometrics course
+> /// at Johns Hopkins SAIS
+> 
+> *** This do file aims at
+> **** (a) practicing time-series commands in STATA
+> **** (b) calculating potential Output and Output Gap with the Hodrick-Prescott
+>  filter
+> 
+> ATTN: Make sure you have the hprescott command installed. If you dont:
+>      -> net search hprescott
+>  
+>  */
+.  
+.  
+. capture log close // close any open logs

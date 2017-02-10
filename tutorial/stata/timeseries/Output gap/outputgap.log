@@ -1,0 +1,196 @@
+--------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  U:\Macroeconometrics\Stata\Output gap\outputgap.log
+  log type:  text
+ opened on:  31 Jan 2014, 17:44:09
+
+. 
+. // 1. Prepare the data
+. 
+. // 1a. Take logs of the output and calculate first differences
+. 
+. gen ly = log(y)
+(1 missing value generated)
+
+. gen dly = ( ly - l1.ly ) * 100                                                
+>                   // you can take first differences using the lag operator (l.
+> )
+(2 missing values generated)
+
+. gen du = d1.u * 100                                                           
+>                           // or directly through the difference operator (d.)
+(2 missing values generated)
+
+. 
+. // 1b. Remember to properly label your variables, it will make it easier for y
+> ou to build your graphs
+. 
+. label var date "Year"
+
+. label var y "Actual Output"
+
+. label var u "Unemployment rate"
+
+. label var ly "Natural log of actual GDP"
+
+. label var dly "Annual GDP Growth"
+
+. label var du "Change in employment"
+
+. 
+. tsset date, y                                                                 
+>                                   // tells STATA you are dealing with a time s
+> eries
+        time variable:  date, 1980 to 2011
+                delta:  1 year
+
+. 
+. // 2. Use Hodrick-Prescott filter of the log of GDP
+. 
+. hprescott ly, stub(yhp) smooth(6.25) 
+
+. 
+. // 3. Exponentiate calculated trend to obtain the trend in levels
+. 
+. rename yhp_ly_sm_1 yp 
+
+. label var yp "Potential Output"
+
+. replace yp = exp(yp)
+(32 real changes made)
+
+. 
+. // 4. Calculate Output Gap
+. 
+. gen ygap = ( y / yp - 1 ) * 100
+(1 missing value generated)
+
+. label var ygap "Output Gap"
+
+. 
+. // 5. Do the same to calculate the natural rate of unemployment and the employ
+> ment gap
+. 
+. hprescott u, stub(uhp) smooth(6.25)
+
+. 
+. rename uhp_u_sm_1 uhp
+
+. label var uhp "Natural rate of unemployment"
+
+. 
+. gen ugap = ( u / uhp - 1 ) * 100
+(1 missing value generated)
+
+. 
+. // 6. Draw graphs
+. 
+. line yp date || line y date, ///
+>   title("Potential Output and Actual Output in Brazil", position(11) margin(vs
+> mall)) ///
+>   subtitle("(in percent)",  position(11) margin(vsmall) size(small)) ///
+>   caption("Source: Author's calculations, with IMF Data; Trend calculated usin
+> g Hodrick-Prescott Filter", size(vsmall)) ///
+>   saving(output_and_potential, replace) name(output_and_potential, replace)
+(file output_and_potential.gph saved)
+
+. 
+. tw bar ygap date, yline(0, lcolor(black)) ///
+>   title("Output Gap in Brazil", position(11) margin(vsmall)) ///
+>   subtitle("(in percent)",  position(11) margin(vsmall) size(small)) ///
+>   caption("Source: Author's calculations, with IMF Data; Trend calculated usin
+> g Hodrick-Prescott Filter", size(vsmall)) ///
+>   ytitle("Output gap") xtitle("Year") ylabel(-6 0 6 12) || ///
+>   line dly date, yaxis(2) ylabel(-5 0 5 10, axis(2)) ///
+>   saving(ygap, replace) name(ygap, replace)
+(file ygap.gph saved)
+
+.     
+. line ugap date, yline(0, lcolor(black)) yaxis(1) ylabel(-2 -1 1 2 ) || line yg
+> ap date, yaxis(2) ylabel(-6 -3 0 3 6, axis(2)) ///
+>   title("Output Gap and Employment Gap in Brazil", position(11) margin(vsmall)
+> ) ///
+>   subtitle("(in percent)",  position(11) margin(vsmall) size(small)) ///
+>   caption("Source: Author's calculations, with IMF Data; Trends calculated usi
+> ng Hodrick-Prescott Filter", size(vsmall)) ///
+>   xtitle("Year") legend(order(1 "Employment Gap" 2 "Output Gap")) ///
+>   saving(ygap_ugap, replace) name(ygap_ugap, replace)
+(file ygap_ugap.gph saved)
+
+.   
+. // 6. Calculate relationship between unemployment and output and plot Okun's l
+> aw scatterplot
+. 
+. reg ygap ugap, robust                                                         
+>                                   // regresses the unemployment gap on the out
+> put gap
+
+Linear regression                                      Number of obs =      32
+                                                       F(  1,    30) =   39.88
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.5112
+                                                       Root MSE      =  1.4695
+
+------------------------------------------------------------------------------
+             |               Robust
+        ygap |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        ugap |  -.1433546   .0227005    -6.32   0.000    -.1897152   -.0969941
+       _cons |  -.0448811   .2587198    -0.17   0.863    -.5732574    .4834952
+------------------------------------------------------------------------------
+
+. estimates store ygap                                                          
+>                                   // stores the results with the label "ygap"
+
+. reg dly du, robust                                                            
+>                                           // regresses the change in unemploym
+> ent on GDP growth
+
+Linear regression                                      Number of obs =      31
+                                                       F(  1,    29) =    6.64
+                                                       Prob > F      =  0.0153
+                                                       R-squared     =  0.3275
+                                                       Root MSE      =  2.6407
+
+------------------------------------------------------------------------------
+             |               Robust
+         dly |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          du |  -1.468023   .5697235    -2.58   0.015    -2.633239   -.3028079
+       _cons |   2.496404   .4772552     5.23   0.000     1.520308    3.472501
+------------------------------------------------------------------------------
+
+. estimates store dly                                                           
+>                                   // stores the results with the label "dly"
+
+. estimates table ygap dly, star stats(r2) b(%9.3f)                             
+>           // presents the results labelled ygap and dly
+
+--------------------------------------------
+    Variable |     ygap           dly       
+-------------+------------------------------
+        ugap |    -0.143***                 
+          du |                   -1.468*    
+       _cons |    -0.045          2.496***  
+-------------+------------------------------
+          r2 |     0.511          0.328     
+--------------------------------------------
+    legend: * p<0.05; ** p<0.01; *** p<0.001
+
+. 
+. twoway lfitci du dly || scatter du dly, ///
+>   msymbol(oh) yline(0, lcolor(black) lstyle(grid)) xline(0, lcolor(black) lsty
+> le(grid)) mlabel(date) mlabsize(vsmall) ///
+>   title("Okun's law in Brazil", position(11) margin(vsmall)) ///
+>   subtitle("(Output Gap and Employment Gap, in percent)", position(11) margin(
+> vsmall) size(small)) ///
+>   caption("Source: Author's calculations, with IMF Data; Trends calculated usi
+> ng Hodrick-Prescott Filter", size(vsmall)) ///
+>   ytitle("Employement Gap") xtitle("Output Gap") legend(off) ///
+>   saving(okun, replace) name(okun, replace)
+(file okun.gph saved)
+
+. 
+end of do-file
+
+. exit, clear

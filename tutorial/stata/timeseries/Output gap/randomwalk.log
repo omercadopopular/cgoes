@@ -1,0 +1,206 @@
+--------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  U:\Macroeconometrics\Stata\Output gap\randomwalk.log
+  log type:  text
+ opened on:  31 Jan 2014, 16:04:15
+
+. 
+. set obs 1500                                                                  
+>                                   // sets up the number of observations to 150
+> 0
+obs was 0, now 1500
+
+. 
+. gen t = _n                                                                    
+>                                   // generates a continuous time variable
+
+. tsset t                                                                       
+>                                       // sets up time series mode
+        time variable:  t, 1 to 1500
+                delta:  1 unit
+
+. 
+. // 1. Generate 15 random walk series with a loop
+. 
+. local x = 0                                                                   
+>                                   // creates a temporary coumter that will be 
+> used in our loop
+
+. while `x' < 31 {                                                              
+>                                   // sets up the loop
+  2. 
+.         local x = `x' + 1                                                     
+>                           // makes the counter add one everytime the loop rest
+> arts
+  3.         gen r_`x' = 0                                                      
+>                                      // generates a new series starting with 0
+  4.         replace r_`x' = l.r_`x' + rnormal(0,1) if t > 1                    
+>      // says x_t = x_t-1 + [random value with normal distribution, mean=0 & sd
+> =1]
+  5. 
+. }
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+(1499 real changes made)
+
+. 
+. // 2. Plot our random series over time
+. 
+. line r_1-r_30 t, ///
+>   title("30 Random Walk Series", position(11) margin(vsmall)) ///
+>   legend(off) name(rwalk, replace) 
+
+. 
+. // 3. Regress our random series on each other
+. 
+. reg r_13 r_1
+
+      Source |       SS       df       MS              Number of obs =    1500
+-------------+------------------------------           F(  1,  1498) =  458.52
+       Model |  157683.175     1  157683.175           Prob > F      =  0.0000
+    Residual |  515153.721  1498   343.89434           R-squared     =  0.2344
+-------------+------------------------------           Adj R-squared =  0.2338
+       Total |  672836.897  1499  448.857169           Root MSE      =  18.544
+
+------------------------------------------------------------------------------
+        r_13 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         r_1 |   .8800592    .041099    21.41   0.000     .7994415     .960677
+       _cons |   34.30309   .6267484    54.73   0.000      33.0737    35.53249
+------------------------------------------------------------------------------
+
+. reg r_8 r_4
+
+      Source |       SS       df       MS              Number of obs =    1500
+-------------+------------------------------           F(  1,  1498) =    0.00
+       Model |  .649344768     1  .649344768           Prob > F      =  0.9580
+    Residual |  349938.449  1498  233.603771           R-squared     =  0.0000
+-------------+------------------------------           Adj R-squared = -0.0007
+       Total |  349939.098  1499  233.448364           Root MSE      =  15.284
+
+------------------------------------------------------------------------------
+         r_8 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         r_4 |   .0011849   .0224747     0.05   0.958    -.0429003    .0452701
+       _cons |  -18.89554   .4657976   -40.57   0.000    -19.80922   -17.98185
+------------------------------------------------------------------------------
+
+. reg r_2 r_11
+
+      Source |       SS       df       MS              Number of obs =    1500
+-------------+------------------------------           F(  1,  1498) =   48.48
+       Model |  4211.07717     1  4211.07717           Prob > F      =  0.0000
+    Residual |  130110.968  1498   86.856454           R-squared     =  0.0314
+-------------+------------------------------           Adj R-squared =  0.0307
+       Total |  134322.045  1499  89.6077687           Root MSE      =  9.3197
+
+------------------------------------------------------------------------------
+         r_2 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        r_11 |   .1568685   .0225289     6.96   0.000     .1126769      .20106
+       _cons |  -3.976815   .6442628    -6.17   0.000    -5.240568   -2.713062
+------------------------------------------------------------------------------
+
+. reg r_14 r_3
+
+      Source |       SS       df       MS              Number of obs =    1500
+-------------+------------------------------           F(  1,  1498) =    4.06
+       Model |  298.528262     1  298.528262           Prob > F      =  0.0441
+    Residual |  110133.384  1498   73.520283           R-squared     =  0.0027
+-------------+------------------------------           Adj R-squared =  0.0020
+       Total |  110431.912  1499  73.6703883           Root MSE      =  8.5744
+
+------------------------------------------------------------------------------
+        r_14 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         r_3 |   .0686668   .0340767     2.02   0.044     .0018237      .13551
+       _cons |    6.83439    .255352    26.76   0.000     6.333505    7.335276
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "C:\Users\cgoes\AppData\Local\Temp\1\STD00000000.tmp"
+
+. line r_1-r_15 t, ///
+>   title("15 Random Walk Series", position(11) margin(vsmall)) ///
+>   subtitle("aren't they cool", position(11) margin(vsmall) size(small)) ///
+>   caption("Source: it's like magic!", size(vsmall)) ///  
+>   legend(off) name(rwalk, replace) 
+
+. 
+end of do-file
+
+. do "C:\Users\cgoes\AppData\Local\Temp\1\STD00000000.tmp"
+
+. line r_1-r_15 t, ///
+>   title("15 Random Walk Series", position(11) margin(vsmall)) ///
+>   subtitle("aren't they cool", position(11) margin(vsmall) size(small)) ///
+>   caption("Source: what SOURCEry is this?") ///  
+>   legend(off) name(rwalk, replace) 
+
+. 
+end of do-file
+
+. do "C:\Users\cgoes\AppData\Local\Temp\1\STD00000000.tmp"
+
+. line r_1-r_15 t, ///
+>   title("15 Random Walk Series", position(11) margin(vsmall)) ///
+>   subtitle("aren't they cool?", position(11) margin(vsmall)) ///
+>   caption("Source: what SOURCEry is this?") ///  
+>   legend(off) name(rwalk, replace) 
+
+. 
+end of do-file
+
+. help program
+
+. do "C:\Users\cgoes\AppData\Local\Temp\1\STD00000000.tmp"
+
+. /*
+> 
+> /// Do-file written by Carlos Goes and Rania Papageorgiou
+> /// for use at Dr Prakash Loungani's Macroeconometrics course
+> /// at Johns Hopkins SAIS
+> 
+> *** This do file aims at
+> **** (a) practicing time-series commands in STATA
+> **** (b) calculating potential Output and Output Gap with the Hodrick-Prescott
+>  filter
+> 
+> ATTN: Make sure you have the hprescott command installed. If you dont:
+>      -> net search hprescott
+>  
+>  */
+.  
+.  
+. capture log close                                                             
+>                                   // close any open logs
