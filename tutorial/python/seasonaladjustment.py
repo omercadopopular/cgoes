@@ -28,12 +28,11 @@ df = pd.Series(totals, index=dates)
 res = sm.tsa.seasonal_decompose(df)
 
 with open('eggs.csv', 'wb') as csvfile:
-spamwriter = csv.writer(csvfile, delimiter=' ',
-quotechar='|', quoting=csv.QUOTE_MINIMAL)
-assert (len(res.resid) == len(res.seasonal) and len(res.resid) == len(res.trend))
-spamwriter.writerow(['Date', 'Total (src)', 'Trend', 'Residual', 'Seasonal'])
+  spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+  assert (len(res.resid) == len(res.seasonal) and len(res.resid) == len(res.trend))
+  spamwriter.writerow(['Date', 'Total (src)', 'Trend', 'Residual', 'Seasonal'])
 for i in range(len(res.resid)):
-spamwriter.writerow([dates[i], totals[i], res.trend[i], res.resid[i], res.seasonal[i]])
+  spamwriter.writerow([dates[i], totals[i], res.trend[i], res.resid[i], res.seasonal[i]])
 
 fig = res.plot()
 fig.set_size_inches(10, 5)
