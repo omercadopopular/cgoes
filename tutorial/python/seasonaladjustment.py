@@ -12,11 +12,11 @@ import csv
 s = [10 * math.sin(i * 2 * math.pi / 25) + i * i /100.0 for i in range(100)]
 
 def grab_total(line):
-split = line.split(',')
+  split = line.split(',')
 try:
-return pd.to_datetime(split[0]), int((split[-2] + split[-1]).strip()[1:-1])
+  return pd.to_datetime(split[0]), int((split[-2] + split[-1]).strip()[1:-1])
 except:
-return None
+  return None
 
 lines = open('total.csv', 'r').readlines()
 dates, totals = zip(*[grab_total(line) for line in lines if grab_total(line) != None])
