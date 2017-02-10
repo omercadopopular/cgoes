@@ -10,8 +10,10 @@
 
 /*
 
-Purpose: Create state time series for different aggregates and
-run mincerian regressions.
+Purpose: Importing PNAD data, adjusting income per capita data for purchasing
+	power differences, creating state-wide and nation-wide percentiles
+	of PPP ajusted family income per capita, using such percentiles to plot 
+	regional income inequality patterns, and consumption-based inequality
 
 Methods: 
 
@@ -235,7 +237,7 @@ log using pes`year'.log, replace  					// chooses logfile
 			
 		// C. Education
 		
-			generate schooling = `schooling'
+			generate schooling = `schooling' - 1
 
 		// D. Occupation
 		
@@ -347,7 +349,7 @@ log using pes`year'.log, replace  					// chooses logfile
 		
 	predict lwagehat_private
 	
-	// Private Sector
+	// Public Sector
 	
 	svy: reg lwage ///
 		schooling ///
@@ -358,14 +360,39 @@ log using pes`year'.log, replace  					// chooses logfile
 		
 	predict lwagehat_public
 	
+	// Difference Public - Private
 	
-	twoway qfitci lwagehat_private schooling || ///
-		 qfitci lwagehat_public schooling,  ///
-		ytitle("Log of wage") ///
+	gen wagepremium = (lwagehat_public - lwagehat_private) * 100
+	
+
+	
+	graph box lwagehat_private lwagehat_public, over(schooling) noout ///
+		ytitle("Log of predicted wage given 50+ controls") ///
+		title("Brazil: Predicted Returns on Schooling", margin(vsmall) position(11)) ///
+		subtitle("Per years of education", margin(vsmall) position(11)) ///
+		legend( lab(1 "Private Sector") lab(2 "Public Sector") ) ///
+		caption("Source: Staff estimates with PNAD microdata.", size(small)) ///
+		scheme(s2color) name(schoolingbox, replace)
+		graph export schoolingbox.pdf, as(pdf) replace
+	
+	
+	twoway lfit lwagehat_private schooling || ///
+		 lfit lwagehat_public schooling,  ///
+		ytitle("Log of predicted wage given 50+ controls") ///
 		xtitle("Years of schooling") ///
-		title("Brazil: Predicted Returns on Schooling, `year'", margin(vsmall) position(11)) ///
+		title("Brazil: Predicted Returns on Schooling", margin(vsmall) position(11)) ///
 		subtitle("Public and Private Sectors", margin(vsmall) position(11)) ///
-		legend( lab(1 "Private Sector") lab(2 "Public Sector")) ///
-		lwidth(thin) scheme(s2color) name(schooling, replace)
-		graph export schooling.pdf, as(pdf) replace
+		legend( lab(1 "Private Sector") lab(2 "Public Sector") ) ///
+		lwidth(thin) scheme(s2color) name(schoolinglines, replace)
+		graph export schoolinglines.pdf, as(pdf) replace
+	
+	graph box wagepremium, over(schooling) noout ///
+		ytitle("Pct difference in predicted wage given 50+ controls") ///
+		yline(0, lcolor(black)) ///
+		title("Brazil: Wage Premium of Public Sector", margin(vsmall) position(11)) ///
+		subtitle("Per years of education", margin(vsmall) position(11)) ///
+		caption("Source: Staff estimates with PNAD microdata.", size(small)) ///
+		scheme(s2color) name(wagepremium, replace)
+		graph export wagepremium.pdf, as(pdf) replace
+
 
