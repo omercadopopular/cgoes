@@ -1,1 +1,1 @@
-Teoria do Impeachment.
+Python code for the simulation used in "Política ou direito: como pensar sobre as causas de um impeachment?" Mercado Popular. Em 09/09/2016. http://mercadopopular.org/2016/09/politica-ou-direito-como-pensar-sobre-as-causas-de-um-impeachment/
