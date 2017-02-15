@@ -58,7 +58,7 @@ for %a Lprov Lipiq Lroilp
 next
 
 for %a Lprov Lipiq Lroilp
-	series {%a}_wl = {%a}_wm +- 1.96 * {%a}_ws
+	series {%a}_wl = {%a}_wm - 1.96 * {%a}_ws
 next
 
 '' Group actuals, forecasts, forecast bands
