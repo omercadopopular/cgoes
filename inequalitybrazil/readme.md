@@ -1,6 +1,6 @@
 # Details
 
-Repository for my ongoing project regardingn "Past and Future of Inequality in Brazil: Distributional Implications of Macrostructural Policies", which uses a household survey (Pesquisa Nacional por Amostra de Domicílios - PNAD) microdata. 
+Repository for my ongoing project regarding "Past and Future of Inequality in Brazil: Distributional Implications of Macrostructural Policies", which uses a household survey (Pesquisa Nacional por Amostra de Domicílios - PNAD) microdata. 
 
 # Files
 
