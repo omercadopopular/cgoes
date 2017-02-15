@@ -10,10 +10,9 @@
 
 /*
 
-Purpose: Importing PNAD data, adjusting income per capita data for purchasing
-	power differences, creating state-wide and nation-wide percentiles
-	of PPP ajusted family income per capita, using such percentiles to plot 
-	regional income inequality patterns, and consumption-based inequality
+Purpose: Imports individual PNAD data, creates dummies for important characteristics
+(race, gender, state, etc.), runs mincerian regressions predicting income, calculates
+wage premium for public sector.
 
 Methods: 
 
