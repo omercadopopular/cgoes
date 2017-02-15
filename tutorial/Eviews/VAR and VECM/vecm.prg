@@ -2,7 +2,7 @@
 '/// for use at Dr Prakash Loungani's Macroeconometrics course
 '/// at Johns Hopkins SAIS
 
-'*** This do file aims at
+'*** This code is meant to
 '**** (a) Run unit root tests and Granger-Causality Tests
 '**** (b) Run VAR
 '**** (c) Run VECM
@@ -13,8 +13,8 @@
 
 	'F10: the yield to maturity of 10-year sovereign local currency yield of zero-coupon bonds;
 	'T10:  the yield to maturity of the U.S. Treasury 10-year bond, which conceptually includes the world real interest rate, the US inflation and a term premium;
-	'CDS: the spread, in basis points, of the 5-year Credit Default Swap USD contract for the emerging country, which measures investors’ perception of country risk – i.e. the absolute risk of investing in a given country;
-	'EMBIG: the difference between the EMBIG stripped spread for emerging country and the EMBIG Global stripped spread, which captures the opportunity costs for investors who usually invest in emerging markets – i.e. the relative risk of the country in comparison to other emerging markets;
+	'CDS: the spread, in basis points, of the 5-year Credit Default Swap USD contract for the emerging country, which measures investorsâ€™ perception of country risk â€“ i.e. the absolute risk of investing in a given country;
+	'EMBIG: the difference between the EMBIG stripped spread for emerging country and the EMBIG Global stripped spread, which captures the opportunity costs for investors who usually invest in emerging markets â€“ i.e. the relative risk of the country in comparison to other emerging markets;
 	'POLICY: the annualized short term policy rate set by the local central bank for overnight interbank loans, which, combined with other variables, provides measures for term premium inflation differential;
 	'VIX: the Chicago Board Options Exchange Market Volatility Index (VIX) for bid-ask quotes of options that have the S&P 500 index as underlying, which is a proxy for global risk aversion;
 	'IMVOL: is the one-month implied volatility of the forward exchange rate, which is meant to capture the short-term currency risk;
