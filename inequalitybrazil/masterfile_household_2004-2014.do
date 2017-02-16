@@ -13,7 +13,12 @@
 Purpose: Importing PNAD data, adjusting income per capita data for purchasing
 	power differences, creating state-wide and nation-wide percentiles
 	of PPP ajusted family income per capita, using such percentiles to plot 
-	regional income inequality patterns, and consumption-based inequality
+	regional income inequality patterns, and consumption-based inequality.
+	
+Output: Several excel files with time series for spatial-price differences adjusted
+	income percentiles for each state, as well as how those percentiles fit in the national
+	income distribution; time series for consumption patterns at different percentiles;
+	Gini, QE, and other inequality coefficients for each state.
 	
 Attention: To make sure that the file runs through all PNADS, the variable
 	names have to be the same for all of them (if there was a change in name,
@@ -47,9 +52,9 @@ Timing: If you don't need to import raw data from the TXT files, running this
  
  // II. Input the survey weighting variables
  
-	local psu = "V4618"
-	local strat = "V4617"
-	local weight = "V4611"
+	global psu = "V4618"
+	global strat = "V4617"
+	global weight = "V4611"
 	
 // III. Set parameters for PPP adjustment
 	// 0 = no adjustment
@@ -120,7 +125,7 @@ forvalues tyear = $first / $last {
 		// Load dataset
 
 			use p$year, clear
-			svyset `psu' [weight=`weight'], strat(`strat')
+			svyset $psu [weight=$weight], strat($strat)
 
 		// Create group id by state
 
@@ -202,7 +207,7 @@ forvalues tyear = $first / $last {
 
 
 			forval x = 1/27 {
-				xtile pctileUF`x' = income [aweight=`weight'] if id == `x', n(`ntiles')
+				xtile pctileUF`x' = income [aweight=$weight] if id == `x', n(`ntiles')
 			}
 
 			egen pctilestate = rowtotal(pctileUF*)
@@ -266,7 +271,7 @@ forvalues tyear = $first / $last {
 				subtitle("(Percentiles of state-wide and nation-wide distributions, PPP adjusted)", margin(vsmall) position(11)) ///
 				legend( lab(1 "RO") lab(2 "AC") lab(3 "AM")  lab(4 "RR") lab(5 "PA")  lab(6 "AP")  lab(7 "TO")  lab(8 "45 degree")) ///
 				lwidth(thin) scheme(s2color) name(north, replace)
-				graph export $imagefolder\\${year}_north, as(pdf) replace		
+				graph export $imagefolder\\${year}_north.pdf, as(pdf) replace		
 				
 			// ne
 				 
@@ -458,7 +463,7 @@ forvalues tyear = $first / $last {
 
 		// Calculate inequality indices
 
-			qui ineqdeco income [aweight=`weight'] , by(UF)
+			qui ineqdeco income [aweight=$weight] , by(UF)
 			putexcel A1=rscalarnames using  $resultsfolder\giniresults.xlsx, modify sheet("$year")
 			putexcel B1=rscalars using $resultsfolder\giniresults.xlsx, modify sheet("$year")
 						
