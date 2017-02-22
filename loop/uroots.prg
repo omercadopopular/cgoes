@@ -21,8 +21,6 @@
 		llc_uroot{%a}.save(t=csv) llc_uroot{%a}
 	next
 
-stop
-
 	for %a {%group} 
 		smpl 2002M1 @last if code = {%a}
 		freeze(uroot{%a}) lindex_time.uroot(ips,info=aic,maxlag=10)
