@@ -41,7 +41,7 @@ Timing: If you don't need to import raw data from the TXT files, running this
 	global folder = "Q:\DATA\S1\BRA\Inequality\PNAD"
 	global resultsfolder = "Q:\DATA\S1\BRA\Inequality\PNAD\results"
 	global imagefolder = "Q:\DATA\S1\BRA\Inequality\PNAD\images"
-	global first = 2004	// First PNAD being used
+	global first = 2014	// First PNAD being used
 	global last = 2014 	// Last PNAD being used
 	global exception = 2010 // Year when there is no PNAD
 
@@ -53,8 +53,8 @@ Timing: If you don't need to import raw data from the TXT files, running this
  // II. Input the survey weighting variables
  
 	global psu = "V4618"
-	global strat = "V4617"
-	global weight = "V4611"
+	global strat = "V4617" 
+	global weight = "V4611" 
 	
 // III. Set parameters for PPP adjustment
 	// 0 = no adjustment
@@ -203,7 +203,7 @@ forvalues tyear = $first / $last {
 		///////////////////////////////////////////////////////////////////////////////
 
 
-			xtile pctile = income [aweight=V4611], n(`ntiles')
+			xtile pctile = income [aweight=$weight], n(`ntiles')
 
 
 			forval x = 1/27 {
@@ -231,6 +231,12 @@ forvalues tyear = $first / $last {
 				collapse (mean) income, by(pctilestate)
 				export excel using $resultsfolder\incomepercentilestotal.xlsx, firstrow(variables) sheet("$year") sheetmodify
 			restore	
+
+			preserve
+				collapse (mean) pppindex, by(UF)
+				export excel using $resultsfolder\ppp.xlsx, firstrow(variables) sheet("$year") sheetmodify
+			restore	
+
 			
 		///////////////////////////////////////////////////////////////////////////////
 		//////////////////////////// 5. PLOT XTILES CHARTS ///////////////////////////
