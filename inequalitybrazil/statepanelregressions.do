@@ -214,3 +214,4 @@ foreach x of local list  {
 
  gen dlgini_hat = d.lgini_hat
  gen dlgini = d.lgini
+ export delimited using "decomp", replace
