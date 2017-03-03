@@ -33,8 +33,8 @@ Timing: If you don't need to import raw data from the TXT files, running this
 	global folder = "Q:\DATA\S1\BRA\Inequality\PNAD"
 	global resultsfolder = "Q:\DATA\S1\BRA\Inequality\PNAD\results"
 	global imagefolder = "Q:\DATA\S1\BRA\Inequality\PNAD\images"
-	global first = 2004	// First PNAD being used
-	global last = 2013 	// Last PNAD being used
+	global first = 2014	// First PNAD being used
+	global last = 2014 	// Last PNAD being used
 	global exception = 2010 // Year when there is no PNAD
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -104,7 +104,7 @@ Timing: If you don't need to import raw data from the TXT files, running this
 			// C. Education
 
 				if $year > 2006 {
-					qui local schooling = "V4803" // overstates by one year, 17 = not available
+					local schooling = "V4803" // overstates by one year, 17 = not available
 				}
 				else {
 					local schooling = "V4703" // overstates by one year, 17 = not available
@@ -114,19 +114,32 @@ Timing: If you don't need to import raw data from the TXT files, running this
 				
 				// University Level
 
-				if $year > 2006 {	
+				if $year > 2008 {	
 					local edlevel = "V6003"
 					local university = 5
 					local ednetwork = "V6002"
 					local edpublic = 2
 					local edprivate = 4
+					local edpubtype = "V6020"
+					local federal = 6					
 					}
+				else if $year > 2006 {
+					local edlevel = "V6003"
+					local university = 5
+					local ednetwork = "V6002"
+					local edpublic = 2
+					local edprivate = 4
+					local edpubtype = "V6002"
+					local federal = 2
+				}
 				else {
 					local edlevel = "V0603"
 					local university = 5
 					local ednetwork = "V6002"
 					local edpublic = 2
-					local edprivate = 4			
+					local edprivate = 4
+					local edpubtype = "V6002"
+					local federal = 2
 				}
 				
 			// D. Occupation
@@ -191,10 +204,18 @@ Timing: If you don't need to import raw data from the TXT files, running this
 			
 				local laborforce = "V4704" 
 				local laborforceactive = 1
-
-				local employmentrate = "V4805" 
-				local employed = 1
-				local unemployed = 2
+				
+				
+				if $year > 2006 {
+					local employmentrate = "V4805" 
+					local employed = 1
+					local unemployed = 2
+					}
+				else {
+					local employmentrate = "V4705" 
+					local employed = 1
+					local unemployed = 2
+					}
 				
 			// I. Experience - how to calculate labor market experience?
 			
@@ -203,10 +224,12 @@ Timing: If you don't need to import raw data from the TXT files, running this
 				local retired = "V9122"
 					local retiree = 2
 					local nonretiree = 4
-
+					local retiredincome = "V1252"
+				
 				local pension = "V9123"
 					local pensioneer = 1
 					local nonpensioneer = 3
+					local pensionincome = "V1255"
 				
  
 			///////////////////////////////////////////////////////////////////////////////
@@ -256,14 +279,15 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					svyset $psu [weight=$weight], strat($strat)
 				
 			// Label regions
-
-				gen region = ""
-				replace region = "N" if UF >= 10 & UF < 20 
-				replace region = "NE" if UF >= 20 & UF < 30
-				replace region = "SE" if UF >= 30 & UF < 40
-				replace region = "S" if UF >= 40 & UF < 50
-				replace region = "CO" if UF >= 50 & UF < 60
-					
+				
+				local counter1 = 0
+				foreach x in region_N region_NE region_SE region_S region_CO {	
+					local counter1 = `counter1' + 10
+					local counter2 = `counter1' + 10
+					gen `x' = 0 if UF != .
+					replace `x' = 1 if UF >= `counter1' & UF < `counter2'
+				}
+							
 			// Generate variables
 
 					quietly {
@@ -305,7 +329,7 @@ Timing: If you don't need to import raw data from the TXT files, running this
 						replace  highskilled = 0 if schooling < `highskilledthreshold' 
 						
 						generate universitypublic = 0
-						replace  universitypublic = 1 if `edlevel' == `university' & `ednetwork' == `edpublic' 
+						replace  universitypublic = 1 if `edlevel' == `university' & `ednetwork' == `edpublic' & `edpubtype' == `federal' 
 						generate universityprivate = 0
 						replace  universityprivate = 1 if `edlevel' == `university' & `ednetwork' == `edprivate' 
 						
@@ -355,16 +379,22 @@ Timing: If you don't need to import raw data from the TXT files, running this
 						replace laborforce = 0 if `laborforce' != `laborforceactive' & `laborforce' != .
 
 						generate employmentrate = .
-						replace employmentrate = 1 if `employmentrate' == `employed' 
-						replace employmentrate = 0 if `employmentrate' == `unemployed' 
+						replace employmentrate = 1 if `employmentrate' == `employed' & laborforce == 1
+						replace employmentrate = 0 if `employmentrate' == `unemployed' & laborforce == 1
 						
 						generate retiree = . 
 						replace retiree = 1 if `retired' == `retiree'
 						replace retiree = 0 if `retired' == `nonretiree'
+						
+						generate retiredincome = `retiredincome' 
+						replace retiredincome = . if retiredincome > 1.00e+11
 
 						generate pensioneer = . 
 						replace pensioneer = 1 if `pension' == `pensioneer'
 						replace pensioneer = 0 if `pension' == `nonpensioneer'
+						
+						generate pensionincome = `pensionincome'
+						replace pensionincome = . if pensionincome > 1.00e+11
 
 				}
 					
@@ -372,15 +402,22 @@ Timing: If you don't need to import raw data from the TXT files, running this
 			////////////////////////// 3. CALCULATE TIME SERIES ///////////////////////////
 			///////////////////////////////////////////////////////////////////////////////
 
-				local general = "income wage civilservant migrant white formalworker schooling highskilled universityprivate universitypublic retiree pensioneer employmentrate"  
+				// General Variables
+				
+				local general = "income wage civilservant migrant white formalworker highskilled universityprivate universitypublic retiree pensioneer employmentrate retiredincome pensionincome"  
 				
 				foreach x of local general {
 					qui svy: mean `x', over(UF)
 					qui matrix `x' = e(b)
 					qui matrix colnames `x' = `x'
 				}
-
 				
+				// Education
+
+				qui svy: mean schooling if age > 16, over(UF) 
+				qui matrix schooling = e(b)
+				qui matrix colnames schooling = schooling
+							
 				local students = "universityprivate universitypublic"  
 				
 				foreach x of local students {
@@ -389,19 +426,49 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					qui matrix colnames `x' = `x'
 				}
 				
+				// Civil Servant
+				
 				local ps = "income schooling highskilled" 
 
 				foreach x of local ps {
 					qui svy: mean `x' if civilservant == 1, over(UF)
 					qui matrix `x'_cs = e(b)
 					qui matrix colnames `x'_cs = `x'_cs
-				}			
+				}
+				
+				// Income and Education by Quartile
+				
+				sum income [aweight=$weight], detail
+
+				forval x = 25(25)75 {
+						local p`x' = r(p`x')
+						}
+						
+				gen q1 = 1 if income < `p25'
+				replace q1 = 0 if income >= `p25'
+				gen q2 = 1 if income >= `p25' & income < `p50'
+				replace q2 = 0 if income < `p25' | income >= `p50'
+				gen q3 = 1 if income >= `p50' & income < `p75'
+				replace q3 = 0 if income < `p50' | income >= `p75'
+				gen q4 = 1 if income >= `p75'
+				replace q4 = 0 if income < `p75'	
+				
+				local quartilelist = "income schooling"
+
+				foreach z of local quartilelist {
+					forval x = 1/4 {
+						qui svy: mean `z' if q`x' == 1, over(UF)
+						qui matrix `z'_q`x' = e(b)
+						}
+					}
+				
+				drop q1-q4
 					
 				// Aggregate and export resulting matrix, with respective weights
 				
 					preserve
-						matrix A = [income', wage', civilservant', migrant', white', formalworker', schooling', highskilled', universityprivate', universitypublic', retiree', pensioneer', employmentrate', income_cs', schooling_cs', highskilled_cs']
-						matrix colnames A = income wage civilservant migrant white formalworker schooling highskilled universityprivate universitypublic retiree pensioneer employmentrate income_cs schooling_cs highskilled_cs
+						matrix A = [income', income_q1', income_q2', income_q3', income_q4', wage', civilservant', migrant', white', formalworker', schooling', schooling_q1', schooling_q2', schooling_q3', schooling_q4', highskilled', universityprivate', universitypublic', retiree', pensioneer', employmentrate', income_cs', schooling_cs', highskilled_cs', retiredincome', pensionincome']
+						matrix colnames A = income income_q1 income_q2 income_q3 income_q4 wage civilservant migrant white formalworker schooling schooling_q1 schooling_q2 schooling_q3 schooling_q4 highskilled universityprivate universitypublic retiree pensioneer employmentrate income_cs schooling_cs highskilled_cs retiredincome pensionincome
 						matrix rownames A = RO	AC	AM	RR	PA	AP	TO	MA	PI	CE	RN	PB	PE	AL	SE	BA	MG	ES	RJ	SP	PR	SC	RS	MS	MT	GO	DF
 						collapse (sum) $weight, by(UF)
 						mkmat $weight, matrix(labor)
@@ -522,7 +589,7 @@ Timing: If you don't need to import raw data from the TXT files, running this
 			gen q4 = 1 if income >= `p75'
 			replace q4 = 0 if income < `p75'
 			
-			foreach x in universitypublic universityprivate highskilled {
+			foreach x in universitypublic universityprivate highskilled  {
 				forval y = 1/4 {
 				qui svy: mean q`y' if `x' == 1
 				qui matrix `x'`y' = e(b)			
@@ -530,11 +597,93 @@ Timing: If you don't need to import raw data from the TXT files, running this
 				matrix `x' = [`x'1', `x'2', `x'3', `x'4']
 			}
 			
+			drop q1-q4
+							
 			matrix compare = [universitypublic', universityprivate',  highskilled']
 			matrix colnames compare = universitypublic universityprivate highskilled
 			putexcel A1=matrix(compare, names) using $resultsfolder\university.xlsx, modify sheet("$year")
+
+			qui ineqdeco schooling [aweight=$weight] , by(UF)
+			putexcel A1=rscalarnames using  $resultsfolder\educationgini.xlsx, modify sheet("$year")
+			putexcel B1=rscalars using $resultsfolder\educationgini.xlsx, modify sheet("$year")
+			
+			///////////////////////////////////////////////////////////////////////////////
+			///////////////////////// 6. LOGIT FOR UNIVERSITY //////////////////
+			///////////////////////////////////////////////////////////////////////////////		
+	
+
+				
+				gen lincome = ln(income)
+	
+				preserve
+				
+					// Run Univariate Model
+
+							logit universitypublic lincome if age > 16 & age < 25 & universityprivate != 1
+								outreg2 lincome  /// 
+									using $resultsfolder\univlogitreg_${year}.xls, cttop(Correlacao) ///
+									lab dec(3) replace
+					
+					// Fit Values
+					
+							predict univ_hat
+							replace univ_hat = univ_hat * 100
+							
+					// Calculate Marginal Values
+					
+							margins, dydx(*) at( (median) lincome) post
+
+							logit universitypublic lincome if age > 16 & age < 25 & universityprivate != 1
+							margins, dydx(*) at(lincome=(3.5(0.5)9)) post
+							marginsplot
+					
+					// Adjust Scale for Chart
+
+					drop if income > 20000
+					drop if income < 100
+							
+					line univ_hat income, sort  ///
+						title("Probability", position(11) margin(vsmall)) ///
+						subtitle("of Being in University",  position(11) margin(vsmall)) ///
+						scheme(economist) name(test_hat, replace)
+						
+					keep income univ_hat 
+											
+					export delimited using "$resultsfolder\univlogitfitchart1_${year}.csv", replace
+						
+				restore			
+
+							
+				// Multivariabe Logit
+				
+						// Run Model 
+
+						
+							logit universitypublic lincome age male black brown asian native region_N region_NE region_S region_CO if age > 16 & age < 25 & universityprivate != 1
+							outreg2 lincome age male black brown asian native region_N region_NE region_S region_CO /// 
+									using $resultsfolder\univlogitreg_${year}.xls, cttop(Completo) ///
+									lab dec(3)  		
+
+								predict univ_hat2 if age > 16 & age < 25 
+								replace univ_hat2 = univ_hat2 * 100
+								
+							preserve
+								keep income univ_hat2 
+								drop if missing(univ_hat2)
+								export delimited using "$resultsfolder\univlogitfitchart2_${year}.csv", replace
+								
+							restore
+
+						// Calculate Marginal Values
+							
+							margins, dydx(*) at(male=0 black=0 brown=0 asian=0 region_N = 0 region_NE = 0 region_S = 0 region_CO = 0 (median) lincome age ) post
+							outreg2 lincome age male black brown asian native region_N region_NE region_S region_CO /// 
+									using $resultsfolder\univlogitreg_${year}.xls, cttop(Completo) ///
+									lab dec(3)  		
+
 				
 		}
 }
+
 
 
