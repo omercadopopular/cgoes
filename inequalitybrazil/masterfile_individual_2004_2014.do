@@ -494,7 +494,10 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					male ///
 					$races $occupationlist $activitylist $classlist ///
 					i.UF
-				
+					outreg2 schooling exp expsq male $races $occupationlist $activitylist $classlist  /// 
+						using $resultsfolder\mincerian_${year}.xls, cttop(Overall)  ///
+						lab dec(3) replace				
+						
 				// Private Sector
 				
 				svy: reg lwage ///
@@ -503,6 +506,9 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					male ///
 					$races $occupationlist $activitylist $classlist ///
 					i.UF if publicsector == 0
+					outreg2 schooling exp expsq male $races $occupationlist $activitylist $classlist  /// 
+						using $resultsfolder\mincerian_${year}.xls, cttop(Private) ///
+						lab dec(3) 				
 					
 				predict lwagehat_private
 				
@@ -514,6 +520,9 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					male ///
 					$races $occupationlist $activitylist $classlist ///
 					i.UF if civilservant == 1
+					outreg2 schooling exp expsq male $races $occupationlist $activitylist $classlist  /// 
+						using $resultsfolder\mincerian_${year}.xls, cttop(Public) ///
+						lab dec(3) 				
 					
 				predict lwagehat_public
 				
@@ -620,9 +629,6 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					// Run Univariate Model
 
 							logit universitypublic lincome if age > 16 & age < 25 & universityprivate != 1
-								outreg2 lincome  /// 
-									using $resultsfolder\univlogitreg_${year}.xls, cttop(Correlacao) ///
-									lab dec(3) replace
 					
 					// Fit Values
 					
@@ -632,6 +638,9 @@ Timing: If you don't need to import raw data from the TXT files, running this
 					// Calculate Marginal Values
 					
 							margins, dydx(*) at( (median) lincome) post
+								outreg2 lincome  /// 
+									using $resultsfolder\univlogitreg_${year}.xls, cttop(Correlacao) ///
+									lab dec(3) replace
 
 							logit universitypublic lincome if age > 16 & age < 25 & universityprivate != 1
 							margins, dydx(*) at(lincome=(3.5(0.5)9)) post
@@ -660,9 +669,7 @@ Timing: If you don't need to import raw data from the TXT files, running this
 
 						
 							logit universitypublic lincome age male black brown asian native region_N region_NE region_S region_CO if age > 16 & age < 25 & universityprivate != 1
-							outreg2 lincome age male black brown asian native region_N region_NE region_S region_CO /// 
-									using $resultsfolder\univlogitreg_${year}.xls, cttop(Completo) ///
-									lab dec(3)  		
+
 
 								predict univ_hat2 if age > 16 & age < 25 
 								replace univ_hat2 = univ_hat2 * 100
@@ -684,6 +691,5 @@ Timing: If you don't need to import raw data from the TXT files, running this
 				
 		}
 }
-
 
 
