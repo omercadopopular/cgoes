@@ -239,38 +239,7 @@ forvalues tyear = $first / $last {
 				export excel using $resultsfolder\ppp.xlsx, firstrow(variables) sheet("$year") sheetmodify
 			restore	
 			
-			/// Top income shares
-			
-			preserve
-
-				xtile minitile = income [aweight=$weight], n(10000)
-				
-			
-				gen top1 = .
-				replace top1 = 1 if minitile > 9900
-				replace top1 = 0 if minitile <= 9900
-				
-				bysort top1: egen top1share = sum(income)		
-				
-
-				gen top0point1 = .
-				replace top0point1  = 1 if minitile > 9990
-				replace top0point1  = 0 if minitile <= 9990
-				
-				bysort top0point1: egen top0point1share = sum(income)		
-				
-				gen top0point01 = .
-				replace top0point01 = 1 if minitile > 9999
-				replace top0point01  = 0 if minitile <= 9999
-				
-				bysort top0point01: egen top0point01share = sum(income)		
-				
-				keep top*
-				
-				export excel using $resultsfolder\shares.xlsx, firstrow(variables) sheet("$year") sheetmodify
-				
-			restore
-			
+		
 			
 			
 		///////////////////////////////////////////////////////////////////////////////
