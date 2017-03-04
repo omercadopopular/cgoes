@@ -586,25 +586,30 @@ Timing: If you don't need to import raw data from the TXT files, running this
 
 						xtile minitile = wage [aweight=$weight], n(10000)
 						
+						gen top10 = .
+						replace top10 = 1 if minitile > 9000
+						replace top10 = 0 if minitile <= 9000
+						
+						bysort top10: egen top10share = sum(wage)		
 					
 						gen top1 = .
 						replace top1 = 1 if minitile > 9900
 						replace top1 = 0 if minitile <= 9900
 						
-						bysort top1: egen top1share = sum(income)		
+						bysort top1: egen top1share = sum(wage)		
 						
 
 						gen top0point1 = .
 						replace top0point1  = 1 if minitile > 9990
 						replace top0point1  = 0 if minitile <= 9990
 						
-						bysort top0point1: egen top0point1share = sum(income)		
+						bysort top0point1: egen top0point1share = sum(wage)		
 						
 						gen top0point01 = .
 						replace top0point01 = 1 if minitile > 9999
 						replace top0point01  = 0 if minitile <= 9999
 						
-						bysort top0point01: egen top0point01share = sum(income)		
+						bysort top0point01: egen top0point01share = sum(wage)		
 						
 						keep top*
 						
