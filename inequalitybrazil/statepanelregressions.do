@@ -147,6 +147,8 @@ drop if year == 2015
 
 xtset uf year
 
+export delimited using "$workingfolder\statepaneldatabase.csv", replace
+
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 3. ÀDJUST DATA //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -174,6 +176,11 @@ gen pbfcapita = pbfexpenditure / population
 gen taxgdp = (taxrev / stategdp) * 100
 bysort uf: egen taxgdpbar = mean(taxgdp)
 gen taxgdpdemean = taxgdp - taxgdpbar
+
+// Calculate State GDP per capita
+
+gen stategdpcapita = stategdp / population
+
 
 // Deflate and ajust for spatial price differences
 
@@ -252,10 +259,26 @@ xtreg gini $regressors2 i.uf, vce(cluster uf)
 	outreg2 $regressors2 ///
 		using $resultsfolder\panelregressions.xls, cttop(Fixed Effects) ///
 		lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
-		
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////// 5. PLOT CORRELATION CHARTS //////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+local group = "stategdpcapita schooling lr_income_cs lr_pbfcapita retiree taxgdpdemean formalworker universitypublic"
+
+foreach y in gini lr_income {
+
+	foreach x of local group {
+		twoway lfitci `y' `x' if year == 2014 || scatter `y' `x' if year == 2014,  ///
+			title("`x'", margin(vsmall) position(11)) mlabel(state) ///
+			lwidth(thin) scheme(s2color) name(`y'chart_`x', replace) legend(off)  
+	}
+
+	graph combine `y'chart_stategdpcapita `y'chart_schooling `y'chart_lr_income_cs `y'chart_lr_pbfcapita `y'chart_retiree `y'chart_taxgdpdemean `y'chart_formalworker `y'chart_universitypublic, col(4) name(`y', replace)  
+}
 		
 ///////////////////////////////////////////////////////////////////////////////
-////////////////////////// 5. RUN BASELINE REGRESSION AND ESTIMATE CHANGES //////////////////////////
+////////////////////////// 6. RUN BASELINE REGRESSION AND ESTIMATE CHANGES //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 forval z = 2 {
