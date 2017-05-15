@@ -4,6 +4,11 @@
 ### About
 
 ### Contents
+#### 0. Introduction to Statistical Programming
+##### 0.1. Python Basics
+##### 0.2. Introduction to Pandas
+##### 0.3. Introduction to Matplotlib
+
 #### 1. [Averages can be deceitful](https://github.com/omercadopopular/cgoes/blob/master/IntroEconometricsPython/1.%20Averages%20can%20be%20deceitful.ipynb)
 ##### 1.1. Distributions: mean, variance, and standard deviation
 ##### 1.2. Populations and samples
