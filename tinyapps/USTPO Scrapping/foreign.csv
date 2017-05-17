@@ -1,0 +1,1376 @@
+,US or Foreign,Code,"State, Territory, or Country",Utility,Design,Plant,Reissue,Total,year
+55,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,05
+56,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,05
+57,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,05
+58,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,05
+59,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,05
+60,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,05
+61,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,05
+62,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,05
+63,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,05
+64,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,05
+65,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,05
+66,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,05
+67,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,05
+68,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,05
+69,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,05
+70,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,05
+71,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,05
+72,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,05
+73,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,05
+74,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,05
+75,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,05
+76,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,05
+77,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,05
+78,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,05
+79,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,05
+80,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,05
+81,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,05
+82,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,05
+83,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,05
+84,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,05
+85,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,05
+86,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,05
+87,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,05
+88,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,05
+89,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,05
+90,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,05
+91,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,05
+92,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,05
+93,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,05
+94,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,05
+95,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,05
+96,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,05
+97,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,05
+98,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,05
+99,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,05
+100,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,05
+101,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,05
+102,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,05
+103,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,05
+104,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,05
+105,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,05
+106,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,05
+107,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,05
+108,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,05
+109,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,05
+110,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,05
+111,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,05
+112,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,05
+113,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,05
+114,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,05
+115,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,05
+116,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,05
+117,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,05
+118,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,05
+119,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,05
+120,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,05
+121,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,05
+122,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,05
+123,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,05
+124,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,05
+125,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,05
+126,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,05
+127,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,05
+128,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,05
+129,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,05
+130,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,05
+131,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,05
+132,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,05
+133,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,05
+134,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,05
+135,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,05
+136,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,05
+137,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,05
+138,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,05
+139,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,05
+140,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,05
+141,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,05
+142,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,05
+143,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,05
+144,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,05
+145,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,05
+146,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,05
+147,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,05
+148,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,05
+149,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,05
+150,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,05
+151,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,05
+152,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,05
+153,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,05
+154,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,05
+155,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,05
+156,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,05
+157,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,05
+158,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,05
+159,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,05
+160,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,05
+161,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,05
+162,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,05
+163,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,05
+164,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,05
+165,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,05
+166,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,05
+167,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,05
+168,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,05
+169,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,05
+170,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,05
+171,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,05
+172,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,05
+173,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,05
+174,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,05
+175,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,05
+176,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,05
+177,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,05
+178,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,05
+179,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,05
+237,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,06
+238,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,06
+239,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,06
+240,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,06
+241,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,06
+242,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,06
+243,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,06
+244,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,06
+245,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,06
+246,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,06
+247,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,06
+248,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,06
+249,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,06
+250,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,06
+251,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,06
+252,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,06
+253,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,06
+254,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,06
+255,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,06
+256,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,06
+257,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,06
+258,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,06
+259,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,06
+260,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,06
+261,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,06
+262,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,06
+263,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,06
+264,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,06
+265,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,06
+266,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,06
+267,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,06
+268,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,06
+269,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,06
+270,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,06
+271,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,06
+272,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,06
+273,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,06
+274,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,06
+275,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,06
+276,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,06
+277,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,06
+278,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,06
+279,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,06
+280,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,06
+281,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,06
+282,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,06
+283,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,06
+284,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,06
+285,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,06
+286,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,06
+287,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,06
+288,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,06
+289,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,06
+290,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,06
+291,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,06
+292,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,06
+293,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,06
+294,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,06
+295,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,06
+296,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,06
+297,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,06
+298,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,06
+299,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,06
+300,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,06
+301,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,06
+302,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,06
+303,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,06
+304,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,06
+305,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,06
+306,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,06
+307,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,06
+308,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,06
+309,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,06
+310,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,06
+311,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,06
+312,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,06
+313,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,06
+314,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,06
+315,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,06
+316,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,06
+317,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,06
+318,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,06
+319,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,06
+320,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,06
+321,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,06
+322,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,06
+323,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,06
+324,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,06
+325,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,06
+326,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,06
+327,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,06
+328,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,06
+329,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,06
+330,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,06
+331,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,06
+332,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,06
+333,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,06
+334,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,06
+335,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,06
+336,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,06
+337,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,06
+338,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,06
+339,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,06
+340,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,06
+341,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,06
+342,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,06
+343,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,06
+344,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,06
+345,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,06
+346,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,06
+347,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,06
+348,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,06
+349,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,06
+350,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,06
+351,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,06
+352,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,06
+353,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,06
+354,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,06
+355,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,06
+356,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,06
+357,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,06
+358,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,06
+359,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,06
+360,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,06
+361,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,06
+419,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,07
+420,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,07
+421,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,07
+422,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,07
+423,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,07
+424,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,07
+425,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,07
+426,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,07
+427,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,07
+428,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,07
+429,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,07
+430,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,07
+431,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,07
+432,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,07
+433,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,07
+434,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,07
+435,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,07
+436,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,07
+437,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,07
+438,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,07
+439,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,07
+440,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,07
+441,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,07
+442,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,07
+443,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,07
+444,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,07
+445,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,07
+446,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,07
+447,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,07
+448,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,07
+449,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,07
+450,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,07
+451,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,07
+452,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,07
+453,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,07
+454,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,07
+455,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,07
+456,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,07
+457,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,07
+458,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,07
+459,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,07
+460,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,07
+461,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,07
+462,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,07
+463,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,07
+464,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,07
+465,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,07
+466,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,07
+467,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,07
+468,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,07
+469,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,07
+470,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,07
+471,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,07
+472,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,07
+473,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,07
+474,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,07
+475,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,07
+476,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,07
+477,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,07
+478,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,07
+479,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,07
+480,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,07
+481,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,07
+482,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,07
+483,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,07
+484,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,07
+485,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,07
+486,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,07
+487,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,07
+488,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,07
+489,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,07
+490,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,07
+491,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,07
+492,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,07
+493,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,07
+494,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,07
+495,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,07
+496,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,07
+497,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,07
+498,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,07
+499,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,07
+500,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,07
+501,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,07
+502,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,07
+503,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,07
+504,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,07
+505,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,07
+506,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,07
+507,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,07
+508,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,07
+509,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,07
+510,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,07
+511,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,07
+512,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,07
+513,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,07
+514,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,07
+515,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,07
+516,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,07
+517,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,07
+518,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,07
+519,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,07
+520,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,07
+521,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,07
+522,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,07
+523,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,07
+524,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,07
+525,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,07
+526,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,07
+527,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,07
+528,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,07
+529,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,07
+530,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,07
+531,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,07
+532,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,07
+533,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,07
+534,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,07
+535,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,07
+536,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,07
+537,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,07
+538,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,07
+539,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,07
+540,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,07
+541,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,07
+542,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,07
+543,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,07
+601,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,08
+602,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,08
+603,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,08
+604,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,08
+605,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,08
+606,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,08
+607,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,08
+608,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,08
+609,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,08
+610,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,08
+611,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,08
+612,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,08
+613,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,08
+614,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,08
+615,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,08
+616,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,08
+617,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,08
+618,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,08
+619,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,08
+620,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,08
+621,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,08
+622,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,08
+623,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,08
+624,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,08
+625,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,08
+626,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,08
+627,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,08
+628,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,08
+629,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,08
+630,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,08
+631,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,08
+632,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,08
+633,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,08
+634,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,08
+635,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,08
+636,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,08
+637,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,08
+638,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,08
+639,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,08
+640,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,08
+641,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,08
+642,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,08
+643,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,08
+644,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,08
+645,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,08
+646,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,08
+647,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,08
+648,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,08
+649,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,08
+650,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,08
+651,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,08
+652,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,08
+653,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,08
+654,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,08
+655,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,08
+656,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,08
+657,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,08
+658,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,08
+659,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,08
+660,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,08
+661,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,08
+662,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,08
+663,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,08
+664,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,08
+665,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,08
+666,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,08
+667,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,08
+668,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,08
+669,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,08
+670,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,08
+671,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,08
+672,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,08
+673,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,08
+674,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,08
+675,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,08
+676,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,08
+677,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,08
+678,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,08
+679,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,08
+680,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,08
+681,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,08
+682,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,08
+683,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,08
+684,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,08
+685,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,08
+686,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,08
+687,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,08
+688,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,08
+689,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,08
+690,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,08
+691,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,08
+692,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,08
+693,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,08
+694,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,08
+695,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,08
+696,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,08
+697,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,08
+698,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,08
+699,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,08
+700,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,08
+701,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,08
+702,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,08
+703,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,08
+704,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,08
+705,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,08
+706,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,08
+707,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,08
+708,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,08
+709,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,08
+710,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,08
+711,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,08
+712,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,08
+713,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,08
+714,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,08
+715,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,08
+716,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,08
+717,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,08
+718,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,08
+719,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,08
+720,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,08
+721,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,08
+722,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,08
+723,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,08
+724,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,08
+725,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,08
+783,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,09
+784,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,09
+785,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,09
+786,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,09
+787,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,09
+788,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,09
+789,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,09
+790,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,09
+791,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,09
+792,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,09
+793,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,09
+794,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,09
+795,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,09
+796,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,09
+797,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,09
+798,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,09
+799,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,09
+800,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,09
+801,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,09
+802,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,09
+803,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,09
+804,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,09
+805,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,09
+806,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,09
+807,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,09
+808,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,09
+809,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,09
+810,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,09
+811,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,09
+812,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,09
+813,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,09
+814,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,09
+815,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,09
+816,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,09
+817,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,09
+818,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,09
+819,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,09
+820,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,09
+821,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,09
+822,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,09
+823,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,09
+824,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,09
+825,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,09
+826,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,09
+827,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,09
+828,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,09
+829,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,09
+830,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,09
+831,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,09
+832,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,09
+833,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,09
+834,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,09
+835,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,09
+836,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,09
+837,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,09
+838,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,09
+839,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,09
+840,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,09
+841,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,09
+842,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,09
+843,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,09
+844,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,09
+845,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,09
+846,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,09
+847,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,09
+848,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,09
+849,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,09
+850,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,09
+851,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,09
+852,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,09
+853,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,09
+854,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,09
+855,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,09
+856,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,09
+857,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,09
+858,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,09
+859,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,09
+860,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,09
+861,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,09
+862,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,09
+863,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,09
+864,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,09
+865,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,09
+866,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,09
+867,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,09
+868,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,09
+869,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,09
+870,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,09
+871,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,09
+872,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,09
+873,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,09
+874,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,09
+875,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,09
+876,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,09
+877,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,09
+878,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,09
+879,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,09
+880,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,09
+881,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,09
+882,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,09
+883,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,09
+884,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,09
+885,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,09
+886,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,09
+887,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,09
+888,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,09
+889,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,09
+890,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,09
+891,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,09
+892,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,09
+893,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,09
+894,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,09
+895,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,09
+896,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,09
+897,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,09
+898,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,09
+899,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,09
+900,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,09
+901,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,09
+902,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,09
+903,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,09
+904,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,09
+905,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,09
+906,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,09
+907,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,09
+965,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,10
+966,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,10
+967,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,10
+968,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,10
+969,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,10
+970,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,10
+971,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,10
+972,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,10
+973,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,10
+974,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,10
+975,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,10
+976,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,10
+977,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,10
+978,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,10
+979,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,10
+980,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,10
+981,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,10
+982,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,10
+983,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,10
+984,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,10
+985,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,10
+986,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,10
+987,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,10
+988,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,10
+989,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,10
+990,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,10
+991,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,10
+992,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,10
+993,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,10
+994,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,10
+995,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,10
+996,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,10
+997,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,10
+998,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,10
+999,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,10
+1000,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,10
+1001,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,10
+1002,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,10
+1003,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,10
+1004,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,10
+1005,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,10
+1006,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,10
+1007,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,10
+1008,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,10
+1009,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,10
+1010,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,10
+1011,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,10
+1012,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,10
+1013,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,10
+1014,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,10
+1015,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,10
+1016,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,10
+1017,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,10
+1018,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,10
+1019,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,10
+1020,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,10
+1021,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,10
+1022,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,10
+1023,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,10
+1024,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,10
+1025,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,10
+1026,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,10
+1027,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,10
+1028,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,10
+1029,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,10
+1030,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,10
+1031,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,10
+1032,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,10
+1033,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,10
+1034,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,10
+1035,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,10
+1036,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,10
+1037,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,10
+1038,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,10
+1039,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,10
+1040,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,10
+1041,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,10
+1042,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,10
+1043,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,10
+1044,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,10
+1045,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,10
+1046,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,10
+1047,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,10
+1048,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,10
+1049,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,10
+1050,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,10
+1051,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,10
+1052,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,10
+1053,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,10
+1054,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,10
+1055,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,10
+1056,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,10
+1057,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,10
+1058,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,10
+1059,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,10
+1060,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,10
+1061,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,10
+1062,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,10
+1063,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,10
+1064,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,10
+1065,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,10
+1066,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,10
+1067,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,10
+1068,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,10
+1069,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,10
+1070,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,10
+1071,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,10
+1072,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,10
+1073,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,10
+1074,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,10
+1075,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,10
+1076,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,10
+1077,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,10
+1078,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,10
+1079,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,10
+1080,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,10
+1081,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,10
+1082,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,10
+1083,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,10
+1084,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,10
+1085,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,10
+1086,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,10
+1087,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,10
+1088,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,10
+1089,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,10
+1147,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,11
+1148,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,11
+1149,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,11
+1150,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,11
+1151,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,11
+1152,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,11
+1153,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,11
+1154,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,11
+1155,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,11
+1156,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,11
+1157,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,11
+1158,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,11
+1159,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,11
+1160,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,11
+1161,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,11
+1162,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,11
+1163,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,11
+1164,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,11
+1165,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,11
+1166,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,11
+1167,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,11
+1168,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,11
+1169,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,11
+1170,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,11
+1171,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,11
+1172,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,11
+1173,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,11
+1174,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,11
+1175,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,11
+1176,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,11
+1177,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,11
+1178,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,11
+1179,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,11
+1180,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,11
+1181,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,11
+1182,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,11
+1183,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,11
+1184,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,11
+1185,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,11
+1186,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,11
+1187,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,11
+1188,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,11
+1189,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,11
+1190,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,11
+1191,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,11
+1192,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,11
+1193,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,11
+1194,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,11
+1195,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,11
+1196,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,11
+1197,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,11
+1198,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,11
+1199,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,11
+1200,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,11
+1201,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,11
+1202,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,11
+1203,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,11
+1204,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,11
+1205,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,11
+1206,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,11
+1207,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,11
+1208,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,11
+1209,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,11
+1210,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,11
+1211,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,11
+1212,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,11
+1213,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,11
+1214,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,11
+1215,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,11
+1216,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,11
+1217,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,11
+1218,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,11
+1219,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,11
+1220,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,11
+1221,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,11
+1222,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,11
+1223,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,11
+1224,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,11
+1225,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,11
+1226,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,11
+1227,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,11
+1228,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,11
+1229,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,11
+1230,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,11
+1231,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,11
+1232,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,11
+1233,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,11
+1234,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,11
+1235,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,11
+1236,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,11
+1237,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,11
+1238,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,11
+1239,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,11
+1240,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,11
+1241,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,11
+1242,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,11
+1243,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,11
+1244,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,11
+1245,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,11
+1246,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,11
+1247,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,11
+1248,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,11
+1249,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,11
+1250,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,11
+1251,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,11
+1252,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,11
+1253,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,11
+1254,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,11
+1255,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,11
+1256,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,11
+1257,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,11
+1258,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,11
+1259,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,11
+1260,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,11
+1261,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,11
+1262,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,11
+1263,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,11
+1264,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,11
+1265,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,11
+1266,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,11
+1267,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,11
+1268,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,11
+1269,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,11
+1270,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,11
+1271,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,11
+1329,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,12
+1330,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,12
+1331,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,12
+1332,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,12
+1333,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,12
+1334,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,12
+1335,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,12
+1336,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,12
+1337,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,12
+1338,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,12
+1339,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,12
+1340,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,12
+1341,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,12
+1342,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,12
+1343,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,12
+1344,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,12
+1345,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,12
+1346,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,12
+1347,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,12
+1348,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,12
+1349,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,12
+1350,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,12
+1351,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,12
+1352,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,12
+1353,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,12
+1354,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,12
+1355,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,12
+1356,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,12
+1357,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,12
+1358,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,12
+1359,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,12
+1360,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,12
+1361,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,12
+1362,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,12
+1363,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,12
+1364,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,12
+1365,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,12
+1366,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,12
+1367,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,12
+1368,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,12
+1369,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,12
+1370,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,12
+1371,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,12
+1372,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,12
+1373,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,12
+1374,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,12
+1375,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,12
+1376,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,12
+1377,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,12
+1378,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,12
+1379,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,12
+1380,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,12
+1381,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,12
+1382,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,12
+1383,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,12
+1384,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,12
+1385,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,12
+1386,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,12
+1387,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,12
+1388,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,12
+1389,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,12
+1390,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,12
+1391,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,12
+1392,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,12
+1393,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,12
+1394,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,12
+1395,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,12
+1396,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,12
+1397,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,12
+1398,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,12
+1399,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,12
+1400,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,12
+1401,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,12
+1402,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,12
+1403,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,12
+1404,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,12
+1405,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,12
+1406,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,12
+1407,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,12
+1408,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,12
+1409,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,12
+1410,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,12
+1411,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,12
+1412,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,12
+1413,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,12
+1414,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,12
+1415,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,12
+1416,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,12
+1417,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,12
+1418,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,12
+1419,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,12
+1420,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,12
+1421,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,12
+1422,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,12
+1423,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,12
+1424,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,12
+1425,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,12
+1426,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,12
+1427,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,12
+1428,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,12
+1429,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,12
+1430,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,12
+1431,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,12
+1432,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,12
+1433,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,12
+1434,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,12
+1435,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,12
+1436,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,12
+1437,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,12
+1438,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,12
+1439,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,12
+1440,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,12
+1441,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,12
+1442,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,12
+1443,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,12
+1444,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,12
+1445,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,12
+1446,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,12
+1447,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,12
+1448,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,12
+1449,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,12
+1450,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,12
+1451,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,12
+1452,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,12
+1453,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,12
+1511,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,13
+1512,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,13
+1513,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,13
+1514,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,13
+1515,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,13
+1516,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,13
+1517,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,13
+1518,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,13
+1519,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,13
+1520,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,13
+1521,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,13
+1522,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,13
+1523,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,13
+1524,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,13
+1525,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,13
+1526,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,13
+1527,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,13
+1528,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,13
+1529,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,13
+1530,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,13
+1531,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,13
+1532,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,13
+1533,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,13
+1534,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,13
+1535,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,13
+1536,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,13
+1537,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,13
+1538,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,13
+1539,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,13
+1540,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,13
+1541,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,13
+1542,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,13
+1543,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,13
+1544,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,13
+1545,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,13
+1546,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,13
+1547,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,13
+1548,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,13
+1549,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,13
+1550,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,13
+1551,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,13
+1552,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,13
+1553,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,13
+1554,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,13
+1555,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,13
+1556,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,13
+1557,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,13
+1558,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,13
+1559,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,13
+1560,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,13
+1561,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,13
+1562,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,13
+1563,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,13
+1564,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,13
+1565,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,13
+1566,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,13
+1567,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,13
+1568,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,13
+1569,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,13
+1570,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,13
+1571,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,13
+1572,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,13
+1573,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,13
+1574,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,13
+1575,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,13
+1576,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,13
+1577,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,13
+1578,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,13
+1579,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,13
+1580,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,13
+1581,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,13
+1582,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,13
+1583,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,13
+1584,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,13
+1585,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,13
+1586,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,13
+1587,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,13
+1588,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,13
+1589,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,13
+1590,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,13
+1591,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,13
+1592,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,13
+1593,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,13
+1594,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,13
+1595,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,13
+1596,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,13
+1597,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,13
+1598,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,13
+1599,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,13
+1600,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,13
+1601,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,13
+1602,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,13
+1603,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,13
+1604,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,13
+1605,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,13
+1606,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,13
+1607,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,13
+1608,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,13
+1609,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,13
+1610,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,13
+1611,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,13
+1612,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,13
+1613,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,13
+1614,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,13
+1615,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,13
+1616,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,13
+1617,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,13
+1618,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,13
+1619,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,13
+1620,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,13
+1621,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,13
+1622,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,13
+1623,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,13
+1624,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,13
+1625,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,13
+1626,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,13
+1627,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,13
+1628,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,13
+1629,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,13
+1630,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,13
+1631,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,13
+1632,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,13
+1633,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,13
+1634,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,13
+1635,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,13
+1693,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,14
+1694,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,14
+1695,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,14
+1696,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,14
+1697,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,14
+1698,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,14
+1699,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,14
+1700,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,14
+1701,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,14
+1702,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,14
+1703,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,14
+1704,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,14
+1705,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,14
+1706,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,14
+1707,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,14
+1708,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,14
+1709,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,14
+1710,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,14
+1711,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,14
+1712,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,14
+1713,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,14
+1714,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,14
+1715,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,14
+1716,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,14
+1717,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,14
+1718,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,14
+1719,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,14
+1720,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,14
+1721,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,14
+1722,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,14
+1723,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,14
+1724,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,14
+1725,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,14
+1726,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,14
+1727,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,14
+1728,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,14
+1729,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,14
+1730,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,14
+1731,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,14
+1732,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,14
+1733,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,14
+1734,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,14
+1735,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,14
+1736,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,14
+1737,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,14
+1738,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,14
+1739,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,14
+1740,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,14
+1741,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,14
+1742,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,14
+1743,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,14
+1744,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,14
+1745,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,14
+1746,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,14
+1747,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,14
+1748,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,14
+1749,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,14
+1750,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,14
+1751,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,14
+1752,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,14
+1753,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,14
+1754,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,14
+1755,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,14
+1756,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,14
+1757,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,14
+1758,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,14
+1759,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,14
+1760,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,14
+1761,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,14
+1762,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,14
+1763,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,14
+1764,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,14
+1765,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,14
+1766,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,14
+1767,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,14
+1768,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,14
+1769,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,14
+1770,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,14
+1771,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,14
+1772,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,14
+1773,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,14
+1774,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,14
+1775,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,14
+1776,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,14
+1777,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,14
+1778,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,14
+1779,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,14
+1780,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,14
+1781,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,14
+1782,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,14
+1783,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,14
+1784,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,14
+1785,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,14
+1786,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,14
+1787,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,14
+1788,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,14
+1789,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,14
+1790,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,14
+1791,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,14
+1792,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,14
+1793,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,14
+1794,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,14
+1795,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,14
+1796,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,14
+1797,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,14
+1798,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,14
+1799,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,14
+1800,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,14
+1801,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,14
+1802,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,14
+1803,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,14
+1804,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,14
+1805,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,14
+1806,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,14
+1807,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,14
+1808,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,14
+1809,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,14
+1810,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,14
+1811,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,14
+1812,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,14
+1813,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,14
+1814,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,14
+1815,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,14
+1816,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,14
+1817,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,14
+1875,FOREIGN,DZX,ALGERIA,        1,        0,        0,        0,        1,15
+1876,FOREIGN,ADX,ANDORRA,        2,        3,        0,        0,        5,15
+1877,FOREIGN,ARX,ARGENTINA,       66,        5,        1,        0,       72,15
+1878,FOREIGN,AMX,ARMENIA,        8,        0,        0,        0,        8,15
+1879,FOREIGN,AUX,AUSTRALIA,     1627,      247,       41,        2,     1917,15
+1880,FOREIGN,ATX,AUSTRIA,     1156,      104,        0,        2,     1262,15
+1881,FOREIGN,AZX,AZERBAIJAN,        1,        0,        0,        0,        1,15
+1882,FOREIGN,BSX,THE BAHAMAS,        2,       12,        0,        0,       14,15
+1883,FOREIGN,BHX,BAHRAIN,        1,        0,        0,        0,        1,15
+1884,FOREIGN,BDX,BANGLADESH,        2,        0,        0,        0,        2,15
+1885,FOREIGN,BBX,BARBADOS,        2,        3,        0,        0,        5,15
+1886,FOREIGN,BYX,BELARUS,        8,       14,        1,        0,       23,15
+1887,FOREIGN,BEX,BELGIUM,     1133,       78,       13,        1,     1225,15
+1888,FOREIGN,BMX,BERMUDA,        2,        1,        0,        0,        3,15
+1889,FOREIGN,BOX,BOLIVIA,        1,        0,        0,        0,        1,15
+1890,FOREIGN,BRX,BRAZIL,      323,       58,        0,        0,      381,15
+1891,FOREIGN,VGX,BRITISH VIRGIN ISLANDS,        3,        0,        0,        0,        3,15
+1892,FOREIGN,BNX,BRUNEI DARUSSALAM,        1,        0,        0,        0,        1,15
+1893,FOREIGN,BGX,BULGARIA,       31,        3,        0,        0,       34,15
+1894,FOREIGN,CMX,CAMEROON,        1,        0,        0,        0,        1,15
+1895,FOREIGN,CAX,CANADA,     6802,      673,        7,       10,     7492,15
+1896,FOREIGN,KYX,CAYMAN ISLANDS,       12,        1,        0,        0,       13,15
+1897,FOREIGN,CLX,CHILE,       75,        1,        3,        0,       79,15
+1898,FOREIGN,HKX,"CHINA, HONG KONG S.A.R.",      601,      189,        0,        3,      793,15
+1899,FOREIGN,MOX,"CHINA, MACAU S.A.R.",       16,        1,        0,        0,       17,15
+1900,FOREIGN,CNX,"CHINA, PEOPLE'S REPUBLIC OF",     8116,      881,        3,        4,     9004,15
+1901,FOREIGN,COX,COLOMBIA,       33,        5,        0,        0,       38,15
+1902,FOREIGN,CRX,COSTA RICA,        8,        4,       10,        0,       22,15
+1903,FOREIGN,HRX,CROATIA,       11,        3,        0,        0,       14,15
+1904,FOREIGN,CUX,CUBA,       11,        0,        0,        0,       11,15
+1905,FOREIGN,CYX,CYPRUS,        9,        1,        0,        0,       10,15
+1906,FOREIGN,CZX,CZECH REPUBLIC,      191,       13,        1,        1,      206,15
+1907,FOREIGN,DKX,DENMARK,     1012,      137,       39,        2,     1190,15
+1908,FOREIGN,DOX,DOMINICAN REPUBLIC,        1,        1,        0,        0,        2,15
+1909,FOREIGN,ECX,ECUADOR,        1,        0,        0,        0,        1,15
+1910,FOREIGN,EGX,EGYPT,       30,        0,        0,        0,       30,15
+1911,FOREIGN,SVX,EL SALVADOR,        1,        1,        0,        0,        2,15
+1912,FOREIGN,EEX,ESTONIA,       38,        5,        0,        0,       43,15
+1913,FOREIGN,FOX,FAROE ISLANDS,        1,        0,        0,        0,        1,15
+1914,FOREIGN,FIX,FINLAND,     1376,      100,        0,        9,     1485,15
+1915,FOREIGN,FRX,FRANCE,     6565,      420,       34,        7,     7026,15
+1916,FOREIGN,PFX,FRENCH POLYNESIA,        1,        0,        0,        0,        1,15
+1917,FOREIGN,GEX,GEORGIA (REPUBLIC OF),        2,        0,        0,        0,        2,15
+1918,FOREIGN,DEX,GERMANY,    16549,     1040,      141,       22,    17752,15
+1919,FOREIGN,GHX,GHANA,        1,        0,        0,        0,        1,15
+1920,FOREIGN,GIX,GIBRALTAR,        2,        0,        0,        0,        2,15
+1921,FOREIGN,GRX,GREECE,       69,        8,        0,        0,       77,15
+1922,FOREIGN,GTX,GUATEMALA,        3,        1,        0,        0,        4,15
+1923,FOREIGN,GGX,GUERNSEY,        1,        0,        0,        0,        1,15
+1924,FOREIGN,HUX,HUNGARY,      143,       11,        3,        1,      158,15
+1925,FOREIGN,ISX,ICELAND,       51,        8,        0,        0,       59,15
+1926,FOREIGN,INX,INDIA,     3355,       59,        0,        1,     3415,15
+1927,FOREIGN,IDX,INDONESIA,       20,        1,        0,        0,       21,15
+1928,FOREIGN,IRX,IRAN,       27,        4,        0,        0,       31,15
+1929,FOREIGN,IQX,IRAQ,        1,        0,        0,        0,        1,15
+1930,FOREIGN,IEX,IRELAND,      473,       37,        5,        0,      515,15
+1931,FOREIGN,IMX,ISLE OF MAN,        9,        7,        0,        0,       16,15
+1932,FOREIGN,ILX,ISRAEL,     3628,      149,       26,        1,     3804,15
+1933,FOREIGN,ITX,ITALY,     2645,      425,       15,        5,     3090,15
+1934,FOREIGN,JMX,JAMAICA,        9,        0,        0,        0,        9,15
+1935,FOREIGN,JPX,JAPAN,    52409,     1878,       52,       83,    54422,15
+1936,FOREIGN,JEX,JERSEY,       10,        0,        0,        0,       10,15
+1937,FOREIGN,JOX,JORDAN,       11,        0,        0,        0,       11,15
+1938,FOREIGN,KZX,KAZAKHSTAN,        5,        0,        0,        0,        5,15
+1939,FOREIGN,KEX,KENYA,        5,        0,        0,        0,        5,15
+1940,FOREIGN,KRX,"KOREA, SOUTH",    17924,     2238,        1,       38,    20201,15
+1941,FOREIGN,KWX,KUWAIT,       64,        0,        0,        0,       64,15
+1942,FOREIGN,LVX,LATVIA,        4,        1,        0,        0,        5,15
+1943,FOREIGN,LBX,LEBANON,       10,        6,        0,        0,       16,15
+1944,FOREIGN,LIX,LIECHTENSTEIN,       29,        7,        0,        0,       36,15
+1945,FOREIGN,LTX,LITHUANIA,       12,        1,        0,        0,       13,15
+1946,FOREIGN,LUX,LUXEMBOURG,       51,       11,        0,        0,       62,15
+1947,FOREIGN,MKX,MACEDONIA,        2,        0,        0,        0,        2,15
+1948,FOREIGN,MWX,MALAWI,        1,        0,        0,        0,        1,15
+1949,FOREIGN,MYX,MALAYSIA,      256,       11,        0,        0,      267,15
+1950,FOREIGN,MLX,MALI,        1,        0,        0,        0,        1,15
+1951,FOREIGN,MTX,MALTA,        4,        3,        0,        0,        7,15
+1952,FOREIGN,MXX,MEXICO,      172,       31,        0,        0,      203,15
+1953,FOREIGN,MCX,MONACO,       17,        1,        0,        0,       18,15
+1954,FOREIGN,MNX,MONGOLIA,        2,        0,        0,        0,        2,15
+1955,FOREIGN,MAX,MOROCCO,        3,        0,        0,        1,        4,15
+1956,FOREIGN,NPX,"NEPAL, FED. DEM. REPUBLIC OF",        1,        0,        0,        0,        1,15
+1957,FOREIGN,NLX,NETHERLANDS,     2399,      186,      200,        3,     2788,15
+1958,FOREIGN,NCX,NEW CALEDONIA,        1,        0,        0,        0,        1,15
+1959,FOREIGN,NZX,NEW ZEALAND,      268,       58,       26,        0,      352,15
+1960,FOREIGN,NIX,NICARAGUA,        1,        0,        0,        0,        1,15
+1961,FOREIGN,NOX,NORWAY,      625,       60,        1,        1,      687,15
+1962,FOREIGN,OMX,OMAN,        4,        1,        0,        0,        5,15
+1963,FOREIGN,PKX,PAKISTAN,       16,        0,        0,        0,       16,15
+1964,FOREIGN,PAX,PANAMA,        2,        0,        0,        0,        2,15
+1965,FOREIGN,PYX,PARAGUAY,        1,        0,        0,        0,        1,15
+1966,FOREIGN,PEX,PERU,        5,        0,        0,        0,        5,15
+1967,FOREIGN,PHX,PHILIPPINES,       42,        3,        0,        0,       45,15
+1968,FOREIGN,PLX,POLAND,      200,       23,        0,        0,      223,15
+1969,FOREIGN,PTX,PORTUGAL,       56,       11,        0,        0,       67,15
+1970,FOREIGN,QAX,QATAR,        6,        1,        0,        1,        8,15
+1971,FOREIGN,ROX,ROMANIA,       71,        3,        0,        0,       74,15
+1972,FOREIGN,RUX,RUSSIAN FEDERATION,      440,       41,        1,        1,      483,15
+1973,FOREIGN,BLX,SAINT BARTHELEMY,        0,        1,        0,        0,        1,15
+1974,FOREIGN,SAX,SAUDI ARABIA,      360,        4,        0,        0,      364,15
+1975,FOREIGN,RSX,SERBIA,        6,        0,        0,        0,        6,15
+1976,FOREIGN,SCX,SEYCHELLES,        1,        2,        0,        0,        3,15
+1977,FOREIGN,SGX,SINGAPORE,      966,       82,        0,        0,     1048,15
+1978,FOREIGN,SKX,SLOVAKIA,       26,        2,        0,        0,       28,15
+1979,FOREIGN,SIX,SLOVENIA,       38,        4,        0,        0,       42,15
+1980,FOREIGN,ZAX,SOUTH AFRICA,      166,       29,        4,        0,      199,15
+1981,FOREIGN,ESX,SPAIN,      818,       88,        5,        1,      912,15
+1982,FOREIGN,LKX,SRI LANKA,        4,        3,        0,        0,        7,15
+1983,FOREIGN,SEX,SWEDEN,     2633,      225,        0,        4,     2862,15
+1984,FOREIGN,CHX,SWITZERLAND,     2553,      283,        1,        4,     2841,15
+1985,FOREIGN,SYX,SYRIA,        2,        0,        0,        0,        2,15
+1986,FOREIGN,TWX,TAIWAN,    11690,      877,        1,        7,    12575,15
+1987,FOREIGN,THX,THAILAND,       89,       20,        7,        0,      116,15
+1988,FOREIGN,TTX,TRINIDAD AND TOBAGO,        6,        1,        0,        0,        7,15
+1989,FOREIGN,TNX,TUNISIA,        6,        0,        0,        0,        6,15
+1990,FOREIGN,TRX,TURKEY,      116,       18,        0,        2,      136,15
+1991,FOREIGN,TMX,TURKMENISTAN,        1,        0,        0,        0,        1,15
+1992,FOREIGN,UAX,UKRAINE,       61,        2,        0,        1,       64,15
+1993,FOREIGN,AEX,UNITED ARAB EMIRATES,       45,       11,        0,        0,       56,15
+1994,FOREIGN,GBX,UNITED KINGDOM,     6417,      702,       32,       16,     7167,15
+1995,FOREIGN,UYX,URUGUAY,        5,        0,        0,        0,        5,15
+1996,FOREIGN,UZX,UZBEKISTAN,        1,        0,        0,        0,        1,15
+1997,FOREIGN,VEX,VENEZUELA,       22,        8,        0,        0,       30,15
+1998,FOREIGN,VNX,VIET NAM,        5,        0,        0,        0,        5,15
+1999,FOREIGN,PSX,WEST BANK/GAZA,        1,        0,        0,        0,        1,15
