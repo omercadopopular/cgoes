@@ -23,7 +23,7 @@ def uspto(url):
     soup = BeautifulSoup(r.content, "html.parser")
 
     # Find the tables in the website         
-    table=soup.find('table', class_="table")
+    table=soup.find('table')
     
     # Loops through all the rows
     for row in table.find_all('tr'):
@@ -56,7 +56,7 @@ def uspto(url):
             else:
                 list = []
                 for column in columns:
-                    max = len(column.get_text()) - 1
+                    max = len(column.get_text())
                     list.append(column.get_text()[:max])
                 list = pd.Series(list)
                 new_table = new_table.append(list, ignore_index=True)
@@ -66,7 +66,16 @@ def uspto(url):
     
     return new_table
 
-years = ['13','14','15']
+years = ['06',
+         '07',
+         '08',
+         '09',
+         '10',
+         '11',
+         '12',
+         '13',
+         '14',
+         '15']
 
 for year in years:    
     total = uspto("https://www.uspto.gov/web/offices/ac/ido/oeip/taf/st_co_" +
@@ -78,3 +87,5 @@ for year in years:
         
     else:
         complete = complete.append(total, ignore_index=True)   
+        
+brazil = complete[ complete['Code'] == 'BRX' ]
