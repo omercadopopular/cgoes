@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-path = "K://Notas Técnicas//Produtividade//Databases//PPI World Bank//PPI_DB_082316.dta"
-cpisauce = "K://Notas Técnicas//Produtividade//Databases//PPI World Bank//CPIAUCSL.xls"
+path = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/PPI_DB_082316.dta"
+cpisauce = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/CPIAUCSL.xls"
 
 #Read file
 
