@@ -1,23 +1,19 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May 26 10:04:06 2017
+# Coded by Carlos Góes
+# Pesquisador-Chefe do IMP (www.mercadopopular.org)
 
-@author: CarlosABG
-"""
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+path = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/PPI_DB_082316.dta?raw=true"
+cpisauce = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/CPIAUCSL.xls?raw=true"
 
-path = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/PPI_DB_082316.dta"
-cpisauce = "https://github.com/omercadopopular/cgoes/blob/master/tutorial/python/statatopython/CPIAUCSL.xls"
-
-#Read file
+#Read file from STATA dta
 
 ppidf = pd.read_stata(path)
 
-#Reduce dimensionality
+# Reduce dimensionality to exclude data with negative values and data prior to 1994
 
 ppidf = (ppidf
          [ppidf['investment'] > 0]
@@ -28,7 +24,6 @@ ppidf = (ppidf
 sectorslist = ppidf['sector'].unique()
 years = np.sort(ppidf['IY'].unique())
 
-## Brazilain time series
 
 # Identify Brazilian data
 
@@ -37,24 +32,28 @@ brazildf = ppidf[ ppidf['country'] == 'Brazil' ]
 # Collapse data by sector and fill na
 
 brazilinvestment = (brazildf
-               .groupby(['sector','IY']).sum()
-               .fillna(0)
-               ['investment']
-               )
+                    .groupby(['sector','IY']).sum()
+                    .fillna(0)
+                    ['investment']
+                    )
 
-# Import CPI data
+print(brazilinvestment)
+
+# Import CPI data from excel file
+    # Note you have to skip 9 rows
 
 cpi = pd.read_excel(cpisauce, skiprows=list(range(9)), header=1)
 
-# Extact years
+# Extract years and set index
 
 cpi['year'] = [row.year for row in cpi['observation_date']]
 
-# Join CPI data on investment data
+cpi = cpi.set_index('year')
+
+# Join both dataframes
 
 rbrazilinvestment = (
-        cpi
-        .set_index('year')
+        cpi       
         .join(brazilinvestment.reset_index().set_index('IY'),
               how='inner')
         )
@@ -121,3 +120,4 @@ plt.legend(loc='upper left')
 plt.xticks(barl, years, rotation=45)
 
 plt.show()
+
