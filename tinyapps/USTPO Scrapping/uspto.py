@@ -6,7 +6,6 @@ available on the website of the
 U.S. PATENT AND TRADEMARK OFFICE
 as a html table and organizes it in
 Pandas DataFrame
-
 Author: Carlos Góes
 www.carlosgoes.com
 """
@@ -35,7 +34,7 @@ def uspto(url):
         if len(headers) > 0:
             labels = []
             for header in headers:
-                labels.append(header.get_text())
+                labels.append(header.get_text().rstrip().strip().lower())
             new_table = pd.DataFrame(
                     columns=range(0,len(labels)),
                                  index = [0])
@@ -56,8 +55,7 @@ def uspto(url):
             else:
                 list = []
                 for column in columns:
-                    max = len(column.get_text())
-                    list.append(column.get_text()[:max])
+                    list.append(column.get_text().rstrip().strip().lower())
                 list = pd.Series(list)
                 new_table = new_table.append(list, ignore_index=True)
        
@@ -66,7 +64,11 @@ def uspto(url):
     
     return new_table
 
-years = ['06',
+years = ['02',
+         '03',
+         '04',
+         '05',
+         '06',
          '07',
          '08',
          '09',
@@ -87,5 +89,62 @@ for year in years:
         
     else:
         complete = complete.append(total, ignore_index=True)   
+
+# drop unecessary rows
         
-brazil = complete[ complete['Code'] == 'BRX' ]
+complete = complete[complete['code'] != 'ALL']
+complete = complete[complete['code'] != '']
+
+# consolidate columns (different labeling for different years)
+
+complete['state, territory, or country'] = (complete['state, territory, or country']
+                                            .fillna(value=complete['state/country *']))
+
+complete['statutory invention registration (sir)'] = (complete['statutory invention registration (sir)']
+                                                      .fillna(value=complete['statutoryinventionregistration (sir)'])
+                                                      .fillna(value=complete['statutoryinventorregistration(sir)']))
+        
+complete['total'] = (complete['total']
+                    .fillna(value=complete['total (less sirs)'])
+                    .fillna(value=complete['totals(less sirs)']))
+
+complete = complete.drop(['state/country *',
+                          'statutoryinventionregistration (sir)',
+                          'statutoryinventorregistration(sir)',
+                          'total (less sirs)',
+                          'totals(less sirs)'], axis=1)
+
+# transform year into integers
+
+complete['year'] = [int('20'+ str(row)) for row in complete['year']]
+
+complete = complete.fillna(0)
+    
+# transform other variables into integers
+
+vars = ['design',
+        'plant',
+        'reissue',
+        'utility',
+        'total',
+        'statutory invention registration (sir)']
+
+for var in vars:
+    complete[var] = [int(str(row)) for row in complete[var]]
+    
+# set aside Brazil
+        
+brazil = complete[ complete['state, territory, or country'] == 'brazil' ]
+
+brazil.to_csv("K:\\Notas Técnicas\\Produtividade\\Databases\\patentes\\brazilustpo.csv")
+
+# Plot
+
+import matplotlib.pyplot as plt
+
+plt.plot(brazil['year'],
+         brazil['total'])
+plt.axis([2001,2016,0,400])
+
+plt.title('Brasil: Patentes Registradas no USTPO')
+plt.show()
