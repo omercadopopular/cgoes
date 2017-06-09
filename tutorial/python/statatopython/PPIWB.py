@@ -1,7 +1,3 @@
-# Coded by Carlos Góes
-# Pesquisador-Chefe do IMP (www.mercadopopular.org)
-
-
 # -*- coding: utf-8 -*-
 """
 Created on Fri May 26 10:04:06 2017
@@ -111,10 +107,10 @@ cpi = cpi.set_index('year')
 
 
 #####################################
-# 3. Brazil Time Series #############
+# 3. Brazil Time Series, constant USD
 #####################################
 
-# Create a new dataset
+## 3.1 Create a new dataset
 
 brazildf = consolidated[ consolidated['country'] == 'Brazil' ]
 
@@ -126,6 +122,7 @@ brazilinvestment = (brazildf
                     ['investment']
                     )
 
+## 3.2 Adjust for Inflation
 
 # Join CPI data
 
@@ -144,16 +141,16 @@ rbrazilinvestment = (
         .sort_index()
         )
 
-# Adjust for Inflation
-
-## updated cpi frame with necessary data
+## Update CPI frame with necessary data
 
 cpi = (rbrazilinvestment
         .reset_index(drop=False)
         .groupby('index').mean()
         .drop(['investment'], axis=1)
         ['CPIAUCSL']
-        )      
+        )
+   
+# Adjust for Inflation
 
 rbrazilinvestment['rinvestment'] = rbrazilinvestment['investment'] / rbrazilinvestment['CPIAUCSL']  * cpi[2014]
 
@@ -161,7 +158,7 @@ rbrazilinvestment['rinvestment'] = rbrazilinvestment['investment'] / rbrazilinve
 
 rbrazilinvestment = rbrazilinvestment['rinvestment']
 
-# Plot chart
+## 3.2 Plot chart
 
 f, ax = plt.subplots(1, figsize=(10,5))
 barw = 0.75
@@ -196,16 +193,23 @@ plt.legend(loc='upper left')
 
 plt.title('Brasil: Investimento Privado em Infraestrutura')
 
+plt.text(0,-0.25,'Fonte: Cálculos da SAE/PR com dados do Banco Mundial')
+
 plt.xticks(barl, years, rotation=45)
 
 plt.show()
 
-##########################
-##########################
+#####################################
+# 4. Brazil Time Series, share of GDP
+#####################################
 
-# Share of GDP
+## 4.1 Import GDP data from World Bank Dataset
+
+# Create new series with Brazil GDP data
 
 brazilgdp = wbdata.loc['Brazil'].reset_index()
+
+# Join both dataframes
 
 brazilinvestment = (brazilgdp.set_index('year')
                     .join(brazilinvestment
@@ -214,17 +218,26 @@ brazilinvestment = (brazilgdp.set_index('year')
                                     how='right')
                     )
                     
+
+# Set new indices
+
 brazilinvestment = brazilinvestment.reset_index(drop=False).set_index(['sector','index'])
+
+## 4.2 Calculate GDP shares
                     
 brazilinvestment['investmentgdp'] = ( brazilinvestment['investment'] / ( brazilinvestment['gdp']  ) ) * 100
 
+# Only keep investment to GDP Data
+
 brazilinvestmentgdp = brazilinvestment['investmentgdp']
+
+# Export to CSV
 
 brazilinvestment.unstack().to_csv("K://Notas Técnicas//Produtividade//Databases//PPI World Bank//brazilinvestment.csv",
                         sep=";",
                         decimal=",")     
 
-# Plot chart
+## 4.3 Plot chart
 
 f, ax = plt.subplots(1, figsize=(10,5))
 barw = 0.75
@@ -259,36 +272,76 @@ plt.legend(loc='upper left')
 
 plt.title('Brasil: Investimento Privado em Infraestrutura')
 
+plt.text(0,-0.25,'Fonte: Cálculos da SAE/PR com dados do Banco Mundial')
+
 plt.xticks(barl, years, rotation=45)
 
 plt.show()                
 
 
-# Consolidate 2010-2014 average
+#####################################
+# 5. Cross Section, 2010-2014 avg ###
+#####################################
 
-# Investment
+
+## 5.1 Consolidate 2010-2014 investment average
 
 average = consolidated[ (consolidated['IY'] > 2009) & (consolidated['IY'] < 2015) ].copy()
+
+# Sum across investment types
+
 average = average.groupby(['country','IY']).sum()['investment']
+
+# Take period average
+
 average = average.reset_index(drop=False).groupby('country').mean().drop(['IY'], axis=1)
+
+## 5.2 Consolidate 2010-2014 GDP average
 
 averagegdp = wbdata.reset_index().copy()
 averagegdp = averagegdp[ (averagegdp['year'] > 2009) & (averagegdp['year'] < 2015) ]
+
+# Take period average
+
 averagegdp = averagegdp.groupby(['country']).mean()
+
+## 5.3 Join both dataframes
 
 average = average.join(averagegdp, how='inner')
 
+## 5.4 Calculate shares of GDP
+
 average['investmentgdp'] = average['investment'] / ( average['gdp'] ) * 100
+
+## 5.5 Calculate percentiles
+
 average['pctile'] = average['investmentgdp'].rank(pct=True) * 100
+
+# Save to GDP
 
 average.unstack().to_csv("K://Notas Técnicas//Produtividade//Databases//PPI World Bank//crosssection.csv", sep=";", decimal=",")     
 
-# Plot Chart
+## 5.6 Plot Charts
 
 f, ax = plt.subplots(1, figsize=(10,5))
-
-ax.scatter(average['pctile'] , average['investmentgdp'])
-
 plt.axis([0,100,0,5])
+plt.xticks(np.linspace(0,100,5), np.linspace(0,100,5))
+
+ax.scatter(average['pctile'] , average['investmentgdp'], color='grey', label='Resto do Mundo', marker='x')
+
+ax.scatter(average.loc['Brazil']['pctile'], average.loc['Brazil']['investmentgdp'], color='red', label='Brasil')
+
+plt.axvline(average.loc['Brazil']['pctile'], color='red') 
+
+plt.legend(loc='upper left')
+
+ax.set_xlabel("Percentil na Distribuição de Países Emergentes")
+ax.set_ylabel("Investimento privado em infraestrutura, % GDP")
+
+
+plt.title('Países em Desenvolvimento: Investimento Privado em Infraestrutura (média 2010-2014)')
+
+plt.text(0,-0.75,'Fonte: Cálculos da SAE/PR com dados do Banco Mundial')
 
 plt.show()
+
