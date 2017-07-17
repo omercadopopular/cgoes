@@ -54,6 +54,7 @@ def comtrade(reporter,partner,year,freq,commoditycode):
     #Return the data
     return data
 
+"""
 #Import data from 2000 through 2014
 first = 2014
 last = 2014
@@ -71,3 +72,4 @@ for year in list(range(first,last)):
         frame = frame.append(framet)
 
 print(frame)
+"""
