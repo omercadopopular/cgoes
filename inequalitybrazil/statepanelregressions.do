@@ -19,10 +19,10 @@ Purpose:
 /////////// CHANGE THE VALUES IN THIS SECTION FOLLOWING INSTRUCTIONS //////////
 ///////////////////////////////////////////////////////////////////////////////
 
-	global workingfolder = "Q:\DATA\S1\BRA\Inequality\Econometrics\StatePanel"
+	global workingfolder = "E:\Inequality\Econometrics\StatePanel"
 	global resultsfolder = "${workingfolder}\results"
 	global imagefolder = "${workingfolder}\images"
-	global datafolder = "Q:\DATA\S1\BRA\Inequality\PNAD\results"
+	global datafolder = "E:\Inequality\PNAD\results"
 	global first = 2004
 	global last = 2014 	// Last PNAD being used
 	global exception = 2010 // Year when there is no PNAD
@@ -30,7 +30,8 @@ Purpose:
 	
 	global uflist = "11	12	13	14	15	16	17	21	22	23	24	25	26	27	28	29	31	32	33	35	41	42	43	50	51	52	53"
 	global regressors1 = "lr_income lr_income_cs lr_pbfcapita formalworker employmentrate schooling_q1 schooling_q4 taxgdpdemean"  
-	global regressors2 = "lr_income lr_income_q4 lr_income_cs lr_pbfcapita formalworker employmentrate schooling_q1 schooling_q4 taxgdpdemean" 
+	global regressors2 = "lr_income lr_income_cs civilservant lr_pbfcapita formalworker employmentrate schooling_q1 schooling_q4 taxgdpdemean" 
+	global regressors3 = "lr_income lr_income_cs civilservant lr_pbfcapita formalworker employmentrate schooling_q1 schooling_q4 taxgdpdemean"
 	global income = "lr_income lr_income_cs" 	
 	global incomebf = "lr_income lr_income_cs lr_pbfcapita taxgdpdemean" 	
 
@@ -143,14 +144,13 @@ replace region = "SE" if uf  >= 30 & uf  < 40
 replace region = "S" if uf  >= 40 & uf  < 50
 replace region = "CO" if uf  >= 50 & uf < 60
 
+
 drop if year == 2015
 
 xtset uf year
 
-export delimited using "$workingfolder\statepaneldatabase.csv", replace
-
 ///////////////////////////////////////////////////////////////////////////////
-////////////////////////// 3. ÀDJUST DATA //////////////////////////
+////////////////////////// 3. Ã€DJUST DATA //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 // Create Dyanmic PPP Index
@@ -176,11 +176,6 @@ gen pbfcapita = pbfexpenditure / population
 gen taxgdp = (taxrev / stategdp) * 100
 bysort uf: egen taxgdpbar = mean(taxgdp)
 gen taxgdpdemean = taxgdp - taxgdpbar
-
-// Calculate State GDP per capita
-
-gen stategdpcapita = stategdp / population
-
 
 // Deflate and ajust for spatial price differences
 
@@ -260,32 +255,69 @@ xtreg gini $regressors2 i.uf, vce(cluster uf)
 		using $resultsfolder\panelregressions.xls, cttop(Fixed Effects) ///
 		lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
 
+xtivreg gini (lr_income_q1 lr_income_q4 = $regressors3 i.uf), first
+
 ///////////////////////////////////////////////////////////////////////////////
-////////////////////////// 5. PLOT CORRELATION CHARTS //////////////////////////
+////////////////////////// 4. RUN REGRESSIONS //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-local group = "stategdpcapita schooling lr_income_cs lr_pbfcapita retiree taxgdpdemean formalworker universitypublic"
+local endog = "gini lr_income_q1 lr_income_q4"
 
-foreach y in gini lr_income {
+foreach y of local endog {
 
-	foreach x of local group {
-		twoway lfitci `y' `x' if year == 2014 || scatter `y' `x' if year == 2014,  ///
-			title("`x'", margin(vsmall) position(11)) mlabel(state) ///
-			lwidth(thin) scheme(s2color) name(`y'chart_`x', replace) legend(off)  
-	}
+	xtreg `y' $income, vce(cluster uf)
+		outreg2 $income ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Random Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) replace
 
-	graph combine `y'chart_stategdpcapita `y'chart_schooling `y'chart_lr_income_cs `y'chart_lr_pbfcapita `y'chart_retiree `y'chart_taxgdpdemean `y'chart_formalworker `y'chart_universitypublic, col(4) name(`y', replace)  
-}
+	xtreg `y' $incomebf, vce(cluster uf)
+		outreg2 $incomebf ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Random Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+
+	xtreg `y' $regressors1, vce(cluster uf)
+		outreg2 $regressors2 ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Random Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+			
+	xtreg `y' $regressors2, vce(cluster uf)
+		outreg2 $regressors2 ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Random Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+				
+	xtreg `y' $income i.uf, vce(cluster uf)
+		outreg2 $income ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Fixed Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+
+	xtreg `y' $incomebf  i.uf, vce(cluster uf)
+		outreg2 $incomebf ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Fixed Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 		
+
+	xtreg `y' $regressors1 i.uf, vce(cluster uf)
+		outreg2 $regressors1 ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Fixed Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+
+	xtreg `y' $regressors2 i.uf, vce(cluster uf)
+		outreg2 $regressors2 ///
+			using $resultsfolder\panelregressions_`y'.xls, cttop(Fixed Effects) ///
+			lab dec(3) adds(R2 Overall, e(r2_o), R2 Within, e(r2_w), R2 Between, e(r2_b)) 
+
+}		
 		
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6. RUN BASELINE REGRESSION AND ESTIMATE CHANGES //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-forval z = 2 {
+local quarts = "lr_income_q1 lr_income_q4"
+
+foreach k of local quarts {
 
 	preserve
 
-		xtreg gini ${regressors`z'} i.uf
+		xtreg `k' ${regressors3} i.uf
 
 		// Store Results
 
@@ -293,7 +325,7 @@ forval z = 2 {
 
 		// Create predicted values
 
-		local list = "${regressors`z'} $uflist _cons"
+		local list = "${regressors3} $uflist _cons"
 
 		local counter = 0
 
@@ -312,6 +344,53 @@ forval z = 2 {
 			replace hat_`x' = . if uf != `x'
 		}
 
+		egen `k'_hat = rowtotal(hat_*)
+
+		keep if year == $first | year == $last
+		gen t = .
+		replace t = 1 if year == $first
+		replace t = 2 if year == $last
+
+		xtset uf t
+
+		local list = "${regressors3} $uflist _cons"
+
+		foreach x of local list  {
+			gen dhat_`x' = d.hat_`x'
+		}
+
+
+		 gen d`k'_hat = d.`k'_hat
+		 gen d`k' = d.`k'
+
+		 keep if year == 2014
+		 
+		 export excel using "$resultsfolder\decompm`k'.xlsx", sheet("decomp") sheetmodify first(var)
+
+ restore
+ 
+ }
+ 
+ 
+	preserve
+
+		xtivreg gini (lr_income_q1 lr_income_q4 = lr_income lr_income_cs civilservant lr_pbfcapita formalworker employmentrate schooling_q1 schooling_q4 taxgdpdemean i.uf), first
+
+		// Store Results
+
+		matrix A = e(b)'
+
+		// Create predicted values
+
+		local list = "lr_income_q1 lr_income_q4  _cons"
+
+		local counter = 0
+
+		foreach x of local list  {
+			local counter = `counter' + 1
+			gen hat_`x' = `x' * A[`counter',1]
+		}
+
 		egen gini_hat = rowtotal(hat_*)
 
 		keep if year == $first | year == $last
@@ -321,7 +400,7 @@ forval z = 2 {
 
 		xtset uf t
 
-		local list = "${regressors`z'} $uflist _cons"
+		local list = "lr_income_q1 lr_income_q4 _cons"
 
 		foreach x of local list  {
 			gen dhat_`x' = d.hat_`x'
@@ -333,8 +412,10 @@ forval z = 2 {
 
 		 keep if year == 2014
 		 
-		 export excel using "$resultsfolder\decompm`z'.xlsx", sheet("decomp") sheetmodify first(var)
+		 export excel using "$resultsfolder\decompmgini.xlsx", sheet("decomp") sheetmodify first(var)
 
  restore
-
- }
+ 
+ 
+ 
+ 
