@@ -1,6 +1,8 @@
 # Details
 
-Repository for my ongoing project regarding "Past and Future of Inequality in Brazil: Distributional Implications of Macrostructural Policies", which uses a household survey (Pesquisa Nacional por Amostra de Domicílios - PNAD) microdata. 
+Code and Sourcefile for Góes, C.; and I. Karpowicz. (2017) "Inequality in Brazil: A Micro-Data Analysis". IMF Working Paper.
+
+Abstract: In this study, we document the decline in income inequality and a convergence in consumption patterns in Brazilian states in a new database constructed from micro micro-data from the national households’ survey. We adjust the state Gini coefficients for spatial price differences using information on households’ rental prices available in the survey. In a panel regression framework, we find that labor income growth, formalization, and schooling contributed to the decline in inequality during 2004−14, but redistributive policies, such as Bolsa Família, have also played a positive role. Going forward, it will be important to phase out untargeted subsidies, such as public spending on tertiary education, and contain growth of public sector wages, to improve budgetary efficiency and protect gains in equality.
 
 # Files
 
