@@ -1,15 +1,15 @@
 ''''''  	PANEL STRUCTURAL VAR WITH HETEROGENEOUS DYNAMICS AND CONFIDENCE INTERVALS FOR MEDIANS	            
 '''''' 
-''''''		Coded by Carlos Góes (andregoes@gmail.com), International Monetary Fund
+''''''		Coded by Carlos GÃ³es (andregoes@gmail.com), International Monetary Fund
 '''''' 		
 ''''''		This code implements the model developed for
-''''''		Góes, C (2016) "Testing Piketty: Evidence from Structural Panel VARs with Heterogeneous Dynamics." IMF Working Paper
+''''''		GÃ³es, C (2016) "Testing Piketty: Evidence from Structural Panel VARs with Heterogeneous Dynamics." IMF Working Paper
 ''''''		with the structural Panel VAR technique described in
 ''''''		Pedroni, Peter (2013). 'Structural Panel VARs". Econometrics 1, pp. 180-206
 ''''''
 ''''''		Please cite both papers if you use this code
 ''''''
-''''''		This file has been tested and is compatible with Eviews 7.2 and Eviews 9.5
+''''''		This file has been tested and is compatible with Eviews 10
 				
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' SECTION 1: USER INPUTS '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
