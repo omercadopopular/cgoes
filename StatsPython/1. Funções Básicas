@@ -5,7 +5,7 @@ Carlos Góes (andregoes@gmail.com)
 
 """
 
-# TIPOS FUNDAMENTAOS
+# TIPOS FUNDAMENTAIS
 
 # Integers and Floats
 
@@ -105,13 +105,13 @@ print(holder[100:150])
 print(holder[:101])
 print(holder[-100:])
 
-# List with booleans
+# Lista com booleanas
 
 booleans = [True, True, False, True]
 
 print('Booleans: ',sum(booleans))
 
-# It works with strings too
+# Também funciona com strings
 
 string = 'my string' + ' ' 'is awesome'
 
@@ -121,14 +121,14 @@ print(string[0:4])
 
 print(string[-2:])
 
-# Assessing properties of lists
+# Compreendendo as propriedades das listas
 
 print(
       len(holder),
       len(string)
       )
 
-# Dictionaries
+# Dicionários
 
 person1 = {
         'name': 'Milton Friedman',
@@ -146,13 +146,13 @@ person2 = {
 
 chicago = [person1, person2]
 
-# Sets
+# Conjuntos
 
 set1 = {'john', 'mary', 'jane'}
 set2 = {'jack', 'john'}
 set3 = {'john', 'mary'}
 
-# You can check if one set is a subset of the other one
+# Você pode checar se um é um subconjunto de outro
 
 set2.issubset(set1) # Set2 is not
 set3.issubset(set1) # But set3 is 
@@ -161,27 +161,27 @@ set2.intersection(set1) # Although there is an intersection between set2 and set
 
 # LOOPS
 
-# Try the following:
+# Tente fazer o seguinte:
 
 for professor in chicago:
-    print(professor['name'] + ' was born on ' + professor['dob'])
+    print(professor['name'] + ' nasceu em ' + professor['dob'])
     
-# Explanation:
-    # The object chicago = [person1, person2]
-    # When you type in 'for professor in chicago'
-    # Python will loop over all objects in 'chicago' (person1 and person2)
-    # and whenever you type in 'professor' in the loop, it will replace it
-    # with the objects in 'chicago'.
+# Explicação:
+    # O objeto chicago = [person1, person2]
+    # Quando você escreve 'for professor in chicago'
+    # Python vai iterar sobre todos os elementos em 'chicago' (person1 e person2)
+    # e sempre que você digitar 'professor' dentro do loop, ele vai substituir
+    # pelos elementos em 'chicago'.
     
-    # The first iteration will report:
-    # print(person1['name'] + ' was born on ' + person1['dob'])
+    # A primeira iteração vai trazer:
+    # print(person1['name'] + ' nasceu eu ' + person1['dob'])
 
-    # The second iteration will report:
-    # print(person2['name'] + ' was born on ' + person2['dob'])
+    # A segunda iteração vai trazer:
+    # print(person2['name'] + ' nasceu eu ' + person2['dob'])
     
-    # Until all objects in chicago are over.
+    # Até que todos os objetos em Chicago estiverem finalizados.
     
-# What would happen if we add one more object to chicago?
+# O que aconteceria se nós ajuntássemos mais um elemento em Chicago?
 
 person3 = {
         'name': 'Ed Prescott',
