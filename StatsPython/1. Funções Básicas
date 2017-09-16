@@ -5,21 +5,21 @@ Carlos Góes (andregoes@gmail.com)
 
 """
 
-# BASIC DATA TYPES
+# TIPOS FUNDAMENTAOS
 
-# Integers and Floats - numerical operations
+# Integers and Floats
 
-# Integers (as expected) do not have decimal points
+# Integers são números inteiros - não têm decimais
 
 integer = 20
 print(type(integer))
 
-# Floats do
+# Floats também são números, mas têm decimais
 
 float = 20.5
 print(type(float))
 
-# Assingning values to multiple variables
+# Você pode assignar valores para várias variáveis de uma vez só
 
 a, b = 1, 2
 c, d = 2.5, 10.0
@@ -27,20 +27,20 @@ c, d = 2.5, 10.0
 print('a: ',type(a),
       'd: ', type(d))
 
-# The ratio of two integers can be a float
+# A razão de dois integers pode ser um float
 
 print(a/b, ': ', type(a/b))
 
-# Strings - words operations
+# Strings são variáveis com palavras
 
-string = 'This is a string'
+string = 'Esse é um string'
 print(type(string))
 
-str1, str2, str3 = 'You can ', 'add strings ', 'to concatenate them'
+str1, str2, str3 = 'Você pode ', 'usar a adição ', 'para concatená-los'
 concatenation = str1 + str2 + str3
 print(concatenation)
 
-# Booleans - logical operations (essential for loops)
+# Booleans trazem operações lógicas
 
 x = True
 print(x)
@@ -48,23 +48,23 @@ print(x)
 y = 100 < 10
 print(y)
 
-# When combined booleans turn into 1 (True) and 0 (False).
-# We can use that for algebra
+# Quando combinadas, booleanas se tornam 1 (verdadeiro) ou zero (falso)
+# Nós podemos utilizar isso para fazer álgebra com booleanas
 
 print('x+y: ',x+y,' x*y: ',x*y)
 
 # TUPLES () and LISTS []
-# Lists and tuples store different information you can assign to them
+# Lists e tuples guardam informações que você pode assignar para elas
 
 integers = [10, 20, 30]
 
-# The items of a list are stored with indices running from zero to N.
+# Os elementos das listas são acessados por meio de índices que vão de zero a N-1.
 
 print(integers[0])
 print(integers[1])
 print(integers[2])
 
-# You can add and remove specific elements to that list
+# Você pode adicionar ou remover elementos da lista
 
 integers.append(40)
 print(integers)
@@ -72,31 +72,30 @@ print(integers)
 integers.remove(10)
 print(integers)
 
-# You can reference that specific list and replace it
+# Você pode referenciar um elemento específico e modificá-lo
 
 print(integers)
 integers[2] = 50
 print(integers)
 
-# And you can apply logical functions that return numbers based on the list
-    # but do not change the object itself
+# Você também pode usar a lista para fazer operações lógicas, sem alterá-la
     
 print(sum(integers))
 print(sorted(integers, reverse=True))
 
-# You can also use such functions to assign value to a new object
+# Ou criar um novo objeto com essas operações lógicas
 
 reverseintegers = sorted(integers, reverse=True)
 print(integers,reverseintegers)
 
-# Slice notation
+# Notação de corte
 
-# The general rule is that a[m:n] returns n - m elements, starting at a[m]
-# Create a sequential list
+# Uma regra geral é que a[m:n] imprime n - m elementos, começando em a[m]
+# Crie uma lista sequencial
 
 holder = [i for i in range(200)]
 
-# List the nth object (it starts in zero)
+# Imprima o elemento n
      
 print(holder[100])
 
