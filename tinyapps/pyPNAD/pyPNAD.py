@@ -87,3 +87,4 @@ class pyPNAD:
     def __init__(self):
         self.release = 'October 2017'
         self.version = '2.0'
+        self.author = 'Lincoln de Souza & Carlos Góes'
