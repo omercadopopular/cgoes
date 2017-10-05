@@ -12,10 +12,10 @@ This code was originally written by Lincoln de Sousa.
 The original code can be found on https://github.com/clarete/pnad
 I was then simplified and updated by Carlos Góes on October 2017.
 
-The procedure is quite simple. The main() function requires two
-parameters:
+The procedure is quite simple. The load() function requires two
+parameters. You can call it by using the following steps:
     
-main(data_file, input_file)
+pyPNAD.load(data_file, input_file)
     
 * data_file is a the raw text file that holds the microdata for
     every PNAD and PNAD.
@@ -27,57 +27,63 @@ main(data_file, input_file)
 import io
 import pandas as pd
 
-# Parse through dictionary line,
-    # return name, position, size, and label
+class pyPNAD:
 
-def get_var(line):
-    # Read
-    position, rest = line.split(' ', 1)
-    variable, rest = rest.strip().split(' ', 1)
-    size, rest = rest.strip().split(' ', 1)
-    comment = rest.replace('/*', '').replace('*/', '').strip()
+    # Parse through dictionary line,
+        # return name, position, size, and label       
 
-    # Convert
-    position = int(position.replace('@', ''))
-    variable = variable.strip()
-    size = int(float(size.replace('$', '')))
-
-    return {
-        'name': variable,
-        'position': position,
-        'size': size,
-        'comment': comment,
-    }
+    def get_var(line):
+        # Read
+        position, rest = line.split(' ', 1)
+        variable, rest = rest.strip().split(' ', 1)
+        size, rest = rest.strip().split(' ', 1)
+        comment = rest.replace('/*', '').replace('*/', '').strip()
     
-# Parse through dictionary line,
-    # return a colection of names, positions, sizes, and labels
-
-def get_vars(varsfile):
-    variables = []
-    for line in varsfile:
-        if line[0] is '@':
-            variable = get_var(line)
-            variables.append(variable)
-        else:
-            pass
-    return variables
-
-# Parse through all variables in PNAD,
-    # return column names and widths
-
-def col_widths(vars_file):
-    vars_fp = io.open(vars_file)
-    variables = get_vars(vars_fp)
+        # Convert
+        position = int(position.replace('@', ''))
+        variable = variable.strip()
+        size = int(float(size.replace('$', '')))
     
-    columns = [var['name'] for var in variables]
-    widths = [var['size'] for var in variables]
-   
-    return columns, widths
+        return {
+            'name': variable,
+            'position': position,
+            'size': size,
+            'comment': comment,
+        }
+        
+    # Parse through dictionary line,
+        # return a colection of names, positions, sizes, and labels
+    
+    def get_vars(varsfile):
+        variables = []
+        for line in varsfile:
+            if line[0] is '@':
+                variable = pyPNAD.get_var(line)
+                variables.append(variable)
+            else:
+                pass
+        return variables
+    
+    # Parse through all variables in PNAD,
+        # return column names and widths
+    
+    def col_widths(vars_file):
+        vars_fp = io.open(vars_file)
+        variables = pyPNAD.get_vars(vars_fp)
+        
+        columns = [var['name'] for var in variables]
+        widths = [var['size'] for var in variables]
+       
+        return columns, widths
+    
+    # Loads all input and source files,
+        # returns a pandas DataFrame
+    
+    def load(data_file, input_file):
+        columns, widths = pyPNAD.col_widths(input_file)
+        df = pd.read_fwf(data_file, widths=widths, header=None, names=columns)
+        return df
 
-# Loads all input and source files,
-    # returns a pandas DataFrame
-
-def main(data_file, input_file):
-    columns, widths = col_widths(input_file)
-    df = pd.read_fwf(data_file, widths=widths, header=None, names=columns)
-    return df
+    def __init__(self):
+        self.release = 'October 2017'
+        self.version = '2.0'
