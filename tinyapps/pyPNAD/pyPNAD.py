@@ -10,7 +10,7 @@ pandas DataFrame in a simple and straightforward fashion.
 
 This code was originally written by Lincoln de Sousa.
 The original code can be found on https://github.com/clarete/pnad
-I was then simplified and updated by Carlos Góes on October 2017.
+It was then simplified and updated by Carlos Góes on October 2017.
 
 The procedure is quite simple. The load() function requires two
 parameters. You can call it by using the following steps:
