@@ -14,6 +14,16 @@ import statsmodels.formula.api as smf
 
 x = np.linspace(0,100,100)
 
+### Função
+
+fig1 = plt.figure()
+plt.plot(x,100 + 2*x, linewidth=2)
+plt.axis([0,100,0,400])
+plt.axhline(100, color='black', linewidth=0.5)
+plt.axhline(300, color='black', linewidth=0.5)
+plt.show()
+
+
 # y = função de x mais um erro aleatório.
 y = x * 10 + np.random.normal(0,50,len(x))
 
