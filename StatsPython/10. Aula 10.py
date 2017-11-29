@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 18 07:03:57 2017
-
 @author: CarlosABG
 """
 
@@ -114,7 +113,7 @@ for i in np.linspace(0,99,100, dtype=int):
     filenames.append(save_path + '\\fig{}.png'.format(i))
 
 # Vai tentar fazer o gif. Se der erro, vai continuar o programa.
-gif = True
+gif = False
 if gif == True:
     try:
         import imageio
@@ -163,12 +162,16 @@ plt.ylabel('Preço (dólares)')
 plt.title('Passagens aéreas: relação entre distância e preço')
 plt.show()
 
+# Rodar regressão
 reg = smf.ols('preco ~ dist', data=df).fit()
 
+# Imprimir resultados
 print(reg.summary())
 
+# Imprimir só os coeficientes
 print(reg.params)
 
+# Criar valores preditos pela equação
 preco_hat = reg.params[0] + reg.params[1] * df['preco']
 preco_hat = reg.predict()
 df['preco_hat'] = preco_hat
@@ -182,4 +185,15 @@ plt.plot('dist',
 plt.xlabel('Distância (milhas)')
 plt.ylabel('Preço (dólares)')
 plt.title('Passagens aéreas: relação entre distância e preço')
+plt.show()
+
+# Estimar resíduos
+df['resid'] = df['preco'] - df['preco_hat'] 
+df['resid'] = reg.resid
+
+plt.scatter('dist', 'resid',
+           data=df, alpha=0.25)
+plt.xlabel('Resíduos')
+plt.ylabel('Preço (dólares)')
+plt.title('Resíduos da equação e preços')
 plt.show()
