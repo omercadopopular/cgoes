@@ -94,7 +94,7 @@ reg_sem_constante = smf.ols('y ~ x - 1', data=df).fit()
 
 print(reg_sem_constante.summary())
 
-# Gif da convergência
+# Gif da convergência: https://twitter.com/goescarlos/status/921432449271386119
 save_path = r'C:\Users\CarlosABG\Documents\IESB\otimizacao\figs'
 
 filenames = []
