@@ -3,12 +3,15 @@
 """
 pyPNAD
 October 2017 release
+
 The purpose of this code is to import PNAD and PNADC microdata,
 released by the Brazilian Office of Statistics (IBGE), into a
 pandas DataFrame in a simple and straightforward fashion.
+
 This code was originally written by Lincoln de Sousa.
 The original code can be found on https://github.com/clarete/pnad
 It was then simplified and updated by Carlos Góes in October 2017.
+
 The procedure is quite simple. The load() function requires two
 parameters. You can call it by using the following steps:
     
@@ -18,6 +21,7 @@ pyPNAD.load(data_file, input_file)
     every PNAD and PNAD.
 * input_file is a SAS variable dictionary, which is a companion file to
     the microdata and contains variable names, text positions, and lenghts.
+
 """
 
 import io
