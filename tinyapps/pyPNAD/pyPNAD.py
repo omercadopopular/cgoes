@@ -53,7 +53,23 @@ class pyPNAD:
         
     # Parse through dictionary line,
         # return a colection of names, positions, sizes, and labels
-    
+        
+    def get_vars(varsfile):
+        lines = varsfile.read().split('\n')
+        print(lines)
+        variables = []
+        for line in lines:
+            if len(line) == 0:
+                pass
+            else:
+                if line[0] == '@':
+                    variable = pyPNAD.get_var(line)
+                    variables.append(variable)
+                else:
+                    pass
+        return variables
+        
+"""    
     def get_vars(varsfile):
         variables = []
         for line in varsfile:
@@ -63,7 +79,7 @@ class pyPNAD:
             else:
                 pass
         return variables
-    
+"""    
     # Parse through all variables in PNAD,
         # return column names and widths
     
