@@ -57,9 +57,9 @@ class pyPNAD:
     def get_vars(vars_list):
         variables = []
         for line in vars_list:
-            if len(line) == 0:
+            if (range(line) == 0):
                 pass
-            elif line[0] == '@':
+            elif (line[0] == '@'):            
                 variable = pyPNAD.get_var(line)
                 variables.append(variable)
             else:
