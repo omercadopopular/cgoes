@@ -68,7 +68,7 @@ class pyPNAD:
         # return column names and widths
     
     def col_widths(vars_file):
-        vars_fp = io.open(vars_file)
+        vars_fp = io.open(vars_file, encoding='Latin-1')
         variables = pyPNAD.get_vars(vars_fp)
         
         columns = [var['name'] for var in variables]
