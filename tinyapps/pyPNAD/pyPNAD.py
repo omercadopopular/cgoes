@@ -3,15 +3,12 @@
 """
 pyPNAD
 October 2017 release
-
 The purpose of this code is to import PNAD and PNADC microdata,
 released by the Brazilian Office of Statistics (IBGE), into a
 pandas DataFrame in a simple and straightforward fashion.
-
 This code was originally written by Lincoln de Sousa.
 The original code can be found on https://github.com/clarete/pnad
 It was then simplified and updated by Carlos Góes in October 2017.
-
 The procedure is quite simple. The load() function requires two
 parameters. You can call it by using the following steps:
     
@@ -21,7 +18,6 @@ pyPNAD.load(data_file, input_file)
     every PNAD and PNAD.
 * input_file is a SAS variable dictionary, which is a companion file to
     the microdata and contains variable names, text positions, and lenghts.
-
 """
 
 import io
@@ -53,31 +49,27 @@ class pyPNAD:
         
     # Parse through dictionary line,
         # return a colection of names, positions, sizes, and labels
-        
-    def get_vars(vars_list):
+    
+    def get_vars(varsfile):
         variables = []
-        for line in vars_list:
-            if (range(line) == 0):
-                pass
-            elif (line[0] == '@'):            
+        for line in varsfile:
+            if line[0] is '@':
                 variable = pyPNAD.get_var(line)
                 variables.append(variable)
             else:
                 pass
         return variables
-        
+    
     # Parse through all variables in PNAD,
         # return column names and widths
     
     def col_widths(vars_file):
-        vars_fp = io.open(vars_file, encoding='latin-1')
-        vars_list = vars_fp.read().split('\n')
-
-        variables = pyPNAD.get_vars(vars_list)
+        vars_fp = io.open(vars_file)
+        variables = pyPNAD.get_vars(vars_fp)
         
         columns = [var['name'] for var in variables]
         widths = [var['size'] for var in variables]
-
+       
         return columns, widths
     
     # Loads all input and source files,
