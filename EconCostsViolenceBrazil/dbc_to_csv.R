@@ -7,18 +7,25 @@ setwd("H:/Notas Conceituais/SegPub-Drogas/Dados/Datasus/Arq_936829632/")
 
 library(read.dbc)
 
+n <- c(1:15,79:99)
 lista <- 0
 
-for(i in 1:15) {
+counter <- 0
+for(i in n) {
+  counter <- counter +1
+  
   if(i < 10) {
-    lista[i] <- paste("DOEXT0", toString(i), ".DBC", sep="")
+    lista[counter] <- paste("DOEXT0", toString(i), ".DBC", sep="")
   }
+  
   else {
-    lista[i] <- paste("DOEXT", toString(i), ".DBC", sep="")
+    lista[counter] <- paste("DOEXT", toString(i), ".DBC", sep="")
   }
+  
 }
 
 read.convert <- function(file) {
+  print(paste("Processando ", file, sep=""))
   df <- read.dbc(file)
   write.csv(df, paste(substring(file, 1, nchar(file)-4), ".csv", sep=""))
 }
@@ -27,3 +34,5 @@ read.convert <- function(file) {
 for(element in lista) {
   read.convert(element)
 }
+
+

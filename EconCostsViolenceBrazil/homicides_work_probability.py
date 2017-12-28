@@ -136,7 +136,7 @@ WORKDF_CONDITIONS = {
         # Exclude zero income
         'EXCLUDE_ZERO_INCOME': { 'AUTH': False, 'CONDITION': WORKDF['VD4016'] > 0 },
         # Exclude zero income
-        'SET_AGES': { 'AUTH': True, 'CONDITION': (WORKDF['V2009'] >= 16) & (WORKDF['V2009'] <= 80) }
+        'SET_AGES': { 'AUTH': True, 'CONDITION': (WORKDF['V2009'] >= 13) & (WORKDF['V2009'] <= 90) }
         }
 
 WORKDF['bool_vec'] = [True for i in range(len(WORKDF))]
@@ -161,11 +161,11 @@ WORKDF['empregado'] = [(item == 1) for item in WORKDF['VD4002']]
 # CHARTS #
 ##########
 
-POLY_ORDER = 3
+POLY_ORDER = 4
 
 SCATTER_AGE_EMPLOYMENT = sns.regplot('V2009','empregado', data=WORKDF, order=POLY_ORDER,
                      scatter_kws={'alpha': 0.1, 'color': 'grey'},
-                     line_kws={'color': 'black'}, x_bins=80-16, label='Amostra considerada')
+                     line_kws={'color': 'black'}, x_bins=90-13, label='Amostra considerada')
 SCATTER_AGE_EMPLOYMENT.set(ylabel='Portentagem empregados', xlabel='Idade', ylim=[0,1])
 plt.show()
 
@@ -176,10 +176,14 @@ plt.show()
 MODELO = np.polyfit(WORKDF['V2009'], WORKDF['empregado'], POLY_ORDER)
 FITTED = np.poly1d(MODELO)
 
-IDADES = np.linspace(16,80, 80-16+1)
+IDADES = np.linspace(13,90, 90-13+1).astype(int)
 PARTICIPACAO_HAT = {}
 for idade in IDADES:
-    PARTICIPACAO_HAT.update({idade: FITTED(idade)})
+    fitted = FITTED(idade)
+    if fitted > 0:
+        PARTICIPACAO_HAT.update({idade: FITTED(idade)})
+    else:
+        PARTICIPACAO_HAT.update({idade: 0})
 
 PARTICIPACAO_MODELO = {idade: MODELO for idade in IDADES}
 

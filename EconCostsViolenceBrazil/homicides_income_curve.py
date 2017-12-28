@@ -136,7 +136,7 @@ WORKDF_CONDITIONS = {
         # Exclude zero income
         'EXCLUDE_ZERO_INCOME': { 'AUTH': True, 'CONDITION': WORKDF['VD4016'] > 0 },
         # Exclude zero income
-        'SET_AGES': { 'AUTH': True, 'CONDITION': (WORKDF['V2009'] >= 16) & (WORKDF['V2009'] <= 80) }
+        'SET_AGES': { 'AUTH': True, 'CONDITION': (WORKDF['V2009'] >= 13) & (WORKDF['V2009'] <= 90) }
         }
 
 WORKDF['bool_vec'] = [True for i in range(len(WORKDF))]
@@ -163,7 +163,7 @@ POLY_ORDER = 2
 
 SCATTER_AGE_INCOME = sns.regplot('V2009','VD4016', data=WORKDF, order=POLY_ORDER,
                      scatter_kws={'alpha': 0.1, 'color': 'grey'},
-                     line_kws={'color': 'black'}, x_bins=80-16, label='Amostra considerada')
+                     line_kws={'color': 'black'}, x_bins=90-13, label='Amostra considerada')
 
 SCATTER_AGE_INCOME.set(ylabel='Rendimento mensal', xlabel='Idade', ylim=[0,2000])
 plt.show()
@@ -181,7 +181,7 @@ plt.show()
 MODELO = np.polyfit(WORKDF['V2009'], WORKDF['VD4016'], POLY_ORDER)
 FITTED = np.poly1d(MODELO)
 
-IDADES = np.linspace(16,80, 80-16+1)
+IDADES = np.linspace(13,90, 90-13+1).astype(int)
 RENDA_HAT = {}
 for idade in IDADES:
     renda = FITTED(idade)
