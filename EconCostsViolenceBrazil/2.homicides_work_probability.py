@@ -21,6 +21,9 @@ CSVFILE = PATH + 'PNADC_032012.csv'
 RESULTS_PATH = "H:/Notas Conceituais/SegPub-Drogas/Dados/results/"
 RESULTS_FILE = RESULTS_PATH + "participacao_hat.csv"
 
+# Images
+IMG_PATH = "H:/Notas Conceituais/SegPub-Drogas/Dados/img/"
+
 ###################
 # PYTHON PACKAGES #
 ###################
@@ -163,11 +166,16 @@ WORKDF['empregado'] = [(item == 1) for item in WORKDF['VD4002']]
 
 POLY_ORDER = 4
 
-SCATTER_AGE_EMPLOYMENT = sns.regplot('V2009','empregado', data=WORKDF, order=POLY_ORDER,
+SCATTER_AGE_EMPLOYMENT  = plt.figure()
+ax = SCATTER_AGE_EMPLOYMENT .add_axes([0,0,1,1])
+
+
+sns.regplot('V2009','empregado', data=WORKDF, order=POLY_ORDER,
                      scatter_kws={'alpha': 0.1, 'color': 'grey'},
                      line_kws={'color': 'black'}, x_bins=90-13, label='Amostra considerada')
-SCATTER_AGE_EMPLOYMENT.set(ylabel='Portentagem empregados', xlabel='Idade', ylim=[0,1])
+ax.set(ylabel='Portentagem empregados', xlabel='Idade', ylim=[0,1])
 plt.show()
+SCATTER_AGE_EMPLOYMENT.savefig(IMG_PATH + 'SCATTER_AGE_EMPLOYMENT.png')
 
 ################
 # LINEAR MODEL #

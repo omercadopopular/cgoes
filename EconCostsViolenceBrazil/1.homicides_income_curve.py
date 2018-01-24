@@ -21,6 +21,9 @@ CSVFILE = PATH + 'PNADC_032017.csv'
 RESULTS_PATH = "H:/Notas Conceituais/SegPub-Drogas/Dados/results/"
 RESULTS_FILE = RESULTS_PATH + "renda_hat.csv"
 
+# Images
+IMG_PATH = "H:/Notas Conceituais/SegPub-Drogas/Dados/img/"
+
 ###################
 # PYTHON PACKAGES #
 ###################
@@ -161,18 +164,24 @@ YOUTHDF = WORKDF[ (WORKDF['V2009'] >= 16) & (WORKDF['V2009'] <= 24) ]
 
 POLY_ORDER = 2
 
-SCATTER_AGE_INCOME = sns.regplot('V2009','VD4016', data=WORKDF, order=POLY_ORDER,
-                     scatter_kws={'alpha': 0.1, 'color': 'grey'},
-                     line_kws={'color': 'black'}, x_bins=90-13, label='Amostra considerada')
+SCATTER_AGE_INCOME = plt.figure()
+ax = SCATTER_AGE_INCOME.add_axes([0,0,1,1])
 
-SCATTER_AGE_INCOME.set(ylabel='Rendimento mensal', xlabel='Idade', ylim=[0,2000])
+REGPLOT = sns.regplot('V2009','VD4016', data=WORKDF, order=POLY_ORDER,
+            scatter_kws={'alpha': 0.1, 'color': 'grey'},
+            line_kws={'color': 'black'}, x_bins=90-13, label='Amostra considerada')
+
+ax.set(ylabel='Rendimento mensal', xlabel='Idade', ylim=[0,2000])
 plt.show()
+SCATTER_AGE_INCOME.savefig(IMG_PATH + 'SCATTER_AGE_INCOME.png')
 
 ## Distribution of overall income and youth income
 
+DIST_INCOME = plt.figure()
 sns.distplot(np.log(WORKDF['VD4016']), hist=False, label='População Geral')
 sns.distplot(np.log(YOUTHDF['VD4016']), hist=False, label='Jovens', axlabel='Log Natural da Renda do Trabalho Habitual')
 plt.show()
+DIST_INCOME.savefig(IMG_PATH + 'DIST_INCOME.png')
 
 ################
 # LINEAR MODEL #

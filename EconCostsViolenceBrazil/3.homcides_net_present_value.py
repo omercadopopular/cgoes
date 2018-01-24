@@ -14,6 +14,8 @@ RENDA_FILE = PATH + "renda_hat.csv"
 PARTICIPACAO_FILE = PATH + "participacao_hat.csv"
 NPV_FILE = PATH + "npv.csv"
 
+IMG_PATH = "H:/Notas Conceituais/SegPub-Drogas/Dados/img/"
+
 ###################
 # PYTHON PACKAGES #
 ###################
@@ -143,10 +145,10 @@ fig, ax = plt.subplots()
 plt.plot(WORKDF.index, WORKDF['NPV'])
 plt.axhline(0,color='black')
 
-ax.set_title('Valor Presente da Perda de Capacidade Produtiva de Homicídios, por idade da vítima')        
 ax.set_ylabel('Valor Presente da Perda de Capacidade Produtiva de Homicídios')        
 ax.set_xlabel('Idade da Vítima')        
 plt.show()
+fig.savefig(IMG_PATH + 'NPV_LOSS.png')
 
 ########################
 # CONFIDENCE INTERVALS #
@@ -173,13 +175,20 @@ for idade in WORKDF.index:
 fig, ax = plt.subplots()
 
 plt.plot(WORKDF.index, WORKDF['NPV'], label="Valor Presente")
-plt.fill_between(WORKDF.index, lower, upper, color='gray', alpha=0.25, label="Intervalor interquartil das simulações")
+plt.fill_between(WORKDF.index, lower, upper, color='gray', alpha=0.25, label="Intervalo interquartil das simulações")
 plt.legend(loc="upper right")
 
 ax.set_title('Valor Presente da Perda de Capacidade Produtiva de Homicídios, por idade da vítima')        
 ax.set_ylabel('Valor Presente da Perda de Capacidade Produtiva de Homicídios')        
 ax.set_xlabel('Idade da Vítima')        
 plt.show()
+fig.savefig(IMG_PATH + 'NPV_LOSS_CI.png')
 
+CIDF = pd.DataFrame(data={
+        'upper': upper,
+        'median': median,
+        'lower': lower,
+        'mean': mean,
+        }, index=WORKDF.index)
 
-
+CIDF.to_csv(RESULTS_PATH + 'cidf.csv', sep=";", decimal=",")
