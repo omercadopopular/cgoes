@@ -9,4 +9,7 @@ released by the Brazilian Office of Statistics (IBGE), into a pandas DataFrame i
 
 * [PyComtrade](https://github.com/omercadopopular/cgoes/tree/master/tinyapps/PyComtrade): implements the International Trade Statistics database API, pulls up data for partners, and years requested, and organize them into a Pandas DataFrame.
 
-* [USPTO Scrapping](https://github.com/omercadopopular/cgoes/tree/master/tinyapps/PyComtrade): This script scrapes the data on patent counts by origin and type, available on the website of the U.S. Patent and Trademark Office (USPTO) as a html table, and organizes it in a Pandas DataFrame.
+* [USPTO Scrapping](https://github.com/omercadopopular/cgoes/tree/master/tinyapps/PyComtrade): scrapes the data on patent counts by origin and type, available on the website of the U.S. Patent and Trademark Office (USPTO) as a html table, and organizes it in a Pandas DataFrame.
+
+* [raisdecoder](https://github.com/omercadopopular/cgoes/tree/master/TinyApps/raisdecoder): processes Brazilian labor market census microdata, calculating number of employees and average annual salary for all employees in a given economic subsector (CNAE).
+
