@@ -24,10 +24,10 @@ import pandas as pd
 # Função para realizar transformações necessárias no arquivo da RAIS
 
 def rais_decoder(FILE,
-                 CNAE_1 = [74608],
-                 CNAE_2 = [80111, 80129, 80200, 80307],
                  CNAE_TYPE = 1,
-                 CHUNKSIZE = 250000):
+                 CNAE_2 = [80111, 80129, 80200, 80307],
+                 CNAE_1 = [74608],
+                 CHUNKSIZE = 500000):
        
     # Gravar estado e ano
     FILE_NAME = FILE.split("\\")[-1]
@@ -45,33 +45,32 @@ def rais_decoder(FILE,
     DF = pd.DataFrame()
     for frame in READER:
         frame = frame[ ['CNAE 95 Classe', 'Vl Remun Média (SM)'] ]
+
+        # Excluir aqueles com remuneração média          
+        frame = frame[frame['Vl Remun Média (SM)'] > 0]
+
+        # Exceção para anos em que CNAE vem como string
+        try:
+            frame['CNAE 95 Classe'] = [item.replace('-', '') for item in frame['CNAE 95 Classe']]
+            frame['CNAE 95 Classe'] = frame['CNAE 95 Classe'].astype(int)
+        except:
+            pass
+        
+        # Selecionar CNAEs de interesse
+        if CNAE_TYPE == 1:
+            frame = frame[ frame['CNAE 95 Classe'].isin(CNAE_1) ]
+        elif CNAE_TYPE == 2:
+            frame = frame[ frame['CNAE 2.0 Classe'].isin(CNAE_2) ]
+        else:
+            print('Selecionar CNAE 1.0 ou 2.0 e reiniciar rotina!')
+            raise KeyboardInterrupt
+        
         DF = DF.append(frame)
         COUNTER = COUNTER + 1
         print('Chunk número {} processado'.format(COUNTER))
 
     print('Dados importados...')
-    
-    # Exceção para anos em que CNAE vem como string
-    try:
-        DF['CNAE 95 Classe'] = [item.replace('-', '') for item in DF['CNAE 95 Classe']]
-        DF['CNAE 95 Classe'] = DF['CNAE 95 Classe'].astype(int)
-    except:
-        pass
-    
-    # Selecionar CNAEs de interesse
-    if CNAE_TYPE == 1:
-        DF = DF[ DF['CNAE 95 Classe'].isin(CNAE_1) ]
-    elif CNAE_TYPE == 2:
-        DF = DF[ DF['CNAE 2.0 Classe'].isin(CNAE_2) ]
-    else:
-        print('Selecionar CNAE 1.0 ou 2.0 e reiniciar rotina!')
-        raise KeyboardInterrupt
-
-    # Excluir aqueles com remuneração média          
-    DF = DF[DF['Vl Remun Média (SM)'] > 0]
-
-    print('Transformações realizadas...')
-    
+       
     # Criar DataFrame de output
     RESULT = pd.DataFrame.from_dict( data={ 
             'remuneracao_media': DF['Vl Remun Média (SM)'].mean(),
@@ -85,13 +84,10 @@ def rais_decoder(FILE,
     return RESULT
 
 # Buscar todos os arquivos de determinado diretório
-
-FOLDER = "C:\\Users\\CarlosABG\\Desktop\\rais_sp\\"    
-
 import os
 
 FILES = []
-for root, dirs, files in os.walk(FOLDER", topdown=False):
+for root, dirs, files in os.walk("C:\\Users\\CarlosABG\\Desktop\\rais_sp\\", topdown=False):
     for name in files:
           FILES.append(os.path.join(root, name))
 
