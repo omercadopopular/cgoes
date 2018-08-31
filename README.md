@@ -1,6 +1,12 @@
 # Research by Carlos Góes
 
-This repository aggregates research by Carlos Góes, Economic Advisor at the Office of the President of Brazil. Originally from Brazil, Carlos is a PhD Candidate in Economics (UCSD), has a MA in International Economics (Johns Hopkins SAIS), with specializations in finance & quantitative methods, and a BA in International Relations (University of Brasilia). He was formerly at the IMF and the Cato Institute. He is the CRO, in leave of absence, of Instituto Mercado Popular, a Brazilian think tank. Extensive experience with Latin American economies, including trade modeling, econometric analysis, project management, and business intelligence. Proficient in Python, Stata, Eviews and Excel modeling. Fluent in English, Spanish, and Portuguese; knowledge of French and Italian. Published op-eds in Brazilian nationwide press. Published multiple book chapters and edited a book. Different honors, awards and fellowships.
+Carlos Góes is Chief Research Officer of Instituto Mercado Popular, a São Paulo-based think tank. He has previously worked as Senior Economic Advisor at the Office of the President of Brazil, as a researcher at the International Monetary Fund and U.S. think tanks, and as an instructor of econometrics and data science in different universities. 
+
+Góes is a PhD student in Economics (UC San Diego), holds a MA in International Economics (Johns Hopkins SAIS), and a BA in International Relations (University of Brasilia). In 2016, he founded Instituto Mercado Popular, which focuses on designing evidence-based public policy marrying the goals of social inclusion and fiscal responsibility.
+
+His research spans over different topics, including: monetary policy, trade, economic development, income inequality, and advanced statistical methods. His work has been featured in global outlets such as the Wall Street Journal, the Financial Times, El País and Le Monde. He has been named one of the "30 persons every investor should follow" by Bloomberg Brazil (Infomoney) and writes frequently for the Brazilian press.
+
+A coding enthusiast, he works in Python, Stata, Eviews, LaTeX, R, Julia, and Matlab. He is fluent in English, Spanish, and Portuguese, having some knowledge of French and Italian.
 
 For more info: https://www.linkedin.com/in/carlosgoes
 
