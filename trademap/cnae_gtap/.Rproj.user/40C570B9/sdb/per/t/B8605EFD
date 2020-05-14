@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#####\nclean <- function(x, more=FALSE, encoding=NULL, leave='') {\n  ## x <- enc2utf8(x)\n  x <- gsub(' +', ' ', x)\n  if(is.null(encoding)) {\n    enc <- rvest::guess_encoding(x)[,1]\n    enc <- enc[!grepl('IBM424', enc)]\n    enc <- enc[1]\n  } else enc <- encoding\n  y <- iconv(x, from=enc)\n  ##print(y)\n  y <- iconv(x, from=enc, to='ASCII//TRANSLIT')\n  if (more) {\n    y <- gsub(paste0(\"[^a-zA-Z0-9\", leave, \"]+\"), \"_\", y)\n    y <- gsub('_$', '', y)\n  }\n  return(y)\n}\n\nrais <- readr::read_csv2(\"data/RAIS/2015/AC2015.7z\", n_max=300, locale=readr::locale('pt', encoding='latin1', decimal_mark = \",\"))\nnames(rais) <- tolower(clean(names(rais), more=TRUE))\n\n\n\nsbcl_cnae20 <- unique(rais$cnae_2_0_subclasse)\n\n\n\n\n# testa\nstopifnot(all.equal(cnae20_gtap(sbcl_cnae_teste), c(46, 47, 46, 30, 47, 54, 54, 9, 47, 25, 46, 47, 54, 47, 46,\n                                                    46, 54, 30, 34, 47, 34, 25, 47, 56, 47, 47, 47, 46, 22, 54, 54,\n                                                    10, 34, 29, 19, 54, 32, 34, 47, 51, 37, 34, 11, 8, NA, 10, NA,\n                                                    33, NA, 18, 47, 49, 54, 13, 9, 3, 3, 46, 47, 56, 46, 56, NA,\n                                                    46, 47, 14, 57)\n)\n\n\n\n\n\nstop()\n\n",
+    "created" : 1495020685825.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1999328834",
+    "id" : "B8605EFD",
+    "lastKnownWriteTime" : 1495025518,
+    "last_content_update" : -2147483648,
+    "path" : "E:/reps_sae/cnae_gtap/R/ler_rais.R",
+    "project_path" : "R/ler_rais.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

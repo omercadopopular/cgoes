@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(readxl)\n\n\n## modelo - matriz com gtap nas colunas e anos nas linhas\nmodelo <- readxl::read_excel(\"data/FS_10.xlsx\", sheet = \"PO\", col_names=FALSE)[,-1]\nnames(modelo) <- 1:ncol(modelo)\n## converte para Ano, gtap, Valor \nmodelo <- reshape2::melt(modelo%>%as.matrix, varnames=c(\"Ano\", \"gtap\"))\n## adiciona gtap 0 para os CNAE sem correspondencia\nmodelo <- bind_rows(\n  modelo,\n  modelo%>%distinct(Ano)%>%mutate(gtap=0, value=0))\n\n\n\n#rais por municipio e gtap\nload(\"results/rais_mun.RData\")\n\nrais_mun <- rais_mun_all%>%\n  ## se nao tem correspondencia rais->gtap, coloca como gtap 0\n  mutate(gtap=if_else(is.na(gtap), 0, gtap))%>%\n  ## junta com o modelo\n  left_join(modelo%>%filter(Ano==20), by='gtap')%>%\n  ## por municipio e ano\n  group_by(mun_trab, Ano)%>%\n  mutate(\n    ## confirmar que a conta é essa mesmo\n    nnew=n*(1+value/100))%>%\n  summarise(\n    ## o quantitativo original\n    norig=sum(n),\n    ## o quantitativo final\n    nfinal=sum(nnew),\n    ## a diferenca em numeros absolutos\n    ndif=nfinal-norig,\n    ## a diferenca em termos percentuais\n    pdif=ndif/norig)\n\n\nrais_uf <- rais_mun_all%>%\n  mutate(gtap=if_else(is.na(gtap), 0, gtap))%>%\n  left_join(modelo%>%filter(Ano==20), by='gtap')%>%\n  group_by(uf=substr(mun_trab,1,2), Ano)%>%\n  mutate(\n    nnew=n*(1+value/100))%>%\n  summarise(\n    norig=sum(n),\n    nfinal=sum(nnew),\n    ndif=nfinal-norig,\n    pdif=ndif/norig)\n\n\nrais_reg <- rais_mun_all%>%\n  mutate(gtap=if_else(is.na(gtap), 0, gtap))%>%\n  left_join(modelo%>%filter(Ano==20), by='gtap')%>%\n  group_by(regiao=substr(mun_trab,1,1), Ano)%>%\n  mutate(\n    nnew=n*(1+value/100))%>%\n  summarise(\n    norig=sum(n),\n    nfinal=sum(nnew),\n    ndif=nfinal-norig,\n    pdif=ndif/norig)\n\n\nrais_ano <- rais_mun_all%>%\n  mutate(gtap=if_else(is.na(gtap), 0, gtap))%>%\n  left_join(modelo, by='gtap')%>%\n  group_by(Ano)%>%\n  mutate(\n    nnew=n*(1+value/100))%>%\n  summarise(\n    norig=sum(n),\n    nfinal=sum(nnew),\n    ndif=nfinal-norig,\n    pdif=ndif/norig)\n\nlibrary(ggplot2)\nqplot(Ano, pdif, data=rais_ano) \n\nqplot(pdif, data=rais_mun) \n",
+    "created" : 1495078316364.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "320747737",
+    "id" : "580FB1EE",
+    "lastKnownWriteTime" : 1495078264,
+    "last_content_update" : 1495078264,
+    "path" : "~/reps_sae/cnae_gtap/R/rais_modelo.R",
+    "project_path" : "R/rais_modelo.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

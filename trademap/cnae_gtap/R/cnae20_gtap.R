@@ -1,0 +1,67 @@
+## funcao que converte codigos Subclasse CNAE 2.0 para códigos GTAP
+
+cnae20_gtap <- function(sbcl_cnae20) {
+  require(dplyr)
+  dplyr::case_when (
+    sbcl_cnae20%in%c('0111301') ~  1,
+    sbcl_cnae20%in%c('0111303') ~  2,
+    sbcl_cnae20%in%c('0111302', '0111399') ~  3,
+    substr(sbcl_cnae20,1,4)%in%c('0119', '0121', '0131', '0132', '0133', '0135') ~  4,
+    substr(sbcl_cnae20,1,4)%in%c('0116') ~  5,
+    substr(sbcl_cnae20,1,4)%in%c('0113') ~  6,
+    substr(sbcl_cnae20,1,4)%in%c('0112') ~  7,
+    substr(sbcl_cnae20,1,4)%in%c('0114', '0115', '0122', '0134', '0139', '014') ~  8,
+    sbcl_cnae20%in%c('0151201', '0151203') ~  9,
+    (substr(sbcl_cnae20,1,4)%in%c('0152', '0154', '0155', '0159')) |(sbcl_cnae20%in%c('0153901')) ~  10,
+    sbcl_cnae20%in%c('0151202') ~  11,
+    sbcl_cnae20%in%c('0153902') ~  12,
+    substr(sbcl_cnae20,1,2)%in%c('02') ~  13,
+    substr(sbcl_cnae20,1,2)%in%c('03') ~  14,
+    substr(sbcl_cnae20,1,2)%in%c('05') ~  15,
+    substr(sbcl_cnae20,1,2)%in%c('06') ~  16,
+    #/* setor 17 dentro do setor 16*/
+    substr(sbcl_cnae20,1,2)%in%c('07', '08', '09') ~  18,
+    substr(sbcl_cnae20,1,4)%in%c('1011') ~  19,
+    substr(sbcl_cnae20,1,4)%in%c('1012', '1013') ~  20,
+    substr(sbcl_cnae20,1,3)%in%c('104') ~  21,
+    substr(sbcl_cnae20,1,3)%in%c('105') ~  22,
+    substr(sbcl_cnae20,1,4)%in%c('1061') ~  23,
+    substr(sbcl_cnae20,1,3)%in%c('107') ~  24,
+    (substr(sbcl_cnae20,1,2)%in%c('11')) | (substr(sbcl_cnae20,1,3)%in%c('102', '103', '108', '109')) | (substr(sbcl_cnae20,1,4)%in%c('1062', '1063', '1064', '1065', '1066', '1069')) ~  25,
+    substr(sbcl_cnae20,1,2)%in%c('12') ~  26,
+    substr(sbcl_cnae20,1,2)%in%c('13') ~  27,
+    substr(sbcl_cnae20,1,2)%in%c('14') ~  28,
+    substr(sbcl_cnae20,1,2)%in%c('15') ~  29,
+    substr(sbcl_cnae20,1,2)%in%c('16') ~  30,
+    substr(sbcl_cnae20,1,2)%in%c('17') ~  31,
+    substr(sbcl_cnae20,1,2)%in%c('19') ~  32,
+    substr(sbcl_cnae20,1,2)%in%c('20', '21', '22') ~  33,
+    substr(sbcl_cnae20,1,2)%in%c('23') ~  34,
+    substr(sbcl_cnae20,1,3)%in%c('241', '242', '243', '245') ~  35,
+    substr(sbcl_cnae20,1,3)%in%c('244') ~  36,
+    substr(sbcl_cnae20,1,2)%in%c('25') ~  37,
+    substr(sbcl_cnae20,1,2)%in%c('29') ~  38,
+    substr(sbcl_cnae20,1,2)%in%c('30') ~  39,
+    substr(sbcl_cnae20,1,2)%in%c('27') ~  40,
+    substr(sbcl_cnae20,1,2)%in%c('28') ~  41,
+    substr(sbcl_cnae20,1,2)%in%c('18', '26', '31', '32', '33') ~  42,
+    substr(sbcl_cnae20,1,3)%in%c('351', '353') ~  43,
+    substr(sbcl_cnae20,1,3)%in%c('352') ~  44,
+    substr(sbcl_cnae20,1,2)%in%c('36') ~  45,
+    substr(sbcl_cnae20,1,2)%in%c('41', '42', '43') ~  46,
+    substr(sbcl_cnae20,1,2)%in%c('45', '46', '47') ~  47,
+    (substr(sbcl_cnae20,1,2)%in%c('49', '53')) | (substr(sbcl_cnae20,1,3)%in%c('521', '522', '525')) ~  48,
+    (substr(sbcl_cnae20,1,2)%in%c('50')) | (substr(sbcl_cnae20,1,3)%in%c('523')) ~  49,
+    (substr(sbcl_cnae20,1,2)%in%c('51')) | (substr(sbcl_cnae20,1,3)%in%c('524')) ~  50,
+    substr(sbcl_cnae20,1,2)%in%c('58', '59', '60', '61', '62', '63') ~  51,
+    substr(sbcl_cnae20,1,2)%in%c('64') ~  52,
+    substr(sbcl_cnae20,1,2)%in%c('65', '66') ~  53,
+    #/*Retirado o valor 68 da classificação de 54 e colocado como 57*/
+    substr(sbcl_cnae20,1,2)%in%c( '69', '70', '71', '72', '73', '74', '75', '77', '78', '79', '80', '81', '82') ~  54,
+    substr(sbcl_cnae20,1,2)%in%c('90', '91', '92', '93', '95', '96', '97') ~  55,
+    substr(sbcl_cnae20,1,2)%in%c('37', '38', '39', '84', '85', '86', '87', '88', '94', '99') ~  56,
+    substr(sbcl_cnae20,1,2)%in%c('68') ~  57)
+}
+
+
+
