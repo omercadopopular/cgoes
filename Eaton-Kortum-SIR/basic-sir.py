@@ -39,7 +39,7 @@ def sirModel(mu0,T,R0,Tinf):
     return Mu, TimeGrid
         
 mu0 = [0.995,0.005,0]
-T = 100
+T = 200
 R0 = 2.5
 Tinf = 7
 
@@ -47,9 +47,11 @@ Mu, TimeGrid = sirModel(mu0,T,R0,Tinf)
    
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots(1,1, figsize=(10,10))
-plt.plot(TimeGrid, Mu[:,0], label='Susceptible', color='Blue')
-plt.plot(TimeGrid, Mu[:,1], label='Infected', color='Red')
-plt.plot(TimeGrid, Mu[:,2], label='Recovered', color='Black')
-plt.legend(loc='upper right')
+plt.axhline(y=max(Mu[:,1]), color='gray', linewidth=.5)
+plt.plot(TimeGrid, Mu[:,0], label='Suscetível', color='Blue', linewidth=2)
+plt.plot(TimeGrid, Mu[:,1], label='Infectado', color='Red', linewidth=3)
+plt.plot(TimeGrid, Mu[:,2], label='Recuperado', color='Black', linewidth=2)
+plt.legend(loc='upper right', fontsize='x-large')
 plt.show()
     
+
