@@ -42,7 +42,7 @@ def sirModel(mu0,T,R0,Tinf, LockdownStart, LockdownEnd, ReductionEffect):
         dmu = sirTransition(mu, Beta, Gamma, ReductionEffect0)
         Mu[period+1,:] = mu + dmu.T
         
-        Rt[period+1,0] = Beta*(1-ReductionEffect0)/Gamma
+        Rt[period+1,0] = Beta*(1-ReductionEffect0)/Gamma 
         
         ReductionEffect0 = 0
     
