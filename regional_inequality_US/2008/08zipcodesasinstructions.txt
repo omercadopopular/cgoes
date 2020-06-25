@@ -1,0 +1,17 @@
+Instructions for SAS Users of the SOI ZIP Code Datasets
+
+To open the SOI ZIP Code Datasets using SAS:
+
+1) Save SAS data to desktop (click and drag) 
+2) Open SAS programmer 
+3) Go to Tools 
+4) Open Table Editor 
+5) Go to File —> Open 
+6) Create a Library Name (should be item with cabinet on it) for the SAS file 
+7) Click on Browse button in Library and browse to your desktop to find the file and create path 
+8) Press Okay 
+9) Go to File —> Open and find the library name that was created and click on it 
+10) Data should open 
+
+For additional information, please contact the SOI Statistical Information Services Office by phone at (202) 874-0410 or by email: sis@irs.gov.
+

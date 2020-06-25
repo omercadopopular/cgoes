@@ -1,0 +1,43 @@
+ZIP Code Data
+Documentation Guide
+Tax Year 1998
+
+
+
+What the Data Show
+
+	ZIP Code Data show selected income and tax items classified by state, ZIP code, and size of adjusted gross income.  The data are based on administrative records (individual income tax returns) from the Internal Revenue Service's Individual Master File (IMF) system, which includes a record for every Form 1040, 1040A, 1040EZ, 1040PC, 1040NR and 8814 filed by U.S. citizens and aliens with the IRS.  The records included in this study were all of these types of returns that were filed between January 1, 1999 and December 31, 1999 including a limited numb of late-filed returns for tax years before 1998. 
+
+How the Tables Were Developed
+
+The ZIP Code Data were developed by sorting the returns by the ZIP code provided on the return by the taxpayer.  Returns with foreign or APO or FPO addresses, or which did not contain a ZIP code were not included in these statistics.  The state in which a return belonged was determined by the ZIP code.
+
+	Several steps were taken to avoid disclosure of information about individual taxpayers.  ZIP codes from which fewer than 10 returns were filed were combined into a base ZIP code.  For example, the ZIP Code 80100 represents all ZIP Codes within the range 80101 through 80199 that had a total of less than 10 returns.  Many of these ZIP codes were either invalid or reserved for commercial or government offices.  Also, when an AGI class for a given ZIP code had a frequency of less than 10, it was combined with another AGI class within the same ZIP Code to create a total of 10 or greater.  If the total frequency for salaries and wages, taxable interest, earned income credit, total tax or number of returns with Schedules A, C or F for a particular ZIP Code was less than 10, that total was not shown and the amount was deleted from the state total.
+
+Statistical Items Shown in the File
+
+	The file is organized into 18 columns.  Selected income and tax items are tabulated by state, ZIP code, and size of adjusted gross income (AGI).  The AGI size classes included in this file are: Under $10,000 (which includes deficit returns); $10,000 under $25,000;  $25,000 under $50,000; and $50,000 or more.
+
+Selected Income and Tax Items
+
+ "Number of Returns" includes a count of all Forms 1040, 1040A, 1040EZ, 1040PC, 1040NR (U. S. Nonresident Alien Income Tax Return) and 8814 (Parent's Election to Report Child's Interest and Dividends) filed by citizens and resident aliens with the IRS filed between January 1, 1999 and December 31, 1999.  Forms 1040NR and 8814 are not included in counts of individual income tax returns shown in the SOI Bulletin or Statistics of Income-Individual Income Tax Returns, 1998.
+
+"Total Number of Exemptions" reflects the number of individuals covered on the tax returns.  Persons who were claimed as a dependent on another person's return were not allowed to claim an exemption for themselves on their own return.  Also, this number does not include any additional exemptions for age or blindness.
+
+"Number of Dependent Exemptions" includes exemptions claimed for children at home, children away from home, parents, and other dependents.
+
+"Adjusted Gross Income" is the sum of all taxable sources of income less any adjustments allowed.  This is the equivalent of line 33 of Form 1040 for Tax Year 1998. On Form 8814, this amount is taken from line 4.
+
+"Salaries and Wages" is the amount generally reported to the taxpayer on Form W-2 and shown on line 7 of Form 1040.
+
+"Taxable Interest" is the taxable portion of interest reported to the taxpayer on Form 1099-INT and shown on line 8a of Form 1040 and line 1a of Form 8814.
+
+"Earned Income Credit" is the amount shown on line 59a of Form 1040.  For Tax Year 1998, this could be claimed only by taxpayers with AGI less than $30,095.
+
+"Total Tax" is the amount of tax owed by the taxpayer for the tax year reduced by any credits to which the taxpayer is entitled but before any payments, including the earned income credit, have been taken into consideration.  This is the equivalent of line 56 of Form 1040.
+
+"Schedule C" is used by taxpayers to report income and expenses related to a non-farm sole proprietorship.
+
+"Schedule F" is used by taxpayers to report income and expenses related to a farm sole proprietorship.
+
+	"Schedule A Deductions" is the total itemized deductions shown on Schedule A after being limited on Form 1040 for high-income taxpayers.  This amount includes deductions for medical expenses, state and local taxes, deductible interest expenses, charitable contributions, and other miscellaneous deductions.
