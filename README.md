@@ -11,5 +11,3 @@ A coding enthusiast, he works in Python, Stata, Eviews, LaTeX, R, Julia, and Mat
 For more info: https://www.linkedin.com/in/carlosgoes
 
 Twitter: @goescarlos
-
-Facebook: http://fb.me/carlosgoes
