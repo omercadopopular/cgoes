@@ -1,6 +1,6 @@
 # Research by Carlos Góes
 
-Carlos Góes is Chief Research Officer of Instituto Mercado Popular, a São Paulo-based think tank. He has previously worked as Senior Economic Advisor at the Office of the President of Brazil, as a researcher at the International Monetary Fund and U.S. think tanks, and as an instructor of econometrics and data science in different universities. 
+Carlos Góes is a California-based economist. He has previously worked as Senior Economic Advisor at the Office of the President of Brazil, as a researcher at the International Monetary Fund and U.S. think tanks, and as an instructor of econometrics and data science in different universities. He was Chief Research Officer and co-founder of Instituto Mercado Popular, a São Paulo-based think tank and is currently on leave-of-absense from that institution.
 
 Góes is a PhD student in Economics (UC San Diego), holds a MA in International Economics (Johns Hopkins SAIS), and a BA in International Relations (University of Brasilia). In 2016, he founded Instituto Mercado Popular, which focuses on designing evidence-based public policy marrying the goals of social inclusion and fiscal responsibility.
 
