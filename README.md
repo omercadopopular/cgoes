@@ -1,12 +1,8 @@
 # Research by Carlos Góes
 
-Carlos Góes is a California-based economist. He has previously worked as Senior Economic Advisor at the Office of the President of Brazil, as a researcher at the International Monetary Fund and U.S. think tanks, and as an instructor of econometrics and data science in different universities. 
+I am an economist whose research agenda lies on the intersection between international trade and macroeconomics; I describe it as “Dynamic Trade and Spatial Macroeconomics.” I am embedding the dynamics of growth emphasized in macroeconomics into canonical trade models and incorporating the spatial dimension emphasized in trade models into macroeconomics. In my empirical work, I combine well-identified partial equilibrium effects using spatial data to inform estimates of general equilibrium effects. I use spatial data to answer questions about growth, trade, and inequality. I am an economic researcher at the World Bank Group and a Visiting Scholar at the Globalization and Prosperity Lab of UC San Diego.
 
-Góes has a PhD in Economics (UC San Diego), holds a MA in International Economics (Johns Hopkins SAIS), and a BA in International Relations (University of Brasilia). In 2016, he co-founded Instituto Mercado Popular, which focuses on designing evidence-based public policy marrying the goals of social inclusion and fiscal responsibility. He was Chief Research Officer is currently on leave-of-absense from that institution.
-
-His research spans over different topics, including: monetary policy, trade, economic development, income inequality, and advanced statistical methods. His work has been featured in global outlets such as the Wall Street Journal, the Financial Times, El País and Le Monde. He has been named one of the "30 persons every investor should follow" by Bloomberg Brazil (Infomoney) and writes frequently for the Brazilian press.
-
-A coding enthusiast, he works in Python, Stata, Eviews, LaTeX, R, Julia, and Matlab. He is fluent in English, Spanish, and Portuguese, having some knowledge of French and Italian.
+Góes has a PhD in Economics (UC San Diego) and is an alumni of Johns Hopkins (MA) and of the University of Brasilia (BA). In 2016, he co-founded Instituto Mercado Popular, which focuses on designing evidence-based public policy marrying the goals of social inclusion and fiscal responsibility. He was Chief Research Officer is currently on leave-of-absense from that institution.
 
 For more info: https://www.linkedin.com/in/carlosgoes
 
