@@ -1,0 +1,83 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r05.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}19 Sep 2024, 11:20:25
+{txt}
+{com}. 
+. use "data\temp\mun-master-green.dta", clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\andre\AppData\Local\Temp\STD540c_00001a.tmp"
+{txt}
+{com}. 
+. local group risco exposicao everde
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         gen shr_`var' = `var' / employment
+{txt}  3{com}. {c )-}
+{err}risco not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "C:\Users\andre\AppData\Local\Temp\STD540c_00001b.tmp"
+{txt}
+{com}. 
+. local group risco exposicao everde
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         gen shr_`var' = emp_`var' / employment
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. scatter shr_risco shr_exposicao
+{res}
+{com}. binscatter shr_risco shr_exposicao
+{res}
+{com}. binscatter shr_risco shr_everde
+{res}
+{com}. binscatter shr_risco shr_everde
+{res}
+{com}. binscatter shr_risco shr_exposicao
+{res}
+{com}. correl shr_risco shr_exposicao
+{txt}(obs=138,188)
+
+             {c |} shr_ri~o shr_ex~o
+{hline 13}{c +}{hline 18}
+   shr_risco {c |}{res}   1.0000
+{txt}shr_exposi~o {c |}{res}   0.8468   1.0000
+
+
+{com}. binscatter shr_risco shr_exposicao shr_everde
+{res}
+{com}. correl shr_risco shr_exposicao shr_everde
+{txt}(obs=138,188)
+
+             {c |} shr_ri~o shr_ex~o shr_ev~e
+{hline 13}{c +}{hline 27}
+   shr_risco {c |}{res}   1.0000
+{txt}shr_exposi~o {c |}{res}   0.8468   1.0000
+  {txt}shr_everde {c |}{res}   0.2059   0.2498   1.0000
+
+
+{com}. correl shr_risco shr_exposicao shr_everde if year == 2000
+{txt}(obs=5,461)
+
+             {c |} shr_ri~o shr_ex~o shr_ev~e
+{hline 13}{c +}{hline 27}
+   shr_risco {c |}{res}   1.0000
+{txt}shr_exposi~o {c |}{res}   0.8350   1.0000
+  {txt}shr_everde {c |}{res}   0.0919   0.1412   1.0000
+
+
+{com}. exit, clear

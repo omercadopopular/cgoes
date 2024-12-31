@@ -20,7 +20,7 @@ capture log close 																				// closes any open logs
 clear 																							// clears the memory
 clear matrix
 clear mata
-cd "Q:\DATA\S1\BRA\Research\Regional Price Indices\IBGE\" 
+cd "C:\Users\Carlos\OneDrive - UC San Diego\UCSD\Research\cgoes\loop" 
 set more off  																					// makes sure STATA won't ask you to click "more" to continue running the code
 set maxvar 32000
 set matsize 11000
@@ -131,7 +131,7 @@ log using IPCA.log, replace  																// chooses logfile
 			label var inf_mom "Inflation, month-on-month, in pct"
 			label var index "CPI, per item, July 1999 = 100"
 			
-			/*
+			
 
 			preserve
 				drop index
@@ -145,104 +145,14 @@ log using IPCA.log, replace  																// chooses logfile
 				export delimited using "index", replace	
 			restore
 			
-			*/
+		// Generate real index
 
-	
-	// Start panel
-	
-		// Generate logs
-		
-			drop if missing(index)
-			gen lindex = ln(index)
-						
-		
-		// Generate time fixed effects
-		
-			bysort code date:  egen time_effects = mean(lindex)	
-			gen lindex_time = lindex - time_effects 
-					
-			sort area code date				
-			drop if area == "Brasil"
+			gen index_temp = index if code == 0
+			bysort area date: egen index_base = mean(index_temp)
+			drop index_temp 
 			
-			label var lindex "Log of CPI, per item and city, July 1999 = 100"
-			label var lindex_time "Log of CPI, per item and city, minus time effects"
-		
-			export delimited using "CPI_panel", replace
+			gen change_real = (index / index_base - 1) * 100
 			
-			save IPCA_workfile, replace
-
-
-		// Create loop for specific panels /  
-		
-		
-			drop if code < 1101 | code > 9101
+			keep if code == 6101
 			
-			levelsof code, local(ids)
-			
-			di `ids'
-			
-			matrix define A = ( 0 , 0 , 0 , 0 , 0 , 0 , 0 )
-			matrix colnames A = "Code" "Average lag" "N of obs" "N of periods" "N of groups" "P-value" "W-t-bar"
-			
-			foreach id of local ids {
-				preserve
-					cd "Q:\DATA\S1\BRA\Research\Regional Price Indices\IBGE\panels"
-
-					qui keep if code == `id'
-
-					qui gen n = _n	
-						if (n == 1) {
-						   local title = eng_description
-						 }
-						 
-					qui line lindex_time date, by(area) yline(0) ///
-						scheme(s2manual) name(g`id', replace) nodraw
-					qui graph combine g`id', ///
-						title("`id' - `title'", position(11) margin(vsmall)) ///
-						saving(panel_`id', replace) name(panel_`id', replace) ///
-						cols(1) scheme(s2manual)
-						
-					graph export panel_`id'.pdf, replace name(panel_`id')
-					
-					graph drop _all
-					
-					*egen temp_panelid = group(panelid)
-					*drop panelid
-					*rename temp_panelid panelid
-					
-					*qui export delimited using "panel_`x'", replace
-					
-					di `id'
-					
-					xtunitroot ips lindex_time, lags(aic)
-					matrix A = A \ `id' , r(lagm) , r(N) , r(N_t) , r(N_g) , r(p_wtbar) , r(wtbar)
-				restore
-			}
-			
-			
-			cd "Q:\DATA\S1\BRA\Research\Regional Price Indices\IBGE\
-			
-			preserve 
-					
-				drop *
-				svmat A
-			
-				tempfile export_file
-				save `export_file'
-				
-				import delimited "eng_description.csv", varnames(1) clear
-				egen group = group(code)
-				bysort group: gen n = _n
-				drop if n > 1
-				drop n group
-				rename code A1
-				
-				merge 1:m A1 using `export_file', nogen
-				
-				drop if missing(A7)
-				
-				qui export delimited using "uroottests", replace
-
-				
-			restore
-			
+			export excel using "pharma.xls", replace	 firstrow(variables) 

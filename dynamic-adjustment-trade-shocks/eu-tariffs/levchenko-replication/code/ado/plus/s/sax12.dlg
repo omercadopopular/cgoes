@@ -1,0 +1,2141 @@
+/* 
+*! X-12-ARIMA seasonal adjustment. version 1.0. 2010-April-19, Qunyong, Wang, brynewqy@nankai.edu.cn
+*! Updated: 2011-Nov-23. 
+To install in User Statistics menu via Stata commands:
+  . window menu append item "stUserStatistics" "RegARIMA-X12 seasonal adjustment" "db sax12"
+  . window menu append item "stUserData" "Import data after seasonal adjustment" "db saimport"
+  . window menu append item "stUserGraphics" "Make graphs after seasonal adjustment" "db sagraph"
+  . window menu refresh
+To permanently install, place the commands in your -profile.do- file.
+*/
+
+VERSION 11.0
+SYNCHRONOUS_ONLY
+
+INCLUDE _std_xlarge
+*INCLUDE _std_large
+*INCLUDE _std_mlarge
+INCLUDE _ht350  // specify hight
+INCLUDE header
+
+HELP hlp1, view("help sax12")
+RESET res1, label("Reset")
+
+PROGRAM PREINIT_PROGRAM
+BEGIN
+        put "sax12pre "
+        stata hidden
+		call script pres
+        call tunit.setvalue global tunit
+        if tunit.iseq("quarterly") {
+			call prior.rb_quarter.seton
+		}
+        if tunit.iseq("monthly") {
+			call prior.rb_month.seton
+		}
+		/*
+		if tunit.isneq("quarterly") & tunit.isneq("monthly") {
+			stopbox stop "the program is used only for monthly and quarterly data"
+		}
+		*/
+END
+SCRIPT pres
+BEGIN
+	create STRING tunit
+END
+LIST variables
+BEGIN
+	// intentionally empty, this list will be populated by sax12pre.ado
+END
+
+DIALOG main, label("X-12-ARIMA Seasonal Adjustment")  ///
+		 tabtitle("Main")
+BEGIN
+  RADIO	rb_single  10 5 _iwd 20,  ///
+		first	///
+		label("Single series")  ///
+		default(1) ///
+		option("satype(single)") ///
+		onclickon(script sp_singleon) ///
+		onclickoff(script sp_singleoff) 
+  TEXT tx_single 30 +25 100 20, ///
+       label("Variable:")
+  COMBOBOX vl_single 100 @ 170 230, ///
+  	dropdown contents(variables) ///
+	onselchange(script vlspc)  ///
+	default("")
+  // VARNAME vl_single 100 @ 170 20   // changed to combobox
+  RADIO	rb_dta  10 +25 _iwd 20,  ///
+		middle ///
+		option("satype(dta)") ///
+		label("Multiple series using a single specification file") ///
+		onclickon(script sp_dtaon) ///
+		onclickoff(script sp_dtaoff) 
+  TEXT tx_dta 30 +25 70 20, ///
+       label("Variables:")
+  COMBOBOX vl_dta 100 @ 430 230, ///
+  	dropdown contents(variables) append ///
+	onselchange(script vldta)  ///
+	default("")
+  // VARLIST vl_dta +70 @ 430 20 
+  RADIO	rb_mta  10 +25 _iwd 20,  ///
+		last ///
+		option("satype(mta)") ///
+		label("Multiple series using multiple specification files")  ///
+		onclickon(program prg_mtaon) ///
+		onclickoff(script sp_mtaoff) 
+  TEXT tx_mta 30 +25 110 20, ///
+       label("Select spc files:")
+  FILE  fi_mta +120 @  380 20,	 ///
+		label("Browse") multiselect ///
+		filter(spc file(*.spc)|*.spc|All Files (*.*)|*.*) ///
+		onchange(program prg_spmta) ///
+		error("select spc files") ///
+       option("mtaspc")
+  GROUPBOX  gb_main  10  160 _iwd 185,	///
+		label("Options")		
+  CHECKBOX  ck_comp 20 +25 120 20, ///
+		label("Composite type:") /// 
+		onclickon(main.cb_comp.enable) ///
+		onclickoff(main.cb_comp.disable)  ///
+		default(0)  ///
+		option("comptype") 
+  COMBOBOX	cb_comp  +120 @ 280  60, ///
+		dropdownlist ///
+		contents(comp_list) ///
+		values(comp_values) ///
+		default("add")  ///
+		option("comptype") 
+  CHECKBOX  ck_compsa  20   +25  160  20,	 ///
+		label("Composite adjustment") ///
+		option("compsa") ///
+	    onclickon(program prg_compsaon) ///
+	    onclickoff(program prg_compsaoff) 
+  CHECKBOX  ck_compsadir  +180  @  300  20,	 ///
+		label("Direct seasonal adjustment for composite series") ///
+		option("compsadir")
+   DEFINE sp 210
+   DEFINE spa 230
+   DEFINE spd 180
+   DEFINE spda 200
+   DEFINE spm 180
+   DEFINE spma 200
+   TEXT tx_spc1 20 sp 500 20, ///
+       label("Spc file to save (the same name with variable if left blank):")
+   FILE fi_spc1 30 spa 500 20,	 ///
+		error("Browse:")	///
+		label("Save as") save ///
+		filter(save as (*.spc)|*.spc) ///
+       option("inpref")
+   TEXT tx_spc2 20 spd 500 20, ///
+       label("Spc file to save (mvss.spc if left blank):")
+   FILE fi_spc2 30 spda 500 20,	 ///
+		error("Browse:")	///
+		label("Save as") save ///
+		filter(save as (*.spc)|*.spc) ///
+       option("inpref")
+   TEXT tx_spc3 20 spm 500 20, ///
+       label("Spc file to save (mvms.spc if left blank):")
+   FILE fi_spc3 30 spma 500 20,	 ///
+		error("Browse:")	///
+		label("Save as") save ///
+		filter(save as (*.spc)|*.spc) ///
+       option("inpref")
+   DEFINE so 260
+  TEXT tx_outpref1 20 so 500 20, ///
+       label("Prefix of output to save (the same name with variable if left blank):")
+  EDIT ed_outpref1 30 +25 500 20, ///
+       option("outpref") 
+  TEXT tx_outpref2 20 so 500 20, ///
+       label("Prefix of output to save (the same name with variables if left blank):")
+  EDIT ed_outpref2 30 +25 500 20, ///
+       option("outpref") 
+  TEXT tx_outpref3 20 so 500 20, ///
+       label("Prefix of output to save (the same name with spc files if left blank):")
+  EDIT ed_outpref3 30 +25 500 20, ///
+       option("outpref") 
+  TEXT tx_dtasave 20 +25 500 20, ///
+       label("Dta file to save (mvss.dta if left blank):")
+  FILE   fi_dtasave 30 +25 500 20,	 ///
+		error("Browse:")	///
+		label("Save as") save ///
+		filter(save as (*.dta)|*.dta) ///
+       option("dtafile")	   
+  TEXT tx_mtasave 20 +25 500 20, ///
+       label("Mta file to save (mvms.mta if left blank):")
+ FILE   fi_mtasave 30 +25 500 20,	 ///
+		error("Browse:")	///
+		label("Save as") save ///
+		filter(save as (*.mta)|*.mta|All Files (*.*)|*.*) ///
+       option("mtafile")	   
+END
+
+SCRIPT vlspc
+BEGIN
+    gaction main.fi_spc1.setvalue ""
+    gaction main.vl_single.withvalue main.fi_spc1.smartinsert `"@.spc"'
+    gaction main.ed_outpref1.setvalue ""
+    gaction main.vl_single.withvalue main.ed_outpref1.smartinsert `"@"'
+END
+SCRIPT vldta
+BEGIN
+    gaction main.fi_spc2.setvalue "mvss.spc"
+    gaction main.fi_dtasave.setvalue "mvss.dta"
+    gaction main.ed_outpref2.setvalue ""
+    gaction main.vl_dta.withvalue main.ed_outpref2.smartinsert `"@"'
+END
+PROGRAM prg_spmta
+BEGIN
+	if main.ck_compsa.isenabled() & main.ck_compsa.iseq(1) {
+		call gaction main.fi_spc3.setvalue "mvms.spc"
+	}
+    call gaction main.fi_mtasave.setvalue "mvms.mta"
+	put "sapath "
+	put main.fi_mta
+	stata hidden
+    call gaction main.ed_outpref3.setvalue global prefmta
+    /*
+	call gaction main.ed_outpref3.setvalue ""
+    call gaction main.fi_mta.withvalue main.ed_outpref3.smartinsert `"@"'
+	*/
+END
+
+
+LIST comp_values
+BEGIN 
+	add
+	sub
+	mult
+	div
+END
+LIST comp_list
+BEGIN 
+	added into composite series
+	subtracted from the composite series
+	multiplied by the composite series
+	divided into the composite series
+END
+
+SCRIPT sp_singleon
+BEGIN
+	main.ck_comp.show
+	main.cb_comp.show
+	main.tx_spc1.show
+	main.fi_spc1.show
+	main.tx_outpref1.show
+	main.ed_outpref1.show
+	main.tx_single.enable
+	main.vl_single.enable
+ 	main.ck_comp.enable
+	main.tx_spc1.enable
+	main.tx_spc1.setposition . 210 . .
+	main.fi_spc1.enable
+	main.fi_spc1.setposition . 235 . .
+	main.tx_outpref1.enable
+	main.ed_outpref1.enable
+	main.tx_outpref1.setposition . 260 . .
+	main.ed_outpref1.enable
+	main.ed_outpref1.setposition . 285 . .
+	main.ck_compsa.hide
+	main.ck_compsadir.hide
+	main.tx_dtasave.hide
+	main.fi_dtasave.hide
+	main.tx_mtasave.hide
+	main.fi_mtasave.hide
+	main.tx_spc2.hide
+	main.fi_spc2.hide
+	main.tx_spc3.hide
+	main.fi_spc3.hide
+	main.tx_outpref2.hide
+	main.ed_outpref2.hide
+	main.tx_outpref3.hide
+	main.ed_outpref3.hide
+END
+SCRIPT sp_singleoff
+BEGIN
+	main.tx_single.disable
+	main.vl_single.disable
+END
+
+SCRIPT sp_dtaon
+BEGIN
+	main.tx_dtasave.show
+	main.fi_dtasave.show
+	main.tx_spc2.show
+	main.fi_spc2.show
+	main.tx_outpref2.show
+	main.ed_outpref2.show
+	main.tx_dta.enable
+	main.vl_dta.enable
+	main.tx_spc2.enable
+	main.tx_spc2.setposition . 180 . .
+	main.fi_spc2.enable
+	main.fi_spc2.setposition . 205 . .
+	main.tx_dtasave.enable
+	main.tx_dtasave.setposition . 230 . .
+	main.fi_dtasave.enable
+	main.fi_dtasave.setposition . 255 . .
+	main.tx_outpref2.enable
+	main.tx_outpref2.setposition . 280 . .
+	main.ed_outpref2.enable
+	main.ed_outpref2.setposition . 305 . .
+	main.ck_comp.hide
+	main.cb_comp.hide
+	main.ck_compsa.hide
+	main.ck_compsadir.hide
+	main.tx_mtasave.hide
+	main.fi_mtasave.hide
+	main.tx_spc1.hide
+	main.fi_spc1.hide
+	main.tx_spc3.hide
+	main.fi_spc3.hide
+	main.tx_outpref1.hide
+	main.ed_outpref1.hide
+	main.tx_outpref3.hide
+	main.ed_outpref3.hide
+END
+SCRIPT sp_dtaoff
+BEGIN
+	main.tx_dta.disable
+	main.vl_dta.disable
+END
+
+PROGRAM prg_mtaon
+BEGIN
+	call gaction main.tx_mtasave.show
+	call gaction main.fi_mtasave.show
+	call gaction main.ck_compsa.show
+	call gaction main.ck_compsadir.show
+	call gaction main.tx_outpref3.show
+	call gaction main.ed_outpref3.show
+	call gaction main.tx_spc3.show
+	call gaction main.fi_spc3.show
+	call gaction main.ck_compsadir.show
+	call gaction main.tx_mta.enable
+	call gaction main.fi_mta.enable
+	if main.ck_compsa {
+		call gaction main.tx_spc3.enable
+		call gaction main.fi_spc3.enable
+		call gaction main.ck_compsadir.enable
+	}
+	if !main.ck_compsa {
+		call gaction main.tx_spc3.disable
+		call gaction main.fi_spc3.disable
+		call gaction main.ck_compsadir.disable
+	}
+	call gaction main.ck_compsa.enable
+	call gaction main.ck_compsa.setposition . 180 . .
+	call gaction main.ck_compsadir.setposition . 180 . .
+	call gaction main.tx_spc3.setposition . 205 . .
+	call gaction main.fi_spc3.setposition . 225 . .
+	call gaction main.tx_mtasave.enable
+	call gaction main.tx_mtasave.setposition . 250 . .
+	call gaction main.fi_mtasave.enable
+	call gaction main.fi_mtasave.setposition . 270 . .
+	call gaction main.tx_outpref3.enable
+	call gaction main.tx_outpref3.setposition . 295 . .
+	call gaction main.ed_outpref3.enable
+	call gaction main.ed_outpref3.setposition . 315 . .
+	call gaction main.ck_comp.hide
+	call gaction main.cb_comp.hide
+	call gaction main.tx_dtasave.hide
+	call gaction main.fi_dtasave.hide
+	call gaction main.tx_spc1.hide
+	call gaction main.fi_spc1.hide
+	call gaction main.tx_spc2.hide
+	call gaction main.fi_spc2.hide
+	call gaction main.tx_outpref1.hide
+	call gaction main.ed_outpref1.hide
+	call gaction main.tx_outpref2.hide
+	call gaction main.ed_outpref2.hide
+END
+SCRIPT sp_mtaoff
+BEGIN
+	main.tx_mta.disable
+	main.fi_mta.disable
+END
+
+PROGRAM prg_compsaon
+BEGIN
+	call gaction main.tx_spc3.enable
+	call gaction main.fi_spc3.enable
+   	if main.fi_mta.isenabled()  & !main.fi_mta.iseq("") {
+		call gaction main.fi_spc3.setvalue "mvms.spc"
+	}
+	call gaction main.ck_compsadir.enable
+END
+PROGRAM prg_compsaoff
+BEGIN
+	if main.rb_mta {
+		call gaction main.tx_spc3.disable
+		call gaction main.fi_spc3.disable
+	}
+	call gaction main.ck_compsadir.disable
+END
+
+INCLUDE ifin
+
+DIALOG prior, label("RegARIMA-X12 Seasonal Adjustment")  ///
+		 tabtitle("Prior")
+BEGIN
+DEFINE mm 30
+   GROUPBOX gb_freq  10  10  _iwd 75, ///
+	label("Data properties")
+   TEXT  tx_month  mm +20 100 20,  ///
+	label("Frequency:")
+   RADIO  rb_month  +100 @ 100 20,  ///
+		first ///
+		label("monthly")  ///
+		onclickon(program prg_monthon) ///
+		onclickoff(program prg_monthoff) 
+   RADIO  rb_quarter  +100  @ 100 20,  ///
+		last ///
+		label("quarterly")  ///
+		onclickon(program prg_quarteron) ///
+		onclickoff(program prg_quarteroff) 
+   TEXT  tx_flow  mm +25 100 20,  ///
+	label("Flow or stock:")
+   RADIO  rb_flow  +100 @ 100 20,  ///
+		first ///
+		label("flow")  ///
+		onclickon(program prg_flowon) ///
+		onclickoff(program prg_flowoff)  ///
+		option(nostock)
+   RADIO  rb_stock  +100  @ 100 20,  ///
+		last ///
+		label("stock")  ///
+		onclickon(program prg_stockon) ///
+		onclickoff(program prg_stockoff)  ///
+		option(stock)
+ 
+DEFINE pp +130
+ GROUPBOX  gb_tran  10  +40  _iwd 75, 	///
+		label("Data transformation")	
+  RADIO	rb_auto  mm  +20 120  20,	///
+		first					///
+      	option("transfunc(auto)")	///
+		label("Auto(log or none)")  ///
+	     onclickon(program prg_trautoon) ///
+	     onclickoff(program prg_trautooff)
+  RADIO	rb_none  pp  @  @   @, 	///
+		middle	///
+      	option("transfunc(none)")	///
+		label("None") 
+  RADIO	rb_log  pp  @  @   @,    	///
+		middle				///
+		option("transfunc(log)")	///
+		label("Log") 
+  RADIO	rb_sqrt   pp  @  @   @,   	///
+		middle				///
+		option("transfunc(sqrt)")     ///
+		label("Square Root")    
+  RADIO	rb_inv    mm  +25  @   @,   	///
+		middle				///
+		option("transfunc(inverse)")  ///
+		label("Inverse")  
+  RADIO	rb_logis  pp  @  @   @,      ///
+		middle				///
+		option("transfunc(logistic)")	///
+		label("Logistic")	
+  RADIO	rb_power  pp  @  @   @,     ///
+		last					///
+		label("Box-Cox Power:")	     ///
+		onclickon(prior.ed_power.enable)  ///
+		onclickoff(prior.ed_power.disable) 	
+  EDIT  ed_power +110 @  40 20, 	///
+		option("transpower")		///
+		default("0") 
+		
+  GROUPBOX  gb_prior  10  +40  _iwd  165,	///
+            label("Prior Adjustment")	
+  TEXT      tx_priorpre 25 +20 150 20, ///
+            label("Predefined Variable:") 
+  COMBOBOX  cb_priorpremf  170 @ 230 150,	///
+		option("prioradj")  ///
+        dropdownlist   ///     
+		contents(list_mfadj) ///
+		values(list_mfadjv)  ///
+		onselchangelist(list_mfadjp) ///
+		default(none)
+  COMBOBOX  cb_priorpreqf  170  @  230  150,	///
+		option("prioradj")  ///
+        dropdownlist   ///     
+		contents(list_qfadj) ///
+		values(list_qfadjv) ///
+		onselchangelist(list_qfadjp) ///
+		default(none)
+  GROUPBOX  gb_prioruser  25  +30  500  105,	///
+            label("User defined variables")	
+  TEXT      tx_priorvar +10 +25 60 20, ///
+            label("variables:") 
+  VARLIST   vl_priorvar +70 @ 400 20, ///
+            option("priorvar")
+  TEXT      tx_priormode -70 +25 60 20, ///
+            label("Mode:") 
+  COMBOBOX  cb_priormode +40 @  430 60,	///
+		option("priormode")		///
+        dropdown append ///   
+		contents(list_priormode) values(list_priorvalue) 
+  TEXT      tx_priortype -40 +25 60 20, ///
+            label("Type:") 
+  COMBOBOX  cb_priortype +40 @  430 60, ///
+		option("priortype")		///
+        dropdown append ///     
+		contents(priortype_list) 
+END 
+
+LIST list_mfadjp
+BEGIN
+	""
+	program prg_tdck
+	program prg_tdck
+END
+LIST list_qfadjp
+BEGIN
+	""
+	program prg_tdck
+	program prg_tdck
+END
+PROGRAM prg_tdck
+BEGIN
+	if reg.ck_td | reg.ck_tdnolpyear {
+		stopbox stop "trading day has been specified in regression"
+	}
+	if reg.ck_td1coef | reg.ck_td1nolpyear {
+		stopbox stop "trading day (one regressor) has been specified in regression"
+	}
+	if reg.ck_lpyear {
+		stopbox stop "leap year has been specified in regression"
+	}
+END
+
+PROGRAM prg_monthon 
+BEGIN
+	call prior.cb_priorpreqf.hide
+	call prior.cb_priorpremf.show
+	call prior.cb_priorpremf.disable
+	if prior.rb_flow {
+		if !prior.rb_auto {
+			call script sp_mfadj
+		}
+		call program prg_mf
+	}
+	if prior.rb_stock {
+		call program prg_ms
+	}
+END
+PROGRAM prg_quarteron 
+BEGIN
+	call prior.cb_priorpremf.hide
+	call prior.cb_priorpreqf.show
+	call prior.cb_priorpreqf.disable
+	if prior.rb_flow {
+		if !prior.rb_auto {
+			call script sp_qfadj
+		}
+		call program prg_qf
+	}
+	if prior.rb_stock {
+		call program prg_qs
+	}
+END
+PROGRAM prg_flowon 
+BEGIN
+	if prior.rb_month {
+		call prior.cb_priorpreqf.hide
+		call prior.cb_priorpremf.show
+		if !prior.rb_auto {
+			call prior.cb_priorpremf.enable
+			call script sp_mfadj
+		}
+		call program prg_mf
+	}
+	if prior.rb_quarter {
+		call prior.cb_priorpremf.hide
+		call prior.cb_priorpreqf.show
+		if !prior.rb_auto {
+			call prior.cb_priorpreqf.enable
+			call script sp_qfadj
+		}
+		call program prg_qf
+	}
+END
+PROGRAM prg_stockon 
+BEGIN
+	if prior.cb_priorpremf.isvisible() {
+		call prior.cb_priorpremf.disable
+	}
+	if prior.cb_priorpreqf.isvisible() {
+		call prior.cb_priorpreqf.disable
+	}
+	if prior.rb_month {
+		call program prg_ms
+	}
+	if prior.rb_quarter {
+		call program prg_qs
+	}
+END
+SCRIPT sp_mfadj
+BEGIN
+	//prior.cb_priorpreqf.hide
+	prior.cb_priorpremf.show
+	prior.cb_priorpremf.enable
+END
+SCRIPT sp_qfadj
+BEGIN
+	//prior.cb_priorpremf.hide
+	prior.cb_priorpreqf.show
+	prior.cb_priorpreqf.enable
+END
+PROGRAM prg_mf
+BEGIN
+	call program prg_mqf
+	call reg.ck_lom.enable
+	call reg.ck_loq.disable
+	call reg.ck_labor.enable
+	if reg.ck_labor {
+		call reg.sp_labor.enable
+	}
+	call reg.ck_thank.enable
+	if reg.ck_thank {
+		call reg.sp_thank.enable
+	}
+	call reg.cb_regusertypemf.show
+	call reg.cb_regusertypems.hide
+	call reg.cb_regusertypeqf.hide
+	call reg.cb_regusertypeqs.hide
+END
+PROGRAM prg_qf
+BEGIN
+	call program prg_mqf
+	call reg.ck_lom.disable
+	call reg.ck_loq.enable
+	call reg.ck_labor.disable
+	call reg.sp_labor.disable
+	call reg.ck_thank.disable
+	call reg.sp_thank.disable
+	call reg.cb_regusertypemf.hide
+	call reg.cb_regusertypems.hide
+	call reg.cb_regusertypeqf.show
+	call reg.cb_regusertypeqs.hide
+END
+PROGRAM prg_ms
+BEGIN
+	call program prg_mqs
+	call reg.ck_tdstock.enable
+	if reg.ck_tdstock {
+		call reg.sp_tdstock.enable
+	}
+	call reg.cb_regusertypemf.hide
+	call reg.cb_regusertypems.show
+	call reg.cb_regusertypeqf.hide
+	call reg.cb_regusertypeqs.hide
+END
+PROGRAM prg_qs
+BEGIN
+	call program prg_mqs
+	call reg.ck_tdstock.disable
+	call reg.sp_tdstock.disable
+	call reg.cb_regusertypemf.hide
+	call reg.cb_regusertypems.hide
+	call reg.cb_regusertypeqf.hide
+	call reg.cb_regusertypeqs.show
+END
+PROGRAM prg_mqf
+BEGIN
+	call reg.ck_td.enable
+	call reg.ck_tdnolpyear.enable
+	call reg.ck_td1coef.enable
+	call reg.ck_td1nolpyear.enable
+	call reg.ck_lpyear.enable
+	call reg.ck_tdstock.disable
+	call reg.sp_tdstock.disable
+	call reg.ck_easter.enable
+	if reg.ck_easter {
+		call reg.sp_easter.enable
+	}
+	call reg.ck_sceaster.enable
+	if reg.ck_sceaster {
+		call reg.sp_sceaster.enable
+	}
+END
+PROGRAM prg_mqs
+BEGIN
+	call reg.ck_td.disable
+	call reg.ck_tdnolpyear.disable
+	call reg.ck_td1coef.disable
+	call reg.ck_td1nolpyear.disable
+	call reg.ck_lpyear.disable
+	call reg.ck_lom.disable
+	call reg.ck_loq.disable
+	call reg.ck_easter.disable
+	call reg.sp_easter.disable
+	call reg.ck_sceaster.disable
+	call reg.sp_sceaster.disable
+	call reg.ck_labor.disable
+	call reg.sp_labor.disable
+	call reg.ck_thank.disable
+	call reg.sp_thank.disable
+END
+
+// prior ajustment
+LIST list_mfadj
+BEGIN
+	none
+	length of month
+	leap year
+END
+LIST list_mfadjv
+BEGIN
+	none
+	lom
+	lpyear
+END
+LIST list_qfadj
+BEGIN
+	none
+	length of quarter
+	leap year
+END
+LIST list_qfadjv
+BEGIN
+	none
+	loq
+	lpyear
+END
+
+//  prior modes
+LIST list_priormode
+BEGIN
+	factors as ratios
+	subtract factor from series
+	factors as percents
+END
+LIST list_priorvalue
+BEGIN
+	ratio
+	diff
+	percent
+END
+
+PROGRAM prg_trautoon
+BEGIN
+	call sa.tx_x11mode.disable
+	call sa.cb_x11mode.disable
+	if prior.cb_priorpremf.isvisible() {
+		call prior.cb_priorpremf.disable
+	}
+	if prior.cb_priorpreqf.isvisible() {
+		call prior.cb_priorpreqf.disable
+	}
+END
+PROGRAM prg_trautooff
+BEGIN
+	call sa.tx_x11mode.enable
+	call sa.cb_x11mode.enable
+	if prior.cb_priorpremf.isvisible() & prior.rb_flow {
+		call prior.cb_priorpremf.enable
+	}
+	if prior.cb_priorpreqf.isvisible() & prior.rb_flow  {
+		call prior.cb_priorpreqf.enable
+	}
+END
+
+LIST priortype_list
+BEGIN
+  permanent
+  temporary
+END	
+
+DIALOG reg, label("RegARIMA-X12 Seasonal Adjustment")  ///
+		 tabtitle("Regression")
+BEGIN
+DEFINE ht 55
+DEFINE wt 500
+  GROUPBOX  gb_pre 10 10 _iwd 190,	///
+            label("Predefined variables")	
+DEFINE ps 30
+DEFINE pp 280
+DEFINE pw 250
+DEFINE ph +20
+DEFINE es +180
+DEFINE iw 60
+  CHECKBOX   ck_const  ps  ph  pw 20, ///
+            label("Constant")  ///
+			option(const) ///
+			default(1)
+  CHECKBOX   ck_fseas  ps  ph  pw 20, ///
+            label("seasonal in dummy")  ///
+			onclickon(program prg_fseason) ///
+			onclickoff(program prg_fseasoff) ///
+			option(seasonal)
+  CHECKBOX   ck_sincos  pp  @  pw 20, ///
+            label("seasonal in trigometric")  ///
+			onclickon(program prg_sincoson) ///
+			onclickoff(program prg_sincosoff) ///
+			option(sincos)
+  SPINNER sp_sincos es @ iw 20, ///
+		  min(1) max(6) ///
+		  default(1) 
+  CHECKBOX   ck_td   ps  ph  pw 20 , ///
+            label("trading day with leap year")  ///
+			onclickon(program prg_tdon) ///
+			onclickoff(program prg_tdoff) ///
+			option(td)
+  CHECKBOX   ck_tdnolpyear pp  @ pw 20, ///
+            label("trading day without leap year")  ///
+			onclickon(program prg_tdnolpon) ///
+			onclickoff(program prg_tdnolpoff) ///
+			option(tdnolpyear)
+  CHECKBOX   ck_td1coef ps  ph 300 20, ///
+            label("trading day (one) with leap year")  ///
+			onclickon(program prg_td1coefon) ///
+			onclickoff(program prg_td1coefoff) ///
+			option(td1coef)
+  CHECKBOX   ck_td1nolpyear pp  @ pw 20, ///
+            label("trading day (one) without leap year")  ///
+			onclickon(program prg_td1nolpon) ///
+			onclickoff(program prg_td1nolpoff) ///
+			option(td1nolpyear)
+  CHECKBOX   ck_lpyear ps  ph  pw  20, ///
+            label("leap year")  ///
+			onclickon(program prg_lpon) ///
+			onclickoff(program prg_lpoff) ///
+			option(lpyear)
+  CHECKBOX   ck_tdstock pp  @  pw 20, ///
+            label("stock trading day")  ///
+			onclickon(program prg_tdstockon) ///
+			onclickoff(program prg_tdstockoff) ///
+			option(tdstock)
+  SPINNER sp_tdstock es  @ iw 20, ///
+		  min(1) max(31) ///
+		  default(31)
+  CHECKBOX   ck_lom  ps  ph  pw 20, ///
+            label("length of month")  ///
+			onclickon(program prg_lomqon) ///
+			onclickoff(program prg_lomqoff) ///
+			option(lom)
+  CHECKBOX   ck_loq  pp  @  pw 20, ///
+            label("length of quarter")  ///
+			onclickon(program prg_lomqon) ///
+			onclickoff(program prg_lomqoff) ///
+			option(loq)
+CHECKBOX   ck_easter  ps  ph  pw 20, ///
+            label("Easter Holiday")  ///
+			onclickon(program prg_easteron) ///
+			onclickoff(program prg_easteroff) ///
+			option(easter)
+  SPINNER sp_easter +120  @ iw 20, ///
+		  min(1) max(25) ///
+		  default(1)
+CHECKBOX   ck_sceaster  pp  @  pw 20, ///
+            label("Statistics Canada Easter")  ///
+			onclickon(program prg_sceasteron) ///
+			onclickoff(program prg_sceasteroff) ///
+			option(sceaster)
+  SPINNER sp_sceaster  es  @ iw 20, ///
+		  min(1) max(24) ///
+		  default(1)
+  CHECKBOX   ck_labor  ps  ph  pw 20, ///
+            label("Labor Day")  ///
+			onclickon(program prg_laboron) ///
+			onclickoff(program prg_laboroff) ///
+			option(labor)
+  SPINNER sp_labor  +120  @ iw 20, ///
+		  min(1) max(25) ///
+		  default(7)
+  CHECKBOX   ck_thank pp  @  pw 20, ///
+            label("Thanksgiving")  ///
+			onclickon(program prg_thankon) ///
+			onclickoff(program prg_thankoff) ///
+			option(thank)
+  SPINNER sp_thank  es  @ iw 20, ///
+		  min(-8) max(7) ///
+		  default(1)
+DEFINE rs 80
+DEFINE rw 440
+ GROUPBOX  gb_reguser 10 +40 _iwd 100,	///
+            label("User defined variables")	
+  TEXT      tx_reguser +10 +20 60 20, ///
+            label("Variables:") 
+  VARLIST   vl_reguser +60 @ 440 20, ///
+            option("reguser")
+  TEXT      tx_regusertype -60 +25 60 20, ///
+            label("Types:") 
+  COMBOBOX  cb_regusertypemf  rs  @  rw  100,	///
+		option("regusertype")		///
+        dropdown append   ///     
+		contents(regusertypemf_list) values(regusertypemf_value)
+  COMBOBOX  cb_regusertypems  rs  @  rw  100,	///
+		option("regusertype")		///
+        dropdown append   ///     
+		contents(regusertypems_list) values(regusertypems_value)
+  COMBOBOX  cb_regusertypeqf  rs  @  rw  100,	///
+		option("regusertype")		///
+        dropdown append   ///     
+		contents(regusertypeqf_list) values(regusertypeqf_value)
+  COMBOBOX  cb_regusertypeqs  rs  @  rw 100,	///
+		option("regusertype")		///
+        dropdown append   ///     
+		contents(regusertypeqs_list) values(regusertypeqs_value)
+  TEXT      tx_regusercent -60 +25 100 20, ///
+            label("Center type:") 
+  COMBOBOX  cb_regusercent  +80 @ 180 80,	///
+		option("regusercent")		///
+        dropdownlist   ///     
+		contents(regusercent_list) ///
+		values(regusercent_value) 
+
+  TEXT      tx_regaic 15 +40 60 20, ///
+            label("AIC test:") 
+  COMBOBOX  cb_regaic  +70 @ 450 100,	///
+		option("regaic")  ///
+        dropdown append   ///     
+		contents(regaic_list) ///
+		values(regaic_value)
+END
+
+// 
+PROGRAM prg_adjck
+BEGIN
+	if prior.cb_priorpremf.isenabled() {
+		if prior.cb_priorpremf.contains("lpyear")  {
+			stopbox stop "leap year has been specified in prior adustment"
+		}
+		if prior.cb_priorpremf.contains("lom")  {
+			stopbox stop "length of month has been specified in prior adustment"
+		}
+	}
+	if prior.cb_priorpreqf.isenabled() {
+		if prior.cb_priorpreqf.contains("lpyear")  {
+			stopbox stop "leap year has been specified in prior adustment"
+		}
+		if prior.cb_priorpreqf.contains("loq")  {
+			stopbox stop "length of quarter has been specified in prior adustment"
+		}
+	}
+END
+PROGRAM prg_adjckmq
+BEGIN
+	if prior.cb_priorpremf.isenabled() {
+		if prior.cb_priorpremf.contains("lom")  {
+			stopbox stop "length of month has been specified in prior adustment"
+		}
+	}
+	if prior.cb_priorpreqf.isenabled() {
+		if prior.cb_priorpreqf.contains("loq")  {
+			stopbox stop "length of quarter has been specified in prior adustment"
+		}
+	}
+END
+
+PROGRAM prg_fseason
+BEGIN
+	call reg.ck_sincos.setoff
+END
+PROGRAM prg_sincoson
+BEGIN
+	call reg.ck_fseas.setoff
+	call reg.sp_sincos.enable
+END
+PROGRAM prg_sincosoff
+BEGIN
+	call reg.sp_sincos.disable
+END
+PROGRAM prg_tdon
+BEGIN
+	call program prg_adjck
+	call reg.ck_tdnolpyear.setoff
+	call reg.ck_td1coef.setoff
+	call reg.ck_td1nolpyear.setoff
+	call reg.ck_lpyear.setoff
+	call reg.ck_lom.setoff
+	call reg.ck_loq.setoff
+END
+PROGRAM prg_tdnolpon
+BEGIN
+	call program prg_adjckmq
+	call reg.ck_td.setoff
+	call reg.ck_td1coef.setoff
+	call reg.ck_td1nolpyear.setoff
+	call reg.ck_lom.setoff
+	call reg.ck_loq.setoff
+END
+PROGRAM prg_td1coefon
+BEGIN
+	call program prg_adjck
+	call reg.ck_td.setoff
+	call reg.ck_tdnolpyear.setoff
+	call reg.ck_td1nolpyear.setoff
+	call reg.ck_lpyear.setoff
+	call reg.ck_lom.setoff
+	call reg.ck_loq.setoff
+END
+PROGRAM prg_td1nolpon
+BEGIN
+	call program prg_adjckmq
+	call reg.ck_td.setoff
+	call reg.ck_tdnolpyear.setoff
+	call reg.ck_td1coef.setoff
+	call reg.ck_lom.setoff
+	call reg.ck_loq.setoff
+END
+PROGRAM prg_lpon
+BEGIN
+	call program prg_adjck
+	call reg.ck_td.setoff
+	call reg.ck_td1coef.setoff
+	call reg.ck_lom.setoff
+	call reg.ck_loq.setoff
+END
+PROGRAM prg_tdstockon
+BEGIN
+	call reg.sp_tdstock.enable
+END
+PROGRAM prg_tdstockoff
+BEGIN
+	call reg.sp_tdstock.disable
+END
+
+PROGRAM prg_lomqon
+BEGIN
+	call program prg_adjck
+	call reg.ck_td.setoff
+	call reg.ck_td1coef.setoff
+	call reg.ck_tdnolpyear.setoff
+	call reg.ck_td1nolpyear.setoff
+	call reg.ck_lpyear.setoff
+END
+
+PROGRAM prg_easteron
+BEGIN
+	call reg.sp_easter.enable
+	call reg.ck_sceaster.setoff
+END
+PROGRAM prg_easteroff
+BEGIN
+	call reg.sp_easter.disable
+END
+PROGRAM prg_sceasteron
+BEGIN
+	call reg.sp_sceaster.enable
+	call reg.ck_easter.setoff
+END
+PROGRAM prg_sceasteroff
+BEGIN
+	call reg.sp_sceaster.disable
+END
+PROGRAM prg_laboron
+BEGIN
+	call reg.sp_labor.enable
+END
+PROGRAM prg_laboroff
+BEGIN
+	call reg.sp_labor.disable
+END
+PROGRAM prg_thankon
+BEGIN
+	call reg.sp_thank.enable
+END
+PROGRAM prg_thankoff
+BEGIN
+	call reg.sp_thank.disable
+END
+
+
+//
+LIST regusertypemf_list
+BEGIN 
+	Seasonal
+	Holiday
+	Trading Day(flow)
+	Length of Month
+	Leap Year
+	Easter Holiday
+	Thanksgiving Day
+	Labor Day
+	AO Outlier
+	LS Outlier
+	TC Outlier
+	User Defined
+	Constant
+END 
+LIST regusertypemf_value
+BEGIN 
+	seasonal
+	holiday
+	td
+	lom
+	lpyear
+	easter
+	thanks
+	labor
+	ao
+	ls
+	tc
+	user
+	constant
+END
+// 
+LIST regusertypeqf_list
+BEGIN 
+	Seasonal
+	Holiday
+	Trading Day(flow)
+	Length of Quarter
+	Leap Year
+	Easter Holiday
+	AO Outlier
+	LS Outlier
+	TC Outlier
+	User Defined
+	Constant
+END 
+LIST regusertypeqf_value
+BEGIN 
+	seasonal
+	holiday
+	td
+	loq
+	lpyear
+	easter
+	ao
+	ls
+	tc
+	user
+	constant
+END
+//
+LIST regusertypems_list
+BEGIN 
+	Seasonal
+	Holiday
+	Trading Day(stock)
+	AO Outlier
+	LS Outlier
+	TC Outlier
+	User Defined
+	Constant
+END 
+LIST regusertypems_value
+BEGIN 
+	seasonal
+	holiday
+	tdstock
+	ao
+	ls
+	tc
+	user
+	constant
+END
+//
+LIST regusertypeqs_list
+BEGIN 
+	Seasonal
+	Holiday
+	AO Outlier
+	LS Outlier
+	TC Outlier
+	User Defined
+	Constant
+END 
+LIST regusertypeqs_value
+BEGIN 
+	seasonal
+	holiday
+	ao
+	ls
+	tc
+	user
+	constant
+END
+
+
+LIST regusercent_value
+BEGIN 
+	""
+	mean
+	seasonal
+END
+LIST regusercent_list
+BEGIN 
+	already centered
+	subtract overall mean
+	subtract mean by season
+END
+LIST regaic_list
+BEGIN 
+	trading day (flow) and leap year
+	trading day (flow) 
+	working day and leap year
+	working day
+	trading day (stock)
+	easter
+	user defined variables
+END 
+LIST regaic_value
+BEGIN 
+	td
+	tdnolpyear
+	td1coef
+	td1nolpyear
+	tdstock
+	easter
+	user
+END 
+
+DIALOG out, label("RegARIMA-X12 Seasonal Adjustment")  ///
+		 tabtitle("Outlier")
+BEGIN
+  GROUPBOX  gb_out 10 10 _iwd 200,	///
+            label("Automatically identified outliers")
+  TEXT      tx_outauto +10 +25 100 20, ///
+            label("Outlier type:") 
+  CHECKBOX  ck_outautoao  +10  +25 200 20,	///
+		option("ao")  ///
+		label("AO (additive outlier)") ///
+		onclickon(program prg_outautoon) ///
+		onclickoff(program prg_outaooff) ///
+		default(1) 
+  CHECKBOX  ck_outautols  @  +25 200 20,	///
+		option("ls")  ///
+		label("LS (level shift)") ///
+		onclickon(program prg_outautoon) ///
+		onclickoff(program prg_outlsoff) ///
+		default(1) 
+  CHECKBOX  ck_outautotc  @  +25 200 20,	///
+		option("tc")  ///
+		label("TC (temporary change)") ///
+		onclickon(program prg_outautoon) ///
+		onclickoff(program prg_outtcoff) ///
+		default(0) 
+  GROUPBOX  gb_outauto +160 35 340 160,	///
+            label("Options")
+DEFINE wd 100
+DEFINE edw 110
+DEFINE st 200
+DEFINE ss 130
+DEFINE cbp +100
+DEFINE edp +110
+  TEXT  tx_outcrit st +25 100 20, ///
+        label("Critical values:") 
+  COMBOBOX cb_outcrit cbp @ wd 20, ///
+		dropdownlist ///
+		contents(list_outcrit)  ///
+		onselchangelist(sel_outcrit)  ///
+		default("default") 
+  EDIT ed_outcrit edp @ edw 20, ///
+        option("outcrit")
+/*  TEXT  tx_outcritnote +110 @ tw 20, ///
+        label("3.5,4.0,4,0 ; 3.5, ,4.0") 
+*/
+  TEXT  tx_outspan st +25 100 20, ///
+        label("Outlier span:") 
+  COMBOBOX cb_outspan cbp @ wd 20, ///
+		dropdownlist ///
+		contents(list_outcrit)  ///
+		onselchangelist(sel_outspan)  ///
+		default("default") 
+  EDIT ed_outspan edp @ edw 20, ///
+        option("outspan")
+/*   TEXT  tx_outspannote +110 @ tw 20, ///
+        label("2002.1,2009.12 ; 2002.jan, ") 
+*/
+  TEXT  tx_outlsrun st  +25 120 20, ///
+        label("LS run:") 
+  COMBOBOX  cb_outlsrun  cbp @ wd 60, ///
+		dropdownlist ///
+		contents(list_outlsrun) ///
+		default("0")  ///
+		option("outlsrun") 
+  TEXT  tx_outmeth st +25 100 20, ///
+        label("Identify method:") 
+  COMBOBOX  cb_outmeth  cbp @ wd 60, ///
+		dropdownlist ///
+		contents(outmeth_list) ///
+		default("addone")  ///
+		option("outmethod") 
+  HLINK lk_outexample st +25 120  20, label("note and examples") onpush("view help sax12##s_outlier")
+		
+  GROUPBOX  gb_outuser 10 +60 _iwd 120,	///
+            label("User defined outliers")	
+  DEFINE hy 420
+  TEXT      tx_outao 20 +25 100 20, ///
+            label("AO outliers:") 
+  EDIT   ed_outao 100 @ hy 20, ///
+            option("outao") ///
+			tooltip("Example: ao2003.5 ao2008.feb")
+  TEXT      tx_outls 20 +25 100 20, ///
+            label("LS outliers:") 
+  EDIT   ed_outls 100 @ hy 20, ///
+            option("outls") ///
+			tooltip("Example: ls1972.sep ls1997.12")
+  TEXT      tx_outtc 20 +25 100 20, ///
+            label("TC outliers:") 
+  EDIT   ed_outtc 100 @ hy 20, ///
+            option("outtc") ///
+			tooltip("Example: tc2008.5 tc2008.aug")
+END
+
+PROGRAM prg_outaooff
+BEGIN
+	if !out.ck_outautols & !out.ck_outautotc {
+		call program prg_outautooff
+	}
+END
+PROGRAM prg_outlsoff
+BEGIN
+	if !out.ck_outautoao & !out.ck_outautotc {
+		call program prg_outautooff
+	}
+END
+PROGRAM prg_outtcoff
+BEGIN
+	if !out.ck_outautoao & !out.ck_outautols {
+		call program prg_outautooff
+	}
+END
+PROGRAM prg_outautoon
+BEGIN
+	call gaction out.cb_outcrit.enable
+	call gaction out.ed_outcrit.enable
+	call gaction out.cb_outspan.enable
+	call gaction out.ed_outspan.enable
+	call gaction out.cb_outlsrun.enable
+	call gaction out.cb_outmeth.enable
+END
+PROGRAM prg_outautooff
+BEGIN
+	call gaction out.cb_outcrit.disable
+	call gaction out.ed_outcrit.disable
+	call gaction out.cb_outspan.disable
+	call gaction out.ed_outspan.disable
+	call gaction out.cb_outlsrun.disable
+	call gaction out.cb_outmeth.disable
+END
+
+
+LIST list_outcrit
+BEGIN
+	default
+	user defined
+END
+LIST sel_outcrit
+BEGIN
+	program prg_dfon
+	program prg_dfoff
+END
+PROGRAM prg_dfon
+BEGIN
+	call gaction out.ed_outcrit.hide
+	//call gaction out.tx_outcritnote.hide
+END
+PROGRAM prg_dfoff
+BEGIN
+	call gaction out.ed_outcrit.show
+	//call gaction out.tx_outcritnote.show
+END
+
+LIST sel_outspan
+BEGIN
+	program prg_dfspanon
+	program prg_dfspanoff
+END
+PROGRAM prg_dfspanon
+BEGIN
+	call gaction out.ed_outspan.hide
+	// call gaction out.tx_outspannote.hide
+END
+PROGRAM prg_dfspanoff
+BEGIN
+	call gaction out.ed_outspan.show
+	// call gaction out.tx_outspannote.show
+END
+
+LIST list_outlsrun
+BEGIN 
+	0
+	1
+	2
+	3
+	4
+	5
+END
+
+LIST outauto_values
+BEGIN 
+	ao
+	ls
+	tc
+	all
+	none
+END
+LIST outauto_list
+BEGIN 
+	additive outlier
+	level shift
+	temporary change
+	all
+	none
+END
+LIST outmeth_list
+BEGIN 
+	addone
+	addall
+END
+
+DIALOG arma, label("RegARIMA-X12 Seasonal Adjustment")  ///
+		 tabtitle("ARIMA")
+BEGIN
+  GROUPBOX  gb_arma 10 10 _iwd 230,	///
+            label("model specification")
+  RADIO  rb_amnone  20  +20  270  20,	 ///
+        first ///
+		label("None") ///
+		onclickon(script sp_amnoneon) ///
+		onclickoff(script sp_amnoneoff) 
+  RADIO  rb_ammodel  20  +25  270  20,	 ///
+        middle ///
+		label("Specify by hand (non-seasonal, seasonal):") ///
+		onclickon(script sp_ammodelon)  ///
+		onclickoff("arma.ed_ammodel.disable") 
+  EDIT ed_ammodel +300 @ 120 20, ///
+		default("(0,1,1)(0,1,1)") ///
+        option("ammodel")
+  RADIO  rb_amauto  20  +25  400  20,	 ///
+        middle ///
+		label("Automatic selection given maximum lag and difference:") ///
+		onclickon(program prg_amauon)  /// 
+		onclickoff(script sp_amauoff) ///
+		default(1)
+  RADIO  rb_amfile  20  +100  400  20,	 ///
+        last ///
+		label("Automatic selection in models stored in file:") ///
+		onclickon(arma.fi_ammdl.enable)  ///
+		onclickoff(arma.fi_ammdl.disable) 
+  FILE  fi_ammdl +25 +25 450  @, ///
+		error("Browse:") ///
+		label("Browse")	///
+		option("amfile")	///
+		filter(MDL (*.mdl)|*.mdl|All Files (*.*)|*.*) 
+DEFINE as 240
+DEFINE aw 60
+DEFINE ap +100
+DEFINE at 100
+DEFINE aps +70
+ TEXT tx_ammaxlag 40 -100 300 20, ///
+          label("Max lag of ARMA part:  Regular:") 
+  SPINNER sp_ammaxlag as @ 60 20, ///
+	min(1) max(4)  default(2) 
+ TEXT tx_ammaxlagseas ap @ at 20, ///
+          label("Seasonal:") 
+  SPINNER sp_ammaxlagseas aps @ aw 20, ///
+	min(1) max(2) default(1) 
+		
+  RADIO rb_ammaxdiff  40 +25 300 20, ///
+		first  ///
+		label("Max difference:     Regular:") ///
+        onclickon(program prg_maxdiffon)    ///
+        onclickoff(program prg_maxdiffoff) 
+  SPINNER sp_ammaxdiff as @ aw 20, ///
+		min(1) max(2) default(2) 
+ TEXT tx_ammaxdiffseas ap @ at 20, ///
+          label("Seasonal:") 
+  SPINNER sp_ammaxdiffseas aps  @  aw 20, ///
+		min(1) max(1) default(1) 
+  RADIO	rb_amfixdiff  40 +25  300  @, ///
+		last ///
+		label("Fixed difference:   Regular:")	 ///
+        onclickon(program prg_fixdiffon)    ///
+        onclickoff(program prg_fixdiffoff) 
+  SPINNER sp_amfixdiff  as  @  aw  20, ///
+	min(0) max(2)  default(1) 
+ TEXT tx_amfixdiffseas ap @  at  20, ///
+          label("Seasonal:") 
+  SPINNER sp_amfixdiffseas aps  @  aw  20, ///
+	min(0) max(1)  default(1) 
+		
+GROUPBOX  gb_armaest 10 +90 240 100,	///
+            label("Estimation options")
+DEFINE ams 30
+  TEXT tx_amspan ams +25 50 20, ///
+          label("Sample:") 
+  EDIT ed_amspan +50 @ 120 20, ///
+          option("amspan") 
+  TEXT tx_amspanex ams +25 180 20, ///
+          label("Example: 1995.1, 2009.12") 
+		  
+  GROUPBOX  gb_armafor 270 -50 270 100,	///
+            label("Forecast options")
+  DEFINE amn  80
+  TEXT tx_amlead +25 +20 120 20, ///
+          label("Number of forecast:") 
+  SPINNER sp_amlead +130 @ amn 20, ///
+		  option("ammaxlead") ///
+		  min(0) max(60) ///
+		  default(12)
+  TEXT tx_amback -130 +25 120 20, ///
+          label("Number of backcast:") 
+  SPINNER sp_amback +130 @ amn 20, ///
+		  option("ammaxback") ///
+		  min(0) max(60) ///
+		  default(0)
+  TEXT tx_amlevel -130 +25 120 20, ///
+          label("Confidence level:") 
+  SPINNER sp_amlevel +130 @ amn 20, ///
+		  option("amlevel") ///
+		  min(90) max(99) ///
+		  default(95)
+END
+
+PROGRAM prg_maxdiffon
+BEGIN
+	if arma.rb_amauto {
+		call gaction arma.sp_ammaxdiff.enable
+		call gaction arma.sp_ammaxdiffseas.enable
+	}
+END
+PROGRAM prg_maxdiffoff
+BEGIN
+	call gaction arma.sp_ammaxdiff.disable
+	call gaction arma.sp_ammaxdiffseas.disable
+END
+
+PROGRAM prg_fixdiffon
+BEGIN
+	if arma.rb_amauto {
+		call gaction arma.sp_amfixdiff.enable
+		call gaction arma.sp_amfixdiffseas.enable
+	}
+END
+PROGRAM prg_fixdiffoff
+BEGIN
+	call gaction arma.sp_amfixdiff.disable
+	call gaction arma.sp_amfixdiffseas.disable
+END
+
+
+SCRIPT sp_amnoneon
+BEGIN
+	arma.tx_amspan.disable
+	arma.ed_amspan.disable
+	arma.tx_amlead.disable
+	arma.sp_amlead.disable
+	arma.tx_amback.disable
+	arma.sp_amback.disable
+	arma.tx_amlevel.disable
+	arma.sp_amlevel.disable
+END
+SCRIPT sp_amnoneoff
+BEGIN
+	arma.tx_amspan.enable
+	arma.ed_amspan.enable
+	arma.tx_amlead.enable
+	arma.sp_amlead.enable
+	arma.tx_amback.enable
+	arma.sp_amback.enable
+	arma.tx_amlevel.enable
+	arma.sp_amlevel.enable
+END
+
+SCRIPT sp_ammodelon
+BEGIN
+	arma.ed_ammodel.enable
+	arma.sp_ammaxdiff.disable
+	arma.sp_ammaxdiffseas.disable
+END
+PROGRAM prg_amauon
+BEGIN
+	call gaction arma.tx_ammaxlag.enable
+	call gaction arma.sp_ammaxlag.enable
+	call gaction arma.sp_ammaxlagseas.enable
+	call gaction arma.rb_ammaxdiff.enable
+	if arma.rb_ammaxdiff {
+		call gaction arma.sp_ammaxdiff.enable
+		call gaction arma.sp_ammaxdiffseas.enable
+	}
+	call gaction arma.rb_amfixdiff.enable
+	if arma.rb_amfixdiff {
+		call gaction arma.sp_amfixdiff.enable
+		call gaction arma.sp_amfixdiffseas.enable
+	}
+END
+SCRIPT sp_amauoff
+BEGIN
+	arma.tx_ammaxlag.disable
+	arma.sp_ammaxlag.disable
+	arma.sp_ammaxlagseas.disable
+	arma.rb_ammaxdiff.disable
+	arma.sp_ammaxdiff.disable
+	arma.sp_ammaxdiffseas.disable
+	arma.rb_amfixdiff.disable
+	arma.sp_amfixdiff.disable
+	arma.sp_amfixdiffseas.disable
+END
+
+DIALOG sa, label("RegARIMA-x13 Seasonal Adjustment")  ///
+		 tabtitle("Adjustment")
+BEGIN
+ RADIO rb_x11 10 10 200 20,	///
+    first ///
+	label("X11 adjustment") ///
+	onclickon(program prg_x11on) ///
+	onclickoff(script sp_x11off) 
+ RADIO rb_sanone +200 10 100 20, ///
+    last ///
+	label("No adjustment") ///
+	option("sanone") 
+
+ GROUPBOX  gb_x11 10 +30 _iwd 300,	///
+            label("Options of X11")
+ TEXT tx_x11mode 30 +25 60 20, ///
+		label("X11 mode:") 
+ COMBOBOX  cb_x11mode +60 @ 160 60,  ///
+		option("x11mode") ///
+        dropdownlist  ///    
+		contents(x11mode_list) ///
+		values(x11mode_values) ///
+		onselchangelist(x11mode_prglist) ///
+		default("mult")
+  TEXT tx_sasig 30 +30 100 20, ///
+		label("Extreme limits:") 
+  COMBOBOX cb_sasig +100 @  120 20, ///
+		dropdownlist ///
+		contents(list_sasig)  ///
+		onselchangelist(sel_sasig)  
+  EDIT  ed_sasig +140 @  130 20, ///
+		option("x11sig")	
+  HLINK lk_saexample +150 @ 110  @, label("note and examples") onpush("view help sax12##s_x11")
+DEFINE saw 490
+DEFINE sas 40
+ GROUPBOX gb_safilter 30 +30 saw 90, ///
+        label("Options for trend and seasonal filter")
+  TEXT      tx_tfilt sas +25 80 20, ///
+            label("Trend filter:")
+  COMBOBOX  cb_tfilt +100 @ 150 60,  ///
+        dropdownlist  ///     
+		contents(tfilt_list) ///
+		values(tfilt_values) ///
+		onselchangelist(tfilt_sel)  
+  SPINNER  sp_tfilt +160  @  60  20,       ///
+        min(1)     ///
+        max(101) ///
+		option("x11trend")
+  TEXT      tx_sfilt sas +30 100 20, ///
+            label("Seasonal filter:")
+  COMBOBOX  cb_sfilt +100 @ 150 60,  ///
+		option("x11seas") ///
+        dropdownlist  ///     
+		contents(sfilt_list) ///
+		default("x11default")
+ GROUPBOX gb_sacomp 30 +50  saw 100, ///
+        label("Special treatment of the component in seasonal adjustment")
+   TEXT      tx_saout +10 +25 400 20, ///
+            label("Exclude the outliers out of the seasonally adjusted series:")
+  COMBOBOX  cb_saout @ +20 350 20,  ///
+		option("x11final") ///
+        dropdown append ///     
+		contents(final_list) 
+  CHECKBOX ck_keephol @ +25 400 @, ///
+		label("Keep holiday effect in the seasonally adjusted series")  ///
+		option("x11hol") ///
+		default(0) 
+END
+
+LIST x11mode_prglist
+BEGIN
+	program x11_prg1
+	program x11_prg2
+	program x11_prg3
+	program x11_prg4
+END
+PROGRAM x11_prg2
+BEGIN
+	if prior.cb_priorpre {
+		stopbox stop "additive mode do not allow prior adjustment"
+	}
+END
+PROGRAM x11_prg4
+BEGIN
+	if prior.cb_priorpre {
+		stopbox stop "additive mode do not allow prior adjustment"
+	}
+END
+
+LIST tfilt_sel
+BEGIN
+	sa.sp_tfilt.hide
+	sa.sp_tfilt.show
+END
+
+
+LIST list_sasig
+BEGIN
+	default(1.5 2.5)
+	user defined
+END
+LIST sel_sasig
+BEGIN
+	program prg_sacase1
+	program prg_sacase2
+END
+PROGRAM prg_sacase1
+BEGIN
+	call gaction sa.ed_sasig.hide
+END
+PROGRAM prg_sacase2
+BEGIN
+	call gaction sa.ed_sasig.show
+END
+
+
+PROGRAM prg_x11on
+BEGIN
+	if !prior.rb_auto {
+		call gaction sa.tx_x11mode.enable
+		call gaction sa.cb_x11mode.enable
+	}
+	call gaction sa.tx_sasig.enable
+	call gaction sa.cb_sasig.enable
+	call gaction sa.ed_sasig.enable
+	call gaction sa.tx_tfilt.enable
+	call gaction sa.cb_tfilt.enable
+	call gaction sa.tx_sfilt.enable
+	call gaction sa.cb_sfilt.enable
+	call gaction sa.tx_saout.enable
+	call gaction sa.cb_saout.enable
+	call gaction sa.ck_keephol.enable
+END
+SCRIPT sp_x11off
+BEGIN
+	sa.tx_x11mode.disable
+	sa.cb_x11mode.disable
+	sa.tx_sasig.disable
+	sa.cb_sasig.disable
+	sa.ed_sasig.disable
+	sa.tx_tfilt.disable
+	sa.cb_tfilt.disable
+	sa.tx_sfilt.disable
+	sa.cb_sfilt.disable
+	sa.tx_saout.disable
+	sa.cb_saout.disable
+	sa.ck_keephol.disable
+END
+LIST x11mode_values
+BEGIN
+	mult
+	add
+	pseudoadd
+	logadd
+END
+LIST x11mode_list
+BEGIN
+	multiplicative
+	additive
+	pseudo-Additive
+	log-additive
+END
+
+LIST sfilt_list
+BEGIN
+  x11default
+  S3x1
+  S3x5
+  S3x9
+  S3x15
+  stable
+END	
+LIST tfilt_list
+BEGIN
+  x11default
+  user specified(odd)
+END	
+LIST tfilt_values
+BEGIN
+  x11default
+  user[13] 
+END	
+LIST final_list 
+BEGIN 
+	ao
+	ls
+	tc
+	user
+END
+
+
+DIALOG stab, label("RegARIMA-x13 Seasonal Adjustment")  ///
+		 tabtitle("Others")
+BEGIN
+ CHECKBOX	ck_slid 10 10 330 @, ///
+		label("Sliding span analysis")  ///
+		option("sliding") ///
+ 		default(0) 
+ CHECKBOX	ck_hist 10 +25 330 @, ///
+		label("Revision history analysis")  ///
+		option("history") ///
+		default(0) 
+ CHECKBOX	ck_justspc 10 +25 460 @, ///
+		label("Just generate spc file and check it but not perform seasonal adjustment")  ///
+		option("justspc") ///
+ 		default(0) 
+  CHECKBOX  ck_dsa 10 +30 520 20, ///
+		label("Directly perform seasonal adjustment based on already defined spc(dta, mta) file(s)") /// 
+		onclickon(program prg_dsaon) ///
+		onclickoff(script sp_dsaoff)  ///
+		default(0)  ///
+		option("dsa") 
+
+GROUPBOX gb_stab  10  +30  _iwd 210,	///
+		label("Options")	
+  RADIO	rb_dsaspc  20 +20 450 20,  ///
+		first	///
+		label("Seasonal adjustment for single series based on one spc file")  ///
+		default(1) ///
+		option("satype(single)") ///
+		onclickon(program prg_dsaspcon) ///
+		onclickoff(script sp_dsaspcoff) 
+ DEFINE fit 380
+ TEXT   tx_dsaspc 40  +25 100 20, ///
+        label("Select spc file:")
+ FILE   fi_dsaspc +100 @  fit 20,	 ///
+		label("Browse")  ///
+		filter(spc file(*.spc)|*.spc|All Files(*.*)|*.*) ///
+		error("Select spc file") ///
+       option("dsaspc")
+  RADIO	rb_dsadta  20 +25 450 20,  ///
+		middle ///
+		option("satype(dta)") ///
+		label("Seasonal adjustment for multi-series based on one same spc and dta file") ///
+		onclickon(script sp_dsadtaon) ///
+		onclickoff(script sp_dsadtaoff) 
+ TEXT   tx_dsadtaspc 40  +25 100 20, ///
+        label("Select spc file:")
+ FILE   fi_dsadtaspc +100 @  fit 20,	 ///
+		label("Browse")  ///
+		filter(spc file(*.spc)|*.spc|All Files(*.*)|*.*) ///
+ 		error("Select spc file") ///
+      option("dsadtaspc")
+ TEXT   tx_dsadta 40  +25 100 20, ///
+        label("Select dta file:")
+ FILE   fi_dsadta  +100 @  fit 20,	 ///
+		label("Browse")  ///
+		filter(dta file(*.dta)|*.dta|All Files(*.*)|*.*) ///
+		error("Select dta file") ///
+       option("dsadta")
+  RADIO	rb_dsamta  20 +25 450 20,  ///
+		last ///
+		option("satype(mta)") ///
+		label("Seasonal adjustment for multi-series based on mta file:")  ///
+		onclickon(script sp_dsamtaon) ///
+		onclickoff(script sp_dsamtaoff) 
+ TEXT   tx_dsamta 40  +25 100 20, ///
+        label("Select mta file:")
+ FILE   fi_dsamta +100 @  fit 20,	 ///
+		label("Browse")  ///
+		filter(spc file(*.mta)|*.mta|All Files (*.*)|*.*) ///
+		error("Select mta file") ///
+       option("dsamta")
+END
+
+PROGRAM prg_dsaon
+BEGIN
+	call gaction stab.rb_dsaspc.enable
+	call gaction stab.rb_dsadta.enable
+	call gaction stab.rb_dsamta.enable
+	if stab.rb_dsaspc {
+		call gaction stab.tx_dsaspc.enable
+		call gaction stab.fi_dsaspc.enable
+	}
+	if stab.rb_dsadta {
+		call gaction stab.tx_dsadtaspc.enable
+		call gaction stab.fi_dsadtaspc.enable
+		call gaction stab.tx_dsadta.enable
+		call gaction stab.fi_dsadta.enable
+	}
+	if stab.rb_dsamta {
+		call gaction stab.tx_dsamta.enable
+		call gaction stab.fi_dsamta.enable
+	}
+END
+
+SCRIPT sp_dsaoff 
+BEGIN
+	stab.rb_dsaspc.disable
+	stab.fi_dsaspc.disable
+	stab.rb_dsadta.disable
+	stab.fi_dsadtaspc.disable
+	stab.fi_dsadta.disable
+	stab.rb_dsamta.disable
+	stab.fi_dsamta.disable
+	stab.tx_dsaspc.disable
+	stab.tx_dsadtaspc.disable
+	stab.tx_dsadta.disable
+	stab.tx_dsamta.disable
+END
+
+PROGRAM prg_dsaspcon
+BEGIN
+	if stab.ck_dsa {
+		call gaction stab.tx_dsaspc.enable
+		call gaction stab.fi_dsaspc.enable
+	}
+	else {
+		call gaction stab.tx_dsaspc.disable
+		call gaction stab.fi_dsaspc.disable
+	}
+END
+
+SCRIPT sp_dsaspcoff
+BEGIN
+	stab.tx_dsaspc.disable
+	stab.fi_dsaspc.disable
+END
+
+SCRIPT sp_dsadtaon 
+BEGIN
+  stab.tx_dsadtaspc.enable
+  stab.tx_dsadta.enable
+  stab.fi_dsadtaspc.enable
+  stab.fi_dsadta.enable
+END
+
+SCRIPT sp_dsadtaoff
+BEGIN
+  stab.tx_dsadtaspc.disable
+  stab.tx_dsadta.disable
+  stab.fi_dsadtaspc.disable
+  stab.fi_dsadta.disable
+END
+
+SCRIPT sp_dsamtaon
+BEGIN
+	stab.tx_dsamta.enable
+	stab.fi_dsamta.enable
+END
+SCRIPT sp_dsamtaoff
+BEGIN
+	stab.tx_dsamta.disable
+	stab.fi_dsamta.disable
+END
+
+/* -------- Check Program ------------*/
+//PROGRAM POSTINIT_PROGRAM
+//BEGIN
+//END
+
+/* -------- Run Program ------------*/
+PROGRAM command
+BEGIN
+	put "sax12 "
+	if stab.ck_dsa {
+		beginoptions 
+			option stab.ck_dsa
+			option radio(stab rb_dsaspc rb_dsadta rb_dsamta)
+			if stab.rb_dsaspc {
+				require stab.fi_dsaspc
+			}
+			if stab.rb_dsadta {
+				require stab.fi_dsadtaspc
+				require stab.fi_dsadta
+			}
+			if stab.rb_dsamta {
+				require stab.fi_dsamta
+			}
+			optionarg stab.fi_dsaspc
+			optionarg stab.fi_dsadtaspc
+			optionarg stab.fi_dsadta
+			optionarg stab.fi_dsamta
+		endoptions
+	}
+	else {
+		if main.rb_single {
+			varlist main.vl_single
+		}
+		if main.rb_dta {
+			varlist main.vl_dta
+		}
+		if main.rb_mta {
+			 require main.fi_mta
+		}
+		INCLUDE _ifin_pr
+		beginoptions 
+			option radio(main rb_single rb_dta rb_mta)
+			if main.rb_single {
+				optionarg main.cb_comp
+				optionarg main.fi_spc1
+				optionarg main.ed_outpref1
+			}
+			if main.rb_dta {
+				optionarg main.fi_dtasave
+				optionarg main.ed_outpref2
+			}
+			if main.rb_mta {
+				optionarg main.fi_mta
+				optionarg main.fi_mtasave
+				option main.ck_compsa
+				if main.ck_compsa {
+					optionarg main.fi_spc3
+				}
+				optionarg main.ed_outpref3
+			}
+			if (main.rb_single | main.rb_dta | main.ck_compsadir) {
+				option main.ck_compsadir
+				if prior.rb_power {
+					optionarg prior.ed_power 
+				}
+				else {
+					option radio(prior rb_none rb_auto rb_log rb_sqrt rb_inv rb_logis)  
+				}
+				if prior.cb_priorpremf.isenabled() & !prior.cb_priorpremf.isdefault() {
+					optionarg prior.cb_priorpremf
+				}
+				if prior.cb_priorpreqf.isenabled() & !prior.cb_priorpreqf.isdefault()  {
+					optionarg prior.cb_priorpreqf
+				}
+				option prior.rb_stock
+				optionarg prior.vl_priorvar
+				optionarg prior.cb_priormode
+				optionarg prior.cb_priortype
+				put " regpre("
+					if reg.ck_const {
+						option reg.ck_const
+					}
+					if reg.ck_fseas {
+						option reg.ck_fseas
+					}
+					if reg.ck_sincos.isenabled() & reg.ck_sincos {
+						option reg.ck_sincos
+						put "["
+						put reg.sp_sincos
+						put "]"
+					}
+					if reg.ck_td {
+						option reg.ck_td
+					}
+					if reg.ck_tdnolpyear {
+						option reg.ck_tdnolpyear
+					}
+					if reg.ck_td1coef {
+						option reg.ck_td1coef
+					}
+					if reg.ck_td1nolpyear {
+						option reg.ck_td1nolpyear
+					}
+					if reg.ck_lpyear {
+						option reg.ck_lpyear
+					}
+					if reg.ck_lom {
+						option reg.ck_lom
+					}
+					if reg.ck_loq {
+						option reg.ck_loq
+					}
+					if reg.ck_tdstock.isenabled() & reg.ck_tdstock {
+						option reg.ck_tdstock
+						put "["
+						put reg.sp_tdstock
+						put "]"
+					}
+					if reg.ck_easter.isenabled() & reg.ck_easter {
+						option reg.ck_easter
+						put "["
+						put reg.sp_easter
+						put "]"
+					}
+					if reg.ck_sceaster.isenabled() & reg.ck_sceaster {
+						option reg.ck_sceaster
+						put "["
+						put reg.sp_sceaster
+						put "]"
+					}
+					if reg.ck_labor.isenabled() & reg.ck_labor {
+						option reg.ck_labor
+						put "["
+						put reg.sp_labor
+						put "]"
+					}
+					if reg.ck_thank.isenabled() & reg.ck_thank {
+						option reg.ck_thank
+						put "["
+						put reg.sp_thank
+						put "]"
+					}
+				put ") "
+				optionarg reg.vl_reguser
+				optionarg reg.cb_regusertypemf
+				optionarg reg.cb_regusertypems
+				optionarg reg.cb_regusertypeqf
+				optionarg reg.cb_regusertypeqs
+				optionarg reg.cb_regusercent
+				optionarg reg.cb_regaic
+				optionarg out.ed_outao
+				optionarg out.ed_outls
+				optionarg out.ed_outtc
+				if out.ck_outautoao | out.ck_outautols | out.ck_outautotc {
+					put "outauto("
+					option out.ck_outautoao
+					option out.ck_outautols
+					option out.ck_outautotc
+					put ")"
+					optionarg out.ed_outcrit
+					optionarg out.ed_outspan
+					optionarg out.cb_outlsrun
+					if !out.cb_outmeth.isdefault() {
+						optionarg out.cb_outmeth
+					}
+				}
+
+				if arma.rb_ammodel {
+					optionarg arma.ed_ammodel
+				}
+				if arma.rb_amauto {
+					put " ammaxlag("
+					put arma.sp_ammaxlag
+					put " "
+					put arma.sp_ammaxlagseas
+					put ")"
+					if arma.rb_ammaxdiff {
+						put " ammaxdiff("
+						put arma.sp_ammaxdiff
+						put " "
+						put arma.sp_ammaxdiffseas
+						put ")"
+					}
+					if arma.rb_amfixdiff {
+						put " amfixdiff("
+						put arma.sp_amfixdiff
+						put " "
+						put arma.sp_amfixdiffseas
+						put ")"
+					}
+				}
+				if arma.rb_amfile {
+					optionarg arma.fi_ammdl
+				}
+				optionarg arma.ed_amspan
+				optionarg arma.sp_amlead
+				if !arma.sp_amback.isdefault() {
+					optionarg arma.sp_amback
+				}
+				if !arma.sp_amlevel.isdefault() {
+					optionarg arma.sp_amlevel
+				}
+				
+				option sa.rb_sanone
+				if sa.rb_x11 {
+					optionarg sa.cb_x11mode
+					optionarg sa.ed_sasig
+					optionarg sa.sp_tfilt
+					optionarg sa.cb_sfilt
+					optionarg sa.cb_saout
+					option sa.ck_keephol
+				}
+
+				option stab.ck_slid
+				option stab.ck_hist
+			}
+			option stab.ck_justspc
+		endoptions
+	}
+END

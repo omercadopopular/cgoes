@@ -1,0 +1,185 @@
+*! RegARIMA-X12 version 1.0, 27 Sep 2010, Qunyong Wang, brynewqy@nankai.edu.cn 
+/* 
+*!    for sax12.ado
+To install in User Statistics menu via Stata commands:
+  . window menu append item "stUserStatistics" "RegARIMA-X12 seasonal adjustment" "db sax12"
+  . window menu append item "stUserData" "Import data after seasonal adjustment" "db saimport"
+  . window menu append item "stUserGraphics" "Make graphs after seasonal adjustment" "db sagraph"
+  . window menu refresh
+To permanently install, place the commands in your -profile.do- file.
+*/
+
+VERSION 11.0
+
+INCLUDE _std_large
+INCLUDE _ht320
+INCLUDE header
+
+HELP hlp1, view("help sax12im")
+RESET res1, label("Reset")
+
+DIALOG main, label("Import Series After X-12-ARIMA Seasonal Adjustment")  ///
+		 tabtitle("main")
+BEGIN
+  TEXT  tx_sel  10 10 200 @,	///
+		label("Select X-12-ARIMA results:")
+  FILE fi_sel 10 +20 _iwd 20,	 ///
+		error("Browse:")	///
+		label("Browse") multiselect ///
+		filter((*.out)|*.out) ///
+		onchange(script add_file)
+  EDIT  ed_x12  @  +30  _iwd  @
+ GROUPBOX gb_impvar 10 +30 _iwd 220, ///
+            label("Choose the series to import") 
+  TEXT  tx_ext  +10 +20 300 @,	///
+		label("Select the series or insert the suffix:")
+  COMBOBOX cb_ext @ +25 450  80, ///
+		dropdown append ///
+		contents(ext_list) ///
+		values(ext_values) ///
+		default("d10 d11 d12 d13")  ///
+		option("ext") 
+  CHECKBOX  ck_imat  20 +25 280 20,	///
+		label("import as matrix") ///
+		option("noftvar") ///
+		onclickon(script sp_imaton) ///
+		onclickoff(script sp_imatoff)
+  CHECKBOX  ck_tunit  @ +30 280 20,	///
+		label("specify the frequency if no data in memory:") ///
+		onclickon(main.cb_tunit.enable) ///
+		onclickoff(main.cb_tunit.disable) 
+  COMBOBOX cb_tunit +290 @ 100  60, ///
+		dropdownlist ///
+		contents(freq_list) ///
+		option("tunit") 
+  RADIO  rb_warn  20 +25 _iwd 20,	///
+         first ///
+		label("not update the obs using dataset on disk if variables already exist")
+  RADIO  rb_update  20 +25 _iwd 20,	///
+         last ///
+		label("update the obs using dataset on disk if variables already exist") ///
+		option("update")
+  CHECKBOX  ck_clear  20 +25 280 20,	///
+		label("clear the data in memory") ///
+		option("clear") ///
+		onclickon(program prg_clear)
+END
+
+SCRIPT sp_imaton
+BEGIN
+	main.ck_tunit.disable
+	main.cb_tunit.disable
+	main.rb_warn.disable
+	main.rb_update.disable
+	main.ck_clear.disable
+END
+SCRIPT sp_imatoff
+BEGIN
+	main.ck_tunit.enable
+	main.cb_tunit.enable
+	main.rb_warn.enable
+	main.rb_update.enable
+	main.ck_clear.enable
+END
+
+PROGRAM prg_clear
+BEGIN
+	if !main.ck_tunit {
+		stopbox note "You must specify the frequency." "Press OK to continue."
+	}
+END
+SCRIPT add_file
+BEGIN
+  action withvalue main.ed_x12.insert `"@ "'
+END 
+LIST freq_list
+BEGIN
+	monthly
+	quarterly
+END
+LIST ext_list
+BEGIN
+	seasonal factor(d10)
+	seasonal adjusted series(d11)
+	trend-cycle component(d12)
+	irregular component(d13)
+	combined outlier factor(otl)
+	additive outlier factor(ao)
+	level shift factor(ls)
+	temporary change factor(tc)
+	trading day factor(td)
+	holiday factor(hol)
+	factors of user defined variables(usr)
+	seasonal and trading day factors(d16)
+	holiday and trading day factors(d18)
+	holiday prior adjustment factors(chl) 
+	percent change in original series(pe5)
+	percent change in seasonally adjusted series(pe6)
+	percent change in trend-cylce series(pe7)
+	unmodified SI ratio(d8b)
+	prior-adjustment factor(a2)
+	prior-adjusted series(a3)
+	prior-adjusted and transformed series(trn)	
+	original series(a1)	
+	spectrum of seasonally adjusted series(change) (sp1)
+	spectrum of irregular componnet (sp2)
+	spectrum of the original series (sp0)
+	spectrum of the RegARIMA residual (spr)
+	ACF of RegARIMA residual (acf)
+	PACF of RegARIMA residual (pcf)
+	ACF of RegARIMA squared residual (ac2)
+END
+LIST ext_values
+BEGIN
+	d10 
+	d11
+	d12
+	d13
+	otl
+	ao
+	ls
+	tc
+	td
+	hol
+	usr
+	d16
+	d18
+	chl
+	pe5
+	pe6
+	pe7
+	d8b
+	a2
+	a3
+	trn
+	a1
+	sp1
+	sp2
+	sp0
+	spr
+	acf 
+	pcf
+	ac2
+END
+
+// INCLUDE ifin
+
+
+/* -------- Run Program ------------*/
+
+PROGRAM command
+BEGIN
+  put "sax12im "
+  put main.ed_x12
+  // INCLUDE _ifin_pr
+ beginoptions
+	optionarg main.cb_ext
+	if main.ck_tunit {
+		optionarg main.cb_tunit
+	}
+	option main.rb_update
+	option main.ck_clear
+	option main.ck_imat
+  endoptions
+END
+

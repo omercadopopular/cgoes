@@ -1,0 +1,91 @@
+{smcl}
+{* 06sep2006/08aug2006}{...}
+{hline}
+help for {hi:ddirifit}
+{hline}
+
+{title:Displaying discrete changes and marginal effects from dirifit output}
+
+{p 8 17 2}
+{cmd:ddirifit} 
+[{cmd:,} 
+{cmd:at(}{it:variables_and_values}{cmd:)} 
+{cmdab:iter:ate(}{it:#}{cmd:)}
+]
+
+
+{title:Description}
+
+{p 4 4 2} {cmd:ddirifit} displays the change in predicted dependent variable 
+for three types of discrete changes in explanatory variable and the marginal 
+effects:
+
+
+{p 8 8 2}{cmd:Discrete Changes}
+
+{p 8 8 2}{cmd:Min --> Max} shows the change in predicted dependent variable 
+when the explanatory variable changes from its minimum value to its maximum
+value, while keeping all other explanatory variables at their specified 
+values (by default the mean). This is the only effect shown for dummy 
+variables (variables with only two distinct values).
+
+{p 8 8 2}{cmd:+-SD/2} shows the change in predicted dependent variable when the 
+explanatory variable moves from half a standard deviation below its specified 
+value (by default the mean) to half a standard deviation above its specified 
+value, while keeping all other variables at their specified values. In other 
+words: It shows the effect of a standard deviation change in explanatory 
+variable, centered around the specified value, on the predicted dependent 
+variable.
+
+{p 8 8 2}{cmd:+-1/2} shows the change in predicted dependent variable when the 
+explanatory variable moves from half a unit below its specified value to half 
+a unit above its specified value, while keeping all other variables at their 
+specified values. In other words: It shows the effect of a unit change in 
+explanatory variable, centered around the specified value, on the predicted 
+dependent variable.
+
+
+{p 8 8 2}{cmd:Marginal Effects}
+
+{p 8 8 2}{cmd:MFX at x} shows the marginal effect of each (non dummy) variable,
+while keeping all variables at their specified values. The marginal effect is 
+the change in predicted dependent variable for a unit change in the explanatory 
+variable, assuming that the effect doesn't change over that interval.
+
+{p 4 4 2} {cmd:ddirifit} is only allowed after {cmd:dirifit} in the alternative
+parameterization, i.e. if one or more of {cmd:muvar()}, 
+{cmd:mu1|2|3|...|}{it:k}{cmd:()}, {cmd:baseoutcome()}, and {cmd:phivar()} is
+specified or if the {cmd:alternative} option is specified.
+
+{title:Options}
+
+{p 4 8 2}{cmd:at(}{it:variables_and_values}{cmd:)} allow the user to specify at 
+which values of the explanatory variables the effects are calculated. 
+{it:variables_and_values} is an alternating list of variables and either numeric 
+values or mean, median, min, max, p1, p5, p10 p25, p50, p75, p90, p95, p99. The 
+default is mean for all variables. The statistics p1, p5, ..., p99, are the 1st,
+5th, ..., 99th percentile.
+
+{p 4 8 2}{cmd:iterate(}{it:#}{cmd:)} is passed directly to {cmd:nlcom}. It 
+specifies the maximum number of iterations used to find the optimal step size in 
+calculating numerical derivatives. You should rarely have to use this option. 
+See: {help nlcom}.
+
+{title:Examples}
+
+{p 4 8 2}{cmd:. dirifit propfood, mu(income nchild) phi(haspartner)}
+
+{p 4 8 2}{cmd:. ddirifit}
+
+{p 4 8 2}{cmd:. ddirifit, at(income median nchild 2)}
+
+{title:Author}
+
+{p 4 4 2}Maarten L. Buis, Vrije Universiteit Amsterdam{break}m.buis@fsw.vu.nl
+
+
+{title:Also see}
+
+{p 4 13 2}
+Online: help for {help dirifit} and {help nlcom}
+

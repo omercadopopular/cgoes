@@ -1,0 +1,193 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r04.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 13:54:28
+{txt}
+{com}. 
+. use "data\temp\mun-master-dataset-census.dta", clear
+{txt}
+{com}. 
+. 
+. local group worker_f worker_inf w_f w_inf
+{txt}
+{com}. 
+. foreach var of local group {c -(}
+{txt}  2{com}.         di "`var'"
+{txt}  3{com}.         
+.         matrix results_`var' = J(4, 8,.)
+{txt}  4{com}.         matrix colnames results_`var' = inst_version b se t_stat p_value F1 obs s_fe
+{txt}  5{com}. 
+.         qui ivreghdfe g`var' (gvl_fob = giv_comtrade) LaborShr2000 base_l`var', absorb(uf) first
+{txt}  6{com}.         mat results_`var'[1,1]= 1
+{txt}  7{com}.         mat results_`var'[1,2]=_b[gvl_fob]
+{txt}  8{com}.         mat results_`var'[1,3]=_se[gvl_fob]
+{txt}  9{com}.         
+.         local t = _b[gvl_fob] / _se[gvl_fob]
+{txt} 10{com}.         local p = 2*ttail(e(df_r),abs(`t'))
+{txt} 11{com}.         
+.         mat results_`var'[1,4]= `t'
+{txt} 12{com}.         mat results_`var'[1,5]= `p'
+{txt} 13{com}.         
+.         mat temp=e(first)
+{txt} 14{com}.         mat results_`var'[1,6]=temp[8,1]
+{txt} 15{com}.         mat results_`var'[1,7]=e(N)
+{txt} 16{com}.         mat results_`var'[1,8]=1
+{txt} 17{com}. 
+.         qui ivreghdfe g`var' (gvl_fobr = giv) LaborShr2000 base_l`var', absorb(uf) first
+{txt} 18{com}.         mat results_`var'[2,1]= 2
+{txt} 19{com}.         mat results_`var'[2,2]=_b[gvl_fobr]
+{txt} 20{com}.         mat results_`var'[2,3]=_se[gvl_fobr]
+{txt} 21{com}.         
+.         local t = _b[gvl_fob] / _se[gvl_fob]
+{txt} 22{com}.         local p = 2*ttail(e(df_r),abs(`t'))
+{txt} 23{com}.         
+.         mat results_`var'[2,4]= `t'
+{txt} 24{com}.         mat results_`var'[2,5]= `p'
+{txt} 25{com}.         
+.         mat temp=e(first)
+{txt} 26{com}.         mat results_`var'[2,6]=temp[8,1]
+{txt} 27{com}.         mat results_`var'[2,7]=e(N)
+{txt} 28{com}.         mat results_`var'[2,8]=1
+{txt} 29{com}.         
+.         qui ivreghdfe g`var' (gvl_fob = giv_comtrade) LaborShr2000 base_l`var',  first
+{txt} 30{com}.         mat results_`var'[3,1]= 1
+{txt} 31{com}.         mat results_`var'[3,2]=_b[gvl_fob]
+{txt} 32{com}.         mat results_`var'[3,3]=_se[gvl_fob]
+{txt} 33{com}.         
+.         local t = _b[gvl_fob] / _se[gvl_fob]
+{txt} 34{com}.         local p = 2*ttail(e(df_m),abs(`t'))
+{txt} 35{com}.         
+.         mat results_`var'[3,4]= `t'
+{txt} 36{com}.         mat results_`var'[3,5]= `p'
+{txt} 37{com}.         
+.         mat temp=e(first)
+{txt} 38{com}.         mat results_`var'[3,6]=temp[8,1]
+{txt} 39{com}.         mat results_`var'[3,7]=e(N)
+{txt} 40{com}.         mat results_`var'[3,8]=0
+{txt} 41{com}. 
+.         qui ivreghdfe g`var' (gvl_fobr = giv) LaborShr2000 base_l`var', first
+{txt} 42{com}.         mat results_`var'[4,1]= 2
+{txt} 43{com}.         mat results_`var'[4,2]=_b[gvl_fobr]
+{txt} 44{com}.         mat results_`var'[4,3]=_se[gvl_fobr]
+{txt} 45{com}.         
+.         local t = _b[gvl_fob]/_se[gvl_fob]
+{txt} 46{com}.         local p = 2*ttail(e(df_m),abs(`t'))
+{txt} 47{com}.         
+.         mat results_`var'[4,4]= `t'
+{txt} 48{com}.         mat results_`var'[4,5]= `p'
+{txt} 49{com}.         
+.         mat temp=e(first)
+{txt} 50{com}.         mat results_`var'[4,6]=temp[8,1]
+{txt} 51{com}.         mat results_`var'[4,7]=e(N)
+{txt} 52{com}.         mat results_`var'[4,8]=0        
+{txt} 53{com}.         
+.         xsvmat results_`var', name(col) saving("results/temp/mun_census_results_`var'.dta", replace)
+{txt} 54{com}.         xsvmat results_`var', name(col) list(,) 
+{txt} 55{com}.         
+.         preserve 
+{txt} 56{com}.                 clear 
+{txt} 57{com}.                 svmat results_`var', names(col)
+{txt} 58{com}.                 export excel using "results/mun-census.xlsx", firstrow(var) sheet("`var'", modify)
+{txt} 59{com}.         restore
+{txt} 60{com}. {c )-}
+worker_f
+{txt}{p 0 4 2}
+file {bf}
+results/temp/mun_census_results_worker_f.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c TRC}
+     {c |} {res}inst_v~n          b         se     t_stat    p_value         F1    obs   s_fe {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c RT}
+  1. {c |} {res}       1   .0517518   .0201709   2.565664   .0104137   32.02823   1278      1 {txt}{c |}
+  2. {c |} {res}       2   .1160058   .2586335   .4485335   .6538464   .3260455   1270      1 {txt}{c |}
+  3. {c |} {res}       1   .0435679   .0244809   1.779668   .1731755   23.99874   1279      0 {txt}{c |}
+  4. {c |} {res}       2   1.343365   2.784931   .4823692   .6625507   .2294638   1272      0 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c BRC}
+number of observations will be reset to 4
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 4.
+{p_end}
+{res}{txt}file {bf:results/mun-census.xlsx} saved
+worker_inf
+{p 0 4 2}
+file {bf}
+results/temp/mun_census_results_worker_inf.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c TRC}
+     {c |} {res}inst_v~n           b         se      t_stat    p_value         F1    obs   s_fe {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c RT}
+  1. {c |} {res}       1   -.1200926   .0266977   -4.498245   7.49e-06   34.24612   1278      1 {txt}{c |}
+  2. {c |} {res}       2   -.9272814   1.144848   -.8099601   .4181181    .658641   1270      1 {txt}{c |}
+  3. {c |} {res}       1   -.1387605    .032731   -4.239423   .0240295   27.39021   1279      0 {txt}{c |}
+  4. {c |} {res}       2    1.545197   3.112899    .4963853   .6537146   .2479138   1272      0 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c BRC}
+number of observations will be reset to 4
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 4.
+{p_end}
+{res}{txt}file {bf:results/mun-census.xlsx} saved
+w_f
+{p 0 4 2}
+file {bf}
+results/temp/mun_census_results_w_f.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c TRC}
+     {c |} {res}inst_v~n           b         se      t_stat    p_value         F1    obs   s_fe {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c RT}
+  1. {c |} {res}       1    .0249233   .0119774    2.080866   .0376495   32.29589   1278      1 {txt}{c |}
+  2. {c |} {res}       2    .0205745   .0798596    .2576331   .7967327   .6721914   1270      1 {txt}{c |}
+  3. {c |} {res}       1     .000807     .01333    .0605413    .955532   25.82113   1279      0 {txt}{c |}
+  4. {c |} {res}       2   -.5084491   1.128223   -.4506637   .6828107   .2077162   1272      0 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c BRC}
+number of observations will be reset to 4
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 4.
+{p_end}
+{res}{txt}file {bf:results/mun-census.xlsx} saved
+w_inf
+{p 0 4 2}
+file {bf}
+results/temp/mun_census_results_w_inf.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c TRC}
+     {c |} {res}inst_v~n           b         se      t_stat    p_value         F1    obs   s_fe {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c RT}
+  1. {c |} {res}       1    .0487666   .0186551    2.614115   .0090535   33.40364   1278      1 {txt}{c |}
+  2. {c |} {res}       2    .2563888   .3102244    .8264623   .4087005   .7668431   1270      1 {txt}{c |}
+  3. {c |} {res}       1    .0011207   .0194491    .0576241   .9576715   30.03703   1279      0 {txt}{c |}
+  4. {c |} {res}       2   -2.145353   6.594718   -.3253139   .7663113   .1060027   1272      0 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c -}{hline 6}{c BRC}
+number of observations will be reset to 4
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 4.
+{p_end}
+{res}{txt}file {bf:results/mun-census.xlsx} saved
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. do "code\%stata_mun\g01_plot_irfs.do"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

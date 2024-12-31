@@ -1,0 +1,15 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\froman Times New Roman;}{\f1\fswiss Arial;}{\f2\fmodern Courier New;}}
+\trowd\intbl\trautofit1\trgaph144\sb79\sa0\trqc\clbrdrt\brdrs\cellx1176\clbrdrt\brdrs\cellx3024\clbrdrt\brdrs\cellx5208\clbrdrt\brdrs\cellx7392\fs24 \ql \cell \qc Full Sample\cell \qc Winsorized 1%\cell \qc Winsorized 1%\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb79\sa0\trqc\clbrdrt\brdrs\cellx1176\clbrdrt\brdrs\cellx3024\clbrdrt\brdrs\cellx5208\clbrdrt\brdrs\cellx7392\fs24 \pard\intbl\ql giv\cell \pard\intbl\tqdec\tx674 {\fs24 2.852***}\cell \pard\intbl\tqdec\tx811 {\fs24 }\cell \pard\intbl\tqdec\tx811 {\fs24 }\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql \cell \pard\intbl\tqdec\tx674 {\fs20 (0.256)}\cell \pard\intbl\tqdec\tx811 {\fs20 }\cell \pard\intbl\tqdec\tx811 {\fs20 }\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql giv_w1\cell \pard\intbl\tqdec\tx674 {\fs24 }\cell \pard\intbl\tqdec\tx811 {\fs24 3.119***}\cell \pard\intbl\tqdec\tx811 {\fs24 }\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql \cell \pard\intbl\tqdec\tx674 {\fs20 }\cell \pard\intbl\tqdec\tx811 {\fs20 (0.204)}\cell \pard\intbl\tqdec\tx811 {\fs20 }\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql g2iv_w1\cell \pard\intbl\tqdec\tx674 {\fs24 }\cell \pard\intbl\tqdec\tx811 {\fs24 }\cell \pard\intbl\tqdec\tx811 {\fs24 2.595***}\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql \cell \pard\intbl\tqdec\tx674 {\fs20 }\cell \pard\intbl\tqdec\tx811 {\fs20 }\cell \pard\intbl\tqdec\tx811 {\fs20 (0.480)}\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql _cons\cell \pard\intbl\tqdec\tx674 {\fs24 0.049***}\cell \pard\intbl\tqdec\tx811 {\fs24 0.044***}\cell \pard\intbl\tqdec\tx811 {\fs24 0.324***}\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql \cell \pard\intbl\tqdec\tx674 {\fs20 (0.010)}\cell \pard\intbl\tqdec\tx811 {\fs20 (0.007)}\cell \pard\intbl\tqdec\tx811 {\fs20 (0.019)}\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa0\trqc\cellx1176\cellx3024\cellx5208\cellx7392\fs24 \pard\intbl\ql {\i R}{\super 2}\cell \pard\intbl\tqdec\tx674 0.0\cell \pard\intbl\tqdec\tx811 0.0\cell \pard\intbl\tqdec\tx811 0.0\cell\row
+\trowd\intbl\trautofit1\trgaph144\sb0\sa79\trqc\clbrdrb\brdrs\cellx1176\clbrdrb\brdrs\cellx3024\clbrdrb\brdrs\cellx5208\clbrdrb\brdrs\cellx7392\fs24 \pard\intbl\ql {\i N}\cell \pard\intbl\tqdec\tx674 9,047\cell \pard\intbl\tqdec\tx811 8,667\cell \pard\intbl\tqdec\tx811 8,670\cell\row
+\pard\qc\sb79\sa79\fs19 * {\i p}<0.1; ** {\i p}<0.05; *** {\i p}<0.01\par
+\pard\sb0\sa0\fs24\par
+}

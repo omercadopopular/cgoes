@@ -1,0 +1,64 @@
+*! RegARIMA-X12 version 1.0, 27 Sep 2010, Qunyong Wang, brynewqy@nankai.edu.cn 
+/* 
+*!    for sax12.ado
+To install in User Statistics menu via Stata commands:
+  . window menu append item "stUserStatistics" "RegARIMA-X12 seasonal adjustment" "db sax12"
+  . window menu append item "stUserData" "Import data after seasonal adjustment" "db saimport"
+  . window menu append item "stUserGraphics" "Make graphs after seasonal adjustment" "db sagraph"
+  . window menu refresh
+To permanently install, place the commands in your -profile.do- file.
+*/
+
+VERSION 11.0
+
+INCLUDE _std_large
+INCLUDE _ht320
+INCLUDE header
+
+HELP hlp1, view("help sax12diag")
+RESET res1, label("Reset")
+
+DIALOG main, label("Make Diagnostics Table for X-12-ARIMA Seasonal Adjustment")  ///
+		 tabtitle("main")
+BEGIN
+  TEXT  tx_sel  10 10 _iwd @,	///
+		label("Select X-12-ARIMA diagnostics files:")
+  FILE fi_sel 10 +30 _iwd 20,	 ///
+		error("Browse:")	///
+		label("Browse") multiselect ///
+		filter((*.udg)|*.udg) ///
+		onchange(script add_file)
+  EDIT  ed_x12  @  +30  _iwd  @
+  CHECKBOX  ck_prt  @ +30 280 20,	///
+		label("no print") ///
+		option("noprint") 
+  CHECKBOX  ck_save  @ +30 280 20,	///
+		label("save the table in file:")  ///
+		onclickon(main.fi_save.enable) ///
+		onclickoff(main.fi_save.disable)
+  FILE fi_save 10 +30 _iwd 20,	 ///
+		error("Browse:")	///
+		label("Browse")  ///
+		filter(txt file(*.txt)|*.txt|dat file(*.dat)|*.dat|all file(*.*)|*.*)
+END
+
+SCRIPT add_file
+BEGIN
+  action withvalue main.ed_x12.insert `"@ "'
+END 
+
+/* -------- Run Program ------------*/
+
+PROGRAM command
+BEGIN
+	put "sax12diag "
+	put main.ed_x12
+	if main.ck_save {
+		put "using "
+		put main.fi_save
+	}
+	beginoptions
+		option main.ck_prt
+	endoptions
+END
+

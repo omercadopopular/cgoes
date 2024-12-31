@@ -1,0 +1,59 @@
+{smcl}
+{* Oct 2005}{...}
+{cmd:help seeout}
+{hline}
+
+{title:Title}
+
+{p2colset 5 16 22 2}{...}
+{p2col :{hi: seeout} {hline 2}}Opens tab-delimited {helpb outreg2} table in the data browser {p_end}
+{p2colreset}{...}
+
+
+{title:Syntax}
+
+{p 4 8 2}
+{cmdab:seeout} [,using {it:filename}] {p_end}
+
+{pstd}
+where a {it:filename} is a document to be opened. A minimum of two tabl-delimited columns 
+are required for a document to be opened. {p_end}
+
+
+{title:Description}
+
+{pstd}{cmd:seeout} will open a tab-delimited file created by {helpb outreg2} in the Stata data 
+browser. It is designed to provide a fast access to the regression table without first having to 
+convert the document into another format. {cmd:seeout} thus increasing the utility of such tables 
+in iterative research.
+
+{pstd}If {cmd:seeout} is invoked immediately following an {helpb outreg2} command, then it is not 
+necessary to specify the using {it:filename}. It will be automatically opened.
+
+{pstd}If no extension is provided, then .txt is assumed.
+
+
+{title:Examples}
+
+{phang}{cmd:seeout using mytable} {p_end}
+{phang}{cmd:seeout using "c:\myfolder\mypaper.txt"} {p_end}
+
+{phang}{cmd:outreg2 using mytable} {p_end}
+{phang}{cmd:seeout} {p_end}
+
+
+{title:Author}
+
+          Roy Wada
+          roywada@hotmail.com
+	
+	
+	
+	
+	
+	
+
+
+
+
+

@@ -1,0 +1,499 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r02.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 13:48:10
+{txt}
+{com}. 
+. use "data\temp\mun-master-dataset.dta", clear
+{txt}(Master file, Brazil exports and labor market)
+
+{com}. 
+. /// 0. options
+> 
+. 
+. // instrument
+. local iv giv
+{txt}
+{com}. 
+. // instrumented
+. local instrumented gvl_fob
+{txt}
+{com}. 
+. // controls
+. gen ineqshr = avg_wage_q4r / avg_wage_q1r
+{txt}(314 missing values generated)
+
+{com}. gen t_LaborShr2000 = LaborShr if year == 2000
+{txt}(133,254 missing values generated)
+
+{com}. bysort mun_code_ibge: egen LaborShr2000 = mean(t_LaborShr2000)
+{txt}(14,954 missing values generated)
+
+{com}. gen t_wr2000 = wr if year == 2000
+{txt}(132,735 missing values generated)
+
+{com}. bysort mun_code_ibge: egen wr2000 = mean(t_wr2000)
+{txt}(2,189 missing values generated)
+
+{com}. drop t_*
+{txt}
+{com}. local controls l.LaborShr l.wr
+{txt}
+{com}. 
+. // fixed effects
+. local fe // uf_code
+{txt}
+{com}. *mun_code_ibge
+. 
+. // cluster
+. egen cl = group(uf_code)
+{res}{txt}
+{com}. local clustvar uf_code
+{txt}
+{com}. 
+. // lag-length
+. local lags = 4
+{txt}
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. 
+. foreach iv_iter of local iv {c -(}
+{txt}  2{com}. 
+.         foreach var of global lhs {c -(}
+{txt}  3{com}.                                 
+.                 *Define matrix to store results.
+.                 matrix results_`var' = J(1+$leads+$lags, 5,.)
+{txt}  4{com}.                 matrix colnames results_`var' = horizon b se F1 obs
+{txt}  5{com}.                 
+. 
+.                 forvalues h = 1 (1) $lags {c -(}
+{txt}  6{com}.                 
+.                         *Display step.
+.                         dis("IRF of `var', h=-`h'") as text
+{txt}  7{com}.                         
+.                         *Run regression.
+.                         
+.                         if `h' == 1 {c -(}
+{txt}  8{com}.                                 local row = $lags-`h'+1
+{txt}  9{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 10{com}.                                 mat results_`var'[`row',2]=0
+{txt} 11{com}.                                 mat results_`var'[`row',3]=0
+{txt} 12{com}.                         {c )-}
+{txt} 13{com}.                         else {c -(}
+{txt} 14{com}.                         qui ivreghdfe dl`h'ln`var' l(1/`lags').dl`h'ln`var'  ( `instrumented' = `iv' ) l(1/`lags').`iv' `controls', absorb(`fe') first cluster(`clustvar')
+{txt} 15{com}.                                 local row = $lags-`h'+1
+{txt} 16{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 17{com}.                                 mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 18{com}.                                 mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 19{com}.                                 mat temp=e(first)
+{txt} 20{com}.                                 mat results_`var'[`row',4]=temp[8,1]
+{txt} 21{com}.                                 mat results_`var'[`row',5]=e(N)
+{txt} 22{com}.                         {c )-}
+{txt} 23{com}. 
+.                 {c )-} 
+{txt} 24{com}.                 
+.                 forvalues h = 0 (1) $leads {c -(}
+{txt} 25{com}.                                 
+.                         *Display step.
+.                         dis("IRF of `var', h=`h'") as text
+{txt} 26{com}.                         
+.                         *Run regression.
+.                         qui ivreghdfe df`h'ln`var'  l(1/`lags').df`h'ln`var' ( `instrumented' = `iv' ) l(1/`lags').`iv'  `controls', absorb(`fe') first cluster(`clustvar')                     
+{txt} 27{com}. 
+.                         *Store results.
+.                         local row = $lags+`h'+1
+{txt} 28{com}.                         mat results_`var'[`row',1]= `h'
+{txt} 29{com}.                         mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 30{com}.                         mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 31{com}.                         mat temp=e(first)
+{txt} 32{com}.                         mat results_`var'[`row',4]=temp[8,1]
+{txt} 33{com}.                         mat results_`var'[`row',5]=e(N)                 
+{txt} 34{com}. 
+.                 {c )-} 
+{txt} 35{com}. 
+.                         *Save results.
+.                         xsvmat results_`var', name(col) saving("results/temp/mun_`iv'_results_`var'.dta", replace)
+{txt} 36{com}.                         xsvmat results_`var', name(col) list(,)
+{txt} 37{com}. 
+.         {c )-}       
+{txt} 38{com}. 
+. {c )-}
+IRF of employment, h=-1
+IRF of employment, h=-2
+IRF of employment, h=-3
+IRF of employment, h=-4
+IRF of employment, h=-5
+IRF of employment, h=0
+IRF of employment, h=1
+IRF of employment, h=2
+IRF of employment, h=3
+IRF of employment, h=4
+IRF of employment, h=5
+IRF of employment, h=6
+{txt}{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_employment.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5   -.0356391   .0191808   124.7689   28403 {txt}{c |}
+  2. {c |} {res}     -4    .0145707   .0333673   82.61276   30031 {txt}{c |}
+  3. {c |} {res}     -3    .0058528   .0218235   79.97648   31595 {txt}{c |}
+  4. {c |} {res}     -2   -.0369033   .0170213   76.79076   33075 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0    .2286118   .0383892   38.85571   34523 {txt}{c |}
+  7. {c |} {res}      1    .1386436   .0420334   23.51179   32446 {txt}{c |}
+  8. {c |} {res}      2     .082192   .0443966   20.41142   30417 {txt}{c |}
+  9. {c |} {res}      3    .1720598   .0434938   20.20505   28474 {txt}{c |}
+ 10. {c |} {res}      4    .2121258    .044931   21.70392   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1003683   .0277474   20.61446   24712 {txt}{c |}
+ 12. {c |} {res}      6    .0550195   .0187116   22.28355   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of female, h=-1
+IRF of female, h=-2
+IRF of female, h=-3
+IRF of female, h=-4
+IRF of female, h=-5
+IRF of female, h=0
+IRF of female, h=1
+IRF of female, h=2
+IRF of female, h=3
+IRF of female, h=4
+IRF of female, h=5
+IRF of female, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_female.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5   -.0538688   .0223482   122.4668   28402 {txt}{c |}
+  2. {c |} {res}     -4    .0045873   .0396827   81.45941   30030 {txt}{c |}
+  3. {c |} {res}     -3   -.0036026   .0243615    78.6607   31594 {txt}{c |}
+  4. {c |} {res}     -2   -.0468551   .0190059   75.83106   33074 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0    .2155737   .0397129   37.70778   34523 {txt}{c |}
+  7. {c |} {res}      1    .1076732   .0394249   23.25061   32446 {txt}{c |}
+  8. {c |} {res}      2    .0548308   .0427986   20.09391   30417 {txt}{c |}
+  9. {c |} {res}      3    .1539853   .0444499   20.09063   28474 {txt}{c |}
+ 10. {c |} {res}      4    .1726937   .0420999   21.36601   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .0612195   .0251746   20.39521   24712 {txt}{c |}
+ 12. {c |} {res}      6    .0186686    .017574   21.85617   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of male, h=-1
+IRF of male, h=-2
+IRF of male, h=-3
+IRF of male, h=-4
+IRF of male, h=-5
+IRF of male, h=0
+IRF of male, h=1
+IRF of male, h=2
+IRF of male, h=3
+IRF of male, h=4
+IRF of male, h=5
+IRF of male, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_male.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .0072134   .0242003   128.3589   28395 {txt}{c |}
+  2. {c |} {res}     -4    .0346186    .023687   87.29783   30022 {txt}{c |}
+  3. {c |} {res}     -3    .0151309   .0174149   87.07381   31584 {txt}{c |}
+  4. {c |} {res}     -2   -.0320768   .0180656   84.26618   33065 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0    .2466823   .0415961   39.80795   34516 {txt}{c |}
+  7. {c |} {res}      1    .2069214    .050743   24.01085   32439 {txt}{c |}
+  8. {c |} {res}      2    .1494716   .0551824   20.24425   30410 {txt}{c |}
+  9. {c |} {res}      3    .2235867   .0508911   19.52081   28467 {txt}{c |}
+ 10. {c |} {res}      4      .29012   .0528832   21.48228   26580 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1872961   .0400756   20.45629   24705 {txt}{c |}
+ 12. {c |} {res}      6    .1350434   .0292318   21.42737   22887 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of less_than_college, h=-1
+IRF of less_than_college, h=-2
+IRF of less_than_college, h=-3
+IRF of less_than_college, h=-4
+IRF of less_than_college, h=-5
+IRF of less_than_college, h=0
+IRF of less_than_college, h=1
+IRF of less_than_college, h=2
+IRF of less_than_college, h=3
+IRF of less_than_college, h=4
+IRF of less_than_college, h=5
+IRF of less_than_college, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_less_than_college.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5   -.0677147   .0213294   124.3012   28403 {txt}{c |}
+  2. {c |} {res}     -4    .0122794   .0362135   82.01727   30031 {txt}{c |}
+  3. {c |} {res}     -3   -.0140213   .0228586   78.70245   31595 {txt}{c |}
+  4. {c |} {res}     -2    -.047454   .0182681   75.33994   33075 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0     .232912   .0398758   39.03645   34523 {txt}{c |}
+  7. {c |} {res}      1    .1485756   .0456095   23.87382   32446 {txt}{c |}
+  8. {c |} {res}      2    .0794627   .0464165   20.29608   30417 {txt}{c |}
+  9. {c |} {res}      3    .1765342   .0430595   20.21792   28474 {txt}{c |}
+ 10. {c |} {res}      4    .2227318   .0498048   21.85498   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5     .097479   .0284958   20.68876   24712 {txt}{c |}
+ 12. {c |} {res}      6    .0397267   .0162324   22.35463   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of college_or_higher, h=-1
+IRF of college_or_higher, h=-2
+IRF of college_or_higher, h=-3
+IRF of college_or_higher, h=-4
+IRF of college_or_higher, h=-5
+IRF of college_or_higher, h=0
+IRF of college_or_higher, h=1
+IRF of college_or_higher, h=2
+IRF of college_or_higher, h=3
+IRF of college_or_higher, h=4
+IRF of college_or_higher, h=5
+IRF of college_or_higher, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_college_or_higher.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .1755349   .0541986   135.2597   28231 {txt}{c |}
+  2. {c |} {res}     -4    .0944784   .0425165   87.18023   29865 {txt}{c |}
+  3. {c |} {res}     -3    .0945953   .0304016   95.49989   31440 {txt}{c |}
+  4. {c |} {res}     -2   -.0174434   .0178901   89.65693   32937 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0    .2871183   .0438349   39.59634   34403 {txt}{c |}
+  7. {c |} {res}      1    .2030225   .0610356   23.88218   32325 {txt}{c |}
+  8. {c |} {res}      2    .2195726   .0377133    20.1532   30295 {txt}{c |}
+  9. {c |} {res}      3    .2057318   .0622134   18.84514   28352 {txt}{c |}
+ 10. {c |} {res}      4    .2809645   .0337064   20.75497   26465 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1904763   .0621605    20.0215   24592 {txt}{c |}
+ 12. {c |} {res}      6    .2555299   .0572553   20.98985   22775 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of w, h=-1
+IRF of w, h=-2
+IRF of w, h=-3
+IRF of w, h=-4
+IRF of w, h=-5
+IRF of w, h=0
+IRF of w, h=1
+IRF of w, h=2
+IRF of w, h=3
+IRF of w, h=4
+IRF of w, h=5
+IRF of w, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_w.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .1360566   .0266158   137.4339   28402 {txt}{c |}
+  2. {c |} {res}     -4    .1100092   .0287887   86.51632   30029 {txt}{c |}
+  3. {c |} {res}     -3    .0643105   .0235832   85.98766   31593 {txt}{c |}
+  4. {c |} {res}     -2    .0750972   .0286252   77.20778   33074 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   -.0141615   .0103632   38.09648   34523 {txt}{c |}
+  7. {c |} {res}      1      .03985   .0116919   24.83582   32446 {txt}{c |}
+  8. {c |} {res}      2     .048287   .0110032   19.36289   30417 {txt}{c |}
+  9. {c |} {res}      3    .0614992   .0156423   18.29985   28474 {txt}{c |}
+ 10. {c |} {res}      4    .0674412   .0246109   19.20753   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1406241   .0323415   18.60249   24712 {txt}{c |}
+ 12. {c |} {res}      6    .1773183    .037985   19.05491   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of w_male, h=-1
+IRF of w_male, h=-2
+IRF of w_male, h=-3
+IRF of w_male, h=-4
+IRF of w_male, h=-5
+IRF of w_male, h=0
+IRF of w_male, h=1
+IRF of w_male, h=2
+IRF of w_male, h=3
+IRF of w_male, h=4
+IRF of w_male, h=5
+IRF of w_male, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_w_male.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .1559533    .027514    129.959   28390 {txt}{c |}
+  2. {c |} {res}     -4    .0969567   .0348354   89.37955   30017 {txt}{c |}
+  3. {c |} {res}     -3     .093351   .0300871   88.07357   31580 {txt}{c |}
+  4. {c |} {res}     -2    .0883527   .0274671   82.09584   33062 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   -.0275142   .0111039   38.55334   34513 {txt}{c |}
+  7. {c |} {res}      1   -.0040444   .0156582    24.5694   32436 {txt}{c |}
+  8. {c |} {res}      2     .037235   .0217222   19.69544   30407 {txt}{c |}
+  9. {c |} {res}      3     .026479   .0224149   18.42894   28464 {txt}{c |}
+ 10. {c |} {res}      4    .0321998   .0281334   19.36683   26577 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .0985196    .019016   19.15394   24702 {txt}{c |}
+ 12. {c |} {res}      6    .1295833   .0303237    18.9259   22884 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of w_female, h=-1
+IRF of w_female, h=-2
+IRF of w_female, h=-3
+IRF of w_female, h=-4
+IRF of w_female, h=-5
+IRF of w_female, h=0
+IRF of w_female, h=1
+IRF of w_female, h=2
+IRF of w_female, h=3
+IRF of w_female, h=4
+IRF of w_female, h=5
+IRF of w_female, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_w_female.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .1343426   .0289279   140.7274   28401 {txt}{c |}
+  2. {c |} {res}     -4    .1222438   .0281419   86.75114   30028 {txt}{c |}
+  3. {c |} {res}     -3    .0571369   .0200809   87.19711   31592 {txt}{c |}
+  4. {c |} {res}     -2    .0694571   .0281659   77.12739   33073 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   -.0098803   .0104108   37.33908   34523 {txt}{c |}
+  7. {c |} {res}      1    .0656777   .0134793   24.60403   32446 {txt}{c |}
+  8. {c |} {res}      2     .057139   .0092681   19.14578   30417 {txt}{c |}
+  9. {c |} {res}      3    .0781216   .0165774   18.12237   28474 {txt}{c |}
+ 10. {c |} {res}      4    .0910918   .0234642   18.90531   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5      .16369   .0403978   18.11196   24712 {txt}{c |}
+ 12. {c |} {res}      6    .2073465   .0403445   18.90924   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of w_less_than_college, h=-1
+IRF of w_less_than_college, h=-2
+IRF of w_less_than_college, h=-3
+IRF of w_less_than_college, h=-4
+IRF of w_less_than_college, h=-5
+IRF of w_less_than_college, h=0
+IRF of w_less_than_college, h=1
+IRF of w_less_than_college, h=2
+IRF of w_less_than_college, h=3
+IRF of w_less_than_college, h=4
+IRF of w_less_than_college, h=5
+IRF of w_less_than_college, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_w_less_than_college.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .1269975   .0240987   135.3541   28402 {txt}{c |}
+  2. {c |} {res}     -4    .1060873   .0253795    85.2983   30029 {txt}{c |}
+  3. {c |} {res}     -3    .0523857   .0209893   85.22292   31593 {txt}{c |}
+  4. {c |} {res}     -2    .0657327   .0267565   78.53951   33074 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   -.0161336   .0103423   37.96724   34523 {txt}{c |}
+  7. {c |} {res}      1    .0461761   .0119897   24.70388   32446 {txt}{c |}
+  8. {c |} {res}      2    .0421707   .0109803   19.49149   30417 {txt}{c |}
+  9. {c |} {res}      3    .0657207    .015227   18.22682   28474 {txt}{c |}
+ 10. {c |} {res}      4    .0629799   .0251909   19.28453   26587 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1485768   .0348193    18.6597   24712 {txt}{c |}
+ 12. {c |} {res}      6    .1808919   .0393964    19.0938   22894 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+IRF of w_college_or_higher, h=-1
+IRF of w_college_or_higher, h=-2
+IRF of w_college_or_higher, h=-3
+IRF of w_college_or_higher, h=-4
+IRF of w_college_or_higher, h=-5
+IRF of w_college_or_higher, h=0
+IRF of w_college_or_higher, h=1
+IRF of w_college_or_higher, h=2
+IRF of w_college_or_higher, h=3
+IRF of w_college_or_higher, h=4
+IRF of w_college_or_higher, h=5
+IRF of w_college_or_higher, h=6
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_results_w_college_or_higher.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon          b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5   .0713253   .0353896   132.4724   28193 {txt}{c |}
+  2. {c |} {res}     -4   .0273559   .0344522   87.60423   29830 {txt}{c |}
+  3. {c |} {res}     -3   .0205963   .0328018   93.26729   31405 {txt}{c |}
+  4. {c |} {res}     -2   .0261329   .0239283     88.903   32909 {txt}{c |}
+  5. {c |} {res}     -1          0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   .0015334   .0113951   40.14438   34382 {txt}{c |}
+  7. {c |} {res}      1   .0011072   .0224507   25.39273   32304 {txt}{c |}
+  8. {c |} {res}      2   .0163107   .0143854   20.15063   30273 {txt}{c |}
+  9. {c |} {res}      3   .0038066   .0176363   18.86522   28330 {txt}{c |}
+ 10. {c |} {res}      4   .0409795   .0204548   19.87056   26444 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5   .0575521   .0229184   19.78745   24572 {txt}{c |}
+ 12. {c |} {res}      6   .0538423   .0202723   19.52514   22756 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. do "code\%stata_mun\r02b_baseline_irfs.do"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

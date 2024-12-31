@@ -1,0 +1,152 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\wb592068\OneDrive - UC San Diego\UCSD\Research\dynamic-adjustment-trade-disruptions\levchenko-replication\output/logs/log_d02.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Jun 2023, 20:32:24
+{txt}
+{com}. 
+. ////////////////////////////
+> ///Generate country codes///
+> ////////////////////////////
+> 
+. *Import country code database.
+. import excel "./data/TRAINS/AllCountries.xls", sheet("Sheet1") firstrow clear
+{res}{text}(3 vars, 275 obs)
+
+{com}. 
+. *Drop variable.
+. drop CountryName
+{txt}
+{com}. 
+. *Rename variable.
+. rename CountryCode exporter
+{res}{txt}
+{com}. 
+. *Save database.
+. compress
+{txt}  (0 bytes saved)
+
+{com}. save "./temp_files/ExporterCode.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+./temp_files/ExporterCode.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/ExporterCode.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. *Rename variable.
+. rename exporter importer
+{res}{txt}
+{com}. 
+. *Save database.
+. save "./temp_files/ImporterCode.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+./temp_files/ImporterCode.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/ImporterCode.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. ////////////////////////
+> ///Unzip source files -- PLEASE SAVE YOUR SOURCE FILES in the folder data/TRAINS/TRAINS`year' where year is the year of the data///
+> ////////////////////////
+> 
+. clear
+{txt}
+{com}. 
+. forvalues year=1995/1995 {c -(}
+{txt}  2{com}. 
+.         *Unzip file.
+.         unzipfile "./data/TRAINS/TRAINS`year'.zip", replace 
+{txt}  3{com}. 
+.         *Find unzipped file (file has non-standarized name).
+.         local files : dir "`c(pwd)'" files "*TRAINS`year'*.dta"
+{txt}  4{com}.         
+.         *Open database.
+.         use NativeNomen Partner Reporter ReporterName PartnerName Product TariffYear TradeYear DutyType SimpleAverage ImportsValuein1000USD StandardDeviation TradeSource SpecificDutyImportsin1000USD using `files', clear
+{txt}  5{com}.         
+.         *Drop observations with NA.
+.         drop if Reporter=="NA"
+{txt}  6{com}.         drop if Partner=="NA"
+{txt}  7{com}.         
+.         *Keep observations with no specific duties.
+.         keep if SpecificDutyImportsin1000USD==0
+{txt}  8{com}.         drop SpecificDutyImportsin1000USD
+{txt}  9{com}.         
+.         *Drop duplicates.
+.         duplicates drop
+{txt} 10{com}.         
+.         *Save database.
+.         save "./temp_files/TRAINS`year'.dta", replace
+{txt} 11{com}.         
+.         *Erase files.
+.         erase `files'
+{txt} 12{com}.         
+. {c )-}
+{res}{err}file ./data/TRAINS/TRAINS1995.zip not found
+{txt}{search r(601), local:r(601);}
+
+end of do-file
+{search r(601), local:r(601);}
+
+end of do-file
+
+{search r(601), local:r(601);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD8ea4_000000.tmp"
+{txt}
+{com}. ** version 1.0 april 2020
+. ** carlos góes
+. ** world bank
+. 
+. global WD = "C:\Users\wb592068\OneDrive - WBG\Poverty_DIOT\Tunisia"
+{txt}
+{com}. global rawpath = "data/survey"
+{txt}
+{com}. global concpath = "data/conc"
+{txt}
+{com}. global cleanpath = "data/enpe_clean"
+{txt}
+{com}. global outpath = "data/out"
+{txt}
+{com}. global comtradepath = "data/comtrade"
+{txt}
+{com}. global wdipath = "data/wdi"
+{txt}
+{com}. global batispath = "data/wto-oecd-batis"
+{txt}
+{com}. global resultspath = "results"
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD8ea4_000000.tmp"
+{txt}
+{com}. /// Prepare exports data
+> use "${c -(}outpath{c )-}/trade_industry_database.dta", clear
+{err}{p 0 4 2}
+file {bf:{err}data/out/trade_industry_database.dta}
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+end of do-file
+
+{search r(601), local:r(601);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD8ea4_000000.tmp"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

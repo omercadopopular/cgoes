@@ -1,0 +1,80 @@
+.-
+help for ^seq^                                                   (STB-37: dm44)
+.-
+
+Sequences of integers
+- ---------------------
+
+    ^seq^ newvar [^if^ exp] [^in^ range] [^, by(^byvar^) b^lock^(^#^) f^rom^(^#^)^ ^t^o^(^#^)^ ]
+
+
+Description
+- -----------
+
+^seq^ creates newvar containing one or more sequences of integers. It is
+principally useful for quick creation of observation identifiers or
+automatic numbering of levels of factors or categorical variables.
+
+
+Options
+- -------
+
+^by(^byvar^)^ specifies that ^seq^ is to generate the sequence within each
+    group defined by the by variables.
+
+^block(^#^)^ specifies that each integer is repeated in a block of #.
+    The default is 1.
+
+^from(^#^)^ specifies that integers start at #. The default is 1.
+
+^to(^#^)^ specifies that integers stop at #. The default is _N, or the
+    number of the last value reached as determined by whatever
+    combination of ^by^, ^if^, and ^in^ has been issued. If there are
+    more values, numbering restarts at the value set by ^from^.
+
+
+Examples
+- --------
+
+    . ^set obs 12^
+    . ^seq a^
+    . ^seq b, b(2)^
+    . ^seq c, t(6)^
+    . ^seq d, f(10) t(12)^
+    . ^seq e, f(3) t(1)^
+
+    The results are
+
+                a          b          c          d          e
+     1.         1          1          1         10          3
+     2.         2          1          2         11          2
+     3.         3          2          3         12          1
+     4.         4          2          4         10          3
+     5.         5          3          5         11          2
+     6.         6          3          6         12          1
+     7.         7          4          1         10          3
+     8.         8          4          2         11          2
+     9.         9          5          3         12          1
+    10.        10          5          4         10          3
+    11.        11          6          5         11          2
+    12.        12          6          6         12          1
+
+    ^a^ also from ^gen a = _n^ or ^range a 1 12^ or ^range a 1 _N^
+    ^b^           ^gen b = 1 + int((_n - 1)/2)^
+    ^c^           ^gen c = 1 + mod(_n - 1, 6)^
+    ^d^           ^gen d = 10 + mod(_n - 1, 3)^
+    ^e^           ^gen e = 3 - mod(_n - 1, 3)^
+
+
+Author
+- ------
+
+         Nicholas J. Cox, University of Durham, U.K.
+         n.j.cox@@durham.ac.uk
+
+
+Also see
+- --------
+
+    STB:  STB-37 dm44
+On-line:  help for @range@, @functions@

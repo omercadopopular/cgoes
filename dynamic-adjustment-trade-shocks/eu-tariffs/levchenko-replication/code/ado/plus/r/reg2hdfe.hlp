@@ -1,0 +1,139 @@
+{smcl}
+{.-}
+help for {cmd:reg2hdfe} {right:()}
+{.-}
+ 
+{title:Title}
+
+reg2hdfe - Estimates a Linear Regression Model with two High Dimensional Fixed Effects.
+
+{title:Syntax}
+
+{p 8 15}
+{cmd:reg2hdfe} {it:{help depvar}} [{it:{help indepvar}}] [{help if}] [{help in}] , {cmd:id1(}{it:{help varname}}{cmd:)} {cmd:id2(}{it:{help varname}}{cmd:)}
+  [{it:options}]
+
+{p}
+
+{title:Description}
+
+{p} This command implements the algorithm of Guimaraes & Portugal for estimation
+of a linear regression model with two high dimensional fixed effects. The command is particularly suited
+for use with large data sets because in a first step you can remove the high dimensional fixed effects from the data
+and then use the transformed regression variables to try alternative specifications of the model. 
+
+{title:Options}
+
+{p 0 4} {cmd:fe1(}{it:new varname}{cmd:)} {cmd:fe2(}{it:new varname}{cmd:)}:
+Stores the estimates of the two fixed effects.
+
+{p 0 4} {cmd:cluster(}{it:varname}{cmd:)} Computes clustered standard errors.
+
+{p 0 4} {cmdab:group:id (}{it:new varname}{cmd:)} Creates a new variable containing a unique identifier for the mobility groups.
+
+{p 0 4} {cmdab:out:data(}{it:string}{cmd:)} Saves the transformed regression variables.
+
+{p 0 4} {cmdab:in:data(}{it:string}{cmd:)} To be used after {cmd:outdata(}{it:string}{cmd:)}. Performs
+the regression with previously transformed variables. This is the fastest way to implement regressions. 
+
+{p 0 4} {cmdab:imp:rove(}{it:string}{cmd:)} To be used after {cmd:outdata(}{it:string}{cmd:)}. Improves
+convergence for a single variable.
+
+{p 0 4}{cmd:tol}{cmd:(}{it:float}{cmd:)} Specify the convergence criterion for the 
+iteration method. Default is 1.000e-06.
+
+{p 0 4}{cmd:simple} Disables acceleration of convergence for the algorithm.
+
+{p 0 4}{cmd:op1}{cmd:(}{it:integer}{cmd:)} Iteration number after which convergence is accelerated. Default is 3.
+
+{p 0 4}{cmd:op2}{cmd:(}{it:integer}{cmd:)} Parameter that defines the rate of acceleration at every iteration of the algorithm. 
+Default is 1. The parameter is adjusted as the algorithm evolves. If convergence is monotonous the parameter is increased and
+if the algorithm starts diverging the parameter goes back to its default value. 
+
+{p 0 4}{cmd:op3}{cmd:(}{it:integer}{cmd:)} Parameter that defines a periodic attempt to accelerate convergence. Default is 10. 
+This means that every 10 iterations the algorithm tries an additional correction to improve convergence.
+
+{p 0 4}{cmd:op4}{cmd:(}{it:integer}{cmd:)} Parameter that defines the rate of acceleration for the periodic correction.
+Default is 1000.
+
+{p 0 4}{cmd:op5}{cmd:(}{it:integer}{cmd:)} Periodic corrections are only applied if estimated values in two consecutived periodic corrections 
+differ by less than this parameter. The default is 0.001.
+
+{p 0 4}{cmd:autoff}{cmd:(}{it:integer}{cmd:)} Parameter OP2 remains at its base level.
+
+{p 0 4}{cmd:check} Checks for convergence by computing additional regressions that use the fixed
+effects estimates as regressors. With successful convergence the coefficients for the fixed effects should equal one.
+To check convergence of the final regression you must store the two fixed effects (use options {cmd:fe1()} and {cmd:fe2()}).
+
+{p 0 4}{cmdab:max:iter}{cmd:(}{it:integer}{cmd:)} Specify a maximum number of iterations.
+
+{p 0 4}{cmd:nodots} Suppress dots indicating the progress of the iteration algorithm.
+
+{p 0 4}{cmdab:noreg:ress} Transforms the variables but does not estimate the regression.
+
+{p 0 4}{cmdab:param1} The estimates of the fixed effects for id1() sum to zero within each group.
+
+{p 0 4}{cmdab:param2} The estimates of the fixed effects for id2() sum to zero within each group.
+
+{p 0 4}{cmdab:verb:ose} Gives more information during estimation.
+
+{title:Examples}
+
+Example 1:
+Estimates a model with two high dimensional fixed effects
+
+{p 8 16}{inp:. reg2hdfe y x1 x2 x3, id1(i) id2(j)}{p_end}
+
+Example2:
+
+Estimate a model saving the transformed variables
+
+{p 8 16}{inp:. reg2hdfe y x1 x2 x3, id1(i) id2(j)} outdata(data1) {p_end}
+
+and then run a (much faster) alternative specification.
+
+{p 8 16}{inp:. reg2hdfe y x1 x2, id1(i) id2(j)} indata(data1) {p_end}
+ 
+Example 3:
+
+For faster results estimate a model with a low tolerance level.
+
+{p 8 16}{inp:. reg2hdfe y x1 x2 x3, id1(i) id2(j)} outdata(data1) check tol(0.001) {p_end} 
+
+The "check" option gives an idea how well the model converged. Next we improve
+convergence for a single variable, say x1,  
+
+{p 8 16}{inp:. reg2hdfe x1, id1(i) id2(j)} improve(data1) check tol(0.000001) {p_end} 
+
+and then reestimate the model.
+
+{p 8 16}{inp:. reg2hdfe y x1 x2, id1(i) id2(j)} indata(data1) check {p_end} 
+
+{title:Author}
+
+{p}
+Paulo Guimaraes, Universidade do Porto, Portugal
+
+{p}
+Email: {browse "mailto:pguimaraes@fep.up.pt":pguimaraes@fep.up.pt}
+
+Comments welcome!
+
+{title:Acknowledgements}
+This program makes use of Amine Quazad's {help a2group} Stata algorithm to compute the connected groups.
+{p}
+
+{title:Reference}
+
+If you use this program in your research cite:
+
+Paulo Guimaraes and Pedro Portugal. "A Simple Feasible Alternative Procedure to Estimate Models with 
+High-Dimensional Fixed Effects", Stata Journal, 10(4), 628-649, 2010.
+
+{title:Also see}
+
+{p 0 21}
+{help gpreg} (if installed), {help a2reg} (if installed), {help a2group} (if installed), 
+{help felsdvreg} (if installed). 
+{p_end}
+

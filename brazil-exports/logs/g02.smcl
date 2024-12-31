@@ -1,0 +1,212 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\g02.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 13:54:39
+{txt}
+{com}. 
+. /// 0. options
+> 
+. scalar confidence_interval = 1.96
+{txt}
+{com}. 
+. 
+. // instrument
+. local iv giv_comtrade
+{txt}
+{com}. 
+. foreach var of global lhs {c -(}
+{txt}  2{com}.         di "`var'"
+{txt}  3{com}.                 use "results/temp/mun_`iv'_results_`var'_alt.dta", clear
+{txt}  4{com}.                 
+.                 gen low = b - confidence_interval * se
+{txt}  5{com}.                 gen high = b + confidence_interval * se
+{txt}  6{com}.         
+.                 export excel using "results/mun_results_irf_comtrade.xlsx", firstrow(var) sheet("`var'", modify)
+{txt}  7{com}. 
+.                 twoway rcap high low horizon, color(gray%80) || ///
+>                         scatter b horizon, mcolor(red) connect(l) lcolor(red) ///
+>                         xtitle("Years after foreign demand shock") ///
+>                         ytitle("Estimated Coefficient") ///
+>                         yline(0, lcolor(black)) ///
+>                         xline(0, lcolor(black)) ///
+>                         xlabel(-$lags(1)$leads) ///
+>                         ylabel(-0.1(.1)0.6) ///
+>                         legend( lab(1 "95% Confidence interval") lab(2 "Coefficient")) ///
+>                         lwidth(thin) name(`iv'_`var', replace)
+{txt}  8{com}.                         graph export "figs\mirf_`iv'_`var'.pdf", as(pdf) replace
+{txt}  9{com}.                         graph export "figs\mirf_`iv'_`var'.wmf", as(wmf) replace
+{txt} 10{com}.                 
+. {c )-}       
+employment
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_employment.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_employment.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+female
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_female.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_female.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+male
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_male.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_male.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+less_than_college
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_less_than_college.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_less_than_college.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+college_or_higher
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_college_or_higher.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_college_or_higher.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+w
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_w.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_w.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+w_male
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_w_male.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_w_male.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+w_female
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_w_female.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_w_female.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+w_less_than_college
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_w_less_than_college.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_w_less_than_college.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+w_college_or_higher
+{res}{txt}file {bf:results/mun_results_irf_comtrade.xlsx} saved
+{res}{txt}{p 0 4 2}
+file {bf}
+figs\mirf_giv_comtrade_w_college_or_higher.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mirf_giv_comtrade_w_college_or_higher.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. do "code\%stata_mun\g03_plot_irfs_comtrade_combined.do"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

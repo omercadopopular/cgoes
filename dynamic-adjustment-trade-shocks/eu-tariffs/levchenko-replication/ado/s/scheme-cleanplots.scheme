@@ -1,0 +1,471 @@
+// cleanplots Graphing Scheme //
+
+* Graphing scheme with colors and other tweaks for common graphs
+* Particularly designed for easier and better default plots of 
+* predictions and marginal effects
+* Many option are based on the excellent plotplain scheme (Bischof 2017)
+
+* NOTE: "help scheme entries" for what each command does
+
+* Trenton D. Mize
+* 2018-09-16
+#include s1color
+
+// Legend outside in lower right corner
+* 1 column; short signatures; no frame
+clockdir legend_position     4
+numstyle legend_cols         1
+numstyle legend_rows         0
+gsize legend_key_xsize       5
+
+yesno legend_col_first       no
+yesno legend_row_first       yes
+
+margin axis_title small
+
+graphsize x 6
+
+// Sizes of titles, etc.
+gsize                 medsmall
+gsize gap             tiny
+gsize text            medsmall
+gsize body            medsmall
+gsize small_body      small
+gsize heading         medium
+gsize subheading      medsmall
+gsize axis_title      medsmall
+gsize matrix_label    large
+gsize label           medsmall     
+gsize small_label     small     
+gsize matrix_marklbl  small     
+gsize key_label       small     
+gsize note            small
+gsize star            medsmall
+gsize text_option     medsmall     
+gsize dot_rectangle   third_tiny
+gsize axis_space      half_tiny
+gsize axis_title_gap  minuscule
+gsize tick            tiny
+gsize minortick       half_tiny
+* gsize minortick       .55
+gsize tickgap         half_tiny
+gsize notickgap       tiny
+gsize tick_label      small
+gsize tick_biglabel   medsmall
+gsize minortick_label vsmall
+gsize filled_text     medsmall
+gsize reverse_big     large
+gsize alternate_gap   zero
+gsize title_gap       vsmall
+gsize key_gap         vsmall
+gsize key_linespace   vsmall
+gsize star_gap        minuscule
+gsize legend_colgap   vsmall
+gsize label_gap       half_tiny
+gsize matrix_mlblgap  half_tiny
+gsize barlabel_gap    tiny
+
+gsize legend_row_gap    	tiny
+gsize legend_key_gap    	vsmall
+gsize legend_key_ysize  	vsmall
+
+gsize zyx2legend_key_gap    tiny
+gsize zyx2legend_key_xsize  vhuge
+gsize zyx2rowgap            zero
+
+* gsize clegend_width     huge
+* gsize clegend_height    zero
+
+gsize pie_explode       	medium
+gsize pielabel_gap      	zero
+
+gsize sts_risktable_space 	third_tiny
+gsize sts_risktable_tgap  	zero
+gsize sts_risktable_lgap  	zero
+gsize sts_risk_label      	medsmall
+gsize sts_risk_title      	medsmall
+gsize sts_risk_tick       	zero
+
+linestyle  legend			none
+linestyle  plotregion		none
+anglestyle vertical_tick	horizontal
+
+linewidth xyline       		medthin
+linewidth histogram    		vthin
+linewidth bar          		vthin
+
+linewidth p                 medium
+linewidth axisline          medthin
+linewidth tick              thin
+linewidth minortick         thin
+linewidth background        thin
+linewidth foreground        thin
+linewidth major_grid        thin
+linewidth minor_grid        thin
+linewidth refmarker         vthin
+linewidth matrixmark        vthin
+linewidth dots              thin
+linewidth dot_line          thin
+linewidth dot_area          thin
+linewidth dotmark           thin
+linewidth plotregion        vthin
+linewidth legend            vthin
+linewidth pie               vthin
+linewidth reverse_big       vthin
+linewidth sunflower         vthin
+linewidth matrix_plotregion vthin
+linewidth text_option       vthin
+linewidth ci                thin
+linewidth ci2               thin
+linewidth ci_area           thin
+linewidth ci2_area          thin
+linewidth pbar              thin
+linewidth p1bar             thin
+linewidth p2bar             thin
+linewidth p3bar             thin
+linewidth p4bar             thin
+linewidth p5bar             thin
+linewidth p6bar             thin
+linewidth p7bar             thin
+linewidth p8bar             thin
+linewidth p9bar             thin
+linewidth p10bar            thin
+linewidth p11bar            thin
+linewidth p12bar            thin
+linewidth p13bar            thin
+linewidth p14bar            thin
+linewidth p15bar            thin
+linewidth pline             medium
+linewidth p1line            medium
+linewidth p2line            medium
+linewidth p3line            medium
+linewidth p4line            medium
+linewidth p5line            medium
+linewidth p6line            medium
+linewidth p7line            medium
+linewidth p8line            medium
+linewidth p9line            medium
+linewidth p10line           medium
+linewidth p11line           medium
+linewidth p12line           medium
+linewidth p13line           medium
+linewidth p14line         	medium
+linewidth p15line         	medium
+linewidth rline 	      	medium
+linewidth p1lineplot  		medium
+linewidth p2lineplot  		medium
+linewidth p3lineplot  		medium
+linewidth p4lineplot  		medium
+linewidth p5lineplot  		medium
+linewidth p6lineplot  		medium
+linewidth p7lineplot 		medium
+linewidth p8lineplot  		medium
+linewidth p9lineplot  		medium
+linewidth p10lineplot 		medium
+linewidth p11lineplot 		medium
+linewidth p12lineplot 		medium
+linewidth p13lineplot 		medium
+linewidth p14lineplot 		medium
+linewidth p15lineplot 		medium
+
+linewidth small 			small
+linewidth histogram    		thin
+linewidth bar          		thin
+
+linewidth refline      		medthin
+
+intensity ci_area    		inten30
+
+yesno draw_minor_vgrid  	yes
+yesno draw_minor_hgrid  	yes
+
+symbolsize         			medsmall
+symbolsize p       			medsmall
+
+* Default symbol shapes
+symbol p1     				smcircle_hollow
+symbol p2     				smcircle
+symbol p3     				smsquare_hollow
+symbol p4     				smsquare
+symbol p5     				smtriangle_hollow
+symbol p6     				smtriangle
+symbol p7     				smdiamond_hollow
+symbol p8     				smdiamond
+symbol p9     				i
+symbol p10    				plus
+symbol p11    				x
+symbol p12    				smcircle
+symbol p13    				smcircle_hollow
+symbol p14    				smsquare
+symbol p15    				smsquare_hollow
+
+linepattern p1lineplot  	solid
+linepattern p2lineplot  	solid 
+linepattern p3lineplot  	solid
+linepattern p4lineplot  	solid
+linepattern p5lineplot  	solid
+linepattern p6lineplot  	solid
+linepattern p7lineplot  	solid
+linepattern p8lineplot  	solid
+linepattern p9lineplot  	dash
+linepattern p10lineplot 	dash
+linepattern p11lineplot 	dash
+linepattern p12lineplot 	dash
+linepattern p13lineplot 	dash
+linepattern p14lineplot 	dash
+linepattern p15lineplot 	dash
+
+linepattern p1line  		solid
+linepattern p2line  		solid 
+linepattern p3line  		solid
+linepattern p4line  		solid
+linepattern p5line  		solid
+linepattern p6line  		solid
+linepattern p7line  		solid
+linepattern p8line  		solid
+linepattern p9line  		dash
+linepattern p10line 		dash
+linepattern p11linep 		dash
+linepattern p12line 		dash
+linepattern p13line 		dash
+linepattern p14line 		dash
+linepattern p15line	 		dash
+
+linepattern xyline      	shortdash 	
+linepattern ci          	dash
+linepattern ci_area     	solid
+
+linepattern grid        	dot
+linepattern major_grid  	dot
+linepattern minor_grid  	dot
+
+yesno extend_axes_low       no
+yesno extend_axes_high      no
+yesno extend_axes_full_low  no
+yesno extend_axes_full_high no
+
+// Colors // 
+
+* White background for all plots
+color background             white
+
+* Textboxes
+color box           		gs15
+color textbox       		gs15
+color mat_label_box 		gs15
+
+* Default for all other non-specified objects
+* NOTE: CIs in marginsplot is based on this
+color p1					red*1.2
+color p2 					eltblue
+color p3 					gs8
+color p4 					black
+color p5 					cyan*1.2
+color p6 					purple
+color p7 					gold
+color p8 					dkgreen
+color p9 					lavender
+color p10 					navy
+color p11					dkgreen
+color p12 					pink
+color p13 					sand
+color p14 					black
+
+* Default for lines (matching the symbols)
+color p1line				red*1.2
+color p2line				eltblue
+color p3line				gs8
+color p4line				black
+color p5line 				cyan*1.2
+color p6line 				purple
+color p7line 				gold
+color p8line 				dkgreen
+color p9line 				lavender
+color p10line 				navy
+color p11line				dkgreen
+color p12line				pink
+color p13line 				sand
+color p14line 				black
+
+color p1lineplot			red*1.2
+color p2lineplot			eltblue
+color p3lineplot			gs8
+color p4lineplot			black
+color p5lineplot 			cyan*1.2
+color p6lineplot			purple
+color p7lineplot 			gold
+color p8lineplot 			dkgreen
+color p9lineplot 			lavender
+color p10lineplot 			navy
+color p11lineplot			dkgreen
+color p12lineplot			pink
+color p13lineplot			sand
+color p14lineplot 			black
+
+color p1markline			red*1.2
+color p2markline			eltblue
+color p3markline			gs8
+color p4markline			black
+color p5markline 			cyan*1.2
+color p6markline			purple
+color p7markline 			gold
+color p8markline 			dkgreen
+color p9markline 			lavender
+color p10markline 			navy
+color p11markline			dkgreen
+color p12markline			pink
+color p13markline			sand
+color p14markline 			black
+
+* Bar charts
+color p1bar					red
+color p2bar					eltblue*.8
+color p3bar					gs10
+color p4bar					black*.9
+color p5bar					cyan
+color p6bar					purple*.8
+color p7bar					gold*.8
+color p8bar					dkgreen*.9
+color p9bar					lavender*.9
+color p10bar				navy*.8
+color p11bar				dkgreen*.9
+color p12bar				pink*.7
+color p13bar				sand*.8
+color p14bar				black
+
+* Confidence Intervals and other rarea plots
+color parea					gs13
+color parealine				gs13
+
+* Area plots
+color p1area				red
+color p2area				eltblue*.8
+color p3area				gs10
+color p4area				black*.9
+color p5area				cyan
+color p6area				purple*.8
+color p7area				gold*.8
+color p8area				dkgreen*.9
+color p9area				lavender*.9
+color p10area				navy*.8
+color p11area				dkgreen*.9
+color p12area				pink*.7
+color p13area				sand*.8
+color p14area				black
+
+color p1arealine			red
+color p2arealine			eltblue*.8
+color p3arealine			gs10
+color p4arealine			black*.9
+color p5arealine			cyan
+color p6arealine			purple*.8
+color p7arealine			gold*.8
+color p8arealine			dkgreen*.9
+color p9arealine			lavender*.9
+color p10arealine			navy*.8
+color p11arealine			dkgreen*.9
+color p12arealine			pink*.7
+color p13arealine			sand*.8
+color p14arealine			black
+
+* Pie slices
+color p1pie					red
+color p2pie					eltblue*.8
+color p3pie					gs10
+color p4pie					black*.9
+color p5pie					cyan
+color p6pie					purple*.8
+color p7pie					gold*.8
+color p8pie					dkgreen*.9
+color p9pie					lavender*.9
+color p10pie				navy*.8
+color p11pie				dkgreen*.9
+color p12pie				pink*.7
+color p13pie				sand*.8
+color p14pie				black
+
+* Fade out bar charts and histograms into lighther palette because
+* so much ink
+intensity bar 				80
+intensity histogram         80
+
+* Confidence Intervals
+color ci_line      			gs13
+color ci_arealine  			gs13
+color ci_area      			gs13
+color ci_symbol    			gs13
+color ci2_line     			gs13
+color ci2_arealine 			gs13
+color ci2_area     			gs13
+color ci2_symbol   			gs13
+
+* Histograms
+color histogram 			none
+color histogram_line		black
+
+color xyline 				gs7
+color tick         			gs10
+color minortick    			gs10
+
+color grid                  gs10
+color major_grid            gs10
+color minor_grid            gs10
+color axisline     			gs10
+
+color matrix         		gs6    
+color matrixmarkline 		gs6    
+color refmarker      		gs11
+color refmarkline    		black
+color histogram      		gs8
+color histback       		gs10
+color histogram_line 		black
+
+* Gridlines
+yesno draw_major_grid       	no
+yesno draw_minor_grid       	no
+yesno draw_majornl_grid     	no
+yesno draw_minornl_grid     	no
+yesno draw_major_hgrid      	yes
+yesno draw_minor_hgrid      	no
+yesno draw_majornl_hgrid    	no
+yesno draw_minornl_hgrid    	no
+yesno draw_major_vgrid      	yes
+yesno draw_minor_vgrid      	no
+yesno draw_majornl_vgrid    	no
+yesno draw_minornl_vgrid    	no
+yesno draw_major_nl_vgrid   	no
+yesno draw_minor_nl_vgrid   	no
+yesno draw_majornl_nl_vgrid 	no
+yesno draw_minornl_nl_vgrid 	no
+yesno draw_major_nl_hgrid   	no
+yesno draw_minor_nl_hgrid   	no
+yesno draw_majornl_nl_hgrid 	no
+yesno draw_minornl_nl_hgrid 	no
+yesno draw_major_nt_vgrid   	no
+yesno draw_minor_nt_vgrid   	no
+yesno draw_majornl_nt_vgrid 	no
+yesno draw_minornl_nt_vgrid 	no
+yesno draw_major_nt_hgrid   	no
+yesno draw_minor_nt_hgrid   	no
+yesno draw_majornl_nt_hgrid 	no
+yesno draw_minornl_nt_hgrid 	no
+yesno draw_major_nlt_vgrid  	no
+yesno draw_minor_nlt_vgrid  	no
+yesno draw_majornl_nlt_vgrid 	no
+yesno draw_minornl_nlt_vgrid 	no
+yesno draw_major_nlt_hgrid   	no
+yesno draw_minor_nlt_hgrid   	no
+yesno draw_majornl_nlt_hgrid 	no
+yesno draw_minornl_nlt_hgrid 	no
+yesno extend_grid_low        	yes
+yesno extend_grid_high       	yes
+yesno extend_minorgrid_low   	yes
+yesno extend_minorgrid_high 	yes
+yesno extend_majorgrid_low   	yes
+yesno extend_majorgrid_high  	yes
+yesno grid_draw_min          	no
+yesno grid_draw_max          	no
+yesno grid_force_nomin       	no
+yesno grid_force_nomax       	no
+
+

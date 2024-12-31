@@ -1,0 +1,173 @@
+{smcl}
+{* 07Dec2007}{...}
+{hline}
+help for {hi:reclink}
+{hline}
+
+{title:Record Linkage}
+
+
+{p 4 21}{cmd:reclink} {it: varlist} {cmd:using} {it:filename}
+            {cmd:,} 
+            {cmdab:idm:aster(}{it:varname}{cmd:)} 
+						{cmdab:idu:sing(}{it:varname}{cmd:)}             
+            {cmdab:g:en(}{it:newvarname}{cmd:)} 
+            [
+            {cmdab:wm:atch(}{it:match weight list}{cmd:)}  
+						{cmdab:wnom:atch(}{it:non-match weight list}{cmd:)}  
+						{cmdab:orb:lock(}{it:varlist}{cmd:)}  
+						{cmdab:req:uired(}{it:varlist}{cmd:)}  
+						{cmdab:exa:ctstr(}{it:varlist}{cmd:)}  
+						{cmdab:exc:lude(}{it:filename}{cmd:)}  
+						{cmdab:_m:erge(}{it:newvarname}{cmd:)} 
+						{cmdab:uv:arlist(}{it:varlist}{cmd:)} 
+						{cmdab:upr:efix(}{it:text}{cmd:)} 
+						{cmdab:mins:core(}{it:#}{cmd:)} 
+						{cmdab:minb:igram(}{it:#}{cmd:)}{p_end}
+
+{title:Description}
+
+{p 4 4 2}{cmd:reclink} uses record linkage methods to match observations between
+two datasets where no perfect key fields exist -- essentially a fuzzy merge.  
+{cmd: reclink} allows for user-defined matching and non-matching weights for each 
+variable and employs a bigram string comparator to assess imperfect string matches.  
+
+
+{p 4 4 2}The master and using datasets must each have a variable that uniquely identifies
+observations.  Two new variables are created, one to hold the matching score (scaled 0-1) 
+and one for the merge variable.  In addition, all of the matching variables from the using 
+dataset are brought into the master dataset (with newly prefixed names) to allow for 
+manual review of matches.  
+
+{p 4 4 2} To enhance the speed of this often slow procedure, or-blocking can be used which 
+requires at least one variable to match perfectly between datasets.  Or-blocking is 
+the default if 4 or more variables are specified.
+
+{title:Note and Warning}
+
+{p 4 4 2}In general, record linkage methods are imperfect and results should be manually reviewed, 
+especially for observations with lower matching scores.  It is not uncommon to try several 
+runs with a variety of weights, orblock options, and derived variables to increase the accuracy
+of the linkage.  A series of {cmd: reclink} commands can be used with the help of 
+the {it: exclude} option.
+
+{title:Required Options} 
+
+
+{p 4 4 2}
+{opt idmaster(varname)} is required and specifies the name of a variable in the 
+master dataset that uniquely identifies the observations.  This variable is used 
+to track observations.  If a unique identifer does not exist, one can be created 
+simply as gen idmaster=_n.
+
+{p 4 4 2}
+{opt idusing(varname)} is required and specifies the name of a variable in the 
+using dataset that uniquely identifies the observations analogous to {it: idmaster}.  
+
+{p 4 4 2}
+{opt gen(newvarname)} is required and specifies the name of a new variable created by 
+{cmd: reclink} to store the matching scores (scaled 0-1) for the linked observations.  
+
+
+{title:Common Options} 
+
+{p 4 4 2}
+{opth wmatch(numlist)} specifies the weights given to matches for each variable in 
+{it: varlist}.  Each variable requires a weight, although a default of 1 will be used 
+for all variables if not specified.  Weights must be >=1 and are typically integers 
+from 1 to 20.  The values should reflect the relative likelihood of a variable match 
+indicating a true observation match.  For example, a name variable will often have 
+a large weight such as 10 but a city variable, where many duplicates are expected, 
+may have a weight of just 2.
+
+{p 4 4 2}
+{opth wnomatch(numlist)} specifies the weights given to mismatches for each variable in the 
+{it: varlist}.  These weights are analogous to {it: wmatch} weights, but instead reflect 
+the relative likelihood that a mismatch on a variable indicates that the observations don't match
+ -- a small value indicates that mismatches are expected even if the observations truly match.  
+ A variable such as telephone number may have a large wmatch but a small wnomatch because 
+ matches are unlikely to occur randomly, but mismatches may be fairly common due to changes 
+ in phone numbers over time or multiple phone numbers owned by the same person/entity.
+
+{p 4 4 2}
+{opt orblock(varlist | none)} is used to speed up the record linkage by providing a method for 
+selecting only subsets of observations from the using dataset to search for matches.  Only 
+observations that match on at least one variable in the Or-Block are examined.  Or-blocking on 
+the full varlist is the default behavior if there are 4 or more variables specified.  This default 
+can be overriden by specifying {it: orblock(none)}, which is advised if all of the variables are 
+expected to be fairly unique.  New variables are sometimes created in the master and using datasets 
+to assist with Or-Blocking, such as initials of first and last names, street numbers extracted from 
+addresses, and telephone area codes.  Or-Blocking can dramatically improve the speed of {cmd: reclink}.
+
+{p 4 4 2}
+{opt required(varlist)} allows the user to specify one or more variables that must match exactly 
+for the observation to be considered a match.  The variable(s) must also be in the main varlist and 
+are included in the matching score.   This option could have been named andblock to
+make it's function clear in relation to {it: orblock}.
+
+{p 4 4 2}
+{opt exclude(filename)} allows the user to specify the name of a file that contains previously 
+matched observations, providing a convenient way to use {cmd: reclink} repeatedly with different 
+specifications.  The exclude file must include the variables specified in  {it: idmaster} and 
+{it: idusing}.  Any observation with non-missing values for both id variables is considered matched
+and is excluded from the datasets for the current matching.  Results from each run of {cmd: reclink} 
+can be appended together and specified as the {it: exclude} file.  This approach can speed up the 
+matching process by starting with more restrictive {it: orblock} and/or {it: required} specifications 
+that work quickly, followed by a more exhaustive and slow search for the more difficult observations.  
+
+{title:Less Commonly Used Options} 
+
+{p 4 4 2}
+{opt _merge(varname)} specifies the name of the variable that will mark the
+source of each observation.  The default name is {cmd:_merge(_merge)}.
+
+{p 4 4 2}
+{opt exactstr(varlist)} allows the user to specify one or more string variables where the 
+bigram string comparator is not used to assess the degree of agreement, but instead the 
+agreement is simply 0 or 1.  
+
+{p 4 4 2}
+{opt uvarlist(varlist)} allows the using dataset to have different variable names than the master 
+dataset for the variables to be matched.  If specified, the {it: uvarlist} must have the same number 
+of variables in the same ordering as the master {it: varlist}.
+
+{p 4 4 2}
+{opt uprefix(string)} allows changing the prefix used for renaming the variables in the
+matching {it: varlist} that are brought into the master dataset from the using dataset.  The default 
+uprefix is U.  For example, if the matching variables are name and address, then the resulting 
+dataset will have variables Uname and Uaddress added from the using dataset for the matching observations.
+
+{p 4 4 2}
+{opt minscore(#)} specifies the minimum overall matching score value (0-1) used to declare two 
+observations a match, default=0.6.  Observations in the using dataset are only merged into the 
+master dataset if they have a match score>={it:minscore} and are the highest match score 
+in the using dataset.  Lower values of {it:minscore} will expand the number of matches but may lead to
+more false matches.   
+
+{p 4 4 2}
+{opt minbigram(#)} specifies the bigram value needed to declare two strings as likely matched, default=0.6.  
+Each raw bigram score is transformed into match and non-match weight multipliers that vary from 
+0 to 1 with a sharp change at {it:minbigram}.  A higher value of minbigram may be useful when matching 
+longer strings.   
+
+{title:Example} 
+
+{p 4 4 2} {cmd: . reclink fname lname address zip phone using bigset, gen(myscore) idm(id) idu(recno) wmatch(3 8 10 2 8) wmnomatch(4 5 8 4 2) }
+
+{p 4 4 2} finds matches between current dataset and bigset based on 5 variables.  Uses orblocking by default so that 
+only records that match on fname or lname or address or zip or phone will be examined.  Could specify orblock(none) to 
+widen possible matches but much slower.  Could {cmd: gen initials=substr(fname,1,1)+substr(lname,1,1)} in both 
+datasets and then add initials to the varlist to increase likelihood that or-blocking will work.
+
+
+
+{title:Author}
+
+{p 4 4 2}Michael Blasnik{break}
+michael.blasnik@verizon.net
+	 
+
+{title:Also see}
+
+{p 4 13 2}Online: help for {help merge}, {help joinby}
+

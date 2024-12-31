@@ -1,0 +1,246 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d06.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:04:15
+{txt}
+{com}. 
+. /// 1. import RAIS dataset
+> 
+. use "data\census\overall_formal_and_informal_2000_and_2010_census_municipality_CNAE95.dta", clear
+{txt}
+{com}. 
+. rename cnae10 cnae10Code
+{res}{txt}
+{com}. 
+. tempfile temp
+{txt}
+{com}. save `temp'
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. /// 2. merge with CNAE-ISIC concordance file
+> 
+. import excel "data\conc\CNAExISIC - EXPORT.xlsx", clear firstrow allstring
+{res}{text}(5 vars, 560 obs)
+
+{com}. 
+. // check uniqueness
+. bysort cnae10Code: gen N = _N
+{txt}
+{com}. qui sum N
+{txt}
+{com}. 
+. if r(mean) > 1 {c -(}
+.         di "non-unique"
+.         break   
+. {c )-}
+{txt}
+{com}. 
+. drop N
+{txt}
+{com}. 
+. merge 1:m cnae10Code using `temp'
+{res}{txt}{p 0 7 2}
+(variable
+{bf:cnae10Code} was {bf:str5}, now {bf:str7} to accommodate using data's values)
+{p_end}
+
+{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           5,189
+{txt}{col 9}from master{col 30}{res}             363{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           4,826{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         786,388{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. keep if _merge == 3
+{txt}(5,189 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. /// 3. rename variables and save processed rais database as a tempfile
+>         /// we erase this file at the end of this do-file
+> 
+. rename ano year
+{res}{txt}
+{com}. rename Código_IBGE mun_code_ibge
+{res}{txt}
+{com}. 
+. /// adjust ibge_code
+> 
+. gen t_ufCode = substr(string(mun_code_ibge),1,2)
+{txt}
+{com}. destring t_ufCode, gen(ufCode)
+{txt}t_ufCode: all characters numeric; ufCode {res}generated {txt}as {res}byte
+{txt}
+{com}. drop t_*
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}.         collapse (mean) avg_wage_tot avg_wage_man_tot avg_wage_less_than_pri_tot avg_wage_primary_tot avg_wage_secondary_tot avg_wage_college_tot avg_wage_q1_tot avg_wage_q2_tot avg_wage_q3_tot avg_wage_q4_tot, by(year ufCode mun_code_ibge isic3code3d )
+{res}{txt}
+{com}.         save "data\temp\means.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+data\temp\means.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+data\temp\means.dta{rm}
+saved
+{p_end}
+
+{com}. restore
+{txt}
+{com}. 
+. collapse (sum) worker_tot man_tot less_than_primary_tot primary_tot secondary_tot college_or_higher_tot wage_mass_tot wage_mass_man_tot wage_mass_less_than_pri_tot wage_mass_primary_tot wage_mass_secondary_tot wage_mass_college_tot worker_f worker_inf wage_mass_f  wage_mass_inf, by(year ufCode  mun_code_ibge isic3code3d )
+{res}{txt}
+{com}. 
+. merge year ufCode  mun_code_ibge isic3code3d using "data\temp\means.dta"
+{txt}{p}
+(you are using old
+{bf:merge} syntax; see
+{bf:{help merge:[D] merge}} for new syntax)
+{p_end}
+
+{com}. erase "data\temp\means.dta"
+{txt}
+{com}. drop _merge
+{txt}
+{com}. 
+. compress
+  {txt}variable {bf}{res}year{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}int{sf}
+  {txt}variable {bf}{res}worker_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}man_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}less_than_primary_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}primary_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}secondary_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}college_or_higher_tot{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}worker_f{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}worker_inf{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+{txt}  (19,760,188 bytes saved)
+
+{com}. 
+. /// 6. save tempfile and close log
+> 
+. save "data\temp\mun-census-panel-processed.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-census-panel-processed.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. /// 7. calculate growth rates
+> 
+. collapse (sum) worker_tot man_tot less_than_primary_tot primary_tot secondary_tot college_or_higher_tot wage_mass_tot wage_mass_man_tot wage_mass_less_than_pri_tot wage_mass_primary_tot wage_mass_secondary_tot wage_mass_college_tot worker_f worker_inf wage_mass_f wage_mass_inf, by(year ufCode  mun_code_ibge )
+{res}{txt}
+{com}. 
+. egen groupid = group(ufCode mun_code_ibge)
+{txt}
+{com}. egen t = group(year)
+{txt}
+{com}. 
+. xtset groupid t
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:t}{txt:, }{res:{bind:1}}{txt: to }{res:{bind:2}}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen w = wage_mass_tot / worker_tot
+{txt}
+{com}. gen w_f = wage_mass_f / worker_f
+{txt}(2 missing values generated)
+
+{com}. gen w_inf = wage_mass_inf / worker_inf
+{txt}
+{com}. 
+. local group worker_tot man_tot less_than_primary_tot primary_tot secondary_tot college_or_higher_tot worker_f worker_inf w w_f w_inf
+{txt}
+{com}. 
+. foreach var of local group {c -(}
+{txt}  2{com}.         gen l`var' = log(`var')
+{txt}  3{com}.         gen base_l`var' = l.l`var'
+{txt}  4{com}.         gen g`var' = l`var' - l.l`var'
+{txt}  5{com}.         gen g2`var' = (`var'/l.`var') - 1
+{txt}  6{com}.         drop l`var'
+{txt}  7{com}. {c )-}
+{txt}(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(1 missing value generated)
+(5,566 missing values generated)
+(5,566 missing values generated)
+(5,566 missing values generated)
+(4 missing values generated)
+(5,569 missing values generated)
+(5,569 missing values generated)
+(5,569 missing values generated)
+(398 missing values generated)
+(5,963 missing values generated)
+(5,963 missing values generated)
+(5,963 missing values generated)
+(2 missing values generated)
+(5,567 missing values generated)
+(5,567 missing values generated)
+(5,567 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(2 missing values generated)
+(5,567 missing values generated)
+(5,567 missing values generated)
+(5,567 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+(5,565 missing values generated)
+
+{com}. 
+. keep if year == 2010
+{txt}(5,507 observations deleted)
+
+{com}. keep ufCode mun_code_ibge year g* base_*
+{txt}
+{com}. 
+. drop groupid
+{txt}
+{com}. 
+. save "data\temp\mun-census-growth-rates.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-census-growth-rates.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d06.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:04:24
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

@@ -1,0 +1,76 @@
+clear
+capture log close
+log using "logs\d03.smcl", replace  					// chooses logfile
+
+/// 1. import quartiles by state, make adjustments, save as tempfiles
+
+import delimited "data\trade-processed\EXP_quartiles.csv"
+
+gen co_isic_grupo_str = string(co_isic_grupo)
+gen isic3code3d = substr(3 * "0", 1, 3 - length(co_isic_grupo_str)) + co_isic_grupo_str
+rename co_ano year
+rename sg_uf_ncm uf
+drop co_isic_grupo*
+
+// add state codes
+
+gen ufCode = .
+
+replace ufCode = 12 if uf == "AC"
+replace ufCode = 27 if uf == "AL"
+replace ufCode = 16 if uf == "AP"
+replace ufCode = 13 if uf == "AM"
+replace ufCode = 29 if uf == "BA"
+replace ufCode = 23 if uf == "CE"
+replace ufCode = 53 if uf == "DF"
+replace ufCode = 32 if uf == "ES"
+replace ufCode = 52 if uf == "GO"
+replace ufCode = 21 if uf == "MA"
+replace ufCode = 51 if uf == "MT"
+replace ufCode = 50 if uf == "MS"
+replace ufCode = 31 if uf == "MG"
+replace ufCode = 15 if uf == "PA"
+replace ufCode = 25 if uf == "PB"
+replace ufCode = 41 if uf == "PR"
+replace ufCode = 26 if uf == "PE"
+replace ufCode = 22 if uf == "PI"
+replace ufCode = 24 if uf == "RN"
+replace ufCode = 43 if uf == "RS"
+replace ufCode = 33 if uf == "RJ"
+replace ufCode = 11 if uf == "RO"
+replace ufCode = 14 if uf == "RR"
+replace ufCode = 42 if uf == "SC"
+replace ufCode = 35 if uf == "SP"
+replace ufCode = 28 if uf == "SE"
+replace ufCode = 17 if uf == "TO"
+
+drop if missing(ufCode)
+
+/// merge with basefile
+
+merge 1:m year ufCode isic3code3d using "data\temp\rais-panel-processed-mun.dta"
+
+/// count employment by tradable quartiles
+
+gen nonexp = 0
+replace nonexp = 1 if q1 == 1 | q2 == 1 | q3 == 1 | q4 == 1  
+keep if _merge > 1
+drop _merge
+
+collapse (sum) employment, by(year ufCode mun_code_ibge nonexp)
+
+reshape wide employment, i(year ufCode mun_code_ibge) j(nonexp)
+
+rename employment0 emp_ntrade
+rename employment1 emp_trade
+replace emp_trade = 0 if !missing(emp_trade)
+
+merge 1:1 year ufCode mun_code_ibge using "data\temp\mun-trade-panel-processed.dta"
+keep if _merge == 3
+drop _merge
+
+drop if missing(mun)
+
+save "data\temp\mun-trade-panel-processed.dta", replace
+
+log close

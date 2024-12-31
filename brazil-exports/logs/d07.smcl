@@ -1,0 +1,211 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d07.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:04:30
+{txt}
+{com}. 
+. /// 1. create region specific export shares
+> 
+. use "data\temp\mun-census-panel-processed.dta", clear
+{txt}
+{com}. 
+. // create export exposure
+. 
+. sort mun_code isic3code3d year
+{txt}
+{com}. 
+. egen groupid = group(uf mun_code)
+{res}{txt}
+{com}. 
+. // create shares
+. 
+. bysort year groupid: egen TotalLF = sum(worker_tot)
+{txt}
+{com}. gen LaborShr = worker_tot / TotalLF
+{txt}
+{com}. 
+. gen t_LaborShr2000 = LaborShr if year == 2000
+{txt}(304,120 missing values generated)
+
+{com}. bysort mun_code isic3code3d: egen LaborShr2000 = mean(t_LaborShr2000)
+{txt}(88,592 missing values generated)
+
+{com}. 
+. // save tempfile
+. 
+. save "data\temp\census-laborShrs.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\census-laborShrs.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. /// 2. import trade by sector
+> 
+. 
+. use "data/temp/panel-isic3-3d.dta", clear
+{txt}
+{com}. 
+. // keep only 2000, 2010
+. 
+. keep if year == 2000 | year == 2010
+{txt}(1,463 observations deleted)
+
+{com}. 
+. // reshape 
+. reshape wide foreigndemandus, i(isic3_3d) j(year)
+{txt}(j = 2000 2010)
+
+Data{col 36}Long{col 43}->{col 48}Wide
+{hline 77}
+Number of observations     {res}         154   {txt}->   {res}77          
+{txt}Number of variables        {res}           3   {txt}->   {res}3           
+{txt}j variable (2 values)              {res}year   {txt}->   (dropped)
+xij variables:
+                        {res}foreigndemandus   {txt}->   {res}foreigndemandus2000 foreigndemandus2010
+{txt}{hline 77}
+
+{com}. 
+. rename isic3_3d isic3code3d
+{res}{txt}
+{com}. 
+. save "data\temp\tradeIsic.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+data\temp\tradeIsic.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+data\temp\tradeIsic.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. merge 1:m isic3code3d using "data\temp\census-laborShrs.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}         356,584
+{txt}{col 9}from master{col 30}{res}              17{txt}  (_merge==1)
+{col 9}from using{col 30}{res}         356,567{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         224,615{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. // calculate missing workers
+. 
+. cap qui total worker_tot if missing(foreigndemandus2000) & missing(foreigndemandus2010)
+{txt}
+{com}. local missing = _b[worker_tot]
+{txt}
+{com}. qui total worker_tot
+{txt}
+{com}. local total = _b[worker_tot]
+{txt}
+{com}. display "`=`missing' / `total''"
+{res}.6603408652904196
+{txt}
+{com}. 
+. keep if _merge == 3
+{txt}(356,584 observations deleted)
+
+{com}. 
+. // gen exposures
+. 
+. gen lforeigndemandus2010 = log(foreigndemandus2010)
+{txt}
+{com}. gen lforeigndemandus2000 = log(foreigndemandus2000)
+{txt}
+{com}. gen gFD = lforeigndemandus2010 - lforeigndemandus2000
+{txt}
+{com}. gen g2FD = foreigndemandus2010 / foreigndemandus2000 - 1
+{txt}
+{com}. 
+. gen giv_comtrade = LaborShr2000 * gFD 
+{txt}(35,885 missing values generated)
+
+{com}. gen g2iv_comtrade = LaborShr2000 * g2FD 
+{txt}(35,885 missing values generated)
+
+{com}. 
+. // collapse and save new dataset
+. 
+. keep if year == 2010
+{txt}(108,960 observations deleted)
+
+{com}. 
+. collapse (sum) LaborShr2000 giv_comtrade g2iv_comtrade, by(year ufCode mun_code)
+{res}{txt}
+{com}. 
+. // replace missing values
+. 
+. replace giv_comtrade = . if giv == 0
+{txt}(58 real changes made, 58 to missing)
+
+{com}. replace g2iv_comtrade = . if g2iv == 0
+{txt}(58 real changes made, 58 to missing)
+
+{com}. 
+. local group "giv_comtrade g2iv_comtrade"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w) trim
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. // merge with growth rates dataset
+. 
+. merge 1:1 year ufCode mun_code using "data\temp\mun-census-growth-rates.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           5,565{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. drop _merge
+{txt}
+{com}. 
+. merge 1:1 year ufCode  mun_code using "data\temp\mun-census-microregion-trade-panel-processed.dta"
+{res}{txt}{p 0 7 2}
+(variable
+{bf:ufCode} was {bf:byte}, now {bf:float} to accommodate using data's values)
+{p_end}
+
+{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           5,565{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. drop _merge
+{txt}
+{com}. 
+. save "data\temp\mun-census-microregion-trade-panel-processed.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-census-microregion-trade-panel-processed.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. // erase tempfiles
+. 
+. erase "data\temp\tradeIsic.dta"
+{txt}
+{com}. *erase "data\temp\rais-panel-processed.dta"
+. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d07.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:04:33
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

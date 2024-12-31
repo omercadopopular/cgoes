@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <script>
+            function onwinerror() {
+                window.scriptloaderror = true;
+            }
+            
+            function checkforie() {
+                window.isIE = false;
+                var ua = window.navigator.userAgent;
+                var old_ie = ua.indexOf('MSIE ');
+                var ie_11 = ua.indexOf('Trident/');
+
+                if ((old_ie > -1) || (ie_11 > -1)) {
+                    window.isIE = true;
+                }
+            }
+            checkforie();
+            window.onerror = onwinerror
+        </script>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+        <link rel="icon" href="data:,"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <noscript>
+          <link rel="stylesheet" href="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/css/react-header-and-footer/21.0.3/styles.css">
+        </noscript>
+        <style>
+        
+            @charset "UTF-8";
+            .els-row-center,.els-row-center-fixed,.els-row-content{
+                margin-left:auto;margin-right:auto
+            }
+            @font-face {
+              font-family:ElsevierSans;
+              src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-sans/1.0/sans/ElsevierSansWeb-Regular.woff2) format("woff2");
+              font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierSans;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-sans/1.0/sans/ElsevierSansWeb-Bold.woff2) format("woff2");
+                font-weight:700;
+                font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierSans;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-sans/1.0/sans/ElsevierSansWeb-RegularItalic.woff2) format("woff2");
+                font-style:italic;
+                font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierSans;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-sans/1.0/sans/ElsevierSansWeb-BoldItalic.woff2) format("woff2");
+                font-weight:700;font-style:italic;font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierGulliver;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-gulliver/1.0/serif/ElsevierGulliver-Regular.woff2) format("woff2");
+                font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierGulliver;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-gulliver/1.0/serif/ElsevierGulliver-Bold.woff2) format("woff2");
+                font-weight:700;
+                font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierGulliver;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-gulliver/1.0/serif/ElsevierGulliver-Italic.woff2) format("woff2");
+                font-style:italic;
+                font-display:swap
+            }
+            @font-face {
+                font-family:ElsevierGulliver;
+                src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/fonts/elsevier-gulliver/1.0/serif/ElsevierGulliver-BoldItalic.woff2) format("woff2");
+                font-weight:700;font-style:italic;
+                font-display:swap
+            }                       
+            @font-face {
+                font-family: NexusSans;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Regular.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSans;
+                font-weight: 700;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Bold.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSans;
+                font-style: italic;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Italic.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSans;
+                font-style: italic;
+                font-weight: 700;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-BoldItalic.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSerif;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Regular.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSerif;
+                font-weight: 700;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Bold.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSerif;
+                font-style: italic;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Italic.woff) format("woff");
+            }
+            @font-face {
+                font-family: NexusSerif;
+                font-style: italic;
+                font-weight: 700;
+                src: url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-BoldItalic.woff) format("woff");
+            }
+            .e404 {
+                min-height: 512px;
+                font-family: ElsevierSans, NexusSans, Arial, Helvetica, Lucida Sans Unicode, Microsoft Sans Serif, Segoe UI Symbol, STIXGeneral, Cambria Math, Arial Unicode MS, sans-serif;
+            }
+            .e404-title {
+                font-size: 24px;
+                line-height: 32px;
+                color: #fff;
+            }
+            @media (min-width: 625px) {
+                .e404-title {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+            .e404-sugg-title {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            @media (min-width: 625px) {
+                .e404-sugg-title {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+            .e404-art-title {
+                font-family: ElsevierSans, NexusSerif, Georgia, serif;
+                font-size: 18px;
+                line-height: 26px;
+            }
+            @media (min-width: 625px) {
+                .e404-art-title {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+            .e404-msg-para {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            .els-row-center {
+                max-width: 1392px;
+            }
+            .els-row-content {
+                max-width: 1296px;
+            }
+            .els-row-center-fixed {
+                max-width: 1224px;
+            }
+            .els-row-padding {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .els-row-section {
+                padding-bottom: 32px;
+                padding-top: 32px;
+            }
+            .els-row-dark.els-row-center,
+            .els-row-grey.els-row-center,
+            .els-row-white.els-row-center {
+                background: red !important;
+            }
+            .els-row-dark,
+            .els-row-grey,
+            .els-row-white {
+                clear: both;
+                padding-left: 8px;
+                padding-right: 8px;
+                transition: margin 0.3s;
+            }
+            @media (min-width: 625px) {
+                .e404-msg-para {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+                .els-row-dark,
+                .els-row-grey,
+                .els-row-white {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                }
+                .e404-art-list,
+                .e404-sugg-title {
+                    margin-left: 8.33%;
+                    margin-right: 8.33%;
+                }
+            }
+            @media (min-width: 1121px) {
+                .els-row-dark,
+                .els-row-grey,
+                .els-row-white {
+                    padding-left: 24px;
+                    padding-right: 24px;
+                }
+            }
+            .els-row-transparent {
+                transition: margin 0.3s;
+            }
+            .els-row-dark {
+                background-color: #505050;
+                color: #fff;
+            }
+            .els-row-grey {
+                background-color: #f5f5f5;
+            }
+            .els-row-white {
+                background-color: #fff;
+            }
+            .ctrl-error .els-header-search-toggle {
+                display: none;
+            }
+            .e404-art-item,
+            .e404-warning-icon,
+            .is-expanded .qs404-author,
+            .is-expanded .qs404-issue,
+            .is-expanded .qs404-page,
+            .is-expanded .qs404-source,
+            .is-expanded .qs404-volume,
+            .qs404-all {
+                display: inline-block;
+            }
+            .e404-art-author {
+                color: #505050;
+            }
+            .e404-art-item {
+                font-size: 16px;
+                line-height: 24px;
+                padding: 0 8px 17px;
+                vertical-align: top;
+                list-style: none;
+            }
+            @media (min-width: 721px) {
+                .e404-art-list,
+                .e404-sugg-title {
+                    margin-left: 16.66%;
+                    margin-right: 16.66%;
+                }
+                .e404-art-list {
+                    -webkit-column-count: 2;
+                    column-count: 2;
+                    -webkit-column-gap: 0;
+                    column-gap: 0;
+                }
+            }
+            .e404-art-source {
+                color: #737373;
+                padding-top: 6px;
+            }
+            .e404-msg {
+                margin-left: 48px;
+                padding: 24px 8px 23px;
+            }
+            @media (min-width: 625px) {
+                .e404-msg {
+                    margin-left: 8.33%;
+                    margin-right: 8.33%;
+                    padding: 37px 8px 39px;
+                }
+            }
+            @media (min-width: 721px) {
+                .e404-msg {
+                    margin-left: 16.66%;
+                    margin-right: 16.66%;
+                }
+            }
+            .e404-msg-link:link {
+                color: #44c6f4;
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+                transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            }
+            .e404-msg-link:focus,
+            .e404-msg-link:hover {
+                color: #ff8200;
+                border-bottom-color: #ff8200;
+            }
+            .e404-msg-para {
+                padding-top: 13px;
+                max-width: 33em;
+            }
+            @media (min-width: 625px) {
+                .e404-msg-para {
+                    padding-top: 17px;
+                }
+            }
+            .e404-sugg-title {
+                color: #505050;
+                padding: 29px 8px 0;
+            }
+            @media (min-width: 625px) {
+                .e404-sugg-title {
+                    padding: 26px 8px 16px;
+                }
+            }
+            .e404-warning-icon {
+                border: 2px solid #ff6a5a;
+                color: #ff6a5a;
+                font-size: 24px;
+                line-height: 24px;
+                margin: 0 16px 0 -48px;
+                padding-top: 4px;
+                text-align: center;
+                vertical-align: baseline;
+                width: 32px;
+            }
+            .qs404-cell {
+                padding: 4px;
+            }
+            .qs404-all {
+                padding-right: 44px;
+                width: 100%;
+            }
+            @media (min-width: 625px) {
+                .qs404-all {
+                    padding-right: 4px;
+                    width: 52%;
+                }
+            }
+            @media (min-width: 1121px) {
+                .qs404-all {
+                    width: 28%;
+                }
+            }
+            .qs404-author {
+                display: none;
+                width: 100%;
+            }
+            @media (min-width: 625px) {
+                .qs404-author {
+                    display: inline-block;
+                    width: 48%;
+                }
+            }
+            .qs404-button {
+                position: absolute;
+                right: 8px;
+                top: 14px;
+            }
+            .qs404-form {
+                display: block;
+                padding: 10px 4px;
+                position: relative;
+            }
+            @media (min-width: 625px) {
+                .qs404-button {
+                    right: 4px;
+                    top: 4px;
+                }
+                .qs404-form {
+                    margin: 0 8.33%;
+                }
+            }
+            @media (min-width: 1121px) {
+                .qs404-author {
+                    width: 20%;
+                }
+                .qs404-form {
+                    margin: 0;
+                }
+            }
+            .qs404-input-text {
+                border-radius: 0;
+                border: 1px solid #b9b9b9;
+                box-shadow: 0 0;
+                height: 32px;
+                line-height: 30px;
+                padding: 0 8px 0 6px;
+                width: 100%;
+            }
+            .qs404-issue {
+                display: none;
+                width: 33.333%;
+            }
+            .qs404-line2 {
+                display: inline-block;
+                height: 0;
+            }
+            @media (min-width: 625px) {
+                .qs404-issue {
+                    display: inline-block;
+                }
+                .qs404-line2 {
+                    padding-right: 40px;
+                    position: relative;
+                    width: 55%;
+                }
+            }
+            @media (min-width: 1121px) {
+                .qs404-line2 {
+                    width: 28%;
+                }
+            }
+            @media (max-width: 624px) {
+                .is-expanded .qs404-line2 {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .qs404-page {
+                display: none;
+                width: 33.333%;
+            }
+            @media (min-width: 625px) {
+                .qs404-page {
+                    display: inline-block;
+                }
+            }
+            .qs404-source {
+                display: none;
+                width: 100%;
+            }
+            @media (min-width: 625px) {
+                .qs404-source {
+                    display: inline-block;
+                    width: 45%;
+                }
+            }
+            @media (min-width: 1121px) {
+                .qs404-source {
+                    display: inline-block;
+                    width: 24%;
+                }
+            }
+            .qs404-submit {
+                -webkit-appearance: none;
+                background-color: #007398;
+                border: 0;
+                color: #fff;
+                height: 32px;
+                width: 32px;
+            }
+            .qs404-submit > svg {
+                position: absolute;
+                left: 4px;
+                top: 4px;
+            }
+            .qs404-toggle {
+                background-color: transparent;
+                border: 0;
+                color: #505050;
+                display: block;
+                margin-top: -10px;
+                height: 28px;
+                padding: 0 0 4px;
+                width: 100%;
+            }
+            .qs404-toggle > svg {
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+            }
+            .qs404-toggle[aria-expanded="true"] > svg {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+            .qs404-volume {
+                display: none;
+                width: 33.333%;
+            }
+            @media (min-width: 625px) {
+                .qs404-toggle {
+                    display: none;
+                }
+                .qs404-volume {
+                    display: inline-block;
+                }
+            }
+
+        </style>     
+        <style>
+        
+            @font-face {
+                font-family: ElsevierSans;
+                ascent-override: 70%;
+                descent-override: 30%;
+                line-gap-override: normal;
+                src: local(Arial); size-adjust=96.5%
+            }
+            
+            html {
+                background-color: #fff
+            }
+
+            .hidden {
+              display: none;
+            }
+            
+            .redirect-message {
+              text-align: left;
+              font-size: large;
+            }
+            
+            .tagline-message {
+                text-align: left;
+                font-size: medium;
+            }
+            
+            .centerdiv {           
+                font: normal normal 20px/1.4 ElsevierSans, nexussans, Arial, sans-serif;
+                margin: auto;
+                width: 85%;
+                border: 0px solid #FFFF11;
+                padding: 40px;
+            }
+            
+            .centerdiv h1 {
+                font-size: 32px;
+                line-height: 1.25;
+            }
+            
+            .centerdiv a {
+            }
+            
+            .centerdiv a,
+            .centerdiv a:link,
+            .centerdiv a:visited {
+                color: #007398;
+                transition: color 0.3s ease, border-bottom-color 0.3s ease;
+                text-decoration: none;
+                text-underline-position: under;
+            }
+            
+            .centerdiv a:active,
+            .centerdiv a:focus,
+            .centerdiv a:hover {
+                color: inherit;
+                text-decoration: 2px solid underline #eb6500;
+            }
+            
+            .centerdiv p {
+                margin: 16px 0;
+            }
+            #gh-main-cnt {
+                background-color: #fff
+            }
+            .centerdiv .details,
+            .centerdiv .tagline {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        </style>
+        <script>    
+          function isSubmitted() {
+              if (isDefined(window['turnstileComplete']) && window['turnstileComplete'] === true) {
+                  return true;
+              } else {
+                  return false;
+              }
+          }
+          
+          function isNotSubmitted() {
+              return !isSubmitted();
+          }
+        
+          function formSubmit()
+          {
+              if (isNotSubmitted()) {                
+                  window.turnstileComplete = true;
+                  var formEl = document.getElementById("form1")
+                  
+                  var input = document.createElement("input");
+                  input.setAttribute("type", "hidden");
+                  input.setAttribute("name", "CraftCapiRenderHostProtocol");
+                  input.setAttribute("value", Function('return ' + Function('return ' + 'atob("d2luZG9" + "3Lmxv" + "Y2F0aW9uLnByb3RvY29s")')())());
+                  formEl.appendChild(input);
+                  
+                  formEl.action = "/craft/capi/cfts/verify?s=1800&p=%2F271652%2F1-s2.0-S0014292109X0005X%2F1-s2.0-S0014292109000208%2Fmain.pdf&q=X-Amz-Security-Token%3DIQoJb3JpZ2luX2VjEHAaCXVzLWVhc3QtMSJHMEUCIQCzTdlvkEXqf8HTQLUwsmwPQW%252B0sSR5DlYEFCZYAwLYEgIgDmSsTfb9HA7R0cSaNtE%252FDuN1%252BqiXfgQxekwF7V1WwNIqswUIOBAFGgwwNTkwMDM1NDY4NjUiDMm56%252F4FNDUfWqiAviqQBebvH67nO2k7jOG9EGagGIqsAIMyt%252FStpez8%252BVtTEJf4jzldXaZBiNNknBV%252Bgp30wfLWNR9xJvTyat3IPU0yfX%252BzBzTACcHI9K1nF2aJxbwvcvuN%252FWA7iWinjjK2dENjjPy3UlfdRlE4zHyFyL0%252FXSKiIPzSSaTS8hJVA6%252Bzwl7ucQry0jOyHqJr17mzYZnzO0Cr8r3I%252B%252BDRRobNyPQis2Nk%252Fs7Cqcs7e9MnyRC05F6Dy7X0eC5cZnlHyOEbvJOCVOPEAzBJjQEZd4PEhFavSyfug9Y1Iyqh26ztsD9ii36Ex3qoRpMAlYb0q0iXZ3dGIGcat5iYfxdAYZv1AWgX5MHG5P2t9jhYgHIlHWUsQd0v5FpeDDaTLtBetZjIs6zlYUIVca3HI618%252BieuHjrA%252BvKhBHHhxaxR%252FcV2cZGyjES10ouNirYcQi9GWg11zwPve6cYGxsEILah819ajdDZiz3hCvy8GlctvT9e5U%252BifM%252FzsfCAmj93irnQXCflOA%252FbNoO9oOUAFmiW96BfUq5H4YUNypYspl%252FgTkMecKk0asttMuAZr62YNwGPOjGVaFYJzsT%252FZh21sbPJzx6fSxkFM4ZvzCmvm1qHA%252FW8ueK%252BvZadksOMS6gpy2KnO2o8%252FC2fLk3WJE9FthwYBjeek%252BpPSdL8xCrUZRnK1hQMTE76JfThTLjdJZ%252BRlGbM82zgthhXYwejRdVwmBMxMG1QOeeqRHhuHohGj6p8GuMehaK7wwGhMwTiaDHQZlkPMkSkPLVWeF9%252BDHRk0YdvG2WM9Ey6NJGy1S31SrObNbf%252BZsMDq5skmf3U%252FTuLbARaxQUK48ndVRXZ7rRwpmpdZ2RU%252B7wujq108ushej%252BadQ3rBCChYeH4MJfpgrsGOrEBuEZUOCJPorCMSkKvPXY8u3xP0xFAIUUY1PphR5xR%252Ferx7KVzgwKHDQREEmT9AQlduPep%252BkxTdTLd3Atc%252FcsXDHL%252Fit4qV%252FQvrsb6CfTv%252B4psy42BcCB1lp%252FylOscRPXyfZ9DTLjd8cbrDcKocE4B0uDEPWKne%252FNxYU%252F7JrHMenIwAXZnV5DIExxVaMu6mGd5yHrjPSJT1k1r5q6LK8Ppe0zaXiTeIiI%252BFlW6da40QDaC%26X-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Date%3D20241217T000727Z%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Expires%3D300%26X-Amz-Credential%3DASIAQ3PHCVTY4OQOMJCY%252F20241217%252Fus-east-1%252Fs3%252Faws4_request%26X-Amz-Signature%3D2f40568a584af2cb9dc96b144edd9a0ce3b27088ac17bd601e9882dfe94fd29c%26hash%3Da4d4c5197324891e73b9312efcd4148918299c1d58cf103a674c36d94e5c14f2%26host%3D68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61%26pii%3DS0014292109000208%26tid%3Dspdf-574ad776-273f-44d8-ae05-c9f470e24b58%26sid%3Df8badf21367bb7486e78ce4769ae634a7533gxrqa%26type%3Dclient%26tsoh%3Dd3d3LnNjaWVuY2VkaXJlY3QuY29t%26ua%3D13135e0255500e065707%26rr%3D8f32ac4d4d7120ae%26cc%3Dus&i=2024-12-17T00%3A07%3A54.252Z&c=spdf-no-referer&r=8f32acf3ee3782bd&u=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0014292109000208&w=interactive&h=eyJrZXkiOiIrdEhzM0lBWGNPVXlVSU5WZFFxUG5ETmFYcEk3TjQyenZQRFR2akpUN3FkalFNL0lJTnRPcjdCajZDUm9xZmMzV01XbnQ3cnVFbEdCd2dxMnd1RzdIVWNJdExPYmdZY0VaYVFpRDU5Z2JhST0iLCJpdiI6ImI5ZmFlY2E4YjQ4YTRhMmIxNGM0ZDc5ZDRjNDVjNzU3In0%3D";
+                  formEl.submit();
+              }
+          }
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <iframe id="px" width="0" height="0" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/1px.png?fr=cfts_njs&rr=8f32acf45eb982bd" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>            
+            <div class="challengenojs">
+                <div id="gh-main-cnt" class="u-flex-center-ver u-position-relative u-padding-s-hor u-padding-m-hor-from-sm u-padding-l-hor-from-lg"><a id="gh-branding" class="u-flex-center-ver" href="/" aria-label="Science Direct home page" data-aa-region="header" data-aa-name="ScienceDirect"><img class="gh-logo lazyimg" loading="lazy" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/elsevier-non-solus-new-grey.svg" alt="Elsevier logo" height="48" width="54"/><img class="lazyimg" loading="lazy" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-sciencedirect.svg" height="30" width="138" alt="Science Direct Home Page" class="gh-wordmark u-margin-s-left"></a></div><div id="gh-overlay" class="u-overlay u-display-none" role="button" tabindex="-1"></div>
+                <div style="background-color: rgb(235, 241, 249);">
+                    <div class="centerdiv redirect-message">
+                        <h1 class="title">JavaScript is disabled on your browser</h1> 
+                        <p class="tagline">Please turn JavaScript on and reload the page.</p>       
+                        <p>
+                          If you are unable to access your content please 
+                          <a href="/271652/1-s2.0-S0014292109X0005X/1-s2.0-S0014292109000208/main.pdf?ref=craft_challenge&fr=RR-CW-13&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHAaCXVzLWVhc3QtMSJHMEUCIQCzTdlvkEXqf8HTQLUwsmwPQW%2B0sSR5DlYEFCZYAwLYEgIgDmSsTfb9HA7R0cSaNtE%2FDuN1%2BqiXfgQxekwF7V1WwNIqswUIOBAFGgwwNTkwMDM1NDY4NjUiDMm56%2F4FNDUfWqiAviqQBebvH67nO2k7jOG9EGagGIqsAIMyt%2FStpez8%2BVtTEJf4jzldXaZBiNNknBV%2Bgp30wfLWNR9xJvTyat3IPU0yfX%2BzBzTACcHI9K1nF2aJxbwvcvuN%2FWA7iWinjjK2dENjjPy3UlfdRlE4zHyFyL0%2FXSKiIPzSSaTS8hJVA6%2Bzwl7ucQry0jOyHqJr17mzYZnzO0Cr8r3I%2B%2BDRRobNyPQis2Nk%2Fs7Cqcs7e9MnyRC05F6Dy7X0eC5cZnlHyOEbvJOCVOPEAzBJjQEZd4PEhFavSyfug9Y1Iyqh26ztsD9ii36Ex3qoRpMAlYb0q0iXZ3dGIGcat5iYfxdAYZv1AWgX5MHG5P2t9jhYgHIlHWUsQd0v5FpeDDaTLtBetZjIs6zlYUIVca3HI618%2BieuHjrA%2BvKhBHHhxaxR%2FcV2cZGyjES10ouNirYcQi9GWg11zwPve6cYGxsEILah819ajdDZiz3hCvy8GlctvT9e5U%2BifM%2FzsfCAmj93irnQXCflOA%2FbNoO9oOUAFmiW96BfUq5H4YUNypYspl%2FgTkMecKk0asttMuAZr62YNwGPOjGVaFYJzsT%2FZh21sbPJzx6fSxkFM4ZvzCmvm1qHA%2FW8ueK%2BvZadksOMS6gpy2KnO2o8%2FC2fLk3WJE9FthwYBjeek%2BpPSdL8xCrUZRnK1hQMTE76JfThTLjdJZ%2BRlGbM82zgthhXYwejRdVwmBMxMG1QOeeqRHhuHohGj6p8GuMehaK7wwGhMwTiaDHQZlkPMkSkPLVWeF9%2BDHRk0YdvG2WM9Ey6NJGy1S31SrObNbf%2BZsMDq5skmf3U%2FTuLbARaxQUK48ndVRXZ7rRwpmpdZ2RU%2B7wujq108ushej%2BadQ3rBCChYeH4MJfpgrsGOrEBuEZUOCJPorCMSkKvPXY8u3xP0xFAIUUY1PphR5xR%2Ferx7KVzgwKHDQREEmT9AQlduPep%2BkxTdTLd3Atc%2FcsXDHL%2Fit4qV%2FQvrsb6CfTv%2B4psy42BcCB1lp%2FylOscRPXyfZ9DTLjd8cbrDcKocE4B0uDEPWKne%2FNxYU%2F7JrHMenIwAXZnV5DIExxVaMu6mGd5yHrjPSJT1k1r5q6LK8Ppe0zaXiTeIiI%2BFlW6da40QDaC&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241217T000727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY4OQOMJCY%2F20241217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=2f40568a584af2cb9dc96b144edd9a0ce3b27088ac17bd601e9882dfe94fd29c&hash=a4d4c5197324891e73b9312efcd4148918299c1d58cf103a674c36d94e5c14f2&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0014292109000208&tid=spdf-574ad776-273f-44d8-ae05-c9f470e24b58&sid=f8badf21367bb7486e78ce4769ae634a7533gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=13135e0255500e065707&rr=8f32ac4d4d7120ae&cc=us">try accessing the content again</a> or <a href="//service.elsevier.com/app/contact/supporthub/sciencedirect">contact our support team</a> who will be happy to help.<br/>
+                        </p>
+                        <p>Please supply the following details:</p>
+                        <div class="details">
+                          <strong>Request ID:</strong> 8f32acf45eb982bd<br/>
+                          <strong>IP:</strong> 165.85.44.188<br/>
+                          <strong>UTC time</strong>: 2024-12-17T00:07:54.333Z<br/>
+                          <strong>Browser</strong>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36<br/>
+                          <div id="clienterror" class="hidden"></div>
+                       </div>
+                    </div>
+                </div>
+                <footer>
+                    <div id="footer">
+                        <div class="hor-line" style="border-color:#e9711c"></div><div class="panel-s u-padding-l-bottom u-bg-white u-clr-grey7" role="contentinfo"><a class="anchor move-left els-footer-elsevier anchor-has-inherit-color" href="https://www.elsevier.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-elsevier.svg" height="30" width="104" alt="Elsevier"></span></a><div class="panel-s u-bg-white u-padding-0-hor-from-xs u-padding-s-hor-from-md u-padding-xs-ver text-xs u-clear-both-from-xs u-clear-none-from-md"><p class="u-margin-xs-bottom"><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/solutions/sciencedirect" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">About ScienceDirect</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://sd-cart.elsevier.com/?" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Shopping cart</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://service.elsevier.com/app/contact/supporthub/sciencedirect/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Contact and support</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/elsevier-website-terms-and-conditions" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Terms and conditions</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/privacy-policy" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Privacy policy</span></a></p>
+                        <p id="els-footer-cookie-message">Cookies are used by this site.  By continuing you agree to the <a class="anchor u-margin-0-right" href="https://www.elsevier.com/legal/cookienotice" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">use of cookies</span></a>.</p>
+                        <p id="els-footer-copyright">Copyright © <!-- -->2024<!-- --> Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the Creative Commons licensing terms apply.</p>
+                        </div><div><span style="margin-top:-10px" class="u-position-relative move-bottom u-float-left-from-xs u-float-right-from-md move-right u-padding-0-hor"><a class="anchor els-footer-relx anchor-has-inherit-color" href="https://www.relx.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-relx-group.svg" height="28" width="118" alt="RELX group home page"></span></a></span></div></div>
+                    </div>
+                </footer>
+            </div>                  
+        </noscript>        
+        <div class="challenge" style="display: none">
+            <div id="gh-main-cnt" class="u-flex-center-ver u-position-relative u-padding-s-hor u-padding-m-hor-from-sm u-padding-l-hor-from-lg"><a id="gh-branding" class="u-flex-center-ver" href="/" aria-label="Science Direct home page" data-aa-region="header" data-aa-name="ScienceDirect"><img class="gh-logo lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/elsevier-non-solus-new-grey.svg" alt="Elsevier logo" height="48" width="54"/><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-sciencedirect.svg" height="30" width="138" alt="Science Direct Home Page" class="gh-wordmark u-margin-s-left"></a></div><div id="gh-overlay" class="u-overlay u-display-none" role="button" tabindex="-1"></div>
+            <div style="background-color: rgb(235, 241, 249);">
+                <div class="centerdiv redirect-message">
+                    <h1 class="title">Request Verification: In Progress</h1>
+                    <img class="lazyimg" loading="lazy" id="failedcschallpx" width="0" height="0" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/88/images/1px.png?fr=cfts_failedcs&rr=8f32acf45eb982bd" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></img>         
+                    <p class="tagline">
+                    <p id="browsersupport" class="hidden">Your browser may not be supported</p>
+                    <form id="form1" class="captcha-form" action="#" method="POST" enctype="multipart/form-data">
+                        <br />
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAIJB5yGm8wJK_4V" data-callback="formSubmit"></div>
+                        <div id="turnstileForm"></div>
+                    </form>
+                    </p>  
+                    <p>
+                      If you are unable to access your content please 
+                      <a href="/271652/1-s2.0-S0014292109X0005X/1-s2.0-S0014292109000208/main.pdf?ref=craft_challenge&fr=RR-CW-15&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHAaCXVzLWVhc3QtMSJHMEUCIQCzTdlvkEXqf8HTQLUwsmwPQW%2B0sSR5DlYEFCZYAwLYEgIgDmSsTfb9HA7R0cSaNtE%2FDuN1%2BqiXfgQxekwF7V1WwNIqswUIOBAFGgwwNTkwMDM1NDY4NjUiDMm56%2F4FNDUfWqiAviqQBebvH67nO2k7jOG9EGagGIqsAIMyt%2FStpez8%2BVtTEJf4jzldXaZBiNNknBV%2Bgp30wfLWNR9xJvTyat3IPU0yfX%2BzBzTACcHI9K1nF2aJxbwvcvuN%2FWA7iWinjjK2dENjjPy3UlfdRlE4zHyFyL0%2FXSKiIPzSSaTS8hJVA6%2Bzwl7ucQry0jOyHqJr17mzYZnzO0Cr8r3I%2B%2BDRRobNyPQis2Nk%2Fs7Cqcs7e9MnyRC05F6Dy7X0eC5cZnlHyOEbvJOCVOPEAzBJjQEZd4PEhFavSyfug9Y1Iyqh26ztsD9ii36Ex3qoRpMAlYb0q0iXZ3dGIGcat5iYfxdAYZv1AWgX5MHG5P2t9jhYgHIlHWUsQd0v5FpeDDaTLtBetZjIs6zlYUIVca3HI618%2BieuHjrA%2BvKhBHHhxaxR%2FcV2cZGyjES10ouNirYcQi9GWg11zwPve6cYGxsEILah819ajdDZiz3hCvy8GlctvT9e5U%2BifM%2FzsfCAmj93irnQXCflOA%2FbNoO9oOUAFmiW96BfUq5H4YUNypYspl%2FgTkMecKk0asttMuAZr62YNwGPOjGVaFYJzsT%2FZh21sbPJzx6fSxkFM4ZvzCmvm1qHA%2FW8ueK%2BvZadksOMS6gpy2KnO2o8%2FC2fLk3WJE9FthwYBjeek%2BpPSdL8xCrUZRnK1hQMTE76JfThTLjdJZ%2BRlGbM82zgthhXYwejRdVwmBMxMG1QOeeqRHhuHohGj6p8GuMehaK7wwGhMwTiaDHQZlkPMkSkPLVWeF9%2BDHRk0YdvG2WM9Ey6NJGy1S31SrObNbf%2BZsMDq5skmf3U%2FTuLbARaxQUK48ndVRXZ7rRwpmpdZ2RU%2B7wujq108ushej%2BadQ3rBCChYeH4MJfpgrsGOrEBuEZUOCJPorCMSkKvPXY8u3xP0xFAIUUY1PphR5xR%2Ferx7KVzgwKHDQREEmT9AQlduPep%2BkxTdTLd3Atc%2FcsXDHL%2Fit4qV%2FQvrsb6CfTv%2B4psy42BcCB1lp%2FylOscRPXyfZ9DTLjd8cbrDcKocE4B0uDEPWKne%2FNxYU%2F7JrHMenIwAXZnV5DIExxVaMu6mGd5yHrjPSJT1k1r5q6LK8Ppe0zaXiTeIiI%2BFlW6da40QDaC&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241217T000727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY4OQOMJCY%2F20241217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=2f40568a584af2cb9dc96b144edd9a0ce3b27088ac17bd601e9882dfe94fd29c&hash=a4d4c5197324891e73b9312efcd4148918299c1d58cf103a674c36d94e5c14f2&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0014292109000208&tid=spdf-574ad776-273f-44d8-ae05-c9f470e24b58&sid=f8badf21367bb7486e78ce4769ae634a7533gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=13135e0255500e065707&rr=8f32ac4d4d7120ae&cc=us">try accessing the content again</a> or 
+                      <a href="//service.elsevier.com/app/contact/supporthub/sciencedirect">contact our support team</a> 
+                      who will be happy to help.<br/>
+                    </p>       
+                    <p>Please supply the following details:</p>
+                    <div class="details">
+                      <strong>Request ID:</strong> 8f32acf45eb982bd<br/>
+                      <strong>IP:</strong> 165.85.44.188<br/>
+                      <strong>UTC time</strong>: 2024-12-17T00:07:54.333Z<br/>
+                      <strong>Browser</strong>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36<br/>
+                      <div id="clienterror" class="hidden"></div>
+                      <div id="errstack" class="hidden"><strong class="error">Error Encountered</strong>: <span class="browsererror"></span><br/>
+                        <img class="lazyimg" loading="lazy" id="errorchallpx" width="0" height="0" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/88/images/1px.png?fr=cfts_error_failedcs&rr=8f32acf45eb982bd" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></img>
+                        <img class="lazyimg" loading="lazy" id="initerrorchallpx" width="0" height="0" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/88/images/1px.png?fr=cfts_initerror&rr=8f32acf45eb982bd" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></img>
+                      </div>
+                   </div>
+                </div>
+            </div>
+            <footer>
+                <div id="footer">
+                    <div class="hor-line" style="border-color:#e9711c"></div><div class="panel-s u-padding-l-bottom u-bg-white u-clr-grey7" role="contentinfo"><a class="anchor move-left els-footer-elsevier anchor-has-inherit-color" href="https://www.elsevier.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-elsevier.svg" height="30" width="104" alt="Elsevier"></span></a><div class="panel-s u-bg-white u-padding-0-hor-from-xs u-padding-s-hor-from-md u-padding-xs-ver text-xs u-clear-both-from-xs u-clear-none-from-md"><p class="u-margin-xs-bottom"><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/solutions/sciencedirect" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">About ScienceDirect</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://sd-cart.elsevier.com/?" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Shopping cart</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://service.elsevier.com/app/contact/supporthub/sciencedirect/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Contact and support</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/elsevier-website-terms-and-conditions" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Terms and conditions</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/privacy-policy" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Privacy policy</span></a></p>
+                    <p id="els-footer-cookie-message">Cookies are used by this site.  By continuing you agree to the <a class="anchor u-margin-0-right" href="https://www.elsevier.com/legal/cookienotice" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">use of cookies</span></a>.</p>                                       
+                    <p id="els-footer-copyright">Copyright © <!-- -->2024<!-- --> Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the Creative Commons licensing terms apply.</p>
+                    </div><div><span style="margin-top:-10px" class="u-position-relative move-bottom u-float-left-from-xs u-float-right-from-md move-right u-padding-0-hor"><a class="anchor els-footer-relx anchor-has-inherit-color" href="https://www.relx.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-relx-group.svg" height="28" width="118" alt="RELX group home page"></span></a></span></div></div>
+                </div>
+            </footer>
+        </div>        
+        <div id='oldbrowserproblem' class="oldbrowserproblem hidden">
+          <div id="gh-main-cnt" class="u-flex-center-ver u-position-relative u-padding-s-hor u-padding-m-hor-from-sm u-padding-l-hor-from-lg"><a id="gh-branding" class="u-flex-center-ver" href="/" aria-label="Science Direct home page" data-aa-region="header" data-aa-name="ScienceDirect"><img class="lazyimg gh-logo" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/elsevier-non-solus-new-grey.svg" alt="Elsevier logo" height="48" width="54"/><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-sciencedirect.svg" height="30" width="138" alt="Science Direct Home Page" class="gh-wordmark u-margin-s-left"/></a></div><div id="gh-overlay" class="u-overlay u-display-none" role="button" tabindex="-1"></div>
+          <div style="background-color: rgb(235, 241, 249);">
+              <div class="centerdiv redirect-message">
+                <img class="lazyimg" loading="lazy" id="oldchallpx" width="0" height="0" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/88/images/1px.png?fr=cfts_old&rr=8f32acf45eb982bd" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></img>
+                <h1 class="title">Your Browser is out of date.</h1>
+                <p>
+                  Use one of <a href="https://service.elsevier.com/app/answers/detail/a_id/9831/supporthub/sciencedirect/">the supported browsers</a> or <a href="//service.elsevier.com/app/contact/supporthub/sciencedirect">contact our support team</a> who will be happy to help.<br/>
+                </p>
+                <p>Please supply the following details:</p>
+                <div class="details">
+                  <strong>Request ID:</strong> 8f32acf45eb982bd<br/>
+                  <strong>IP:</strong> 165.85.44.188<br/>
+                  <strong>UTC time</strong>: 2024-12-17T00:07:54.333Z<br/>
+                  <strong>Browser</strong>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36<br/>
+                </div>
+              </div>
+          </div>
+          <footer>
+            <div id="footer">
+              <div class="hor-line" style="border-color:#e9711c"></div><div class="panel-s u-padding-l-bottom u-bg-white u-clr-grey7" role="contentinfo"><a class="anchor move-left els-footer-elsevier anchor-has-inherit-color" href="https://www.elsevier.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-elsevier.svg" height="30" width="104" alt="Elsevier"></span></a><div class="panel-s u-bg-white u-padding-0-hor-from-xs u-padding-s-hor-from-md u-padding-xs-ver text-xs u-clear-both-from-xs u-clear-none-from-md"><p class="u-margin-xs-bottom"><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/solutions/sciencedirect" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">About ScienceDirect</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://sd-cart.elsevier.com/?" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Shopping cart</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://service.elsevier.com/app/contact/supporthub/sciencedirect/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Contact and support</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/elsevier-website-terms-and-conditions" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Terms and conditions</span></a><wbr><a class="anchor u-margin-xs-right u-margin-s-right-from-sm u-margin-l-right-from-md anchor-has-inherit-color" href="https://www.elsevier.com/legal/privacy-policy" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">Privacy policy</span></a></p>
+              <p id="els-footer-cookie-message">Cookies are used by this site.  By continuing you agree to the <a class="anchor u-margin-0-right" href="https://www.elsevier.com/legal/cookienotice" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text">use of cookies</span></a>.</p>                    
+              <p id="els-footer-copyright">Copyright © <!-- -->2024<!-- --> Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the Creative Commons licensing terms apply.</p>
+              </div><div><span style="margin-top:-10px" class="u-position-relative move-bottom u-float-left-from-xs u-float-right-from-md move-right u-padding-0-hor"><a class="anchor els-footer-relx anchor-has-inherit-color" href="https://www.relx.com/" rel="nofollow" target="_blank" style="white-space:nowrap"><span class="anchor-text"><img class="lazyimg" loading="lazy" data-src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/67/images/wordmark-relx-group.svg" height="28" width="118" alt="RELX group home page"></span></a></span></div></div>
+            </div>
+          </footer>
+        </div>
+
+        <script>
+            function unhideImages() {
+              var images = document.getElementsByClassName("lazyimg");
+              for (var i = 0; i < images.length; i++) {
+                if (
+                    images[i].id !== "failedcschallpx" && 
+                    images[i].id !== "oldchallpx"  && 
+                    images[i].id !== "errorchallpx" &&
+                    images[i].id !== "initerrorchallpx" 
+                    ) { 
+                    var imagelink = images[i].getAttribute("data-src");
+                    images[i].setAttribute("src", imagelink);
+                }
+              }
+            }
+            
+            function unhideSpecificImage(id) {
+                var images = document.getElementsByClassName("lazyimg");
+                for (var i = 0; i < images.length; i++) {
+                    if (images[i].id === id) { 
+                        var imagelink = images[i].getAttribute("data-src");
+                        images[i].setAttribute("src", imagelink);
+                    }
+                }
+            }
+            
+            function unhideFailedClientSideImage() {
+                unhideSpecificImage("failedcschallpx")                
+            }
+            
+            function unhideFailedInitialisationImage() {
+                unhideSpecificImage("initerrorchallpx")                
+            }
+            
+            function unhideOldImage() {
+                unhideSpecificImage("oldchallpx")                
+            }
+            
+            function unhideFailedClientSideWithErrorImage() {
+                unhideSpecificImage("errorchallpx")                
+            }
+            
+            function unhideBrowserSupport() {
+                unhideOldImage();
+                var challenge = document.querySelector(".challenge");
+                challenge.classList.add("hidden");
+                
+                var challenge = document.querySelector(".oldbrowserproblem");
+                challenge.classList.remove("hidden");
+            }
+            
+            function unhideProblemCreationIssue(err) {
+                window['initialisationFailed'] = true;
+                unhideFailedInitialisationImage();
+                
+                // grab problem div
+                var problem = document.querySelector(".challenge");
+                var title = problem.querySelector(".title")
+                title.innerHTML="Request Verification: Initialisation Error";
+                
+                var form = document.querySelector(".captcha-form");
+                form.classList.add("hidden");
+                
+                if (err !== null && err !== undefined) {
+                    var errStack = document.querySelector("#errstack");
+
+                    // hide it
+                    errStack.classList.remove("hidden");
+                    
+                    var browserError = document.querySelector(".browsererror");
+                    browserError.innerHTML = "" + err;
+                }
+                
+                if (window['scriptloaderror']) {
+                    document.querySelector("#browsersupport").classList.remove("hidden");
+                }
+            }
+            
+            function unhideClientErrors() {
+                var clienterror = document.querySelector("#clienterror")
+                    clienterror.innerHTML="<strong>Error(s)</strong>: " + window['turnstileClientErrors'].toString() + "<br/>"
+                    clienterror.classList.remove("hidden");
+            }
+            
+            function unhideChallenge() {
+                var challenge = document.querySelector(".challenge");
+                challenge.style.display = "block"
+            }
+            
+            function unhideProblem(err) {
+                if (window['turnstileClientErrors'].length > 0) {
+                    console.log(window['turnstileClientErrors'])
+                    unhideClientErrors()
+                }
+                // grab problem div
+                var problem = document.querySelector(".challenge");
+                var title = problem.querySelector(".title")
+                if (err===null && err === undefined) {
+                    title.innerHTML="Request Verification: Failed";
+                } else {
+                    title.innerHTML="Request Verification: Error";
+                }
+                
+                if (err !== null && err !== undefined) {
+                    unhideFailedClientSideWithErrorImage();
+                    var errStack = document.querySelector("#errstack");
+
+                    // hide it
+                    errStack.classList.remove("hidden");
+                    
+                    var browserError = document.querySelector(".browsererror");
+                    browserError.innerHTML = "" + err;
+                } else {
+                    unhideFailedClientSideImage();
+                }
+            }
+            
+            function unhideCss() {
+              var styleCSS = document.createElement("link");
+              styleCSS.rel = "stylesheet";
+              // eslint-disable-next-line
+              styleCSS.href = "https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/108/css/react-header-and-footer/21.0.3/styles.css";
+              // eslint-disable-next-line
+              var styles = ".els-row-center,.els-row-center-fixed,.els-row-content{margin-left:auto;margin-right:auto}@font-face{font-family:NexusSans;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Regular.woff) format('woff')}@font-face{font-family:NexusSans;font-weight:700;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Bold.woff) format('woff')}@font-face{font-family:NexusSans;font-style:italic;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-Italic.woff) format('woff')}@font-face{font-family:NexusSans;font-style:italic;font-weight:700;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/sans/NexusSansWebPro-BoldItalic.woff) format('woff')}@font-face{font-family:NexusSerif;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Regular.woff) format('woff')}@font-face{font-family:NexusSerif;font-weight:700;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Bold.woff) format('woff')}@font-face{font-family:NexusSerif;font-style:italic;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-Italic.woff) format('woff')}@font-face{font-family:NexusSerif;font-style:italic;font-weight:700;src:url(//sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/3/fonts/nexus/1.0/serif/NexusSerifWebPro-BoldItalic.woff) format('woff')}.e404{min-height: 512px;font-family:NexusSans,Arial,Helvetica,Lucida Sans Unicode,Microsoft Sans Serif,Segoe UI Symbol,STIXGeneral,Cambria Math,Arial Unicode MS,sans-serif}.e404-title{font-size:24px;line-height:32px;color:#fff}@media (min-width:625px){.e404-title{font-size:30px;line-height:40px}}.e404-sugg-title{font-size:20px;line-height:28px}@media (min-width:625px){.e404-sugg-title{font-size:24px;line-height:32px}}.e404-art-title{font-family:NexusSerif,Georgia,serif;font-size:18px;line-height:26px}@media (min-width:625px){.e404-art-title{font-size:20px;line-height:28px}}.e404-msg-para{font-size:18px;line-height:26px}.els-row-center{max-width:1392px}.els-row-content{max-width:1296px}.els-row-center-fixed{max-width:1224px}.els-row-padding{padding-left:8px;padding-right:8px}.els-row-section{padding-bottom:32px;padding-top:32px}.els-row-dark.els-row-center,.els-row-grey.els-row-center,.els-row-white.els-row-center{background:red!important}.els-row-dark,.els-row-grey,.els-row-white{clear:both;padding-left:8px;padding-right:8px;transition:margin .3s}@media (min-width:625px){.e404-msg-para{font-size:20px;line-height:28px}.els-row-dark,.els-row-grey,.els-row-white{padding-left:16px;padding-right:16px}.e404-art-list,.e404-sugg-title{margin-left:8.33%;margin-right:8.33%}}@media (min-width:1121px){.els-row-dark,.els-row-grey,.els-row-white{padding-left:24px;padding-right:24px}}.els-row-transparent{transition:margin .3s}.els-row-dark{background-color:#505050;color:#fff}.els-row-grey{background-color:#f5f5f5}.els-row-white{background-color:#fff}.ctrl-error .els-header-search-toggle{display:none}.e404-art-item,.e404-warning-icon,.is-expanded .qs404-author,.is-expanded .qs404-issue,.is-expanded .qs404-page,.is-expanded .qs404-source,.is-expanded .qs404-volume,.qs404-all{display:inline-block}.e404-art-author{color:#505050}.e404-art-item{font-size:16px;line-height:24px;padding:0 8px 17px;vertical-align:top;list-style:none}@media (min-width:721px){.e404-art-list,.e404-sugg-title{margin-left:16.66%;margin-right:16.66%}.e404-art-list{-webkit-column-count:2;column-count:2;-webkit-column-gap:0;column-gap:0}}.e404-art-source{color:#737373;padding-top:6px}.e404-msg{margin-left:48px;padding:24px 8px 23px}@media (min-width:625px){.e404-msg{margin-left:8.33%;margin-right:8.33%;padding:37px 8px 39px}}@media (min-width:721px){.e404-msg{margin-left:16.66%;margin-right:16.66%}}.e404-msg-link:link{color:#44c6f4;text-decoration:none;border-bottom:2px solid transparent;transition:color .3s ease,border-bottom-color .3s ease}.e404-msg-link:focus,.e404-msg-link:hover{color:#ff8200;border-bottom-color:#ff8200}.e404-msg-para{padding-top:13px;max-width:33em}@media (min-width:625px){.e404-msg-para{padding-top:17px}}.e404-sugg-title{color:#505050;padding:29px 8px 0}@media (min-width:625px){.e404-sugg-title{padding:26px 8px 16px}}.e404-warning-icon{border:2px solid #ff6a5a;color:#ff6a5a;font-size:24px;line-height:24px;margin:0 16px 0 -48px;padding-top:4px;text-align:center;vertical-align:baseline;width:32px}.qs404-cell{padding:4px}.qs404-all{padding-right:44px;width:100%}@media (min-width:625px){.qs404-all{padding-right:4px;width:52%}}@media (min-width:1121px){.qs404-all{width:28%}}.qs404-author{display:none;width:100%}@media (min-width:625px){.qs404-author{display:inline-block;width:48%}}.qs404-button{position:absolute;right:8px;top:14px}.qs404-form{display:block;padding:10px 4px;position:relative}@media (min-width:625px){.qs404-button{right:4px;top:4px}.qs404-form{margin:0 8.33%}}@media (min-width:1121px){.qs404-author{width:20%}.qs404-form{margin:0}}.qs404-input-text{border-radius:0;border:1px solid #b9b9b9;box-shadow:0 0;height:32px;line-height:30px;padding:0 8px 0 6px;width:100%}.qs404-issue{display:none;width:33.333%}.qs404-line2{display:inline-block;height:0}@media (min-width:625px){.qs404-issue{display:inline-block}.qs404-line2{padding-right:40px;position:relative;width:55%}}@media (min-width:1121px){.qs404-line2{width:28%}}@media (max-width:624px){.is-expanded .qs404-line2{height:auto;width:100%}}.qs404-page{display:none;width:33.333%}@media (min-width:625px){.qs404-page{display:inline-block}}.qs404-source{display:none;width:100%}@media (min-width:625px){.qs404-source{display:inline-block;width:45%}}@media (min-width:1121px){.qs404-source{display:inline-block;width:24%}}.qs404-submit{-webkit-appearance:none;background-color:#007398;border:0;color:#fff;height:32px;width:32px}.qs404-submit>svg{position:absolute;left:4px;top:4px}.qs404-toggle{background-color:transparent;border:0;color:#505050;display:block;margin-top:-10px;height:28px;padding:0 0 4px;width:100%}.qs404-toggle>svg{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.qs404-toggle[aria-expanded=true]>svg{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.qs404-volume{display:none;width:33.333%}@media (min-width:625px){.qs404-toggle{display:none}.qs404-volume{display:inline-block}}";
+              var styleSheet = document.createElement("style");
+              styleSheet.innerText = styles;
+              document.head.appendChild(styleCSS);
+              document.head.appendChild(styleSheet);
+            }            
+            
+            function captureErrorCode(errorcode) {
+                if (errorcode !== undefined && errorcode != null) {
+                    window['turnstileClientErrors'].push("(" + errorcode + ")@" + new Date().toISOString())
+                    unhideClientErrors()
+                }
+            }
+
+            function retryTurnstileOrError(reason) {
+                if(window['initialisationFailed']) {
+                    return;
+                }
+                
+                if (isSubmitted()) {
+                    return;
+                }
+                
+                window['turnstileRetry'] = window['turnstileRetry'] + 1
+                try {                    
+                    if (window['turnstileRetry'] <= window['maxRetries']) {
+                        turnstile.reset(widgetid);
+                        turnstile.execute(); 
+                    } else {
+                        unhideProblem(null);
+                    }
+                } catch(error) {
+                    unhideProblem(error);
+                }
+            }
+            
+            function isDefined(data) {
+                if (data === null || typeof data === "undefined") {
+                    return false;
+                }
+                return true;
+            }
+            
+            function renderTurnstile() {
+                widgetid = turnstile.render('#turnstileForm', {
+                    'sitekey': '0x4AAAAAAAIJB5yGm8wJK_4V',
+                    'action' : 'spdf-no-referer',
+                    'theme': 'light',
+                    'appearance': 'always',
+                    'execution' : 'execute',
+                    'retry-interval': 2000,  
+                    'retry': 'never', 
+                    'refresh-expired': 'manual',
+                    'timeout-callback' : function(errorcode) {
+                        captureErrorCode(errorcode)
+                        retryTurnstileOrError('timeout');
+                    },               
+                    'expired-callback' : function(errorcode) {
+                        captureErrorCode(errorcode)
+                        retryTurnstileOrError('expired');
+                    },               
+                    'error-callback': function(errorcode) {
+                        captureErrorCode(errorcode)
+                        setTimeout( function () {
+                            retryTurnstileOrError('error');
+                        },2000) 
+                    },
+                    'callback': function (token) {
+                        formSubmit();
+                    }
+                });
+            }
+        
+            window.onloadTurnstileCallback = function() {
+                try {
+                    renderTurnstile();
+                    // try again          
+                    if (widgetid === null || widgetid === undefined) {
+                       renderTurnstile() 
+                    } 
+                    if (widgetid === null || widgetid === undefined) {
+                        unhideProblemCreationIssue();
+                    } else {                    
+                        window['turnstileRetry']=0
+                        turnstile.execute();
+                    }
+                } catch (error) {
+                    unhideProblemCreationIssue(error);
+                }
+            }
+            
+            unhideCss();
+            unhideImages();
+            window['maxRetries'] = 2;
+            window['initialisationFailed'] = false;
+            window['turnstileComplete'] = false;
+            window['turnstileClientErrors'] = [];
+            
+            if(window.isIE) {
+                unhideBrowserSupport();
+            } else {
+                unhideChallenge();
+                try {
+                    turnstile.ready(onloadTurnstileCallback);               
+                } catch (error) {
+                    unhideProblemCreationIssue(error);
+                }
+            }
+        </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8f32acf45eb982bd',t:'MTczNDM5NDA3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    
+</html>

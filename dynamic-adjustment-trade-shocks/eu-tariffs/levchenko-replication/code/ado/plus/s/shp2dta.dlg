@@ -1,0 +1,76 @@
+/*
+    shp2dta.dlg
+
+*!  VERSION 1.0.1  22aug2011
+
+*/
+
+VERSION 9.0
+
+INCLUDE _std_medium
+INCLUDE _ht230
+INCLUDE header
+
+HELP hlp1, view("help shp2dta")
+RESET res1
+
+DIALOG main, tabtitle("Main")	///
+	label("shp2dta - Converts shape boundary files to Stata datasets")
+BEGIN
+  TEXT tx_shpfile		_lft	_top	_iwd	.,		///
+	label("Shape file on disk:")
+  FILE fi_shpfile 		@	_ss	@	.,		///
+	error("Shape file on disk")				///
+	filter("Shape File (*.shp)|*.shp|All Files (*.*)|*.*")		///
+	defext(shp)							///
+	label("Browse...")
+
+  TEXT tx_database		@	_ls	_iwd	.,		///
+	label("dBase dataset:")
+  DEFINE holdy @y
+  EDIT ed_database		@	_ss	_vnwd	.,		///
+	option(database)						///
+	label("dBase dataset")
+  TEXT tx_coordinates		_lft2	holdy	_iwd	.,		///
+	label("Coordinates dataset:")
+  EDIT ed_coordinates		@	_ss	_vnwd	.,		///
+	option(coordinates)						///
+	label("Coordinates dataset")
+
+  GROUPBOX gb_options		_lft	_ls	_iwd	_ht7,		///
+	label("Options")
+  TEXT tx_genid			_ilft	_ss	_cwd1	.,		///
+	label("Create id variable for dBase dataset:")
+  DEFINE holdy @y
+  EDIT ed_genid			@	_ss	_vnwd	.,		///
+	option(genid)						///
+	label("Create id variable for dBase dataset")
+  TEXT tx_gencentroids		_lft2	holdy	_cwd2	.,		///
+	label("Centroid variables stub:")
+  EDIT ed_gencentroids		@	_ss	_vnwd	.,		///
+	option(gencentroids)						///
+	label("Centroid variables stub")
+
+  CHECKBOX ck_replace		_ilft	_ls	_ibwd	.,		///
+	option(replace)							///
+	label("Overwrites existing database and coordinates dataset filenames")
+END
+
+PROGRAM command
+BEGIN
+	require main.fi_shpfile
+	require main.ed_database
+	require main.ed_coordinates
+
+	put "shp2dta using "
+	put `"""'
+	put main.fi_shpfile
+	put `"""'
+	beginoptions
+		optionarg /quoted main.ed_database
+		optionarg /quoted main.ed_coordinates
+		optionarg main.ed_genid
+		optionarg main.ed_gencentroids
+		option main.ck_replace
+	endoptions
+END

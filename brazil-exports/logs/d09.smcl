@@ -1,0 +1,314 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d09.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 14:49:12
+{txt}
+{com}. 
+. /// 1. import RAIS dataset
+> 
+. use "data\rais\RAIS_data_1995_2021_by_municipality_and_CNAE95_5digits.dta", clear
+{txt}(RAIS vinculo -1995)
+
+{com}. 
+. rename cnae10 cnae10Code
+{res}{txt}
+{com}. 
+. tempfile temp
+{txt}
+{com}. save `temp'
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. /// 2. merge with CNAE-ISIC concordance file
+> 
+. import excel "data\conc\CNAExISIC - EXPORT.xlsx", clear firstrow allstring
+{res}{text}(5 vars, 560 obs)
+
+{com}. 
+. // check uniqueness
+. bysort cnae10Code: gen N = _N
+{txt}
+{com}. qui sum N
+{txt}
+{com}. 
+. if r(mean) > 1 {c -(}
+.         di "non-unique"
+.         break   
+. {c )-}
+{txt}
+{com}. 
+. drop N
+{txt}
+{com}. 
+. merge 1:m cnae10Code using `temp'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}         464,886
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}         464,886{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       9,013,551{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. keep if _merge == 3
+{txt}(464,886 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. /// 3. rename variables and save processed rais database as a tempfile
+>         /// we erase this file at the end of this do-file
+> 
+. rename contador employment
+{res}{txt}
+{com}. rename sexo_1 female
+{res}{txt}
+{com}. rename ano year
+{res}{txt}
+{com}. rename Código_IBGE mun_code_ibge
+{res}{txt}
+{com}. 
+. /// adjust ibge_code
+> 
+. gen t_ufCode = substr(string(mun_code_ibge),1,2)
+{txt}
+{com}. destring t_ufCode, gen(ufCode)
+{txt}t_ufCode: all characters numeric; ufCode {res}generated {txt}as {res}byte
+{txt}(593 missing values generated)
+{res}{txt}
+{com}. drop t_*
+{txt}
+{com}. 
+. /// 4. save file in memory, load sectors environment classifications, and merge 1:m 
+> 
+. save `temp', replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. use "data\green variable\CNAE95_at_the_5_digit_with_green_classification_FEBRABAN.dta" 
+{txt}
+{com}. 
+. rename cnae cnae10Code
+{res}{txt}
+{com}. 
+. merge 1:m cnae10Code using `temp'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}         125,313
+{txt}{col 9}from master{col 30}{res}               6{txt}  (_merge==1)
+{col 9}from using{col 30}{res}         125,307{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,888,244{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. keep if _merge == 3
+{txt}(125,313 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. /// 5. calculate employment in each of these categories
+> 
+. rename alta_exposicao_clima exposicao
+{res}{txt}
+{com}. rename alto_risco risco
+{res}{txt}
+{com}. rename economia_verde everde
+{res}{txt}
+{com}. 
+. local group exposicao risco everde
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         gen emp_`var' = `var' * employment
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. collapse (sum) employment emp_*, by(year ufCode  mun_code_ibge)
+{res}{txt}
+{com}. gen emp_n_exposicao = employment - emp_exposicao
+{txt}
+{com}. gen emp_n_risco = employment - emp_risco
+{txt}
+{com}. gen emp_n_everde = employment - emp_everde
+{txt}
+{com}. 
+. /// 6. merge with baseline database
+> 
+. merge 1:1 year mun_code_ibge using "data\temp\mun-master-dataset.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           9,939
+{txt}{col 9}from master{col 30}{res}           9,929{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         138,188{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. keep if _merge == 3
+{txt}(9,939 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. /// 7. create LHS variables
+> 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. local greenlhs emp_exposicao emp_n_exposicao emp_risco emp_n_risco emp_everde emp_n_everde
+{txt}
+{com}. 
+. foreach var of local greenlhs {c -(}
+{txt}  2{com}.         gen ln`var' = log(`var')
+{txt}  3{com}.         
+.         local lags = $lags +1
+{txt}  4{com}.         forvalues i = 1/`lags' {c -(}
+{txt}  5{com}.                 gen dl`i'ln`var' = l`i'.ln`var' - l.ln`var'
+{txt}  6{com}.                 label var dl`i'ln`var' "Cumulative Pct Change in `var' from t-1 to h=t-`i'"
+{txt}  7{com}.         {c )-}
+{txt}  8{com}.         
+.         
+.         forvalues i = 0/$leads  {c -(}
+{txt}  9{com}.                 gen df`i'ln`var' = f`i'.ln`var' - l.ln`var'
+{txt} 10{com}.                 label var df`i'ln`var' "Cumulative Pct Change in `var' from t-1 to h=t+`i'"
+{txt} 11{com}.         {c )-}
+{txt} 12{com}.         
+. {c )-}
+{txt}(6,360 missing values generated)
+(11,815 missing values generated)
+(18,208 missing values generated)
+(23,837 missing values generated)
+(29,312 missing values generated)
+(34,716 missing values generated)
+(40,092 missing values generated)
+(12,816 missing values generated)
+(18,460 missing values generated)
+(23,934 missing values generated)
+(29,349 missing values generated)
+(34,741 missing values generated)
+(40,043 missing values generated)
+(45,353 missing values generated)
+(99 missing values generated)
+(5,733 missing values generated)
+(11,350 missing values generated)
+(16,896 missing values generated)
+(22,434 missing values generated)
+(27,994 missing values generated)
+(33,561 missing values generated)
+(5,759 missing values generated)
+(11,346 missing values generated)
+(16,896 missing values generated)
+(22,459 missing values generated)
+(28,026 missing values generated)
+(33,595 missing values generated)
+(39,161 missing values generated)
+(3,583 missing values generated)
+(9,169 missing values generated)
+(15,264 missing values generated)
+(20,892 missing values generated)
+(26,422 missing values generated)
+(31,937 missing values generated)
+(37,429 missing values generated)
+(9,711 missing values generated)
+(15,355 missing values generated)
+(20,888 missing values generated)
+(26,413 missing values generated)
+(31,908 missing values generated)
+(37,356 missing values generated)
+(42,804 missing values generated)
+(133 missing values generated)
+(5,766 missing values generated)
+(11,391 missing values generated)
+(16,938 missing values generated)
+(22,474 missing values generated)
+(28,032 missing values generated)
+(33,597 missing values generated)
+(5,801 missing values generated)
+(11,387 missing values generated)
+(16,934 missing values generated)
+(22,496 missing values generated)
+(28,060 missing values generated)
+(33,628 missing values generated)
+(39,194 missing values generated)
+(5,961 missing values generated)
+(11,515 missing values generated)
+(18,067 missing values generated)
+(23,795 missing values generated)
+(29,285 missing values generated)
+(34,694 missing values generated)
+(40,080 missing values generated)
+(12,547 missing values generated)
+(18,287 missing values generated)
+(23,796 missing values generated)
+(29,214 missing values generated)
+(34,615 missing values generated)
+(39,996 missing values generated)
+(45,357 missing values generated)
+(47 missing values generated)
+(5,682 missing values generated)
+(11,289 missing values generated)
+(16,835 missing values generated)
+(22,381 missing values generated)
+(27,939 missing values generated)
+(33,505 missing values generated)
+(5,700 missing values generated)
+(11,288 missing values generated)
+(16,847 missing values generated)
+(22,404 missing values generated)
+(27,972 missing values generated)
+(33,543 missing values generated)
+(39,110 missing values generated)
+
+{com}. 
+. // 8. save
+. 
+. compress 
+  {txt}variable {bf}{res}year{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}int{sf}
+  {txt}variable {bf}{res}dl1lnemp_exposicao{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_n_exposicao{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_risco{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_n_risco{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_everde{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_n_everde{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}employment{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}emp_exposicao{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}emp_risco{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}emp_everde{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+{txt}  (4,974,768 bytes saved)
+
+{com}. save "data\temp\mun-master-green.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-master-green.dta{rm}
+saved
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\andre\AppData\Local\Temp\STD540c_00000v.tmp"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

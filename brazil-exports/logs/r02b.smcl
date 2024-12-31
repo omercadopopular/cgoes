@@ -1,0 +1,425 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r02b.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:59:16
+{txt}
+{com}. 
+. use "data\temp\mun-master-dataset.dta", clear
+{txt}(Master file, Brazil exports and labor market)
+
+{com}. 
+. /// 0. options
+> 
+. 
+. // instrument
+. local iv giv_comtrade
+{txt}
+{com}. 
+. // instrumented
+. local instrumented gvl_fob
+{txt}
+{com}. 
+. // lag-length
+. local lags = 4
+{txt}
+{com}. 
+. 
+. // controls
+. gen t_LaborShr2000 = LaborShr if year == 2000
+{txt}(133,254 missing values generated)
+
+{com}. bysort mun_code_ibge: egen LaborShr2000 = mean(t_LaborShr2000)
+{txt}(14,954 missing values generated)
+
+{com}. gen t_wr2000 = wr if year == 2000
+{txt}(132,735 missing values generated)
+
+{com}. bysort mun_code_ibge: egen wr2000 = mean(t_wr2000)
+{txt}(2,189 missing values generated)
+
+{com}. drop t_*
+{txt}
+{com}. local controls LaborShr2000 wr2000
+{txt}
+{com}. 
+. // fixed effects
+. local fe 
+{txt}
+{com}. *mun_code_ibge
+. 
+. // cluster
+. egen cl = group(uf_code)
+{res}{txt}
+{com}. local clustvar uf_code
+{txt}
+{com}. 
+. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. local lhs emp_ntrade
+{txt}
+{com}. 
+. foreach iv_iter of local iv {c -(}
+{txt}  2{com}. 
+.         foreach var of local lhs {c -(}
+{txt}  3{com}.                                 
+.                 *Define matrix to store results.
+.                 matrix results_`var' = J(1+$leads+$lags, 5,.)
+{txt}  4{com}.                 matrix colnames results_`var' = horizon b se F1 obs
+{txt}  5{com}.                 
+. 
+.                 forvalues h = 1 (1) $lags {c -(}
+{txt}  6{com}.                 
+.                         *Display step.
+.                         dis("IRF of `var', h=-`h'") as text
+{txt}  7{com}.                         
+.                         *Run regression.
+.                         
+.                         if `h' == 1 {c -(}
+{txt}  8{com}.                                 local row = $lags-`h'+1
+{txt}  9{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 10{com}.                                 mat results_`var'[`row',2]=0
+{txt} 11{com}.                                 mat results_`var'[`row',3]=0
+{txt} 12{com}.                         {c )-}
+{txt} 13{com}.                         else {c -(}
+{txt} 14{com}.                         qui ivreghdfe dl`h'ln`var' l(1/`lags').dl`h'ln`var' dl`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv' `controls', absorb(`fe') first cluster(`clustvar')
+{txt} 15{com}.                                 local row = $lags-`h'+1
+{txt} 16{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 17{com}.                                 mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 18{com}.                                 mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 19{com}.                                 mat temp=e(first)
+{txt} 20{com}.                                 mat results_`var'[`row',4]=temp[8,1]
+{txt} 21{com}.                                 mat results_`var'[`row',5]=e(N)
+{txt} 22{com}.                         {c )-}
+{txt} 23{com}.                 {c )-} 
+{txt} 24{com}.                 
+.                 forvalues h = 0 (1) $leads {c -(}
+{txt} 25{com}.                                 
+.                         *Display step.
+.                         dis("IRF of `var', h=`h'") as text
+{txt} 26{com}.                         
+.                         *Run regression.
+.                         qui ivreghdfe df`h'ln`var'  l(1/`lags').df`h'ln`var' df`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv'  `controls', absorb(`fe') first cluster(`clustvar')                   
+{txt} 27{com}. 
+.                         *Store results.
+.                         local row = $lags+`h'+1
+{txt} 28{com}.                         mat results_`var'[`row',1]= `h'
+{txt} 29{com}.                         mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 30{com}.                         mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 31{com}.                         mat temp=e(first)
+{txt} 32{com}.                         mat results_`var'[`row',4]=temp[8,1]
+{txt} 33{com}.                         mat results_`var'[`row',5]=e(N)                 
+{txt} 34{com}. 
+.                 {c )-} 
+{txt} 35{com}. 
+.                         *Save results.
+.                         xsvmat results_`var', name(col) saving("results/temp/mun_`iv'_results_`var'.dta", replace)
+{txt} 36{com}.                         xsvmat results_`var', name(col) list(,)
+{txt} 37{com}. 
+.         {c )-}       
+{txt} 38{com}. 
+. {c )-}
+IRF of emp_ntrade, h=-1
+IRF of emp_ntrade, h=-2
+IRF of emp_ntrade, h=-3
+IRF of emp_ntrade, h=-4
+IRF of emp_ntrade, h=-5
+IRF of emp_ntrade, h=0
+IRF of emp_ntrade, h=1
+IRF of emp_ntrade, h=2
+IRF of emp_ntrade, h=3
+IRF of emp_ntrade, h=4
+IRF of emp_ntrade, h=5
+IRF of emp_ntrade, h=6
+{txt}{p 0 4 2}
+file {bf}
+results/temp/mun_giv_comtrade_results_emp_ntrade.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5     .055105    .062337   160.1209   26449 {txt}{c |}
+  2. {c |} {res}     -4    .0106111   .0398279   167.7738   28111 {txt}{c |}
+  3. {c |} {res}     -3   -.0123417   .0402284   178.4929   28170 {txt}{c |}
+  4. {c |} {res}     -2   -.0374492   .0362103   184.7591   28173 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0     .020368   .0239753   145.5639   28175 {txt}{c |}
+  7. {c |} {res}      1    .0067499   .0376573   146.9509   28175 {txt}{c |}
+  8. {c |} {res}      2    .0840407   .0349733   138.8504   26158 {txt}{c |}
+  9. {c |} {res}      3    .0394495   .0295648   131.9028   24228 {txt}{c |}
+ 10. {c |} {res}      4    .0583764   .0226808   149.6201   22353 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .0240505   .0448679   131.7922   20486 {txt}{c |}
+ 12. {c |} {res}      6    .0865323   .0318512   144.2332   18673 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+
+{com}. 
+. 
+. gen pos_exp = .
+{txt}(138,198 missing values generated)
+
+{com}. replace pos_exp = 1 if !missing(gvl_fob) & gvl_fob > 0
+{txt}(22,935 real changes made)
+
+{com}. replace pos_exp = 0 if !missing(gvl_fob) & gvl_fob <= 0
+{txt}(17,887 real changes made)
+
+{com}. local lhs employment_p
+{txt}
+{com}. 
+. foreach iv_iter of local iv {c -(}
+{txt}  2{com}. 
+.         foreach var of local lhs {c -(}
+{txt}  3{com}.                                 
+.                 *Define matrix to store results.
+.                 matrix results_`var' = J(1+$leads+$lags, 5,.)
+{txt}  4{com}.                 matrix colnames results_`var' = horizon b se F1 obs
+{txt}  5{com}.                 
+. 
+.                 forvalues h = 1 (1) $lags {c -(}
+{txt}  6{com}.                 
+.                         *Display step.
+.                         dis("IRF of `var', h=-`h'") as text
+{txt}  7{com}.                         
+.                         *Run regression.
+.                         
+.                         if `h' == 1 {c -(}
+{txt}  8{com}.                                 local row = $lags-`h'+1
+{txt}  9{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 10{com}.                                 mat results_`var'[`row',2]=0
+{txt} 11{com}.                                 mat results_`var'[`row',3]=0
+{txt} 12{com}.                         {c )-}
+{txt} 13{com}.                         else {c -(}
+{txt} 14{com}.                         
+.                         gen dl`h'lnemployment_p = dl`h'lnemployment * pos_exp
+{txt} 15{com}.                         
+.                         qui ivreghdfe dl`h'ln`var' l(1/`lags').dl`h'ln`var' dl`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv' `controls', absorb(`fe') first cluster(`clustvar')
+{txt} 16{com}.                                 local row = $lags-`h'+1
+{txt} 17{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 18{com}.                                 mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 19{com}.                                 mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 20{com}.                                 mat temp=e(first)
+{txt} 21{com}.                                 mat results_`var'[`row',4]=temp[8,1]
+{txt} 22{com}.                                 mat results_`var'[`row',5]=e(N)
+{txt} 23{com}.                         {c )-}
+{txt} 24{com}.                 {c )-} 
+{txt} 25{com}.                 
+.                 forvalues h = 0 (1) $leads {c -(}
+{txt} 26{com}.                                 
+.                         *Display step.
+.                         dis("IRF of `var', h=`h'") as text
+{txt} 27{com}.                         
+.                         gen df`h'lnemployment_p = df`h'lnemployment * pos_exp
+{txt} 28{com}. 
+.                         *Run regression.
+.                         qui ivreghdfe df`h'ln`var'  l(1/`lags').df`h'ln`var' df`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv'  `controls', absorb(`fe') first cluster(`clustvar')                   
+{txt} 29{com}. 
+.                         *Store results.
+.                         local row = $lags+`h'+1
+{txt} 30{com}.                         mat results_`var'[`row',1]= `h'
+{txt} 31{com}.                         mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 32{com}.                         mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 33{com}.                         mat temp=e(first)
+{txt} 34{com}.                         mat results_`var'[`row',4]=temp[8,1]
+{txt} 35{com}.                         mat results_`var'[`row',5]=e(N)                 
+{txt} 36{com}. 
+.                 {c )-} 
+{txt} 37{com}. 
+.                         *Save results.
+.                         xsvmat results_`var', name(col) saving("results/temp/mun_`iv'_results_emp_symp.dta", replace)
+{txt} 38{com}.                         xsvmat results_`var', name(col) list(,)
+{txt} 39{com}. 
+.         {c )-}       
+{txt} 40{com}. 
+. {c )-}
+IRF of employment_p, h=-1
+IRF of employment_p, h=-2
+{txt}(98,716 missing values generated)
+IRF of employment_p, h=-3
+(100,068 missing values generated)
+IRF of employment_p, h=-4
+(101,485 missing values generated)
+IRF of employment_p, h=-5
+(102,951 missing values generated)
+IRF of employment_p, h=0
+(97,415 missing values generated)
+IRF of employment_p, h=1
+(99,517 missing values generated)
+IRF of employment_p, h=2
+(101,573 missing values generated)
+IRF of employment_p, h=3
+(103,536 missing values generated)
+IRF of employment_p, h=4
+(105,441 missing values generated)
+IRF of employment_p, h=5
+(107,336 missing values generated)
+IRF of employment_p, h=6
+(109,173 missing values generated)
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_comtrade_results_emp_symp.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5   -.2210302   .0211013    151.917   21561 {txt}{c |}
+  2. {c |} {res}     -4   -.1502146    .014442   144.7821   22804 {txt}{c |}
+  3. {c |} {res}     -3   -.0923968   .0100118   146.9417   22839 {txt}{c |}
+  4. {c |} {res}     -2   -.0360522    .007404   145.6982   22841 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0    .0193657   .0094314   139.6493   22843 {txt}{c |}
+  7. {c |} {res}      1    .0837672   .0174488   147.2165   22843 {txt}{c |}
+  8. {c |} {res}      2    .1193191   .0186951   130.8707   21236 {txt}{c |}
+  9. {c |} {res}      3    .1452053   .0246693   159.6545   19678 {txt}{c |}
+ 10. {c |} {res}      4    .1645872    .028134   182.7954   18148 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    .1701269   .0315808   159.5321   16655 {txt}{c |}
+ 12. {c |} {res}      6     .155722   .0289676   195.5493   15181 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+
+{com}. 
+. 
+. gen neg_exp = .
+{txt}(138,198 missing values generated)
+
+{com}. replace neg_exp = 1 if !missing(gvl_fob) & gvl_fob <= 0
+{txt}(17,887 real changes made)
+
+{com}. replace neg_exp = 0 if !missing(gvl_fob) & gvl_fob > 0
+{txt}(22,935 real changes made)
+
+{com}. 
+. local lhs employment_n
+{txt}
+{com}. 
+. foreach iv_iter of local iv {c -(}
+{txt}  2{com}. 
+.         foreach var of local lhs {c -(}
+{txt}  3{com}.                                 
+.                 *Define matrix to store results.
+.                 matrix results_`var' = J(1+$leads+$lags, 5,.)
+{txt}  4{com}.                 matrix colnames results_`var' = horizon b se F1 obs
+{txt}  5{com}.                 
+. 
+.                 forvalues h = 1 (1) $lags {c -(}
+{txt}  6{com}.                 
+.                         *Display step.
+.                         dis("IRF of `var', h=-`h'") as text
+{txt}  7{com}.                         
+.                         *Run regression.
+.                         
+.                         if `h' == 1 {c -(}
+{txt}  8{com}.                                 local row = $lags-`h'+1
+{txt}  9{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 10{com}.                                 mat results_`var'[`row',2]=0
+{txt} 11{com}.                                 mat results_`var'[`row',3]=0
+{txt} 12{com}.                         {c )-}
+{txt} 13{com}.                         else {c -(}
+{txt} 14{com}.                         
+.                         gen dl`h'lnemployment_n = dl`h'lnemployment * neg_exp
+{txt} 15{com}.                         
+.                         qui ivreghdfe dl`h'ln`var' l(1/`lags').dl`h'ln`var' dl`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv' `controls', absorb(`fe') first cluster(`clustvar')
+{txt} 16{com}.                                 local row = $lags-`h'+1
+{txt} 17{com}.                                 mat results_`var'[`row',1]= -`h'
+{txt} 18{com}.                                 mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 19{com}.                                 mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 20{com}.                                 mat temp=e(first)
+{txt} 21{com}.                                 mat results_`var'[`row',4]=temp[8,1]
+{txt} 22{com}.                                 mat results_`var'[`row',5]=e(N)
+{txt} 23{com}.                         {c )-}
+{txt} 24{com}.                 {c )-} 
+{txt} 25{com}.                 
+.                 forvalues h = 0 (1) $leads {c -(}
+{txt} 26{com}.                                 
+.                         *Display step.
+.                         dis("IRF of `var', h=`h'") as text
+{txt} 27{com}.                         
+.                         gen df`h'lnemployment_n = df`h'lnemployment * neg_exp
+{txt} 28{com}. 
+.                         *Run regression.
+.                         qui ivreghdfe df`h'ln`var'  l(1/`lags').df`h'ln`var' df`h'lnemployment ( `instrumented' = `iv' ) l(1/`lags').`iv'  `controls', absorb(`fe') first cluster(`clustvar')                   
+{txt} 29{com}. 
+.                         *Store results.
+.                         local row = $lags+`h'+1
+{txt} 30{com}.                         mat results_`var'[`row',1]= `h'
+{txt} 31{com}.                         mat results_`var'[`row',2]=_b[`instrumented']
+{txt} 32{com}.                         mat results_`var'[`row',3]=_se[`instrumented']
+{txt} 33{com}.                         mat temp=e(first)
+{txt} 34{com}.                         mat results_`var'[`row',4]=temp[8,1]
+{txt} 35{com}.                         mat results_`var'[`row',5]=e(N)                 
+{txt} 36{com}. 
+.                 {c )-} 
+{txt} 37{com}. 
+.                         *Save results.
+.                         xsvmat results_`var', name(col) saving("results/temp/mun_`iv'_results_emp_symn.dta", replace)
+{txt} 38{com}.                         xsvmat results_`var', name(col) list(,)
+{txt} 39{com}. 
+.         {c )-}       
+{txt} 40{com}. 
+. {c )-}
+IRF of employment_n, h=-1
+IRF of employment_n, h=-2
+{txt}(98,716 missing values generated)
+IRF of employment_n, h=-3
+(100,068 missing values generated)
+IRF of employment_n, h=-4
+(101,485 missing values generated)
+IRF of employment_n, h=-5
+(102,951 missing values generated)
+IRF of employment_n, h=0
+(97,415 missing values generated)
+IRF of employment_n, h=1
+(99,517 missing values generated)
+IRF of employment_n, h=2
+(101,573 missing values generated)
+IRF of employment_n, h=3
+(103,536 missing values generated)
+IRF of employment_n, h=4
+(105,441 missing values generated)
+IRF of employment_n, h=5
+(107,336 missing values generated)
+IRF of employment_n, h=6
+(109,173 missing values generated)
+{p 0 4 2}
+file {bf}
+results/temp/mun_giv_comtrade_results_emp_symn.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c TRC}
+     {c |} {res}horizon           b         se         F1     obs {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  1. {c |} {res}     -5    .2237737   .0218678   139.1611   21561 {txt}{c |}
+  2. {c |} {res}     -4    .1500566   .0145948   127.5271   22804 {txt}{c |}
+  3. {c |} {res}     -3    .0918194   .0097229   131.5569   22839 {txt}{c |}
+  4. {c |} {res}     -2    .0366336    .007318   140.2313   22841 {txt}{c |}
+  5. {c |} {res}     -1           0          0          .       . {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+  6. {c |} {res}      0   -.0215594   .0095155   135.8026   22843 {txt}{c |}
+  7. {c |} {res}      1   -.0859584   .0186599    135.828   22843 {txt}{c |}
+  8. {c |} {res}      2   -.1179695   .0204287   122.1315   21236 {txt}{c |}
+  9. {c |} {res}      3   -.1479938   .0258465    155.685   19678 {txt}{c |}
+ 10. {c |} {res}      4   -.1673912   .0294477   175.0124   18148 {txt}{c |}
+     {c LT}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c RT}
+ 11. {c |} {res}      5    -.175317   .0334439   149.9378   16655 {txt}{c |}
+ 12. {c |} {res}      6   -.1605242   .0304753   201.5945   15181 {txt}{c |}
+     {c BLC}{hline 9}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 7}{c BRC}
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. exit, clear

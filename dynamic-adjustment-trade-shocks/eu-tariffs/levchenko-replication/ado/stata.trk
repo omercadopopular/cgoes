@@ -1,0 +1,894 @@
+* 00000023
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://fmwww.bc.edu/RePEc/bocode/i
+N ineqdeco.pkg
+D 21 Mar 2017
+U 1
+d 'INEQDECO': module to calculate inequality indices with decomposition by subgroup
+d 
+d ineqdeco estimates a range of inequality and related
+d indices      commonly  used by economists, plus optional
+d decompositions of a subset of      these indices by  population
+d subgroup.  Indices estimated are:   members of the single
+d parameter Generalized Entropy class GE(a)   for a = -1, 0, 1,
+d 2; the Atkinson class A(e) for e = 0.5, 1, 2;       the Gini
+d coefficient, and the percentile ratios p90/p10 and p75/p25.
+d Optionally presented are indices  related to the Atkinson
+d inequality indices, viz equally-distributed-equivalent income
+d  Yede(e), social welfare indices W(e), and the Sen welfare index.
+d      If there are observations with negative or zero values on
+d the variable     of interest, and you wish to wish to estimate
+d inequality indices    including these observations, then use
+d ineqdec0 (q.v.)      This version is for Stata versions 8.2
+d onwards. For versions 5 to 8.1,      use ineqdeco5 instead.
+d 
+d Author: Stephen P. Jenkins, London School of Economics
+d Support: email s.jenkins@@lse.ac.uk
+d 
+d Distribution-Date: 20150122
+d 
+f i\ineqdeco.ado
+f i\ineqdeco.hlp
+f i\ineqdeco5.ado
+f i\ineqdeco5.hlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/o
+N outreg2.pkg
+D 24 Apr 2017
+U 2
+d 'OUTREG2': module to arrange regression outputs into an illustrative table
+d 
+d  outreg2 provides a fast and easy way to produce an illustrative
+d table  of regression outputs. The regression outputs are produced
+d piecemeal and are  difficult to compare without some type of
+d rearrangement. outreg2  automates this process by concatenating
+d the successive regression outputs in a  vertical format. The
+d resulting table is saved to the disk in ASCII  format, which can
+d be read by other programs. outreg2 thus facilitates  the
+d convertion of regression outputs to a standard format suitable
+d for  inclusion in a scholarly publication. The functionality of
+d outreg2 is based on the earlier package outreg,  by John Luke
+d Gallup. Unlike outreg, outreg2 is capable of writing LaTeX-format
+d tables, as well as ASCII, MS Word and MS Excel.
+d 
+d KW: regression
+d KW: output
+d KW: tables
+d KW: tab-delimited output
+d KW: LaTeX
+d KW: Word
+d KW: Excel
+d 
+d Requires: Stata version 7
+d 
+d Distribution-Date: 20140817
+d 
+d Author: Roy Wada
+d Support: email roywada@@hotmail.com
+d 
+f o\outreg2.ado
+f o\outreg2_prf.ado
+f o\outreg2.hlp
+f s\shellout.ado
+f s\shellout.hlp
+f s\seeout.ado
+f s\seeout.hlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/i
+N ivreg2.pkg
+D  4 Mar 2019
+U 3
+d 'IVREG2': module for extended instrumental variables/2SLS and GMM estimation
+d 
+d ivreg2 provides extensions to Stata's official ivregress and
+d newey. Its main capabilities: two-step feasible GMM estimation;
+d continuously updated GMM estimation (CUE); LIML and k-class
+d estimation; automatic output of the Hansen-Sargan or
+d Anderson-Rubin statistic for overidentifying restrictions; C
+d statistic test of exogeneity of subsets of instruments (orthog()
+d option); kernel-based autocorrelation-consistent (AC) and
+d heteroskedastic and autocorrelation-consistent (HAC) estimation,
+d with user-specified choice of kernel; Cragg's "heteroskedastic
+d OLS" (HOLS) estimator; default reporting of large-sample
+d statistics (z and chi-squared rather than t and F); small option
+d to report small-sample statistics; first-stage regression
+d reported with F-test of excluded instruments and R-squared with
+d included instruments "partialled-out"; enhanced Kleibergen-Paap
+d and Cragg-Donald tests for weak instruments, redundancy of
+d instruments, significance of endogenous regressors; two-way
+d clustering of standard errors;  Kiefer and Driscoll-Kraay
+d standard errors. ivreg2 can also be used for ordinary least
+d squares (OLS) estimation using the same command syntax as Stata's
+d official regress and newey. New in this version: ivreg2 now
+d supports factor variables. This is version 4.1.10 of ivreg2,
+d updated from that published in Stata Journal, 5(4), requiring
+d Stata 11.2 or better. Stata 8.2/9.2/10.2 users may use this
+d routine, which will  automatically call ivreg28, ivreg29, or
+d ivreg210, respectively. These versions are now included in the
+d ivreg2 package. Stata 7 users may use the Stata Journal version
+d of ivreg2, accessible via net search ivreg2.
+d 
+d KW: instrumental variables
+d KW: Sargan test
+d KW: robust estimation
+d KW: orthogonality
+d KW: GMM
+d KW: Hansen's J
+d KW: heteroskedastic OLS,
+d 
+d Requires: Stata version 11.2 and ranktest from SSC
+d 
+d 
+d Author: Christopher F Baum, Boston College
+d Support: email baum@@bc.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+d Author: Steven Stillman, Free University of Bozen-Bolzano
+d Support: email  stillman@@motu.org.nz
+d 
+d Distribution-Date: 20180419
+d 
+f i\ivreg2.ado
+f i\ivreg2.sthlp
+f i\ivreg2_p.ado
+f l\livreg2.mlib
+f i\ivreg210.ado
+f i\ivreg210.sthlp
+f i\ivreg210_p.ado
+f i\ivreg29.ado
+f i\ivreg29.hlp
+f i\ivreg29_p.ado
+f i\ivreg29_cue.ado
+f i\ivreg28.ado
+f i\ivreg28.hlp
+f i\ivreg28_p.ado
+f i\ivreg28_cue.ado
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N ranktest.pkg
+D  4 Mar 2019
+U 4
+d 'RANKTEST': module to test the rank of a matrix using the Kleibergen-Paap rk statistic
+d 
+d  ranktest implements the Kleibergen-Paap (2006) rk test for the
+d rank of a matrix.  Tests of the rank of a matrix have many
+d practical applications.  For example, in econometrics the
+d requirement for identification is the rank condition, which
+d states that a particular matrix must be of full column rank.
+d Another example from econometrics concerns cointegration in
+d vector autoregressive (VAR) models; the Johansen trace test is a
+d test of a rank of a particular matrix.  The traditional test of
+d the rank of a matrix for the standard (stationary) case is the
+d Anderson (1951) canonical correlations test. If we denote one
+d list of variables as Y and a second as Z, and we calculate the
+d squared canonical correlations between Y and Z, the LM form of
+d the Anderson test, where the null hypothesis is that the matrix
+d of correlations or regression parameters B between Y and Z has
+d rank(B)=r, is N times the sum of the r+1 largest squared
+d canonical correlations.  A large test statistic and rejection of
+d the null indicates that the matrix has rank at least r+1.  The
+d Cragg-Donald (1993) statistic is a closely related Wald test for
+d the rank of a matrix.  Both the Anderson and Cragg-Donald tests
+d require the assumption that the covariance matrix has a Kronecker
+d form; when this is not so, e.g., when disturbances are
+d heteroskedastic or autocorrelated, the test statistics are no
+d longer valid. The Kleibergen-Paap (2006) rk statistic is a
+d generalization of the Anderson canonical correlation rank test to
+d the case of a non-Kronecker covariance matrix.  The
+d implementation in ranktest will calculate rk statistics that are
+d robust to various forms of heteroskedasticity, autocorrelation,
+d and clustering.
+d 
+d KW: matrix
+d KW: rank
+d KW: collinearity
+d KW: cointegration
+d 
+d Requires: Stata version 11.2 (version 9.2 for ranktest9)
+d 
+d Distribution-Date: 20150124
+d 
+d Author: Frank Kleibergen, Brown University
+d Support: email  Frank_Kleibergen@@brown.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+f r\ranktest.ado
+f r\ranktest9.ado
+f r\ranktest.hlp
+f l\livreg2.mlib
+e
+S http://fmwww.bc.edu/RePEc/bocode/e
+N estout.pkg
+D 11 Sep 2019
+U 5
+d 'ESTOUT': module to make regression tables
+d 
+d  estout produces a table of regression results from one or
+d several models for use with spreadsheets, LaTeX, HTML, or a
+d word-processor table. eststo stores a quick copy of the active
+d estimation results for later tabulation. esttab is a wrapper for
+d estout. It displays a pretty looking publication-style regression
+d table without much typing. estadd adds additional results to the
+d e()-returns for one or several models previously fitted and
+d stored. This package subsumes the previously circulated esto,
+d esta, estadd,  and estadd_plus. An earlier version of estout is
+d available  as estout1.
+d 
+d KW: estimates
+d KW: LaTeX
+d KW: HTML
+d KW: word processor
+d KW: output
+d 
+d Requires: Stata version 8.2
+d 
+d Distribution-Date: 20190613
+d 
+d Author: Ben Jann, University of Bern
+d Support: email jann@@soz.unibe.ch
+d 
+f _\_eststo.ado
+f _\_eststo.hlp
+f e\estadd.ado
+f e\estadd.hlp
+f e\estout.ado
+f e\estout.hlp
+f e\eststo.ado
+f e\eststo.hlp
+f e\estpost.ado
+f e\estpost.hlp
+f e\esttab.ado
+f e\esttab.hlp
+e
+S http://www.econ.puc-rio.br/datazoom/portugues
+N datazoom_pnad.pkg
+D 21 Sep 2019
+U 6
+d datazoom_pnad - Extração e Compatibilização da PNAD
+d 
+d                  Por: DataZoom - PUC-Rio/Departamento de Economia
+d 
+d Os arquivos deste pacote destinam-se à extração dos microdados da PNAD desde a versão
+d 1981.
+d 
+d Através da execução do programa datazoom_pnad.ado, o usuário pode obter os arquivos .dta
+d tanto de indivíduos quanto de domicílios. É necessário que o usuário possua as bases de
+d dados originais do IBGE.
+d 
+d O programa oferece duas possibilidades de compatibilização: para os anos 1980 e anos
+d 1990. Ao optar por uma delas, o número de variáveis é reduzido para um conjunto de
+d variáveis semelhantes existentes em (praticamente) todos os anos. Mais detalhes sobre
+d a compatibilização podem ser encontrados em Compatibilização das PNADs, que se encontra
+d disponível para download no site www.econ.puc-rio.br/datazoom.
+d 
+d Caso uma das opções de compatibilização seja escolhida, as variáveis monetárias são
+d deflacionadas para Out/2012.
+d 
+d Uma vez instalado o pacote, o programa pode ser executado a partir da linha de comando
+d ou via interface gráfica, através do comando "db datazoom_pnad".
+f d\datazoom_pnad.ado
+f d\datazoom_pnad.dlg
+f d\datazoom_pnad.sthlp
+f d\datazoom_multi.dlg
+f d\datazoom_finalfolder.dlg
+f c\compat_pes_1981a1990_para_81.ado
+f c\compat_pes_1992a2001_para_81.ado
+f c\compat_pes_2002a2009_para_81.ado
+f c\compat_pes_1992a2001_para_92.ado
+f c\compat_pes_2002a2009_para_92.ado
+f c\compat_dom_1981a1990_para_81.ado
+f c\compat_dom_1992a2001_para_81.ado
+f c\compat_dom_2002a2009_para_81.ado
+f c\compat_dom_1992a2001_para_92.ado
+f c\compat_dom_2002a2009_para_92.ado
+f p\pnad2001pes.dct
+f p\pnad2002pes.dct
+f p\pnad2003pes.dct
+f p\pnad2004pes.dct
+f p\pnad2005pes.dct
+f p\pnad2006pes.dct
+f p\pnad2007pes.dct
+f p\pnad2008pes.dct
+f p\pnad2009pes.dct
+f p\pnad2011pes.dct
+f p\pnad2012pes.dct
+f p\pnad2013pes.dct
+f p\pnad2014pes.dct
+f p\pnad2015pes.dct
+f p\pnad2001dom.dct
+f p\pnad2002dom.dct
+f p\pnad2003dom.dct
+f p\pnad2004dom.dct
+f p\pnad2005dom.dct
+f p\pnad2006dom.dct
+f p\pnad2007dom.dct
+f p\pnad2008dom.dct
+f p\pnad2009dom.dct
+f p\pnad2011dom.dct
+f p\pnad2012dom.dct
+f p\pnad2013dom.dct
+f p\pnad2014dom.dct
+f p\pnad2015dom.dct
+f p\pnad1999pes.dct
+f p\pnad1998pes.dct
+f p\pnad1997pes.dct
+f p\pnad1996pes.dct
+f p\pnad1995pes.dct
+f p\pnad1993pes.dct
+f p\pnad1992pes.dct
+f p\pnad1990pes.dct
+f p\pnad1999dom.dct
+f p\pnad1998dom.dct
+f p\pnad1997dom.dct
+f p\pnad1996dom.dct
+f p\pnad1995dom.dct
+f p\pnad1993dom.dct
+f p\pnad1992dom.dct
+f p\pnad1990dom.dct
+f p\pnad1989dom.dct
+f p\pnad1988dom.dct
+f p\pnad1987dom.dct
+f p\pnad1986dom.dct
+f p\pnad1985dom.dct
+f p\pnad1984dom.dct
+f p\pnad1983dom.dct
+f p\pnad1982dom.dct
+f p\pnad1981dom.dct
+f p\pnad1989pes.dct
+f p\pnad1988pes.dct
+f p\pnad1987pes.dct
+f p\pnad1986pes.dct
+f p\pnad1985pes.dct
+f p\pnad1984pes.dct
+f p\pnad1983pes.dct
+f p\pnad1982pes.dct
+f p\pnad1981pes.dct
+e
+S http://www.stata.com/stb/stb56
+N dm79.pkg
+D 18 Mar 2020
+U 7
+d STB-56 dm79.  Yet more matrix commands
+d STB insert by Nicholas J. Cox, University of Durham, UK
+d Support:   n.j.cox@@durham.ac.uk
+d After intallation see help ^matcorr^, help ^matselrc^, help ^matvech^,
+d help ^matvtom^, help ^svmatsv^, help ^matewmf^, help ^matvec^,
+d help ^matvsort^, and help ^svmat2^
+f m\matcorr.ado
+f m\matcorr.hlp
+f m\matewmf.ado
+f m\matewmf.hlp
+f m\matselrc.ado
+f m\matselrc.hlp
+f m\matvec.ado
+f m\matvec.hlp
+f m\matvech.ado
+f m\matvech.hlp
+f m\matvsort.ado
+f m\matvsort.hlp
+f m\matvtom.ado
+f m\matvtom.hlp
+f s\svmat2.ado
+f s\svmat2.hlp
+f s\svmatsv.ado
+f s\svmatsv.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/x
+N xtdpdgmm.pkg
+D 11 Jun 2020
+U 8
+d 'XTDPDGMM': module to perform generalized method of moments estimation of linear dynamic panel data models
+d 
+d  xtdpdgmm implements generalized method of moments estimators for
+d linear dynamic panel data models. Linear moment conditions can be
+d combined with the nonlinear moment conditions suggested by Ahn
+d and Schmidt (1995). The Windmeijer (2005) finite-sample standard
+d error correction is implemented for estimators with and without
+d nonlinear moment conditions. Available postestimation statistics
+d include the Arellano-Bond test for autocorrelation of the
+d residuals and Hansen's J-test for the validity of the
+d overidentifying restrictions.
+d 
+d KW: dynamic panel data
+d KW: generalized method of moments
+d 
+d Requires: Stata version 13
+d 
+d Distribution-Date: 20190914
+d 
+d Author: Sebastian Kripfganz, University of Exeter
+d Support: email S.Kripfganz@@exeter.ac.uk
+d 
+f x\xtdpdgmm.ado
+f x\xtdpdgmm.sthlp
+f x\xtdpdgmm_p.ado
+f x\xtdpdgmm_estat.ado
+f x\xtdpdgmm_postestimation.sthlp
+f l\lxtdpdgmm.mlib
+e
+S http://www.stata.com/users/kcrow
+N tab2xl.pkg
+D 13 Sep 2020
+U 9
+d tab2xl. exports tabulation tables to MS Excel.
+d Program by Kevin Crow, StataCorp <kcrow@stata.com>
+d 
+d tab2xl exports tabulation tables to MS Excel.
+f t\tab2xl.ado
+f t\tab2xl.sthlp
+f t\tab2xl.dlg
+e
+S http://www.stata.com/users/kcrow
+N tab2docx.pkg
+D 13 Sep 2020
+U 10
+d tab2docx. exports tabulation tables to MS Word.
+d Program by Chris Hassell, StataCorp <kcrow@stata.com>
+d 
+d tab2docx exports tabulation tables to MS Word.
+f t\tab2docx.ado
+f t\tab2docx.sthlp
+f t\tab2docx.dlg
+e
+S https://stats.idre.ucla.edu/stat/stata/ado/analysis
+N wls0.pkg
+D 27 Nov 2020
+U 11
+d wls0.  Weighted least squares regressin a la Greene
+d Philip B. Ender
+d UCLA Department of Education
+d UCLA Academic Technology Services
+d ender@@ucla.edu
+d 
+d STATA ado and hlp files in the package
+d distribution-date: 20130822
+f w\wls0.ado
+f w\wls0.hlp
+e
+S http://fmwww.bc.edu/repec/bocode/l
+N listtab.pkg
+D 11 Jan 2021
+U 12
+d 'LISTTAB': module to list variables as rows of a TeX, HTML or word processor table
+d 
+d   listtab outputs a list of variables to the Stata log or to a
+d file as TeX, HTML or word processor table rows, which can then be
+d inserted into a TeX, HTML or word processor table by cutting and
+d pasting and/or file linking and/or embedding (eg using the TeX
+d \input command). listtab produces the table rows, but may also
+d produce a set of header lines before the table rows and/or footer
+d lines after the table rows, containing preambles and/or table
+d definitions and/or table headers and/or table footers, as
+d specified by the user.
+d 
+d KW: output
+d KW: LaTeX
+d KW: HTML
+d KW: RTF
+d 
+d Requires: Stata version 11.0
+d 
+d Distribution-Date: 20200921
+d 
+d Author: Roger Newson, Imperial College London
+d Support: email r.newson@@imperial.ac.uk
+d 
+f l\listtab.ado
+f l\listtab.sthlp
+f l\listtab_rstyle.ado
+f l\listtab_rstyle.sthlp
+f l\listtab_vars.ado
+f l\listtab_vars.sthlp
+e
+S http://fmwww.bc.edu/RePEc/bocode/b
+N binscatter.pkg
+D 23 Aug 2021
+U 13
+d 'BINSCATTER': module to generate binned scatterplots
+d 
+d  binscatter generates binned scatterplots, and is optimized for
+d speed in large  datasets.  Binned scatterplots provide a
+d non-parametric way of visualizing the relationship between two
+d variables.  With a large number of observations, a scatterplot
+d that plots every data point would become too crowded to interpret
+d visually.  binscatter groups the x-axis variable into equal-sized
+d bins, computes the mean of the x-axis and y-axis variables within
+d each bin, then creates a scatterplot of these data points.  It
+d provides built-in options to control for covariates before
+d plotting the relationship.  It will also plot fit lines based on
+d the underlying data, and can automatically handle regression
+d discontinuities.
+d 
+d KW: scatterplot
+d KW: data description
+d KW: regression discontinuity
+d 
+d Requires: Stata version 12.1
+d 
+d Distribution-Date: 20131124
+d 
+d Author: Michael Stepner
+d Support: email michaelstepner@@gmail.com
+d 
+f b\binscatter.ado
+f b\binscatter.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/f
+N ftools.pkg
+D 18 Feb 2022
+U 15
+d 'FTOOLS': module to provide alternatives to common Stata commands optimized for large datasets
+d 
+d  ftools consists of a Mata file and several Stata commands: The
+d Mata file creates identifiers (factors) from variables by using
+d hash functions instead of sorting the data, so it runs in time
+d O(N) and not in O(N log N). The Stata commands exploit this to
+d avoid sort operations,  at the cost of being slower for small
+d datasets (mainly because of the cost involved in moving data from
+d Stata to Mata). Implemented commands are fcollapse, fegen group,
+d and fsort. Note that most of the capabilities of levels and
+d contract are already supported by these commands. Possible
+d commands include more egen functions and merge and reshape
+d alternatives.
+d 
+d KW: levels
+d KW: collapse
+d KW: contract
+d KW: egen
+d KW: sort
+d KW: factor variables
+d KW: Mata
+d 
+d Requires: Stata version 11.2
+d 
+d Distribution-Date: 20191118
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f f\ftools.ado
+f f\ftools.mata
+f f\ftools.sthlp
+f f\fcollapse.ado
+f f\fcollapse.sthlp
+f f\fegen.ado
+f f\fegen_group.ado
+f f\fegen.sthlp
+f f\fisid.ado
+f f\fisid.sthlp
+f f\flevelsof.ado
+f f\flevelsof.sthlp
+f f\fmerge.ado
+f f\fmerge.sthlp
+f f\freshape.ado
+f f\fsort.ado
+f f\fsort.sthlp
+f f\ftab.ado
+f j\join.ado
+f j\join.sthlp
+f l\local_inlist.ado
+f l\local_inlist.sthlp
+f f\fcollapse_functions.mata
+f f\fcollapse_main.mata
+f f\ftools_type_aliases.mata
+f f\ftools.mata
+f f\ftools_common.mata
+f f\ftools_hash1.mata
+f f\ftools_main.mata
+f f\ftools_experimental.mata
+f f\ftools_plugin.mata
+f f\ftools_type_aliases.mata
+f m\ms_compile_mata.ado
+f m\ms_expand_varlist.ado
+f m\ms_fvstrip.ado
+f m\ms_fvstrip.sthlp
+f m\ms_fvunab.ado
+f m\ms_get_version.ado
+f m\ms_parse_absvars.ado
+f m\ms_parse_varlist.ado
+f m\ms_parse_vce.ado
+f m\ms_add_comma.ado
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N spmap.pkg
+D  6 Aug 2022
+U 16
+d 'SPMAP': module to visualize spatial data
+d 
+d   spmap is aimed at visualizing several kinds of spatial data,
+d and is particularly suited for drawing thematic maps and
+d displaying the results of spatial data analyses. Proper
+d specification of spmap options and suboptions, combined with the
+d availability of properly formatted spatial data, allows the user
+d to draw several kinds of maps, including choropleth maps,
+d proportional symbol maps, pin maps, pie chart maps, and
+d noncontiguous area cartograms. spmap completely supersedes its
+d predecessor tmap.
+d 
+d KW: maps
+d KW: thematic
+d KW: spatial data
+d KW: choropleth
+d 
+d Requires: Stata version 9.2
+d 
+d Distribution-Date: 20180118
+d 
+d Author: Maurizio Pisati, University of Milano Bicocca - Italy
+d Support: email maurizio.pisati@@unimib.it
+d 
+f s\spmap.ado
+f s\spmap.hlp
+f s\spmap_arrow.ado
+f s\spmap_color.ado
+f s\spmap_diagram.ado
+f s\spmap_examples.ado
+f s\spmap_label.ado
+f s\spmap_line.ado
+f s\spmap_point.ado
+f s\spmap_polygon.ado
+f s\spmap_psl.ado
+f s\spmap_scalebar.ado
+e
+S http://fmwww.bc.edu/repec/bocode/c
+N csdid.pkg
+D 11 Oct 2022
+U 17
+d 'CSDID': module for the estimation of Difference-in-Difference models with multiple time periods
+d 
+d  CSDID implements Callaway and Sant'Anna (2020) estimator for DID
+d models with multiple time periods. The main idea of CSDID is that
+d consistent estimations for ATT's can be obtained by ignoring 2x2
+d DID design that compare late treated units with earlier treated
+d units. In the presence of heterogeneous and dynamic effects, this
+d type of comparison can severely bias the estimation of Treatment
+d effects. CSDID at its core uses DRDID for the estimation of all
+d 2x2 DID designs to estimate all relevant ATTGT's (Average
+d treatment effects of the treated for group G at time T). Post
+d estimation commands can be used to obtain important aggregations.
+d CSDID can be used with panel data and repeated cross-section.Â 
+d 
+d KW: difference in differences
+d KW: DID
+d KW: event studies
+d KW: drdid
+d 
+d Requires: Stata version 14 and drdid from SSC (q.v.)
+d 
+d Distribution-Date: 20221007
+d 
+d Author: Fernando Rios-Avila, Levy Economics Institute of Bard College
+d Support: email friosavi@@levy.org
+d 
+d Author: Pedro H.C. Sant'Anna, Vanderbilt University
+d Support: email pedro.h.santanna@@vanderbilt.edu
+d 
+d Author: Brantly Callaway, University of Georgia
+d Support: email brantly.callaway@@uga.edu
+d 
+f c\csdid.ado
+f c\csdid_estat.ado
+f c\csdid_rif.ado
+f c\csdid_stats.ado
+f c\csdid_table.ado
+f c\csdid_plot.ado
+f _\_gcsgvar.ado
+f t\tsvmat.ado
+f c\csdid.sthlp
+f c\csdid_postestimation.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/d
+N drdid.pkg
+D 11 Oct 2022
+U 18
+d 'DRDID': module for the estimation of Doubly Robust Difference-in-Difference models
+d 
+d  DRDID implements Sant'Anna and Zhao (2020) proposed estimators
+d for the Average Treatment Effect on the Treated (ATT) in
+d Difference-in-Differences (DID) setups where the parallel trends
+d assumption holds after conditioning on a vector of pre-treatment
+d covariates. For a generalization to multiple periods see CSDID.
+d  The main estimators in DRDID are locally efficient and
+d doubly-robust estimators, because they combine Inverse
+d probability weighting and outcome regression to estimate ATT's.
+d  DRDID can be applied to both balanced/unbalanced panel data, or
+d repeated cross-section.
+d 
+d KW: difference in differences
+d KW: DID
+d KW: pretreatment covariates
+d KW: csdid
+d 
+d Requires: Stata version 14
+d 
+d Distribution-Date: 20221007
+d 
+d Author: Fernando Rios-Avila, Levy Economics Institute of Bard College
+d Support: email friosavi@@levy.org
+d 
+d Author: Pedro H.C. Sant'Anna, Vanderbilt University
+d Support: email pedro.h.santanna@@vanderbilt.edu
+d 
+d Author:  Asjad Naqvi, International Institute for Applied Systems Analysis
+d Support: email snaqvi@@wu.ac.at
+d 
+f d\drdid.ado
+f d\drdid_display.ado
+f d\drdid_predict.ado
+f _\_gmm_regipw.ado
+f _\_het_did_gmm.ado
+f _\_gmm_dripw.ado
+f _\_gmm_repeated.ado
+f d\drdid.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/x
+N xtevent.pkg
+D 18 Oct 2022
+U 19
+d 'XTEVENT': module to estimate and visualize linear panel event-study models
+d 
+d  -xtevent- provides commands to estimate linear panel event-study
+d models, create event-study plots, and conduct hypothesis tests
+d after estimation. It implements the plotting suggestions and many
+d of the estimators discussed in Freyaldenhoven et al. (2021).
+d 
+d KW: panel data
+d KW: event studies
+d KW: graphics
+d 
+d Requires: Stata version 11.2 and ivreghdfe, reghdfe, ftools, ivreg2, ranktest from SSC (q.v.)
+d 
+d Distribution-Date: 20220809
+d 
+d Author: Simon Freyaldenhoven, Federal Reserve Bank of Philadelphia
+d Support: email simon.freyaldenhoven@@phil.frb.org
+d 
+d Author: Christian Hansen, University of Chicago, Booth School of Business
+d Support: email chansen1@@chicagobooth.edu
+d 
+d Author: Jorge Eduardo Perez Perez, Banco de MÃ©xico
+d Support: email  jorgepp@@banxico.org.mx
+d 
+d Author: Jesse Shapiro, Brown University
+d Support: email  jesse_shapiro_1@@brown.edu
+d 
+f x\xtevent.ado
+f _\_eventgenvars.ado
+f _\_eventiv.ado
+f _\_eventivstatic.ado
+f _\_eventols.ado
+f _\_eventolsstatic.ado
+f x\xtevent.sthlp
+f x\xteventplot.ado
+f x\xteventplot.sthlp
+f x\xteventtest.ado
+f x\xteventtest.sthlp
+e
+S https://tdmize.github.io/data/cleanplots
+N cleanplots.pkg
+D 10 Jul 2023
+U 20
+d cleanplots - graphing scheme
+d Clean default plots with marginsplot and other common graphs
+d Trenton D. Mize, Purdue University
+d Distribution-Date: 20200124
+f s\scheme-cleanplots.scheme
+f c\cleanplots.sthlp
+e
+S https://raw.githubusercontent.com/sergiocorreia/reghdfe/master/src
+N reghdfe.pkg
+D 18 Jan 2024
+U 21
+d REGHDFE: Linear models with multi-way fixed effects and multi-way clustering
+d 
+d Authors:
+d - Sergio Correia. Board of Governors of the Federal Reserve System
+d - Noah Constantine. Board of Governors of the Federal Reserve System
+d Support:
+d - https://github.com/sergiocorreia/reghdfe/issues
+d 
+d reghdfe fits a linear or instrumental-variable/GMM regression absorbing an arbitrary number of categorical factors and factorial interactions
+d Optionally, it saves the estimated fixed effects.
+d 
+d The estimator employed is described in Correia (2017):
+d http://scorreia.com/research/hdfe.pdf
+d 
+d For details (user guide, help, FAQ), see the website:
+d http://scorreia.com/reghdfe/
+d 
+d KW: fixed effects
+d KW: panel data
+d KW: hdfe
+d KW: areg
+d KW: xtreg
+d KW: MWFE
+d KW: MWC
+d KW: cluster
+d 
+d Requires: Stata version 11.2
+d 
+d Required packages:
+d  ftools
+d 
+d Distribution-Date: 20230912
+d 
+f r\reghdfe.ado
+f r\reghdfe_estat.ado
+f r\reghdfe_header.ado
+f r\reghdfe_footnote.ado
+f r\reghdfe_p.ado
+f r\reghdfe.mata
+f r\reghdfe.sthlp
+f r\reghdfe_programming.sthlp
+f e\estfe.ado
+f r\reghdfe3.ado
+f r\reghdfe3.sthlp
+f r\reghdfe3_estat.ado
+f r\reghdfe3_footnote.ado
+f r\reghdfe3_p.ado
+f r\reghdfe5.ado
+f r\reghdfe5.mata
+f r\reghdfe5.sthlp
+f r\reghdfe5_estat.ado
+f r\reghdfe5_footnote.ado
+f r\reghdfe5_header.ado
+f r\reghdfe5_p.ado
+f r\reghdfe5_parse.ado
+e
+S https://raw.githubusercontent.com/sergiocorreia/ivreghdfe/master/src
+N ivreghdfe.pkg
+D 18 Jan 2024
+U 22
+d Instrumental Variables with High Dimensional Fixed Effects (ivreg2 with an absorb() option)
+d 
+d KW: fixed effects
+d KW: ivreg2
+d KW: reghdfe
+d 
+d Requires: Stata version 11.2
+d 
+d Required packages:
+d  ftools
+d  reghdfe
+d  ivreg2
+d  boottest (for Stata version 12 or earlier)
+d 
+d Distribution-Date: 20211214
+f i\ivreghdfe.ado
+f i\ivreghdfe.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/x
+N xsvmat.pkg
+D 18 Jan 2024
+U 23
+d 'XSVMAT': module to convert a matrix to variables in an output dataset
+d 
+d  xsvmat is an extended version of svmat. It creates an output
+d dataset (or resultsset), with one observation per row of an
+d existing matrix, and data on the values of the column entries in
+d that row, and, optionally, extra variables specified by the user.
+d The output dataset created by xsvmat may be listed to the Stata
+d log, or saved to a disk file, or written to the memory
+d (overwriting any pre-existing dataset).
+d 
+d KW: matrix
+d KW: data management
+d 
+d Requires: Stata version 16.0
+d 
+d Distribution-Date: 20200411
+d 
+d Author: Roger Newson,  King's College London
+d Support: email roger.newson@@kcl.ac.uk
+d 
+f x\xsvmat.ado
+f x\xsvmat.sthlp
+e

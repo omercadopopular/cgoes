@@ -1,0 +1,18 @@
+VERSION 10.0
+POSITION . . 300 65
+
+DIALOG main
+BEGIN
+   TEXT txCaminho     10  5 280   ., label(Selecione a pasta para salvar novas bases)
+   FILE caminho       @ +20 280   ., label(Procurar...) dir
+END
+
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+*HELP hlp1,   view("help global")
+RESET res1
+
+PROGRAM command
+BEGIN
+      put "saving"  "(" main.caminho ") "
+END

@@ -1,0 +1,76 @@
+{smcl}
+{* 14oct2004}{...}
+{hline}
+help for {hi:sxpose}
+{hline}
+
+{title:Transpose of string variable dataset}
+
+{p 8 29 2}
+{cmd:sxpose, clear}
+[{cmd:force format(}{it:format}{cmd:) firstnames destring}] 
+
+
+{title:Description}
+
+{pstd}
+{cmd:sxpose} transposes a dataset of string variables, so that observations
+become variables, and vice versa. It is a rough and ready utility: use
+circumspectly. 
+
+
+{title:Remarks}
+
+{pstd}
+{cmd:sxpose} is destructive. Your existing dataset will disappear. The 
+compulsory {cmd:clear} option is intended to remind you of that. 
+
+{pstd} 
+The number of variables allowed in Stata is very much less than the 
+number of observations allowed. See help on {help limits}. In 
+addition, with even moderate numbers of observations, you may 
+run into memory problems when trying to transpose a dataset. 
+See help on {help memory}. 
+
+
+{title:Options} 
+
+{pstd}{cmd:clear} is a required option, flagging that you are aware 
+that the current dataset will be cleared from memory. 
+
+{pstd}{cmd:force} specifies that the transpose should go ahead 
+even though the dataset contains numeric variables. Numeric values
+will be coerced to string using the format %12.0g or whatever numeric 
+format is specified by the {cmd:format()} option. You may lose some precision, 
+especially in non-integer values, when you do this. 
+
+{pstd}{cmd:format()} specifies a numeric format to use in coercing 
+numeric values to string. See above. 
+
+{pstd}{cmd:firstnames} specifies that the first variable (first 
+column) in the existing dataset is to be treated as a set of variable
+names for the variables in the transposed dataset. This first column 
+will not appear as the first observation in the new dataset. Any 
+values that are not legal variable names will be lost. 
+
+{pstd}{cmd:destring} specifies that {cmd:destring, replace} will
+be run on the new dataset in an attempt to convert variables that 
+are unambiguously numeric in content to numeric. No force will be applied. 
+See help on {help destring}. 
+
+
+{title:Examples}
+
+{phang}{cmd:. sxpose, clear}
+
+   
+{title:Acknowledgements} 
+
+{pstd}John Wallace suggested this problem. 
+
+
+{title:Also see}
+
+{psee}
+Online:  help for {help xpose} 
+{p_end}

@@ -1,0 +1,429 @@
+--------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Carlos\OneDrive - UC San Diego\UCSD\Research\cgoes\loop\IPCA.log
+  log type:  text
+ opened on:  30 Jan 2021, 19:37:16
+
+. 
+. 
+. // Import data and merge
+. 
+.         // Import 1999 to 2006
+. 
+.                 import delimited "sa19992006.csv", varnames(1)
+(86 vars, 7,116 obs)
+
+. 
+.                 local date = tm(1999m8)
+
+.                 forv x=4/86 {
+  2.                         rename v`x' d`=`date'-4+`x''
+  3.                 }
+
+. 
+.                 reshape long d, i(area code description) j(month)
+(note: j = 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496
+>  497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520
+>  521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544
+>  545 546 547 548 549 550 551 552 553 554 555 556 557)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                     7116   ->  590628
+Number of variables                  86   ->       5
+j variable (83 values)                    ->   month
+xij variables:
+                     d475 d476 ... d557   ->   d
+-----------------------------------------------------------------------------
+
+. 
+.                 sort month area code
+
+. 
+.                 format month %tm
+
+. 
+.                 save d1999_2006.dta, replace
+(note: file d1999_2006.dta not found)
+file d1999_2006.dta saved
+
+.                 
+.         // Import 2006 - 2011
+. 
+.                 import delimited "sa20062011.csv", varnames(1) clear
+(69 vars, 5,580 obs)
+
+. 
+.                 local date = tm(2006m7)
+
+.                 forv x=4/69 {
+  2.                         rename v`x' d`=`date'-4+`x''
+  3.                 }
+
+. 
+.                 reshape long d, i(area code description) j(month)
+(note: j = 558 559 560 561 562 563 564 565 566 567 568 569 570 571 572 573 574 575 576 577 578 579
+>  580 581 582 583 584 585 586 587 588 589 590 591 592 593 594 595 596 597 598 599 600 601 602 603
+>  604 605 606 607 608 609 610 611 612 613 614 615 616 617 618 619 620 621 622 623)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                     5580   ->  368280
+Number of variables                  69   ->       5
+j variable (66 values)                    ->   month
+xij variables:
+                     d558 d559 ... d623   ->   d
+-----------------------------------------------------------------------------
+
+. 
+.                 sort month area code
+
+. 
+.                 format month %tm
+
+. 
+.                 save d2006_2011.dta, replace
+(note: file d2006_2011.dta not found)
+file d2006_2011.dta saved
+
+.                 
+.         // Import 2012 - 2014
+. 
+.                 import delimited "sa20112014.csv", varnames(1) clear
+(34 vars, 6,356 obs)
+
+. 
+.                 local date = tm(2012m1)
+
+.                 forv x=4/34 {
+  2.                         rename v`x' d`=`date'-4+`x''
+  3.                 }
+
+. 
+.                 reshape long d, i(area code description) j(month)
+(note: j = 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638 639 640 641 642 643 644 645
+>  646 647 648 649 650 651 652 653 654)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                     6356   ->  197036
+Number of variables                  34   ->       5
+j variable (31 values)                    ->   month
+xij variables:
+                     d624 d625 ... d654   ->   d
+-----------------------------------------------------------------------------
+
+. 
+.                 sort month area code
+
+. 
+.                 format month %tm
+
+. 
+.                 save d2012_2014.dta, replace
+(note: file d2012_2014.dta not found)
+file d2012_2014.dta saved
+
+. 
+.         // Merge
+.         
+.                 use d1999_2006.dta
+
+.         
+.                 merge 1:1 * using d2006_2011.dta, nogen
+(note: variable description was str41, now str49 to accommodate using data's values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                       958,908
+        from master                   590,628  
+        from using                    368,280  
+
+    matched                                 0  
+    -----------------------------------------
+
+.                 
+.                 merge 1:1 * using d2012_2014.dta, nogen                 
+(note: variable area was str19, now str20 to accommodate using data's values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                     1,155,944
+        from master                   958,908  
+        from using                    197,036  
+
+    matched                                 0  
+    -----------------------------------------
+
+.                 
+.                 egen panelid = group(area code)
+
+.                 
+.                 rename d inf_mom
+
+.                 
+.                 gen eng_description = ""
+(1,155,944 missing values generated)
+
+.                 
+.                 tempfile merge_file
+
+.                 save `merge_file'
+file C:\Users\Carlos\AppData\Local\Temp\ST_3ae4_000002.tmp saved
+
+.                 
+.                 import delimited "eng_description.csv", varnames(1) clear
+(2 vars, 723 obs)
+
+.                 egen group = group(code)
+
+.                 bysort group: gen n = _n
+
+.                 drop if n > 1
+(67 observations deleted)
+
+.                 drop n group
+
+.                 
+.                 merge 1:m code using `merge_file', nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                         1,155,944  
+    -----------------------------------------
+
+.                 
+.                 rename month date
+
+.                 
+.                 save IPCA.dta, replace
+(note: file IPCA.dta not found)
+file IPCA.dta saved
+
+.                 
+.                 
+.         // Export
+.                 
+.                 xtset panelid date, m
+       panel variable:  panelid (unbalanced)
+        time variable:  date, 1999m8 to 2014m7, but with gaps
+                delta:  1 month
+
+.                 
+.                 // Generate indices
+.                 
+.                         gen index = 100
+
+.                 
+.                         replace index = 100 * 1 + inf_mom/100 if date == tm(1999m8)
+(6,743 real changes made, 2,191 to missing)
+
+.                         replace index = l.index * (1 + inf_mom/100) if date > tm(1999m8)
+(1,146,132 real changes made, 403,608 to missing)
+
+.                         
+.          // Label and export to excel
+. 
+.                         label var area "Geographical Area"
+
+.                         label var code "Code"
+
+.                         label var description "Description"
+
+.                         label var date "Date"
+
+.                         label var inf_mom "Inflation, month-on-month, in pct"
+
+.                         label var index "CPI, per item, July 1999 = 100"
+
+.                         
+.                         
+. 
+.                         preserve
+
+.                                 drop index
+
+.                                 reshape wide inf_mom, i(area code description panelid) j(date)
+(note: j = 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496
+>  497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520
+>  521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544
+>  545 546 547 548 549 550 551 552 553 554 555 556 557 558 559 560 561 562 563 564 565 566 567 568
+>  569 570 571 572 573 574 575 576 577 578 579 580 581 582 583 584 585 586 587 588 589 590 591 592
+>  593 594 595 596 597 598 599 600 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616
+>  617 618 619 620 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638 639 640
+>  641 642 643 644 645 646 647 648 649 650 651 652 653 654)
+
+Data                               long   ->   wide
+-----------------------------------------------------------------------------
+Number of obs.                  1.2e+06   ->    9644
+Number of variables                   7   ->     185
+j variable (180 values)            date   ->   (dropped)
+xij variables:
+                                inf_mom   ->   inf_mom475 inf_mom476 ... inf_mom654
+-----------------------------------------------------------------------------
+
+.                                 export delimited using "inf_mom", replace       
+(note: file inf_mom.csv not found)
+file inf_mom.csv saved
+
+.                         restore
+
+. 
+.                         preserve
+
+.                                 drop inf_mom
+
+.                                 reshape wide index, i(area code description panelid) j(date)
+(note: j = 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496
+>  497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520
+>  521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544
+>  545 546 547 548 549 550 551 552 553 554 555 556 557 558 559 560 561 562 563 564 565 566 567 568
+>  569 570 571 572 573 574 575 576 577 578 579 580 581 582 583 584 585 586 587 588 589 590 591 592
+>  593 594 595 596 597 598 599 600 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616
+>  617 618 619 620 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638 639 640
+>  641 642 643 644 645 646 647 648 649 650 651 652 653 654)
+
+Data                               long   ->   wide
+-----------------------------------------------------------------------------
+Number of obs.                  1.2e+06   ->    9644
+Number of variables                   7   ->     185
+j variable (180 values)            date   ->   (dropped)
+xij variables:
+                                  index   ->   index475 index476 ... index654
+-----------------------------------------------------------------------------
+
+.                                 export delimited using "index", replace 
+(note: file index.csv not found)
+file index.csv saved
+
+.                         restore
+
+. 
+end of do-file
+
+. bysort area date: egen index_base = mean(index)
+(28,148 missing values generated)
+
+. drop index_base
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         gen index_temp = index if code == 0
+(1,153,784 missing values generated)
+
+. 
+end of do-file
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         gen index_temp = index if code == 0
+variable index_temp already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. drop index_temp
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         gen index_temp = index if code == 0
+(1,153,784 missing values generated)
+
+.                         bysort area: egen index_base = mean(index_temp)
+(28,148 missing values generated)
+
+.                         drop index_temp 
+
+. 
+end of do-file
+
+. drop index_*
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         gen index_temp = index if code == 0
+(1,153,784 missing values generated)
+
+.                         bysort area date: egen index_base = mean(index_temp)
+(28,148 missing values generated)
+
+.                         drop index_temp 
+
+. 
+end of do-file
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         gen change_real = (index / index_base - 1) * 100
+(405,799 missing values generated)
+
+.                         
+.                         keep if code == 6101
+(1,153,722 observations deleted)
+
+. 
+end of do-file
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         bysort area date: tsset index 
+tsset may not be combined with by
+r(190);
+
+end of do-file
+
+r(190);
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         bysort area date: tsline index 
+tsline may not be combined with by
+r(190);
+
+end of do-file
+
+r(190);
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         tsline index 
+
+. 
+end of do-file
+
+. help tsline
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         export excel using "pharma.xls", replace        
+file pharma.xls saved
+
+. 
+end of do-file
+
+. help export excel
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         export excel using "pharma.xls", replace        firstrow 
+option firstrow incorrectly specified
+r(198);
+
+end of do-file
+
+r(198);
+
+. help export excel
+
+. do "C:\Users\Carlos\AppData\Local\Temp\STD3ae4_000000.tmp"
+
+.                         export excel using "pharma.xls", replace         firstrow(variables) 
+file pharma.xls saved
+
+. 
+end of do-file
+
+. exit, clear

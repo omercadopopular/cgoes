@@ -1,0 +1,225 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d04.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:04:01
+{txt}
+{com}. 
+. /// 1. import exports dataset at the microregion level
+> 
+. import delimited "data\trade-processed\munTradeExp19972023.csv", clear 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(13 vars, 53,767 obs)
+
+{com}. 
+. 
+. // rename variables
+. rename co_ano year
+{res}{txt}
+{com}. rename no_mun mun_name
+{res}{txt}
+{com}. rename pop pop2022
+{res}{txt}
+{com}. 
+. gen t_mun_code_ibge = substr(string(co_mun),1,6)
+{txt}
+{com}. destring t_mun_code_ibge, gen(mun_code_ibge)
+{txt}t_mun_code_ibge: all characters numeric; mun_code_ibge {res}generated {txt}as {res}long
+{txt}
+{com}. drop t_*
+{txt}
+{com}. 
+. // set panel
+. egen groupid = group(mun_name mun_code_ibge)
+{txt}
+{com}. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2023}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. // generate exports growth variable
+. gen lnvl_fobr =  log(vl_fobr)
+{txt}(2,052 missing values generated)
+
+{com}. gen gvl_fobr =  lnvl_fobr - l.lnvl_fobr
+{txt}(8,579 missing values generated)
+
+{com}. gen g2vl_fobr =  (vl_fobr - l.vl_fobr)/l.vl_fobr
+{txt}(8,578 missing values generated)
+
+{com}. 
+. // generate exports growth variable
+. gen lnvl_fob =  log(vl_fob)
+{txt}(2,052 missing values generated)
+
+{com}. gen gvl_fob =  lnvl_fob - l.lnvl_fob
+{txt}(8,579 missing values generated)
+
+{com}. gen g2vl_fob =  (vl_fob - l.vl_fob)/l.vl_fob
+{txt}(8,578 missing values generated)
+
+{com}. 
+. // generate exports growth variable, fixed period
+. gen t_vl_fob_base = vl_fob if year == $baseyear
+{txt}(52,028 missing values generated)
+
+{com}. gen t_vl_fobr_base = vl_fobr if year == $baseyear
+{txt}(52,028 missing values generated)
+
+{com}. gen t_lnvl_fob_base = lnvl_fob if year == $baseyear
+{txt}(52,028 missing values generated)
+
+{com}. gen t_lnvl_fobr_base = lnvl_fobr if year == $baseyear
+{txt}(52,028 missing values generated)
+
+{com}. 
+. gen t_vl_fobr_base_e = vl_fobr if year == $endyear
+{txt}(51,935 missing values generated)
+
+{com}. gen t_vl_fob_base_e = vl_fob if year == $endyear
+{txt}(51,935 missing values generated)
+
+{com}. gen t_lnvl_fobr_base_e = lnvl_fobr if year == $endyear
+{txt}(51,935 missing values generated)
+
+{com}. gen t_lnvl_fob_base_e = lnvl_fob if year == $endyear
+{txt}(51,935 missing values generated)
+
+{com}. 
+. bysort groupid: egen vl_fobr_base = mean(t_vl_fobr_base)
+{txt}(14,370 missing values generated)
+
+{com}. bysort groupid: egen lnvl_fobr_base = mean(t_lnvl_fobr_base)
+{txt}(14,370 missing values generated)
+
+{com}. bysort groupid: egen vl_fob_base = mean(t_vl_fob_base)
+{txt}(14,370 missing values generated)
+
+{com}. bysort groupid: egen lnvl_fob_base = mean(t_lnvl_fob_base)
+{txt}(14,370 missing values generated)
+
+{com}. 
+. bysort groupid: egen vl_fobr_base_e = mean(t_vl_fobr_base_e)
+{txt}(12,203 missing values generated)
+
+{com}. bysort groupid: egen lnvl_fobr_base_e = mean(t_lnvl_fobr_base_e)
+{txt}(12,203 missing values generated)
+
+{com}. bysort groupid: egen vl_fob_base_e = mean(t_vl_fob_base_e)
+{txt}(12,203 missing values generated)
+
+{com}. bysort groupid: egen lnvl_fob_base_e = mean(t_lnvl_fob_base_e)
+{txt}(12,203 missing values generated)
+
+{com}. 
+. gen gvl_fobr_base = lnvl_fobr_base_e - lnvl_fobr_base
+{txt}(18,173 missing values generated)
+
+{com}. gen g2vl_fobr_base = (vl_fobr_base_e - vl_fobr_base)/vl_fobr_base
+{txt}(18,173 missing values generated)
+
+{com}. gen gvl_fob_base = lnvl_fob_base_e - lnvl_fob_base
+{txt}(18,173 missing values generated)
+
+{com}. gen g2vl_fob_base = (vl_fob_base_e - vl_fob_base)/vl_fob_base
+{txt}(18,173 missing values generated)
+
+{com}. 
+. drop vl_fobr_base vl_fobr_base_e vl_fob_base vl_fob_base_e lnvl_fobr_base lnvl_fobr_base_e lnvl_fob_base lnvl_fob_base_e t_*
+{txt}
+{com}. 
+. 
+. 
+. /// 2. merge with rais dataset
+> merge 1:1 year mun_code_ibge using "data\temp\mun-trade-panel-processed.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}         108,352
+{txt}{col 9}from master{col 30}{res}           6,996{txt}  (_merge==1)
+{col 9}from using{col 30}{res}         101,356{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}          46,771{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. // drop missing years
+. drop if year < 1997 | year > 2022
+{txt}(14,434 observations deleted)
+
+{com}. 
+. // input obs with zero exports
+. local vars = "vl_fobr vl_fob"
+{txt}
+{com}. foreach var of local vars {c -(}
+{txt}  2{com}.         replace `var' = 0 if missing(`var') | _merge == 2
+{txt}  3{com}. {c )-}
+{txt}(91,427 real changes made)
+(91,427 real changes made)
+
+{com}. 
+. // drop merge
+. drop _merge
+{txt}
+{com}. 
+. // set panel
+. 
+. drop groupid
+{txt}
+{com}. egen groupid = group(ufCode mun_code_ibge)
+{res}{txt}(2,491 missing values generated)
+
+{com}. keep if !missing(groupid)
+{txt}(2,491 observations deleted)
+
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. // verify that all mun are there
+. 
+. // winsorize
+. 
+. local group "gvl_fobr g2vl_fobr gvl_fob g2vl_fob"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w) trim
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. 
+. /// 3. erase dataset and close log
+> 
+. drop co_mun
+{txt}
+{com}. 
+. save "data\temp\mun-trade-panel-processed-exp.dta", replace 
+{txt}{p 0 4 2}
+(file {bf}
+data\temp\mun-trade-panel-processed-exp.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+data\temp\mun-trade-panel-processed-exp.dta{rm}
+saved
+{p_end}
+
+{com}. erase "data\temp\mun-trade-panel-processed.dta"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d04.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:04:02
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

@@ -1,0 +1,735 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d05.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:04:02
+{txt}
+{com}. 
+. use "data\temp\mun-trade-panel-processed-exp.dta", clear
+{txt}
+{com}. 
+. 
+. // 1. create missing variables
+. 
+. // rename variables
+. rename wage_mass_sexo_1 wage_mass_female
+{res}{txt}
+{com}. rename wage_mass_college wage_mass_college_or_higher
+{res}{txt}
+{com}. rename less_than_primary less_than_pri
+{res}{txt}
+{com}. rename ufCode uf_code
+{res}{txt}
+{com}. gen male = employment - female
+{txt}
+{com}. gen wage_mass_male = wage_mass - wage_mass_female 
+{txt}
+{com}. gen less_than_college = employment - college_or_higher
+{txt}
+{com}. gen wage_mass_less_than_college = wage_mass - wage_mass_college_or_higher
+{txt}
+{com}. 
+. // adjust for inflation
+. 
+. // Save before importing PCE
+. tempfile trade
+{txt}
+{com}. save `trade'
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. // import PCE file and merge/
+. import excel "data/ibge/tabela1737.xlsx", clear firstrow sheet("INDEX")
+{res}{text}(2 vars, 29 obs)
+
+{com}. 
+. drop if missing(year)
+{txt}(1 observation deleted)
+
+{com}. 
+. gen t_reference = IPCA if year == 2002
+{txt}(27 missing values generated)
+
+{com}. egen reference = mean(t_reference)
+{txt}
+{com}. drop t_* 
+{txt}
+{com}. 
+. gen adj_ipca = 1 / (IPCA / reference)
+{txt}
+{com}. 
+. keep year adj
+{txt}
+{com}. 
+. merge 1:m year using `trade'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               3
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         138,198{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. keep if _merge == 3
+{txt}(3 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. foreach var of varlist wage_* avg_wage_* {c -(}
+{txt}  2{com}.         gen `var'r = `var' * adj_ipca
+{txt}  3{com}. {c )-}
+{txt}(314 missing values generated)
+(136 missing values generated)
+(13 missing values generated)
+(230 missing values generated)
+
+{com}. 
+. drop adj_ipca
+{txt}
+{com}. 
+. // wages
+. 
+. gen avg_wage_h1r = (avg_wage_q1r + avg_wage_q2r)/2
+{txt}(314 missing values generated)
+
+{com}. gen avg_wage_h2r = (avg_wage_q3r + avg_wage_q4r)/2
+{txt}(230 missing values generated)
+
+{com}. gen avg_wage_h1 = (avg_wage_q1 + avg_wage_q2)/2
+{txt}(314 missing values generated)
+
+{com}. gen avg_wage_h2 = (avg_wage_q3 + avg_wage_q4)/2
+{txt}(230 missing values generated)
+
+{com}. 
+. gen w = wage_mass / employment
+{txt}
+{com}. gen wr = wage_massr / employment
+{txt}
+{com}. 
+. local subscript "male female less_than_college college_or_higher"
+{txt}
+{com}. 
+. foreach var of local subscript {c -(}
+{txt}  2{com}.         gen w_`var' = wage_mass_`var' / `var'
+{txt}  3{com}.         gen w_`var'r = wage_mass_`var'r / `var'
+{txt}  4{com}. {c )-}
+{txt}(376 missing values generated)
+(376 missing values generated)
+(43 missing values generated)
+(43 missing values generated)
+(8 missing values generated)
+(8 missing values generated)
+(3,454 missing values generated)
+(3,454 missing values generated)
+
+{com}. 
+. // windorize
+. 
+. foreach var of global lhs {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w) trim
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. /// 2. label 
+> 
+. order year uf uf_code mun_code_ibge pop employment female male less_than_pri primary secondary college_or_higher w* vl_fob vl_fobr avg_wage_* gvl_fobr* giv*  
+{txt}
+{com}. 
+. // indices
+. label var year "Year"
+{txt}
+{com}. label var uf_code "State, IBGE code"
+{txt}
+{com}. label var mun_code "Municipality, IBGE code"
+{txt}
+{com}. 
+. // ibge
+. label var pop2022 "2022 Population, IBGE"
+{txt}
+{com}. 
+. // rais 
+. 
+. label var employment "Number of workers, RAIS"
+{txt}
+{com}. label var female "Number of female workers, RAIS"
+{txt}
+{com}. label var male "Number of male workers, RAIS"
+{txt}
+{com}. label var less_than_pri "Number of workers with less than primary education, RAIS"
+{txt}
+{com}. label var primary "Number of workers with primary education, RAIS"
+{txt}
+{com}. label var secondary "Number of workers with secondary education, RAIS"
+{txt}
+{com}. label var college_or_higher "Number of workers with college or higher education, RAIS"
+{txt}
+{com}. 
+. label var wage_mass "Wage mass, nominal, RAIS"
+{txt}
+{com}. label var wage_mass_female "Wage mass, female workers, nominal, RAIS"
+{txt}
+{com}. label var wage_mass_male "Wage mass, male workers, nominal, RAIS"
+{txt}
+{com}. label var wage_mass_less_than_pri "Wage mass, less than primary education, nominal, RAIS"
+{txt}
+{com}. label var wage_mass_secondary "Wage mass, secondary education, nominal, RAIS"
+{txt}
+{com}. label var wage_mass_college_or_higher "Wage mass, college or higher education, nominal, RAIS"
+{txt}
+{com}. 
+. label var wage_massr "Wage mass, constant R$2022, RAIS"
+{txt}
+{com}. label var wage_mass_femaler "Wage mass, female workers, constant R$2022, RAIS"
+{txt}
+{com}. label var wage_mass_maler "Wage mass, male workers, constant R$2022, RAIS"
+{txt}
+{com}. label var wage_mass_less_than_prir "Wage mass, less than primary education, constant R$2022, RAIS"
+{txt}
+{com}. label var wage_mass_secondaryr "Wage mass, secondary education, constant R$2022, RAIS"
+{txt}
+{com}. label var wage_mass_college_or_higherr "Wage mass, college or higher education, constant R$2022, RAIS"
+{txt}
+{com}. 
+. label var wr "Average wage, constant R$2022, RAIS"
+{txt}
+{com}. label var w_femaler "Average wage, female workers, constant R$2022, RAIS"
+{txt}
+{com}. label var w_maler "Average wage, male workers, constant R$2022, RAIS"
+{txt}
+{com}. 
+. label var w "Average wage, current R$, RAIS"
+{txt}
+{com}. label var w_female "Average wage, female workers, current R$, RAIS"
+{txt}
+{com}. label var w_male "Average wage, male workers, current R$, RAIS"
+{txt}
+{com}. label var w_less_than_college "Average wage, less than college, current R$, RAIS"
+{txt}
+{com}. label var w_college_or_higher "Average wage, college or higher education, current R$, RAIS"
+{txt}
+{com}. 
+. label var avg_wage_q1r "Average real wage, mun quartile 1"
+{txt}
+{com}. label var avg_wage_q2r "Average real wage, mun quartile 2"
+{txt}
+{com}. label var avg_wage_q3r "Average real wage, mun quartile 3"
+{txt}
+{com}. label var avg_wage_q4r "Average real wage, mun quartile 4"
+{txt}
+{com}. 
+. label var avg_wage_q1 "Average wage, mun quartile 1"
+{txt}
+{com}. label var avg_wage_q2 "Average wage, mun quartile 2"
+{txt}
+{com}. label var avg_wage_q3 "Average wage, mun quartile 3"
+{txt}
+{com}. label var avg_wage_q4 "Average wage, mun quartile 4"
+{txt}
+{com}. 
+. label var avg_wage_h1r "Average real wage, mun half 1"
+{txt}
+{com}. label var avg_wage_h2r "Average real wage, mun half 2"
+{txt}
+{com}. 
+. label var avg_wage_h1 "Average wage, mun half 1"
+{txt}
+{com}. label var avg_wage_h2 "Average wage, mun half 2"
+{txt}
+{com}. 
+. // mdic
+. label var vl_fob "Exports by mun, nominal $, MDIC"
+{txt}
+{com}. label var vl_fobr "Exports by mun, constant $2022, MDIC (Deflated with PCE, FRED)"
+{txt}
+{com}. label var gvl_fobr "Pct Change in Exports by mun, constant $2022, MDIC (Deflated with PCE, FRED)"
+{txt}
+{com}. 
+. // ivs
+. label var giv "Log Difference, Exposure Foreign Demand Shocks (GDP trade partners)"
+{txt}
+{com}. label var g2iv "Pct Change, Exposure Foreign Demand Shocks (GDP trade partners)"
+{txt}
+{com}. label var giv_comtrade "Log Difference, Exposure Foreign Demand Shocks (global sector export)"
+{txt}
+{com}. label var g2iv_comtrade "Pct Change, Exposure Foreign Demand Shocks (global sector export)"
+{txt}
+{com}. 
+. // groupid
+. label var groupid "Panel ID"
+{txt}
+{com}. 
+. // data
+. label data "Master file, Brazil exports and labor market"
+{txt}
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. // 3. create changes
+. 
+. foreach var of global lhs {c -(}
+{txt}  2{com}.         gen ln`var' = log(`var')
+{txt}  3{com}.         
+.         local lags = $lags +1
+{txt}  4{com}.         forvalues i = 1/`lags' {c -(}
+{txt}  5{com}.                 gen dl`i'ln`var' = l`i'.ln`var' - l.ln`var'
+{txt}  6{com}.                 label var dl`i'ln`var' "Cumulative Pct Change in `var' from t-1 to h=t-`i'"
+{txt}  7{com}.         {c )-}
+{txt}  8{com}.         
+.         
+.         forvalues i = 0/$leads  {c -(}
+{txt}  9{com}.                 gen df`i'ln`var' = f`i'.ln`var' - l.ln`var'
+{txt} 10{com}.                 label var df`i'ln`var' "Cumulative Pct Change in `var' from t-1 to h=t+`i'"
+{txt} 11{com}.         {c )-}
+{txt} 12{com}.         
+. {c )-}
+{txt}(5,639 missing values generated)
+(11,231 missing values generated)
+(16,776 missing values generated)
+(22,324 missing values generated)
+(27,889 missing values generated)
+(33,458 missing values generated)
+(5,639 missing values generated)
+(11,231 missing values generated)
+(16,794 missing values generated)
+(22,358 missing values generated)
+(27,929 missing values generated)
+(33,500 missing values generated)
+(39,068 missing values generated)
+(43 missing values generated)
+(5,681 missing values generated)
+(11,286 missing values generated)
+(16,836 missing values generated)
+(22,380 missing values generated)
+(27,941 missing values generated)
+(33,507 missing values generated)
+(5,694 missing values generated)
+(11,288 missing values generated)
+(16,849 missing values generated)
+(22,408 missing values generated)
+(27,976 missing values generated)
+(33,544 missing values generated)
+(39,111 missing values generated)
+(376 missing values generated)
+(6,004 missing values generated)
+(11,713 missing values generated)
+(17,255 missing values generated)
+(22,782 missing values generated)
+(28,328 missing values generated)
+(33,880 missing values generated)
+(6,127 missing values generated)
+(11,702 missing values generated)
+(17,234 missing values generated)
+(22,786 missing values generated)
+(28,342 missing values generated)
+(33,891 missing values generated)
+(39,446 missing values generated)
+(8 missing values generated)
+(5,647 missing values generated)
+(11,242 missing values generated)
+(16,787 missing values generated)
+(22,335 missing values generated)
+(27,900 missing values generated)
+(33,467 missing values generated)
+(5,650 missing values generated)
+(11,242 missing values generated)
+(16,805 missing values generated)
+(22,369 missing values generated)
+(27,938 missing values generated)
+(33,508 missing values generated)
+(39,076 missing values generated)
+(3,454 missing values generated)
+(9,054 missing values generated)
+(15,225 missing values generated)
+(20,741 missing values generated)
+(26,190 missing values generated)
+(31,615 missing values generated)
+(37,108 missing values generated)
+(9,651 missing values generated)
+(15,174 missing values generated)
+(20,625 missing values generated)
+(26,053 missing values generated)
+(31,548 missing values generated)
+(37,042 missing values generated)
+(42,562 missing values generated)
+(13 missing values generated)
+(5,650 missing values generated)
+(11,250 missing values generated)
+(16,794 missing values generated)
+(22,342 missing values generated)
+(27,907 missing values generated)
+(33,474 missing values generated)
+(5,658 missing values generated)
+(11,247 missing values generated)
+(16,809 missing values generated)
+(22,374 missing values generated)
+(27,943 missing values generated)
+(33,513 missing values generated)
+(39,080 missing values generated)
+(449 missing values generated)
+(6,076 missing values generated)
+(11,822 missing values generated)
+(17,351 missing values generated)
+(22,871 missing values generated)
+(28,415 missing values generated)
+(33,959 missing values generated)
+(6,236 missing values generated)
+(11,797 missing values generated)
+(17,322 missing values generated)
+(22,872 missing values generated)
+(28,420 missing values generated)
+(33,969 missing values generated)
+(39,525 missing values generated)
+(67 missing values generated)
+(5,703 missing values generated)
+(11,323 missing values generated)
+(16,871 missing values generated)
+(22,414 missing values generated)
+(27,975 missing values generated)
+(33,539 missing values generated)
+(5,731 missing values generated)
+(11,321 missing values generated)
+(16,880 missing values generated)
+(22,440 missing values generated)
+(28,006 missing values generated)
+(33,570 missing values generated)
+(39,136 missing values generated)
+(25 missing values generated)
+(5,662 missing values generated)
+(11,268 missing values generated)
+(16,812 missing values generated)
+(22,360 missing values generated)
+(27,925 missing values generated)
+(33,489 missing values generated)
+(5,676 missing values generated)
+(11,265 missing values generated)
+(16,827 missing values generated)
+(22,392 missing values generated)
+(27,958 missing values generated)
+(33,527 missing values generated)
+(39,094 missing values generated)
+(3,865 missing values generated)
+(9,463 missing values generated)
+(15,737 missing values generated)
+(21,241 missing values generated)
+(26,685 missing values generated)
+(32,097 missing values generated)
+(37,563 missing values generated)
+(10,165 missing values generated)
+(15,675 missing values generated)
+(21,120 missing values generated)
+(26,536 missing values generated)
+(32,004 missing values generated)
+(37,486 missing values generated)
+(43,004 missing values generated)
+(38 missing values generated)
+(5,674 missing values generated)
+(11,279 missing values generated)
+(16,825 missing values generated)
+(22,369 missing values generated)
+(27,931 missing values generated)
+(33,500 missing values generated)
+(5,687 missing values generated)
+(11,276 missing values generated)
+(16,835 missing values generated)
+(22,398 missing values generated)
+(27,967 missing values generated)
+(33,537 missing values generated)
+(39,104 missing values generated)
+
+{com}. 
+. foreach var of global lhs {c -(}
+{txt}  2{com}.         gen ln`var'_w = log(`var'_w)
+{txt}  3{com}.         
+.         local lags = $lags +1
+{txt}  4{com}.         forvalues i = 1/`lags' {c -(}
+{txt}  5{com}.                 gen dl`i'ln`var'_w = l`i'.ln`var'_w - l.ln`var'_w
+{txt}  6{com}.                 label var dl`i'ln`var'_w "Cumulative Pct Change in `var'_w from t-1 to h=t-`i'"
+{txt}  7{com}.         {c )-}
+{txt}  8{com}.         
+.         
+.         forvalues i = 0/$leads  {c -(}
+{txt}  9{com}.                 gen df`i'ln`var'_w = f`i'.ln`var'_w - l.ln`var'_w
+{txt} 10{com}.                 label var df`i'ln`var'_w "Cumulative Pct Change in `var'_w from t-1 to h=t+`i'"
+{txt} 11{com}.         {c )-}
+{txt} 12{com}.         
+. {c )-}
+{txt}(2,746 missing values generated)
+(8,284 missing values generated)
+(14,194 missing values generated)
+(19,699 missing values generated)
+(25,168 missing values generated)
+(30,646 missing values generated)
+(36,139 missing values generated)
+(8,690 missing values generated)
+(14,218 missing values generated)
+(19,689 missing values generated)
+(25,175 missing values generated)
+(30,676 missing values generated)
+(36,158 missing values generated)
+(41,645 missing values generated)
+(2,668 missing values generated)
+(8,209 missing values generated)
+(14,107 missing values generated)
+(19,624 missing values generated)
+(25,106 missing values generated)
+(30,575 missing values generated)
+(36,066 missing values generated)
+(8,600 missing values generated)
+(14,136 missing values generated)
+(19,620 missing values generated)
+(25,098 missing values generated)
+(30,597 missing values generated)
+(36,078 missing values generated)
+(41,569 missing values generated)
+(2,725 missing values generated)
+(8,269 missing values generated)
+(14,192 missing values generated)
+(19,707 missing values generated)
+(25,167 missing values generated)
+(30,650 missing values generated)
+(36,137 missing values generated)
+(8,685 missing values generated)
+(14,227 missing values generated)
+(19,694 missing values generated)
+(25,182 missing values generated)
+(30,674 missing values generated)
+(36,160 missing values generated)
+(41,651 missing values generated)
+(2,748 missing values generated)
+(8,291 missing values generated)
+(14,219 missing values generated)
+(19,733 missing values generated)
+(25,199 missing values generated)
+(30,681 missing values generated)
+(36,173 missing values generated)
+(8,713 missing values generated)
+(14,248 missing values generated)
+(19,718 missing values generated)
+(25,206 missing values generated)
+(30,708 missing values generated)
+(36,188 missing values generated)
+(41,675 missing values generated)
+(4,835 missing values generated)
+(10,344 missing values generated)
+(16,510 missing values generated)
+(22,003 missing values generated)
+(27,422 missing values generated)
+(32,814 missing values generated)
+(38,273 missing values generated)
+(11,027 missing values generated)
+(16,527 missing values generated)
+(21,948 missing values generated)
+(27,344 missing values generated)
+(32,806 missing values generated)
+(38,266 missing values generated)
+(43,746 missing values generated)
+(2,763 missing values generated)
+(8,252 missing values generated)
+(14,839 missing values generated)
+(20,297 missing values generated)
+(25,714 missing values generated)
+(31,124 missing values generated)
+(36,584 missing values generated)
+(9,429 missing values generated)
+(14,928 missing values generated)
+(20,360 missing values generated)
+(25,790 missing values generated)
+(31,239 missing values generated)
+(36,696 missing values generated)
+(42,163 missing values generated)
+(3,132 missing values generated)
+(8,468 missing values generated)
+(15,229 missing values generated)
+(20,671 missing values generated)
+(26,080 missing values generated)
+(31,500 missing values generated)
+(36,931 missing values generated)
+(10,019 missing values generated)
+(15,459 missing values generated)
+(20,868 missing values generated)
+(26,286 missing values generated)
+(31,737 missing values generated)
+(37,193 missing values generated)
+(42,673 missing values generated)
+(2,805 missing values generated)
+(8,378 missing values generated)
+(15,091 missing values generated)
+(20,529 missing values generated)
+(25,937 missing values generated)
+(31,326 missing values generated)
+(36,754 missing values generated)
+(9,585 missing values generated)
+(15,068 missing values generated)
+(20,498 missing values generated)
+(25,911 missing values generated)
+(31,322 missing values generated)
+(36,747 missing values generated)
+(42,204 missing values generated)
+(2,771 missing values generated)
+(8,340 missing values generated)
+(15,035 missing values generated)
+(20,500 missing values generated)
+(25,950 missing values generated)
+(31,391 missing values generated)
+(36,816 missing values generated)
+(9,537 missing values generated)
+(15,045 missing values generated)
+(20,515 missing values generated)
+(25,970 missing values generated)
+(31,407 missing values generated)
+(36,858 missing values generated)
+(42,323 missing values generated)
+(6,148 missing values generated)
+(11,692 missing values generated)
+(18,789 missing values generated)
+(24,134 missing values generated)
+(29,443 missing values generated)
+(34,775 missing values generated)
+(40,157 missing values generated)
+(13,283 missing values generated)
+(18,624 missing values generated)
+(23,932 missing values generated)
+(29,273 missing values generated)
+(34,670 missing values generated)
+(40,041 missing values generated)
+(45,506 missing values generated)
+(2,771 missing values generated)
+(8,312 missing values generated)
+(14,267 missing values generated)
+(19,769 missing values generated)
+(25,214 missing values generated)
+(30,689 missing values generated)
+(36,180 missing values generated)
+(8,761 missing values generated)
+(14,288 missing values generated)
+(19,738 missing values generated)
+(25,219 missing values generated)
+(30,714 missing values generated)
+(36,189 missing values generated)
+(41,674 missing values generated)
+
+{com}. 
+. // 3. create changes with base year
+. 
+. foreach var of global lhs {c -(}
+{txt}  2{com}.         gen t_`var' = log(`var') if year == $baseyear
+{txt}  3{com}.         bysort groupid: egen ln`var'_base = mean(t_`var')
+{txt}  4{com}.         drop t_*
+{txt}  5{com}.         gen dlln`var'_base = ln`var' - ln`var'_base
+{txt}  6{com}.         drop ln`var'_base
+{txt}  7{com}. {c )-}
+{txt}(132,643 missing values generated)
+(253 missing values generated)
+(253 missing values generated)
+(132,646 missing values generated)
+(318 missing values generated)
+(354 missing values generated)
+(132,668 missing values generated)
+(848 missing values generated)
+(1,140 missing values generated)
+(132,643 missing values generated)
+(253 missing values generated)
+(261 missing values generated)
+(132,817 missing values generated)
+(4,439 missing values generated)
+(6,736 missing values generated)
+(132,643 missing values generated)
+(253 missing values generated)
+(265 missing values generated)
+(132,669 missing values generated)
+(873 missing values generated)
+(1,222 missing values generated)
+(132,647 missing values generated)
+(341 missing values generated)
+(398 missing values generated)
+(132,644 missing values generated)
+(276 missing values generated)
+(299 missing values generated)
+(132,835 missing values generated)
+(4,880 missing values generated)
+(7,438 missing values generated)
+(132,646 missing values generated)
+(305 missing values generated)
+(337 missing values generated)
+
+{com}. 
+. 
+. // 4. save and erase files 
+. 
+. compress 
+  {txt}variable {bf}{res}uf_code{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}groupid{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}int{sf}
+  {txt}variable {bf}{res}dl1lnemployment{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnfemale{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnmale{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnless_than_college{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lncollege_or_higher{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_male{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_female{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_less_than_college{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_college_or_higher{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_ntrade{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemployment_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnfemale_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnmale_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnless_than_college_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lncollege_or_higher_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_male_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_female_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_less_than_college_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnw_college_or_higher_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}dl1lnemp_ntrade_w{sf}{txt} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}employment{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}female{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}less_than_pri{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}primary{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}secondary{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}college_or_higher{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}emp_ntrade{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}emp_trade{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}byte{sf}
+  {txt}variable {bf}{res}employment_w{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}female_w{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+  {txt}variable {bf}{res}college_or_higher_w{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}int{sf}
+  {txt}variable {bf}{res}emp_ntrade_w{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}long{sf}
+{txt}  (17,136,552 bytes saved)
+
+{com}. save "data\temp\mun-master-dataset.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-master-dataset.dta{rm}
+saved
+{p_end}
+
+{com}. *erase "data\temp\mun-trade-panel-processed-exp.dta"
+. 
+{txt}end of do-file
+
+{com}. 
+. do "code\%stata_mun\d06_prepare_census.do"
+{txt}
+{com}. clear
+{txt}
+{com}. capture log close
+{smcl}
+{com}{sf}{ul off}

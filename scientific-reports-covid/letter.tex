@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{appendix}
+\usepackage{units}
+\usepackage{minted}
+\usepackage[affil-it]{authblk}
+
+\usepackage[style=nature]{biblatex}
+\addbibresource{ref.bib}
+
+\usepackage{geometry}
+\usepackage{csquotes}
+
+\theoremstyle{lemma}
+\newtheorem*{lemma}{Lemma}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\title{Explanation of changes regarding ``Pairwise difference regressions are just weighted averages''}
+\author{Carlos Góes\footnote{University of California -- San Diego, Department of Economics. cgoes@ucsd.edu}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Here I summarize the main changes done to the Matters Arising commentary. They are all stylistic or small clarifications that do not change anything substantial in the paper.
+
+\begin{itemize}
+    \item \textbf{Change in title}. I changed the title from ``Savaris et al (2021) erroneously interpreted their regressions'' to ``Pairwise difference regressions are just weighted averages,'' as recommended by the Editors.
+    \item \textbf{Nonstationarity of variables}. In their response, the authors took issue with the simplifying assumption that $X^i_t, Y_t^i$ being iid. The derivations of the paper, however, remain unchanged with the weaker assumption that $\Delta X^i_t, \Delta Y_t^i$, which is closer to the assumption the authors make in their paper. So I changed it.
+    \item \textbf{Formalization of mathematical derivation}. The helpful referee report stresses the important of the mathematical proof in the commentary for interpreting the original paper. Therefore, I combined the derivation into a formal statement of a proposition and its proof, highlighting the importance of the result.
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,30 @@
+Licenses for data used in Boehm, Levchenko and Pandalai-Nayar (2022)
+
+BACI, CEPII gravity data
+BACI is distributed under the Etalab Open Licence 2.0, which means that any use is authorized, provided the source is mentioned.
+CEPII gravity data is distributed under the Etalab Open Licence 2.0, which means that any use is authorized, provided the source is mentioned.
+
+TRAINS:
+UNCTAD TRAINS database can be used freely by policy makers, researchers and businesses
+provided that the data are not put up for sale or otherwise commercially exploited, and that the
+database is acknowledged as the source (UNCTAD TRAINS database). Users of the database are
+not allowed to disseminate the data or parts of the database in other dissemination tools unless
+written permission is given by the Chief of UNCTAD's Trade Information Section, Trade
+Analysis Branch.
+
+WTO Tariff data:
+No explicit data license on the website. Confirmed by email with WTO Statistics "Please refer to our website copyright policy here https://www.wto.org/english/info_e/copyrights_permissions_e.htm.
+
+All in all, regarding data, the main requirement we have is for you to clearly mention in the paper (below graphs, tables and/or in a central reference for data sources) about the WTO data source, that is "WTO STATS database"."
+
+TTB:
+No license provided on website, confirmed by email with the distributor:"the database on global trade remedies is a public good in the public domain (with no specific terms of use)". 
+
+Penn World Tables
+Penn World Table 10.0 by Robert C. Feenstra, Robert Inklaar and Marcel P. Timmer is licensed under a Creative Commons Attribution 4.0 International License . This research received support through grants from the National Science Foundation, the Sloan Foundation and the Transatlantic Platform’s Digging into Data program.
+
+WIOD
+The World Input-Output Database is licensed under a Creative Commons Attribution 4.0 International License .
+
+KLEMS
+The data are freely available and are licensed under a Creative Commons Attribution 4.0 International-license. 

@@ -1,0 +1,106 @@
+/*
+  tab2docx
+
+*!  VERSION 1.0.0  2jun2018
+
+*/
+
+VERSION 15.0
+
+INCLUDE _std_medium
+INCLUDE header
+
+HELP hlp1, view("help tab2docx")
+RESET res1
+
+SCRIPT PREINIT
+BEGIN
+        setscale_hadj resource TABULATE1_DLG_HSCALE
+END
+
+DIALOG main, label("tab2docx - Tabulate to docx") tabtitle("Main")
+BEGIN
+	RADIO		rad1	_lft	_top	_iwd	.,		///
+			label("One-way tabulate") 			///
+			onclickon(script set1way) first
+	RADIO		rad2	@	_ss	_iwd	.,		///
+			label("Summary tabulate")			///
+			onclickon(script set_summarize_on) last
+	TEXT		tx_var	@	_ls	_cwd1	.,		///
+		label(resource TABULATE1_MAIN_TX_VAR)
+	VARNAME		vn_var	@	_ss	_vnwd	.,		///
+		label(resource TABULATE1_MAIN_TX_VAR)
+	TEXT		tx_sum	@	_ls	_cwd1	.,		///
+			label("Summary variable:")
+	VARNAME		vn_sum	@	_ss	_vnwd	.,		///
+			label("Summary variable")
+END
+
+INCLUDE ifin
+INCLUDE weights_fai
+
+DIALOG adv, label("") tabtitle(resource LBL_ADVANCED)
+BEGIN
+	CHECKBOX	ch_missing	_lft	_top	_iwd	.,	///
+		label("Create a new row for missing values")		///
+		option(missing)
+	CHECKBOX	ch_open		@	_ms	@	.,	///
+		label("Open, write to, and close a specific file")	///
+		option(open) onclickon(script setFileOn)		///
+		onclickoff(script setFileOff)
+	TEXT		tx_file		@	_ls	_iwd	., 	///
+		label("docx file name:")
+	EDIT		filename	@	_ss	_cwd1	.,	///
+		 error("docx file name")
+	CHECKBOX	ch_replace	_lft2	@	_iwd	., 	///
+		label("Replace docx file")
+	
+END
+
+SCRIPT setFileOn
+BEGIN
+	adv.filename.enable
+END
+
+SCRIPT setFileOff
+BEGIN
+	adv.filename.disable
+END
+
+SCRIPT set1way
+BEGIN
+	main.tx_sum.hide
+	main.vn_sum.hide
+END
+
+SCRIPT set_summarize_on
+BEGIN
+	main.tx_sum.show
+	main.vn_sum.show
+END
+
+PROGRAM command
+BEGIN
+        put "tab2docx "
+        varlist main.vn_var
+        put " " /program weights_output
+	put " " /program ifin_output
+	beginoptions
+		if adv.ch_missing {
+			put " missing"
+		}
+		if adv.ch_open {
+			require adv.filename
+			if adv.ch_replace {
+				put " filename(" adv.filename ", replace)"
+			}
+			else {
+				put " filename(" adv.filename ")"
+			}
+		}
+		if main.rad2 {
+			require main.vn_sum
+			put " summarize(" main.vn_sum ")"
+		}
+	endoptions
+END

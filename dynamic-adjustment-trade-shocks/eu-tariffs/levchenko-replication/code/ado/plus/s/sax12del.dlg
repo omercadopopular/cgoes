@@ -1,0 +1,77 @@
+*! RegARIMA-X12 version 1.0, 27 Sep 2010, Qunyong Wang, brynewqy@nankai.edu.cn 
+/* 
+*!    for sax12.ado
+To install in User Statistics menu via Stata commands:
+  . window menu append item "stUserStatistics" "RegARIMA-X12 seasonal adjustment" "db sax12"
+  . window menu append item "stUserData" "Import data after seasonal adjustment" "db saimport"
+  . window menu append item "stUserGraphics" "Make graphs after seasonal adjustment" "db sagraph"
+  . window menu refresh
+To permanently install, place the commands in your -profile.do- file.
+*/
+
+VERSION 11.0
+SYNCHRONOUS_ONLY
+
+INCLUDE _std_large
+INCLUDE _ht320
+INCLUDE header
+
+HELP hlp1, view("help sax12del")
+RESET res1, label("Reset")
+
+DIALOG main, label("Delete Files After X-12-ARIMA Seasonal Adjustment")  ///
+		 tabtitle("main")
+BEGIN
+  TEXT  tx_sel  10 10 200 @,	///
+		label("Select X-12-ARIMA results:")
+  FILE fi_sel 10 +30 _iwd 20,	 ///
+		error("Browse:")	///
+		label("Browse")  ///
+		onchange(program prg_fi) ///
+		filter((*.out)|*.out) 
+ GROUPBOX gb_impvar 10 +35 _iwd 220, ///
+            label("Choose the extensions of the series") 
+  TEXT  tx_drop  20 +25 450 @,	///
+		label("Select the extensions to delete(leave empty to delete all files):")
+  COMBOBOX cb_drop @ +25 450  80, ///
+		dropdown append  ///
+		contents(extlist) ///
+		option("drop") 
+  TEXT  tx_keep  20 +30 450 @,	///
+		label("Select the extensions to keep:")
+  COMBOBOX cb_keep @ +25 450  80, ///
+		dropdown append  ///
+		contents(extlist) ///
+		option("keep") 
+END
+
+PROGRAM prg_fi
+BEGIN
+	put "sax12ext "
+	put main.fi_sel
+	stata hidden
+    call gaction main.cb_drop.repopulate
+    call gaction main.cb_keep.repopulate
+   // call gaction main.ed_outpref3.setvalue global prefmta
+END
+LIST extlist
+BEGIN
+	// intentionally empty, this list will be populated by sa12ext.ado
+END
+
+/* -------- Run Program ------------*/
+
+PROGRAM command
+BEGIN
+  put "sax12del "
+  call gaction main.fi_sel.prepend `" ""'
+  put main.fi_sel
+  put `"" "'
+  //call gaction main.fi_sel.append `"" "'
+  // INCLUDE _ifin_pr
+  beginoptions
+	optionarg main.cb_drop
+	optionarg main.cb_keep
+  endoptions
+END
+

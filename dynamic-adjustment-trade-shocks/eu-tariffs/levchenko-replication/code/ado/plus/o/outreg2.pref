@@ -1,0 +1,3 @@
+25 Jan 2022
+using `".././temp/regs_ext_all_inter.xml"'
+stat(coef se) e(r2_a N) dec(5) sortvar(c.dist_ln c.kl_jati c.kl_varna c.bc_jati c.bc_varna)

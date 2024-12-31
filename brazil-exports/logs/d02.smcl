@@ -1,0 +1,442 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d02.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:03:12
+{txt}
+{com}. 
+. /// 1. create region specific export shares
+> 
+. use "data\temp\rais-panel-processed-mun.dta", clear
+{txt}
+{com}. 
+. // create export exposure
+. 
+. sort isic3code3d year
+{txt}
+{com}. 
+. egen groupid = group(ufCode mun_code)
+{res}{txt}(307 missing values generated)
+
+{com}. 
+. // create shares
+. 
+. bysort year groupid: egen TotalLF = sum(employment)
+{txt}
+{com}. gen LaborShr = employment / TotalLF
+{txt}
+{com}. 
+. drop groupid
+{txt}
+{com}. 
+. // save tempfile
+. 
+. tempfile laborShrs
+{txt}
+{com}. save `laborShrs', replace
+{txt}{p 0 4 2}
+(file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. /// 2. import trade by partner, uf, and isic-section and perform necessary changes in data
+> 
+. import delimited "data\trade-processed\tradeDest19892023-3digit.csv", clear stringcols(1 4 5 6)
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{text}(11 vars, 1,099,762 obs)
+
+{com}. 
+. // add state codes
+. 
+. gen ufCode = .
+{txt}(1,099,762 missing values generated)
+
+{com}. 
+. replace ufCode = 12 if uf == "AC"
+{txt}(1,657 real changes made)
+
+{com}. replace ufCode = 27 if uf == "AL"
+{txt}(7,685 real changes made)
+
+{com}. replace ufCode = 16 if uf == "AP"
+{txt}(2,334 real changes made)
+
+{com}. replace ufCode = 13 if uf == "AM"
+{txt}(21,324 real changes made)
+
+{com}. replace ufCode = 29 if uf == "BA"
+{txt}(39,140 real changes made)
+
+{com}. replace ufCode = 23 if uf == "CE"
+{txt}(33,698 real changes made)
+
+{com}. replace ufCode = 53 if uf == "DF"
+{txt}(5,178 real changes made)
+
+{com}. replace ufCode = 32 if uf == "ES"
+{txt}(30,172 real changes made)
+
+{com}. replace ufCode = 52 if uf == "GO"
+{txt}(22,571 real changes made)
+
+{com}. replace ufCode = 21 if uf == "MA"
+{txt}(9,362 real changes made)
+
+{com}. replace ufCode = 51 if uf == "MT"
+{txt}(12,023 real changes made)
+
+{com}. replace ufCode = 50 if uf == "MS"
+{txt}(13,148 real changes made)
+
+{com}. replace ufCode = 31 if uf == "MG"
+{txt}(85,475 real changes made)
+
+{com}. replace ufCode = 15 if uf == "PA"
+{txt}(23,793 real changes made)
+
+{com}. replace ufCode = 25 if uf == "PB"
+{txt}(7,406 real changes made)
+
+{com}. replace ufCode = 41 if uf == "PR"
+{txt}(90,394 real changes made)
+
+{com}. replace ufCode = 26 if uf == "PE"
+{txt}(23,227 real changes made)
+
+{com}. replace ufCode = 22 if uf == "PI"
+{txt}(3,851 real changes made)
+
+{com}. replace ufCode = 24 if uf == "RN"
+{txt}(7,644 real changes made)
+
+{com}. replace ufCode = 43 if uf == "RS"
+{txt}(127,583 real changes made)
+
+{com}. replace ufCode = 33 if uf == "RJ"
+{txt}(81,116 real changes made)
+
+{com}. replace ufCode = 11 if uf == "RO"
+{txt}(5,946 real changes made)
+
+{com}. replace ufCode = 14 if uf == "RR"
+{txt}(1,416 real changes made)
+
+{com}. replace ufCode = 42 if uf == "SC"
+{txt}(99,399 real changes made)
+
+{com}. replace ufCode = 35 if uf == "SP"
+{txt}(206,242 real changes made)
+
+{com}. replace ufCode = 28 if uf == "SE"
+{txt}(3,617 real changes made)
+
+{com}. replace ufCode = 17 if uf == "TO"
+{txt}(1,946 real changes made)
+
+{com}. 
+. // drop missing years for GDP
+. drop if year < 1995
+{txt}(106,313 observations deleted)
+
+{com}. drop if year > 2022
+{txt}(48,073 observations deleted)
+
+{com}. 
+. // manual changes in country codes
+. replace iso3code = "GBR" if iso3code == "AIA" // anguilla -> UK
+{txt}(336 real changes made)
+
+{com}. replace iso3code = "FIN" if iso3code == "ALA" // Aland Islands  -> Finland
+{txt}(22 real changes made)
+
+{com}. replace iso3code = "NLD" if iso3code == "ANT" // Netherlands Antilles -> Netherlands
+{txt}(4,005 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "ATF" // French Southern Lands  -> France
+{txt}(38 real changes made)
+
+{com}. replace iso3code = "NLD" if iso3code == "BES" // Bonaire, Saint Eustatius and Saba -> Netherlands
+{txt}(324 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "BLM" // Saint Barthelemy  -> France
+{txt}(93 real changes made)
+
+{com}. replace iso3code = "GBR" if iso3code == "COK" // Cook Islands -> UK
+{txt}(203 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "GLP" // Guadeloupe  -> France
+{txt}(2,392 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "GUF" // French Guyana -> France
+{txt}(3,579 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "MTQ" // Martinique -> France
+{txt}(2,380 real changes made)
+
+{com}. replace iso3code = "FRA" if iso3code == "REU" // Reunion -> France
+{txt}(1,295 real changes made)
+
+{com}. 
+. // collapse with new aggregation
+. collapse (sum) vl_fob vl_fobr (first) pce adj isic3code1d isic3code2d, by(ufCode uf year iso3code isic3code3d)
+{res}{txt}
+{com}. 
+. // drop if uf non-reported as state
+. 
+. drop if inlist(uf, "EX", "ZN", "CB", "MN", "RE", "ED", "ND")
+{txt}(122,253 observations deleted)
+
+{com}. 
+. save "data\temp\tradeDest.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+data\temp\tradeDest.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+data\temp\tradeDest.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. /// 3. Create Market-Specific Exposure to GDP growth, by ISIC sector
+> 
+. import excel "data\wdi\API_NY.GDP.MKTP.CD_DS2_en_excel_v2_93.xls", sheet("Data") firstrow cellrange(A4:BO270) clear
+{res}{text}(67 vars, 266 obs)
+
+{com}. *import excel "${c -(}wdipath{c )-}\API_NY.GDP.PCAP.KD_DS2_en_excel_v2_4024802", sheet("Data") firstrow cellrange(A4:BM270) clear
+. local variables = "E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ AK AL AM AN AO AP AQ AR AS AT AU AV AW AX AY AZ BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO"
+{txt}
+{com}. foreach var of local variables {c -(}
+{txt}  2{com}.     local x: variable label `var'
+{txt}  3{com}.         rename `var' GDP`x'
+{txt}  4{com}. {c )-}
+{res}{txt}
+{com}. 
+. forvalues x = 1960/1994 {c -(}
+{txt}  2{com}.         drop GDP`x'
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. // to-do: incorporate taiwan?
+. 
+. // Reshape
+. 
+. reshape long GDP, i(CountryName CountryCode IndicatorName IndicatorCode)
+{txt}(j = 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}         266   {txt}->   {res}7,448       
+{txt}Number of variables        {res}          32   {txt}->   {res}6           
+{txt}j variable (28 values)                    ->   {res}_j
+{txt}xij variables:
+            {res}GDP1995 GDP1996 ... GDP2022   {txt}->   {res}GDP
+{txt}{hline 77}
+
+{com}. *rename _j Year
+. *rename Y gdppercapita
+. rename CountryCode iso3code
+{res}{txt}
+{com}. rename CountryName iso3name
+{res}{txt}
+{com}. rename _j year
+{res}{txt}
+{com}. drop IndicatorName IndicatorCode
+{txt}
+{com}. 
+. egen groupid = group(iso3code iso3name)
+{txt}
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (strongly balanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1995}}{txt: to }{res:{bind:2022}}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. drop groupid
+{txt}
+{com}. 
+. // merge
+. 
+. merge 1:m year iso3code using "data\temp\tradeDest.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,324
+{txt}{col 9}from master{col 30}{res}           1,771{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           8,553{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         802,116{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. keep if _merge == 3
+{txt}(10,324 observations deleted)
+
+{com}. drop _merge
+{txt}
+{com}. 
+. // transform dollar GDP to real values, using same deflator
+. gen GDPr = GDP // / adj
+{txt}(8,579 missing values generated)
+
+{com}. gen lGDPr = log(GDPr)
+{txt}(8,579 missing values generated)
+
+{com}. 
+. // create shares
+. 
+. bysort year uf isic3code3d: egen TotalExp = sum(vl_fobr)
+{txt}
+{com}. gen ExpShr = vl_fobr / TotalExp
+{txt}(23 missing values generated)
+
+{com}. 
+. egen groupid = group(ufCode isic3code3d iso3code)
+{txt}
+{com}. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1995}}{txt: to }{res:{bind:2022}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen gGDPr = lGDPr - l.lGDPr
+{txt}(211,144 missing values generated)
+
+{com}. gen g2GDPr = (GDPr - l.GDP)/l.GDP
+{txt}(211,144 missing values generated)
+
+{com}. gen dGDPr = GDPr - l.GDPr
+{txt}(211,144 missing values generated)
+
+{com}. 
+. gen gGDPcont = l.ExpShr * gGDPr
+{txt}(211,145 missing values generated)
+
+{com}. gen g2GDPcont = l.ExpShr * g2GDPr
+{txt}(211,145 missing values generated)
+
+{com}. gen dGDPcont = l.ExpShr * dGDPr
+{txt}(211,145 missing values generated)
+
+{com}. 
+. collapse (sum) gGDPcont g2GDPcont dGDPcont, by(year uf ufCode isic3code3d)
+{res}{txt}
+{com}. 
+. // drop missing obs
+. drop if year < 1996
+{txt}(1,044 observations deleted)
+
+{com}. drop if gGDPcont == 0
+{txt}(6,329 observations deleted)
+
+{com}. 
+. // rename
+. rename gGDPcont gGDPrExp
+{res}{txt}
+{com}. rename g2GDPcont g2GDPrExp
+{res}{txt}
+{com}. rename dGDPcont dGDPrExp
+{res}{txt}
+{com}. 
+. /// 4. merge and collapse
+> 
+. merge 1:m year ufCode isic3code3d using `laborShrs'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}       4,071,921
+{txt}{col 9}from master{col 30}{res}          18,308{txt}  (_merge==1)
+{col 9}from using{col 30}{res}       4,053,613{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         857,282{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. drop if _merge == 1
+{txt}(18,308 observations deleted)
+
+{com}. 
+. egen groupid = group(ufCode mun_code isic3code3d)
+{txt}(307 missing values generated)
+
+{com}. drop if missing(groupid)
+{txt}(307 observations deleted)
+
+{com}. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1995}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen giv = l.LaborShr * gGDPrExp 
+{txt}(4,116,638 missing values generated)
+
+{com}. gen g2iv = l.LaborShr * g2GDPrExp 
+{txt}(4,116,638 missing values generated)
+
+{com}. gen div = l.LaborShr * dGDPrExp 
+{txt}(4,116,638 missing values generated)
+
+{com}. 
+. // collapse and save new dataset
+. 
+. collapse (sum) employment female less_than_primary primary secondary college_or_higher wage_mass wage_mass_sexo_1 wage_mass_less_than_pri wage_mass_secondary wage_mass_college giv g2iv div LaborShr (mean) avg_wage_q1 avg_wage_q2 avg_wage_q3 avg_wage_q4, by(year ufCode mun_code)
+{res}{txt}
+{com}. 
+. rename LaborShr lsharedyn
+{res}{txt}
+{com}. 
+. // replace missing values
+. 
+. replace giv = . if giv == 0
+{txt}(25,256 real changes made, 25,256 to missing)
+
+{com}. replace g2iv = . if g2iv == 0
+{txt}(25,256 real changes made, 25,256 to missing)
+
+{com}. replace div = . if div == 0
+{txt}(25,256 real changes made, 25,256 to missing)
+
+{com}. 
+. local group "giv g2iv"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w) trim
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. save "data\temp\mun-trade-panel-inst.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-trade-panel-inst.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. // erase tempfiles
+. 
+. erase "data\temp\tradeDest.dta"
+{txt}
+{com}. *erase "data\temp\rais-panel-processed.dta"
+. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d02.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:03:44
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

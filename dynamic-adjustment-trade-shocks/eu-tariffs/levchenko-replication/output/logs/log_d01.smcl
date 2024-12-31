@@ -1,0 +1,5431 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\wb592068\OneDrive - UC San Diego\UCSD\Research\dynamic-adjustment-trade-disruptions\levchenko-replication\output/logs/log_d01.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Jun 2023, 16:01:39
+{txt}
+{com}. 
+. ////////////////////////
+> ///Unzip source files///
+> ////////////////////////
+> 
+. *Unzip files.
+. foreach h in "92" "96" "02" "07" "12" "17" {c -(}
+{txt}  2{com}. 
+.         unzipfile "./data/BACI_2020/BACI_HS`h'_V202001.zip", replace 
+{txt}  3{com}. 
+. {c )-}
+{res}{text:    inflating: BACI_HS92_Y1995_V202001.csv}
+{text:    inflating: BACI_HS92_Y1996_V202001.csv}
+{text:    inflating: BACI_HS92_Y1997_V202001.csv}
+{text:    inflating: BACI_HS92_Y1998_V202001.csv}
+{text:    inflating: BACI_HS92_Y1999_V202001.csv}
+{text:    inflating: BACI_HS92_Y2000_V202001.csv}
+{text:    inflating: BACI_HS92_Y2001_V202001.csv}
+{text:    inflating: BACI_HS92_Y2002_V202001.csv}
+{text:    inflating: BACI_HS92_Y2003_V202001.csv}
+{text:    inflating: BACI_HS92_Y2004_V202001.csv}
+{text:    inflating: BACI_HS92_Y2005_V202001.csv}
+{text:    inflating: BACI_HS92_Y2006_V202001.csv}
+{text:    inflating: BACI_HS92_Y2007_V202001.csv}
+{text:    inflating: BACI_HS92_Y2008_V202001.csv}
+{text:    inflating: BACI_HS92_Y2009_V202001.csv}
+{text:    inflating: BACI_HS92_Y2010_V202001.csv}
+{text:    inflating: BACI_HS92_Y2011_V202001.csv}
+{text:    inflating: BACI_HS92_Y2012_V202001.csv}
+{text:    inflating: BACI_HS92_Y2013_V202001.csv}
+{text:    inflating: BACI_HS92_Y2014_V202001.csv}
+{text:    inflating: BACI_HS92_Y2015_V202001.csv}
+{text:    inflating: BACI_HS92_Y2016_V202001.csv}
+{text:    inflating: BACI_HS92_Y2017_V202001.csv}
+{text:    inflating: BACI_HS92_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS92_V202001.zip to current directory}
+{text:total processed:  24}
+{text:        skipped:  0}
+{text:      extracted:  24}
+{text:    inflating: BACI_HS96_Y1996_V202001.csv}
+{text:    inflating: BACI_HS96_Y1997_V202001.csv}
+{text:    inflating: BACI_HS96_Y1998_V202001.csv}
+{text:    inflating: BACI_HS96_Y1999_V202001.csv}
+{text:    inflating: BACI_HS96_Y2000_V202001.csv}
+{text:    inflating: BACI_HS96_Y2001_V202001.csv}
+{text:    inflating: BACI_HS96_Y2002_V202001.csv}
+{text:    inflating: BACI_HS96_Y2003_V202001.csv}
+{text:    inflating: BACI_HS96_Y2004_V202001.csv}
+{text:    inflating: BACI_HS96_Y2005_V202001.csv}
+{text:    inflating: BACI_HS96_Y2006_V202001.csv}
+{text:    inflating: BACI_HS96_Y2007_V202001.csv}
+{text:    inflating: BACI_HS96_Y2008_V202001.csv}
+{text:    inflating: BACI_HS96_Y2009_V202001.csv}
+{text:    inflating: BACI_HS96_Y2010_V202001.csv}
+{text:    inflating: BACI_HS96_Y2011_V202001.csv}
+{text:    inflating: BACI_HS96_Y2012_V202001.csv}
+{text:    inflating: BACI_HS96_Y2013_V202001.csv}
+{text:    inflating: BACI_HS96_Y2014_V202001.csv}
+{text:    inflating: BACI_HS96_Y2015_V202001.csv}
+{text:    inflating: BACI_HS96_Y2016_V202001.csv}
+{text:    inflating: BACI_HS96_Y2017_V202001.csv}
+{text:    inflating: BACI_HS96_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS96_V202001.zip to current directory}
+{text:total processed:  23}
+{text:        skipped:  0}
+{text:      extracted:  23}
+{text:    inflating: BACI_HS02_Y2002_V202001.csv}
+{text:    inflating: BACI_HS02_Y2003_V202001.csv}
+{text:    inflating: BACI_HS02_Y2004_V202001.csv}
+{text:    inflating: BACI_HS02_Y2005_V202001.csv}
+{text:    inflating: BACI_HS02_Y2006_V202001.csv}
+{text:    inflating: BACI_HS02_Y2007_V202001.csv}
+{text:    inflating: BACI_HS02_Y2008_V202001.csv}
+{text:    inflating: BACI_HS02_Y2009_V202001.csv}
+{text:    inflating: BACI_HS02_Y2010_V202001.csv}
+{text:    inflating: BACI_HS02_Y2011_V202001.csv}
+{text:    inflating: BACI_HS02_Y2012_V202001.csv}
+{text:    inflating: BACI_HS02_Y2013_V202001.csv}
+{text:    inflating: BACI_HS02_Y2014_V202001.csv}
+{text:    inflating: BACI_HS02_Y2015_V202001.csv}
+{text:    inflating: BACI_HS02_Y2016_V202001.csv}
+{text:    inflating: BACI_HS02_Y2017_V202001.csv}
+{text:    inflating: BACI_HS02_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS02_V202001.zip to current directory}
+{text:total processed:  17}
+{text:        skipped:  0}
+{text:      extracted:  17}
+{text:    inflating: BACI_HS07_Y2007_V202001.csv}
+{text:    inflating: BACI_HS07_Y2008_V202001.csv}
+{text:    inflating: BACI_HS07_Y2009_V202001.csv}
+{text:    inflating: BACI_HS07_Y2010_V202001.csv}
+{text:    inflating: BACI_HS07_Y2011_V202001.csv}
+{text:    inflating: BACI_HS07_Y2012_V202001.csv}
+{text:    inflating: BACI_HS07_Y2013_V202001.csv}
+{text:    inflating: BACI_HS07_Y2014_V202001.csv}
+{text:    inflating: BACI_HS07_Y2015_V202001.csv}
+{text:    inflating: BACI_HS07_Y2016_V202001.csv}
+{text:    inflating: BACI_HS07_Y2017_V202001.csv}
+{text:    inflating: BACI_HS07_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS07_V202001.zip to current directory}
+{text:total processed:  12}
+{text:        skipped:  0}
+{text:      extracted:  12}
+{text:    inflating: BACI_HS12_Y2012_V202001.csv}
+{text:    inflating: BACI_HS12_Y2013_V202001.csv}
+{text:    inflating: BACI_HS12_Y2014_V202001.csv}
+{text:    inflating: BACI_HS12_Y2015_V202001.csv}
+{text:    inflating: BACI_HS12_Y2016_V202001.csv}
+{text:    inflating: BACI_HS12_Y2017_V202001.csv}
+{text:    inflating: BACI_HS12_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS12_V202001.zip to current directory}
+{text:total processed:  7}
+{text:        skipped:  0}
+{text:      extracted:  7}
+{text:    inflating: BACI_HS17_Y2018_V202001.csv}
+
+{text:successfully unzipped ./data/BACI_2020/BACI_HS17_V202001.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. 
+. *Convert files.
+. foreach h in "92" "96" "02" "07" "12" "17" {c -(}
+{txt}  2{com}.         
+.         forvalues year=1995/2018 {c -(}
+{txt}  3{com}.         
+.                 capture confirm file "BACI_HS`h'_Y`year'_V202001.csv"
+{txt}  4{com}.                 
+.                 if _rc==0 {c -(}
+{txt}  5{com}.                         import delimited "BACI_HS`h'_Y`year'_V202001.csv", clear
+{txt}  6{com}.                         compress
+{txt}  7{com}.                         save "./data/BACI_2020/baci`h'/baci`h'_`year'.dta", replace
+{txt}  8{com}.                         capture erase "BACI_HS`h'_Y`year'_V202001.csv"
+{txt}  9{com}.                 {c )-}
+{txt} 10{com}.                 else {c -(}
+{txt} 11{com}.                         display "The file BACI_HS`h'_Y`year'_V202001.csv does not exist"
+{txt} 12{com}.                 {c )-}
+{txt} 13{com}.         
+.         {c )-}
+{txt} 14{com}.         
+. {c )-}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 4,397,156 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_1995.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_1995.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 4,732,091 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_1996.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_1996.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,046,678 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_1997.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_1997.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,187,532 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_1998.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_1998.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,267,368 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_1999.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_1999.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,665,719 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2000.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2000.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,803,121 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2001.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2001.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,965,417 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2002.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2002.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,202,924 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2003.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2003.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,509,213 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2004.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2004.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,787,950 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2005.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2005.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,981,372 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2006.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2006.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,187,488 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2007.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2007.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,323,374 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2008.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2008.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,051,112 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2009.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2009.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,283,116 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2010.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2010.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,423,824 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2011.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2011.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,497,061 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2012.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,663,633 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2013.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,702,521 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2014.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,679,811 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2015.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,657,486 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2016.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,817,060 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2017.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,666,806 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci92/baci92_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci92/baci92_2018.dta{rm}
+saved
+{p_end}
+The file BACI_HS96_Y1995_V202001.csv does not exist
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 3,859,599 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_1996.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_1996.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 4,573,756 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_1997.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_1997.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 4,832,035 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_1998.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_1998.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,085,716 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_1999.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_1999.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,630,022 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2000.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2000.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,802,462 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2001.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2001.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,011,082 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2002.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2002.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,254,848 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2003.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2003.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,563,035 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2004.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2004.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,882,038 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2005.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2005.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,080,130 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2006.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2006.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,259,610 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2007.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2007.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,425,325 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2008.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2008.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,154,129 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2009.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2009.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,390,291 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2010.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2010.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,533,587 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2011.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2011.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,605,437 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2012.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,776,078 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2013.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,815,342 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2014.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,793,105 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2015.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,769,843 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2016.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,952,284 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2017.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,798,022 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci96/baci96_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci96/baci96_2018.dta{rm}
+saved
+{p_end}
+The file BACI_HS02_Y1995_V202001.csv does not exist
+The file BACI_HS02_Y1996_V202001.csv does not exist
+The file BACI_HS02_Y1997_V202001.csv does not exist
+The file BACI_HS02_Y1998_V202001.csv does not exist
+The file BACI_HS02_Y1999_V202001.csv does not exist
+The file BACI_HS02_Y2000_V202001.csv does not exist
+The file BACI_HS02_Y2001_V202001.csv does not exist
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,314,425 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2002.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2002.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,827,347 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2003.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2003.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,336,721 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2004.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2004.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,734,058 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2005.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2005.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,970,569 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2006.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2006.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,209,838 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2007.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2007.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,404,403 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2008.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2008.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,131,344 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2009.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2009.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,430,428 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2010.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2010.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,582,578 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2011.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2011.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,660,105 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2012.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,837,972 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2013.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,878,116 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2014.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,862,098 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2015.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,827,036 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2016.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 8,007,970 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2017.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,855,149 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci02/baci02_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci02/baci02_2018.dta{rm}
+saved
+{p_end}
+The file BACI_HS07_Y1995_V202001.csv does not exist
+The file BACI_HS07_Y1996_V202001.csv does not exist
+The file BACI_HS07_Y1997_V202001.csv does not exist
+The file BACI_HS07_Y1998_V202001.csv does not exist
+The file BACI_HS07_Y1999_V202001.csv does not exist
+The file BACI_HS07_Y2000_V202001.csv does not exist
+The file BACI_HS07_Y2001_V202001.csv does not exist
+The file BACI_HS07_Y2002_V202001.csv does not exist
+The file BACI_HS07_Y2003_V202001.csv does not exist
+The file BACI_HS07_Y2004_V202001.csv does not exist
+The file BACI_HS07_Y2005_V202001.csv does not exist
+The file BACI_HS07_Y2006_V202001.csv does not exist
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 5,934,112 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2007.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2007.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,804,224 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2008.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2008.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,998,172 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2009.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2009.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,286,145 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2010.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2010.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,522,145 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2011.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2011.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,636,859 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2012.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,853,652 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2013.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,924,757 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2014.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,938,062 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2015.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,899,304 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2016.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 8,102,744 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2017.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,953,664 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci07/baci07_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci07/baci07_2018.dta{rm}
+saved
+{p_end}
+The file BACI_HS12_Y1995_V202001.csv does not exist
+The file BACI_HS12_Y1996_V202001.csv does not exist
+The file BACI_HS12_Y1997_V202001.csv does not exist
+The file BACI_HS12_Y1998_V202001.csv does not exist
+The file BACI_HS12_Y1999_V202001.csv does not exist
+The file BACI_HS12_Y2000_V202001.csv does not exist
+The file BACI_HS12_Y2001_V202001.csv does not exist
+The file BACI_HS12_Y2002_V202001.csv does not exist
+The file BACI_HS12_Y2003_V202001.csv does not exist
+The file BACI_HS12_Y2004_V202001.csv does not exist
+The file BACI_HS12_Y2005_V202001.csv does not exist
+The file BACI_HS12_Y2006_V202001.csv does not exist
+The file BACI_HS12_Y2007_V202001.csv does not exist
+The file BACI_HS12_Y2008_V202001.csv does not exist
+The file BACI_HS12_Y2009_V202001.csv does not exist
+The file BACI_HS12_Y2010_V202001.csv does not exist
+The file BACI_HS12_Y2011_V202001.csv does not exist
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 6,936,991 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2012.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,562,403 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2013.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,802,455 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2014.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,923,549 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2015.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,892,508 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2016.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 8,132,873 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2017.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 8,000,275 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci12/baci12_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci12/baci12_2018.dta{rm}
+saved
+{p_end}
+The file BACI_HS17_Y1995_V202001.csv does not exist
+The file BACI_HS17_Y1996_V202001.csv does not exist
+The file BACI_HS17_Y1997_V202001.csv does not exist
+The file BACI_HS17_Y1998_V202001.csv does not exist
+The file BACI_HS17_Y1999_V202001.csv does not exist
+The file BACI_HS17_Y2000_V202001.csv does not exist
+The file BACI_HS17_Y2001_V202001.csv does not exist
+The file BACI_HS17_Y2002_V202001.csv does not exist
+The file BACI_HS17_Y2003_V202001.csv does not exist
+The file BACI_HS17_Y2004_V202001.csv does not exist
+The file BACI_HS17_Y2005_V202001.csv does not exist
+The file BACI_HS17_Y2006_V202001.csv does not exist
+The file BACI_HS17_Y2007_V202001.csv does not exist
+The file BACI_HS17_Y2008_V202001.csv does not exist
+The file BACI_HS17_Y2009_V202001.csv does not exist
+The file BACI_HS17_Y2010_V202001.csv does not exist
+The file BACI_HS17_Y2011_V202001.csv does not exist
+The file BACI_HS17_Y2012_V202001.csv does not exist
+The file BACI_HS17_Y2013_V202001.csv does not exist
+The file BACI_HS17_Y2014_V202001.csv does not exist
+The file BACI_HS17_Y2015_V202001.csv does not exist
+The file BACI_HS17_Y2016_V202001.csv does not exist
+The file BACI_HS17_Y2017_V202001.csv does not exist
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(6 vars, 7,738,903 obs)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./data/BACI_2020/baci17/baci17_2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./data/BACI_2020/baci17/baci17_2018.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. ////////////////////////////
+> ///Generate country codes///
+> ////////////////////////////
+> 
+. *Import country code database.
+. import delimited "./data/BACI_2020/country_codes_V202001.csv", clear  
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(5 vars, 227 obs)
+
+{com}. 
+. *Drop variables.
+. keep country_code iso_3digit_alpha
+{txt}
+{com}. 
+. *Rename variables.
+. rename country_code i
+{res}{txt}
+{com}. rename iso_3digit_alpha exporter
+{res}{txt}
+{com}. 
+. *Save database.
+. compress
+{txt}  (0 bytes saved)
+
+{com}. save "./temp_files/expcode_baci.dta", replace 
+{txt}{p 0 4 2}
+(file {bf}
+./temp_files/expcode_baci.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/expcode_baci.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. *Rename variables.
+. rename i j
+{res}{txt}
+{com}. rename exporter importer
+{res}{txt}
+{com}. 
+. *Save database.
+. save "./temp_files/impcode_baci.dta", replace 
+{txt}{p 0 4 2}
+(file {bf}
+./temp_files/impcode_baci.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/impcode_baci.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. //////////////////////////////
+> ///Generate clean databases///
+> //////////////////////////////
+> 
+. foreach h in "92" "96" "02" "07" "12" "17" {c -(}
+{txt}  2{com}.         
+.         forvalues year=1995/2018 {c -(}
+{txt}  3{com}.         
+.                 capture confirm file "./data/BACI_2020/baci`h'/baci`h'_`year'.dta"
+{txt}  4{com}.                 
+.                 if _rc==0 {c -(}
+{txt}  5{com}.                         
+.                         *Open database.
+.                         use "./data/BACI_2020/baci`h'/baci`h'_`year'.dta", clear
+{txt}  6{com}. 
+.                         *Merge with exporter country code names.
+.                         merge m:1 i using "./temp_files/expcode_baci.dta"
+{txt}  7{com}.                         drop if _merge==2
+{txt}  8{com}.                         drop _merge
+{txt}  9{com}. 
+.                         *Merge with importer country code names.        
+.                         merge m:1 j using "./temp_files/impcode_baci.dta"
+{txt} 10{com}.                         drop if _merge==2
+{txt} 11{com}.                         drop _merge
+{txt} 12{com}. 
+.                         *Drop NA.
+.                         drop if exporter=="N/A" | importer=="N/A" //Europe EFTA, not elsewhere specified
+{txt} 13{com}. 
+.                         *Rename variables.
+.                         rename t year
+{txt} 14{com}.                         rename v imports_baci
+{txt} 15{com}.                         rename q quantity_baci
+{txt} 16{com}.                         rename k hs6
+{txt} 17{com}.                         drop i j
+{txt} 18{com}. 
+.                         *Convert HS code to string (6-digits).
+.                         tostring hs6, replace
+{txt} 19{com}.                         replace hs6="0"+hs6 if length(hs6)<6
+{txt} 20{com}.                         assert (length(hs6)==6)
+{txt} 21{com}. 
+.                         *Label variables.
+.                         label variable imports_baci "FOB value, in 1000 USD"
+{txt} 22{com}.                         label variable quantity_baci "Quantity in tons"
+{txt} 23{com}.                         label variable hs6 "HS 6-digit code"
+{txt} 24{com}. 
+.                         *Generate HS version (nomenclature).
+.                         gen temp="`h'"
+{txt} 25{com}.                         gen nomen=""
+{txt} 26{com}.                         replace nomen="H92" if temp=="92"
+{txt} 27{com}.                         replace nomen="H96" if temp=="96"
+{txt} 28{com}.                         replace nomen="H02" if temp=="02"
+{txt} 29{com}.                         replace nomen="H07" if temp=="07"
+{txt} 30{com}.                         replace nomen="H12" if temp=="12"
+{txt} 31{com}.                         replace nomen="H17" if temp=="17"
+{txt} 32{com}.                         drop temp
+{txt} 33{com}. 
+.                         *Order database.
+.                         order importer exporter year hs6 imports_baci quantity_baci nomen
+{txt} 34{com}. 
+.                         *Save database.
+.                         save "./temp_files/Bacitrade`year'_`h'.dta", replace
+{txt} 35{com}.                         
+.                 {c )-}
+{txt} 36{com}.                 
+.                 else {c -(}
+{txt} 37{com}.                         display "The file baci`h'_`year'.dta does not exist"
+{txt} 38{com}.                 {c )-}
+{txt} 39{com}.         
+.         {c )-}
+{txt} 40{com}.         
+. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,397,156{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,397,156{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+(124,369 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(182,432 real changes made)
+(4,272,787 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,272,787 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1995_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1995_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,732,091{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              14
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,732,091{txt}  (_merge==3)
+{col 5}{hline 41}
+(14 observations deleted)
+(134,288 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(195,297 real changes made)
+(4,597,803 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,597,803 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1996_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1996_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,046,678{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              14
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,046,678{txt}  (_merge==3)
+{col 5}{hline 41}
+(14 observations deleted)
+(201,287 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(202,894 real changes made)
+(4,845,391 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,845,391 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1997_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1997_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,187,532{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              14
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,187,532{txt}  (_merge==3)
+{col 5}{hline 41}
+(14 observations deleted)
+(202,963 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(206,180 real changes made)
+(4,984,569 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,984,569 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1998_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1998_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,267,368{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,267,368{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+(204,946 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(211,560 real changes made)
+(5,062,422 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,062,422 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1999_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1999_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,665,719{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,665,719{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(215,058 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(218,883 real changes made)
+(5,450,661 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,450,661 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2000_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2000_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,803,121{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,803,121{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(212,846 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(224,406 real changes made)
+(5,590,275 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,590,275 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2001_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2001_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,965,417{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,965,417{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(215,035 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(229,812 real changes made)
+(5,750,382 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,750,382 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2002_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2002_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,202,924{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,202,924{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(218,728 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(240,275 real changes made)
+(5,984,196 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,984,196 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2003_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2003_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,509,213{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,509,213{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(223,354 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(253,518 real changes made)
+(6,285,859 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,285,859 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2004_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2004_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,787,950{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,787,950{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(223,126 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(263,948 real changes made)
+(6,564,824 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,564,824 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2005_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2005_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,981,372{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,981,372{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(228,515 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(269,957 real changes made)
+(6,752,857 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,752,857 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2006_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2006_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,187,488{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,187,488{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(230,813 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(284,577 real changes made)
+(6,956,675 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,956,675 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2007_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2007_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,323,374{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,323,374{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(232,646 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(291,239 real changes made)
+(7,090,728 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,090,728 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2008_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2008_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,051,112{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,051,112{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(219,979 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(283,603 real changes made)
+(6,831,133 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,831,133 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2009_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2009_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,283,116{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,283,116{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+(226,821 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(295,698 real changes made)
+(7,056,295 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,056,295 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2010_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2010_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,423,824{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,423,824{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(228,124 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(301,059 real changes made)
+(7,195,700 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,195,700 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2011_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2011_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,497,061{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,497,061{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+(227,494 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(308,325 real changes made)
+(7,269,567 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,269,567 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2012_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2012_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,663,633{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,663,633{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(227,285 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(318,389 real changes made)
+(7,436,348 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,436,348 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2013_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2013_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,702,521{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,702,521{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(226,852 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(323,602 real changes made)
+(7,475,669 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,475,669 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2014_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2014_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,679,811{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,679,811{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(225,020 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(325,937 real changes made)
+(7,454,791 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,454,791 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2015_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2015_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,657,486{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,657,486{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(222,867 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(328,406 real changes made)
+(7,434,619 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,434,619 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2016_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2016_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,817,060{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,817,060{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(222,587 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(334,532 real changes made)
+(7,594,473 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,594,473 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2017_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2017_92.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,666,806{txt}  (_merge==3)
+{col 5}{hline 41}
+(5 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,666,806{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(216,088 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(327,165 real changes made)
+(7,450,718 missing values generated)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,450,718 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_92.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_92.dta{rm}
+saved
+{p_end}
+The file baci96_1995.dta does not exist
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       3,859,599{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              14
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       3,859,599{txt}  (_merge==3)
+{col 5}{hline 41}
+(14 observations deleted)
+(95,810 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(156,764 real changes made)
+(3,763,789 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(3,763,789 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1996_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1996_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,573,756{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,573,756{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+(121,373 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(186,548 real changes made)
+(4,452,383 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,452,383 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1997_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1997_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,832,035{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              14
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       4,832,035{txt}  (_merge==3)
+{col 5}{hline 41}
+(14 observations deleted)
+(126,636 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(193,385 real changes made)
+(4,705,399 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,705,399 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1998_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1998_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,085,716{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              15{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,085,716{txt}  (_merge==3)
+{col 5}{hline 41}
+(15 observations deleted)
+(140,297 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(205,964 real changes made)
+(4,945,419 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(4,945,419 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade1999_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade1999_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,630,022{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,630,022{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(216,813 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(215,330 real changes made)
+(5,413,209 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,413,209 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2000_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2000_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,802,462{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,802,462{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(214,851 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(221,255 real changes made)
+(5,587,611 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,587,611 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2001_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2001_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,011,082{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,011,082{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(218,679 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(229,297 real changes made)
+(5,792,403 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,792,403 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2002_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2002_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,254,848{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,254,848{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(222,436 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(239,099 real changes made)
+(6,032,412 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,032,412 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2003_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2003_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,563,035{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,563,035{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(226,799 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(252,363 real changes made)
+(6,336,236 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,336,236 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2004_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2004_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,882,038{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,882,038{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(227,148 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(266,313 real changes made)
+(6,654,890 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,654,890 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2005_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2005_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,080,130{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,080,130{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(232,718 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(272,110 real changes made)
+(6,847,412 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,847,412 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2006_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2006_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,259,610{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,259,610{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(234,701 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(285,991 real changes made)
+(7,024,909 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,024,909 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2007_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2007_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,425,325{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,425,325{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(236,875 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(295,137 real changes made)
+(7,188,450 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,188,450 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2008_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2008_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,154,129{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,154,129{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(223,453 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(287,881 real changes made)
+(6,930,676 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,930,676 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2009_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2009_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,390,291{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,390,291{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+(230,436 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(300,102 real changes made)
+(7,159,855 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,159,855 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2010_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2010_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,533,587{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,533,587{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(231,761 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(305,636 real changes made)
+(7,301,826 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,301,826 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2011_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2011_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,605,437{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,605,437{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+(230,701 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(312,970 real changes made)
+(7,374,736 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,374,736 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2012_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2012_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,776,078{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,776,078{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(230,896 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(323,246 real changes made)
+(7,545,182 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,545,182 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2013_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2013_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,815,342{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,815,342{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(230,479 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(328,599 real changes made)
+(7,584,863 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,584,863 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2014_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2014_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,793,105{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,793,105{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(228,612 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(330,963 real changes made)
+(7,564,493 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,564,493 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2015_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2015_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,769,843{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,769,843{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(226,444 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(333,471 real changes made)
+(7,543,399 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,543,399 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2016_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2016_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,952,284{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,952,284{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(226,926 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(339,897 real changes made)
+(7,725,358 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,725,358 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2017_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2017_96.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,798,022{txt}  (_merge==3)
+{col 5}{hline 41}
+(5 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,798,022{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(220,282 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(327,800 real changes made)
+(7,577,740 missing values generated)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,577,740 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_96.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_96.dta{rm}
+saved
+{p_end}
+The file baci02_1995.dta does not exist
+The file baci02_1996.dta does not exist
+The file baci02_1997.dta does not exist
+The file baci02_1998.dta does not exist
+The file baci02_1999.dta does not exist
+The file baci02_2000.dta does not exist
+The file baci02_2001.dta does not exist
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,314,425{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,314,425{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(139,127 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(204,057 real changes made)
+(5,175,298 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,175,298 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2002_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2002_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,827,347{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,827,347{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(153,471 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(224,614 real changes made)
+(5,673,876 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,673,876 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2003_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2003_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,336,721{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              11
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              11{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,336,721{txt}  (_merge==3)
+{col 5}{hline 41}
+(11 observations deleted)
+(223,235 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(243,532 real changes made)
+(6,113,486 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,113,486 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2004_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2004_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,734,058{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,734,058{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(224,727 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(260,552 real changes made)
+(6,509,331 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,509,331 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2005_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2005_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,970,569{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,970,569{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(230,783 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(267,356 real changes made)
+(6,739,786 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,739,786 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2006_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2006_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,209,838{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,209,838{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(234,692 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(284,339 real changes made)
+(6,975,146 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,975,146 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2007_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2007_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,404,403{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,404,403{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(237,005 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(294,790 real changes made)
+(7,167,398 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,167,398 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2008_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2008_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,131,344{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,131,344{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(223,483 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(287,482 real changes made)
+(6,907,861 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,907,861 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2009_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2009_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,430,428{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,430,428{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+(231,733 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(302,268 real changes made)
+(7,198,695 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,198,695 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2010_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2010_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,582,578{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,582,578{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(233,143 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(308,201 real changes made)
+(7,349,435 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,349,435 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2011_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2011_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,660,105{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,660,105{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+(232,281 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(316,422 real changes made)
+(7,427,824 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,427,824 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2012_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2012_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,837,972{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,837,972{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(232,502 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(327,125 real changes made)
+(7,605,470 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,605,470 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2013_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2013_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,878,116{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,878,116{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(231,990 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(332,820 real changes made)
+(7,646,126 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,646,126 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2014_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2014_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,862,098{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,862,098{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(230,015 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(335,403 real changes made)
+(7,632,083 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,632,083 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2015_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2015_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,827,036{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,827,036{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(227,694 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(337,492 real changes made)
+(7,599,342 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,599,342 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2016_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2016_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,007,970{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,007,970{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(228,203 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(344,344 real changes made)
+(7,779,767 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,779,767 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2017_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2017_02.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,855,149{txt}  (_merge==3)
+{col 5}{hline 41}
+(5 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,855,149{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(221,594 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(336,758 real changes made)
+(7,633,555 missing values generated)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,633,555 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_02.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_02.dta{rm}
+saved
+{p_end}
+The file baci07_1995.dta does not exist
+The file baci07_1996.dta does not exist
+The file baci07_1997.dta does not exist
+The file baci07_1998.dta does not exist
+The file baci07_1999.dta does not exist
+The file baci07_2000.dta does not exist
+The file baci07_2001.dta does not exist
+The file baci07_2002.dta does not exist
+The file baci07_2003.dta does not exist
+The file baci07_2004.dta does not exist
+The file baci07_2005.dta does not exist
+The file baci07_2006.dta does not exist
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,934,112{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       5,934,112{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(130,901 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(234,662 real changes made)
+(5,803,211 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(5,803,211 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2007_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2007_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,804,224{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,804,224{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(157,873 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(271,628 real changes made)
+(6,646,351 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,646,351 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2008_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2008_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,998,172{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              10
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              10{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,998,172{txt}  (_merge==3)
+{col 5}{hline 41}
+(10 observations deleted)
+(223,620 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(282,539 real changes made)
+(6,774,552 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,774,552 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2009_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2009_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,286,145{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               8
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,286,145{txt}  (_merge==3)
+{col 5}{hline 41}
+(8 observations deleted)
+(231,011 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(294,287 real changes made)
+(7,055,134 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,055,134 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2010_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2010_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,522,145{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,522,145{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(234,102 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(304,510 real changes made)
+(7,288,043 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,288,043 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2011_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2011_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,636,859{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,636,859{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+(233,196 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(314,851 real changes made)
+(7,403,663 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,403,663 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2012_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2012_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,853,652{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,853,652{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(234,237 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(327,444 real changes made)
+(7,619,415 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,619,415 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2013_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2013_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,924,757{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,924,757{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(234,383 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(333,712 real changes made)
+(7,690,374 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,690,374 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2014_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2014_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,938,062{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,938,062{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(232,876 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(338,230 real changes made)
+(7,705,186 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,705,186 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2015_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2015_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,899,304{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,899,304{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(230,456 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(340,421 real changes made)
+(7,668,848 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,668,848 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2016_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2016_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,102,744{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,102,744{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(231,676 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(347,814 real changes made)
+(7,871,068 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,871,068 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2017_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2017_07.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,953,664{txt}  (_merge==3)
+{col 5}{hline 41}
+(5 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,953,664{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(225,005 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(340,483 real changes made)
+(7,728,659 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,728,659 real changes made)
+(0 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_07.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_07.dta{rm}
+saved
+{p_end}
+The file baci12_1995.dta does not exist
+The file baci12_1996.dta does not exist
+The file baci12_1997.dta does not exist
+The file baci12_1998.dta does not exist
+The file baci12_1999.dta does not exist
+The file baci12_2000.dta does not exist
+The file baci12_2001.dta does not exist
+The file baci12_2002.dta does not exist
+The file baci12_2003.dta does not exist
+The file baci12_2004.dta does not exist
+The file baci12_2005.dta does not exist
+The file baci12_2006.dta does not exist
+The file baci12_2007.dta does not exist
+The file baci12_2008.dta does not exist
+The file baci12_2009.dta does not exist
+The file baci12_2010.dta does not exist
+The file baci12_2011.dta does not exist
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,936,991{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               7
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       6,936,991{txt}  (_merge==3)
+{col 5}{hline 41}
+(7 observations deleted)
+(152,355 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(315,500 real changes made)
+(6,784,636 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(6,784,636 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2012_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2012_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,562,403{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,562,403{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(230,661 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(343,064 real changes made)
+(7,331,742 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,331,742 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2013_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2013_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,802,455{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,802,455{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(233,727 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(358,789 real changes made)
+(7,568,728 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,568,728 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2014_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2014_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,923,549{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,923,549{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(233,612 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(369,659 real changes made)
+(7,689,937 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,689,937 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2015_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2015_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,892,508{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,892,508{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(231,121 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(372,601 real changes made)
+(7,661,387 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,661,387 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2016_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2016_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,132,873{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,132,873{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(233,122 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(385,812 real changes made)
+(7,899,751 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,899,751 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2017_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2017_12.dta{rm}
+saved
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,000,275{txt}  (_merge==3)
+{col 5}{hline 41}
+(5 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       8,000,275{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(226,484 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(379,320 real changes made)
+(7,773,791 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,773,791 real changes made)
+(0 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_12.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_12.dta{rm}
+saved
+{p_end}
+The file baci17_1995.dta does not exist
+The file baci17_1996.dta does not exist
+The file baci17_1997.dta does not exist
+The file baci17_1998.dta does not exist
+The file baci17_1999.dta does not exist
+The file baci17_2000.dta does not exist
+The file baci17_2001.dta does not exist
+The file baci17_2002.dta does not exist
+The file baci17_2003.dta does not exist
+The file baci17_2004.dta does not exist
+The file baci17_2005.dta does not exist
+The file baci17_2006.dta does not exist
+The file baci17_2007.dta does not exist
+The file baci17_2008.dta does not exist
+The file baci17_2009.dta does not exist
+The file baci17_2010.dta does not exist
+The file baci17_2011.dta does not exist
+The file baci17_2012.dta does not exist
+The file baci17_2013.dta does not exist
+The file baci17_2014.dta does not exist
+The file baci17_2015.dta does not exist
+The file baci17_2016.dta does not exist
+The file baci17_2017.dta does not exist
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,738,903{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               6{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       7,738,903{txt}  (_merge==3)
+{col 5}{hline 41}
+(6 observations deleted)
+(223,333 observations deleted)
+{res}{txt}hs6 was {res:long} now {res:str6}
+(368,400 real changes made)
+(7,515,570 missing values generated)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+variable {bf}{res}nomen{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str3{sf}
+{txt}(7,515,570 real changes made)
+{p 0 4 2}
+(file {bf}
+./temp_files/Bacitrade2018_17.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files/Bacitrade2018_17.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. ///////////////////////////////////
+> ///Merge clean databases by year///
+> ///////////////////////////////////
+> 
+. forvalues year=1995/2018 {c -(}
+{txt}  2{com}. 
+.         *Append databases.
+.         clear
+{txt}  3{com}.         foreach h in "92" "96" "02" "07" "12" "17" {c -(} 
+{txt}  4{com}.         
+.                 capture confirm file "./temp_files//Bacitrade`year'_`h'.dta" 
+{txt}  5{com}.                 if _rc==0 {c -(}
+{txt}  6{com}.                         append using "./temp_files//Bacitrade`year'_`h'.dta"
+{txt}  7{com}.                 {c )-}
+{txt}  8{com}.                 else {c -(}
+{txt}  9{com}.                         display "The file Bacitrade`year'_`h' does not exist"
+{txt} 10{com}.                 {c )-}       
+{txt} 11{com}.                 
+.         {c )-}
+{txt} 12{com}.         
+.         *Drop observations with empty names.
+.         drop if exporter=="" | importer==""
+{txt} 13{com}.         
+.         *Drop duplicates.
+.         *duplicates drop importer exporter nomen hs6 year, force
+.         duplicates tag importer exporter nomen hs6 year, gen(dup)
+{txt} 14{com}.         drop if dup>0
+{txt} 15{com}.         drop dup
+{txt} 16{com}.         
+.         *Save database.
+.         compress
+{txt} 17{com}.         save "./temp_files//Bacitrade`year'.dta", replace
+{txt} 18{com}.         
+. {c )-}
+The file Bacitrade1995_96 does not exist
+The file Bacitrade1995_02 does not exist
+The file Bacitrade1995_07 does not exist
+The file Bacitrade1995_12 does not exist
+The file Bacitrade1995_17 does not exist
+{txt}(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade1995.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade1995.dta{rm}
+saved
+{p_end}
+The file Bacitrade1996_02 does not exist
+The file Bacitrade1996_07 does not exist
+The file Bacitrade1996_12 does not exist
+The file Bacitrade1996_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade1996.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade1996.dta{rm}
+saved
+{p_end}
+The file Bacitrade1997_02 does not exist
+The file Bacitrade1997_07 does not exist
+The file Bacitrade1997_12 does not exist
+The file Bacitrade1997_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade1997.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade1997.dta{rm}
+saved
+{p_end}
+The file Bacitrade1998_02 does not exist
+The file Bacitrade1998_07 does not exist
+The file Bacitrade1998_12 does not exist
+The file Bacitrade1998_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade1998.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade1998.dta{rm}
+saved
+{p_end}
+The file Bacitrade1999_02 does not exist
+The file Bacitrade1999_07 does not exist
+The file Bacitrade1999_12 does not exist
+The file Bacitrade1999_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade1999.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade1999.dta{rm}
+saved
+{p_end}
+The file Bacitrade2000_02 does not exist
+The file Bacitrade2000_07 does not exist
+The file Bacitrade2000_12 does not exist
+The file Bacitrade2000_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2000.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2000.dta{rm}
+saved
+{p_end}
+The file Bacitrade2001_02 does not exist
+The file Bacitrade2001_07 does not exist
+The file Bacitrade2001_12 does not exist
+The file Bacitrade2001_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2001.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2001.dta{rm}
+saved
+{p_end}
+The file Bacitrade2002_07 does not exist
+The file Bacitrade2002_12 does not exist
+The file Bacitrade2002_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2002.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2002.dta{rm}
+saved
+{p_end}
+The file Bacitrade2003_07 does not exist
+The file Bacitrade2003_12 does not exist
+The file Bacitrade2003_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2003.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2003.dta{rm}
+saved
+{p_end}
+The file Bacitrade2004_07 does not exist
+The file Bacitrade2004_12 does not exist
+The file Bacitrade2004_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2004.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2004.dta{rm}
+saved
+{p_end}
+The file Bacitrade2005_07 does not exist
+The file Bacitrade2005_12 does not exist
+The file Bacitrade2005_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2005.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2005.dta{rm}
+saved
+{p_end}
+The file Bacitrade2006_07 does not exist
+The file Bacitrade2006_12 does not exist
+The file Bacitrade2006_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2006.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2006.dta{rm}
+saved
+{p_end}
+The file Bacitrade2007_12 does not exist
+The file Bacitrade2007_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2007.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2007.dta{rm}
+saved
+{p_end}
+The file Bacitrade2008_12 does not exist
+The file Bacitrade2008_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2008.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2008.dta{rm}
+saved
+{p_end}
+The file Bacitrade2009_12 does not exist
+The file Bacitrade2009_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2009.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2009.dta{rm}
+saved
+{p_end}
+The file Bacitrade2010_12 does not exist
+The file Bacitrade2010_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(24 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2010.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2010.dta{rm}
+saved
+{p_end}
+The file Bacitrade2011_12 does not exist
+The file Bacitrade2011_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(3,082 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2011.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2011.dta{rm}
+saved
+{p_end}
+The file Bacitrade2012_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2012.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2012.dta{rm}
+saved
+{p_end}
+The file Bacitrade2013_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2013.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2013.dta{rm}
+saved
+{p_end}
+The file Bacitrade2014_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2014.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2014.dta{rm}
+saved
+{p_end}
+The file Bacitrade2015_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2015.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2015.dta{rm}
+saved
+{p_end}
+The file Bacitrade2016_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2016.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2016.dta{rm}
+saved
+{p_end}
+The file Bacitrade2017_17 does not exist
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2017.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2017.dta{rm}
+saved
+{p_end}
+(0 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {res} importer exporter nomen hs6 year{p_end}
+{txt}(0 observations deleted)
+  (0 bytes saved)
+{p 0 4 2}
+(file {bf}
+./temp_files//Bacitrade2018.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+./temp_files//Bacitrade2018.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. *Erase files.
+. foreach h in "92" "96" "02" "07" "12" "17" {c -(}
+{txt}  2{com}.         
+.         forvalues year=1995/2018 {c -(}
+{txt}  3{com}.                 
+.                 capture erase "./data/BACI_2020/baci`h'/baci`h'_`year'.dta"
+{txt}  4{com}.                 capture erase "./temp_files/Bacitrade`year'_`h'.dta" 
+{txt}  5{com}.         
+.         {c )-}
+{txt}  6{com}.         
+. {c )-}
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. *** Tariff data construction -- NB: Data cannot be publicly shared. This file
+. *** will take your downloaded version (see ReadMe for instructions) and name variables appropriately
+. *** for merging with our other data. 
+. di "$S_DATE $S_TIME"
+{res}15 Jun 2023 20:32:23
+{txt}
+{com}. do "./code/d02_TRAINS_clean_data.do"
+{txt}
+{com}. clear all
+{res}{txt}
+{com}. set more off
+{txt}
+{com}. 
+. cap log close
+{smcl}
+{com}{sf}{ul off}

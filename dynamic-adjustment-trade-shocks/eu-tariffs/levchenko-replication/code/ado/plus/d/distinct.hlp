@@ -1,0 +1,145 @@
+{smcl}
+{* 26 Feb 2002/16 Sept 2008/28 Oct 2008/14 Mar 2012}{...}
+{hline}
+{cmd:help distinct}{right: ({browse "http://www.stata-journal.com/article.html?article=dm0042_1":SJ12-2: dm0042})}
+{hline}
+
+{title:Title}
+
+{p2colset 5 17 19 2}{...}
+{p2col: {hi:distinct} {hline 2}}Report number(s) of distinct observations or values{p_end}
+{p2colreset}{...}
+
+
+{title:Syntax}
+
+{p 8 17 2}{cmd:distinct} [{varlist}]
+{ifin}
+[{cmd:,} {opt miss:ing}
+{opt a:bbrev(#)} 
+{opt j:oint}
+{opt min:imum(#)}
+{opt max:imum(#)}
+]  
+
+{p 4 4 2}{cmd:by} is allowed; see {manhelp by D}.
+
+
+{title:Description}
+
+{p 4 4 2}The {cmd:distinct} command displays the number of distinct
+observations with respect to the variables in {varlist}.  By default, each
+variable is considered separately so that the number of distinct observations
+for each variable is reported; the number of distinct observations is the same
+as the number of distinct values.  Optionally, variables can be considered
+jointly so that the number of distinct groups defined by the values of
+variables in {it:varlist} is reported. 
+
+{p 4 4 2}By default, missing values are not counted.  {it:varlist} may
+contain both numeric and string variables.  
+
+
+{title:Options} 
+
+{p 4 4 2}{cmd:missing} specifies that missing values are to be included
+in counting distinct observations. 
+
+{p 4 4 2}{opt abbrev(#)} specifies that variable names are to be
+displayed abbreviated to at most {it:#} characters.  This option has no
+effect with {cmd:joint}. 
+
+{p 4 4 2}{cmd:joint} specifies that distinctness is to be determined
+jointly for the variables in {it:varlist}. 
+
+{p 4 4 2}{opt minimum(#)} specifies that numbers of distinct values are to be displayed only if they are 
+equal to or greater than a specified minimum. 
+
+{p 4 4 2}{opt maximum(#)} specifies that numbers of distinct values are to be displayed only if they are 
+less than or equal to a specified maximum. 
+
+
+{title:Remarks} 
+
+{p 4 4 2}Distinctness, duplication, and uniqueness are different aspects
+of the similarity and difference of observations.  Suppose the values of some
+variable are 1, 2, 2, 3, 3, 3, 4, 4, 4, 4.  Then there are four distinct
+values: 1, 2, 3, and 4.  Alternatively, there are, so far as this variable is
+concerned, four distinct observations because, for example, the second and
+third observations both containing the value 2 are identical in respect to this
+variable.  Of these values, 2, 3, and 4 are duplicated in the data, meaning
+that each occurs twice or more.  Some people refer to the distinct values as
+unique values, even though in general distinct values could all be repeated in
+the data.  One logic behind that terminology is that if you remove all
+duplicates from these data then you are left with four distinct values, each of
+which occurs once. 
+
+{p 4 4 2}Now consider distinctness determined jointly for two variables.
+Suppose observations are 1 and {cmd:"a"}, 2 and {cmd:"b"}, 2 and {cmd:"b"}, 3
+and {cmd:"c"}, 3 and {cmd:"c"}, 3 and {cmd:"d"}, 4 and {cmd:"c"}, 4 and
+{cmd:"c"}, 4 and {cmd:"d"}, 4 and {cmd:"d"}.  Then, as far as these two
+variables are concerned, there are six distinct observations, 1 and {cmd:"a"},
+2 and {cmd:"b"}, 3 and {cmd:"c"}, 3 and {cmd:"d"}, 4 and {cmd:"c"}, 4 and
+{cmd:"d"}.  Considering the variables individually, there are four distinct
+values for the first variable and four for the second.  Clearly, the same
+principles of considering variables individually and jointly extend to three or
+more variables. 
+
+
+{title:Saved results}
+
+{pstd}{cmd:distinct} saves the following in {cmd:r()}:
+
+{synoptset 14 tabbed}{...}
+{p2col 5 14 18 2: Scalars}{p_end}
+{synopt:{cmd:r(ndistinct)}}distinct count (for last variable, 
+           or jointly considered group of variables, 
+           and, if specified, last {cmd:by} group){p_end}
+{synopt:{cmd:r(N)}}number of observations (for last variable,
+           or jointly considered group of variables, 
+           and, if specified, last {cmd:by} group){p_end}
+{p2colreset}{...}
+
+
+{title:Examples}
+
+{p 4 4 2}{cmd:. sysuse auto}{p_end}
+{p 4 4 2}{cmd:. distinct} {p_end}
+{p 4 4 2}{cmd:. distinct, max(10)} {p_end}
+{p 4 4 2}{cmd:. distinct make-headroom}{p_end}
+{p 4 4 2}{cmd:. distinct make-headroom, missing abbrev(6)}{p_end}
+{p 4 4 2}{cmd:. distinct foreign rep78, joint}{p_end}
+{p 4 4 2}{cmd:. distinct foreign rep78, joint missing}
+
+
+{title:Authors}
+
+{p 4 4 2}Gary Longton, Fred Hutchinson Cancer Research Center, USA{break}
+glongton@fhcrc.org
+
+{p 4 4 2}Nicholas J. Cox, Durham University, UK{break} 
+n.j.cox@durham.ac.uk
+
+
+{title:Acknowledgment}
+
+{p 4 4 2}This program grew out of one originally posted to Statalist by
+Patrick Royston for Stata 4.
+
+
+{title:Also see}
+
+{psee}
+Article: {it:Stata Journal}, volume 8, number 4: {browse "http://www.stata-journal.com/article.html?article=dm0042":dm0042}
+
+{psee}
+Online:
+{manhelp codebook D}, 
+{manhelp contract D}, 
+{manhelp duplicates D}, 
+{manhelp egen D},
+{manhelp inspect D},
+{manhelp isid D},
+{manhelp levelsof P},  
+{help tabulate}, 
+{help groups} (if installed) 
+{p_end}

@@ -1,0 +1,178 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d02b.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:03:44
+{txt}
+{com}. 
+. /// 1. create region specific export shares
+> 
+. use "data\temp\rais-panel-processed-mun.dta", clear
+{txt}
+{com}. 
+. // create export exposure
+. 
+. sort isic3code3d year
+{txt}
+{com}. 
+. egen groupid = group(ufCode mun_code)
+{res}{txt}(307 missing values generated)
+
+{com}. 
+. // create shares
+. 
+. bysort year groupid: egen TotalLF = sum(employment)
+{txt}
+{com}. gen LaborShr = employment / TotalLF
+{txt}
+{com}. 
+. drop groupid
+{txt}
+{com}. 
+. // save tempfile
+. 
+. tempfile laborShrs
+{txt}
+{com}. save `laborShrs', replace
+{txt}{p 0 4 2}
+(file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_a954_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. /// 2. import trade by sector
+> 
+. use "data/temp/panel-isic3-3d.dta", clear
+{txt}
+{com}. 
+. // drop missing years for GDP
+. drop if year < 1995
+{txt}(0 observations deleted)
+
+{com}. drop if year > 2022
+{txt}(0 observations deleted)
+
+{com}. 
+. rename isic3_3d isic3code3d
+{res}{txt}
+{com}. 
+. /// 4. merge and collapse
+> 
+. merge 1:m year isic3code3d using `laborShrs'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}       3,517,502
+{txt}{col 9}from master{col 30}{res}             121{txt}  (_merge==1)
+{col 9}from using{col 30}{res}       3,517,381{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}       1,393,514{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. drop if _merge < 3
+{txt}(3,517,502 observations deleted)
+
+{com}. 
+. egen groupid = group(ufCode mun_code isic3code3d)
+{txt}
+{com}. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:2000}}{txt: to }{res:{bind:2020}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen lforeigndemandus = log(foreigndemandus)
+{txt}
+{com}. gen gFD = lforeigndemandus - l.lforeigndemandus
+{txt}(169,225 missing values generated)
+
+{com}. gen g2FD = foreigndemandus / l.foreigndemandus - 1
+{txt}(169,225 missing values generated)
+
+{com}. 
+. 
+. gen giv_comtrade = l.LaborShr * gFD 
+{txt}(169,225 missing values generated)
+
+{com}. gen g2iv_comtrade = l.LaborShr * g2FD 
+{txt}(169,225 missing values generated)
+
+{com}. 
+. // collapse and save new dataset
+. 
+. collapse (sum) giv_comtrade g2iv_comtrade LaborShr, by(year ufCode mun_code)
+{res}{txt}
+{com}. 
+. // replace missing values
+. 
+. replace giv_comtrade = . if giv == 0
+{txt}(6,635 real changes made, 6,635 to missing)
+
+{com}. replace g2iv_comtrade = . if g2iv == 0
+{txt}(6,635 real changes made, 6,635 to missing)
+
+{com}. 
+. local group "giv_comtrade g2iv_comtrade"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w) trim
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. save "data\temp\mun-alternative-instrument.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-alternative-instrument.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. merge 1:1 year ufCode mun_code using "data\temp\mun-trade-panel-inst.dta"
+{res}{txt}{p 0 7 2}
+(variable
+{bf:ufCode} was {bf:byte}, now {bf:float} to accommodate using data's values)
+{p_end}
+
+{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          38,014
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          38,014{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         110,113{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. save "data\temp\mun-trade-panel-processed.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+data\temp\mun-trade-panel-processed.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+data\temp\mun-trade-panel-processed.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d02b.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:03:57
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

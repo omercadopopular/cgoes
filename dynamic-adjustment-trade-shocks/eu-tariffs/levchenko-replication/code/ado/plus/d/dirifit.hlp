@@ -1,0 +1,215 @@
+{smcl}
+{* 06sep2006/08apr2006/18apr2006}{...}
+{hline}
+help for {hi:dirifit}
+{hline}
+
+{title:Fitting a Dirichlet distribution by maximum likelihood}
+
+{p 8 17 2}
+{cmd:dirifit} 
+{it:depvarlist} 
+[{it:weight}] 
+[{cmd:if} {it:exp}]
+[{cmd:in} {it:range}] 
+[{cmd:,} 
+{c -(}
+{cmdab:alpha:var(}{it:varlist_a}{cmd:)}
+{cmd:alpha1|2|3|..|}{it:k}{cmd:(}{it:varlist_a_j}{cmd:)} 
+{c )-}
+{c |} 
+{c -(}
+{cmdab:mu:var(}{it:varlist_m}{cmd:)} 
+{cmdab:phi:var(}{it:varlist_p}{cmd:)}
+{cmd:mu1|2|3|...|}{it:k}{cmd:(}{it:varlist_m_j}{cmd:)}
+{cmdab:b:aseoutcome(}{it:var}{cmd:)}
+{cmdab:alt:ernative}
+{c )-} 
+{cmdab:r:obust}
+{cmdab:cl:uster(}{it:clustervar}{cmd:)}  
+{cmdab:l:evel(}{it:#}{cmd:)} 
+{it:maximize_options} 
+]
+
+{p 4 4 2}{cmd:by} {it:...} {cmd::} may be used with {cmd:dirifit}; see help
+{help by}. 
+
+{p 4 4 2}{cmd:fweight}s and {cmd:aweight}s are allowed; see help {help weights}.
+
+
+{title:Description}
+
+{p 4 4 2} {cmd:dirifit} fits by maximum likelihood a Dirichlet
+distribution to a set of variables {it:depvarlist}. 
+Each variable in {it:depvarlist} ranges between 0 and 1 and 
+all variables in {it:depvarlist} must, for each observation, add
+up to 1: for example, they may be proportions.  
+
+{p 4 4 2} Note that cases will be ignored if the one or more of the dependent
+variables has a value less than or equal to zero or more than or equal to one or
+if the dependent variables don't add up to one.
+
+{p 4 4 2}{cmd:dirifit} uses one of two parameterizations:
+
+{p 8 8 2}A conventional parameterization with shape parameters
+{it:alpha_j} > 0 (one for each variable in {it:depvarlist}) 
+(e.g. Evans et al. 2000 or Kotz et al. 2000) will be used 
+if only {it:depvarlist} is specified or if one or more of 
+{cmd:alphavar()} and {cmd:alpha1|2|3|...|}{it:k}{cmd:()} is specified.
+{it:alpha_j} is reported on the logarithmic scale to ensure that
+it remains positive. The conventional parameterization is
+especially useful when no covariates are present. 
+
+{p 8 8 2}An alternative parameterization with location parameters {it:mu_j} 
+(one for each variable in {it:depvarlist} except the {it:baseoutcome})
+and scale parameter {it:phi} will be used if one or more of {cmd:muvar()}, 
+{cmd:mu1|2|3|...|}{it:k}{cmd:()}, {cmd:baseoutcome()}, and {cmd:phivar()} is specified
+or if the {cmd:alternative} option is specified.  The alternative parameterization
+is especially useful when covariates are present. {it:mu_j} are reported on 
+the multinomial logit scale so that they stay between 0 and 1, and add up 
+to one. In order to help interpretation, various types of marginal effects can be 
+calculated with {help dirifit postestimation##ddirifit:ddirifit}. {it:phi} is reported 
+on the logarithmic scale to ensure that it remains positive. This parameterization is 
+analogous to the parameterization proposed by Paolino (2001), Ferrari and Cribari-Neto 
+(2004), and Smithson and Verkuilen (2006) for the beta distribution.
+
+
+{title:Options}
+
+{p 4 8 2}{cmd:alphavar()} and {cmd:alpha1|2|3|...|}{it:k}{cmd:()} allow the user to
+specify each parameter in the conventional parameterization as a function of the
+covariates specified in the variable list. The covariates in {cmd:alphavar()} are
+common to {it:all} parameters, while {cmd:alpha1|2|3|...|}{it:k}{cmd:()} allow the
+user to specify (additional) covariates for the first, second, third, ..., {it:k} th
+parameter. The order of the parameters is determined by the order of 
+{it:depvarlist}.  A constant term is always included in each equation.
+
+{p 4 8 2}{cmd:muvar()}, {cmd:mu1|2|3|...|}{it:k}{cmd:()}, and {cmd:phivar()} allow the user
+to specify each parameter in the alternative parameterization as a function of the
+covariates specified in the respective variable list. The covariates in {cmd:muvar()} are
+common to {it:all mu} parameters, while {cmd:mu1|2|3|...|}{it:k}{cmd:()} allow the
+user to specify (additional) covariates for the first, second, third, ..., {it:k} th
+mu parameter. The order of the parameters is determined by the order of 
+{it:depvarlist}. A constant term is always included in each equation.
+
+{p 4 8 2}As implied above, just one parameterization should be chosen. 
+
+{p 4 8 2}{cmd:alternative} ensures that the alternative parameterization
+is used instead of the conventional parameterization if only {it:depvarlist}
+is specified.  This option cannot be used with {cmd:alphavar()} or
+{cmd:alpha1|2|3|...|}{it:k}{cmd:()}.
+
+{p 4 8 2} {cmd:baseoutcome} variable in {it:depvarlist} that will be the
+baseoutcome. The default is the first variable of {it:depvarlist}. This option 
+cannot be used with {cmd:alphavar()} or {cmd:alpha1|2|3|...|}{it:k}{cmd:()}.
+
+{p 4 8 2}{cmd:robust} specifies that the Huber/White/sandwich estimator
+of variance is to be used in place of the traditional calculation; see
+{hi:[U] 20.14 Obtaining robust variance estimates} ({hi:[U] 23.14} in version 8).  
+{cmd:robust}
+combined with {cmd:cluster()} allows observations which are not
+independent within cluster (although they must be independent between
+clusters). 
+
+{p 4 8 2}{cmd:cluster(}{it:clustervar}{cmd:)} specifies that the observations
+are independent across groups (clusters) but not necessarily within groups.
+{it:clustervar} specifies to which group each observation belongs; e.g.,
+{cmd:cluster(personid)} in data with repeated observations on individuals.  See
+{hi:[U] 20.14 Obtaining robust variance estimates} ({hi:[U] 23.14} in version 8).  
+Specifying {cmd:cluster()} implies {cmd:robust}.
+
+{p 4 8 2}{cmd:level(}{it:#}{cmd:)} specifies the confidence level, in percent,
+for the confidence intervals of the coefficients; see help {help level}.
+
+{p 4 8 2}{cmd:nolog} suppresses the iteration log.
+
+{p 4 8 2}{it:maximize_options} control the maximization process; see 
+help {help maximize}. If you are seeing many "(not concave)" messages in the 
+log, using the {cmd:difficult} option may help convergence.
+
+
+{title:Saved results}
+
+{p 4 4 2}In addition to the usual results saved after {cmd:ml},
+{cmd:dirifit} also saves the following, as appropriate: 
+
+{p 8 8 2}{cmd:e(b_alpha1)} to {cmd:e(b_alpha}{it:k}{cmd:)} 
+(where {it:k} is the number of variables in {it:depvarlist}) 
+are row vectors containing the 
+parameter estimates from each equation in the conventional parameterization.
+
+{p 8 8 2}{cmd:e(b_phi)} and {cmd:e(b_mu1)} to {cmd:e(b_mu}{it:k}{cmd:)} 
+(where {it:k} 
+is the number of variables in {it:depvarlist}) except for the {it:baseoutcome},
+are row vectors containing the parameter estimates from each equation in the
+alternative parameterization.
+
+{p 8 8 2}{cmd:e(length_b_alpha1)} to {cmd:e(length_b_alpha}{it:k}{cmd:)} or
+{cmd:e(length_b_mu1)} to {cmd:e(length_b_mu}{it:k}{cmd:)} and {cmd:e(length_b_phi)}
+contain the lengths of these vectors. If no covariates are specified in an 
+equation, the corresponding vector has length equal to 1 (the constant term);
+otherwise, the length is one plus the number of covariates.
+        
+        
+{title:Examples}
+
+{cmd}
+    use http://fmwww.bc.edu/repec/bocode/c/citybudget.dta, clear
+
+    dirifit governing safety education recreation social urbanplanning, ///
+        mu(minorityleft noleft houseval popdens)
+
+    ddirifit, at(minorityleft 0 noleft 0 )
+{txt}
+{p 4 4 2}({stata "dirifit_ex":click to run}){p_end}
+
+{title:Authors}
+
+{p 4 4 2}Maarten L. Buis, Universitaet Tuebingen{break}maarten.buis@uni-tuebingen.de
+
+{p 4 4 2}Nicholas J. Cox, Durham University{break}n.j.cox@durham.ac.uk
+
+{p 4 4 2}Stephen P. Jenkins, University of Essex{break}stephenj@essex.ac.uk
+
+
+{title:Acknowledgement}
+Philipp Rehm provided a bug report.
+
+
+{title:References}
+
+{p 4 4 2}
+Evans, M., Hastings, N. and Peacock, B. 2000. {it:Statistical distributions.}
+New York: John Wiley.
+
+{p 4 4 2}
+Ferrari, S.L.P. and Cribari-Neto, F. 2004.
+Beta regression for modelling rates and proportions. 
+{it:Journal of Applied Statistics} 31(7): 799{c -}815.
+
+{p 4 4 2}
+Kotz, S., Balakrishnan, N.,  Johnson, N.L. 2000.
+{it:Continuous multivariate distributions: Volume 1.} New York: John Wiley.
+
+{p 4 4 2}
+MacKay, D.J.C. 2003. 
+{it:Information theory, inference, and learning algorithms.} 
+Cambridge: Cambridge University Press (see pp.316{c -}318). 
+{browse "http://www.inference.phy.cam.ac.uk/itprnn/book.pdf":http://www.inference.phy.cam.ac.uk/itprnn/book.pdf}
+
+{p 4 4 2}
+Paolino, P. 2001.
+Maximum likelihood estimation of models with
+beta-distributed dependent variables. {it:Political Analysis} 9(4): 325{c -}346.
+{browse "http://polmeth.wustl.edu/polanalysis/vol/9/WV008-Paolino.pdf":http://polmeth.wustl.edu/polanalysis/vol/9/WV008-Paolino.pdf}
+
+{p 4 4 2}
+Smithson, M. and Verkuilen, J. 2006.
+A better lemon squeezer? Maximum likelihood regression with beta-distributed dependent variables.
+{it:Psychological Methods} 11(1): 54{c -}71.
+
+{title:Also see}
+
+{p 4 13 2}
+Online: help for {help dirifit_postestimation}, {help betafit}, {help fmlogit} (if installed)
+

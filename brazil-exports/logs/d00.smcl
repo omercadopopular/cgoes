@@ -1,0 +1,2302 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\wb592068\OneDrive - WBG\Brazil\logs\d00.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}30 Jul 2024, 18:56:06
+{txt}
+{com}. 
+. ///////////////////
+> /// Harmonize comtrade vintages
+> //////////////////
+> 
+. clear
+{txt}
+{com}. 
+. forval yr = $first_y / $last_y {c -(}        
+{txt}  2{com}.         
+.         
+.         import delimited "data/comtrade/`yr'-hs6.csv", clear stringcols(12) 
+{txt}  3{com}.         tempfile merge
+{txt}  4{com}.         save `merge'
+{txt}  5{com}. 
+.         /// Add H3 equivalent codes
+> 
+.         levelsof classification, local(vintages)
+{txt}  6{com}. 
+.         gen ProductHS = ""
+{txt}  7{com}.         foreach vintage of local vintages {c -(}
+{txt}  8{com}.                 di "Processing vintage `vintage', year `yr'"
+{txt}  9{com}.                 
+.                 if ("`vintage'" == "H3") {c -(}
+{txt} 10{com}.                         replace ProductHS = commoditycode if classification == "`vintage'"
+{txt} 11{com}.                         save `merge', replace
+{txt} 12{com}.                 {c )-}
+{txt} 13{com}.                 else {c -(}
+{txt} 14{com}.                         import excel "data/conc/CompleteCorrelationsOfHS-SITC-BEC_20170606-cg.xlsx", firstrow clear
+{txt} 15{com}.                         keep H3 `vintage'
+{txt} 16{com}.                         collapse (first) H3, by(`vintage')
+{txt} 17{com}. 
+.                         rename H3 ProductHS
+{txt} 18{com}.                         rename `vintage' commoditycode
+{txt} 19{com}.                         gen classification = "`vintage'"
+{txt} 20{com}.                                 
+.                         merge 1:m classification commoditycode using `merge'
+{txt} 21{com}.                         
+.                         tab _merge if classification == "`vintage'"
+{txt} 22{com}.         *               drop if (_merge == 2)
+.                         drop _merge
+{txt} 23{com}.                         
+.                         save `merge', replace
+{txt} 24{com}.                 {c )-}
+{txt} 25{com}.         {c )-}
+{txt} 26{com}. 
+.         collapse (sum) tradevalueus (first) commodity, by(ProductHS year period perioddesc aggregatelevel isleafcode tradeflowcode tradeflow partnercode partner partneriso)
+{txt} 27{com}. 
+.         rename ProductHS commoditycode
+{txt} 28{com}. 
+. 
+.         // missing rate
+.         cap qui total tradevalueus if commoditycode == ""
+{txt} 29{com}.         cap scalar missing = _b[tradevalueus]
+{txt} 30{com}.         cap qui total tradevalueus 
+{txt} 31{com}.         cap scalar total = _b[tradevalueus]
+{txt} 32{com}.         cap display missing / total
+{txt} 33{com}. 
+. 
+.         drop if missing(year)
+{txt} 34{com}. 
+.         save "data/temp/`yr'-hs6-h3.dta", replace 
+{txt} 35{com}. 
+.         
+. {c )-}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,631 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"'
+(9,631 missing values generated)
+Processing vintage H0, year 2000
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           5,654
+{txt}{col 9}from master{col 30}{res}             532{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,122{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,509{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        532       10.55       10.55
+{txt}            Matched (3) {c |}{res}      4,509       89.45      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2000
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           5,053
+{txt}{col 9}from master{col 30}{res}              12{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,041{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,122{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         12        0.23        0.23
+{txt}            Matched (3) {c |}{res}      5,122       99.77      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(493 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2000-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,142 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"'
+(9,142 missing values generated)
+Processing vintage H0, year 2001
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           6,145
+{txt}{col 9}from master{col 30}{res}           1,022{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,123{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,019{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      1,022       20.27       20.27
+{txt}            Matched (3) {c |}{res}      4,019       79.73      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2001
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           5,052
+{txt}{col 9}from master{col 30}{res}              11{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,041{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,123{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         11        0.21        0.21
+{txt}            Matched (3) {c |}{res}      5,123       99.79      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(929 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2001-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 13,200 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"'
+(13,200 missing values generated)
+Processing vintage H0, year 2002
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,519
+{txt}{col 9}from master{col 30}{res}           2,180{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,339{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,861{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,180       43.25       43.25
+{txt}            Matched (3) {c |}{res}      2,861       56.75      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2002
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,284
+{txt}{col 9}from master{col 30}{res}              19{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,265{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,115{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         19        0.37        0.37
+{txt}            Matched (3) {c |}{res}      5,115       99.63      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2002
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,178
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,175{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,224{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,224       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,955 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2002-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 13,221 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000004.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"'
+(13,221 missing values generated)
+Processing vintage H0, year 2003
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,464
+{txt}{col 9}from master{col 30}{res}           2,142{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,322{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,899{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,142       42.49       42.49
+{txt}            Matched (3) {c |}{res}      2,899       57.51      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000004.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2003
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,301
+{txt}{col 9}from master{col 30}{res}              36{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,265{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,098{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         36        0.70        0.70
+{txt}            Matched (3) {c |}{res}      5,098       99.30      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000004.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2003
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,178
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,175{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,224{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,224       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000004.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,936 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2003-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 13,245 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000005.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"'
+(13,245 missing values generated)
+Processing vintage H0, year 2004
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,262
+{txt}{col 9}from master{col 30}{res}           2,029{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,233{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           3,012{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,029       40.25       40.25
+{txt}            Matched (3) {c |}{res}      3,012       59.75      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000005.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2004
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,388
+{txt}{col 9}from master{col 30}{res}             124{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,264{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,010{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        124        2.42        2.42
+{txt}            Matched (3) {c |}{res}      5,010       97.58      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000005.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2004
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,179
+{txt}{col 9}from master{col 30}{res}               4{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,175{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,223{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          4        0.08        0.08
+{txt}            Matched (3) {c |}{res}      5,223       99.92      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000005.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,843 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2004-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 12,731 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000006.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"'
+(12,731 missing values generated)
+Processing vintage H0, year 2005
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,644
+{txt}{col 9}from master{col 30}{res}           2,477{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,167{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,564{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,477       49.14       49.14
+{txt}            Matched (3) {c |}{res}      2,564       50.86      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000006.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2005
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,456
+{txt}{col 9}from master{col 30}{res}             191{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,265{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,943{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        191        3.72        3.72
+{txt}            Matched (3) {c |}{res}      4,943       96.28      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000006.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2005
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,178
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,175{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,224{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,224       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000006.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(2,227 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2005-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 12,638 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000007.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"'
+(12,638 missing values generated)
+Processing vintage H0, year 2006
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,655
+{txt}{col 9}from master{col 30}{res}           2,529{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,126{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,512{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,529       50.17       50.17
+{txt}            Matched (3) {c |}{res}      2,512       49.83      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000007.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2006
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,495
+{txt}{col 9}from master{col 30}{res}             231{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,264{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,903{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        231        4.50        4.50
+{txt}            Matched (3) {c |}{res}      4,903       95.50      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000007.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2006
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,179
+{txt}{col 9}from master{col 30}{res}               4{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,175{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,223{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          4        0.08        0.08
+{txt}            Matched (3) {c |}{res}      5,223       99.92      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000007.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(2,316 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2006-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 17,715 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"' `"H3"'
+(17,715 missing values generated)
+Processing vintage H0, year 2007
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          17,500
+{txt}{col 9}from master{col 30}{res}           2,413{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,087{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,628{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,413       47.87       47.87
+{txt}            Matched (3) {c |}{res}      2,628       52.13      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2007
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,608
+{txt}{col 9}from master{col 30}{res}             307{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,301{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,827{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        307        5.98        5.98
+{txt}            Matched (3) {c |}{res}      4,827       94.02      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2007
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,244
+{txt}{col 9}from master{col 30}{res}              18{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,226{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,209{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         18        0.34        0.34
+{txt}            Matched (3) {c |}{res}      5,209       99.66      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2007
+(5,051 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(2,224 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2007-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 15,685 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"' `"H3"'
+(15,685 missing values generated)
+Processing vintage H0, year 2008
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          19,024
+{txt}{col 9}from master{col 30}{res}           4,190{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,834{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             851{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      4,190       83.12       83.12
+{txt}            Matched (3) {c |}{res}        851       16.88      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2008
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,837
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,289{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,586{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        548       10.67       10.67
+{txt}            Matched (3) {c |}{res}      4,586       89.33      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2008
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,256
+{txt}{col 9}from master{col 30}{res}              30{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,226{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,197{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         30        0.57        0.57
+{txt}            Matched (3) {c |}{res}      5,197       99.43      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2008
+(5,051 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(3,733 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2008-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 14,309 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"' `"H3"'
+(14,309 missing values generated)
+Processing vintage H0, year 2009
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          19,316
+{txt}{col 9}from master{col 30}{res}           5,024{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,292{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              17{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      5,024       99.66       99.66
+{txt}            Matched (3) {c |}{res}         17        0.34      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2009
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,709
+{txt}{col 9}from master{col 30}{res}             755{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,954{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,379{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        755       14.71       14.71
+{txt}            Matched (3) {c |}{res}      4,379       85.29      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2009
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,591
+{txt}{col 9}from master{col 30}{res}             365{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,226{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,862{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        365        6.98        6.98
+{txt}            Matched (3) {c |}{res}      4,862       93.02      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2009
+(5,051 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(4,530 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2009-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 12,075 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"' `"H3"'
+(12,075 missing values generated)
+Processing vintage H0, year 2010
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          17,092
+{txt}{col 9}from master{col 30}{res}           5,029{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,063{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      5,029       99.76       99.76
+{txt}            Matched (3) {c |}{res}         12        0.24      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2010
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          17,948
+{txt}{col 9}from master{col 30}{res}           2,989{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,959{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,145{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      2,989       58.22       58.22
+{txt}            Matched (3) {c |}{res}      2,145       41.78      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2010
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,586
+{txt}{col 9}from master{col 30}{res}             360{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,226{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,867{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        360        6.89        6.89
+{txt}            Matched (3) {c |}{res}      4,867       93.11      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2010
+(5,051 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(4,614 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2010-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 11,328 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H0"' `"H1"' `"H2"' `"H3"'
+(11,328 missing values generated)
+Processing vintage H0, year 2011
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          16,343
+{txt}{col 9}from master{col 30}{res}           5,028{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          11,315{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              13{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      5,028       99.74       99.74
+{txt}            Matched (3) {c |}{res}         13        0.26      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,041      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H1, year 2011
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          17,920
+{txt}{col 9}from master{col 30}{res}           3,349{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,571{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,785{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      3,349       65.23       65.23
+{txt}            Matched (3) {c |}{res}      1,785       34.77      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2011
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,974
+{txt}{col 9}from master{col 30}{res}             748{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,226{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,479{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        748       14.31       14.31
+{txt}            Matched (3) {c |}{res}      4,479       85.69      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2011
+(5,051 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(4,633 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2011-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 15,661 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000d.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H1"' `"H2"' `"H3"' `"H4"'
+(15,661 missing values generated)
+Processing vintage H1, year 2012
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          18,663
+{txt}{col 9}from master{col 30}{res}           4,068{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          14,595{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,066{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      4,068       79.24       79.24
+{txt}            Matched (3) {c |}{res}      1,066       20.76      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,134      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000d.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H2, year 2012
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          16,226
+{txt}{col 9}from master{col 30}{res}             862{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,364{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,365{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        862       16.49       16.49
+{txt}            Matched (3) {c |}{res}      4,365       83.51      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000d.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2012
+(5,026 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000d.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2012
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,390
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          15,387{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,204{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,204       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000d.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(3,770 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2012-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 14,097 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000e.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"'
+(14,097 missing values generated)
+Processing vintage H2, year 2013
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          11,090
+{txt}{col 9}from master{col 30}{res}           1,110{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           9,980{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,117{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      1,110       21.24       21.24
+{txt}            Matched (3) {c |}{res}      4,117       78.76      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000e.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2013
+(4,776 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000e.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2013
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,006
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          10,003{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,204{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,204       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000e.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,067 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2013-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 13,460 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000f.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"'
+(13,460 missing values generated)
+Processing vintage H2, year 2014
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,515
+{txt}{col 9}from master{col 30}{res}           1,141{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           9,374{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,086{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      1,141       21.83       21.83
+{txt}            Matched (3) {c |}{res}      4,086       78.17      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000f.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2014
+(4,170 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000f.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2014
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           9,400
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           9,397{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,204{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,204       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000f.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,092 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2014-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 11,508 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000g.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"'
+(11,508 missing values generated)
+Processing vintage H2, year 2015
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          10,241
+{txt}{col 9}from master{col 30}{res}           1,980{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           8,261{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           3,247{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      1,980       37.88       37.88
+{txt}            Matched (3) {c |}{res}      3,247       62.12      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000g.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2015
+(3,057 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000g.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2015
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           8,287
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           8,284{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,204{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,204       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000g.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,895 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2015-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 10,832 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000h.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"'
+(10,832 missing values generated)
+Processing vintage H2, year 2016
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           9,551
+{txt}{col 9}from master{col 30}{res}           1,973{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           7,578{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           3,254{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      1,973       37.75       37.75
+{txt}            Matched (3) {c |}{res}      3,254       62.25      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000h.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2016
+(2,374 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000h.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2016
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           7,604
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           7,601{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,204{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,204       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000h.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(1,885 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2016-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 14,600 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000i.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"' `"H5"'
+(14,600 missing values generated)
+Processing vintage H2, year 2017
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,991
+{txt}{col 9}from master{col 30}{res}           3,309{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,682{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,918{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      3,309       63.31       63.31
+{txt}            Matched (3) {c |}{res}      1,918       36.69      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000i.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2017
+(2,134 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000i.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2017
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,792
+{txt}{col 9}from master{col 30}{res}              45{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,747{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,162{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}         45        0.86        0.86
+{txt}            Matched (3) {c |}{res}      5,162       99.14      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000i.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H5, year 2017
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,571
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,568{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,386{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,386       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,389      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000i.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(3,108 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2017-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 14,065 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000j.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H2"' `"H3"' `"H4"' `"H5"'
+(14,065 missing values generated)
+Processing vintage H2, year 2018
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          15,498
+{txt}{col 9}from master{col 30}{res}           3,330{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,168{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,897{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}      3,330       63.71       63.71
+{txt}            Matched (3) {c |}{res}      1,897       36.29      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,227      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000j.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H3, year 2018
+(1,800 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000j.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2018
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,638
+{txt}{col 9}from master{col 30}{res}             225{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,413{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,982{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        225        4.32        4.32
+{txt}            Matched (3) {c |}{res}      4,982       95.68      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000j.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H5, year 2018
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          12,237
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          12,234{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,386{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,386       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,389      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000j.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(3,150 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2018-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 11,336 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000k.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H3"' `"H4"' `"H5"'
+(11,336 missing values generated)
+Processing vintage H3, year 2019
+variable {bf}{res}ProductHS{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str6{sf}
+{txt}(1,179 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000k.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2019
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           7,001
+{txt}{col 9}from master{col 30}{res}             436{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           6,565{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,771{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        436        8.37        8.37
+{txt}            Matched (3) {c |}{res}      4,771       91.63      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000k.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H5, year 2019
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           6,389
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           6,386{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,386{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,386       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,389      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000k.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(409 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2019-hs6-h3.dta{rm}
+saved
+{p_end}
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(14 vars, 10,118 obs)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000l.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}`"H3"' `"H4"' `"H5"'
+(10,118 missing values generated)
+Processing vintage H3, year 2020
+variable {bf}{res}ProductHS{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str6{sf}
+{txt}(280 real changes made)
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000l.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H4, year 2020
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           6,421
+{txt}{col 9}from master{col 30}{res}             755{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,666{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           4,452{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}        755       14.50       14.50
+{txt}            Matched (3) {c |}{res}      4,452       85.50      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,207      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000l.tmp{rm}
+saved
+as .dta format
+{p_end}
+Processing vintage H5, year 2020
+{res}{text}(11 vars, 51,860 obs)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           5,490
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           5,487{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           5,386{txt}  (_merge==3)
+{col 5}{hline 41}
+
+   Matching result from {c |}
+                  merge {c |}      Freq.     Percent        Cum.
+{hline 24}{c +}{hline 35}
+        Master only (1) {c |}{res}          3        0.06        0.06
+{txt}            Matched (3) {c |}{res}      5,386       99.94      100.00
+{txt}{hline 24}{c +}{hline 35}
+                  Total {c |}{res}      5,389      100.00
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000l.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}{txt}(698 observations deleted)
+{p 0 4 2}
+file {bf}
+data/temp/2020-hs6-h3.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. ///////////////////
+> /// Match H3 ISIC 3
+> //////////////////
+> 
+. ///// Stack annual data
+> clear
+{txt}
+{com}. 
+. forval yr = $first_y / $last_y {c -(}
+{txt}  2{com}.         di "Merging year `yr'"
+{txt}  3{com}.         use "data/temp/`yr'-hs6-h3.dta", clear
+{txt}  4{com}. 
+.         if `yr' == ${c -(}first_y{c )-} {c -(}
+{txt}  5{com}.                 tempfile long
+{txt}  6{com}.                 save `long', replace
+{txt}  7{com}.         {c )-}
+{txt}  8{com}.         else {c -(}
+{txt}  9{com}.                 append using `long'
+{txt} 10{com}.                 
+.                 save `long', replace 
+{txt} 11{com}.         {c )-}
+{txt} 12{com}. {c )-}
+Merging year 2000
+{txt}{p 0 4 2}
+(file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2001
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2002
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2003
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2004
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2005
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2006
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2007
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2008
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2009
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2010
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2011
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2012
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2013
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2014
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2015
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2016
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2017
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2018
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2019
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+Merging year 2020
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\AppData\Local\Temp\ST_6890_00000m.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. 
+. ///// HS TO ISIC 3 MAP
+> 
+. import delimited "data/conc/JobID-48_Concordance_H3_to_I3.CSV", clear
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(4 vars, 5,052 obs)
+
+{com}. 
+. rename isicrevision3productcode isic3
+{res}{txt}
+{com}. rename hs2007productcode commoditycode
+{res}{txt}
+{com}. 
+. // Add missing "0" string digits
+. tostring isic3, gen(t_rev3)
+{txt}t_rev3 generated as {res:str4}
+
+{com}. gen t_0 = "0" if length(t_rev3) < 4
+{txt}(4,751 missing values generated)
+
+{com}. drop isic3
+{txt}
+{com}. egen isic3 = concat(t_0 t_rev3)
+{txt}
+{com}. drop t_* 
+{txt}
+{com}. 
+. tostring commoditycode, gen(t_h03)
+{txt}t_h03 generated as {res:str6}
+
+{com}. gen t_0 = "0" if length(t_h03) < 6
+{txt}(4,664 missing values generated)
+
+{com}. drop commoditycode
+{txt}
+{com}. egen commoditycode = concat(t_0 t_h03)
+{txt}
+{com}. drop t_* 
+{txt}
+{com}. 
+. // Merge
+. 
+. merge 1:m commoditycode using `long'
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              32
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              30{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         103,977{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. forval yr = $first_y / $last_y {c -(}
+{txt}  2{com}.         cap qui total tradevalueus if isic3 == "" & year == `yr'
+{txt}  3{com}.         if _rc {c -(}
+{txt}  4{com}.                 display "Year `yr', no errors"
+{txt}  5{com}.         {c )-}
+{txt}  6{com}.         else {c -(}
+{txt}  7{com}.         local missing = _b[tradevalueus]
+{txt}  8{com}.         qui total tradevalueus if year == `yr'
+{txt}  9{com}.         local total = _b[tradevalueus]
+{txt} 10{com}.         display "Year `yr', `=`missing' / `total''"
+{txt} 11{com}.         {c )-}
+{txt} 12{com}. 
+. {c )-}
+Year 2000, .0454460898598119
+Year 2001, .0436905677525109
+Year 2002, .043954786315787
+Year 2003, .0452433809920527
+Year 2004, .0512472659724081
+Year 2005, .0472600471205388
+Year 2006, .0498047543213287
+Year 2007, .0366010968893695
+Year 2008, .0369518933620895
+Year 2009, .0555580387299492
+Year 2010, .0513539455408595
+Year 2011, .0494118126105806
+Year 2012, .0384929623953542
+Year 2013, .0349916300548254
+Year 2014, .0367918213894753
+Year 2015, .0381112626289912
+Year 2016, .0438167032922794
+Year 2017, .0522772222218131
+Year 2018, .0575677628745631
+Year 2019, .0480235264273147
+Year 2020, .0436491750034471
+{txt}
+{com}. 
+. di "Dropping unclassified"
+{res}Dropping unclassified
+{txt}
+{com}. 
+. drop if commoditycode == "999999"
+{txt}(30 observations deleted)
+
+{com}. 
+. forval yr = $first_y / $last_y {c -(}
+{txt}  2{com}.         cap qui total tradevalueus if isic3 == "" & year == `yr'
+{txt}  3{com}.         if _rc {c -(}
+{txt}  4{com}.                 display "Year `yr', no errors"
+{txt}  5{com}.         {c )-}
+{txt}  6{com}.         else {c -(}
+{txt}  7{com}.         local missing = _b[tradevalueus]
+{txt}  8{com}.         qui total tradevalueus if year == `yr'
+{txt}  9{com}.         local total = _b[tradevalueus]
+{txt} 10{com}.         display "Year `yr', `=`missing' / `total''"
+{txt} 11{com}.         {c )-}
+{txt} 12{com}. 
+. {c )-}
+Year 2000, no errors
+Year 2001, no errors
+Year 2002, no errors
+Year 2003, no errors
+Year 2004, no errors
+Year 2005, no errors
+Year 2006, no errors
+Year 2007, no errors
+Year 2008, no errors
+Year 2009, no errors
+Year 2010, no errors
+Year 2011, no errors
+Year 2012, no errors
+Year 2013, no errors
+Year 2014, no errors
+Year 2015, no errors
+Year 2016, no errors
+Year 2017, no errors
+Year 2018, no errors
+Year 2019, no errors
+Year 2020, no errors
+{txt}
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. save "data/temp/panel-hs6-isic3.dta", replace 
+{txt}{p 0 4 2}
+file {bf}
+data/temp/panel-hs6-isic3.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. ///////////////////
+> /// Match H3 ISIC 3
+> //////////////////
+> 
+. use "data/temp/panel-hs6-isic3.dta", clear
+{txt}
+{com}. 
+. gen isic3_3d = substr(isic3,1,3)
+{txt}
+{com}. 
+. collapse (sum) tradevalueus, by(year isic3_3d)
+{res}{txt}
+{com}. 
+. keep if !missing(isic3_3d) & !missing(year)
+{txt}(2 observations deleted)
+
+{com}. 
+. /*
+> 
+> check to see if complete balanced panel
+> 
+> tempfile values
+> save `values', replace
+> 
+> levelsof isic3_3d, local(set)
+> local obs `r(r)'
+> 
+> 
+> forval yr = $first_y / $last_y {c -(}
+> 
+>         clear
+>         set obs `obs'
+>         gen year = `yr'
+>         gen n = _n
+>         gen isic3_3d = ""
+> 
+>         local counter = 0
+>         foreach code of local set {c -(}
+>                 local counter = `counter' + 1
+>                 qui replace isic3_3d = "`code'" if n == `counter'
+>         {c )-}
+>         
+>         drop n
+>         
+>         if `yr' == $first_y {c -(}
+>                 tempfile list
+>                 save `list'
+>         {c )-}
+>         
+>         else {c -(}
+>                 qui merge 1:1 isic3_3d year using `list'
+>                 drop _merge
+>                 save `list', replace
+>         {c )-}
+> {c )-}
+> 
+> use `values', clear
+> merge 1:1 isic3_3d year using `list'
+> */
+. 
+. rename tradevalueus foreigndemandus
+{res}{txt}
+{com}. 
+. save "data/temp/panel-isic3-3d.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data/temp/panel-isic3-3d.dta{rm}
+saved
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. do "code\%stata_mun\d01_prepare_rais.do"
+{txt}
+{com}. clear
+{txt}
+{com}. capture log close
+{smcl}
+{com}{sf}{ul off}

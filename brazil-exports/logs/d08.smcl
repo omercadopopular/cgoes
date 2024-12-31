@@ -1,0 +1,114 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d08.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Nov 2024, 22:04:33
+{txt}
+{com}. 
+. /// 1. import exports dataset at the microregion level
+> 
+. import delimited "data\trade-processed\munTradeExp19972023.csv", clear
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{text}(13 vars, 53,767 obs)
+
+{com}. 
+. 
+. 
+. // rename variables
+. rename co_ano year
+{res}{txt}
+{com}. rename no_mun mun_name
+{res}{txt}
+{com}. rename pop pop2022
+{res}{txt}
+{com}. 
+. gen t_mun_code_ibge = substr(string(co_mun),1,6)
+{txt}
+{com}. destring t_mun_code_ibge, gen(mun_code_ibge)
+{txt}t_mun_code_ibge: all characters numeric; mun_code_ibge {res}generated {txt}as {res}long
+{txt}
+{com}. drop t_*
+{txt}
+{com}. 
+. // keep only 2000, 2010
+. keep if year == 2000 | year == 2010
+{txt}(50,346 observations deleted)
+
+{com}. 
+. // reshape 
+. drop pop2022
+{txt}
+{com}. reshape wide vl_fob vl_fobr pce adj, i(uf mun_code_ibge) j(year)
+{txt}(j = 2000 2010)
+
+Data{col 36}Long{col 43}->{col 48}Wide
+{hline 77}
+Number of observations     {res}       3,421   {txt}->   {res}2,136       
+{txt}Number of variables        {res}          13   {txt}->   {res}16          
+{txt}j variable (2 values)              {res}year   {txt}->   (dropped)
+xij variables:
+                                 {res}vl_fob   {txt}->   {res}vl_fob2000 vl_fob2010
+                                vl_fobr   {txt}->   {res}vl_fobr2000 vl_fobr2010
+                                    pce   {txt}->   {res}pce2000 pce2010
+                                    adj   {txt}->   {res}adj2000 adj2010
+{txt}{hline 77}
+
+{com}. 
+. // generate exports growth variable
+. gen lnvl_fob2000 =  log(vl_fob2000)
+{txt}(547 missing values generated)
+
+{com}. gen lnvl_fob2010 =  log(vl_fob2010)
+{txt}(304 missing values generated)
+
+{com}. gen gvl_fob =  lnvl_fob2010 - lnvl_fob2000
+{txt}(851 missing values generated)
+
+{com}. gen g2vl_fob =  (vl_fob2010 - vl_fob2000)/vl_fob2000
+{txt}(851 missing values generated)
+
+{com}. 
+. // generate exports growth variable
+. gen lnvl_fobr2000 =  log(vl_fobr2000)
+{txt}(547 missing values generated)
+
+{com}. gen lnvl_fobr2010 =  log(vl_fobr2010)
+{txt}(304 missing values generated)
+
+{com}. gen gvl_fobr =  lnvl_fobr2010 - lnvl_fobr2000
+{txt}(851 missing values generated)
+
+{com}. gen g2vl_fobr =  (vl_fobr2010 - vl_fobr2000)/vl_fobr2000
+{txt}(851 missing values generated)
+
+{com}. 
+. 
+. /// 2. merge with census dataset
+> merge 1:1 mun_code_ibge using "data\temp\mun-census-microregion-trade-panel-processed.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           3,437
+{txt}{col 9}from master{col 30}{res}               4{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           3,433{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           2,132{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. save "data\temp\mun-master-dataset-census.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+data\temp\mun-master-dataset-census.dta{rm}
+saved
+{p_end}
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\d08.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Nov 2024, 22:04:33
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

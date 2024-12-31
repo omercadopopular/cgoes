@@ -1,0 +1,1114 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\wb592068\OneDrive - WBG\Brazil\logs\s01.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 4 Mar 2024, 18:51:09
+{txt}
+{com}. 
+. import delimited "data\trade-processed\microregionTradeExp19972023.csv", clear
+{res}{txt}(encoding automatically selected: UTF-8)
+{res}{text}(7 vars, 12,563 obs)
+
+{com}. 
+. rename co_ano year
+{res}{txt}
+{com}. rename no_mr microregion_name
+{res}{txt}
+{com}. rename co_mr microregion_code_ibge
+{res}{txt}
+{com}. 
+. egen groupid = group(microregion_code_ibge)
+{txt}
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2023}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen lnvl_fobr = log(vl_fobr)
+{txt}
+{com}. gen gvl_fobr =  lnvl_fobr - l.lnvl_fobr
+{txt}(816 missing values generated)
+
+{com}. 
+. merge 1:1 year microregion_code_ibge using "data\temp\microregion-trade-panel-processed.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           4,499
+{txt}{col 9}from master{col 30}{res}             998{txt}  (_merge==1)
+{col 9}from using{col 30}{res}           3,501{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}          11,565{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. 
+. keep if _merge == 3
+{txt}(4,499 observations deleted)
+
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. gen dvl_fobr = d.vl_fobr
+{txt}(789 missing values generated)
+
+{com}. 
+. local group "giv div gvl_fobr dvl_fobr"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w1) trim
+{txt}  3{com}.         winsor2 `var', cuts(5 95) suffix(_w5) trim
+{txt}  4{com}. {c )-}
+{txt}
+{com}. 
+. reghdfe gvl_fobr giv, absorb(microregion_code_ibge)
+{res}{txt}(dropped 4 {browse "http://scorreia.com/research/singletons.pdf":singleton observations})
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    10,715
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  10199{txt}){col 67}= {res}     53.04
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0515
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0036
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0052
+{txt}{col 51}Root MSE{col 67}= {res}    0.8604
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    gvl_fobr{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}giv {c |}{col 14}{res}{space 2} 4.025181{col 26}{space 2} .5527123{col 37}{space 1}    7.28{col 46}{space 3}0.000{col 54}{space 4} 2.941757{col 67}{space 3} 5.108606
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0529035{col 26}{space 2} .0083518{col 37}{space 1}    6.33{col 46}{space 3}0.000{col 54}{space 4} .0365324{col 67}{space 3} .0692746
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{txt}Absorbed degrees of freedom:
+{res}{col 1}{text}{hline 23}{c TT}{hline 12}{hline 12}{hline 14}{hline 1}{c TRC}
+{col 1}{text}           Absorbed FE{col 24}{c |} Categories{col 37} - Redundant{col 49}  = Num. Coefs{col 64}{c |}
+{res}{col 1}{text}{hline 23}{c +}{hline 12}{hline 12}{hline 14}{hline 1}{c RT}
+{col 1}{text} microregion_code_ibge{col 24}{c |}{space 1}      515{col 37}{space 1}        0{col 49}{result}{space 1}      515{col 63}{text} {col 64}{c |}
+{res}{col 1}{text}{hline 23}{c BT}{hline 12}{hline 12}{hline 14}{hline 1}{c BRC}
+{res}{txt}
+{com}. reghdfe gvl_fobr_w1 giv_w1, absorb(microregion_code_ibge)
+{res}{txt}(dropped 5 {browse "http://scorreia.com/research/singletons.pdf":singleton observations})
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    10,295
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}   9780{txt}){col 67}= {res}    107.24
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0594
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0099
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0108
+{txt}{col 51}Root MSE{col 67}= {res}    0.6020
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} gvl_fobr_w1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}giv_w1 {c |}{col 14}{res}{space 2} 5.028605{col 26}{space 2} .4855862{col 37}{space 1}   10.36{col 46}{space 3}0.000{col 54}{space 4} 4.076756{col 67}{space 3} 5.980454
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0478831{col 26}{space 2} .0059774{col 37}{space 1}    8.01{col 46}{space 3}0.000{col 54}{space 4} .0361663{col 67}{space 3}    .0596
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{txt}Absorbed degrees of freedom:
+{res}{col 1}{text}{hline 23}{c TT}{hline 12}{hline 12}{hline 14}{hline 1}{c TRC}
+{col 1}{text}           Absorbed FE{col 24}{c |} Categories{col 37} - Redundant{col 49}  = Num. Coefs{col 64}{c |}
+{res}{col 1}{text}{hline 23}{c +}{hline 12}{hline 12}{hline 14}{hline 1}{c RT}
+{col 1}{text} microregion_code_ibge{col 24}{c |}{space 1}      514{col 37}{space 1}        0{col 49}{result}{space 1}      514{col 63}{text} {col 64}{c |}
+{res}{col 1}{text}{hline 23}{c BT}{hline 12}{hline 12}{hline 14}{hline 1}{c BRC}
+{res}{txt}
+{com}. reghdfe gvl_fobr_w5 giv_w5, absorb(microregion_code_ibge)
+{res}{txt}(dropped 13 {browse "http://scorreia.com/research/singletons.pdf":singleton observations})
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}     8,658
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}   8152{txt}){col 67}= {res}    200.70
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0859
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0292
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0240
+{txt}{col 51}Root MSE{col 67}= {res}    0.3717
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} gvl_fobr_w5{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}giv_w5 {c |}{col 14}{res}{space 2} 6.339662{col 26}{space 2} .4474972{col 37}{space 1}   14.17{col 46}{space 3}0.000{col 54}{space 4} 5.462454{col 67}{space 3} 7.216871
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0377363{col 26}{space 2} .0040233{col 37}{space 1}    9.38{col 46}{space 3}0.000{col 54}{space 4} .0298497{col 67}{space 3} .0456229
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{txt}Absorbed degrees of freedom:
+{res}{col 1}{text}{hline 23}{c TT}{hline 12}{hline 12}{hline 14}{hline 1}{c TRC}
+{col 1}{text}           Absorbed FE{col 24}{c |} Categories{col 37} - Redundant{col 49}  = Num. Coefs{col 64}{c |}
+{res}{col 1}{text}{hline 23}{c +}{hline 12}{hline 12}{hline 14}{hline 1}{c RT}
+{col 1}{text} microregion_code_ibge{col 24}{c |}{space 1}      505{col 37}{space 1}        0{col 49}{result}{space 1}      505{col 63}{text} {col 64}{c |}
+{res}{col 1}{text}{hline 23}{c BT}{hline 12}{hline 12}{hline 14}{hline 1}{c BRC}
+{res}{txt}
+{com}. 
+. qui reg gvl_fobr i.microregion_code_ibge
+{txt}
+{com}. predict gvl_fobr_r, resid
+{txt}(789 missing values generated)
+
+{com}. 
+. qui reg giv i.microregion_code_ibge
+{txt}
+{com}. predict giv_r, resid
+{txt}(80 missing values generated)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. binscatter gvl_fobr_r giv_r, title(First Stage) ///
+>         ytitle("Observed Growth in Exports, by Microregion") ///
+>         xtitle("Exposure to Foreign Demand Shocks, by Microregion") ///
+>         yline(0, lcolor(black)) ///
+>         title("First Stage", margin(vsmall) position(11)) ///
+>         msymbol(oh) ///
+>         name(growth, replace) legend(off)
+{res}{txt}
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv,
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}.         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off)
+{err}command {bf}title{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+end of do-file
+
+{search r(199), local:r(199);}
+
+{com}. sum, detail
+
+                           {txt}CO_ANO
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     1997           1997
+{txt} 5%    {res}     1998           1997
+{txt}10%    {res}     1999           1997       {txt}Obs         {res}     11,565
+{txt}25%    {res}     2003           1997       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}     2009                      {txt}Mean          {res}  2009.28
+                        {txt}Largest       Std. dev.     {res} 7.196905
+{txt}75%    {res}     2016           2021
+{txt}90%    {res}     2019           2021       {txt}Variance      {res} 51.79545
+{txt}95%    {res}     2020           2021       {txt}Skewness      {res}-.0396549
+{txt}99%    {res}     2021           2021       {txt}Kurtosis      {res}   1.7996
+
+                            {txt}NO_MR
+{hline 61}
+no observations
+
+                            CO_MR
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     1105           1101
+{txt} 5%    {res}     1503           1101
+{txt}10%    {res}     1703           1101       {txt}Obs         {res}     11,565
+{txt}25%    {res}     2604           1101       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}     3166                      {txt}Mean          {res} 3276.863
+                        {txt}Largest       Std. dev.     {res} 1035.854
+{txt}75%    {res}     4126           5301
+{txt}90%    {res}     5001           5301       {txt}Variance      {res}  1072993
+{txt}95%    {res}     5115           5301       {txt}Skewness      {res} -.033781
+{txt}99%    {res}     5215           5301       {txt}Kurtosis      {res} 2.482417
+
+                           {txt}VL_FOBr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  6704.06       1.091553
+{txt} 5%    {res} 133663.2       1.214609
+{txt}10%    {res} 582926.8       1.256725       {txt}Obs         {res}     11,565
+{txt}25%    {res}  8267127       1.256725       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res} 6.92e+07                      {txt}Mean          {res} 5.52e+08
+                        {txt}Largest       Std. dev.     {res} 1.77e+09
+{txt}75%    {res} 3.24e+08       2.90e+10
+{txt}90%    {res} 1.21e+09       2.92e+10       {txt}Variance      {res} 3.15e+18
+{txt}95%    {res} 2.55e+09       3.00e+10       {txt}Skewness      {res} 8.012226
+{txt}99%    {res} 8.39e+09       3.23e+10       {txt}Kurtosis      {res} 91.69253
+
+                           {txt}VL_FOB
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     4355              1
+{txt} 5%    {res}    69914              1
+{txt}10%    {res}   308538              1       {txt}Obs         {res}     11,565
+{txt}25%    {res}  4407614              1       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res} 3.76e+07                      {txt}Mean          {res} 3.40e+08
+                        {txt}Largest       Std. dev.     {res} 1.13e+09
+{txt}75%    {res} 2.01e+08       1.88e+10
+{txt}90%    {res} 7.42e+08       2.27e+10       {txt}Variance      {res} 1.28e+18
+{txt}95%    {res} 1.59e+09       2.27e+10       {txt}Skewness      {res} 9.203171
+{txt}99%    {res} 5.08e+09       2.96e+10       {txt}Kurtosis      {res} 133.2908
+
+                             {txt}POP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     6015           2309
+{txt} 5%    {res}    14002           2309
+{txt}10%    {res}    23739           2309       {txt}Obs         {res}     11,565
+{txt}25%    {res}    57682           2309       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}   126845                      {txt}Mean          {res} 348809.9
+                        {txt}Largest       Std. dev.     {res}  1023342
+{txt}75%    {res}   289126       1.49e+07
+{txt}90%    {res}   611366       1.49e+07       {txt}Variance      {res} 1.05e+12
+{txt}95%    {res}  1182458       1.49e+07       {txt}Skewness      {res} 9.906034
+{txt}99%    {res}  3541226       1.49e+07       {txt}Kurtosis      {res} 124.4314
+
+                             {txt}UF
+{hline 61}
+no observations
+
+                group(microregion_code_ibge)
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        5              1
+{txt} 5%    {res}       32              1
+{txt}10%    {res}       58              1       {txt}Obs         {res}     11,565
+{txt}25%    {res}      169              1       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}      301                      {txt}Mean          {res} 289.6695
+                        {txt}Largest       Std. dev.     {res}  153.377
+{txt}75%    {res}      421            541
+{txt}90%    {res}      490            541       {txt}Variance      {res} 23524.49
+{txt}95%    {res}      515            541       {txt}Skewness      {res}-.2033753
+{txt}99%    {res}      537            541       {txt}Kurtosis      {res} 1.907032
+
+                          {txt}lnvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 8.810469       .0876015
+{txt} 5%    {res} 11.80308       .1944218
+{txt}10%    {res} 13.27582       .2285091       {txt}Obs         {res}     11,565
+{txt}25%    {res}  15.9278       .2285091       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res} 18.05246                      {txt}Mean          {res} 17.53572
+                        {txt}Largest       Std. dev.     {res} 3.011231
+{txt}75%    {res} 19.59473       24.09019
+{txt}90%    {res} 20.91607        24.0988       {txt}Variance      {res} 9.067512
+{txt}95%    {res} 21.65963        24.1248       {txt}Skewness      {res}-.8636553
+{txt}99%    {res} 22.85026        24.1979       {txt}Kurtosis      {res} 4.034993
+
+                          {txt}gvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.570712      -11.97382
+{txt} 5%    {res} -.964817      -8.765566
+{txt}10%    {res}-.5532608      -8.744438       {txt}Obs         {res}     10,776
+{txt}25%    {res}-.2003384      -8.290283       {txt}Sum of wgt. {res}     10,776
+
+{txt}50%    {res} .0350647                      {txt}Mean          {res} .0583449
+                        {txt}Largest       Std. dev.     {res} .8636259
+{txt}75%    {res} .2907023        7.54989
+{txt}90%    {res}   .70016       9.202249       {txt}Variance      {res} .7458497
+{txt}95%    {res} 1.209225       12.72891       {txt}Skewness      {res} .4969154
+{txt}99%    {res} 2.896399        13.1892       {txt}Kurtosis      {res} 30.85907
+
+                           {txt}ufCode
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       11             11
+{txt} 5%    {res}       15             11
+{txt}10%    {res}       17             11       {txt}Obs         {res}     11,565
+{txt}25%    {res}       26             11       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}       31                      {txt}Mean          {res}  32.5898
+                        {txt}Largest       Std. dev.     {res} 10.34269
+{txt}75%    {res}       41             53
+{txt}90%    {res}       50             53       {txt}Variance      {res} 106.9713
+{txt}95%    {res}       51             53       {txt}Skewness      {res}-.0130621
+{txt}99%    {res}       52             53       {txt}Kurtosis      {res} 2.487619
+
+                           {txt}ufName
+{hline 61}
+no observations
+
+                      (sum) laborforce
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     2147             82
+{txt} 5%    {res}     5209            138
+{txt}10%    {res}     7796            224       {txt}Obs         {res}     11,565
+{txt}25%    {res}    15758            243       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}    34718                      {txt}Mean          {res} 114854.2
+                        {txt}Largest       Std. dev.     {res} 417990.2
+{txt}75%    {res}    80729        8529521
+{txt}90%    {res}   185978        8731031       {txt}Variance      {res} 1.75e+11
+{txt}95%    {res}   380857        8785294       {txt}Skewness      {res} 12.38643
+{txt}99%    {res}  1501730        8804800       {txt}Kurtosis      {res} 199.4083
+
+                        {txt}(sum) female
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}     1078             67
+{txt} 5%    {res}     2846            125
+{txt}10%    {res}     4441            178       {txt}Obs         {res}     11,565
+{txt}25%    {res}     9596            180       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}    21796                      {txt}Mean          {res} 68961.47
+                        {txt}Largest       Std. dev.     {res} 239176.5
+{txt}75%    {res}    51107        4757242
+{txt}90%    {res}   114194        4799804       {txt}Variance      {res} 5.72e+10
+{txt}95%    {res}   227443        4808973       {txt}Skewness      {res} 11.72848
+{txt}99%    {res}   873335        4813379       {txt}Kurtosis      {res} 178.4932
+
+                   {txt}(sum) less_than_primary
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      448             47
+{txt} 5%    {res}     1101             85
+{txt}10%    {res}     1917             96       {txt}Obs         {res}     11,565
+{txt}25%    {res}     4160            121       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}     9222                      {txt}Mean          {res} 22598.26
+                        {txt}Largest       Std. dev.     {res} 65780.82
+{txt}75%    {res}    21212        1404867
+{txt}90%    {res}    43887        1484565       {txt}Variance      {res} 4.33e+09
+{txt}95%    {res}    66809        1652683       {txt}Skewness      {res} 12.59744
+{txt}99%    {res}   229264        1881192       {txt}Kurtosis      {res} 221.8745
+
+                        {txt}(sum) primary
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      326              7
+{txt} 5%    {res}      840             26
+{txt}10%    {res}     1333             32       {txt}Obs         {res}     11,565
+{txt}25%    {res}     2972             48       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}     7521                      {txt}Mean          {res} 24571.36
+                        {txt}Largest       Std. dev.     {res} 82898.97
+{txt}75%    {res}    18070        1490581
+{txt}90%    {res}    44300        1497068       {txt}Variance      {res} 6.87e+09
+{txt}95%    {res}    84941        1517468       {txt}Skewness      {res} 10.86698
+{txt}99%    {res}   317824        1524539       {txt}Kurtosis      {res} 150.5321
+
+                       {txt}(sum) secondary
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      534             25
+{txt} 5%    {res}     1510             27
+{txt}10%    {res}     2412             41       {txt}Obs         {res}     11,565
+{txt}25%    {res}     5162             45       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}    12304                      {txt}Mean          {res} 51628.86
+                        {txt}Largest       Std. dev.     {res} 206452.6
+{txt}75%    {res}    31520        4562244
+{txt}90%    {res}    86891        4623414       {txt}Variance      {res} 4.26e+10
+{txt}95%    {res}   188217        4680507       {txt}Skewness      {res} 13.66437
+{txt}99%    {res}   764914        4691785       {txt}Kurtosis      {res} 248.1248
+
+                   {txt}(sum) college_or_higher
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       41              0
+{txt} 5%    {res}      213              0
+{txt}10%    {res}      453              0       {txt}Obs         {res}     11,565
+{txt}25%    {res}     1284              2       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}     3181                      {txt}Mean          {res} 16046.48
+                        {txt}Largest       Std. dev.     {res} 81717.24
+{txt}75%    {res}     7391        1963659
+{txt}90%    {res}    20787        1963695       {txt}Variance      {res} 6.68e+09
+{txt}95%    {res}    51397        1970062       {txt}Skewness      {res} 15.38031
+{txt}99%    {res}   243148        2096473       {txt}Kurtosis      {res} 305.8801
+
+                       {txt}(sum) wage_mass
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 557204.4        42835.2
+{txt} 5%    {res}  1998480       64613.19
+{txt}10%    {res}  3471183       68247.83       {txt}Obs         {res}     11,565
+{txt}25%    {res}  9453599       70087.01       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res} 2.64e+07                      {txt}Mean          {res} 1.52e+08
+                        {txt}Largest       Std. dev.     {res} 7.89e+08
+{txt}75%    {res} 7.46e+07       2.01e+10
+{txt}90%    {res} 2.15e+08       2.02e+10       {txt}Variance      {res} 6.22e+17
+{txt}95%    {res} 4.98e+08       2.02e+10       {txt}Skewness      {res} 16.52183
+{txt}99%    {res} 2.39e+09       2.44e+10       {txt}Kurtosis      {res} 360.8715
+
+                   {txt}(sum) wage_mass_sexo_1
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}   329266        31334.4
+{txt} 5%    {res}  1198214       53193.46
+{txt}10%    {res}  2139943       56010.07       {txt}Obs         {res}     11,565
+{txt}25%    {res}  5837621       63586.12       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res} 1.64e+07                      {txt}Mean          {res} 9.34e+07
+                        {txt}Largest       Std. dev.     {res} 4.71e+08
+{txt}75%    {res} 4.71e+07       1.17e+10
+{txt}90%    {res} 1.33e+08       1.17e+10       {txt}Variance      {res} 2.22e+17
+{txt}95%    {res} 3.12e+08       1.17e+10       {txt}Skewness      {res} 15.85455
+{txt}99%    {res} 1.50e+09       1.37e+10       {txt}Kurtosis      {res}  330.659
+
+                {txt}(sum) wage_mass_less_than_pri
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 178287.6       11375.33
+{txt} 5%    {res} 491336.4          13158
+{txt}10%    {res} 818613.2       22115.66       {txt}Obs         {res}     11,565
+{txt}25%    {res}  2027096       33193.65       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}  5014078                      {txt}Mean          {res} 1.36e+07
+                        {txt}Largest       Std. dev.     {res} 4.42e+07
+{txt}75%    {res} 1.14e+07       8.35e+08
+{txt}90%    {res} 2.54e+07       8.37e+08       {txt}Variance      {res} 1.96e+15
+{txt}95%    {res} 4.29e+07       8.69e+08       {txt}Skewness      {res} 11.92728
+{txt}99%    {res} 1.43e+08       8.82e+08       {txt}Kurtosis      {res} 177.8596
+
+                  {txt}(sum) wage_mass_secondary
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 199742.1        15064.8
+{txt} 5%    {res} 659578.8       17854.72
+{txt}10%    {res}  1155118       17921.99       {txt}Obs         {res}     11,565
+{txt}25%    {res}  3158441       19862.17       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}  9871065                      {txt}Mean          {res} 5.92e+07
+                        {txt}Largest       Std. dev.     {res} 2.80e+08
+{txt}75%    {res} 3.13e+07       6.84e+09
+{txt}90%    {res} 9.42e+07       6.90e+09       {txt}Variance      {res} 7.82e+16
+{txt}95%    {res} 2.11e+08       6.90e+09       {txt}Skewness      {res} 15.41758
+{txt}99%    {res} 9.54e+08       7.96e+09       {txt}Kurtosis      {res} 317.0001
+
+                   {txt}(sum) wage_mass_college
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}    36636              0
+{txt} 5%    {res}   201715              0
+{txt}10%    {res} 482809.6              0       {txt}Obs         {res}     11,565
+{txt}25%    {res}  1817124          550.8       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}  6177443                      {txt}Mean          {res} 6.08e+07
+                        {txt}Largest       Std. dev.     {res} 4.09e+08
+{txt}75%    {res} 1.88e+07       1.12e+10
+{txt}90%    {res} 6.07e+07       1.14e+10       {txt}Variance      {res} 1.67e+17
+{txt}95%    {res} 1.71e+08       1.14e+10       {txt}Skewness      {res} 18.91659
+{txt}99%    {res} 1.10e+09       1.46e+10       {txt}Kurtosis      {res} 470.8205
+
+                          {txt}(sum) giv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0386195      -.3496635
+{txt} 5%    {res}-.0201633      -.2117308
+{txt}10%    {res}-.0133923      -.1906935       {txt}Obs         {res}     11,485
+{txt}25%    {res}-.0050687      -.1728375       {txt}Sum of wgt. {res}     11,485
+
+{txt}50%    {res} .0000141                      {txt}Mean          {res} .0010106
+                        {txt}Largest       Std. dev.     {res} .0153662
+{txt}75%    {res} .0059562         .08694
+{txt}90%    {res}  .018001       .0904383       {txt}Variance      {res} .0002361
+{txt}95%    {res} .0276264       .0910916       {txt}Skewness      {res}-1.383098
+{txt}99%    {res} .0462872       .0958045       {txt}Kurtosis      {res} 38.23243
+
+                          {txt}(sum) div
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.23e+11      -5.34e+11
+{txt} 5%    {res}-4.90e+10      -4.89e+11
+{txt}10%    {res}-2.79e+10      -4.23e+11       {txt}Obs         {res}     11,485
+{txt}25%    {res}-7.82e+09      -4.15e+11       {txt}Sum of wgt. {res}     11,485
+
+{txt}50%    {res} 1.01e+09                      {txt}Mean          {res} 1.28e+10
+                        {txt}Largest       Std. dev.     {res} 5.73e+10
+{txt}75%    {res} 2.41e+10       5.27e+11
+{txt}90%    {res} 7.30e+10       5.55e+11       {txt}Variance      {res} 3.29e+21
+{txt}95%    {res} 1.13e+11       5.76e+11       {txt}Skewness      {res} 1.168568
+{txt}99%    {res} 2.21e+11       7.74e+11       {txt}Kurtosis      {res} 17.81103
+
+                 {txt}Matching result from merge
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        3              3
+{txt} 5%    {res}        3              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}     11,565
+{txt}25%    {res}        3              3       {txt}Sum of wgt. {res}     11,565
+
+{txt}50%    {res}        3                      {txt}Mean          {res}        3
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        3              3
+{txt}90%    {res}        3              3       {txt}Variance      {res}        0
+{txt}95%    {res}        3              3       {txt}Skewness      {res}        .
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res}        .
+
+                          {txt}dvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.04e+09      -1.28e+10
+{txt} 5%    {res}-1.99e+08      -1.23e+10
+{txt}10%    {res}-7.28e+07      -7.87e+09       {txt}Obs         {res}     10,776
+{txt}25%    {res} -9780487      -7.74e+09       {txt}Sum of wgt. {res}     10,776
+
+{txt}50%    {res} 251965.6                      {txt}Mean          {res} 1.28e+07
+                        {txt}Largest       Std. dev.     {res} 4.94e+08
+{txt}75%    {res} 2.12e+07       7.68e+09
+{txt}90%    {res} 1.11e+08       8.22e+09       {txt}Variance      {res} 2.44e+17
+{txt}95%    {res} 2.63e+08       9.94e+09       {txt}Skewness      {res} .5196426
+{txt}99%    {res} 1.18e+09       1.37e+10       {txt}Kurtosis      {res} 215.3608
+
+                          {txt}(sum) giv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0303176      -.0385878
+{txt} 5%    {res}-.0186356      -.0385267
+{txt}10%    {res}-.0126096      -.0384265       {txt}Obs         {res}     11,255
+{txt}25%    {res}-.0048592      -.0384095       {txt}Sum of wgt. {res}     11,255
+
+{txt}50%    {res} .0000141                      {txt}Mean          {res} .0010559
+                        {txt}Largest       Std. dev.     {res} .0123916
+{txt}75%    {res} .0057187       .0453877
+{txt}90%    {res} .0165619       .0453948       {txt}Variance      {res} .0001536
+{txt}95%    {res}  .025053       .0455242       {txt}Skewness      {res} .5040465
+{txt}99%    {res} .0381395       .0456147       {txt}Kurtosis      {res} 4.654682
+
+                          {txt}(sum) giv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0186356      -.0201633
+{txt} 5%    {res}-.0138647      -.0201579
+{txt}10%    {res}-.0102515      -.0201528       {txt}Obs         {res}     10,337
+{txt}25%    {res}-.0041271      -.0201445       {txt}Sum of wgt. {res}     10,337
+
+{txt}50%    {res} .0000141                      {txt}Mean          {res} .0007884
+                        {txt}Largest       Std. dev.     {res} .0089641
+{txt}75%    {res} .0049144       .0275382
+{txt}90%    {res} .0132417       .0275737       {txt}Variance      {res} .0000804
+{txt}95%    {res}  .018679       .0276246       {txt}Skewness      {res} .4586283
+{txt}99%    {res}  .025053       .0276264       {txt}Kurtosis      {res} 3.522651
+
+                          {txt}(sum) div
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-8.40e+10      -1.23e+11
+{txt} 5%    {res}-4.37e+10      -1.23e+11
+{txt}10%    {res}-2.57e+10      -1.22e+11       {txt}Obs         {res}     11,257
+{txt}25%    {res}-7.50e+09      -1.21e+11       {txt}Sum of wgt. {res}     11,257
+
+{txt}50%    {res} 1.01e+09                      {txt}Mean          {res} 1.23e+10
+                        {txt}Largest       Std. dev.     {res} 4.45e+10
+{txt}75%    {res} 2.31e+10       2.20e+11
+{txt}90%    {res} 6.88e+10       2.20e+11       {txt}Variance      {res} 1.98e+21
+{txt}95%    {res} 1.05e+11       2.21e+11       {txt}Skewness      {res} 1.402746
+{txt}99%    {res} 1.75e+11       2.21e+11       {txt}Kurtosis      {res} 6.739797
+
+                          {txt}(sum) div
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-4.37e+10      -4.90e+10
+{txt} 5%    {res}-2.91e+10      -4.90e+10
+{txt}10%    {res}-1.98e+10      -4.90e+10       {txt}Obs         {res}     10,337
+{txt}25%    {res}-5.93e+09      -4.89e+10       {txt}Sum of wgt. {res}     10,337
+
+{txt}50%    {res} 1.01e+09                      {txt}Mean          {res} 9.81e+09
+                        {txt}Largest       Std. dev.     {res} 3.00e+10
+{txt}75%    {res} 1.96e+10       1.13e+11
+{txt}90%    {res} 5.42e+10       1.13e+11       {txt}Variance      {res} 8.98e+20
+{txt}95%    {res} 7.61e+10       1.13e+11       {txt}Skewness      {res} 1.209029
+{txt}99%    {res} 1.05e+11       1.13e+11       {txt}Kurtosis      {res} 4.503351
+
+                          {txt}gvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.819314      -2.570712
+{txt} 5%    {res}-.8623409      -2.566914
+{txt}10%    {res}-.5184956      -2.566195       {txt}Obs         {res}     10,561
+{txt}25%    {res} -.193716      -2.525072       {txt}Sum of wgt. {res}     10,561
+
+{txt}50%    {res} .0350475                      {txt}Mean          {res} .0555012
+                        {txt}Largest       Std. dev.     {res} .6089666
+{txt}75%    {res} .2820206       2.876548
+{txt}90%    {res} .6584463       2.877813       {txt}Variance      {res} .3708404
+{txt}95%    {res} 1.055406       2.878927       {txt}Skewness      {res} .2963673
+{txt}99%    {res} 2.108402       2.884659       {txt}Kurtosis      {res} 7.289619
+
+                          {txt}gvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.8627815       -.964817
+{txt} 5%    {res} -.582325       -.963851
+{txt}10%    {res}-.4096165      -.9619579       {txt}Obs         {res}      9,699
+{txt}25%    {res}-.1711559      -.9593258       {txt}Sum of wgt. {res}      9,699
+
+{txt}50%    {res} .0350475                      {txt}Mean          {res} .0491031
+                        {txt}Largest       Std. dev.     {res} .3763993
+{txt}75%    {res} .2521782       1.202824
+{txt}90%    {res} .5238562       1.204157       {txt}Variance      {res} .1416764
+{txt}95%    {res} .7287207       1.204899       {txt}Skewness      {res} .2199986
+{txt}99%    {res} 1.055799       1.206768       {txt}Kurtosis      {res} 3.513252
+
+                          {txt}dvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-5.73e+08      -1.04e+09
+{txt} 5%    {res}-1.56e+08      -1.04e+09
+{txt}10%    {res}-6.39e+07      -1.04e+09       {txt}Obs         {res}     10,562
+{txt}25%    {res} -9089248      -1.04e+09       {txt}Sum of wgt. {res}     10,562
+
+{txt}50%    {res} 251965.6                      {txt}Mean          {res} 1.16e+07
+                        {txt}Largest       Std. dev.     {res} 1.67e+08
+{txt}75%    {res} 2.02e+07       1.14e+09
+{txt}90%    {res} 9.86e+07       1.17e+09       {txt}Variance      {res} 2.78e+16
+{txt}95%    {res} 2.15e+08       1.18e+09       {txt}Skewness      {res} .7763408
+{txt}99%    {res} 7.06e+08       1.18e+09       {txt}Kurtosis      {res} 18.38207
+
+                          {txt}dvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.56e+08      -1.99e+08
+{txt} 5%    {res}-8.12e+07      -1.99e+08
+{txt}10%    {res}-4.14e+07      -1.99e+08       {txt}Obs         {res}      9,700
+{txt}25%    {res} -6786114      -1.98e+08       {txt}Sum of wgt. {res}      9,700
+
+{txt}50%    {res} 251965.6                      {txt}Mean          {res}  7493132
+                        {txt}Largest       Std. dev.     {res} 5.74e+07
+{txt}75%    {res} 1.63e+07       2.61e+08
+{txt}90%    {res} 6.73e+07       2.61e+08       {txt}Variance      {res} 3.30e+15
+{txt}95%    {res} 1.19e+08       2.61e+08       {txt}Skewness      {res} .8186616
+{txt}99%    {res} 2.15e+08       2.63e+08       {txt}Kurtosis      {res} 7.422767
+
+                          {txt}Residuals
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.570928      -11.23766
+{txt} 5%    {res}-1.044039      -8.633696
+{txt}10%    {res}-.6318803      -8.372788       {txt}Obs         {res}     10,776
+{txt}25%    {res}-.2587586      -8.188108       {txt}Sum of wgt. {res}     10,776
+
+{txt}50%    {res}-.0098854                      {txt}Mean          {res}-4.29e-10
+                        {txt}Largest       Std. dev.     {res} .8432144
+{txt}75%    {res} .2382725       6.557397
+{txt}90%    {res} .6367198       7.185321       {txt}Variance      {res} .7110105
+{txt}95%    {res} 1.109169       9.115811       {txt}Skewness      {res} .1519011
+{txt}99%    {res} 2.816966       11.11581       {txt}Kurtosis      {res} 24.50773
+
+                          {txt}Residuals
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0401178      -.3411618
+{txt} 5%    {res}-.0220108      -.2060983
+{txt}10%    {res}-.0150867      -.1868516       {txt}Obs         {res}     11,485
+{txt}25%    {res}-.0057933      -.1638228       {txt}Sum of wgt. {res}     11,485
+
+{txt}50%    {res}   -.0001                      {txt}Mean          {res}-1.03e-12
+                        {txt}Largest       Std. dev.     {res}  .015072
+{txt}75%    {res} .0049191       .0795272
+{txt}90%    {res} .0165462       .0836789       {txt}Variance      {res} .0002272
+{txt}95%    {res} .0251522       .0929547       {txt}Skewness      {res}-1.581512
+{txt}99%    {res} .0418925         .09894       {txt}Kurtosis      {res} 36.85894
+
+{com}. sum giv, detail
+
+                          {txt}(sum) giv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0386195      -.3496635
+{txt} 5%    {res}-.0201633      -.2117308
+{txt}10%    {res}-.0133923      -.1906935       {txt}Obs         {res}     11,485
+{txt}25%    {res}-.0050687      -.1728375       {txt}Sum of wgt. {res}     11,485
+
+{txt}50%    {res} .0000141                      {txt}Mean          {res} .0010106
+                        {txt}Largest       Std. dev.     {res} .0153662
+{txt}75%    {res} .0059562         .08694
+{txt}90%    {res}  .018001       .0904383       {txt}Variance      {res} .0002361
+{txt}95%    {res} .0276264       .0910916       {txt}Skewness      {res}-1.383098
+{txt}99%    {res} .0462872       .0958045       {txt}Kurtosis      {res} 38.23243
+
+{com}. kdensity giv
+{res}
+{com}. sum giv, detail
+
+                          {txt}(sum) giv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0386195      -.3496635
+{txt} 5%    {res}-.0201633      -.2117308
+{txt}10%    {res}-.0133923      -.1906935       {txt}Obs         {res}     11,485
+{txt}25%    {res}-.0050687      -.1728375       {txt}Sum of wgt. {res}     11,485
+
+{txt}50%    {res} .0000141                      {txt}Mean          {res} .0010106
+                        {txt}Largest       Std. dev.     {res} .0153662
+{txt}75%    {res} .0059562         .08694
+{txt}90%    {res}  .018001       .0904383       {txt}Variance      {res} .0002361
+{txt}95%    {res} .0276264       .0910916       {txt}Skewness      {res}-1.383098
+{txt}99%    {res} .0462872       .0958045       {txt}Kurtosis      {res} 38.23243
+
+{com}. di r(mean)
+{res}.00101064
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv,
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}.         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         yline(r(mean), lcolor(red) lstyle(dash)) 
+{err}command {bf}title{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+end of do-file
+
+{search r(199), local:r(199);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         yline(r(mean), lcolor(red) lstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}invalid line argument, r(mean)
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         yline(`r(mean)', lcolor(red) lstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{p 0 4 2}
+{txt}(note:  named style
+dash not found in class
+linestyle,  default attributes used)
+{p_end}
+{res}{txt}
+{com}.         
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. di r(mean)
+{res}.
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         yline(r(mean), lcolor(red) lstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}invalid line argument, r(mean)
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         yline(`=r(mean)', lcolor(red) lstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{p 0 4 2}
+{txt}(note:  named style
+dash not found in class
+linestyle,  default attributes used)
+{p_end}
+{res}{txt}
+{com}.         
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{p 0 4 2}
+{txt}(note:  named style
+dash not found in class
+linestyle,  default attributes used)
+{p_end}
+{res}{txt}
+{com}.         
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lstyle(-.)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}invalid line argument, .
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lstyle(-)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}invalid line argument, .
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. help line
+
+. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpatternstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}option {bf:lpatternstyle()} not allowed
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) linepatternstyle(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}option {bf:linepatternstyle()} not allowed
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}.         
+. 
+{txt}end of do-file
+
+{com}. help hist
+
+. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. hist giv, percent ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{err}invalid line argument, .
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. 
+. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, percent ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) 
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}.         
+. 
+. 
+{txt}end of do-file
+
+{com}. sum gvl_fobr, detail
+
+                          {txt}gvl_fobr
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.570712      -11.97382
+{txt} 5%    {res} -.964817      -8.765566
+{txt}10%    {res}-.5532608      -8.744438       {txt}Obs         {res}     10,776
+{txt}25%    {res}-.2003384      -8.290283       {txt}Sum of wgt. {res}     10,776
+
+{txt}50%    {res} .0350647                      {txt}Mean          {res} .0583449
+                        {txt}Largest       Std. dev.     {res} .8636259
+{txt}75%    {res} .2907023        7.54989
+{txt}90%    {res}   .70016       9.202249       {txt}Variance      {res} .7458497
+{txt}95%    {res} 1.209225       12.72891       {txt}Skewness      {res} .4969154
+{txt}99%    {res} 2.896399        13.1892       {txt}Kurtosis      {res} 30.85907
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. 
+. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, percent ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) ///
+>         color(%30)
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, percent ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) ///
+>         xtitle("") color(%50)
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. 
+. binscatter gvl_fobr_r giv_r, title(First Stage) ///
+>         ytitle("Observed Growth in Exports, by Microregion (residualized)") ///
+>         xtitle("Exposure to Foreign Demand Shocks, by Microregion (residualized)") ///
+>         yline(0, lcolor(black)) ///
+>         title("First Stage", margin(vsmall) position(11)) ///
+>         msymbol(oh) ///
+>         name(growth, replace) legend(off)
+{res}{txt}
+{com}. graph export "figs\first-stage.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\first-stage.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\first-stage.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+(file {bf}
+figs\first-stage.wmf{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\OneDrive - WBG\Brazil\figs\first-stage.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. qui sum giv, detail
+{txt}
+{com}.         
+. hist giv, percent ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Microregion") ///
+>         name(hist, replace) legend(off) ///
+>         xline(`=r(mean)', lcolor(red) lpattern(dash)) ///
+>         xtitle("") color(%50)
+{txt}(bin={res}40{txt}, start={res}-.34966354{txt}, width={res}.0111367{txt})
+{res}{txt}
+{com}. graph export "figs\iv-hist.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\iv-hist.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\iv-hist.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+(file {bf}
+figs\iv-hist.wmf{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\wb592068\OneDrive - WBG\Brazil\figs\iv-hist.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}.         
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD2150_000000.tmp"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

@@ -1,0 +1,131 @@
+.-
+help for ^dlogit2^, ^dprobit2^, ^dmlogit2^                              (31 Jan 1996)
+.-
+
+Marginal effects for logit, probit, and multinomial logit
+---------------------------------------------------------
+
+	^dlogit2^  depvar [indepvars] [weight] [^if^ exp] [^in^ range]
+			[ ^,^ ^at(^{expression|matname|#}^)^ ^log^ ^logit_options^ ]
+
+	^dprobit2^ depvar [indepvars] [weight] [^if^ exp] [^in^ range]
+			[ ^,^ ^at(^{expression|matname|#}^)^ ^log^ ^probit_options^ ]
+
+	^dmlogit2^ depvar [indepvars] [weight] [^if^ exp] [^in^ range]
+			[ ^,^ ^at(^{expression|matname|#}^)^ ^log^ ^mlogit_options^ ]
+
+^fweight^s and ^aweight^s are allowed; see help @weights@.
+
+These commands share the features of all estimation commands; see help @est@.
+
+^dlogit2^, ^dprobit2^, or ^dmlogit2^ typed without arguments redisplays previous
+results.
+
+To reset problem-size limits, see help @matsize@.
+
+
+Description
+-----------
+
+^dlogit2^, ^dprobit2^, and ^dmlogit2^ compute the marginal effects dP/dx from,
+respectively, logistic regression, probit regression, and multinomial
+logistic regression; see help for @logit@ and @mlogit@.
+
+^dlogit2^, ^dprobit2^, and ^dmlogit2^ only handle dummy variables in one manner:
+they compute marginal effects for incremental changes from the mean.  They
+cannot compute the discrete change in probability as dummy variables go
+from 0 to 1.  (A future revision will add this capability.)
+
+Stata's @dprobit@ command allows changes for dummy variables to be either
+discrete or incremental; see help @dprobit@ for details.
+
+^dlogit2^, ^dprobit2^, and ^dmlogit2^ post estimation results; hence, post-
+estimation commands such as @test@ and @lincom@ work after these commands.
+
+
+Options
+-------
+
+^at(^{expression|matname|#}^)^ specifies the point x at which the marginal
+    effects are to be computed.  If ^at()^ is not specified, the marginal
+    effects are computed at the means of the indepvars.
+
+    ^at(^expression^)^ can be used to compute the marginal effects at the means
+    for a subgroup.  If ^at(^expression^)^ is specified, x is set to the means of
+    the indepvars for those observations in the estimation sample that satisfy
+    "expression".
+
+    ^at(^matname^)^ sets x to the row vector "matname".  The columns of the row
+    vector must be labeled with the names of the indepvars.
+
+    ^at(^#^)^ sets x to the values of the indepvars for observation number #.
+    This observation does not have to be part of the estimation sample.
+
+^log^ displays the coefficients of the logistic, probit, or multinomial logistic
+    regression (i.e., the output from ^logit^, ^probit^, or ^mlogit^) before
+    displaying the marginal effects.
+
+logit_options are any of the options allowed with ^logit^; see help @logit@.
+
+probit_options are any of the options allowed with ^probit^; see help @probit@.
+
+mlogit_options are any of the options allowed with ^mlogit^; see help @mlogit@.
+
+
+Examples
+--------
+
+ . ^dlogit2 employ educ age race1 race2 sex^
+ . ^dlogit2^
+
+ . ^dprobit2 employ educ age race1 race2 sex, log^
+
+ . ^dmlogit2 job educ age race1 race2 sex, basecategory(1)^
+
+To compute the marginal effects at the means for black men:
+
+ . ^dlogit2  employ educ age race1 race2 sex, at(race1==1 & sex==1)^
+ . ^dprobit2 employ educ age race1 race2 sex, at(race1==1 & sex==1)^
+ . ^dmlogit2 job    educ age race1 race2 sex, at(race1==1 & sex==1)^
+
+To compute the marginal effects at educ==12, age==40, race1==1, race2==0,
+and sex==1:
+
+ . ^matrix x = (12, 40, 1, 0, 1)^
+ . ^matrix colnames x = educ age race1 race2 sex^
+
+ . ^dlogit2  employ educ age race1 race2 sex, at(x)^
+ . ^dprobit2 employ educ age race1 race2 sex, at(x)^
+ . ^dmlogit2 job    educ age race1 race2 sex, at(x)^
+
+To compute the marginal effects at the values of the indepvars for
+observation 501:
+
+ . ^dmlogit2 job educ age race1 race2 sex in 1/500, at(501)^
+
+To compute the marginal effects at the values of the indepvars for the
+person with id==173:
+
+ . ^dmlogit2 job educ age race1 race2 sex, at(id==173)^
+
+
+Author
+------
+
+	Bill Sribney
+	Stata Corporation
+	702 University Drive East
+	College Station, TX 77840
+	Phone: 409-696-4600
+	       800-782-8272
+	Fax:   409-696-4601
+        email: tech-support@@stata.com
+
+
+Also see
+--------
+
+ Manual:  ^[U] 23 Estimation and post-estimation commands,^
+          ^[U] 29 Overview of model estimation in Stata,^
+          ^[R] probit^
+On-line:  help for @est@, @postest@; @logit@, @mlogit@, @probit@

@@ -1,0 +1,551 @@
+* version 1.4
+
+VERSION 10.0
+SYNCHRONOUS_ONLY
+
+POSITION . . 320 380
+
+DIALOG main, label("PNAD") tabtitle("Main")
+BEGIN
+
+GROUPBOX caixaPeriodo 10 25 140 315, label("Escolha um Periodo ...")
+
+   RADIO    rad8190 20 +20 120    .,                           ///
+      first label("1981 a 1990")                              ///
+      onclickon(script mostra8190)
+
+   RADIO    rad9201 @ +20 120    .,                          ///
+      middle label("1992 a 2001")                             ///
+      onclickon(script mostra9201)
+
+   RADIO    rad0209 @ +20 120    .,                          ///
+      last label("2002 a 2015")                               ///
+      onclickon(script mostra0209)
+
+   TEXT     instr1     +0   +30  130    ., label("... e selecione o(s) ano(s)") left
+
+   CHECKBOX    ck80 20 140 120    ., label("Todos") onclickon(script marcatudo80) onclickoff(script desmarcatudo80)
+   CHECKBOX    ck1981 20 +24 120    ., label("1981") onclickon(program ad1981) onclickoff(program rm1981)
+   CHECKBOX    ck1982 +56 +0 120    ., label("1982") onclickon(program ad1982) onclickoff(program rm1982)
+   CHECKBOX    ck1983 20 +24 120    ., label("1983") onclickon(program ad1983) onclickoff(program rm1983)
+   CHECKBOX    ck1984 +56 +0 120    ., label("1984") onclickon(program ad1984) onclickoff(program rm1984)
+   CHECKBOX    ck1985 20 +24 120    ., label("1985") onclickon(program ad1985) onclickoff(program rm1985)
+   CHECKBOX    ck1986 +56 +0 120    ., label("1986") onclickon(program ad1986) onclickoff(program rm1986)
+   CHECKBOX    ck1987 20 +24 120    ., label("1987") onclickon(program ad1987) onclickoff(program rm1987)
+   CHECKBOX    ck1988 +56 +0 120    ., label("1988") onclickon(program ad1988) onclickoff(program rm1988)
+   CHECKBOX    ck1989 20 +24 120    ., label("1989") onclickon(program ad1989) onclickoff(program rm1989)
+   CHECKBOX    ck1990 +56 +0 120    ., label("1990") onclickon(program ad1990) onclickoff(program rm1990)
+   CHECKBOX    ck90 20 140 120    ., label("Todos") onclickon(script marcatudo90) onclickoff(script desmarcatudo90)
+   CHECKBOX    ck1992 20 +24 120    ., label("1992") onclickon(program ad1992) onclickoff(program rm1992)
+   CHECKBOX    ck1993 +56 +0 120    ., label("1993") onclickon(program ad1993) onclickoff(program rm1993)
+   CHECKBOX    ck1995 20 +24 120    ., label("1995") onclickon(program ad1995) onclickoff(program rm1995)
+   CHECKBOX    ck1996 +56 +0 120    ., label("1996") onclickon(program ad1996) onclickoff(program rm1996)
+   CHECKBOX    ck1997 20 +24 120    ., label("1997") onclickon(program ad1997) onclickoff(program rm1997)
+   CHECKBOX    ck1998 +56 +0 120    ., label("1998") onclickon(program ad1998) onclickoff(program rm1998)
+   CHECKBOX    ck1999 20 +24 120    ., label("1999") onclickon(program ad1999) onclickoff(program rm1999)
+   CHECKBOX    ck2001 +56 +0 120    ., label("2001") onclickon(program ad2001) onclickoff(program rm2001)
+   CHECKBOX    ck00 20 140 120    ., label("Todos") onclickon(script marcatudo00) onclickoff(script desmarcatudo00)
+   CHECKBOX    ck2002 20 +24 120    ., label("2002") onclickon(program ad2002) onclickoff(program rm2002)
+   CHECKBOX    ck2003 +56 +0 120    ., label("2003") onclickon(program ad2003) onclickoff(program rm2003)
+   CHECKBOX    ck2004 20 +24 120    ., label("2004") onclickon(program ad2004) onclickoff(program rm2004)
+   CHECKBOX    ck2005 +56 +0 120    ., label("2005") onclickon(program ad2005) onclickoff(program rm2005)
+   CHECKBOX    ck2006 20 +24 120    ., label("2006") onclickon(program ad2006) onclickoff(program rm2006)
+   CHECKBOX    ck2007 +56 +0 120    ., label("2007") onclickon(program ad2007) onclickoff(program rm2007)
+   CHECKBOX    ck2008 20 +24 120    ., label("2008") onclickon(program ad2008) onclickoff(program rm2008)
+   CHECKBOX    ck2009 +56 +0 120    ., label("2009") onclickon(program ad2009) onclickoff(program rm2009)
+   CHECKBOX    ck2011 20 +24 120    ., label("2011") onclickon(program ad2011) onclickoff(program rm2011)
+   CHECKBOX    ck2012 +56 +0 120    ., label("2012") onclickon(program ad2012) onclickoff(program rm2012)
+   CHECKBOX    ck2013 20 +24 120    ., label("2013") onclickon(program ad2013) onclickoff(program rm2013)
+   CHECKBOX    ck2014 +56 +0 120    ., label("2014") onclickon(program ad2014) onclickoff(program rm2014)
+   CHECKBOX    ck2015 20 +24 120    ., label("2015") onclickon(program ad2015) onclickoff(program rm2015)
+
+GROUPBOX caixaBase 165 25 140 80, label("Bases de dados")
+
+    BUTTON  fldata    +17 +18 100     ., label("Dados Originais...") onpush(script dadosoriginais)
+    BUTTON  fldata1    +0 +30 100     ., label("Salvando...") onpush(script dadosfinais)
+
+GROUPBOX caixaarq 165 +40 140 84, label("Tipo de Registro") 
+
+	RADIO	pes 	 +10 +21 100 .,  first 	label("Pessoas") 	option(pes) 
+	RADIO	dom	 	 +0 +21 100 .,   middle	label("Domicílios")  	option(dom) 
+	RADIO	both 	 +0 +21 100 .,   last	label("Ambos Merged")  	option(both) 
+
+GROUPBOX caixaid 165 +35 140 94, label("Compatibilidade")
+
+	RADIO	ncomp       +10 +22 100 ., 	first	label("Não-compatível")  option(ncomp)
+	RADIO 	comp81		+0 +22 150 .,  	middle	label("Compatível anos 1980") option(comp81)
+	RADIO 	comp92		+0 +22 150 .,  	last	label("Compatível anos 1990") option(comp92)
+
+TEXT     credit     0   360  300    ., label("PUC-Rio - Departamento de Economia") right
+TEXT     notes     5  345  300    ., label("         Nota: reinstale periodicamente o pacote datazoom_pnad") left 
+TEXT     notes2     5   5  300    ., label("Arquivos de dados originais") left
+		
+END
+
+OK ok1      
+SUBMIT sub1      
+CANCEL can1
+HELP hlp1,   view("help datazoom_pnad")
+RESET res1
+
+SCRIPT PREINIT_SCRIPT
+	BEGIN	
+		create STRING listaAnos
+        create STRING saidadata
+        create STRING saidadata1
+	END 
+
+
+SCRIPT mostra8190
+   BEGIN
+      main.ck80.show
+      main.ck1981.show
+      main.ck1982.show
+      main.ck1983.show
+      main.ck1984.show
+      main.ck1985.show
+      main.ck1986.show
+      main.ck1987.show
+      main.ck1988.show
+      main.ck1989.show
+      main.ck1990.show
+      main.ck90.hide
+      main.ck1992.hide
+      main.ck1993.hide
+      main.ck1995.hide
+      main.ck1996.hide
+      main.ck1997.hide
+      main.ck1998.hide
+      main.ck1999.hide
+      main.ck2001.hide
+      main.ck00.hide
+      main.ck2002.hide
+      main.ck2003.hide
+      main.ck2004.hide
+      main.ck2005.hide
+      main.ck2006.hide
+      main.ck2007.hide
+      main.ck2008.hide
+      main.ck2009.hide
+      main.ck2011.hide
+      main.ck2012.hide
+      main.ck2013.hide
+	  main.ck2014.hide
+	  main.ck2015.hide
+   END
+
+SCRIPT mostra9201
+   BEGIN
+      main.ck80.hide
+      main.ck1981.hide
+      main.ck1982.hide
+      main.ck1983.hide
+      main.ck1984.hide
+      main.ck1985.hide
+      main.ck1986.hide
+      main.ck1987.hide
+      main.ck1988.hide
+      main.ck1989.hide
+      main.ck1990.hide
+      main.ck90.show
+      main.ck1992.show
+      main.ck1993.show
+      main.ck1995.show
+      main.ck1996.show
+      main.ck1997.show
+      main.ck1998.show
+      main.ck1999.show
+      main.ck2001.show
+      main.ck00.hide
+      main.ck2002.hide
+      main.ck2003.hide
+      main.ck2004.hide
+      main.ck2005.hide
+      main.ck2006.hide
+      main.ck2007.hide
+      main.ck2008.hide
+      main.ck2009.hide
+      main.ck2011.hide
+      main.ck2012.hide
+      main.ck2013.hide
+	  main.ck2014.hide
+	  main.ck2015.hide
+   END
+
+SCRIPT mostra0209
+   BEGIN
+      main.ck80.hide 
+      main.ck1981.hide
+      main.ck1982.hide
+      main.ck1983.hide
+      main.ck1984.hide
+      main.ck1985.hide
+      main.ck1986.hide
+      main.ck1987.hide
+      main.ck1988.hide
+      main.ck1989.hide
+      main.ck1990.hide
+      main.ck90.hide
+      main.ck1992.hide
+      main.ck1993.hide
+      main.ck1995.hide
+      main.ck1996.hide
+      main.ck1997.hide
+      main.ck1998.hide
+      main.ck1999.hide
+      main.ck2001.hide
+      main.ck00.show
+      main.ck2002.show
+      main.ck2003.show
+      main.ck2004.show
+      main.ck2005.show
+      main.ck2006.show
+      main.ck2007.show
+      main.ck2008.show
+      main.ck2009.show
+      main.ck2011.show
+      main.ck2012.show
+      main.ck2013.show
+	  main.ck2014.show
+	  main.ck2015.show
+   END
+   
+SCRIPT marcatudo80
+	BEGIN
+		main.ck1981.seton
+		main.ck1982.seton
+		main.ck1983.seton
+		main.ck1984.seton
+		main.ck1985.seton
+		main.ck1986.seton
+		main.ck1987.seton
+		main.ck1988.seton
+		main.ck1989.seton
+		main.ck1990.seton
+	END
+	
+SCRIPT desmarcatudo80
+	BEGIN
+		main.ck1981.setoff
+		main.ck1982.setoff
+		main.ck1983.setoff
+		main.ck1984.setoff
+		main.ck1985.setoff
+		main.ck1986.setoff
+		main.ck1987.setoff
+		main.ck1988.setoff
+		main.ck1989.setoff
+		main.ck1990.setoff
+	END
+
+SCRIPT marcatudo90
+	BEGIN
+		main.ck1992.seton
+		main.ck1993.seton
+		main.ck1995.seton
+		main.ck1996.seton
+		main.ck1997.seton
+		main.ck1998.seton
+		main.ck1999.seton
+		main.ck2001.seton
+	END
+	
+SCRIPT desmarcatudo90
+	BEGIN
+		main.ck1992.setoff
+		main.ck1993.setoff
+		main.ck1995.setoff
+		main.ck1996.setoff
+		main.ck1997.setoff
+		main.ck1998.setoff
+		main.ck1999.setoff
+		main.ck2001.setoff
+	END
+	
+SCRIPT marcatudo00
+	BEGIN
+		main.ck2002.seton
+		main.ck2003.seton
+		main.ck2004.seton
+		main.ck2005.seton
+		main.ck2006.seton
+		main.ck2007.seton
+		main.ck2008.seton
+		main.ck2009.seton
+		main.ck2011.seton
+		main.ck2012.seton
+		main.ck2013.seton
+		main.ck2014.seton
+		main.ck2015.seton
+	END
+
+SCRIPT desmarcatudo00
+	BEGIN
+		main.ck2002.setoff
+		main.ck2003.setoff
+		main.ck2004.setoff
+		main.ck2005.setoff
+		main.ck2006.setoff
+		main.ck2007.setoff
+		main.ck2008.setoff
+		main.ck2009.setoff
+		main.ck2011.setoff
+		main.ck2012.setoff
+		main.ck2013.setoff
+		main.ck2014.setoff
+		main.ck2015.setoff
+	END
+
+SCRIPT dadosoriginais
+BEGIN
+	create CHILD datazoom_multi AS data
+	data.settitle "Arquivos de dados originais"
+	data.setExitString saidadata 
+END 
+
+SCRIPT dadosfinais
+BEGIN
+	create CHILD datazoom_finalfolder AS folder
+	folder.settitle "Novas bases de dados"
+	folder.setExitString saidadata1 
+END 
+
+
+PROGRAM ad1981
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1982
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1983
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1984
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1985
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1986
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1987
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1988
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1989
+	BEGIN
+		call main.comp92.disable
+	END
+
+PROGRAM ad1990
+	BEGIN
+		call main.comp92.disable
+	END
+	
+PROGRAM rm1981
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & ///
+			main.ck1990.isneq(1) & main.comp81.isneq(1) {
+			call main.comp92.enable
+		}
+	END
+
+PROGRAM rm1982
+	BEGIN
+		if main.ck1981.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1983
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1981.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1984
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1981.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1985
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1981.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1986
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1987
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1981.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1988
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1981.isneq(1) & main.ck1989.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1989
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1986.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1981.isneq(1) & main.ck1990.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM rm1990
+	BEGIN
+		if main.ck1982.isneq(1) & main.ck1983.isneq(1) & main.ck1984.isneq(1) & main.ck1985.isneq(1) &  ///
+			main.ck1981.isneq(1) & main.ck1987.isneq(1) & main.ck1988.isneq(1) & main.ck1989.isneq(1) & main.ck1981.isneq(1) {
+			call main.comp92.enable
+			}
+	END
+
+PROGRAM command
+	BEGIN
+		put `"datazoom_pnad "'
+		beginoptions
+			/*Parte da syntax: anos a extrair*/
+			put `" years("'
+			if main.ck1981.iseq(1) {
+				put `" 1981"'
+				}
+			if main.ck1982.iseq(1) {
+				put `" 1982"'
+				}
+			if main.ck1983.iseq(1) {
+				put `" 1983"'
+				}
+			if main.ck1984.iseq(1) {
+				put `" 1984"'
+				}
+			if main.ck1985.iseq(1) {
+				put `" 1985"'
+				}
+			if main.ck1986.iseq(1) {
+				put `" 1986"'
+				}
+			if main.ck1987.iseq(1) {
+				put `" 1987"'
+				}
+			if main.ck1988.iseq(1) {
+				put `" 1988"'
+				}
+			if main.ck1989.iseq(1) {
+				put `" 1989"'
+				}
+			if main.ck1990.iseq(1) {
+				put `" 1990"'
+				}
+			if main.ck1992.iseq(1) {
+				put `" 1992"'
+				}
+			if main.ck1993.iseq(1) {
+				put `" 1993"'
+				}
+			if main.ck1995.iseq(1) {
+				put `" 1995"'
+				}
+			if main.ck1996.iseq(1) {
+				put `" 1996"'
+				}
+			if main.ck1997.iseq(1) {
+				put `" 1997"'
+				}
+			if main.ck1998.iseq(1) {
+				put `" 1998"'
+				}
+			if main.ck1999.iseq(1) {
+				put `" 1999"'
+				}
+			if main.ck2001.iseq(1) {
+				put `" 2001"'
+				}
+			if main.ck2002.iseq(1) {
+				put `" 2002"'
+				}
+			if main.ck2003.iseq(1) {
+				put `" 2003"'
+				}
+			if main.ck2004.iseq(1) {
+				put `" 2004"'
+				}
+			if main.ck2005.iseq(1) {
+				put `" 2005"'
+				}
+			if main.ck2006.iseq(1) {
+				put `" 2006"'
+				}
+			if main.ck2007.iseq(1) {
+				put `" 2007"'
+				}
+			if main.ck2008.iseq(1) {
+				put `" 2008"'
+				}
+			if main.ck2009.iseq(1) {
+				put `" 2009"'
+				}
+			if main.ck2011.iseq(1) {
+				put `" 2011"'
+				}
+			if main.ck2012.iseq(1) {
+				put `" 2012"'
+				}
+			if main.ck2013.iseq(1) {
+				put `" 2013"'
+				}
+			if main.ck2014.iseq(1) {
+				put `" 2014"'
+				}	
+			if main.ck2015.iseq(1) {
+				put `" 2015"'
+				}	
+			put `") "'
+			put saidadata " "
+			put saidadata1 
+			option radio(main pes dom both)
+			option radio(main ncomp comp81 comp92)
+			endoptions
+	END
+	

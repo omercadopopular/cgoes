@@ -1,0 +1,149 @@
+{smcl}
+{* 30jan2001/23aug2005}{...}
+{hline}
+help for {hi:renvars}{right:(SJ 5-4: dm88_1; STB-60: dm88)}
+{hline}
+
+{title:Renames variables}
+
+{p 8 17 2}{cmd:renvars} [{it:varlist}] {cmd:\} {it:newvarlist} [ {cmd:,}
+{cmdab:d:isplay} {cmd:test} ]
+
+{p 8 17 2}{cmd:renvars} [{it:varlist}] {cmd:,} {it:transformation_option}
+[ {cmdab:d:isplay} {cmd:test} {cmdab:sy:mbol(}{it:str}{cmd:)} ]
+
+{p 12 12 2}where {it:transformation_option} is one of
+
+{col 16}{cmdab:u:pper}{col 40}{cmdab:l:ower}
+
+{col 16}{cmdab:pref:ix(}{it:str}{cmd:)}{col 40}{cmdab:postf:ix(}{it:str}{cmd:)} (synonym {cmdab:suff:ix(}{it:str}{cmd:)})
+
+{col 16}{cmdab:pres:ub(}{it:str1 str2}{cmd:)}{col 40}{cmdab:posts:ub(}{it:str1 str2}{cmd:)}
+
+{p 15}{cmdab:sub:st(}{it:str1 str2}{cmd:)}{p_end}
+
+{col 16}{cmdab:pred:rop(}{it:#}{cmd:)}{col 40}{cmdab:postd:rop(}{it:#}{cmd:)}
+
+{p 15}{cmdab:t:rim(}{it:#}{cmd:)}
+
+{p 15}{cmdab:trime:nd(}{it:#}{cmd:)}
+
+{p 15}{cmdab:m:ap(}{it:string exp}{cmd:)}
+
+
+{title:Description}
+
+{p 4 4 2}{cmd:renvars} renames the variables listed in {it:varlist}.  
+If not specified, {it:varlist} defaults to {cmd:_all}.
+
+{p 4 4 2}{cmd:renvars} [{it:varlist}] {cmd:\} {it:newvarlist}  renames each 
+variable to the corresponding new name in {it:newvarlist}.
+
+{p 4 4 2}{cmd:renvars} [{it:varlist}] {cmd:,} {it:transformation_option}  
+applies the
+transformation specified to each variable name in {it:varlist}.
+
+{p 4 4 2}{cmd:renvars} will not rename any variable unless all the new names
+specified are acceptable as new variable names.  Variable labels, value labels,
+formats, and characteristics are maintained.
+
+
+{title:Options}
+
+{p 4 4 2}One of the following {it:transformation_options} may be specified:
+
+{p 4 25}{cmd:upper}{space 15}
+ converts the variable names to uppercase{p_end}
+{*}{...}
+{p 4 25}{cmd:lower}{space 15}
+ converts the variable names to lowercase{p_end}
+{*}{...}
+{p 4 25}{cmd:prefix(}{it:str}{cmd:)}{space 9}
+ prefixes variable names with {it:str}{p_end}
+{*}{...}
+{p 4 25}{cmd:postfix(}{it:str}{cmd:)}{space 8}
+ postfixes variable names with {it:str}.  {cmd:suffix(}{it:str}{cmd:)}
+ is an exact synonym{p_end}
+{*}{...}
+{p 4 25}{cmd:presub(}{it:str1 str2}{cmd:)}{space 3}
+ replaces the leading string {it:str1} by {it:str2} in variable
+ names.  {bind:{it:str2} may be empty}{p_end}
+{*}{...}
+{p 4 25}{cmd:postsub(}{it:str1 str2}{cmd:)}{space 2}
+ replaces the trailing string {it:str1} by {it:str2} in variable
+ names.  {bind:{it:str2} may be empty}{p_end}
+{*}{...}
+{p 4 25}{cmd:subst(}{it:str1 str2}{cmd:)}{space 4}
+ substitutes (all occurrences of) {it:str1} by {it:str2} in variable
+ names.  {bind:{it:str2} may be empty}{p_end}
+{*}{...}
+{p 4 25}{cmd:predrop(}{it:#}{cmd:)}{space 10}
+ removes the first {it:#} characters from variable names{p_end}
+{*}{...}
+{p 4 25}{cmd:postdrop(}{it:#}{cmd:)}{space 9}
+ removes the last {it:#} characters from variable names{p_end}
+{*}{...}
+{p 4 25}{cmd:trim(}{it:#}{cmd:)}{space 13}
+ keeps (at most) the first {it:#} characters from variable names,
+ dropping the remaining characters{p_end}
+{*}{...}
+{p 4 25}{cmd:trimend(}{it:#}{cmd:)}{space 10}
+ keeps (at most) the last {it:#} characters from variable names,
+ dropping the remaining characters{p_end}
+{*}{...}
+{p 4 25}{cmd:map(}{it:string_exp}{cmd:)}{space 5}
+ specifies a rule for building new variable names from existing
+ names.  By default, {cmd:@} is the placeholder for existing names.
+ This placeholder can be changed by specifying {cmd:symbol()}.
+
+{p 4 8 2}{cmd:display} specifies that each change is displayed.
+
+{p 4 8 2}{cmd:test} specifies that each change is displayed but not
+performed.
+
+{p 4 8 2}{cmd:symbol(}{it:str}{cmd:)} specifies a symbol to be used as a
+placeholder for the existing name in the map expression.  The
+default is {cmd:@}.  The symbol used should not  include characters
+used in existing variable names.  It is difficult to imagine why
+you might want to use this option.
+
+
+{title:Examples}
+
+{p 4 8 2}{cmd:. renvars v1-v4 \ id  time income status}
+
+{p 4 8 2}{cmd:. renvars MYVAR1 MYVAR2 MYVAR3, lower}
+
+{p 4 8 2}{cmd:. renvars v1-v10, upper}
+
+{p 4 8 2}{cmd:. renvars, pref(X) test}
+
+{p 4 8 2}{cmd:. renvars, subs(X Y)}
+
+{p 4 8 2}{cmd:. renvars, predrop(1)}
+
+{p 4 8 2}{cmd:. renvars, map("D_" + substr("@", 1, 6))}
+
+
+{title:Acknowledgment} 
+
+{p 4 4 2}Steven Stillman suggested the {cmd:trimend()} option. 
+
+
+{title:Authors}
+
+{p 4 4 2}Jeroen Weesie, Utrecht University, Netherlands{break} 
+    J.Weesie@fss.uu.nl
+
+{p 4 4 2}Nicholas J. Cox, Durham University, U.K.{break} 
+    n.j.cox@durham.ac.uk
+
+
+{title:Also see}
+
+{p 4 13 2}Manual:  {hi:[U] 14.3 Naming conventions}
+
+{p 4 13 2}Online:  {helpb rename}{space 3}specify the new name of a variable{p_end}
+{p 4 13 2}{space 9}{helpb renpfix}{space 2}replaces one prefix with another prefix{p_end}
+{p 4 13 2}{space 9}{helpb foreach}{space 2}for loops over a varlist
+{p_end}

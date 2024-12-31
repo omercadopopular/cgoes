@@ -1,0 +1,96 @@
+{smcl}
+{* 20 Feb 2002/19 Jul 2006}{...}
+{hline}
+help for {hi:winsor}
+{hline}
+
+{title:Winsorizing a variable}
+
+{p 8 17 2}
+{cmd:winsor}
+{it:varname}
+[{cmd:if} {it:exp}]
+[{cmd:in} {it:range}]
+, {cmdab:g:enerate(}{it:newvar}{cmd:)}
+{break}{c -(} {cmd:p(}{it:#}{cmd:)} {c |} {cmd:h(}{it:#}{cmd:)} {c )-}
+[ {c -(} {cmdab:high:only} {c |} {cmdab:low:only} {c )-} ]
+
+
+{title:Description}
+
+{p 4 4 2}{cmd:winsor} takes the non-missing values of a variable {it:x}
+ordered such that
+
+{p 8 8 2}{it:x_1} <=  ... <= {it:x_n}
+
+{p 4 4 2}and generates a new variable {it:y} identical to {it:x} except that
+the {it:h} highest and {it:h} lowest values are replaced by the next value
+counting inwards from the extremes:
+
+{p 8 8 2}{it:y_1}, ... , {it:y_h} = {it:y_(h + 1)}
+
+{p 8 8 2}{it:y_n}, ... , {it:y_(n - h + 1)} = {it:y_(n - h)}
+
+{p 4 4 2}{it:h} can be specified directly or indirectly by specifying a
+fraction {it:p} of the number of observations {it:n}:
+
+{p 8 8 2}{it:h} = [ {it:p n} ]
+
+{p 4 4 2} where [ ] denotes integer part. This transformation is named after
+the biostatistician Charles P. Winsor (1895-1951): see, for example, Tukey
+(1962).  For more discussion and references, see Barnett and Lewis (1994).
+
+{p 4 4 2}Charles (Charlie) Winsor was educated at Harvard as an engineer and
+then worked for the New England Telephone and Telegraph Company, but his
+interests shifted to biological research and biostatistics. After further
+study at Johns Hopkins and Harvard, he held posts at Iowa State College and
+Johns Hopkins; in between, in the Second World War, he did government work
+at Princeton.
+
+
+{title:Options}
+
+{p 4 8 2}{cmd:generate(}{it:newvar}{cmd:)} specifies the name of the new
+variable.  It is a required option.
+
+{p 4 8 2}{cmd:p(}{it:#}{cmd:)} specifies the fraction of the observations to
+be modified in each tail. {it:p} should be greater than 0 and less than 0.5
+and imply a value of {it:h} as just below.
+
+{p 4 8 2}{cmd:h(}{it:#}{cmd:)} specifies the number of the observations to
+be modified in each tail. {it:h} should be at least 1 and less than half the
+number of non-missing observations.
+
+{p 4 4 2}Just one of {cmd:p()} and {cmd:h()} should be specified.
+
+{p 4 8 2}{cmd:highonly} and {cmd:lowonly} specify that Winsorizing should be
+one-sided, referring only to the tail with the highest values or only to the
+tail with the lowest values, respectively. These options should not be
+specified together.
+
+
+{title:Examples}
+
+{p 4 8 2}{inp:. winsor mpg, gen(Wmpg) h(3)}
+
+{p 4 8 2}{inp:. winsor mpg, gen(Wmpg2) p(0.1)}
+
+
+{title:References}
+
+{p 4 8 2}Anonymous. 1951. In memoriam: Charles P. Winsor.
+{it:Biometrics} 7: 221.
+
+{p 4 8 2}Barnett, V. and Lewis, T. 1994. {it:Outliers in statistical data.}
+Chichester: John Wiley. [Previous editions 1978, 1984.]
+
+{p 4 8 2}Tukey, J.W. 1962. The future of data analysis.
+{it:Annals of Mathematical Statistics} 33: 1{c -}67.
+
+
+{title:Author}
+
+{p 4 4 2}Nicholas J. Cox, Durham University, U.K.{break}
+         n.j.cox@durham.ac.uk
+
+

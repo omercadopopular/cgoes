@@ -1,0 +1,129 @@
+{smcl}
+{* 13Feb2007}{...}
+{cmd:help fastgini}
+{hline}
+
+{title:Title}
+
+{p2colset 8 20 22 2}{...}
+{p2col :{hi:fastgini} {hline 2}}Fast algorithm for calculation of Gini coefficient and it's jackknife standard
+errors{p_end} {p2colreset}{...}
+
+
+{title:Syntax}
+
+{p 8 16 2}
+{cmd:fastgini} {varname} {ifin} {weight} [{cmd:,} {opt bin(#)} {opt jk} {opt L:evel(#)} {opt noch:eck}]
+
+
+{p 4 6 2}
+{opt pweight}s and {opt fweight}s are allowed; see {help weight}.{p_end}
+
+
+{title:Description}
+
+{pstd}
+{cmd:fastgini} calculates the Gini coefficient for either unit-level or aggregated level data. Optionally
+it returns the jackknife estimates of the standard error. {cmd:fastgini} uses a fast optimized algorithm
+that could be especially useful when calculating the Gini coefficient and it's standard errors for the large samples.
+The command implements algorithms for both exact and approximate calculation of the Gini coefficient.
+
+{dlgtab:Main}
+
+{phang}
+{opt bin(#)} set number of bins. Specifying this option can dramatically reduce the computation time when working with
+large datasets (1M+ obs). When {opt bin(#)} is specified {cmd:fastgini} uses approximation algorithm for Gini
+calculation. Specifying the sufficient number bins allows obtaining the approximation for the Gini at any desired level
+of precision. For example, on the dataset of 1,000,000 observations {opt bin(100,000)} will in most
+cases estimate computer-exact value of Gini. This calculation required significantly less computer time compared to the
+exact estimation of the Ginin on whole sample.
+
+{phang}
+{opt jk} estimate jackknife (leave-one-out) standard error of the Gini coefficient. An efficient method of calculating
+jackknife estimates involves only two (one to get the Gini coefficient itself and another for standard errors)
+runs through the data.
+
+{phang}
+{opt level(#)} set confidence level for the reported jackknife confidence intervals; default is {opt level(95)}.
+
+{phang}
+{opt nocheck} by default, non-positive values of {it:varname} are excluded from Gini calculations. Specifying {opt
+nocheck} skips the value check as well as ignores {ifin} conditions. The option can be useful to speed-up the
+execution if {cmd:fastgini} is used within loops.
+
+
+{title:Saved Results}
+
+{phang}{cmd:fastgini} saves in {cmd:r()}:
+
+{p 8 4 2}{cmd:r(gini)} calculated Gini coefficient;
+
+{phang} if {opt jk} option specified:
+
+{p 8 4 2}{cmd:r(se)} jackknife estimate for the standard error of the Gini;
+
+{p 8 4 2}{cmd:r(mse)} jackknife estimate for the mean standard error of the Gini;
+
+{p 8 4 2}{cmd:r(gini_jk)} jackknife estimate for the Gini.
+
+
+{title:Remarks}
+
+{phang}{cmd:fastgini} uses formula:
+
+		      i=N      j=i
+		      SUM W_i*(SUM W_j*X_j - W_i*X_i/2)
+		      i=1      j=1
+	  G = 1 - 2* ----------------------------------
+	  	 	   i=N             i=N
+		  	   SUM W_i*X_i  *  SUM W_i
+		  	   i=1             i=1
+
+{pmore}where observations are sorted in ascending order of X.
+
+
+{phang}if {opt bin(M)} is specified, the data are aggregated into {it:M} equal-size bins, i.e.
+
+	~
+	X_i = (X_min + i * binsize)	   binsize = (X_max - X_min)/M
+
+	~                 ~            ~
+	W_i = SUM W_j (if X_(i-1)<=X_j<X_i)              i=1..M
+	       j
+
+{phang} and then Gini coefficient is calculated using aggregated data.
+
+
+{title:Examples}
+
+{p 4 4 2}{cmd:.fastgini pc_exp}
+
+{p 4 4 2}{cmd:.fastgini income [w=weight], jk}
+
+{p 4 4 2}{cmd:.fastgini income [w=weight], bin(10000)}
+
+
+{title:Author}
+
+{phang} Zurab Sajaia, DECRG-PO SDG, The World Bank, zsajaia@worldbank.org
+
+
+{title:References}
+
+{phang}Karagiannis E. and M. Kovacevic' (2000), "A Method to Calculate Jakknife Variance Estimator For the Gini Coefficient",
+Oxford Bulletin of Economics and Statistics, Vol. 62 Issue 1 119-122.
+
+
+{title:Also see}
+
+{p 4 13 2}Online:  {help jackknife} {p_end}
+
+{psee}
+Links to user-written programs:
+{net "describe inequal7, from(http://fmwww.bc.edu/RePEc/bocode/i)":inequal7},
+{net "describe egen_inequal, from(http://fmwww.bc.edu/RePEc/bocode/e)":egen_inequal},
+{rnethelp "http://fmwww.bc.edu/RePEc/bocode/m/mf_mm_gini.hlp":mm_gini()},
+{net "describe sg115, from(http://www.stata.com/stb/stb51)":ineqerr},
+{net "describe ineqdeco, from(http://fmwww.bc.edu/RePEc/bocode/i)":ineqdeco},
+{net "describe ineqdec0, from(http://fmwww.bc.edu/RePEc/bocode/i)":ineqdec0}
+

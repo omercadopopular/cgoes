@@ -1,0 +1,511 @@
+{smcl}
+{* 3-Aug2004 rev 8-11-2004, 4-11-2005, 1-27-2012, 2013feb24 & Mar8, May4, July25, 2014may16, 2016jan15}
+{hline}
+help for {hi:carryforward}
+{hline}
+
+{title:Carry values forward, filling in missing values.}
+
+{p 8 17 2}
+{cmd:carryforward}
+{it:varlist} [{cmd:if} {it:exp}] [{cmd:in} {it:range}]{cmd:, }{c -(}{cmd:gen(}{it:newvarlist1}{cmd:)} | {cmd:replace}{c )-}
+[{cmd:cfindic(}{it:newvarlist2}{cmd:) back carryalong(}{it:varlist2}{cmd:)} {cmd:strict} {cmd:nonotes}
+{cmd:dynamic_condition(}{it:dyncond}{cmd:)} {cmd:extmiss}]
+
+{p 4 4 2}
+{cmd:by} {it:...} {cmd::} may be used with {cmd:carryforward}; see {help by}.
+
+{title:Description}
+
+{p 4 4 2}
+{cmd:carryforward} will carry non-missing values forward from one observation to the next,
+filling in missing values with the previous value. Thus, if you consider a sequence of missing values
+as a gap in the overall sequence, this operation will fill the gaps with values that
+appear before the gap.
+
+{p 4 4 2}
+It is important to understand that
+this is not appropriate for imputing missing values; more on this later, under "Additional Remarks".
+
+{p 4 4 2}
+The value-carrying action proceeds sequentially in the existing order of observations, or as sorted by
+{help bysort}, cascading values from one observation to the next, potentially
+carrying a given value through many observations. The process stops upon encountering
+a non-missing value, an excluded observation, or the end of a {cmd:by} group (that it, a change in value
+of the primary sort-variable, when used with {help by}). The process resumes when another missing value is encountered.
+
+{p 4 4 2}
+An example will illustrate:
+
+{cmd:. carryforward x, gen(y)}
+{txt}(6 real changes made)
+
+{cmd:. list, noobs sep(0)}
+{txt}
+  {c TLC}{hline 4}{c -}{hline 4}{c TRC}
+  {c |} {res} x    y {txt}{c |}
+  {c LT}{hline 4}{c -}{hline 4}{c RT}
+  {c |} {res}12   12 {txt}{c |}
+  {c |} {res} 4    4 {txt}{c |}
+  {c |} {res} .    4 {txt}{c |}
+  {c |} {res} .    4 {txt}{c |}
+  {c |} {res} .    4 {txt}{c |}
+  {c |} {res} 3    3 {txt}{c |}
+  {c |} {res} .    3 {txt}{c |}
+  {c |} {res} 7    7 {txt}{c |}
+  {c |} {res} .    7 {txt}{c |}
+  {c |} {res} .    7 {txt}{c |}
+  {c BLC}{hline 4}{c -}{hline 4}{c BRC}
+
+{p 4 4 2}
+Notice that each value is carried until a non-missing value of x is encountered.
+
+{title:Options}
+
+{p 4 4 2}
+{cmd:gen(}{it:newvarlist1}{cmd:)} specifies the new variable(s) that will receive the
+values. If it is specified, then {it:newvarlist1} must have exactly as many names as there are in
+{it:varlist}; the variable names in the two lists will correspond in the order presented. The variables
+in {it:newvarlist1} will equal their corresponding variables in {it:varlist} wherever the latter are
+non-missing.
+
+{p 4 4 2}
+{cmd:replace} specifies that the new values are to br replaced directly in
+the variables of {it:varlist}. Under this option, {cmd:carryforward} functions as a
+{help replace} operation.
+
+{p 4 4 2}
+You must use either {cmd:gen()} or {cmd:replace}, but not both.
+
+{p 4 4 2}
+{cmd:cfindic(}{it:newvarlist2}{cmd:)} specifies indicator variable(s) that will
+be generated, indicating which observations received carry-forward values, that is, which
+observations were altered by the process. This is probably more useful under the {cmd:replace}
+option, since with {cmd:gen()}, this information is discernable by comparing the original
+and generated values. If {cmd:cfindic(}{it:newvarlist2}{cmd:)} is specified, then {it:newvarlist2} 
+must have exactly as many names as there are in
+{it:varlist}; the variable names in the two lists will correspond in the order presented.
+Furthermore, {it:newvarlist2} may not have any names in common with {it:newvarlist1}.
+
+{p 4 4 2}
+{cmd:carryalong(}{it:varlist2}{cmd:)} specifies additional variables that will
+have their values carried along in concert with {it:varlist}.
+These variables get their values carried forward, but the
+set of observations that are affected is determined by {it:varlist}
+rather than the variables in {it:varlist2} themselves.
+This may be specified only if {it:varlist} consists of a single name.
+Be aware that this is essentially a {help replace} operation, with no regard
+for the original values in {it:varlist2}. Whereas 
+{it: varlist} (with {cmd:replace}) never has non-missing values overwritten,
+the variables in {it:varlist2} can, indeed, have non-missing values overwritten.
+(If you are concerned
+about overwriting values, keep a copy in a separate variable. But typically,
+you would use this option to carry values into what were originally missing
+values.)
+
+{p 4 4 2}
+{cmd:back} merely affects the wording of labels and notes, and has no
+effect on the data. It inserts text into labels and notes, indicating that the operation was performed backward.
+Typically, you would use it when you "fool" {cmd:carryforward} into carrying values backward (see example).
+
+{p 4 4 2}
+{cmd:strict} imposes an additional constraint on the treatment of excluded observations which result from
+{cmd:if} or {cmd:in} qualifiers. Such observations are always excluded from having missing values filled in
+(with values from the previous observation).
+With the {cmd:strict} option, they are also excluded from having non-missing value carried forward (into the next observation).
+This will be illustrated below.
+
+{p 4 4 2}
+{cmd:nonotes} prevents the setting of notes on the generated or replaced variable. This pertains to the note stating that the
+variable was subjected to a carryforward operation; it does not affect the transfer of existing notes to the new variable under
+the {cmd:gen()} option. This option is provided for instances where the notes may not be appropriate, such as when
+carryforward is used as a tool for constructing a summary measure, rather than for modifying existing data.
+(For example, you derive a new variable to detect a condition; the new variable initially may be sparsely populated;
+you do a carryforward, followed by a reduction to the last observation per group.)
+
+{p 4 4 2}
+{cmd:dynamic_condition(}{it:dyncond}{cmd:)} specifies a restricting condition which may
+include references to the value being carried. It is a more-capable alternative to the {cmd:if} {it:exp} qualifier
+(though the two can be combined as well). The difference is that the {cmd:if} {it:exp} qualifier
+operates only on conditions that are "static" in that they must be computable at the start of the process;
+by contrast, the {cmd:dynamic_condition()} option allows for references to
+values as they get propagated during the carryforward process.
+
+{p 4 4 2}
+Another limitation of the {cmd:if} {it:exp} qualifier {c -} a consequence of its static nature {c -} is that,
+when there are multiple variables
+in {it:varlist}, the {cmd:if} {it:exp} qualifier establishes a restriction pattern that is the same 
+for all the variables; the {cmd:dynamic_condition} option can affect each variable differently.
+
+{p 4 4 2}
+Note that a reference to the value being carried would be {it:var}{cmd:[_n-1]}, where {it:var} is the 
+variable being operated on. You can specify such a reference in {cmd:if} {it:exp}, but it may not work as you 
+would want, since {it:var}{cmd:[_n-1]} will likely refer to observations that do not yet have the
+desired values in them at the start of the carrying process (in instances where the value would be
+carried more than once). That is, such a reference in {cmd:if} {it:exp} is allowed, but it refers
+to values {it:before} the carrying operation begins {c -} not as they get carried.
+The {cmd:dynamic_condition} option enables you to reference these values during the process of being
+carried. Thus, for example, you might write,{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward a, dynamic_condition(a[_n-1]<y)}{p_end}
+
+{p 4 4 2}
+That condition states that the value in a is to be carried as long as it does not exceed the value in y.
+(That is, the carried value of a is compared to the present value of y.) Note that
+this condition cannot be adequatedly implemented under an {cmd:if} {it:exp} qualifier.
+
+{p 4 4 2}
+You can use the special symbol {cmd:@} 
+to refer to the value being carried from the prior observation; it stands for
+{it:var}{cmd:[_n-1]}, where {it:var} is the variable under consideration.
+Thus, the prior example could be written{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward a, dynamic_condition(@<y)}{p_end}
+
+{p 4 4 2}
+The {cmd:@} symbol should be preferable, as it makes it easier to formulate and
+understand such conditions. But is has an additional advantage: it refers to each of
+the carried variables in succession when there are multiple variables in {it:varlist}.
+Therefore, it can be used with multiple variables if the condition is the same relative
+to each variable individually. Thus, you can write:{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward a b c, dynamic_condition(@<y)}{p_end}
+
+{p 4 4 2}
+Which is equivalent to:{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward a, dynamic_condition(@<y)}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward b, dynamic_condition(@<y)}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward c, dynamic_condition(@<y)}{p_end}
+
+{p 4 4 2}
+Which is equivalent to:{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward a, dynamic_condition(a[_n-1]<y)}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward b, dynamic_condition(b[_n-1]<y)}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward c, dynamic_condition(c[_n-1]<y)}{p_end}
+
+{p 4 4 2}
+But the first form is concise and prefereable.
+
+{col 12}{hline}
+{p 12 12 12}
+{hi:Special notes:} If you do use a hard-coded reference such as {cmd:a[_n-1]}, it usually make sense only when
+{it:varlist} contains a single variable. But if you have multiple 
+variables in {it:varlist} and also use
+hard-coded references, be aware that the carryforward operation
+will be repeated for each variable in sequence, subject to the evolving set of values in these variables.
+It may be complicated and results may depend on the order of the variables.
+
+{p 12 12 12}
+Would you ever reference {it:var}, rather than {it:var}{cmd:[_n-1]} (where {it:var} is the 
+variable being operated on)? It is unlikely that you would ever need to do this, since such a reference would
+be applicable where {it:var} is missing, and therefore its only use would be in distinguishing various
+extended missing values. Furthermore, a conditon involving {it:var} and not {it:var}{cmd:[_n-1]} could be
+expressed using {cmd:if} {it:exp}.
+
+{p 12 12 12}
+If {cmd:dynamic_condition(}{it:dyncond}{cmd:)} is combined with the {cmd:if} {it:exp} qualifiers,
+the carryforward action is subject to the conjunction of both conditions, as well as
+{cmd:in} {it:range}, if applicable).{p_end}
+{col 12}{hline}
+
+{p 4 4 2}
+{cmd:extmiss} applies to numeric variables only. This specifies that extended missing values (.a, .b, etc.)
+are to be treated the same as actual numeric values; only sysmis (.) will be replaced, and extended missing values
+are potentially carried into succeeding observations, just as actual numbers are (if the original values therein are sysmis). 
+This option would be appropriate where the gaps that you want to fill in are coded exclusively with sysmis, and
+other (extended) missing values have special significance that you want to preserve and carry forward. This situation
+will occur after a {help merge} operation, where the pertinent variables in the original datasets never contain sysmis 
+but may contain extended missing values that do not signify gaps to be filled.
+
+{title:Remarks}
+
+{p 4 4 2}
+The effect of {cmd:carryforward} is sensitive to the prevailing order of the observations.
+Thus, you should have the data sorted in an order that is meaningful with
+respect to what is being carried forward. This can be done with a preceeding
+{help sort} operation, or in conjuction with {help bysort}.
+There are two purposes of {cmd:by} or {cmd:bysort} in this context: (a) to limit the flow of values to stay within
+{cmd:by} groups (consecutive observations with
+the same value of the primary sort-variable), that is, to prevent values from spilling over 
+into observations where they don't belong;
+and (b) to assure that the sequence of observations within {cmd:by} groups has a uniquely determined order and is
+appropriate for the carryforward
+operation. For a, there should be a primary sort-variable (a {cmd:by} group identifier), representing distinct entities such as persons.
+For b, there should be a secondary
+"sequencing" variable, typically representing date or time, written in parentheses, to control the order of observations within {cmd:by} groups.
+Thus, symbolically, you would write{p_end}
+{p 6 8 2}{cmd:. by primary_variable (sequencing_variable): carryforward}...{p_end}
+
+{p 4 4 2}
+The sequencing variable should be such that it assures a unique sort within {cmd:by} groups.
+That is, the combination of primary and sequencing variables should be sufficient to uniquely sort the data. (In database terminology, they
+constitute a key.) The uniqueness of the sorting sequence is important: if we are carrying values from one observation to the
+next, it makes sense to require that the "next" observation be uniquely determined. Otherwise, the concept of "next observation" is not
+meaningful. Furthermore, this will assure consistent results if the
+operation is done multiple times on the same starting dataset. Note that just having that sequencing variable in the command does
+not guarantee a unique sort order; it is up to the user to assure that uniqueness.
+
+{p 4 4 2}
+(For the present purpose, the salient feature of sorting on the primary sort-variable is that same-valued
+observations are located together; the particular order in which they occur is not important. On the other hand,
+the order imposed by the sequencing variable is important.)
+
+{p 4 4 2}
+If the primary variable is person_id and the sequencing variable is date, then we would write...{p_end}
+{p 6 8 2}{cmd:. bysort person_id (date): carryforward}...{p_end}
+{p 4 4 2}or equivalently,{p_end}
+{p 6 8 2}{cmd:. sort person_id date}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward}...{p_end}
+
+{p 4 4 2}
+The author advocates using {help assertky} in place of {cmd:sort} in these situations, to
+sort the dataset and assure that the sorting sequence is unique. (See note, below.) Thus, the preferred form is...{p_end}
+{p 6 8 2}{cmd:. assertky person_id date}{p_end}
+{p 6 8 2}{cmd:. by person_id (date): carryforward}...{p_end}
+
+{p 4 4 2}
+Having the sequencing variable in parentheses is important. Do not write...{p_end}
+{p 6 8 2}{cmd:. bysort person_id date: carryforward}...{p_end}
+{p 4 4 2}as that will limit the flow of data to single observations; nothing will happen.
+
+{p 4 4 2}(The foregoing examples assume that the primary and sequencing variables were each a single variable. Naturally,
+either of them could consist of multiple variables. As a separate matter, it may be (rarely) possibly that there is no
+primary sort-variable; the whole dataset is one contiguous sequence. In that case, you can't use {cmd:by}; just preceed the
+{cmd:carryforward} with a {cmd:sort} or {cmd:assertky} on the sequencing variable.)
+
+{p 4 4 2}
+{cmd:carryforward} will call on {help clonevar} to copy the original variable(s) when using the {cmd:gen()} option.
+This will copy the variable {help label} and any existing {help notes}.
+Regardless of whether you use {cmd:gen()} or {cmd:replace}, the variable will receive {help notes} indicating that the
+variable was subjected to a carryforard operation (unless {cmd:nonotes} is specified). This behavior has changed as of version 4.3.
+
+{p 4 4 2}
+When values are carried forward, you will see a message such as
+{cmd:(22 real changes made)}, reporting the number of originally missing
+values that were replaced, and referring to either {it:varlist} or {it:newvarlist1},
+depending on which option ({cmd:gen()} or {cmd:replace}) was used.
+
+{p 4 4 2}
+The presence of {cmd:if} {it:exp} or {cmd:in} {it:range} qualifiers
+will exclude the non-eligible observations from having values
+carried into them, {it:and} will interrupt the carrying
+of values past that point. That is, excluded observations are not merely excluded from
+getting their missing values replaced; they
+affect subsequent observations. Note that, unlike in many commands, such excluded observations
+are not totally "out of the picture"; they have a real effect. (Furthermore, under the {cmd:gen()} option, they can
+receive non-missing values if the original variables have non-missing values in the
+excluded observations. But that is not the typical situation in the use of exclusionary qualifiers.)
+An example will illustrate.
+
+{com}. carryforward x if c1, gen(y)
+{txt}(4 real changes made)
+{com}. carryforward x if c1, gen(z) strict
+{txt}(2 real changes made)
+
+{com}. list, noobs sep(0)
+{txt}
+  {c TLC}{hline 4}{c -}{hline 4}{c -}{hline 4}{c -}{hline 4}{c TRC}
+  {c |} {res} x   c1    y    z {txt}{c |}
+  {c LT}{hline 4}{c -}{hline 4}{c -}{hline 4}{c -}{hline 4}{c RT}
+  {c |} {res}12    1   12   12 {txt}{c |}
+  {c |} {res} 4    1    4    4 {txt}{c |}
+  {c |} {res} .    1    4    4 {txt}{c |}
+  {c |} {res} .    0    .    . {txt}{c |}
+  {c |} {res} .    1    .    . {txt}{c |}
+  {c |} {res} 3    1    3    3 {txt}{c |}
+  {c |} {res} .    1    3    3 {txt}{c |}
+  {c |} {res} 7    0    7    7 {txt}{c |}
+  {c |} {res} .    1    7    . {txt}{c |}
+  {c |} {res} .    1    7    . {txt}{c |}
+  {c BLC}{hline 4}{c -}{hline 4}{c -}{hline 4}{c -}{hline 4}{c BRC}
+
+{p 4 4 2}
+Notice that the fourth observation did not receive a value in y, since c1=0,
+and that the fifth observtion also did not receive a value, as the fourth
+observation interrupted the flow of values.
+
+{p 4 4 2}
+Also notice that the 0 in c1 in observation 8 had no effect on y, since x is
+non-missing in that observation. The basic behavior is that excluded
+observations are restricted from having their missing values replaced,
+but by default, they are not restricted from having their non-missing values carried forward.
+With the {cmd:strict} option, they are also excluded from having their non-missing values carried forward,
+as illustrated by z in this example.
+
+{p 4 4 2}
+Notice that, without {cmd:strict}, excluded observaions interrupt the flow of values only if the
+original value is missing. With {cmd:strict}, excluded observaions always interrupt the flow of values.
+If you prefer that certain excluded observations not interrupt the flow of values,
+you should arrange sorting variables so as to move these observations out of the way.
+
+{col 12}{hline}
+{p 12 12 12}
+{hi:Technical note:} It would be possible to devise an option such that
+excluded observations would be skipped over, and would not stop the flow of
+values. (Thus, observation 5 in the above example would receive 4 in y, and
+observations 9 and 10 would receive a 3 {c -} not a 7.)
+This is a potential avenue for future development, and the author
+welcomes comments on whether this is desirable.
+{p_end}
+{col 12}{hline}
+
+{p 4 4 2}
+When using {cmd:carryalong(}{it:varlist2}{cmd:)} there is nothing to stop you
+from including (the single name in) {it:varlist} among {it:varlist2}, but there is no point in doing
+so. This is effectively equivalent to specifying {cmd:replace}. (If you
+specified {cmd:replace}, then there is no additional effect; if you specified
+{cmd:gen(}{it:newvarlist1}{cmd:)}, then {it:newvarlist1} and {it:varlist}
+will be equal {c -} as if you had specified both {cmd:gen(}{it:newvarlist1}{cmd:)}
+and {cmd:replace}, if that were allowed.)
+
+{title:Examples}
+
+{p 4 8 2}{cmd:. by personid spellno (year): carryforward statefp, replace}
+
+{p 4 8 2}{cmd:. gen int negyear = -year}{p_end}
+{p 4 8 2}{cmd:. bysort personid (negyear): carryforward educ2, gen(educ2b) back}
+{cmd:cfindic(educ2b_cbi) carryalong(educ2_from_hw educ2_cfi)}{p_end}
+
+{p 4 4 2}
+In the latter example, we are going backward; thus, the {cmd:back} option.
+Also, educ2_from_hw is an attribute about how educ2 was constructed, so
+we want it to be carried along with educ2. Similarly for educ2_cfi, but that
+was actually a cfindic variable from an earlier carryforward operation (not
+shown). (That earlier operation was in the forward direction; the present
+one goes backward. In between, certain observations were dropped; otherwise,
+there would be little use in having educ2_cfi in the carryalong variables.)
+
+{p 4 4 2}
+Note that in going backward, it is necessary to reverse only the sequencing variable, not the
+primary sorting variable.
+
+{title:Additional Remarks}
+
+{p 4 4 2}
+{cmd:carryforward} is not intended for imputing missing values; indeed, this operation is considered to be a bad choice for missing-value imputation.
+The intent is, rather, to fill in gaps in the sequence of values of designated variables, where it is natural that these gaps ought to be filled
+with the values that preceed them. 
+It is important to understand that only certain variables have this property {c -} that values persist, in the context of an
+appropriate sort order, until they explicitly change; let us
+call them "prevailing-value" variables.
+Examples include a person's address, marital status, eduational attainment, and various attributes about his/her employment.
+
+{p 4 4 2}
+Typically the observations correspond to dates or times, and the sequence of observations is an important
+aspect of interpreting the data. That is, it is important to always have the dataset sorted by the date or time {c -} or
+typically, by date or time within groups of some other entity such as persons. Thus, you might{p_end}
+{p 4 8 2}{cmd:. sort person_id date}{p_end}
+{p 4 4 2}or possibly,{p_end}
+{p 4 8 2}{cmd:. assertky person_id date}{p_end}
+
+{p 4 4 2}
+The dataset will have observations corresponding to when these attributes change ("change-events").
+Due to the way the dataset is constructed, there may be observations for dates/times that are between change-events for a given variable.
+That is, there may be more observations than change-events for a given variable. A common situation is that there are mutiple prevailing-value
+variables, and they may change on different dates/times.
+Naturally, a between-change-event observaton should retain the value established at the most recent change-event, but the data-construction
+process may have left some between-change observations with missing values, as can happen with non-matched observations in a
+{help merge} operation.
+
+{p 4 4 2}
+(For simplicity, in what follows, we will use date as representative of any sequencing variable. Understand that, generally, it might also
+include time, or it may be some other entity that determines a unique sort order that is appropriate for the data.)
+
+{p 4 4 2}
+Suppose you start with two or more prevailing-value attributes recorded in multiple datasets. Each of these original datasets should be
+uniquely sorted on an identifer and date variable. They have mostly the same identifier values, but possibly
+different date values for any given identifier value. Thus, after a {cmd:merge}, there are non-matched observations, resulting in 
+missing values {c -} gaps in the sequence. (It is important to {help sort} the data again after the {cmd:merge}).
+
+{p 4 4 2}
+Usually, it is important to distinguish these gaps, which are artifacts of the 
+merging process, from "originally" missing values in content variables in the pre-merge datasets.
+(This discussion relates to content variables; identifying variables must never be missing.)
+The pre-merge datasets typically have observations only for change-events, and don't contain any gaps themselves,
+though they might have missing values.
+A missing value in a pre-merge dataset is presumably a "genuine" missing value, representing
+an unknown value on a change-event; its true value may differ from the prior value, and
+you would not want to replace it with a non-missing value, and you would not want to potentially carry such a value
+into subsequent observations in the merged dataset.
+
+{p 4 4 2}
+Suppose salary.dta contains salary, and marstat.dta contains marit_stat.
+
+{p 4 8 2}{cmd:. use salary}{p_end}
+{p 4 8 2}{cmd:. gen byte rec_sal = 1}
+
+{p 4 8 2}{cmd:. merge person_id date using marstat, uniq}{p_end}
+{p 4 8 2}{cmd:. gen byte rec_mar = _merge==2 | _merge==3}{p_end}
+{p 4 8 2}{cmd:. drop _merge}
+
+{p 4 8 2}{cmd:. recode rec_sal (mis=0)}
+
+{p 4 8 2}{cmd:. assertky person_id date}{p_end}
+{p 4 8 2}{cmd:. by person_id (date): carryforward salary if ~rec_sal, replace}{p_end}
+{p 4 8 2}{cmd:. by person_id (date): carryforward marit_stat if ~rec_mar, replace}
+
+{p 4 4 2}
+{cmd:person_id} and {cmd:date} are the primary and sequencing variables as described above. ({cmd:by person_id} insures that you limit the 
+carrying of values to within person-based groups,
+as you don't want to carry a value from one person to another. The presence of {cmd:(date)} assures that the sort 
+order is correct within each such group.)
+
+{p 4 4 2}
+The {cmd:if ~rec_sal} qualifier is there to prevent carrying an actual value into an originally missing value, as explained above.
+Observations in the merged dataset with ~rec_sal (which must have missing values for salary) comprise the gaps.
+They correspond to observations in {cmd:marstat} which fall between 
+observations that come from {cmd:salary}.
+Cases with rec_sal=1, on the other hand, take values from {cmd:salary}; any missing values there should be regarded as "truly missing" and
+should not be overwritten. Similarly for rec_mar as it relates to marit_stat.
+
+{p 4 4 2}
+{cmd:assertky} is a program that sorts the data and assures that the sort order is unique. See more on this, below.
+
+{p 4 4 2}
+(In the code sequence above, it would have been possible to calculate {cmd:rec_sal} as {cmd:_merge==1 | _merge==3} after the
+{cmd:merge}, but the scheme shown here generalizes to more than two files.)
+
+{p 4 4 2}
+One possible situation that arises is where a prevailing-value attribute has gaps, but the data is such that the non-missing value
+following the gap is not necessarily on the date of the change-event; the change may have occurred at that point, or it may have
+occured on one of the observations within
+a gap {c -} but you don't know which one. Usually, then, it is not appropriate to do
+a carryforward, but there is one situation where you can safely do it: (a) the attribute is on an ordered scale and changes monotonically;
+and (b) the values on either side of the gap are the same. As an example, think of educational attainment; it never decreases. If
+the value is "High School Graduate" at two distinct times, then it should be the same at any time in between. The way to handle this
+situation is to fill in the gaps with values from both sides, going forward and backward, as follows:
+
+{p 4 8 2}{cmd:. assertky person_id date}{p_end}
+{p 4 8 2}{cmd:. by person_id (date): carryforward educ, gen educ_fwd}{p_end}
+{p 4 8 2}{cmd:. gen int negdate = -date}{p_end}
+{p 4 8 2}{cmd:. assertky person_id negdate}{p_end}
+{p 4 8 2}{cmd:. by person_id (negdate): carryforward educ, gen educ_back, back}{p_end}
+{p 4 8 2}{cmd:. assertky person_id date}{p_end}
+{p 4 8 2}{cmd:. replace educ = educ_fwd if mi(educ) & educ_fwd == educ_back}{p_end}
+
+{p 4 4 2}
+The idea is that you tentatively carry values in from both sides, using {cmd:gen()} so as not to replace values at that point.
+If the values agree, then you can fill in the gap.
+
+{p 4 4 2}
+One final note: Be aware of a phenomenon that can occur in numeric variables that have been converted to string, such as with {help tostring}.
+In this situation, missing numeric values are rendered as "." (or ".a", ".b", etc.). While these look like missing values, they are not,
+and {cmd:carryforward} will not affect them. If you want {cmd:carryforward} to replace them, then either replace them with null
+strings ("") prior to applying {cmd:carryforward}, or apply {cmd:carryforward} to the numeric variable prior to converting it to string.
+
+{title:About assertky}
+
+{p 4 4 2}
+As mentioned above, assertky is a program that sorts the dataset {it:and} assures that the sorting sequence is unique, which is
+useful in preparation for {cmd:carryforward} (as well as {cmd:merge}). It is by this same author, and available from SSC.
+If you prefer to use a standard Stata
+command, the same results can be obtained by using {help isid} with the {cmd:sort} and {cmd:missok} options.
+
+{title:Author}
+
+{p 4 4 2}
+David Kantor. Initial work was done at The Institute for Policy Studies, Johns Hopkins University.
+Email {browse "mailto:kantor.d@att.net":kantor.d@att.net} if you observe any
+problems. The author thanks several users who have requested the enhancement to allow multiple variables.
+
+{title:Also See}
+
+{p 4 4 2}
+{help replace}; {help gen_tail}, a related program by the same author.

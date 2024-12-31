@@ -1,0 +1,250 @@
+{smcl}
+{* 5 Feb 2010}{...}
+{hline}
+help for {hi:xtivreg2}
+{hline}
+
+{title:Extended IV/2SLS, GMM and AC/HAC, LIML and k-class regression for panel data models}
+
+{p 4}Full syntax, fixed effects and first differences models
+
+{p 8 14}{cmd:xtivreg2} {it:depvar} [{it:varlist1}]
+{cmd:(}{it:varlist2}{cmd:=}{it:varlist_iv}{cmd:)} [{it:weight}]
+[{cmd:if} {it:exp}]
+{bind:[{cmd:in} {it:range}] {cmd:, {{cmd:fe} | {cmd:fd}}} }
+{bind:[{cmdab:i:var(}{it:varname}{cmd:)} {cmdab:t:var(}{it:varname}{cmd:)}}
+{cmd:gmm}
+{cmd:bw(}{it:#}{cmd:)}
+{cmd:kernel(}{it:string}{cmd:)}
+{cmd:liml}
+{cmd:fuller(}{it:#}{cmd:)}
+{cmd:kclass(}{it:#}{cmd:)}
+{cmd:coviv}
+{cmd:cue}
+{cmd:cueinit}{cmd:(}{it:matrix}{cmd:)} 
+{cmdab:cueopt:ions}{cmd:(}{it:string}{cmd:)} 
+{cmdab:r:obust}
+{cmdab:cl:uster}{cmd:(}{it:varlist}{cmd:)}
+{cmd:orthog(}{it:varlist_ex}{cmd:)}
+{cmd:endog(}{it:varlist_en}{cmd:)}
+{cmdab:red:undant(}{it:varlist_ex}{cmd:)}
+{cmd:fwl(}{it:varlist}{cmd:)}
+{cmdab:sm:all}
+{cmdab:noc:onstant}
+{cmd:first} {cmd:ffirst} {cmd:savefirst} {cmdab:savefp:refix}{cmd:(}{it:prefix}{cmd:)} 
+{cmd:rf} {cmd:saverf} {cmdab:saverfp:refix}{cmd:(}{it:prefix}{cmd:)} 
+{cmd:nocollin} {cmd:noid}
+{cmdab:l:evel}{cmd:(}{it:#}{cmd:)}
+{cmdab:nohe:ader}
+{cmdab:nofo:oter}
+{cmdab:ef:orm}{cmd:(}{it:string}{cmd:)} 
+{cmdab:dep:name}{cmd:(}{it:varname}{cmd:)}
+{bind:{cmd:plus} ]}
+
+{p 4}Replay syntax
+
+{p 8 14}{cmd:xtivreg2}
+{bind:[{cmd:,} {cmd:first}}
+{cmd:ffirst} {cmd:rf} 
+{cmdab:l:evel}{cmd:(}{it:#}{cmd:)}
+{cmdab:nohe:ader}
+{cmdab:nofo:oter}
+{cmdab:ef:orm}{cmd:(}{it:string}{cmd:)} 
+{cmdab:dep:name}{cmd:(}{it:varname}{cmd:)}
+{cmd:plus} ]}
+
+{p 4}Version syntax
+
+{p 8 14}{cmd:xtivreg2}, {cmd:version}
+
+
+{p}{cmd:xtivreg2} may be used with time-series or panel data,
+in which case the data can be {cmd:tsset}
+before using {cmd:xtivreg2}; see help {help tsset}.
+
+{p}All {it:varlists} may contain time-series operators;
+see help {help varlist}.
+
+{p}{cmd:aweight}s, {cmd:fweight}s, {cmd:iweight}s and {cmd:pweight}s
+are allowed; see help {help weights}.
+
+{p}The syntax of {help predict} following {cmd:xtivreg2} is
+
+{p 8 16}{cmd:predict} [{it:type}] {it:newvarname} [{cmd:if} {it:exp}]
+[{cmd:in} {it:range}] [{cmd:,} {it:statistic}]
+
+{p}For the fixed-effects estimator, {it:statistic} is
+
+{p 8 23}{cmd:e}{space 11}v_it, the idiosyncratic component of the error term{p_end}
+
+{p}and is available only for the estimation sample.
+
+{p}For the first-differences estimator, {it:statistic} is
+
+{p 8 23}{cmd:e}{space 11}v_it - v_it-1, the first-differenced idiosyncratic component{p_end}
+{p 8 23}{cmd:xb}{space 10}(X_it - X_it-1)*b_hat, the fitted values{p_end}
+
+{p}and are available in and out of sample.
+Use {cmd:e(sample)} if wanted only for the estimation sample.
+
+
+{title:Description}
+
+{p}{cmd:xtivreg2} implements IV/GMM estimation
+of the fixed-effects and first-differences panel data models
+with possibly endogenous regressors.
+It is essentially a wrapper for {cmd:ivreg2},
+which must be installed for {cmd:xtivreg2} to run
+(version 2.1.11 or above of {cmd:ivreg2} is required for Stata 9;
+Stata 8.2 requires {cmd:ivreg28}).
+{cmd:xtivreg2} supports all the estimation and reporting
+options of {cmd:ivreg2};
+see help {help ivreg2} for full descriptions and examples.
+In particular, all the statistics available with {cmd:ivreg2}
+(heteroskedastic, cluster- and
+autocorrelation-robust covariance matrix and standard errors,
+overidentification and orthogonality tests,
+first-stage and weak/underidentification statistics, etc.)
+are also supported by {cmd:xtivreg2} and will be reported
+with any degrees-of-freedom adjustments
+required for a panel data estimation.
+
+{p}The degrees-of-freedom adjustments depend on
+whether the estimation is fixed-effects or first-differences,
+and whether it uses the {cmd:cluster} option.
+
+{p}For fixed-effects estimation without {cmd:cluster},
+the covariance matrix
+and regression statistics
+(identification and overidentification statistics,
+first-stage regressions and tests, etc.)
+are adjusted for the number of fixed effects N_g.
+With large-sample statistics,
+the covariance matrix has the adjustment (N-N_g);
+with small-sample statistics,
+the adjustment is (N-N_g-K),
+where K is the number of regressors.
+
+{p}For fixed-effects estimation with {cmd:cluster},
+{cmd:xtivreg2} makes {it:no} degrees-of-freedom adjustment
+for the number of fixed effects.
+This follows the formulation of a cluster-robust covariance matrix
+for the fixed-effects model as originally proposed by Arellano (1987);
+see, e.g., Wooldridge (2002), p. 275.
+Stata's official {cmd:xtivreg}, {cmd:xtreg} and {cmd:areg}
+(as of version 9.1, October 2005),
+by contrast, use the (N-N_g-K) adjustment,
+which is somewhat conservative in this context.
+{it:However}, the approach used by {cmd:xtivreg2}
+requires that no panel overlaps more than one cluster.
+That is, either the panel variable is identical to the cluster variable,
+or panels are uniquely assigned to clusters.
+If any panel is contained in more than one cluster,
+the {cmd:xtivreg2} approach is invalid, and it will exit with an error.
+
+{p}First-differences estimation makes
+no degrees-of-freedom adjustment,
+irrespective of whether {cmd:cluster} is used.
+
+{p}Other features of {cmd:xtivreg2}
+and differences vs. official {cmd:xtivreg}:
+
+{p 3 3}{cmd:xtivreg2} supports only the fixed effects
+and the first-differences panel models;
+the option {cmd:fe} or {cmd:fd} is required.
+GLS random effects is not supported.
+
+{p 3 3}{cmd:xtivreg2} does not estimate or report a constant
+with the fixed effects model {cmd:fe}.
+
+{p 3 3}If {cmd:ivreg2} version 3.0 or later is installed,
+{cmd:xtivreg2} supports 2-way clustering;
+see help {help ivreg2} for details.
+
+{p 3 3}First-differences estimation with {cmd:xtivreg2}
+yields estimates identical to {cmd:ivreg2} when the latter
+is supplied with all variables
+expressed in first-differences.
+
+{p 3 3}{cmd:xtivreg2} allows use of time series operators.
+
+{p 3 3}For fixed-effects estimation,
+the data must either be {cmd:tsset},
+the panel id variable set with {cmd:iis},
+or the panel id variable supplied to {cmd:xtivreg2}
+with the {cmd:ivar} option.
+For first-differences estimation,
+the data must be {cmd:tsset}.
+
+{p 3 3}{cmd:xtivreg2} supports all types of weights.
+
+{p 3 3}The R-squared reported by {cmd:xtivreg2}
+for the fixed-effects estimation
+is the "within R-squared" obtained by estimating
+the equation in mean-deviation form.
+
+{p 3 3}{cmd:xtivreg2} supports simple fixed effects
+and first-differences estimation
+with no endogeneous variables,
+i.e., {cmd:(}{it:varlist2}{cmd:=}{it:varlist_iv}{cmd:)}
+can be omitted.
+
+
+{title:Examples}
+
+{p 8 12}{stata "use http://fmwww.bc.edu/ec-p/data/macro/abdata.dta" : . use http://fmwww.bc.edu/ec-p/data/macro/abdata.dta }{p_end}
+{p 8 12}(Layard & Nickell, Unemployment in Britain, Economica 53, 1986, from Ox dist)
+
+{p 8 12}{stata "tsset id year" :. tsset id year}
+
+{col 0}({cmd:xtivreg} vs. {cmd:xtivreg2}, fixed effects)
+
+{p 8 12}{stata "xtivreg2 ys k (n=l2.n l3.n), fe small" : . xtivreg2 ys k (n=l2.n l3.n), fe small}
+
+{p 8 12}{stata "xtivreg ys k (n=l2.n l3.n), fe small" : . xtivreg ys k (n=l2.n l3.n), fe small}
+
+{col 0}({cmd:xtivreg2} vs. {cmd:ivreg2} vs. {cmd:xtivreg}, first-differences)
+
+{p 8 12}{stata "xtivreg2 ys k (n=l.n l2.n), fd small first" : . xtivreg2 ys k (n=l.n l2.n), fd small first}
+
+{p 8 12}{stata "ivreg2 d.ys d.k (d.n=ld.n l2d.n), small first" : . ivreg2 d.ys d.k (d.n=ld.n ld2.n), small first}
+
+{p 8 12}{stata "xtivreg ys k (n=l.n l2.n), fd small" : . xtivreg ys k (n=l.n l2.n), fd small}
+
+
+{title:Citation of xtivreg2}
+
+{p}{cmd:xtivreg2} is not an official Stata command. It is a free contribution
+to the research community, like a paper. Please cite it as such: {p_end}
+
+{phang}Schaffer, M.E., 2010.
+xtivreg2: Stata module to perform extended IV/2SLS, GMM and AC/HAC, LIML and k-class regression
+for panel data models.
+{browse "http://ideas.repec.org/c/boc/bocode/s456501.html":http://ideas.repec.org/c/boc/bocode/s456501.html}{p_end}
+
+
+{title:References}
+
+{p 0 4}Arellano, M.  1987.  Computing Robust Standard Errors for Within-Groups Estimators.
+Oxford Bulletin of Economics and Statistics, Vol. 49, pp. 431-34.
+
+{p 0 4}Baum, C.F., Schaffer, M.E., and Stillman, S. 2003. Instrumental Variables and GMM:
+Estimation and Testing.  The Stata Journal, Vol. 3, No. 1, pp. 1-31.
+Unpublished working paper version:
+Boston College Department of Economics Working Paper No 545. http://fmwww.bc.edu/ec-p/WP545.pdf
+
+{p 0 4}Wooldridge, J.M. 2002. Econometric Analysis of Cross Section and Panel Data.
+Cambridge, MA: MIT Press.
+
+
+{title:Author}
+
+	Mark E Schaffer, Heriot-Watt University, UK
+	m.e.schaffer@hw.ac.uk
+
+
+{title:Also see}
+
+{p 0 19}On-line:  help for {help ivreg2}, {help overid}, {help ivendog}, {help ivhettest},
+{help ivreset}, {help xtoverid}, {help condivreg} (if installed)
+{p_end}

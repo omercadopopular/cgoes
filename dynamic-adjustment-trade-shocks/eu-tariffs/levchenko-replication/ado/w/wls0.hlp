@@ -1,0 +1,53 @@
+
+.-
+help for ^wls0^
+.-
+
+Weighted least squares regression
+---------------------------------
+
+ ^wls0^ dvar ivars [if] [in], ^wv^ar(varlist) ^t^ype(wlstype) 
+     [ ^noc^onst ^rob^ust ^hc2^ ^hc3^ ^gr^aph ]
+
+Description
+-----------
+
+^wls0^ computes various weighted least squares regressions.  
+     The command generates three variables _wls_wgt, 
+     _wls_res and _wgt_res, the wls weights, the wls residuals 
+     and the weighted residuals respectively.
+
+
+Options
+-------
+
+^wvar(^varlist^)^ variables in the weightling equation.
+
+^type(^wlstype^)^ the wls type.  The choices are: 
+    ^abse^  - absolute value of residual
+    ^e2^    - residual squared
+    ^loge2^ - log residual squared
+    ^xb2^   - fitted value squared
+
+^noconst^ do not include a constant in the weighting equation.
+
+^robust^ using robust standard errors in the final regression.
+
+^graph^ plots the wls residuals vs fitted.
+
+
+Examples
+--------
+
+ . ^wls0 exp age ownrent income incomesq, wvar(income incomesq) type(abse)^
+ . ^wls0 exp age ownrent income incomesq, wvar(income incomesq) type(abse) noconst^
+
+
+Author
+------
+
+      Philip B. Ender
+      UCLA Department of Education
+      UCLA Academic Technology Services
+      ender@@ucla.edu 
+

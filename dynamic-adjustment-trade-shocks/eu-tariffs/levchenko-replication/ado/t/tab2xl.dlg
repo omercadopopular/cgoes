@@ -1,0 +1,166 @@
+/*
+  tab2xl
+
+*!  VERSION 1.0.2  21may2018
+*!  VERSION 1.0.3  20jun2018
+*!  VERSION 1.0.4  12jul2018
+
+*/
+
+VERSION 15.0
+
+INCLUDE _std_mlarge
+DEFINE _dlght 370
+INCLUDE header
+
+HELP hlp1, view("help tab2xl")
+RESET res1
+
+SCRIPT PREINIT
+BEGIN
+//        setscale_hadj resource TABULATE1_DLG_HSCALE
+END
+
+DIALOG main, label("tab2xl - tabulate to Excel") tabtitle("Main")
+BEGIN
+	RADIO		rb_one		_lft	_top 	_iwd	.,	///
+			label("One-way tabulate") onclickon(script set1way) first
+	RADIO		rb_two		@	_ss 	@	.,	///
+			label("Two-way tabulate")			///
+			onclickoff(script setPercentOff) onclickon(script set2way)
+	RADIO		rb_sum		@ 	_ss 	@	.,	///
+			label("Summary tabulate") 			///
+			onclickon(script set_summarize_on)		///
+			onclickoff(script set_summarize_off) last
+	TEXT		tx_row		@	_ls	_cwd3_1	.,	///
+               		label("Categorical variable:")
+	DEFINE holdy @y
+	VARNAME		vn_row		@	_ss	_vnwd	.,	///
+                	label("Categorical variable:")
+	TEXT		tx_col		_lft3_2	holdy	_cwd3_1	.,	///
+               		label("Column variable:")
+	VARNAME		vn_col		@	_ss	_vnwd	.,	///
+                	label("Column variable:")
+	TEXT		tx_sum		_lft3_3	holdy	_cwd3_1	.,	///
+			label("Summary variable:")
+	VARNAME		vn_sum		@	_ss 	_vnwd 	.,	///
+			label("Summary variable:") option(summarize)
+	GROUPBOX	gb_excel	_lft	_ls	_iwd	_ht19,	///
+			label("Excel settings")
+	TEXT		tx_file		_ilft 	_ss 	_ibwd 	.,	///
+			label("File name:")	
+	FILE		ed_file		@ 	_ss 	@ 	., 	///
+			label("Save as...")				///
+			error("File name") save
+	CHECKBOX	ch_replace	@	_ms	@	.,	///
+			label("Overwrite file") option(replace)
+	TEXT		tx_sheet	@ 	_ms 	@	.,	///
+			label("Sheet name: (optional)")
+	EDIT		ed_sheet	@ 	_ss 	_cwd1	.,	///
+			label(sheet) option(sheet)
+	CHECKBOX	ch_sheet_repl	@	_ms	_cwd3	.,	///
+			label("Overwrite sheet")
+	TEXT		tx_excel_row	_ilft 	_ls 	@	., 	///
+			label("Sheet row number:")
+	DEFINE holdy @y
+	SPINNER		sp_excel_row	@ 	_ss 	_spwd 	.,	///
+			error("Row number") option(row)			///
+			min(1) max(1048576)
+	TEXT		tx_excel_col	_ilft2 	holdy 	_cwd3	., 	///
+			label("Sheet column number:")
+	SPINNER		sp_excel_col	@ 	_ss 	_spwd 	., 	///
+			error("Column number") option(col)		///
+			min(1) max(16384) 
+END
+
+INCLUDE ifin
+INCLUDE weights_fai
+
+DIALOG adv, label("") tabtitle(resource LBL_ADVANCED)
+BEGIN
+	CHECKBOX	ch_missing	_lft	_top	_iwd	.,	///
+			option(missing)					///
+			label("Create a new row or column for missing values")
+	CHECKBOX	ch_percent	@	_ss	_iwd	.,	///
+			option(percentage)				///
+			label("Export relative frequencies for the row and column variables")
+END
+
+SCRIPT set1way
+BEGIN
+	main.vn_col.hide
+	main.tx_col.hide
+	main.tx_row.setlabel "Categorical variable:"
+	main.vn_sum.hide
+	main.tx_sum.hide
+END
+
+SCRIPT set2way
+BEGIN
+	main.vn_col.show
+	main.tx_col.show
+	main.tx_row.setlabel "Row variable:"
+	adv.ch_percent.show
+END
+
+SCRIPT set_summarize_on
+BEGIN
+	main.vn_sum.show
+	main.tx_sum.show
+	main.tx_col.show
+	main.vn_col.show
+	main.tx_row.setlabel "Row variable:"
+	main.tx_col.setlabel "Col. variable: (optional)"
+END
+
+SCRIPT set_summarize_off
+BEGIN
+	main.vn_sum.hide
+	main.tx_sum.hide
+	main.tx_col.setlabel "Column variable:"
+END
+
+SCRIPT setPercentOff
+BEGIN
+	adv.ch_percent.hide
+END
+
+PROGRAM command
+BEGIN
+        put "tab2xl "
+        varlist main.vn_row
+	if main.rb_two {
+		require main.vn_col
+		put " " main.vn_col
+	}
+	if main.rb_sum {
+		if main.vn_col {
+			put " " main.vn_col
+		}
+	}
+	put " using"
+	require main.ed_file
+	put " " main.ed_file
+        put " " /program weights_output
+        put " " /program ifin_output
+	beginoptions
+		require main.sp_excel_row
+		require main.sp_excel_col
+		optionarg main.sp_excel_row
+		optionarg main.sp_excel_col
+		if main.ed_sheet {
+			if main.ch_sheet_repl {
+				put " sheet(" main.ed_sheet ", replace)"
+			}
+			else {
+				optionarg main.ed_sheet
+			}
+		}
+		option adv.ch_missing
+		option main.ch_replace
+		option adv.ch_percent
+		if main.rb_sum {
+			optionarg main.vn_sum
+		}
+	endoptions
+END

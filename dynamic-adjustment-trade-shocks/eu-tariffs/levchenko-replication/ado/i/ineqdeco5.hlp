@@ -1,0 +1,210 @@
+.-
+help for ^ineqdeco5^
+.-
+
+Inequality indices, with decomposition by subgroup
+--------------------------------------------------
+
+^ineqdeco5^ varname [^[^fweights aweights^]^ ^if^ exp ^in^ range] 
+		[, ^by^group^(^groupvar^)^ ^w^ ^s^umm]
+
+^ineqdeco5^ is for use with Stata versions 5 to 8.1. For versions 8.2 onwards,
+use ^ineqdeco^.
+
+Options
+-------
+^by^group^(^groupvar^)^ requests inequality decompositions by population
+	subgroup, with subgroup membership summarized by groupvar.
+^w^ requests calculation of equally-distributed-equivalent incomes and
+	welfare indices in addition to the inequality index calculations.
+^s^umm requests presentation of ^summary, detail^ output for varname.
+
+Saved results (global macros)
+-----------------------------
+S_9010, S_7525		Percentile ratios p90/p10, p75/p25
+S_im1, S_i0, S_i1, S_i2	GE(a), for a = -1, 0, 1, 2 (defined below)
+S_gini			Gini coefficient
+S_ahalf, S_i1, S_a2	A(e), for e = 0.5, 1, 2 (defined below)
+
+	
+Examples
+--------
+. ^ineqdeco5 x [w=wgtvar]^
+. ^ineqdeco5 x, by(famtype) w^
+. ^ineqdeco5 x if sex==1, w s^
+
+Description
+-----------
+
+^ineqdeco5^ estimates a range of inequality and related indices commonly 
+used by economists, plus decompositions of a subset of these indices by 
+population subgroup.  Inequality decompositions by subgroup are useful 
+for providing inequality `profiles' at a point in time, and for analyzing 
+secular trends using shift-share analysis. Unit record (`micro' level) data 
+are required.
+
+Inequality indices estimated are: members of the single parameter
+Generalized Entropy class GE(a) for a = -1, 0, 1, 2; the Atkinson class
+A(e) for e = 0.5, 1, 2; the Gini coefficient, and the percentile ratios
+p90/p10 and p75/p25. Also presented are related summary statistics such as
+subgroup means and population shares. Optionally presented are indices 
+related to the Atkinson inequality indices, viz equally-distributed-
+equivalent income Yede(e), social welfare indices W(e), and the Sen 
+welfare index: see below for details. 
+
+The inequality indices differ in their sensitivities to income differences
+in different parts of the distribution. The more positive a is, the more
+sensitive GE(a) is to income differences at the top of the distribution; 
+the more negative a is, the more sensitive it is to differences at the 
+bottom of the distribution. GE(0) is the mean logarithmic deviation, 
+GE(1) is the Theil index, and GE(2) is half the square of the coefficient 
+of variation. The more positive e>0 (the 'inequality aversion parameter')
+is, the more sensitive A(e) is to income differences at the bottom of
+the distribution. The Gini coefficient is most sensitive to income
+differences about the middle (more precisely, the mode). 
+
+Detailed description
+--------------------
+
+Consider a population of persons (or households ...), i = 1,...,n, 
+with income y_i, and weight w_i. Let f_i = w_i/N, where 
+    i=n
+N = SUM(w_i). When the data are unweighted, w_i = 1 and N = n. 
+    i=1
+Arithmetic mean income is m. Suppose there is an exhaustive partition of 
+the population into mutually-exclusive subgroups k = 1,...,K.
+
+The Generalized Entropy class of inequality indices is given by
+                	  _                          _
+        	         |  _                  _      |
+	            1    | | i=n                |     |
+	GE(a) =  ------- | | SUM (f_i)(y_i/m)^^a]| - 1 |, a~=0, a~=1
+	          a(a-1) | | i=1                |     | 
+        	         |  -                  -      |
+                	  -                          -
+	           i=n             
+	GE(1) =    SUM (f_i)(y_i/m)[log(y_i/m)]
+        	   i=1             
+
+	           i=n             
+	GE(0) =    SUM (f_i)[log(m/y_i)].
+        	   i=1     
+
+Each GE(a) index can be additively decomposed as
+
+	GE(a) = GE_W(a) + GE_B(a)
+
+where GE_W(a) is Within-group Inequality and GE_B(a) is Between-Group
+Inequality.
+                  k=K
+	GE_W(a) = SUM [(v_k)^^(1-a)].[(s_k)^^a].GE_k(a)
+                  k=1
+
+where v_k = N_k/N is the number of persons in subgroup k divided by the 
+total number of persons (subgroup population share), and s_k is the
+share of total income held by k's members (subgroup income share). 
+
+GE_k(a), inequality for subgroup k, is calculated as if the subgroup were a 
+separate population, and GE_B(a) is derived assuming every person within 
+a given subgroup k received k's mean income, m_k.
+
+Define the equally-distributed-equivalent income 
+                   _                       _
+                  |  _                   _  |^^[1/(1-e)]
+                  | | i=n                 | |
+	Yede(e) = | | SUM (f_i)(y_i)^^(1-e]| |         , e>0, e~=1  
+                  | | i=1                 | | 
+                  |  -                   -  |
+                   -                       -
+                  i=n
+		= SUM (f_i).[log(y_i) ], e=1.
+                  i=1
+
+The Atkinson indices are defined by
+
+	A(e) = 1 - [Yede(e)/m].
+
+These indices are decomposable (but not additively decomposable):
+
+	A(e) = A_W(a) + A_B(a) - [A_W(a)].[A_B(a)]
+
+where                 k=K
+	A_W(a) = 1 - [SUM (v_k).(Yede_k)/m]
+                      k=1
+and                          k=K  
+	A_B(a) = 1 - (Yede)/[SUM (v_k).(Yede_k)/m].
+                             k=1
+
+Social welfare indices are defined by 
+
+	W(e) = {[Yede(e)]^^(1-e)}/(1-e),  e>0, e~=1
+
+	W(1) = log[Yede(1)].
+
+Each of these indices is an increasing function of a `generalized mean 
+of order (1-e)'.  All the welfare indices are additively decomposable:
+
+	        k=K
+	W(e) =  SUM (v_k).[W_k(e)].
+                k=1
+
+The Gini coefficient is given by 
+                                    i=n
+	G = 1 + (1/N) - [2/(m.N^^2)][SUM (N-i+1)(y_i)]
+                                    i=1
+
+where persons are ranked in ascending order of y_i.  The Gini coefficient 
+(and the percentile ratios) are not properly decomposable by subgroup into
+within- and between-group inequality components.
+
+Sen's (1976) welfare index is given by:
+
+	S = m(1-G).
+
+
+
+Author
+------
+Stephen P. Jenkins <stephenj@@essex.ac.uk>
+Institute for Social and Economic Research
+University of Essex, Colchester CO4 3SQ, U.K.
+
+NB minor fixes in February 2001: 
+   (i) Made compatible with Stata 7
+       (NB still runs with Stata 5 and Stata 6.)
+   (ii) bug fix for Gini with fweights (minor).
+
+
+References
+----------
+
+Atkinson, A.B. (1970) "On the measurement of inequality",
+	Journal of Economic Theory, 2, 244-63.
+Blackorby, C., Donaldson, D., and Auersperg, M. (1981),
+	"A new procedure for the measurement of inequality
+	within and between population subgroups", Canadian
+	Journal of Economics, XIV, 665-85.
+Cowell, F.A. (1995), Measuring Inequality, second edition,
+	Prentice-Hall/Harvester-Wheatsheaf, Hemel Hempstead.
+Jenkins, S.P. (1991), "The measurement of income inequality", in
+	L. Osberg (ed.), Economic Inequality and Poverty: International
+	Perspectives, Armonk NY, M.E. Sharpe. 
+Jenkins, S.P. (1995) "Accounting for inequality trends: decomposition 
+	analyses for the UK, 1971-86", Economica, 62, 29-63.
+Jenkins, S.P. (1997), "Trends in real income in	Britain: a microeconomic
+	analysis", Empirical Economics, 22, 483-500.
+Sen, A.K. (1976) "Real national income", Review of Economic Studies, 43,
+	19-39.
+Shorrocks, A.F. (1984), "Inequality decomposition by population 
+	subgroups", Econometrica, 52, 1369-88.
+
+
+Also see
+--------
+
+^inequal^ (sg30: STB-23) if installed; ^rspread^ (sg31: STB23) if installed
+^povdeco^ if installed; ^sumdist^ if installed
+^inequal2^  (http://fmwww.bc.edu/RePEc/bocode/i) if installed; 
+^ineqerr^ [STB-51: sg115] if installed
+
+

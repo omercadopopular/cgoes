@@ -1,0 +1,138 @@
+{smcl}
+{* 20dec2002}{...}
+{hline}
+help for {hi:grc1leg}{right:personal distribution}
+{hline}
+
+{title:Combine multiple graphs into one with a single common legend}
+
+{p 8 23}
+{cmd:grc1leg}
+{it:name}
+[{it:name} ...]
+[{cmd:,}
+{it:{help graph_combine:combine_options}}
+{it:legend_options}
+]
+
+{p 4 4 2}
+where {it:name} is
+
+	{it:name}{col 40}description
+	{hline 65}
+	{it:simplename}{...}
+{col 40}name of graph in memory
+	{it:name}{cmd:.gph}{...}
+{col 40}name of graph stored on disk
+	{cmd:"}{it:name}{cmd:"}{...}
+{col 40}name of graph stored on disk
+	{hline 65}
+	See {help graph_combine} for full details on syntax and options.
+	
+{p 4 4 2}
+and where {it:legend_options} are
+
+	{it:legend_options}{col 40}description
+	{hline 69}
+{col 9}{...}
+{col 9}{...}
+{cmdab:leg:endfrom:(}{it:name}{cmd:)}{...}
+{col 40}graph from which to take legend
+{...}
+{col 9}{...}
+{cmdab:pos:ition:(}{it:{help clockpos}}{cmd:)}{...}
+{col 40}where legend appears
+{...}
+{col 9}{...}
+{cmd:ring(}{it:{help ringpos}}{cmd:)}{...}
+{col 40}where legend appears (detail)
+{...}
+{col 9}{...}
+{cmd:span}{...}
+{col 40}"centering" of legend
+	{hline 69}
+{p 8 8 2}
+See
+{hi:Where legends appear} under {hi:Remarks} below and see
+{hi:Positioning of titles} in help
+{it:{help title_options}}
+for definitions of {it:clockpos} and {it:ringpos}.
+
+
+{title:Description}
+
+{p 4 4 2}
+{cmd:graph} {cmd:combine} arrays separately drawn graphs into one graph and
+shows a single common legend taken from one of the graphs.
+
+
+{title:Options}
+
+{p 4 8 2}
+{cmd:legendfrom(}{it:name}{cmd:)} specifies the graph from which the legend for
+   the combined graphs is to be taken, the default is the first graph in the
+   list.  The argument {it:name} must match one of the names from the list of 
+   graph names specified.
+
+{p 4 8 2}
+{cmd:position(}{it:clockpos}{cmd:)} and
+{cmd:ring(}{it:ringpos}{cmd:)}
+    override the default location of the legend, which is usually centered
+    below the plot region.  {cmd:position()} specifies a direction {it:(sic)}
+    according to the hours on the dial of a 12-hour clock, and {cmd:ring()}
+    specifies the distance from the plot region.
+
+{p 8 8 2}
+    {cmd:ring(0)} is defined as being inside the plot region itself and allows you
+    to place the legend inside the plot.  {cmd:ring(}{it:k}{cmd:)}, {it:k}>0,
+    specifies positions outside the plot region; the larger the {cmd:ring()}
+    value, the farther away from the plot region is the legend.  {cmd:ring()}
+    values may be integers or nonintegers and are treated ordinally.
+
+{p 8 8 2}
+    {cmd:position(12)} puts the legend directly above the plot region
+    (assuming {cmd:ring()}>0), {cmd:position(3)} directly to the right
+    of the plot region, and so on.
+
+{p 8 8 2}
+    See
+    {hi:Where legends appear} under {hi:Remarks} below and see
+    {hi:Positioning of titles} in
+    {it:{help title_options}} for more information on
+    the {cmd:position()} and {cmd:ring()} suboptions.
+
+{p 4 8 2}
+{cmd:span} specifies that the legend is to be placed in an area spanning the
+    entire width (or height) of the graph rather than an area spanning the
+    plot region.
+    This affects whether the legend is centered with respect to the plot
+    region or the entire graph.
+    See {hi:Spanning} in
+    {it:{help title_options}} for more information on {cmd:span}.
+
+{p 4 8 2}
+{it:combine_options} specify how the graphs are combined, titling the combined
+    graphs, and other common graph options.  See 
+    {help graph_combine} for details.
+
+
+{title:Remarks}
+
+
+{p 4 4 2}
+{cmd:grc1leg} is the same as {cmd:graph combine} except that it displays a
+single common legend for all of the combined graphs.  This legend is one of
+the legends from the graphs being combined, .  Otherwise, {cmd:grc1leg} is
+exactly like {cmd:graph combine}, see {help graph_combine} for further
+remarks.
+
+{title:Also see}
+
+{p 4 13 2}
+Online:  help for
+{help graph_combine};
+{help graph_use};
+{help graph_save},
+{it:{help saving_option}};
+{help gph_files}
+{p_end}

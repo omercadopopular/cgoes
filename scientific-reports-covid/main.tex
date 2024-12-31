@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{appendix}
+\usepackage{units}
+\usepackage{minted}
+\usepackage[affil-it]{authblk}
+
+\usepackage[style=nature]{biblatex}
+\addbibresource{ref.bib}
+
+\usepackage{geometry}
+\usepackage{csquotes}
+
+\theoremstyle{lemma}
+\newtheorem*{lemma}{Lemma}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\title{Pairwise difference regressions are just weighted averages}
+\author{Carlos Góes\footnote{University of California -- San Diego, Department of Economics. cgoes@ucsd.edu}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\textcite{savaris_stay-at-home_2021} aim at ``verifying if staying at home had an impact on mortality rates.'' This short note shows that the methodology they have applied in their paper does not allow them to do so. An estimated coefficient $\beta \approx 0$ does not imply that there is no association between the variables in either country. Rather, their pairwise difference regressions are computing coefficients that are weighted-averages of region-specific time series regressions, such that \textbf{it is possible that the association is significant in both regions but their weighted-average is close to zero}. Therefore, the results do not back up the conclusions of the paper. 
+
+Consider two regions: $A$ and $B$. Suppose that the true relationships between the change in deaths per million $(\Delta Y_t^i)$ and the change in an index of staying at home $(\Delta X_t^i)$ at epidemiological week $t$ in countries $i=A,B$ are the following:
+\begin{eqnarray*}
+    \Delta Y_t^A &=& \beta_A \Delta X_t^A + \varepsilon_t^A \\
+    \Delta Y_t^B &=& \beta_B \Delta X_t^B + \varepsilon_t^B
+\end{eqnarray*}
+
+For simplicity in exposition, assume that $\Delta X_t^A, \Delta X_t^B, \varepsilon_t^A, \varepsilon_t^B$ are all zero mean, iid processes. By subtracting the second equation from the first and defining $\Delta Y_t \equiv \Delta Y_t^A - \Delta Y_t^B$ and $\Delta X_t \equiv \Delta X_t^A - \Delta X_t^B$, we can write:
+\begin{eqnarray}\label{eq: model}
+    \Delta Y_t^A - \Delta Y_t^B &=& \beta ( \Delta X_t^A - \Delta X_t^B) + (\beta_A - \beta) \Delta X_t^A - (\beta_B-\beta) \Delta X_t^B +  (\varepsilon_t^A - \varepsilon_t^B) \nonumber \\
+     \Delta Y_t &=& \beta \Delta X_t + \eta_t
+\end{eqnarray}
+
+\noindent where $\eta_t \equiv (\beta_A - \beta) \Delta X_t^A - (\beta_B-\beta) \Delta X_t^B +  (\varepsilon_t^A - \varepsilon_t^B)$. It is easy to see that, for $\beta_i \neq \beta$, estimation of $\beta$ will not be consistent, since, by construction, $cov(\Delta X_t,\eta_t) \neq 0$.
+
+If nonetheless one estimates $(\ref{eq: model})$ by ordinary least squares, what does the regression coefficient $\beta$ converge to? It turns out that it converges to a variance-weighted average of $\beta_A$, $\beta_B$, as summarized in the following proposition.
+
+\begin{proposition} Let $\Delta X_t^A, \Delta X_t^B, \varepsilon_t^A, \varepsilon_t^B, \beta_A$, $\beta_B, \beta$ be all as above. Then $\hat{\beta}$, the ordinary least squares coefficient of regressing $\Delta Y_t$ on $\Delta X_t$, converges in probability to:
+
+\begin{equation}\label{eq: plim}
+    \beta = w \beta_A + (1-w) \beta_B
+\end{equation}
+
+\noindent with $w \equiv \frac{\mathbb{E}[(\Delta X_t^A)^2]}{\mathbb{E}[(\Delta X_t^A)^2] + \mathbb{E}[(\Delta X_t^B) ^2] }$. 
+
+\begin{proof}
+    Under the stated assumptions, $\hat{\beta} = \frac{\sum_{t}^T \Delta X_t \Delta Y_t}{\sum_{t}^T \Delta X_t^2} \xrightarrow{p} \frac{ \mathbb{E}[\Delta Y_t \Delta X_t] }{\mathbb{E}[\Delta X_t^2] } \equiv \beta$. One can calculate the population parameter $\beta$ analytically:
+
+\begin{eqnarray*}
+    \beta &=& \frac{ \mathbb{E}[\Delta Y_t \Delta X_t] }{\mathbb{E}[\Delta X_t^2] }  \\
+    &=& \frac{ \mathbb{E}[ ( \Delta Y_t^A - \Delta Y_t^B)( \Delta X_t^A - \Delta X_t^B)] }{\mathbb{E}[( \Delta X_t^A - \Delta X_t^B)^2] }  \\
+    &=& \frac{ \mathbb{E}[ \Delta Y_t^A \Delta X_t^A] + \mathbb{E}[ \Delta Y_t^B \Delta X_t^B] }{\mathbb{E}[(\Delta X_t^A)^2] + \mathbb{E}[(\Delta X_t^B) ^2] } \qquad   \because \mathbb{E}[\Delta X_t^A \Delta X_t^B] = \mathbb{E}[\Delta X_t^A \Delta Y_t^B] = \mathbb{E}[\Delta X_t^B \Delta Y_t^A] = 0  \\
+    &=& \frac{\mathbb{E}[(\Delta X_t^A)^2]}{\mathbb{E}[(\Delta X_t^A)^2] + \mathbb{E}[(\Delta X_t^B) ^2] } \frac{ \mathbb{E}[ \Delta Y_t^A \Delta X_t^A]}{ \mathbb{E}[(\Delta X_t^A)^2] } + \frac{\mathbb{E}[(\Delta X_t^B)^2]}{\mathbb{E}[(\Delta X_t^A)^2] + \mathbb{E}[(\Delta X_t^B) ^2] } \frac{\mathbb{E}[ \Delta Y_t^B \Delta X_t^B]}{ \mathbb{E}[(\Delta X_t^B)^2]} 
+\end{eqnarray*}
+
+Note that $\frac{ \mathbb{E}[ \Delta Y_t^A \Delta X_t^A]}{ \mathbb{E}[(\Delta X_t^A)^2] } = \beta_A$ and $\frac{ \mathbb{E}[ \Delta Y_t^B \Delta X_t^B]}{ \mathbb{E}[(\Delta X_t^B)^2] } =  \beta_B$. Using that and the definition of $w$ we arrive at the desired result.
+\end{proof}
+
+\end{proposition}
+
+The intuition regarding the (\ref{eq: plim}) in the Proposition is simple. Whenever the variance of $\Delta X_t^A$ is large relative to country $B$, $w \to 1$ and $\beta \to \beta_A$. Similarly, if the variance of $\Delta X_t^B$ is large relative to country $A$, $w \to 0$ and $\beta \to \beta_B$.
+
+What does this mean for the analysis of \textcite{savaris_stay-at-home_2021}? In general, it means that one cannot interpret their estimated $\hat{\beta}$ without knowing the underlying relative variances. Additionally, one cannot infer that an insignificant (or even numerically zero) $\hat{\beta}$ implies absence of association in either country.
+
+To see that, suppose countries $A$ and $B$ have identical variance in their independent variables, but $\beta_A$, $\beta_B$ are different. In country $A$, the policymaker adjusts stay-at-home orders in response to the increase in deaths, such that the change in the percentage of the public staying at home is positively correlated with the change in deaths. In country $B$, the policymaker does not act, such that the change in share of population staying at home is negatively correlated with contacts, infections, and deaths.
+
+Consider the limiting case in which $\beta_B = - \beta_A$. Then, since the regions have identical variance, $w=1/2$ and $\beta = 0$ even though the true association is nonzero in both countries. The regression coefficients in \textcite{savaris_stay-at-home_2021} should not lead one to conclude that, in either country, there is no association between the change in mobility and the change in deaths per million. Figure 1 shows the result of 10,000 simulated $\beta$ in which $\beta_A = 10$ and $\beta_B = -10$. In this case, $var(X^A_t) = var(X^B_t)$ and variables are iid and normally distributed. As expected, sample estimates are distributed around the population value of $\beta=0$.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.75]{histogram.pdf}
+    \caption{In-sample simulated \hat{\beta} for 10,000 random draws with $\Delta X_t^i \sim N(0,10)$, $\varepsilon_t^i \sim N(0,1)$, and $\Delta Y_t^i = \beta_i \Delta X_t^i + \varepsilon^i_t$, for $i = A, B$; $T=1,000$; and $\beta_A =10$, $\beta_B = -10$. As expected the sample values are distributed around the true population value of $\beta=0$.}
+\end{figure}
+
+For $\beta_A \neq \beta_B$, then, region-specific dynamics are heterogeneous and, as shown by \textcite{pesaran}, aggregating or pooling slopes can lead to biased estimates, making individual regressions for each group member preferable. If authors assume that $\beta_A = \beta_B$ for each pair in their sample -- i.e., homogeneous $\beta$ --, then dynamic panels would have many advantages in terms of efficiency and use of instruments to circumvent endogeneity. In either case, their pairwise approach would not be appropriate.
+
+In order to verify if ``staying at home had an impact on mortality rates,'' it would be necessary to address many other issues in the analysis, including, but not limited to, omitted variable bias, measurement error, and endogeneity of the regressors. However, as shown above, even in a purely correlational analysis, with no causality claims, the applied methodology will simply deliver a weighted-average of coefficients across the two regions. An estimated coefficient $\beta \approx 0$ does not imply that there is no association between the variables in either country. Therefore, their conclusion does not follow from their regressions.
+
+\printbibliography
+
+\appendix
+
+\section{Author information}
+
+\begin{itemize}
+    \item \textbf{Affiliations}: Department of Economics, University of California - San Diego
+    \item \textbf{Contributions}: This article is solo authored.
+    \item \textbf{Corresponding author}: Correspondence to Carlos Góes (cgoes@ucsd.edu).
+\end{itemize}
+
+
+\section{Competing interests}
+The author declares no competing interests.
+
+\end{document}

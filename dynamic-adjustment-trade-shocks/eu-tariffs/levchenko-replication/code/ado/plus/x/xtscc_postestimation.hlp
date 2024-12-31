@@ -1,0 +1,82 @@
+{smcl}
+{* 9nov2006}{...}
+{cmd:help xtscc postestimation}{right:version:  1.1.2}
+{right:also see:  {helpb xtscc}}
+{hline}
+
+{title:Title}
+
+{p 4 8}{cmd:xtscc postestimation}  -  Postestimation tools for {cmd:xtscc}{p_end}
+{p2colreset}{...}
+
+
+{title:Description}
+
+{pstd}
+The following postestimation commands are available for {cmd:xtscc}:
+
+{synoptset 13}{...}
+{synopt:command}description{p_end}
+{synoptline}
+{p2col :{helpb estat}}VCE and estimation sample summary{p_end}
+INCLUDE help post_estimates
+INCLUDE help post_lincom
+INCLUDE help post_mfx
+INCLUDE help post_nlcom
+{synopt :{helpb xtscc postestimation##predict:predict}}predictions,
+residuals, influence statistics, and other diagnostic measures.{p_end}
+INCLUDE help post_predictnl
+INCLUDE help post_test
+INCLUDE help post_testnl
+{synoptline}
+
+
+{marker predict}{...}
+{title:Syntax for predict}
+
+{p 8 16 2}
+{cmd:predict}
+{dtype}
+{newvar}
+{ifin}
+[{cmd:,} {it:statistic}]
+
+{synopthdr:statistic}
+{synoptline}
+{synopt:{opt xb}}linear prediction; the default{p_end}
+{synopt:{opt stpd}}standard error of the linear prediction{p_end}
+{synopt:{opt r:esiduals}}residuals{p_end}
+{synoptline}
+{p2colreset}{...}
+INCLUDE help esample
+
+
+{title:Options for predict}
+
+{phang}{opt xb}, the default, calculates the linear prediction.
+
+{phang}{opt stdp} calculates the standard error of the linear prediction.
+
+{phang}{opt residuals} calculates the residuals.
+
+
+{title:Example}
+
+{phang}{stata "webuse grunfeld" : . webuse grunfeld}{p_end}
+{phang}{stata "xtscc invest mvalue kstock, lag(4)" : . xtscc invest mvalue kstock, lag(4)}{p_end}
+
+{phang}{stata "predict inv_hat, xb": . predict inv_hat, xb}{p_end}
+
+
+{title:Author}
+
+{p 4 4}Daniel Hoechle, University of Basel, daniel.hoechle@unibas.ch{p_end}
+
+
+{title:Also see}
+
+{psee}
+Online:  {helpb xtscc};{break}
+{helpb estimates}, {helpb lincom}, {helpb mfx}, {helpb nlcom}, {helpb predictnl},
+{helpb test}, {helpb testnl}
+{p_end}

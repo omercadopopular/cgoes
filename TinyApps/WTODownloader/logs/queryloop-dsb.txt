@@ -1,0 +1,953 @@
+Script executed at 31/08/2021 11:56:57 
+Creating inventory list... 
+dsb-minutes-Documents_list_31_08_2021.xls included in inventory 
+Processing document WT/DSB/M/453 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M453.pdf&Open=True 
+Processing document WT/DSB/M/452 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M452.pdf&Open=True 
+Processing document WT/DSB/M/451 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M451.pdf&Open=True 
+Processing document WT/DSB/M/450 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M450.pdf&Open=True 
+Processing document WT/DSB/M/449 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M449.pdf&Open=True 
+Processing document WT/DSB/M/448 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M448.pdf&Open=True 
+Processing document WT/DSB/M/447 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M447.pdf&Open=True 
+Processing document WT/DSB/M/446 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M446.pdf&Open=True 
+Processing document WT/DSB/M/445 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M445.pdf&Open=True 
+Processing document WT/DSB/M/444 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M444.pdf&Open=True 
+Processing document WT/DSB/M/443 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M443.pdf&Open=True 
+Processing document WT/DSB/M/442 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M442.pdf&Open=True 
+Processing document WT/DSB/M/441 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M441.pdf&Open=True 
+Processing document WT/DSB/M/440 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M440.pdf&Open=True 
+Processing document WT/DSB/M/439 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M439.pdf&Open=True 
+Processing document WT/DSB/M/438 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M438.pdf&Open=True 
+Processing document WT/DSB/M/437 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M437.pdf&Open=True 
+Processing document WT/DSB/M/436 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M436.pdf&Open=True 
+Processing document WT/DSB/M/435 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M435.pdf&Open=True 
+Processing document WT/DSB/M/434 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M434.pdf&Open=True 
+Processing document WT/DSB/M/433 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M433.pdf&Open=True 
+Processing document WT/DSB/M/432 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M432.pdf&Open=True 
+Processing document WT/DSB/M/431 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M431.pdf&Open=True 
+Processing document WT/DSB/M/430 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M430.pdf&Open=True 
+Processing document WT/DSB/M/429 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M429.pdf&Open=True 
+Processing document WT/DSB/M/428 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M428.pdf&Open=True 
+Processing document WT/DSB/M/427 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M427.pdf&Open=True 
+Processing document WT/DSB/M/426 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M426.pdf&Open=True 
+Processing document WT/DSB/M/425 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M425.pdf&Open=True 
+Processing document WT/DSB/M/424 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M424.pdf&Open=True 
+Processing document WT/DSB/M/423 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M423.pdf&Open=True 
+Processing document WT/DSB/M/422 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M422.pdf&Open=True 
+Processing document WT/DSB/M/421 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M421.pdf&Open=True 
+Processing document WT/DSB/M/420 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M420.pdf&Open=True 
+Processing document WT/DSB/M/414/Corr.2 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M414C2.pdf&Open=True 
+Processing document WT/DSB/M/414/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M414C1.pdf&Open=True 
+Processing document WT/DSB/M/419 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M419.pdf&Open=True 
+Processing document WT/DSB/M/418 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M418.pdf&Open=True 
+Processing document WT/DSB/M/417 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M417.pdf&Open=True 
+Processing document WT/DSB/M/416 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M416.pdf&Open=True 
+Processing document WT/DSB/M/415 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M415.pdf&Open=True 
+Processing document WT/DSB/M/414 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M414.pdf&Open=True 
+Processing document WT/DSB/M/413 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M413.pdf&Open=True 
+Processing document WT/DSB/M/412 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M412.pdf&Open=True 
+Processing document WT/DSB/M/411 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M411.pdf&Open=True 
+Processing document WT/DSB/M/410 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M410.pdf&Open=True 
+Processing document WT/DSB/M/409 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M409.pdf&Open=True 
+Processing document WT/DSB/M/408 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M408.pdf&Open=True 
+Processing document WT/DSB/M/407 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M407.pdf&Open=True 
+Processing document WT/DSB/M/406 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M406.pdf&Open=True 
+Processing document WT/DSB/M/405 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M405.pdf&Open=True 
+Processing document WT/DSB/M/404 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M404.pdf&Open=True 
+Processing document WT/DSB/M/403 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M403.pdf&Open=True 
+Processing document WT/DSB/M/402 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M402.pdf&Open=True 
+Processing document WT/DSB/M/401 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M401.pdf&Open=True 
+Processing document WT/DSB/M/400 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M400.pdf&Open=True 
+Processing document WT/DSB/M/399 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M399.pdf&Open=True 
+Processing document WT/DSB/M/398 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M398.pdf&Open=True 
+Processing document WT/DSB/M/397 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M397.pdf&Open=True 
+Processing document WT/DSB/M/396 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M396.pdf&Open=True 
+Processing document WT/DSB/M/395 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M395.pdf&Open=True 
+Processing document WT/DSB/M/394 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M394.pdf&Open=True 
+Processing document WT/DSB/M/393 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M393.pdf&Open=True 
+Processing document WT/DSB/M/392 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M392.pdf&Open=True 
+Processing document WT/DSB/M/391 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M391.pdf&Open=True 
+Processing document WT/DSB/M/390 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M390.pdf&Open=True 
+Processing document WT/DSB/M/389 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M389.pdf&Open=True 
+Processing document WT/DSB/M/388 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M388.pdf&Open=True 
+Processing document WT/DSB/M/387 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M387.pdf&Open=True 
+Processing document WT/DSB/M/386 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M386.pdf&Open=True 
+Processing document WT/DSB/M/385 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M385.pdf&Open=True 
+Processing document WT/DSB/M/384 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M384.pdf&Open=True 
+Processing document WT/DSB/M/383 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M383.pdf&Open=True 
+Processing document WT/DSB/M/382 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M382.pdf&Open=True 
+Processing document WT/DSB/M/381 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M381.pdf&Open=True 
+Processing document WT/DSB/M/380 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M380.pdf&Open=True 
+Processing document WT/DSB/M/379 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M379.pdf&Open=True 
+Processing document WT/DSB/M/378 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M378.pdf&Open=True 
+Processing document WT/DSB/M/377 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M377.pdf&Open=True 
+Processing document WT/DSB/M/376 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M376.pdf&Open=True 
+Processing document WT/DSB/M/375 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M375.pdf&Open=True 
+Processing document WT/DSB/M/374 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M374.pdf&Open=True 
+Processing document WT/DSB/M/373 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M373.pdf&Open=True 
+Processing document WT/DSB/M/372 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M372.pdf&Open=True 
+Processing document WT/DSB/M/371 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M371.pdf&Open=True 
+Processing document WT/DSB/M/370 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M370.pdf&Open=True 
+Processing document WT/DSB/M/369 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M369.pdf&Open=True 
+Processing document WT/DSB/M/368 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M368.pdf&Open=True 
+Processing document WT/DSB/M/367 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M367.pdf&Open=True 
+Processing document WT/DSB/M/366 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M366.pdf&Open=True 
+Processing document WT/DSB/M/365 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M365.pdf&Open=True 
+Processing document WT/DSB/M/364 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M364.pdf&Open=True 
+Processing document WT/DSB/M/363 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M363.pdf&Open=True 
+Processing document WT/DSB/M/362 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M362.pdf&Open=True 
+Processing document WT/DSB/M/361 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M361.pdf&Open=True 
+Processing document WT/DSB/M/360 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M360.pdf&Open=True 
+Processing document WT/DSB/M/359 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M359.pdf&Open=True 
+Processing document WT/DSB/M/358 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M358.pdf&Open=True 
+Processing document WT/DSB/M/357 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M357.pdf&Open=True 
+Processing document WT/DSB/M/356 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M356.pdf&Open=True 
+Processing document WT/DSB/M/355 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M355.pdf&Open=True 
+Processing document WT/DSB/M/354 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M354.pdf&Open=True 
+Processing document WT/DSB/M/353 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M353.pdf&Open=True 
+Processing document WT/DSB/M/352 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M352.pdf&Open=True 
+Processing document WT/DSB/M/351 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M351.pdf&Open=True 
+Processing document WT/DSB/M/350 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M350.pdf&Open=True 
+Processing document WT/DSB/M/344/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M344C1.pdf&Open=True 
+Processing document WT/DSB/M/349 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M349.pdf&Open=True 
+Processing document WT/DSB/M/348 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M348.pdf&Open=True 
+Processing document WT/DSB/M/347 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M347.pdf&Open=True 
+Processing document WT/DSB/M/346 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M346.pdf&Open=True 
+Processing document WT/DSB/M/345 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M345.pdf&Open=True 
+Processing document WT/DSB/M/344 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M344.pdf&Open=True 
+Processing document WT/DSB/M/343 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M343.pdf&Open=True 
+Processing document WT/DSB/M/342 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M342.pdf&Open=True 
+Processing document WT/DSB/M/341 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M341.pdf&Open=True 
+Processing document WT/DSB/M/340 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M340.pdf&Open=True 
+Processing document WT/DSB/M/339 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M339.pdf&Open=True 
+Processing document WT/DSB/M/338 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M338.pdf&Open=True 
+Processing document WT/DSB/M/337 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M337.pdf&Open=True 
+Processing document WT/DSB/M/336 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M336.pdf&Open=True 
+Processing document WT/DSB/M/335 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M335.pdf&Open=True 
+Processing document WT/DSB/M/334 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M334.pdf&Open=True 
+Processing document WT/DSB/M/333 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M333.pdf&Open=True 
+Processing document WT/DSB/M/332 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M332.pdf&Open=True 
+Processing document WT/DSB/M/331 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M331.pdf&Open=True 
+Processing document WT/DSB/M/330 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M330.pdf&Open=True 
+Processing document WT/DSB/M/329 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M329.pdf&Open=True 
+Processing document WT/DSB/M/328 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M328.pdf&Open=True 
+Processing document WT/DSB/M/327 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M327.pdf&Open=True 
+Processing document WT/DSB/M/326 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M326.pdf&Open=True 
+Processing document WT/DSB/M/325 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M325.pdf&Open=True 
+Processing document WT/DSB/M/324 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M324.pdf&Open=True 
+Processing document WT/DSB/M/323 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M323.pdf&Open=True 
+Processing document WT/DSB/M/322 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M322.pdf&Open=True 
+Processing document WT/DSB/M/321 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M321.pdf&Open=True 
+Processing document WT/DSB/M/320 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M320.pdf&Open=True 
+Processing document WT/DSB/M/319 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M319.pdf&Open=True 
+Processing document WT/DSB/M/318 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M318.pdf&Open=True 
+Processing document WT/DSB/M/317 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M317.pdf&Open=True 
+Processing document WT/DSB/M/316 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M316.pdf&Open=True 
+Processing document WT/DSB/M/315 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M315.pdf&Open=True 
+Processing document WT/DSB/M/314 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M314.pdf&Open=True 
+Processing document WT/DSB/M/313 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M313.pdf&Open=True 
+Processing document WT/DSB/M/312 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M312.pdf&Open=True 
+Processing document WT/DSB/M/311 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M311.pdf&Open=True 
+Processing document WT/DSB/M/310 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M310.pdf&Open=True 
+Processing document WT/DSB/M/309 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M309.pdf&Open=True 
+Processing document WT/DSB/M/308 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M308.pdf&Open=True 
+Processing document WT/DSB/M/307 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M307.pdf&Open=True 
+Processing document WT/DSB/M/305 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M305.pdf&Open=True 
+Processing document WT/DSB/M/306 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M306.pdf&Open=True 
+Processing document WT/DSB/M/304 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M304.pdf&Open=True 
+Processing document WT/DSB/M/303 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M303.pdf&Open=True 
+Processing document WT/DSB/M/302 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M302.pdf&Open=True 
+Processing document WT/DSB/M/301 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M301.pdf&Open=True 
+Processing document WT/DSB/M/300 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M300.pdf&Open=True 
+Processing document WT/DSB/M/299 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M299.pdf&Open=True 
+Processing document WT/DSB/M/298 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M298.pdf&Open=True 
+Processing document WT/DSB/M/297 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M297.pdf&Open=True 
+Processing document WT/DSB/M/296 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M296.pdf&Open=True 
+Processing document WT/DSB/M/295 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M295.pdf&Open=True 
+Processing document WT/DSB/M/294 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M294.pdf&Open=True 
+Processing document WT/DSB/M/293 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M293.pdf&Open=True 
+Processing document WT/DSB/M/292 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M292.pdf&Open=True 
+Processing document WT/DSB/M/291 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M291.pdf&Open=True 
+Processing document WT/DSB/M/290 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M290.pdf&Open=True 
+Processing document WT/DSB/M/289 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M289.pdf&Open=True 
+Processing document WT/DSB/M/288 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M288.pdf&Open=True 
+Processing document WT/DSB/M/287 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M287.pdf&Open=True 
+Processing document WT/DSB/M/286 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M286.pdf&Open=True 
+Processing document WT/DSB/M/285 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M285.pdf&Open=True 
+Processing document WT/DSB/M/284 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M284.pdf&Open=True 
+Processing document WT/DSB/M/283 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M283.pdf&Open=True 
+Processing document WT/DSB/M/282 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M282.pdf&Open=True 
+Processing document WT/DSB/M/280 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M280.pdf&Open=True 
+Processing document WT/DSB/M/281 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M281.pdf&Open=True 
+Processing document WT/DSB/M/279 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M279.pdf&Open=True 
+Processing document WT/DSB/M/278 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M278.pdf&Open=True 
+Processing document WT/DSB/M/277 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M277.pdf&Open=True 
+Processing document WT/DSB/M/276 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M276.pdf&Open=True 
+Processing document WT/DSB/M/275 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M275.pdf&Open=True 
+Processing document WT/DSB/M/274 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M274.pdf&Open=True 
+Processing document WT/DSB/M/273 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M273.pdf&Open=True 
+Processing document WT/DSB/M/272 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M272.pdf&Open=True 
+Processing document WT/DSB/M/271 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M271.pdf&Open=True 
+Processing document WT/DSB/M/270 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M270.pdf&Open=True 
+Processing document WT/DSB/M/269 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M269.pdf&Open=True 
+Processing document WT/DSB/M/268 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M268.pdf&Open=True 
+Processing document WT/DSB/M/267 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M267.pdf&Open=True 
+Processing document WT/DSB/M/266 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M266.pdf&Open=True 
+Processing document WT/DSB/M/265 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M265.pdf&Open=True 
+Processing document WT/DSB/M/264 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M264.pdf&Open=True 
+Processing document WT/DSB/M/263 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M263.pdf&Open=True 
+Processing document WT/DSB/M/262 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M262.pdf&Open=True 
+Processing document WT/DSB/M/261 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M261.pdf&Open=True 
+Processing document WT/DSB/M/260 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M260.pdf&Open=True 
+Processing document WT/DSB/M/259 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M259.pdf&Open=True 
+Processing document WT/DSB/M/258 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M258.pdf&Open=True 
+Processing document WT/DSB/M/257 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M257.pdf&Open=True 
+Processing document WT/DSB/M/256 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M256.pdf&Open=True 
+Processing document WT/DSB/M/254 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M254.pdf&Open=True 
+Processing document WT/DSB/M/255 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M255.pdf&Open=True 
+Processing document WT/DSB/M/253 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M253.pdf&Open=True 
+Processing document WT/DSB/M/252 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M252.pdf&Open=True 
+Processing document WT/DSB/M/251 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M251.pdf&Open=True 
+Processing document WT/DSB/M/250 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M250.pdf&Open=True 
+Processing document WT/DSB/M/249 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M249.pdf&Open=True 
+Processing document WT/DSB/M/248 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M248.pdf&Open=True 
+Processing document WT/DSB/M/247 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M247.pdf&Open=True 
+Processing document WT/DSB/M/245/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M245C1.pdf&Open=True 
+Processing document WT/DSB/M/246 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M246.pdf&Open=True 
+Processing document WT/DSB/M/245 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M245.pdf&Open=True 
+Processing document WT/DSB/M/244 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M244.pdf&Open=True 
+Processing document WT/DSB/M/243 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M243.pdf&Open=True 
+Processing document WT/DSB/M/242 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M242.pdf&Open=True 
+Processing document WT/DSB/M/241 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M241.pdf&Open=True 
+Processing document WT/DSB/M/240 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M240.pdf&Open=True 
+Processing document WT/DSB/M/239 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M239.pdf&Open=True 
+Processing document WT/DSB/M/238 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M238.pdf&Open=True 
+Processing document WT/DSB/M/237 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M237.pdf&Open=True 
+Processing document WT/DSB/M/236 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M236.pdf&Open=True 
+Processing document WT/DSB/M/235 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M235.pdf&Open=True 
+Processing document WT/DSB/M/234/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M234C1.pdf&Open=True 
+Processing document WT/DSB/M/234 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M234.pdf&Open=True 
+Processing document WT/DSB/M/232 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M232.pdf&Open=True 
+Processing document WT/DSB/M/233 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M233.pdf&Open=True 
+Processing document WT/DSB/M/231 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M231.pdf&Open=True 
+Processing document WT/DSB/M/230 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M230.pdf&Open=True 
+Processing document WT/DSB/M/229 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M229.pdf&Open=True 
+Processing document WT/DSB/M/228 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M228.pdf&Open=True 
+Processing document WT/DSB/M/227 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M227.pdf&Open=True 
+Processing document WT/DSB/M/226 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M226.pdf&Open=True 
+Processing document WT/DSB/M/225 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M225.pdf&Open=True 
+Processing document WT/DSB/M/224 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M224.pdf&Open=True 
+Processing document WT/DSB/M/223 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M223.pdf&Open=True 
+Processing document WT/DSB/M/222 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M222.pdf&Open=True 
+Processing document WT/DSB/M/221 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M221.pdf&Open=True 
+Processing document WT/DSB/M/220 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M220.pdf&Open=True 
+Processing document WT/DSB/M/219 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M219.pdf&Open=True 
+Processing document WT/DSB/M/218 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M218.pdf&Open=True 
+Processing document WT/DSB/M/217 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M217.pdf&Open=True 
+Processing document WT/DSB/M/215 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M215.pdf&Open=True 
+Processing document WT/DSB/M/216 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M216.pdf&Open=True 
+Processing document WT/DSB/M/214 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M214.pdf&Open=True 
+Processing document WT/DSB/M/213 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M213.pdf&Open=True 
+Processing document WT/DSB/M/212 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M212.pdf&Open=True 
+Processing document WT/DSB/M/211/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M211C1.pdf&Open=True 
+Processing document WT/DSB/M/211 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M211.pdf&Open=True 
+Processing document WT/DSB/M/210 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M210.pdf&Open=True 
+Processing document WT/DSB/M/209 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M209.pdf&Open=True 
+Processing document WT/DSB/M/208 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M208.pdf&Open=True 
+Processing document WT/DSB/M/207 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M207.pdf&Open=True 
+Processing document WT/DSB/M/206 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M206.pdf&Open=True 
+Processing document WT/DSB/M/205 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M205.pdf&Open=True 
+Processing document WT/DSB/M/203 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M203.pdf&Open=True 
+Processing document WT/DSB/M/204 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M204.pdf&Open=True 
+Processing document WT/DSB/M/202 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M202.pdf&Open=True 
+Processing document WT/DSB/M/200 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M200.pdf&Open=True 
+Processing document WT/DSB/M/201 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M201.pdf&Open=True 
+Processing document WT/DSB/M/199 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M199.pdf&Open=True 
+Processing document WT/DSB/M/198 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M198.pdf&Open=True 
+Processing document WT/DSB/M/197 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M197.pdf&Open=True 
+Processing document WT/DSB/M/196 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M196.pdf&Open=True 
+Processing document WT/DSB/M/195 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M195.pdf&Open=True 
+Processing document WT/DSB/M/194 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M194.pdf&Open=True 
+Processing document WT/DSB/M/193 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M193.pdf&Open=True 
+Processing document WT/DSB/M/192 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M192.pdf&Open=True 
+Processing document WT/DSB/M/191 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M191.pdf&Open=True 
+Processing document WT/DSB/M/190 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M190.pdf&Open=True 
+Processing document WT/DSB/M/189 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M189.pdf&Open=True 
+Processing document WT/DSB/M/188 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M188.pdf&Open=True 
+Processing document WT/DSB/M/187 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M187.pdf&Open=True 
+Processing document WT/DSB/M/186 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M186.pdf&Open=True 
+Processing document WT/DSB/M/185 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M185.pdf&Open=True 
+Processing document WT/DSB/M/184 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M184.pdf&Open=True 
+Processing document WT/DSB/M/183 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M183.pdf&Open=True 
+Processing document WT/DSB/M/182 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M182.pdf&Open=True 
+Processing document WT/DSB/M/181 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M181.pdf&Open=True 
+Processing document WT/DSB/M/180 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M180.pdf&Open=True 
+Processing document WT/DSB/M/179 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M179.pdf&Open=True 
+Processing document WT/DSB/M/178 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M178.pdf&Open=True 
+Processing document WT/DSB/M/177 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M177.pdf&Open=True 
+Processing document WT/DSB/M/176 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M176.pdf&Open=True 
+Processing document WT/DSB/M/175 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M175.pdf&Open=True 
+Processing document WT/DSB/M/174 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M174.pdf&Open=True 
+Processing document WT/DSB/M/173 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M173.pdf&Open=True 
+Processing document WT/DSB/M/172 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M172.pdf&Open=True 
+Processing document WT/DSB/M/171 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M171.pdf&Open=True 
+Processing document WT/DSB/M/170 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M170.pdf&Open=True 
+Processing document WT/DSB/M/169 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M169.pdf&Open=True 
+Processing document WT/DSB/M/168 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M168.pdf&Open=True 
+Processing document WT/DSB/M/167 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M167.pdf&Open=True 
+Processing document WT/DSB/M/166 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M166.pdf&Open=True 
+Processing document WT/DSB/M/165 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M165.pdf&Open=True 
+Processing document WT/DSB/M/164 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M164.pdf&Open=True 
+Processing document WT/DSB/M/163 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M163.pdf&Open=True 
+Processing document WT/DSB/M/162 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M162.pdf&Open=True 
+Processing document WT/DSB/M/161 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M161.pdf&Open=True 
+Processing document WT/DSB/M/160 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M160.pdf&Open=True 
+Processing document WT/DSB/M/159 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M159.pdf&Open=True 
+Processing document WT/DSB/M/158 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M158.pdf&Open=True 
+Processing document WT/DSB/M/157 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M157.pdf&Open=True 
+Processing document WT/DSB/M/156 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M156.pdf&Open=True 
+Processing document WT/DSB/M/155 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M155.pdf&Open=True 
+Processing document WT/DSB/M/154 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M154.pdf&Open=True 
+Processing document WT/DSB/M/153 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M153.pdf&Open=True 
+Processing document WT/DSB/M/152 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M152.pdf&Open=True 
+Processing document WT/DSB/M/151 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M151.pdf&Open=True 
+Processing document WT/DSB/M/150 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M150.pdf&Open=True 
+Processing document WT/DSB/M/147/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M147C1.pdf&Open=True 
+Processing document WT/DSB/M/149 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M149.pdf&Open=True 
+Processing document WT/DSB/M/147 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M147.pdf&Open=True 
+Processing document WT/DSB/M/148 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M148.pdf&Open=True 
+Processing document WT/DSB/M/146 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M146.pdf&Open=True 
+Processing document WT/DSB/M/145 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M145.pdf&Open=True 
+Processing document WT/DSB/M/144/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M144C1.pdf&Open=True 
+Processing document WT/DSB/M/144 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M144.pdf&Open=True 
+Processing document WT/DSB/M/143 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M143.pdf&Open=True 
+Processing document WT/DSB/M/142 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M142.pdf&Open=True 
+Processing document WT/DSB/M/141 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M141.pdf&Open=True 
+Processing document WT/DSB/M/140 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M140.pdf&Open=True 
+Processing document WT/DSB/M/139 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M139.pdf&Open=True 
+Processing document WT/DSB/M/137 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M137.pdf&Open=True 
+Processing document WT/DSB/M/138 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M138.pdf&Open=True 
+Processing document WT/DSB/M/136 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M136.pdf&Open=True 
+Processing document WT/DSB/M/135 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M135.pdf&Open=True 
+Processing document WT/DSB/M/134 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M134.pdf&Open=True 
+Processing document WT/DSB/M/133/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M133C1.pdf&Open=True 
+Processing document WT/DSB/M/133 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M133.pdf&Open=True 
+Processing document WT/DSB/M/132 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M132.pdf&Open=True 
+Processing document WT/DSB/M/131 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M131.pdf&Open=True 
+Processing document WT/DSB/M/130 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M130.pdf&Open=True 
+Processing document WT/DSB/M/129 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M129.pdf&Open=True 
+Processing document WT/DSB/M/128 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M128.pdf&Open=True 
+Processing document WT/DSB/M/127 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M127.pdf&Open=True 
+Processing document WT/DSB/M/124/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M124C1.pdf&Open=True 
+Processing document WT/DSB/M/126 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M126.pdf&Open=True 
+Processing document WT/DSB/M/125 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M125.pdf&Open=True 
+Processing document WT/DSB/M/124 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M124.pdf&Open=True 
+Processing document WT/DSB/M/123 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M123.pdf&Open=True 
+Processing document WT/DSB/M/122 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M122.pdf&Open=True 
+Processing document WT/DSB/M/121 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M121.pdf&Open=True 
+Processing document WT/DSB/M/120 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M120.pdf&Open=True 
+Processing document WT/DSB/M/119 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M119.pdf&Open=True 
+Processing document WT/DSB/M/118 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M118.pdf&Open=True 
+Processing document WT/DSB/M/117 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M117.pdf&Open=True 
+Processing document WT/DSB/M/116 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M116.pdf&Open=True 
+Processing document WT/DSB/M/115 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M115.pdf&Open=True 
+Processing document WT/DSB/M/114 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M114.pdf&Open=True 
+Processing document WT/DSB/M/113 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M113.pdf&Open=True 
+Processing document WT/DSB/M/112 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M112.pdf&Open=True 
+Processing document WT/DSB/M/111 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M111.pdf&Open=True 
+Processing document WT/DSB/M/110 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M110.pdf&Open=True 
+Processing document WT/DSB/M/109 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M109.pdf&Open=True 
+Processing document WT/DSB/M/108 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M108.pdf&Open=True 
+Processing document WT/DSB/M/107 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M107.pdf&Open=True 
+Processing document WT/DSB/M/106 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M106.pdf&Open=True 
+Processing document WT/DSB/M/105/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M105C1.pdf&Open=True 
+Processing document WT/DSB/M/105 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M105.pdf&Open=True 
+Processing document WT/DSB/M/104 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M104.pdf&Open=True 
+Processing document WT/DSB/M/103 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M103.pdf&Open=True 
+Processing document WT/DSB/M/102 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M102.pdf&Open=True 
+Processing document WT/DSB/M/101 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M101.pdf&Open=True 
+Processing document WT/DSB/M/100 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M100.pdf&Open=True 
+Processing document WT/DSB/M/99 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M99.pdf&Open=True 
+Processing document WT/DSB/M/98 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M98.pdf&Open=True 
+Processing document WT/DSB/M/97 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M97.pdf&Open=True 
+Processing document WT/DSB/M/96 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M96.pdf&Open=True 
+Processing document WT/DSB/M/95 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M95.pdf&Open=True 
+Processing document WT/DSB/M/94 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M94.pdf&Open=True 
+Processing document WT/DSB/M/92/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M92C1.pdf&Open=True 
+Processing document WT/DSB/M/92 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M92.pdf&Open=True 
+Processing document WT/DSB/M/93 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M93.pdf&Open=True 
+Processing document WT/DSB/M/91 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M91.pdf&Open=True 
+Processing document WT/DSB/M/90 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M90.pdf&Open=True 
+Processing document WT/DSB/M/89 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M89.pdf&Open=True 
+Processing document WT/DSB/M/88 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M88.pdf&Open=True 
+Processing document WT/DSB/M/85/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M85C1.pdf&Open=True 
+Processing document WT/DSB/M/86 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M86.pdf&Open=True 
+Processing document WT/DSB/M/87 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M87.pdf&Open=True 
+Processing document WT/DSB/M/85 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M85.pdf&Open=True 
+Processing document WT/DSB/M/84 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M84.pdf&Open=True 
+Processing document WT/DSB/M/83 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M83.pdf&Open=True 
+Processing document WT/DSB/M/80 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M80.pdf&Open=True 
+Processing document WT/DSB/M/81 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M81.pdf&Open=True 
+Processing document WT/DSB/M/82 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M82.pdf&Open=True 
+Processing document WT/DSB/M/79 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M79.pdf&Open=True 
+Processing document WT/DSB/M/78 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M78.pdf&Open=True 
+Processing document WT/DSB/M/77 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M77.pdf&Open=True 
+Processing document WT/DSB/M/76 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M76.pdf&Open=True 
+Processing document WT/DSB/M/75 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M75.pdf&Open=True 
+Processing document WT/DSB/M/74 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M74.pdf&Open=True 
+Processing document WT/DSB/M/73 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M73.pdf&Open=True 
+Processing document WT/DSB/M/71 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M71.pdf&Open=True 
+Processing document WT/DSB/M/72 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M72.pdf&Open=True 
+Processing document WT/DSB/M/70 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M70.pdf&Open=True 
+Processing document WT/DSB/M/69/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M69C1.pdf&Open=True 
+Processing document WT/DSB/M/69 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M69.pdf&Open=True 
+Processing document WT/DSB/M/68 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M68.pdf&Open=True 
+Processing document WT/DSB/M/67 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M67.pdf&Open=True 
+Processing document WT/DSB/M/66 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M66.pdf&Open=True 
+Processing document WT/DSB/M/65 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M65.pdf&Open=True 
+Processing document WT/DSB/M/64 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M64.pdf&Open=True 
+Processing document WT/DSB/M/63 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M63.pdf&Open=True 
+Processing document WT/DSB/M/62 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M62.pdf&Open=True 
+Processing document WT/DSB/M/61 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M61.pdf&Open=True 
+Processing document WT/DSB/M/60 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M60.pdf&Open=True 
+Processing document WT/DSB/M/59 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M59.pdf&Open=True 
+Processing document WT/DSB/M/57 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M57.pdf&Open=True 
+Processing document WT/DSB/M/58 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M58.pdf&Open=True 
+Processing document WT/DSB/M/56 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M56.pdf&Open=True 
+Processing document WT/DSB/M/55/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M55C1.pdf&Open=True 
+Processing document WT/DSB/M/55 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M55.pdf&Open=True 
+Processing document WT/DSB/M/54 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M54.pdf&Open=True 
+Processing document WT/DSB/M/53 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M53.pdf&Open=True 
+Processing document WT/DSB/M/51/Add.2 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M51A2.pdf&Open=True 
+Processing document WT/DSB/M/51/Add.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M51A1.pdf&Open=True 
+Processing document WT/DSB/M/52 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m52.pdf&Open=True 
+Processing document WT/DSB/M/51 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m51.pdf&Open=True 
+Processing document WT/DSB/M/50 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m50.pdf&Open=True 
+Processing document WT/DSB/M/49 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m49.pdf&Open=True 
+Processing document WT/DSB/M/48 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M48.pdf&Open=True 
+Processing document WT/DSB/M/47 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M47.pdf&Open=True 
+Processing document WT/DSB/M/46 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M46.pdf&Open=True 
+Processing document WT/DSB/M/43/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M43C1.pdf&Open=True 
+Processing document WT/DSB/M/45 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M45.pdf&Open=True 
+Processing document WT/DSB/M/44 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M44.pdf&Open=True 
+Processing document WT/DSB/M/43 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M43.pdf&Open=True 
+Processing document WT/DSB/M/42 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m42.pdf&Open=True 
+Processing document WT/DSB/M/41 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m41.pdf&Open=True 
+Processing document WT/DSB/M/40 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m40.pdf&Open=True 
+Processing document WT/DSB/M/39 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/m39.pdf&Open=True 
+Processing document WT/DSB/M/38 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M38.pdf&Open=True 
+Processing document WT/DSB/M/37 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M37.pdf&Open=True 
+Processing document WT/DSB/M/36 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M36.pdf&Open=True 
+Processing document WT/DSB/M/35 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/WT/DSB/M35.pdf&Open=True 
+Processing document WT/DSB/M/34 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M34.pdf&Open=True 
+Processing document WT/DSB/M/33 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M33.pdf&Open=True 
+Processing document WT/DSB/M/32 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M32.pdf&Open=True 
+Processing document WT/DSB/M/31 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M31.pdf&Open=True 
+Processing document WT/DSB/M/30 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M30.pdf&Open=True 
+Processing document WT/DSB/M/29 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M29.pdf&Open=True 
+Processing document WT/DSB/M/28 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M28.pdf&Open=True 
+Processing document WT/DSB/M/26 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M26.pdf&Open=True 
+Processing document WT/DSB/M/27 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M27.pdf&Open=True 
+Processing document WT/DSB/M/25 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M25.pdf&Open=True 
+Processing document WT/DSB/M/24 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M24.pdf&Open=True 
+Processing document WT/DSB/M/22/Corr.1 
+WARNING: Did not find a  file to download... 
+Processing document WT/DSB/M/23 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M23.pdf&Open=True 
+Processing document WT/DSB/M/22 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M22.pdf&Open=True 
+Processing document WT/DSB/M/21 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M21.pdf&Open=True 
+Processing document WT/DSB/M/20 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M20.pdf&Open=True 
+Processing document WT/DSB/M/19 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M19.pdf&Open=True 
+Processing document WT/DSB/M/18/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M18C1.pdf&Open=True 
+Processing document WT/DSB/M/18 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M18.pdf&Open=True 
+Processing document WT/DSB/M/17 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M17.pdf&Open=True 
+Processing document WT/DSB/M/16 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M16.pdf&Open=True 
+Processing document WT/DSB/M/15 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M15.pdf&Open=True 
+Processing document WT/DSB/M/13 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M13.pdf&Open=True 
+Processing document WT/DSB/M/14 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M14.pdf&Open=True 
+Processing document WT/DSB/M/12 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M12.pdf&Open=True 
+Processing document WT/DSB/M/11 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M11.pdf&Open=True 
+Processing document WT/DSB/M/10 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M10.pdf&Open=True 
+Processing document WT/DSB/M/9 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M9.pdf&Open=True 
+Processing document WT/DSB/M/8 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M8.pdf&Open=True 
+Processing document WT/DSB/M/7 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M7.pdf&Open=True 
+Processing document WT/DSB/M/6 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M6.pdf&Open=True 
+Processing document WT/DSB/M/5 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M5.pdf&Open=True 
+Processing document WT/DSB/M/4/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M4C1.pdf&Open=True 
+Processing document WT/DSB/M/4 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M4.pdf&Open=True 
+Processing document WT/DSB/M/3 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M3.pdf&Open=True 
+Processing document WT/DSB/M/2 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M2.pdf&Open=True 
+Processing document WT/DSB/M/1/Corr.1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M1C1.pdf&Open=True 
+Processing document WT/DSB/M/1 
+Downloaded https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=Q:/WT/DSB/M1.pdf&Open=True 

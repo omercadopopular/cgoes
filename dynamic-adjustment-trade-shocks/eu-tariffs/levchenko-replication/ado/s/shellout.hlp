@@ -1,0 +1,98 @@
+{smcl}
+{* Nov2005}{...}
+{cmd:help shellout}
+{hline}
+
+{title:Title}
+
+{p2colset 5 17 22 2}{...}
+{p2col :{hi: shellout} {hline 2}}Opens documents and their programs from inside Stata. {p_end}
+{p2colreset}{...}
+
+
+{title:Multiple Syntax}
+
+{p 4 8 2}
+{cmdab:shellout} {it:application} [, cd] {p_end}
+{pstd}
+where {it:application} is the name of a software application to be opened. {p_end}
+
+{p 4 8 2}
+{cmdab:shellout} [using] {it:filename} [, cd] {p_end}
+{pstd}
+where {it:filename} takes the form of a document with a known extension, such as .doc, 
+.do, .dta, .txt, .xls, .xml, etc. {p_end}
+
+
+{title:Options}
+{pstd}{opt cd} should not be used, except to tell Stata that the program 
+in question is located in the current directory. {p_end}
+
+
+{title:Description}
+
+{pstd}{cmd:shellout} opens a document from inside Stata without having to specify the exact 
+file path of the program. It also opens an application with or without specifying a file 
+document to be opened.
+
+{pstd}{cmd:shellout} is a {help shell} wrapper designed for Windows XP/NT. Unlike {help shell}, implements a nested DOS command. The DOS Window is told to close itself.
+
+{pstd}{cmd:shellout} was originally written to accompany {helpb outreg2} for automatic opening 
+of non-Stata documents.
+
+
+{title:Examples}
+
+{phang}{cmd:shellout} wsestata.exe {p_end}
+{phang}{cmd:shellout} using myfile.xml {p_end}
+{phang}{cmd:shellout} using "c:\myfolder\myfile.doc" {p_end}
+{phang}{cmd:shellout} myfile.xml {p_end}
+{phang}{cmd:shellout} me.do {p_end}
+
+{pstd}The first line will open another Stata executable. {p_end}
+{pstd}The second line will open a document named myfile.xml in Excel. {p_end}
+{pstd}The third line will open a document named myfile.doc in Word. {p_end}
+{pstd}The fourth line will do the same thing without invoking the "using" syntax. {p_end}
+{pstd}The fifth line is the equivalent of -do me- in another Stata executable, or was it -run me-.... {p_end}
+
+
+{title:Parameters}
+
+{pstd}A parameter is any value passed into a batch script. {cmd:shellout} will work with 
+parameters in the following examples (assuming you have Stata SE) {p_end}
+
+{phang}{cmd:shellout} shellout wsestata.exe shellout wsestata.exe shellout wsestata.exe {p_end}
+{phang}{cmd:shellout} wsestata di "Bite Me" {p_end}
+{phang}{cmd:shellout} notepad "Bite Me" {p_end}
+
+{pstd}The first line will open three Stata executables in a daisy-chain. {p_end}
+{pstd}The second line will open a Stata executable with a "Bite Me" message. {p_end}
+{pstd}The third line will open a (new) notepad file called "Bite Me". {p_end}
+
+
+{title:Advanced Parameters}
+
+{pstd}You can save a batch of parameters in a file and invoke it under {cmd:shellout} 
+much like calling upon a do-file. Learn some DOS commands if you want to implement it. {p_end}
+
+
+{title:Author}
+
+          Roy Wada
+          roywada@hotmail.com
+          
+
+{title:Also see}
+
+{p 9}{bf:[D] Shell} {p_end}
+
+
+
+
+
+
+
+
+
+
+

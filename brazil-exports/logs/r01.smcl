@@ -1,0 +1,410 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r01.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 13:47:59
+{txt}
+{com}. 
+. use "data\temp\mun-master-dataset.dta", clear
+{txt}(Master file, Brazil exports and labor market)
+
+{com}. 
+. xtset groupid year
+{res}
+{col 1}{txt:Panel variable: }{res:groupid}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1997}}{txt: to }{res:{bind:2021}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. local group "giv g2iv gvl_fobr g2vl_fobr giv_comtrade g2iv_comtrade gvl_fob g2vl_fob"
+{txt}
+{com}. foreach var of local group {c -(}
+{txt}  2{com}.         winsor2 `var', cuts(1 99) suffix(_w1) trim
+{txt}  3{com}.         winsor2 `var', cuts(5 95) suffix(_w5) trim
+{txt}  4{com}. {c )-}
+{txt}
+{com}. 
+. reghdfe gvl_fobr giv
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    40,340
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  40338{txt}){col 67}= {res}    110.00
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0027
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0027
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0027
+{txt}{col 51}Root MSE{col 67}= {res}    1.1096
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    gvl_fobr{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}giv {c |}{col 14}{res}{space 2} 2.040962{col 26}{space 2} .1946009{col 37}{space 1}   10.49{col 46}{space 3}0.000{col 54}{space 4}  1.65954{col 67}{space 3} 2.422384
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0190489{col 26}{space 2} .0059927{col 37}{space 1}    3.18{col 46}{space 3}0.001{col 54}{space 4} .0073031{col 67}{space 3} .0307946
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Full Sample" \ "", "") ///
+>         keep(_cons giv) replace
+{res}
+{txt}{center:{hline 22}}
+{center:{txt}{lalign 7:}{txt}{center 13:Full Sample}}
+{center:{txt}{lalign 7:giv}{txt}{center 13:2.041***}}
+{txt}{center:{hline 22}}
+{center:{txt}{lalign 7:}{res}{center 13:(0.195)}}
+{center:{txt}{lalign 7:_cons}{res}{center 13:0.019***}}
+{center:{txt}{lalign 7:}{res}{center 13:(0.006)}}
+{center:{txt}{lalign 7:R2}{res}{center 13:0.0}}
+{center:{txt}{lalign 7:N}{res}{center 13:40,340}}
+{txt}{center:{hline 22}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. reghdfe gvl_fobr_w1 giv_w1
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    38,551
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  38549{txt}){col 67}= {res}    191.34
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0049
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0049
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0049
+{txt}{col 51}Root MSE{col 67}= {res}    0.8349
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} gvl_fobr_w1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}giv_w1 {c |}{col 14}{res}{space 2} 2.797392{col 26}{space 2} .2022299{col 37}{space 1}   13.83{col 46}{space 3}0.000{col 54}{space 4} 2.401016{col 67}{space 3} 3.193768
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0078706{col 26}{space 2}  .004883{col 37}{space 1}    1.61{col 46}{space 3}0.107{col 54}{space 4}-.0017002{col 67}{space 3} .0174415
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Winsorized 1%" \ "", "") ///
+>         keep(_cons giv_w1) merge replace
+{res}
+{txt}{center:{hline 38}}
+{center:{txt}{lalign 8:}{txt}{center 13:Full Sample}{txt}{center 15:Winsorized 1%}}
+{center:{txt}{lalign 8:giv}{txt}{center 13:2.041***}{txt}{center 15:}}
+{txt}{center:{hline 38}}
+{center:{txt}{lalign 8:}{res}{center 13:(0.195)}{res}{center 15:}}
+{center:{txt}{lalign 8:giv_w1}{res}{center 13:}{res}{center 15:2.797***}}
+{center:{txt}{lalign 8:}{res}{center 13:}{res}{center 15:(0.202)}}
+{center:{txt}{lalign 8:_cons}{res}{center 13:0.019***}{res}{center 15:0.008}}
+{center:{txt}{lalign 8:}{res}{center 13:(0.006)}{res}{center 15:(0.005)}}
+{center:{txt}{lalign 8:R2}{res}{center 13:0.0}{res}{center 15:0.0}}
+{center:{txt}{lalign 8:N}{res}{center 13:40,340}{res}{center 15:38,551}}
+{txt}{center:{hline 38}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. reghdfe gvl_fobr_w5 giv_w5
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    31,792
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  31790{txt}){col 67}= {res}    230.15
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0072
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0072
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0072
+{txt}{col 51}Root MSE{col 67}= {res}    0.5452
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} gvl_fobr_w5{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}giv_w5 {c |}{col 14}{res}{space 2} 3.132341{col 26}{space 2} .2064752{col 37}{space 1}   15.17{col 46}{space 3}0.000{col 54}{space 4} 2.727641{col 67}{space 3}  3.53704
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0031751{col 26}{space 2} .0037109{col 37}{space 1}    0.86{col 46}{space 3}0.392{col 54}{space 4}-.0040983{col 67}{space 3} .0104486
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Winsorized 5%" \ "", "") ///
+>         keep(_cons giv_w5) merge replace
+{res}
+{txt}{center:{hline 53}}
+{center:{txt}{lalign 8:}{txt}{center 13:Full Sample}{txt}{center 15:Winsorized 1%}{txt}{center 15:Winsorized 5%}}
+{center:{txt}{lalign 8:giv}{txt}{center 13:2.041***}{txt}{center 15:}{txt}{center 15:}}
+{txt}{center:{hline 53}}
+{center:{txt}{lalign 8:}{res}{center 13:(0.195)}{res}{center 15:}{res}{center 15:}}
+{center:{txt}{lalign 8:giv_w1}{res}{center 13:}{res}{center 15:2.797***}{res}{center 15:}}
+{center:{txt}{lalign 8:}{res}{center 13:}{res}{center 15:(0.202)}{res}{center 15:}}
+{center:{txt}{lalign 8:giv_w5}{res}{center 13:}{res}{center 15:}{res}{center 15:3.132***}}
+{center:{txt}{lalign 8:}{res}{center 13:}{res}{center 15:}{res}{center 15:(0.206)}}
+{center:{txt}{lalign 8:_cons}{res}{center 13:0.019***}{res}{center 15:0.008}{res}{center 15:0.003}}
+{center:{txt}{lalign 8:}{res}{center 13:(0.006)}{res}{center 15:(0.005)}{res}{center 15:(0.004)}}
+{center:{txt}{lalign 8:R2}{res}{center 13:0.0}{res}{center 15:0.0}{res}{center 15:0.0}}
+{center:{txt}{lalign 8:N}{res}{center 13:40,340}{res}{center 15:38,551}{res}{center 15:31,792}}
+{txt}{center:{hline 53}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. binscatter gvl_fobr giv, title(First Stage) ///
+>         ytitle("Observed Growth in Exports, by Municipality") ///
+>         xtitle("Exposure to Foreign Demand Shocks, by Municipality") ///
+>         yline(0, lcolor(black)) ///
+>         title("First Stage, Binscatter, Full Sample", margin(vsmall) position(11)) ///
+>         msymbol(oh) nquantiles(100) ///
+>         name(growth, replace) legend(off)
+{res}{txt}
+{com}. graph export "figs\mun-first-stage.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\mun-first-stage.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\mun-first-stage.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mun-first-stage.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. reghdfe gvl_fob giv_comtrade
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    34,670
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  34668{txt}){col 67}= {res}    280.77
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0080
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0080
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0080
+{txt}{col 51}Root MSE{col 67}= {res}    1.1127
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     gvl_fob{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+giv_comtrade {c |}{col 14}{res}{space 2} 2.249058{col 26}{space 2} .1342235{col 37}{space 1}   16.76{col 46}{space 3}0.000{col 54}{space 4} 1.985975{col 67}{space 3}  2.51214
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0348122{col 26}{space 2} .0066462{col 37}{space 1}    5.24{col 46}{space 3}0.000{col 54}{space 4} .0217854{col 67}{space 3} .0478389
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage-comtrade.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Full Sample" \ "", "") ///
+>         keep(_cons giv_comtrade) replace
+{res}
+{txt}{center:{hline 29}}
+{center:{txt}{lalign 14:}{txt}{center 13:Full Sample}}
+{center:{txt}{lalign 14:giv_comtrade}{txt}{center 13:2.249***}}
+{txt}{center:{hline 29}}
+{center:{txt}{lalign 14:}{res}{center 13:(0.134)}}
+{center:{txt}{lalign 14:_cons}{res}{center 13:0.035***}}
+{center:{txt}{lalign 14:}{res}{center 13:(0.007)}}
+{center:{txt}{lalign 14:R2}{res}{center 13:0.0}}
+{center:{txt}{lalign 14:N}{res}{center 13:34,670}}
+{txt}{center:{hline 29}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. reghdfe gvl_fob giv_comtrade_w1
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    33,539
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  33537{txt}){col 67}= {res}    241.73
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0072
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0071
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0072
+{txt}{col 51}Root MSE{col 67}= {res}    1.1103
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gvl_fob{col 17}{c |} Coefficient{col 29}  Std. err.{col 41}      t{col 49}   P>|t|{col 57}     [95% con{col 70}f. interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+giv_comtrade_w1 {c |}{col 17}{res}{space 2} 2.507913{col 29}{space 2} .1613043{col 40}{space 1}   15.55{col 49}{space 3}0.000{col 57}{space 4} 2.191751{col 70}{space 3} 2.824076
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .0309822{col 29}{space 2} .0070391{col 40}{space 1}    4.40{col 49}{space 3}0.000{col 57}{space 4} .0171853{col 70}{space 3}  .044779
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage-comtrade.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Winsorized 1%" \ "", "") ///
+>         keep(_cons giv_comtrade_w1) merge replace
+{res}
+{txt}{center:{hline 47}}
+{center:{txt}{lalign 17:}{txt}{center 13:Full Sample}{txt}{center 15:Winsorized 1%}}
+{center:{txt}{lalign 17:giv_comtrade}{txt}{center 13:2.249***}{txt}{center 15:}}
+{txt}{center:{hline 47}}
+{center:{txt}{lalign 17:}{res}{center 13:(0.134)}{res}{center 15:}}
+{center:{txt}{lalign 17:giv_comtrade_w1}{res}{center 13:}{res}{center 15:2.508***}}
+{center:{txt}{lalign 17:}{res}{center 13:}{res}{center 15:(0.161)}}
+{center:{txt}{lalign 17:_cons}{res}{center 13:0.035***}{res}{center 15:0.031***}}
+{center:{txt}{lalign 17:}{res}{center 13:(0.007)}{res}{center 15:(0.007)}}
+{center:{txt}{lalign 17:R2}{res}{center 13:0.0}{res}{center 15:0.0}}
+{center:{txt}{lalign 17:N}{res}{center 13:34,670}{res}{center 15:33,539}}
+{txt}{center:{hline 47}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. reghdfe gvl_fob giv_comtrade_w5
+{res}{txt}({browse "http://scorreia.com/research/hdfe.pdf":MWFE estimator} converged in 1 iterations)
+{res}
+{txt}HDFE Linear regression{col 51}Number of obs{col 67}= {res}    29,375
+{txt}Absorbing 1 HDFE group{col 51}F({res}   1{txt},{res}  29373{txt}){col 67}= {res}    114.42
+{txt}{col 51}Prob > F{col 67}= {res}    0.0000
+{txt}{col 51}R-squared{col 67}= {res}    0.0039
+{txt}{col 51}Adj R-squared{col 67}= {res}    0.0038
+{txt}{col 51}Within R-sq.{col 67}= {res}    0.0039
+{txt}{col 51}Root MSE{col 67}= {res}    1.1199
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gvl_fob{col 17}{c |} Coefficient{col 29}  Std. err.{col 41}      t{col 49}   P>|t|{col 57}     [95% con{col 70}f. interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+giv_comtrade_w5 {c |}{col 17}{res}{space 2} 2.622468{col 29}{space 2} .2451624{col 40}{space 1}   10.70{col 49}{space 3}0.000{col 57}{space 4} 2.141939{col 70}{space 3} 3.102998
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .0276739{col 29}{space 2} .0083801{col 40}{space 1}    3.30{col 49}{space 3}0.001{col 57}{space 4} .0112485{col 70}{space 3} .0440992
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. outreg using "results\mun-first-stage-comtrade.doc", se sdec(3) ///
+>         summstat(r2 \ N) summdec(1,0) summtitles("R2" \ "N") ///
+>         starlevels(10 5 1) starloc(1) ///
+>         ctitles("", "Winsorized 5%" \ "", "") ///
+>         keep(_cons giv_comtrade_w5) merge replace
+{res}
+{txt}{center:{hline 62}}
+{center:{txt}{lalign 17:}{txt}{center 13:Full Sample}{txt}{center 15:Winsorized 1%}{txt}{center 15:Winsorized 5%}}
+{center:{txt}{lalign 17:giv_comtrade}{txt}{center 13:2.249***}{txt}{center 15:}{txt}{center 15:}}
+{txt}{center:{hline 62}}
+{center:{txt}{lalign 17:}{res}{center 13:(0.134)}{res}{center 15:}{res}{center 15:}}
+{center:{txt}{lalign 17:giv_comtrade_w1}{res}{center 13:}{res}{center 15:2.508***}{res}{center 15:}}
+{center:{txt}{lalign 17:}{res}{center 13:}{res}{center 15:(0.161)}{res}{center 15:}}
+{center:{txt}{lalign 17:giv_comtrade_w5}{res}{center 13:}{res}{center 15:}{res}{center 15:2.622***}}
+{center:{txt}{lalign 17:}{res}{center 13:}{res}{center 15:}{res}{center 15:(0.245)}}
+{center:{txt}{lalign 17:_cons}{res}{center 13:0.035***}{res}{center 15:0.031***}{res}{center 15:0.028***}}
+{center:{txt}{lalign 17:}{res}{center 13:(0.007)}{res}{center 15:(0.007)}{res}{center 15:(0.008)}}
+{center:{txt}{lalign 17:R2}{res}{center 13:0.0}{res}{center 15:0.0}{res}{center 15:0.0}}
+{center:{txt}{lalign 17:N}{res}{center 13:34,670}{res}{center 15:33,539}{res}{center 15:29,375}}
+{txt}{center:{hline 62}}
+{txt}{center:* p<0.1; ** p<0.05; *** p<0.01}
+
+
+{com}. 
+. binscatter gvl_fob giv_comtrade, title(First Stage) ///
+>         ytitle("Observed Growth in Exports, by Municipality") ///
+>         xtitle("Exposure to Foreign Demand Shocks, by Municipality") ///
+>         yline(0, lcolor(black)) ///
+>         title("First Stage, Binscatter, Full Sample", margin(vsmall) position(11)) ///
+>         msymbol(oh) nquantiles(100) ///
+>         name(growth_comtrade, replace) legend(off)
+{res}{txt}
+{com}. graph export "figs\mun-first-stage-comtrade.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\mun-first-stage-comtrade.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\mun-first-stage-comtrade.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mun-first-stage-comtrade.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. twoway (hist giv, color(red%50) percent) (hist giv_comtrade, color(blue%50) percent), ///
+>         title("Distribution of Exposure to Foreign Demand Shocks, by Municipality") ///
+>         name(hist, replace) legend( label(1 "IV = trade partners GDP growth") label(2 "IV = global sectoral exports growth") ) ///
+>         xline(0, lcolor(black) lpattern(dash)) ///
+>         xtitle("") 
+{res}{txt}
+{com}. graph export "figs\mun-iv-hist.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\mun-iv-hist.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\mun-iv-hist.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mun-iv-hist.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. binscatter giv giv_comtrade, ///
+>         ytitle("Exposure to Foreign Demand Shocks (Trade Partners GDP)") ///
+>         xtitle("Exposure to Foreign Demand Shocks (Global Sector Exports)") ///
+>         yline(0, lcolor(black)) ///
+>         title("Alternative IV", margin(vsmall) position(11)) ///
+>         msymbol(oh) nquantiles(100) ///
+>         name(iv, replace) legend(off)
+{res}{txt}
+{com}. graph export "figs\mun-first-stage-ivs.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\mun-first-stage-ivs.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. graph export "figs\mun-first-stage-ivs.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\mun-first-stage-ivs.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. /*
+> lowess giv giv_comtrade,  ///
+>         ytitle("Exposure to Foreign Demand Shocks (Trade Partners GDP)") ///
+>         xtitle("Exposure to Foreign Demand Shocks (Global Sector Exports)") ///
+>         yline(0, lcolor(black)) ///
+>         title("Alternative IV", margin(vsmall) position(11)) ///
+>         msymbol(oh) ///
+>         name(iv, replace) legend(off)
+> graph export "figs\mun-first-stage-ivs-lowess.pdf", as(pdf) replace
+> graph export "figs\mun-first-stage-ivs-lowess.wmf", as(wmf) replace
+> */
+. 
+. reg giv giv_comtrade
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    97,165
+{txt}{hline 13}{c +}{hline 34}   F(1, 97163)     = {res} 47507.46
+{txt}       Model {c |} {res} 20.9407654         1  20.9407654   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 42.8283778    97,163  .000440789   {txt}R-squared       ={res}    0.3284
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.3284
+{txt}       Total {c |} {res} 63.7691432    97,164  .000656304   {txt}Root MSE        =   {res} .02099
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         giv{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+giv_comtrade {c |}{col 14}{res}{space 2} .3887345{col 26}{space 2} .0017835{col 37}{space 1}  217.96{col 46}{space 3}0.000{col 54}{space 4} .3852389{col 67}{space 3} .3922301
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0042433{col 26}{space 2} .0000735{col 37}{space 1}   57.70{col 46}{space 3}0.000{col 54}{space 4} .0040992{col 67}{space 3} .0043874
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\r01.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}18 Sep 2024, 13:48:09
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

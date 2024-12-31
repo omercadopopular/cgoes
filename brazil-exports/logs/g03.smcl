@@ -1,0 +1,368 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\logs\g03.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Sep 2024, 15:52:00
+{txt}
+{com}. 
+. /// 0. options
+> 
+. scalar confidence_interval = 1.96
+{txt}
+{com}. 
+. 
+. // instrument
+. local iv giv_comtrade
+{txt}
+{com}. 
+. // first group
+. local group emp_exposicao emp_n_exposicao 
+{txt}
+{com}. 
+. 
+. clear
+{txt}
+{com}. local N = $leads + $lags + 1
+{txt}
+{com}. set obs `N'
+{txt}{p}
+Number of observations ({bf:_N}) was 0,
+now 12.
+{p_end}
+
+{com}. gen n = _n
+{txt}
+{com}. gen horizon = -$lags + n - 1
+{txt}
+{com}. drop n
+{txt}
+{com}. tempfile chart
+{txt}
+{com}. save `chart', emptyok
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. foreach var of local group {c -(}
+{txt}  2{com}.         di "`var'"
+{txt}  3{com}.                 use "results/temp/mun_`iv'_results_`var'_alt.dta", clear
+{txt}  4{com}.                 
+.                 rename b b_`var'
+{txt}  5{com}.                 
+.                 gen low_`var' = b_`var' - confidence_interval * se
+{txt}  6{com}.                 gen high_`var' = b_`var' + confidence_interval * se
+{txt}  7{com}.                 
+.                 keep horizon b_* low_* high_*
+{txt}  8{com}.                 
+.                 merge 1:1 horizon using `chart'
+{txt}  9{com}.                 drop _merge
+{txt} 10{com}.                 save `chart', replace
+{txt} 11{com}. {c )-}       
+emp_exposicao
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+emp_n_exposicao
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. 
+.                 twoway rcap high_emp_exposicao low_emp_exposicao horizon, color(red%50) || ///
+>                         scatter b_emp_exposicao horizon, mcolor(red) connect(l) lcolor(red) || ///
+>                         rcap high_emp_n_exposicao low_emp_n_exposicao horizon, color(navy%50) || ///
+>                         scatter b_emp_n_exposicao horizon, mcolor(navy) connect(l) lcolor(navy) ///
+>                         xtitle("Years after foreign demand shock") ///
+>                         ytitle("Estimated Coefficient") ///
+>                         yline(0, lcolor(black)) ///
+>                         xline(0, lcolor(black)) ///
+>                         xlabel(-$lags(1)$leads) ///
+>                         ylabel(-0.1(.1)0.6) ///
+>                         legend( order(2 "Exposed" 4 "Non-Exposed")) ///
+>                         lwidth(thin) name(male_female, replace)
+{res}{txt}
+{com}.                         graph export "figs\\m`iv'_green_exp.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\\mgiv_comtrade_green_exp.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.                         graph export "figs\\m`iv'_green_exp.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+(file {bf}
+figs\\mgiv_comtrade_green_exp.wmf{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\\mgiv_comtrade_green_exp.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. 
+. // second group
+. local group emp_risco emp_n_risco
+{txt}
+{com}. 
+. clear
+{txt}
+{com}. local N = $leads + $lags + 1
+{txt}
+{com}. set obs `N'
+{txt}{p}
+Number of observations ({bf:_N}) was 0,
+now 12.
+{p_end}
+
+{com}. gen n = _n
+{txt}
+{com}. gen horizon = -$lags + n - 1
+{txt}
+{com}. drop n
+{txt}
+{com}. tempfile chart
+{txt}
+{com}. save `chart', emptyok
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. foreach var of local group {c -(}
+{txt}  2{com}.         di "`var'"
+{txt}  3{com}.                 use "results/temp/mun_`iv'_results_`var'_alt.dta", clear
+{txt}  4{com}.                 
+.                 rename b b_`var'
+{txt}  5{com}.                 
+.                 gen low_`var' = b_`var' - confidence_interval * se
+{txt}  6{com}.                 gen high_`var' = b_`var' + confidence_interval * se
+{txt}  7{com}.                 
+.                 keep horizon b_* low_* high_*
+{txt}  8{com}.                 
+.                 merge 1:1 horizon using `chart'
+{txt}  9{com}.                 drop _merge
+{txt} 10{com}.                 save `chart', replace
+{txt} 11{com}. {c )-}       
+emp_risco
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+emp_n_risco
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. 
+.                 twoway rcap high_emp_risco low_emp_risco horizon, color(red%50) || ///
+>                         scatter b_emp_risco horizon, mcolor(red) connect(l) lcolor(red) || ///
+>                         rcap high_emp_n_risco low_emp_n_risco horizon, color(navy%50) || ///
+>                         scatter b_emp_n_risco horizon, mcolor(navy) connect(l) lcolor(navy) ///
+>                         xtitle("Years after foreign demand shock") ///
+>                         ytitle("Estimated Coefficient") ///
+>                         yline(0, lcolor(black)) ///
+>                         xline(0, lcolor(black)) ///
+>                         xlabel(-$lags(1)$leads) ///
+>                         ylabel(-0.1(.1)0.6) ///
+>                         legend( order(2 "Risk" 4 "No Risk")) ///
+>                         lwidth(thin) name(college, replace)
+{res}{txt}
+{com}.                         graph export "figs\\m`iv'_green_risk.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\\mgiv_comtrade_green_risk.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.                         graph export "figs\\m`iv'_green_risk.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+(file {bf}
+figs\\mgiv_comtrade_green_risk.wmf{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\\mgiv_comtrade_green_risk.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+.                         
+. // third group
+. local group emp_everde emp_n_everde
+{txt}
+{com}. 
+. clear
+{txt}
+{com}. local N = $leads + $lags + 1
+{txt}
+{com}. set obs `N'
+{txt}{p}
+Number of observations ({bf:_N}) was 0,
+now 12.
+{p_end}
+
+{com}. gen n = _n
+{txt}
+{com}. gen horizon = -$lags + n - 1
+{txt}
+{com}. drop n
+{txt}
+{com}. tempfile chart
+{txt}
+{com}. save `chart', emptyok
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. foreach var of local group {c -(}
+{txt}  2{com}.         di "`var'"
+{txt}  3{com}.                 use "results/temp/mun_`iv'_results_`var'_alt.dta", clear
+{txt}  4{com}.                 
+.                 rename b b_`var'
+{txt}  5{com}.                 
+.                 gen low_`var' = b_`var' - confidence_interval * se
+{txt}  6{com}.                 gen high_`var' = b_`var' + confidence_interval * se
+{txt}  7{com}.                 
+.                 keep horizon b_* low_* high_*
+{txt}  8{com}.                 
+.                 merge 1:1 horizon using `chart'
+{txt}  9{com}.                 drop _merge
+{txt} 10{com}.                 save `chart', replace
+{txt} 11{com}. {c )-}       
+emp_everde
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+emp_n_everde
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              12{txt}  (_merge==3)
+{col 5}{hline 41}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\AppData\Local\Temp\ST_540c_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{com}. 
+. 
+.                 twoway rcap high_emp_everde low_emp_everde horizon, color(red%50) || ///
+>                         scatter b_emp_everde horizon, mcolor(red) connect(l) lcolor(red) || ///
+>                         rcap high_emp_n_everde low_emp_n_everde horizon, color(navy%50) || ///
+>                         scatter b_emp_n_everde horizon, mcolor(navy) connect(l) lcolor(navy) ///
+>                         xtitle("Years after foreign demand shock") ///
+>                         ytitle("Estimated Coefficient") ///
+>                         yline(0, lcolor(black)) ///
+>                         xline(0, lcolor(black)) ///
+>                         xlabel(-$lags(1)$leads) ///
+>                         ylabel(-0.1(.1)0.6) ///
+>                         legend( order(2 "Green" 4 "Not green")) ///
+>                         lwidth(thin) name(male_female_w, replace)
+{res}{txt}
+{com}.                         graph export "figs\\m`iv'_green_green.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+figs\\mgiv_comtrade_green_green.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.                         graph export "figs\\`miv'_green_green.wmf", as(wmf) replace
+{txt}{p 0 4 2}
+(file {bf}
+figs\_green_green.wmf{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\andre\OneDrive\UCSD\Research\cgoes\brazil-exports\figs\_green_green.wmf{rm}
+saved as
+Windows Metafile
+format
+{p_end}
+
+{com}. 
+. 
+. 
+.                         
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\andre\AppData\Local\Temp\STD540c_000011.tmp"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

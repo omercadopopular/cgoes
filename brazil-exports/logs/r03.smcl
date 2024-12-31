@@ -1,0 +1,136 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\wb592068\OneDrive - WBG\Brazil\logs\r03.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Jul 2024, 22:32:13
+{txt}
+{com}. 
+. use "data\temp\mun-master-dataset.dta", clear
+{txt}(Master file, Brazil exports and labor market)
+
+{com}. 
+. // instrument
+. local iv givbase_comtrade
+{txt}
+{com}. 
+. // instrumented
+. local instrumented gvl_fob_base
+{txt}
+{com}. 
+. // controls
+. gen ineqshr = avg_wage_q4r / avg_wage_q1r
+{txt}(314 missing values generated)
+
+{com}. local controls LaborShrbase 
+{txt}
+{com}. 
+. // fixed effects
+. local fe uf_code
+{txt}
+{com}. *microregion_code_ibge
+. 
+. // cluster
+. egen cl = group(uf_code)
+{res}{txt}
+{com}. local clustvar uf_code
+{txt}
+{com}. 
+. // years
+. local fyear = 2001
+{txt}
+{com}. local lyear = 2020
+{txt}
+{com}. 
+. foreach iv_iter of local iv {c -(}
+{txt}  2{com}.         
+. 
+.         foreach var of global lhs {c -(}
+{txt}  3{com}.                                 
+.                 *Define matrix to store results.
+.                 matrix results_`lhs'_base = J(1+`lyear'-`fyear', 5,.)
+{txt}  4{com}.                 matrix colnames results_`lhs'_base = year b se F1 obs
+{txt}  5{com}.                 
+.                 local row = 0
+{txt}  6{com}.                 forvalues y = `fyear' (1) `lyear' {c -(}
+{txt}  7{com}.                         local row = `row' + 1
+{txt}  8{com}.                         
+.                         if `y' == $baseyear {c -(}
+{txt}  9{com}.                                 mat results_`lhs'_base[`row',1]= `y'
+{txt} 10{com}.                                 mat results_`lhs'_base[`row',2]=0
+{txt} 11{com}.                                 mat results_`lhs'_base[`row',3]=0
+{txt} 12{com}.                                 mat results_`lhs'_base[`row',4]=0
+{txt} 13{com}.                                 mat results_`lhs'_base[`row',5]=0                                                                       
+{txt} 14{com}.                         {c )-}
+{txt} 15{com}.                         
+.                         else {c -(}
+{txt} 16{com}.                                 qui ivreghdfe dlln`var'_base ( `instrumented' = `iv' ) `controls' if year == `y' , absorb(`fe') first cluster(`clustvar')
+{txt} 17{com}.                                 mat results_`lhs'_base[`row',1]= `y'
+{txt} 18{com}.                                 mat results_`lhs'_base[`row',2]=_b[`instrumented']
+{txt} 19{com}.                                 mat results_`lhs'_base[`row',3]=_se[`instrumented']
+{txt} 20{com}.                                 mat results_`lhs'_base[`row',4]=e(F)
+{txt} 21{com}.                                 mat results_`lhs'_base[`row',5]=e(N)                            
+{txt} 22{com}.                         {c )-}
+{txt} 23{com}.                         
+.                 {c )-}
+{txt} 24{com}.                 
+.                         *Save results.
+.                         xsvmat results_`lhs'_base, name(col) saving("results/temp/mun_`iv'_results_`var'_base.dta", replace)
+{txt} 25{com}.                         xsvmat results_`lhs'_base, name(col) list(,)
+{txt} 26{com}. 
+.         {c )-}       
+{txt} 27{com}. 
+. {c )-}
+{txt}{p 0 4 2}
+(file {bf}
+results/temp/mun_givbase_comtrade_results_employment_base.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+results/temp/mun_givbase_comtrade_results_employment_base.dta{rm}
+saved
+{p_end}
+
+     {c TLC}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c TRC}
+     {c |} {res}year           b         se         F1    obs {txt}{c |}
+     {c LT}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c RT}
+  1. {c |} {res}2001   -.2965579   .5832328   1.328167   1234 {txt}{c |}
+  2. {c |} {res}2002    .0412137   .0752255   8.293918   1274 {txt}{c |}
+  3. {c |} {res}2003           0          0          0      0 {txt}{c |}
+  4. {c |} {res}2004    .2769897   .4548202   .3758815   1320 {txt}{c |}
+  5. {c |} {res}2005    .1987216   .4919963   .8598162   1295 {txt}{c |}
+     {c LT}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c RT}
+  6. {c |} {res}2006    .2544323   .3425054   .7543333   1255 {txt}{c |}
+  7. {c |} {res}2007    .3268521   .4805747   .4620506   1248 {txt}{c |}
+  8. {c |} {res}2008    .0968125   .3163191   .0497487   1260 {txt}{c |}
+  9. {c |} {res}2009   -.1561901   .3943574   .3369369   1252 {txt}{c |}
+ 10. {c |} {res}2010   -.1931251   .2424204   .5906573   1291 {txt}{c |}
+     {c LT}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c RT}
+ 11. {c |} {res}2011   -.4428607   1.122718   .4496851   1238 {txt}{c |}
+ 12. {c |} {res}2012   -.4779453   .6099991   1.297499   1225 {txt}{c |}
+ 13. {c |} {res}2013   -.5803392   .7562928   .8211312   1216 {txt}{c |}
+ 14. {c |} {res}2014   -.5527523   .6102068   1.608247   1215 {txt}{c |}
+ 15. {c |} {res}2015   -1.895349   7.017608   .1113468   1204 {txt}{c |}
+     {c LT}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c RT}
+ 16. {c |} {res}2016   -1.196538   2.180886   .3750788   1217 {txt}{c |}
+ 17. {c |} {res}2017    -.672434   .6242079   .9419908   1208 {txt}{c |}
+ 18. {c |} {res}2018   -2.294096   6.800766   .1246291   1212 {txt}{c |}
+ 19. {c |} {res}2019   -.8620027    .945913   .9751102   1229 {txt}{c |}
+ 20. {c |} {res}2020   -.8512552   .8030245   1.155986   1215 {txt}{c |}
+     {c BLC}{hline 6}{c -}{hline 11}{c -}{hline 10}{c -}{hline 10}{c -}{hline 6}{c BRC}
+{err}{hline 2}Break{hline 2}
+{txt}{search r(1), local:r(1);}
+
+end of do-file
+
+{err}{hline 2}Break{hline 2}
+{txt}{search r(1), local:r(1);}
+
+{com}. do "C:\Users\wb592068\AppData\Local\Temp\STD6890_000000.tmp"
+{txt}
+{com}. do "code\%stata_mun\r04_census_reg.do"
+{txt}
+{com}. capture log close                                                                               // closes any open logs
+{smcl}
+{com}{sf}{ul off}

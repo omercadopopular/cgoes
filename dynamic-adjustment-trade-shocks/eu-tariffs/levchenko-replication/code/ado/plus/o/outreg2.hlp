@@ -1,0 +1,1212 @@
+{smcl}
+{* 17aug2014}{...}
+{helpb outreg2}
+
+{hline}
+
+{title:Titles & related stuffs}
+
+{p2colset 5 16 22 2}{...}
+{p2col :{hi: outreg2} {hline 2}}Arrange regression, summary, and tabulation into an illustrative table{p_end}
+{p2colset 5 15 20 2}{...}
+{p2col :{hi: {help seeout}} {hline 2}}Opens a tab-delimited table in the data browser{p_end}
+{p2colset 5 17 23 2}{...}
+{p2col :{hi: {help shellout}} {hline 2}}Opens documents and their programs from inside Stata{p_end}
+
+{p2colset 5 15 21 2}{...}
+{p2col :{hi: {help logout}} {hline 2}}Converts log or ASCII files into various output formats{p_end}
+{p2colset 5 14 20 2}{...}
+{p2col :{hi: {help mkest}} {hline 2}}Convert variables to estimates matrix{p_end}
+
+{title:Examples}
+
+    {help outreg2##s_0:0. Basic game plan}                  
+    {help outreg2##s_1:1. Prefix and -bys:-}                {help outreg2##s_11:11. Marginal Effects}
+    {help outreg2##s_2:2. Running loops}                    {help outreg2##s_12:12. Word or Excel files}
+    {help outreg2##s_3:3. Stored estimates}                 {help outreg2##s_13:13. TeX files}
+    {help outreg2##s_4:4. Shorthand}                        {help outreg2##s_14:14. Adding column titles or notes}
+    {help outreg2##s_5:5. Decimal places}                   {help outreg2##s_15:15. n-way cross-tabulation}
+    {help outreg2##s_6:6. Sideway display}                  {help outreg2##s_16:16. Group summary table}
+    {help outreg2##s_7:7. Summary tables}                   {help outreg2##s_17:17. Fixed effects or legends}
+    {help outreg2##s_8:8. Drop/keep/order variables}        {help outreg2##s_18:18. Stats transformation/manipulation}
+    {help outreg2##s_9:9. Adding r( ) e( ) scalars}         {help outreg2##s_19:19. Matching policy variables}
+    {help outreg2##s_10:10. Odds ratios and rrr}             {help outreg2##s_20:20. Insert r-class cmd( ) outputs}
+
+{p 4 4 6}{help outreg2##s_FAQ:Frequently asked questions}{p_end}
+{p 4 4 6}{help outreg2##s_Terms:Terms of Use}{p_end}
+
+{p2colreset}{...}
+
+{hline}
+
+{marker s_Description}
+{title:Description}
+
+{p 4 4 6}
+{cmd:outreg2} provides a fast and easy way to produce an illustrative table 
+of regression outputs. The regression outputs are produced piecemeal and are 
+difficult to compare without some type of rearrangement. {cmd:outreg2} 
+automates this process by concatenating the successive regression ouputs in a 
+vertical format. The resulting table is saved to the disk in ASCII 
+format, which can be read by other programs.
+
+{p 4 4 6}
+{cmd:outreg2} thus facilitates the convertion of regression outputs to a standard 
+format suitable for inclusion in a scholarly publication. The functionality of outreg2 
+is based on the earlier package {help cmd:outreg}, by John Gallup. {help outreg2##s_Differences:Unlike} 
+{cmd:outreg}, {cmd:outreg2} is capable of writing LaTeX-format tables, as well as ASCII, MS Word 
+and MS Excel.
+
+{p 4 4 6}
+{cmd:outreg2} can report any regression output, provided it conforms to 
+{it:the} {it:usual} {it:convention} for {help ereturn:ereturn list}. This includes 
+most regression commands in Stata 7 or later. {cmd:outreg2} will report the latest regression output 
+by default, or the list of {help estimates:stored estimates}. The ancillary statistics from from stored 
+{help return} can also be accessed using {opt e( )} or {opt adds:tat( )}.
+
+{p 4 4 6}
+{cmd:outreg2} will also report the usual statistics such as standard error with the asterisks for the levels of 
+significance (1%, 5%, and 10%), t-statistics, p-values, the number of observations, 
+R-squareds, and the number of groups in a panel estimation. Standarized beta 
+coefficients, exponentially transformed coefficients (i.e. odds/risk ratios 
+or hazard rate). The user can add their own column titles with {opt ct:itle} and {opt addn:ote} options. 
+
+{p 4 4 6}
+An immediate access to the produced table is provided in the browser view with 
+{opt see} option. {cmd:outreg2} also comes with automatically formatted number of 
+significant digits, which avoids the awkward displays assoicated with the fixed 
+format.
+
+
+{hline}
+
+{marker s_Syntax}
+{title:Syntax}
+
+{synopt: Full syntax:}{p_end}
+
+{p 6 8 6}
+{cmdab:outreg2} [{varlist}] {cmd:[}{help estimates:{it:estlist}}{cmd:]}
+{helpb using} {it:filename} [{cmd:,} {it:options}] [{cmd::} {help estimation commands:{it:command}}] {p_end}
+
+{synopt: Shorthand:}{p_end}
+
+{p 6 8 6}
+{cmdab:outreg2} [{varlist}] {cmd:[}{help estimates:{it:estlist}}{cmd:]} 
+[{cmd:,} replace seeout] 
+[{cmd::} {help estimation commands:{it:command}}] {p_end}
+
+{p 4 4 6}
+where {it:command} takes one of {help estimation commands}. The shorthand works 
+only after a full syntax has been invoked.{p_end}
+
+{p 4 6 2}
+Note that {it:filename} must be enclosed within double quotes if it contains embedded spaces.{p_end}
+
+
+{marker s_Options}
+{title:Options}
+
+{dlgtab:Main}
+
+{phang}{opt replace} create a new file or overwrite the existing file.{p_end}
+
+{phang}{opt see:out} display the regression table in the browser.{p_end}
+
+{phang}{opt skip} skips a column (adds an empty column).{p_end}
+
+{phang}{opt lab:el} replace variable names with variable labels, also see stats(label){p_end}
+
+{phang}{opt lab:el( )} takes the following options for label:{p_end}
+
+{p 8}    {cmd:insert} - insert labels next to variable names{p_end}
+{p 8}    {cmd:proper} - proper cases (capitalize the first letter){p_end}
+{p 8}    {cmd:upper} - all upper cases{p_end}
+{p 8}    {cmd:lower} - all lower cases{p_end}
+
+{phang}{opt side:way} specify sideway display (with standard error next to coefficient). Use {opt paren( )} 
+or {opt noparen} to control the location of parentheses.{p_end}
+
+{phang}{opt long} interweave the equation names into the same column 
+with the variable names column, the default is usually wide. Also specify {opt text} if you want a converted text as well. {p_end}
+
+{phang}{opt o:necol} specify one column to display multiple equations; the default is usually wide.{p_end}
+
+{phang}{opt wide} forces wide format with multiple columns, rarely required.{p_end}
+
+
+{dlgtab:Output Files}
+
+{phang}{opt dta} produces Stata file. A suffix "_dta" is added to the file name to prevent the possible loss of main data.{p_end}
+
+{phang}{cmd:dta(saveold)} produces in older Stata file format, as in {help saveold}.{p_end}
+
+{phang}{opt word} produces rich text file (rft) compatible with {cmd:MS Word}. The file conversion can be 
+specified at any time (you should do it with the last appedning). The existing file must not be open for 
+it to be written over.{p_end}
+
+{phang}{opt excel} specifies an xml, xls, xlm, or cvs file compatible with a standard spreadsheet 
+like {cmd:MS Excel}. Any existing file with the same name must be closed to have it 
+replaced with a new file.{p_end}
+
+{phang}{opt tex} produces TeX output for a TeX typesetting program such as Scientific Word.{p_end}
+
+{phang}{cmd:tex( )} takes the following options for tex:{p_end}
+
+{p 8}    {cmd:{ul:frag}}ment - a TeX fragment for inclusion in a document{p_end}
+{p 8}    {cmd:{ul:pr}}etty - with some italics and varying font sizes{p_end}
+{p 8}    {cmd:{ul:land}}scape - horizontally{p_end}
+
+{phang}{opt text} produces plain text file exactly. {opt long} or {opt label} will 
+sometimes cause the main output text file to be different from what might be 
+expected. Use this option to obtain exactly specified text file.{p_end}
+
+{phang}{opt quote} specifies quotation marks to encase each observation.  See the {opt noquote} 
+option in {help outsheet} for more details (all the output of {cmd:outreg2} comes 
+from string variables). {opt quote} may cause problems appending tables together. {p_end}
+
+{phang}{opt comma} specifies that the ASCII file output be separated by commas 
+rather than by tabs. This can cause problems if any of the user-defined text has 
+commas in it (such as variable labels, {opt ct:itle}, {opt adds:tat}, or 
+{opt addn:ote}). If that is the case, consider using {opt quote} as well. {p_end}
+
+
+{dlgtab:Statistics for each variable (main table)}
+
+{phang}{opt st:ats(stats)} contains statistics to be reported per variable, the default is 
+{cmd:stats(coef se)}, space or comma separated, restricted to the estimation sample (single equation), will appear 
+in the order specified by the user:
+
+{p 8 8 12}coef  se  tstat  pval  ci  ci_low  ci_high  beta 
+{help summ:N}  sum_w  mean  Var  sd  sum  min  max  skewness  kurtosis 
+p1  p5  p10  p25  p50  p75  p90  p95  p99  
+{help tabstat:range} iqr  cv semean  median  count 
+{help corr} covar {help pcorr} {help pcorr2:semipcorr} pcorrpval
+{help spearman} tau_a  tau_b{p_end}
+
+{p 8 8 12}eqname varname aster label label_pr label_up label_low blank{p_end}
+
+{p 8 12 12}str({it:str}) where {it:str} is any string or numeric expression{p_end}
+{p 17 17 12}internally stored and recalled as string1, string2, etc.{p_end}
+
+{p 8 12 12}cmd({it:macro}: {it:cmd}) where {it:macro} is to be produced by {help outreg2##s_20:{it:cmd}}{p_end}
+{p 24 24 12}internally stored and recalled as cmd1, cmd2, etc.{p_end}
+
+{phang}{opt stnum(commands)} applies Stata or user-defined {help outreg2##s_18:commands} to {it:numerical} forms of the {cmd:stats( )}, 
+use this option for mathematical/numeric operations, comma delimited, use quotes when there is a comma within a command, 
+usually limited to stats specified in {cmd:stats( )}, also see {cmd:ststr( )} below for string operations{p_end}
+
+{phang}{opt ststr(commands)} applies Stata or user-defined {help outreg2##s_18:commands} to {it:string} forms of the {cmd:stats( )}, 
+use this option to attach symbols or concatenate, comma delimited, use compound quotes if there is a comma in the command, 
+usually limited to stats specified in {cmd:stats( )}, also see {cmd:stnum( )} above{p_end}
+
+{phang}{opt ef:orm} specifies coefficients to be reported. This corresponds to {opt or} option for 
+{help logit}, {help clogit}, and {help glogit} estimation, {opt irr} for {help poisson} estimation, {opt rrr} 
+for {help mlogit}, {opt hr} for {help cox} and {help stcox} hazard models, and 
+{opt eform} for {help xtgee}. The default form of {help stcox} is the hazard rate form; use the {opt eform} to report it. {p_end}
+
+{phang}{opt l:evel(integer)} specifies the confidence level, in percent, for 
+confidence intervals. The default is {opt level(95)} or as set by {help set level}, 
+does not affect the significance levels of asterisks. {p_end}
+
+
+{p 4 8 8}{ul:Short-cut for auxillary statistics}{p_end}
+
+{phang}{opt nose} specifies coefficients reported without std. errors{p_end}
+
+{phang}{opt tstat} displays t-statistics under the coefficent{p_end}
+
+{phang}{opt pvalue} displays p-values under the coefficent{p_end}
+
+{phang}{opt ci} displays conf. intervals under the coefficent{p_end}
+
+{phang}{opt be:ta} displays normalized beta coefficients (see the beta option of {help regress}){p_end}
+
+
+{dlgtab:Significance}
+
+{phang}{opt alpha(numlist)} specifies the levels of significance, separated by comma 
+from the most significant to the least signficiant. Example: {opt alpha(0.001, 0.01, 0.05)}. Up to 3 are automatically 
+assigned asterisks. If more than 3 levels are defined, then the symbols must be specified with {opt sym:bol(text)}. {p_end}
+
+{phang}{opt sym:bol(text)} specifies symbols for the levels of significance from the most significant 
+to the least significant, the default {opt sym:bol(***, **, *)}. The significance levels of 0.01, 
+0.05, and 0.10 will be automatically assigned in that order. If more than 3 symbols are assigned, then the 
+same number of levels of significance must be specified using {opt alpha( )}.{p_end}
+
+{phang}{opt aster:isk( )} specifies asterisks to be placed next to them; default {cmd:stats(coef)}.{p_end}
+
+{phang}{opt noas:ter} no asterisks denoting statistical significance 
+levels be reported. {p_end}
+
+{phang}{opt 2aster} specifies ** for 1% and * for 5% {p_end}
+
+{phang}{opt 10pct} equivalent to {opt sym:bol(**, *, +)}{p_end}
+
+
+{dlgtab:Decimals and Formats}
+
+{phang}{opt auto(integer)} the number of automatically formatted decimals, the default is {cmd:auto(3)}, 
+i.e. three significant digits not counting the ones (i.e. the digit to the left of the decimal point). 
+This means 1.234 and 0.123 might be displayed, while 12.345 or 0.1234 will be trimmed. A probable integer 
+is reported without decimals. A very large or small number will be displayed in 
+exponential format. Specify {opt dec( )} or {opt bd:ec( )} to disable it. {p_end}
+
+{phang}{opt less(integer)} specifies how many less significant digits to be 
+displayed for the auxiliary (non-coefficient) statistics. The default is {cmd:less(0)}, meaning no less.{p_end}
+
+{phang}{opt decm:ark( )} contains the decimal marker; default {opt decm:ark(.)}{p_end}
+
+
+{phang}{ul:fixed decimals & formats}{p_end}
+
+        {opt dec(#)} or {opt fmt(type)} for everything, default {cmd:dec(3)} and {cmd:fmt(fc)}
+
+{p 8}where # is fixed decimals between 0 and 11, {p_end}
+{p 8}and {it:type} is one of the following:{p_end}
+
+         e   exponential
+         f   fixed
+         fc  fixed with commas for thousands
+         g   general
+         gc  general with commas for thousands
+
+        Use the following only if you want them different from {opt dec(#)} or {opt fmt(type)}:
+
+        {opt bd:ec(#)} or {opt bf:mt(type)} for coefficient only
+        {opt sd:ec(#)} or {opt sf:mt(type)} for standard error
+        {opt td:ec(#)} or {opt tf:mt(type)} for t-statistics
+        {opt pd:ec(#)} or {opt pf:mt(type)} for p-value
+        {opt cd:ec(#)} or {opt cf:mt(type)} for conf. interval
+        {opt rd:ec(#)} or {opt rf:mt(type)} for r-square
+        {opt ad:ec(#)} or {opt af:mt(type)} for addstat( ) contents
+
+{dlgtab:Titles and notes}
+
+{phang}{opt ti:tle(list)} titles for your table; comma separated; use quotes for commas within a title. 
+Titles can be added at any time. To erase your title, encase a space between quotes like this: title(" "){p_end}
+
+{phang}{opt ct:itle(list)} column titles; comma separated for each additonal row; semi-colon for each additional column; 
+use quotes if comma is part of title. Example: ctitle("Wage, Participation","Wage: Participation"). To specify empty column title, specify 
+ctitle(" ").{p_end}
+
+{phang}{opt cttop(list)} place additonal column titles on the top; comma separated, use quotes for multiple column titles.{p_end}
+
+{phang}{opt addn:ote(list)} add your own notes at the bottom. Must be specified in the first {cmd:outreg2} 
+call when regression results are appended together. A blank line can be inserted by including "" as a note.{p_end}
+
+{phang}{opt nonot:es} specifies that notes and legends explaining the standard errors, asterisks, etc., not be included.{p_end}
+
+
+{dlgtab:Parenthesis and brackets}
+
+{phang}{opt par:en(stats)} specifies parenthesis ( ) to be placed around the same list as stats( ).{p_end}
+
+{phang}{opt nopa:ren} specifies no parentheses be placed around standard 
+errors, t-statistics, standard errors, etc. {p_end}
+
+{phang}{opt br:acket} specifies square brackets [ ] be used rather than 
+parentheses ( ) around standard errors, t-statistics, etc. {p_end}
+
+{phang}{opt br:acket(stats)} specifies square brackets [ ] to be placed around the same list as stats( ).{p_end}
+
+
+{dlgtab:Statistics for each regression (at bottom)}
+
+{phang}{opt e(scalars)} reports {help ereturn:e-class scalars} at the bottom of the table. 
+They may be requested individually, as in {cmd:e(N ll r2)}, or for all, by specifying {cmd:e(all)}. 
+The reported e-class statistics are automatically formated by auto-digits, unless {opt ade:c} 
+has been specified for it. {p_end}
+
+{phang}{opt adds:tat(name, stats, ..)} access {help ereturns:e-class}, {help return:r-class}, {help sreturn:s-class} 
+scalar statistics, or just plain numbers in new rows below the R-squared (if shown). Comma separted. 
+The user must specify both a name and a value for the statistic. See {help outreg2##s_9:example}.{p_end}
+
+{phang}{opt addtext(name, text, ..)} specifies user-added text (including 
+numbers) to be displayed in new lines below the R-squared (if shown). Unlike {opt adds:tat}, 
+{opt addt:ext} will not format numbers nor try to interpret any e-class text (such as e(N) or e(title)). {p_end}
+
+{phang}{opt ad:jr2} specifies that the adjusted R-squared be reported rather than the regular R-squared 
+when available.{p_end}
+
+{phang}{opt nocon:s} specifies that the intercept (constant) be not reported.
+
+{phang}{opt noni} specifies that the number of groups in a panel data regression 
+not be reported (e.g. the number of groups specified by the i( ) variable in {help xtreg}).{p_end}
+
+{phang}{opt nor:2} specifies that no R-squared (or adjusted R-squared) be reported.{p_end}
+
+{phang}{opt noobs} specifies no number of observations is to be reported.{p_end}
+
+
+
+{dlgtab:Equations and Variables}
+
+{phang}{opt depvar} Include depdendent variable.{p_end}
+
+{phang}{opt nodepvar} Attempt to drop depdendent variable.{p_end}
+
+{phang}{opt policy(varlist)} {help outreg2##s_19:Match policy variables across regressions}.{p_end}
+
+{phang}{opt drop(varlist)} Drop these variables. Do not include the dependent variable in this list.{p_end}
+
+{phang}{opt keep(varlist)} Keep and report these variables. {p_end}
+
+{phang}{opt eqdrop(eqlist)} Drop these equations from the table {p_end}
+
+{phang}{opt eqkeep(eqlist)} Keep and report these equations. {p_end}
+
+{phang}{opt sortvar(varlist)} Sort and order variables; non-existent variable names are ignored.{p_end}
+
+{phang}{opt groupvar(names)} Sort and order variable; non-existent names are inserted as super-rows or row-heading.{p_end}
+
+
+
+{dlgtab:Marginal effects}
+
+{phang}{opt mfx} reports marginal effects as computed by {help mfx}. It will reported marginal 
+effects instead of estiamted coefficients. {p_end}
+
+{phang}{opt m:argin(u|c|p)} the unconditional, conditional, and probability marginal 
+effects for {help truncreg}, {net_d:marginal} from STB 52, or {net_d:dtobit} from STB 56. 
+One of u, c, or p is required after {net_d:dtobit}, corresponding to the unconditional, 
+conditional, and probability marginal effects, respectively. It is not necessary to specify 
+{opt margin} after {help dprobit}, {net_d:dlogit2}, {net_d:dprobit2}, or {net_d:dmlogit2}.{p_end}
+
+
+{dlgtab:Summary Statistics}
+
+{phang}{opt sum} summary be reported after a regression command, restricted to the estimation sample, i.e. e(sample)==1, 
+unless no regress exists or {opt raw} option specified. This is the same as {cmd:stats(mean sd)}.{p_end}
+
+{phang}{opt raw} do not restrict the sample to e(sample) or perform casewise dropping. Currently works only with sum. 
+The number of observation reported is the maximum.{p_end}
+
+{phang}{cmd:sum(log)} summary table just like the one from log file. Default is raw (no casewise dropping). 
+Use eqdrop( ) or eqkeep( ) to get what you want.{p_end}
+
+{phang}{cmd:sum(detail)} detailed summary table.  Default is raw (no casewise dropping). 
+Use eqdrop( ) or eqkeep( ) to get what you want.{p_end}
+
+
+{dlgtab:Tabulations}
+
+{phang}{opt cross:tab} n-way cross-tabulation. Varlist is required. The first 
+variable must be counting numbers, i.e. 0, 1, 2, etc., and the rest must be non-strings. See {help outreg2##s_15:example} below. {p_end}
+
+
+{dlgtab:Laptop/External/Network Drives}
+
+{phang}{opt slow(#)} specifies # of milli-second delay. Specify slow(100) or larger if you are getting 
+"could not be openend r(603)" error; it's probably either (1) your storage device is running too slow, or 
+(2) you don't have write-access, in which case you need to change working directory 
+with {help cd}.{p_end}
+
+
+{hline}
+
+{marker s_0}
+{title:Example 0. Basic game plan}
+
+
+{p 4 4 6}You should specify the current directory where all the files will be stored. Alternatively, you 
+can specify the complete pathway from within {cmd:outreg2}, but you need to 
+encase it with quotations marks. {cmd:Either way, you must have write-access to that folder.} Otherwise you get r(603) error.{p_end}
+
+{p 4 10 8}cd "C:\Users\yourname\Documents\"    /* or whatever your directory may be */{p_end}
+{p 4 10 8}{stata sysuse auto,clear}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight headroom trunk length turn displacement}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace cttop(full)}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight headroom}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, see word excel tex dta}{p_end}
+
+{p 4 4 6}You can immedicately see the changes. The variable "weight" loses some of its significance 
+in the full specification. The estimated effect of weight can be shown to be downward-biased from 
+-0.00420 to -0.00647 by omitting a number of covariates. This is an easy way to check for 
+collinearity and misspecification.{p_end}
+
+{p 4 4 6}You can use {cmd:e( )} or {cmd:addstat( )} option to augment the standard 
+regression results with other e-class statistics (scalar only). {cmd:addstat} can handle 
+r-class and s-class results as well, if they exist. The following codes are equivalent 
+excpet in appearance.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, e(r2 ll)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, addstat(R-squared by hand, e(r2), Log Lik, e(ll))}{p_end}
+
+{p 4 4 6}If you want to see everything available in the e-class, do it like this:{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, e(all)}{p_end}
+
+
+{marker s_1}
+{title:Example 1. Prefix and -bys:-}
+
+
+{p 4 4 6}{cmd:outreg2} can be used in as a prefix.{p_end}
+
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata "outreg2 using myfile, replace ti(Car stuff): reg price mpg weight turn"}{p_end}
+{p 4 10 8}{stata "outreg2 using myfile, see excel: reg price mpg weight turn if price > 6100"}{p_end}
+
+{p 4 8 8}It is also byable with -bys:- prefix.{p_end}
+
+{p 4 10 8}{stata "bys foreign: outreg2 using myfile, side replace see: reg rep78 head weight gear length turn [aw=mpg]"}{p_end}
+
+
+{marker s_2}
+{title:Example 2. Running loops}
+
+
+{p 4 4 6}Because this involves a loop, you must copy and paste into a do-file:
+
+{p 4 4 6}sysuse auto,clear{p_end}
+{p 4 4 6}cap erase myfile.txt{p_end}
+{p 4 4 6}forval num=1/5 {{p_end}
+{p 8 8 6}regress mpg weight headroom if rep78==`num'{p_end}
+{p 8 8 6}outreg2 using myfile{p_end}
+{p 4 4 6}}{p_end}
+{p 4 4 6}seeout{p_end}
+
+
+{p 4 4 6}Alternatively, make use of macro{p_end}
+
+{p 4 4 6}local replace replace{p_end}
+{p 4 4 6}forval num=1/5 {{p_end}
+{p 8 8 6}regress mpg weight headroom if rep78==`num'{p_end}
+{p 8 8 6}outreg2 using myfile, `replace' {p_end}
+{p 8 8 6}local replace{p_end}
+{p 4 4 6}}{p_end}
+
+{marker s_3}
+{title:Example 3. Stored estimates}
+
+
+{p 4 4 6}You can automatically recall the stored estimates by specifying them from 
+within {cmd:outreg2}. To distinguish them from the varlist, place the estlist 
+within a pair of {cmd:[}square brackets{cmd:]}.{p_end}
+
+{p 4 10 8}{stata sysuse auto,clear}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight headroom trunk length turn displacement}{p_end}
+
+{p 4 10 8}{stata est store Full}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight headroom}{p_end}
+
+{p 4 10 8}{stata est store Restricted1}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight}{p_end}
+
+{p 4 10 8}{stata est store Restricted2}{p_end}
+{p 4 10 8}{stata outreg2 [Full Restricted1 Restricted2] using myfile, replace see}{p_end}
+
+{p 4 4 6}{cmd:outreg2} will take the stored estimates as wildcards (*). Try this:
+
+{p 4 10 8}{stata outreg2 [*] using myfile, see replace}{p_end}
+{p 4 10 8}{stata outreg2 [R*] using myfile, see replace}{p_end}
+
+{p 4 4 6}The varlist may be combined with the estlist. The varlist will take the 
+wildcards as well, provided they exist in the estlist.{p_end}
+
+{p 4 10 8}{stata outreg2 foreign weight [*] using myfile, see replace}{p_end}
+
+{p 4 4 6}If you are specifying the varlist, you must make certain the desired varlist 
+exists in all the stored estiamtes. Since not all equations may contain the 
+specified varlist, it is usually a poor idea to combine the one column option 
+with the varlist.{p_end}
+
+
+{marker s_4}
+{title:Example 4. Shorthand}
+
+
+{p 4 4 6}{cmd:outreg2} will remeber the last set of options you specified until the end of
+the day. The stored command will expire at mid-night to prevent the possible 
+loss of finished table by inadvertantly writing over a finished file. The 
+following shorthand should be tried separately.{p_end}
+
+{p 4 10 8}{stata outreg2}{p_end}
+{p 4 10 8}{stata outreg2, replace}{p_end}
+{p 4 10 8}{stata outreg2, seeout}{p_end}
+
+{p 4 4 6}The following two options are excluded from the stored command: 
+seeout and replace. These two must be specified each time you invoke {cmd:outreg2}
+through the shorthand. To change the stored options, you must invoke the full 
+syntax with the specified using file (i.e. outreg2 using myfile, etc). The varlist 
+and the stored estimates names are not stored with the command.{p_end}
+
+{p 4 4 6}For someone who is in a hurry, {cmd:outreg2} will take the following syntax, provided 
+the desired options have been stored by invoking them in the full syntax. The 
+varlist and/or the estlist are still allowed under this syntax. This 
+pre-command syntax is made available for the benefit of iterative users.{p_end}
+
+{p 4 10 8}{stata "outreg2 : reg mpg foreign weight headroom"}{p_end}
+{p 4 10 8}{stata "outreg2, replace : reg mpg foreign weight headroom"}{p_end}
+{p 4 10 8}{stata outreg2}{p_end}
+{p 4 10 8}{stata seeout}{p_end}
+
+
+{marker s_5}
+{title:Example 5. Decimal places}
+
+
+{p 4 4 6}By default the regression coefficients are shown with auto-digits, 
+but a user may wish to specify their own number of decimals places. We could use 
+the option dec(5) to display 5 decimal places for all statistics or bdec(5) 
+for just the coefficient, sdec(5) just for standard error, etc.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, replace auto(4)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, dec(5)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, bdec(5) bfmt(f) sdec(7) sfmt(e) see}{p_end}
+
+
+{marker s_6}
+{title:Example 6. Sideway display}
+
+{p 4 4 6}Medical journals often requires the displays to go sideways. Use {opt side:way} to make this 
+happen. {opt side:way} is compatible with {opt st:ats( )}.
+
+{p 4 10 8}{stata outreg2 using myfile, sideway stats(coef aster se) noparen dec(3) replace}{p_end}
+
+{p 4 4 6}Note the above code is equivalent to building the table one column at a time like this:{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, stats(coef) replace noparen dec(3)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(aster) noparen dec(3)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(se) noparen dec(3)}{p_end}
+
+{p 4 4 6}Some journals often prefer t-statistics to standard errors
+and don't use asterisks to denote statistical significance. Some people use brackets. The 
+title( ) option requires quotation marks when it contains a comma. Note that {opt dec} decimal 
+option apply to both the coefficients and the standard errors.{p_end}
+
+{p 4 10 8}{stata regress mpg foreign weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, tstat bracket noaster title("No standard errors!")}{p_end}
+{p 4 10 8}{stata seeout}{p_end}
+
+
+{marker s_7}
+{title:Example 7. Summary tables}
+
+{p 4 4 6}Use {opt sum} to place summary statistics into a table. The sample mean and the standard 
+deviation for the sample used in the earlier regression will be automatically displayed.
+
+{p 4 6 6}* After estimation{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata reg mpg price rep weight length}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sum replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, see}{p_end}
+
+{p 4 6 6}* Regular summary table{p_end}
+{p 4 6 6}* note: version 11 and above requires clear* to prevent mismatch between e(b) and e(sample){p_end}
+{p 4 10 8}{stata clear*}{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sum(log) replace eqdrop(N mean) see}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sum(detail) replace eqkeep(N max min) see}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sum(detail) replace see}{p_end}
+
+
+{marker s_8}
+{title:Example 8. Drop/keep/order variables}
+
+
+{p 4 4 6}Specifying a varlist can be convenient to limit the output 
+table to only the essential coefficients.  For example, we may want to control for
+the influence of dummy variables, but not report their estimated coefficients.{p_end}
+
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata tab rep78, gen(repair)}{p_end}
+{p 4 10 8}{stata regress mpg foreign weight repair1-repair4}{p_end}
+{p 4 10 8}{stata outreg2 weight foreign using myfile, drop(repair*)}{p_end}
+
+{p 4 4 6}Alternatively, {opt keep( )} and {opt drop( )} can be used to control the displayed 
+variables. Use {opt nocons} to drop constants. 
+
+{p 4 10 8}{stata outreg2 using myfile, drop(repair*) replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, keep(mpg foreign)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, nocons}{p_end}
+{p 4 10 8}{stata seeout}{p_end}
+
+{p 4 4 6}There are several ways to order variables in the output. The first is 
+to order them when running regression. The second way is to specify varlist 
+from within {cmd:outreg2}. Or you might try {opt sortvar( )} or {opt groupvar( )}.{p_end}
+
+{p 4 6 6}* single equation{p_end}
+{p 4 10 8}{stata reg mpg rep78 head trunk weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace sortvar(trunk turn)}{p_end}
+{p 4 10 8}{stata reg mpg rep78 head weight turn disp gear}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sortvar(trunk turn) see}{p_end}
+
+{p 4 6 6}* multiple equations{p_end}
+{p 4 10 8}{stata reg3 (mpg rep78 head trunk weight) (head trunk weight rep78 gear)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace long}{p_end}
+{p 4 10 8}{stata reg3 (mpg rep78 head weight turn disp ) (mpg rep78 head trunk weight gear)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, sortvar(trunk turn) see long}{p_end}
+
+{p 4 6 6}* groupvar( ) will create super-rows{p_end}
+{p 4 10 8}{stata reg mpg rep78 head trunk weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace}{p_end}
+{p 4 10 8}{stata reg mpg rep78 head weight turn disp gear}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, groupvar(Group1 trunk turn head weight Group2) see}{p_end}
+
+
+{marker s_9}
+{title:Example 9. Adding r( ) e( ) scalars}
+
+
+{p 4 4 6}Additional statistics may be added with {opt adds:tat( )} or {opt addt:ext( )}. Values stored in 
+macros r( ), e( ), or s( ) can be included directly. You can see what values are available by typing 
+{cmd:ereturn list} or {cmd:return list}.{p_end}
+
+{p 4 4 6}To test the equality of two of the estimated coefficients and report the results in the table, note 
+that {cmd:test} will sometimes return chi-squared, then you would instead use {opt addstat(chi-square test, r(chi2))}:
+{p_end}
+
+{p 4 10 8}{stata reg mpg foreign weight length}{p_end}
+{p 4 10 8}{stata test foreign length}{p_end}
+{p 4 10 8}{stata `"outreg2 using myfile, adds(F-test, r(F), Prob > F, `r(p)') replace"'}{p_end}
+{p 4 10 8}{stata seeout} {p_end}
+
+{p 4 4 6}To add results of lincom postestimation command to a table:{p_end}
+
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata reg price mpg rep78 head}{p_end}
+{p 4 10 8}{stata lincom mpg + rep}{p_end}
+{p 4 10 8}{stata local tstat=r(estimate)/r(se)}{p_end}
+{p 4 10 8}{stata local pval = tprob(r(df), abs(`tstat'))}{p_end}
+{p 4 10 8}{stata outreg2 using "myfile", adds(joint, r(estimate), t-stat, `tstat', p-val,`pval') replace see}{p_end}
+
+{p 4 4 6}In some cases it is better to save the value of a previously calculated 
+statistic in a local macro and then put that into {opt adds:tat( )}:{p_end}
+
+{p 4 10 8}{stata regress mpg rep78 headroom}{p_end}
+{p 4 10 8}{stata test rep78}{p_end}
+{p 4 10 8}{stata local F1 = r(F)}{p_end}
+{p 4 10 8}{stata test headroom}{p_end}
+{p 4 10 8}{stata outreg2 using 2test, addstat(Test1 F, `F1', Test2 F, `r(F)')}{p_end}
+
+{p 4 4 6}If it is missing, {cmd:outreg2} will automatically calculate e(p), which is presumably 
+the F-test or chi-square-test of significance of a regression.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, addstat(F test, e(p))}{p_end}
+
+{p 4 4 6}Another example would be to report a pseudo R-squared 
+after a logit estimation, which {cmd:outreg2} does not otherwise report.{p_end}
+
+{p 4 10 8}{stata logit foreign price trunk weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, addstat(Pseudo R-squared, `e(r2_p)')}{p_end}
+
+
+{marker s_10}
+{title:Example 10. Odds ratios and exponentials}
+
+
+{p 4 4 6}Odds ratios are exponential transformations of coefficients. As noted above, 
+there is no way of knowing after an estimation command if the 
+user chose to report the exponentiated form of coefficients.  The user must 
+choose the {opt eform} option in {cmd:outreg2} to get the same form of the coefficients
+displayed by the estimation into the {cmd:outreg2} table.{p_end}
+
+{p 4 4 6}For duration models, the exponential form is known as the hazard ratio. For 
+other models it is known as odds ratio, relative risk ratio, or incidence rate 
+ratio.{p_end}
+
+{p 4 10 8}{stata sysuse auto,clear}{p_end}
+{p 4 10 8}{stata logit foreign price mpg rep78, or}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace cti(raw)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, eform cti(odds ratio) see}{p_end}
+
+{p 4 6 6}* Alternatively:{p_end}
+{p 4 8 6}{stata outreg2 using myfile, stnum(replace coef=exp(coef), replace se=coef*se) cti(odds ratio) see}{p_end}
+
+{p 4 4 6}Note that coef was first transformed, then used to calculate se in the example above.{p_end}
+
+
+{marker s_11}
+{title:Example 11. Marginal Effects}
+
+{p 4 4 6}{opt mfx} option can be used to report marginal effects after {help mfx} command 
+has been applied.{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata logit foreign mpg rep78 head}{p_end}
+{p 4 10 8}{stata mfx compute}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, mfx ctitle(mfx) see}{p_end}
+
+{p 4 4 6}{cmd:margins} will report it as well.{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata logit foreign mpg rep78 head}{p_end}
+{p 4 10 8}{stata margins, dydx(_all) post}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, ctitle(margins) see}{p_end}
+
+{p 4 4 6}For multiple outcomes, you may want to use {cmd:mfx2} by Ricahrd Williams or 
+{search margeff} by Tamas Bartus. They are both available from {help ssc}. {p_end}
+
+{p 4 4 6}{cmd:margeff} example:{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata mlogit rep turn mpg price}{p_end}
+{p 4 10 8}{stata margeff, at(mean) replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, cttop(margeff) see replace}{p_end}
+
+{p 4 4 6}{cmd:mfx2} runs a little slower:{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata mlogit rep turn mpg price}{p_end}
+{p 4 10 8}{stata mfx2, replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, long cttop(mfx2) see replace}{p_end}
+
+{p 4 4 6}The marginal effects reported by {search dprobit}, {net_d:dlogit2}, {net_d:dprobit2}, 
+and {search dmlogit2} are automatically reported by {cmd:outreg2}.{p_end}
+
+{p 4 4 6}Because {net_d:truncreg}, {net_d:marginal}, and {net_d:dtobit} report 
+both regression coefficients and marginal effects, the user must specify the 
+{opt margin} option for {cmd:outreg2} report the marginal effects.{p_end}
+
+{p 4 4 6}{search dtobit}, on the other hand, calculates three different marginal effects. 
+The user must specify which marginal effect, the unconditional, conditional, 
+or the probability uncensored, to be reported. Note that "version 6" must be set for 
+{cmd:dtobit} to work.{p_end}
+
+{p 4 10 8}{stata `"version 6: tobit mpg trunk weight, ll(17)"'}{p_end}
+{p 4 10 8}{stata `"version 6: dtobit"'}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, margin(u) ctitle(Unconditional) nor2 replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, margin(c) ctitle(Conditional) nor2}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, margin(p) ctitle(Probability) nor2 see}{p_end}
+
+
+{marker s_12}
+{title:Example 12. Word or Excel files}
+
+{p 4 4 6}
+Use {opt word} or {opt excel} for automatic generation of Word/Excel files:
+
+{p 4 10 8}{stata reg price mpg rep78 headroom trunk weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, word excel replace}{p_end}
+
+{p 4 4 6}
+Follow these directions for manual conversions from .txt files:
+
+{p 4 4 6}
+In {cmd:MS Word}, open or insert the file created by {cmd:outreg2}. Select the estimation text that 
+is in columns (not the notes at the bottom of the table or the title at the top, if any), and choose 
+Table, Convert Text to Table.
+
+{p 4 4 6}To shift the table within {cmd:MS Word}, highlight the entire table, choose Table 
+Properties (go the top menu, drag down on the Table option), and then click the alignment as 
+Left instead of Center. 
+
+{p 4 4 6}
+In {cmd:Excel}, open the file created by {cmd:outreg2} and follow the default choices 
+in the Text Import Wizard (if you do not see the file, choose All Files as the File Type). 
+Prevent the conversion of the parenthesis into a negative number (an accounting convention) 
+by doing the following: 1. import it as "Delimited", 2. choose Tab as the Delimiters, and 
+3. Choose "Text" as Column data format after Highlighting all the columns by shift-down, right-clicking.
+
+{p 4 4 6}To export the .xml table to a word processor, you should separately copy the table and the notes 
+at the bottom of the table (prevents the notes from taking up too much space). You 
+can avoid this problem by opening the .txt file manually from inside {cmd:MS Excel}, 
+as detailed earlier, or copy and paste the notes into another cells in 
+{cmd:MS Excel}, which will cause them to be displayed properly. 
+
+{p 4 4 6}To get rid of "green tabs" in Excel: From inisde Excel, Tools > Options > Error Checking. 
+When you get there, uncheck "Number stored as text". No more green triangles.
+
+{p 4 4 6}
+You can also use {cmd:{browse "http://www.stata.com/support/faqs/data/convert2.html":Stat/Transfer}} 
+if you have one. Choose ASCII-Delimited as the input file and choose {cmd:Excel} 
+as the output file. You will need to adjust the column widths from inside 
+{cmd:Excel}.
+
+
+{marker s_13}
+{title:Example 13. TeX files}
+
+{p 4 4 6}
+{cmd:LaTeX} compatible table can be created with {opt tex} option. With the use 
+of free conversion software, such as MiKTeX, you can create Adobe PDF files of 
+the finished tables directly within Stata by invoking a shell command.
+
+{p 4 10 8}{stata regress mpg foreign weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, tex replace}{p_end}
+
+{p 4 4 6}Free TeX-to-PDF conversion software are available, such as the MiKTeX (www.miktek.org) for 
+Windows or teTeX (www.tug.org/teTeX/) for Unix/Linux. They can be invoked with a shell command:{p_end}
+
+{p 4 10 8}{stata !texify -p -c -b --run-viewer myfile.tex}  {using MiKTeX on Windows){p_end}
+{p 4 10 8}{stata !pdflatex myfile}                          (using teTeX on Linux){p_end}
+
+{p 4 4 6}{cmd:outreg2} cannot append TeX format tables to one another, so regressions must be 
+appended in ASCII form until the last regression, which is appended with the 
+{opt tex} option.{_end}
+
+{p 4 4 6}The base font point size of tex in a TeX table can be specified with the {opt tex( )} 
+parameter. TeX only allows font sizes of 10 and 11 points besides the default
+of 12 point. The {opt texfrag} option creates a TeX fragment for inclusion in a larger 
+TeX document. For example, a TeX fragment table from the first regression above could be created with 
+
+{p 4 10 8}{stata outreg2 using myfile, tex(frag)}{p_end}
+
+{p 4 4 6}and then be included in the following TeX document with the \input{myfile} 
+command:{p_end}
+
+        \documentclass[10pt]{article}
+        \begin{document}
+        ... text before inclusion of table myfile.tex ...
+        \input{myfile}
+        ... text after inclusion of table myfile.tex ...
+        \end{document}
+
+{p 4 4 6}Technical Note: Non-alphanumeric characters often have special meaning 
+in TeX, namely _, %, #, $, &, ~, ^^, \, {, }.  To print them like any other 
+character, include a \ in front of the character. {cmd:outreg2} automatically does this for 
+the first two, _ and %. You can include the other characters in titles,
+variable labels, or notes if you preceed them with with a \ in the Stata text.
+The exception is \ itself; \ must be replaced with $\backslash$ to render
+properly in TeX.
+
+{p 4 4 6}In addition, in TeX the characters <, >, and | will only appear as themselves 
+in math mode, so they must be written as $<$, $>$, and $|$.{p_end}
+
+{p 4 4 6}TeX codes can be inserted into {cmd:outeg2} titles, variable labels, and added 
+notes. This requires understanding TeX formatting codes. The example below 
+creates a Greek letter chi with a squared exponent for a chi-squared test 
+statistic.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, addstat($\chi^2$, 22.1) tex}{p_end}
+
+{p 4 4 6}Note that outreg2 will automatically convert < or > but not chi^2.{p_end}
+
+{p 4 10 8}{stata `"outreg2 using myfile, addstat(LR $\chi^2$, e(chi2), Prob < $\chi^2$, e(p)) tex"'}{p_end}
+
+{p 4 4 6}{cmd:outreg2} automatically converts _ to \_, except 
+when it finds two $'s in the text, in which case it assumes the _ is a 
+subscript designator in a TeX inline equation. That means that if you want to 
+add text that includes an inline equation, but you really want the _ to appear 
+as such in the TeX table, you must replace it with a \_.{p_end}
+
+{p 4 4 6}Stata will interpret $ immediately followed by a letter as a global macro. To 
+get Stata to output a literal $, insert an escape character "\" like this: \$. 
+R-squared, for example, must be "\$R^2$" rather than "$R^2$" because $R would be evaluated 
+as the value of global macro R.{p_end}
+
+{p 4 4 6}Putting a literal "$" in TeX output can be confusing: to get "$US" in the TeX 
+output, for example, one needs "\$US" in the TeX input file, which requires  
+"\\\$US" in Stata text, because Stata resolves "\\" into "\" and "\$" into "$".{p_end}
+
+{p 4 4 6}A final quirk: you cannot use the results of the Stata macro $S_FN in {cmd:outreg2}
+text for a TeX table if you use Microsoft Windows. $S_FN returns the path name 
+for the current data file which in Windows includes \ characters which will 
+prevent the TeX table from rendering properly.{p_end}
+
+
+{marker s_14}
+{title:Example 14. Adding column titles or notes}
+
+
+{p 4 4 6}You can add a column title "Base case (mpg)" to distinguish this regression from a 
+second regression. No quotation marks are required around the column title because 
+it does not contain commas. Use {opt cttop( )} to add additional column title to the default column titles.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, replace ctitle(Base case (mpg))}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, cttop(On top)}{p_end}
+
+{p 4 4 6}You can add explanatory note at the bottom of a column using the {opt addn:ote} option.
+Note that since the text in {opt addn:ote} does not contain parentheses or commas
+it does not need quotation marks.{p_end}
+
+{p 4 10 8}{stata outreg2 using myfile, addnote(Dummy variables not shown)} {p_end}
+
+{p 4 4 6}{opt addnote} for inserting a blank line, followed by the time the program was run (from the 
+built-in Stata functions $S_TIME and $S_DATE), and the dataset used by the 
+estimation (from the Stata function $S_FN).{p_end}
+
+{p 4 10 8}{stata regress mpg foreign weight length}{p_end}
+{p 4 10 8}{stata `"outreg2 using myfile, addn("", "Time $S_TIME, $S_DATE", Data from $S_FN) replace"'} {p_end}
+
+
+{marker s_15}
+{title:Example 15. n-way cross-tabulation}
+
+{p 4 4 6}n-way tabulation likes of which are also produced by tab3way or table. It will take about a minute to run.{p_end}
+
+{p 4 6 6}* Prepare data{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata egen mileage=cut(mpg), group(10)}{p_end}
+{p 4 10 8}{stata egen paid=cut(price), group(3)}{p_end}
+{p 4 10 8}{stata egen heavy=cut(weight), group(3)}{p_end}
+
+{p 4 6 6}* 3-way cross-tabulation sideway{p_end}
+{p 4 10 8}{stata outreg2 mileage paid heavy using myfile, see replace cross side}{p_end}
+
+{p 4 6 6}* 5-way cross-tabulation without percentage{p_end}
+{p 4 10 8}{stata outreg2 mileage paid foreign rep78 heavy using myfile, see replace cross stats(coef)}{p_end}
+
+
+{marker s_16}
+{title:Example 16. Group summary table}
+
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata gen white=cond(uniform( )>.5,1,0)}{p_end}
+{p 4 10 8}{stata gen black=cond(white==1,0,1)}{p_end}
+{p 4 10 8}{stata gen male=cond(uniform( )>.5,1,0)}{p_end}
+{p 4 10 8}{stata gen female=cond(male==1,0,1)}{p_end}
+
+{p 4 8 8}* do it with -bys:-{p_end}
+{p 4 10 8}{stata `"bys male black: outreg2 using myfile, sum(log) eqkeep(mean N) drop(white female male black) excel replace"'}{p_end}
+
+{p 4 8 8}* do it by hand{p_end}
+{p 4 10 8}{stata outreg2 using myfile if white==1 & male==1, sum(log) eqkeep(mean N) cttop(white, male) drop(white male female) excel replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile if white==1 & female==1, sum(log) eqkeep(mean N) cttop( , female) drop(white male female) excel}{p_end}
+{p 4 10 8}{stata outreg2 using myfile if white==1, sum(log) eqkeep(mean N) cttop( , total) drop(white male female) excel}{p_end}
+{p 4 10 8}{stata outreg2 using myfile if black==1 & male==1, sum(log) eqkeep(mean N) cttop(black, male) drop(white male female) excel}{p_end}
+{p 4 10 8}{stata outreg2 using myfile if black==1 & female==1, sum(log) eqkeep(mean N) cttop( , female) drop(white male female) excel}{p_end}
+{p 4 10 8}{stata outreg2 using myfile if black==1, sum(log) eqkeep(mean N) cttop( , total) drop(white male female) excel}{p_end}
+
+
+{marker s_17}
+{title:Example 17. Fixed effects or legends}
+
+{p 4 4 6}Two-way fixed-effects estimation with dummy indicators:{p_end}
+
+{p 4 6 6}* set up data{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata ren rep78 state}{p_end}
+{p 4 10 8}{stata ren turn id}{p_end}
+{p 4 10 8}{stata keep id price mpg weight state}{p_end}
+{p 4 10 8}{stata tab state, gen(ST)}{p_end}
+
+{p 4 6 6}* regress and report{p_end}
+{p 4 10 8}{stata xtreg price mpg weight ST*, fe i(id)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace drop(ST*) addtext(State FE, YES, Year FE, YES)}{p_end}
+{p 4 10 8}{stata xtreg price mpg weight ST*, fe i(id)}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, drop(ST*) addtext(State FE, NO, Year FE, YES)}{p_end}
+{p 4 10 8}{stata reg price mpg weight ST*}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, drop(ST*) addtext(State FE, NO, Year FE, NO)}{p_end}
+
+{p 4 6 6}* legend{p_end}
+{p 4 10 8}{stata outreg2 using myfile,  st(str(Coef) str(Stn Err) str(Spearman)) noparen ct(Legend) replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile,  st(coef se spearman blank)}{p_end}
+
+
+{marker s_19}
+{title:Example 19. Matching policy variables across regressions}
+
+{p 4 10 8}The following matches the variables of interest as "Policy" and their names in the column title.{p_end}
+
+{p 4 10 8}sysuse auto, clear{p_end}
+{p 4 10 8}local replace replace{p_end}
+{p 4 10 8}foreach var in length turn displacement {{p_end}
+{p 4 10 8}reg price weight gear_ratio foreign `var'{p_end}
+{p 8 10 8}     outreg2 using this, `replace' policy(`var') sortvar(Policy) {p_end}
+{p 8 10 8}     local replace {p_end}
+{p 4 10 8}}{p_end}
+
+
+{marker s_18}
+{title:Example 18. Stats transformation/manipulation}
+
+{p 4 4 6}The contents of {cmd:stats( )} can be manipuated with standard Stata commands.{p_end}
+
+{p 4 4 6}Use {opt stnum( )} to work with {it:numerical} forms.{p_end}
+
+{p 4 4 8}* multiply by 100{p_end}
+{p 4 10 8}{stata sysuse auto, clear}{p_end}
+{p 4 10 8}{stata reg mpg price weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, replace}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(coef se) stnum(replace coef=coef*100, replace se=se*100)}{p_end}
+
+{p 4 4 8}* exponentiate both coef and se{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(coef se) stnum(replace coef=exp(coef), replace se=coef*se)}{p_end}
+
+{p 4 4 8}* absolute value of t-statistics{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(coef tstat) stnum(replace tstat=abs(tstat))}{p_end}
+
+
+{p 4 4 6}Use {opt ststr( )} to apply {it:string} operations.{p_end}
+
+{p 4 4 8}* add dollar-sign ($) for the mean of price{p_end}
+{p 4 10 8}{stata reg mpg price weight}{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(mean) ststr(replace mean="$"+mean if varname=="price") replace}{p_end}
+
+{p 4 4 8}* add "max" to maximum and "min" to minimum{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(max min) ststr(replace max="max "+max if max~="", replace min="min "+min if min~="")}{p_end}
+
+
+{p 4 4 6}Use {opt stnum( )} and {opt ststr( )} together.{p_end}
+
+{p 4 4 8}* multiply by 100 and add percent (%) sign{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(mean) stnum(replace mean=mean*100) ststr(replace mean=mean+" %" if mean~="")}{p_end}
+
+{p 4 6 6}* You can automate this process by writing your own programs and inserting them like this:{p_end}
+
+{p 4 10 8}prog drop _all{p_end}
+{p 4 10 8}prog define percent{p_end}
+{p 8 12 10}	replace mean=mean*100{p_end}
+{p 4 10 8}end{p_end}
+
+{p 4 10 8}prog define symbol{p_end}
+{p 8 12 10}	replace mean=mean+" %" if mean~=""{p_end}
+{p 4 10 8}end{p_end}
+
+{p 4 10 8}outreg2 using myfile, stats(mean) stnum(percent) ststr(symbol){p_end}
+
+
+{p 4 4 8}* To manipuate string based on numerical content, generate a numerical copy in stnum( ):{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(mean) stnum(gen temp=mean) ststr(replace mean="Positive" if temp>0)}{p_end}
+
+
+{p 4 4 8}* To concatenate (currently works only with major statistics, i.e. coef, se, tstat, etc.:{p_end}
+{p 4 10 8}{stata outreg2 using myfile, stats(coef) ststr(replace coef=coef+" "+se) noaster}{p_end}
+
+
+{marker s_20}
+{title:Example 20. Insert r-class cmd( ) outputs}
+
+{p 4 4 6}You can insert output from r-class command in the table body through cmd( : ) sub-option. Indep and dependent 
+variables will be fed to them.{p_end}
+
+{p 4 6 6}* outputs Kendall's tau-a and tau-b{p_end}
+{p 4 4 6}sysuse auto, clear{p_end}
+{p 4 4 6}reg rep78 headroom length turn gear_ratio{p_end}
+{p 4 10 8}outreg2 using myfile, replace stats(corr, spearman, cmd(r(tau_a): ktau), /*{p_end}
+{p 12 12 8}*/cmd(r(tau_b): ktau)){p_end}
+
+{p 4 6 6}* double-check{p_end}
+{p 4 4 6}ktau rep78 headroom{p_end}
+{p 4 4 6}ret list{p_end}
+
+
+{p 4 4 6}{ul:Write and insert your own r-class output}
+
+{p 4 4 6}You can write your own r-class program and insert their outputs. A scalar should be returned 
+on two inputs: independent variable and dependent variable. It needs to accept [if] syntax. 
+c_local programs will work, too, but there might be a conflict.{p_end}
+
+{p 4 6 6}* r-class program that calculates coefficient of variation{p_end}
+{p 4 4 6}cap prog drop coefvar{p_end}
+{p 4 4 6}prog define coefvar, rclass{p_end}
+{p 8 8 8}syntax varlist(max=2) [if]{p_end}
+{p 8 8 8}gettoken dep indep : varlist{p_end}
+{p 8 8 8}qui sum `indep' `if'{p_end}
+{p 8 8 8}local variation=`r(sd)'/`r(mean)'*100{p_end}
+{p 8 8 8}ret scalar variation=`variation'{p_end}
+{p 4 4 6}end{p_end}
+
+{p 4 6 6}* test your r-class program{p_end}
+{p 4 4 6}sysuse auto, clear{p_end}
+{p 4 4 6}reg rep78 headroom length turn gear_ratio{p_end}
+{p 4 4 6}coefvar rep78 headroom if e(sample){p_end}
+{p 4 4 6}ret list{p_end}
+
+{p 4 6 6}* run them{p_end}
+{p 4 4 6}sysuse auto, clear{p_end}
+{p 4 4 6}reg rep78 headroom length turn gear_ratio{p_end}
+{p 4 4 6}outreg2 using myfile, replace stats(coef, se, sd, cmd(r(variation): coefvar)){p_end}
+
+
+{p 4 6 6}* return c_local instead of r-class scalar{p_end}
+{p 4 4 6}cap prog drop coefvar2{p_end}
+{p 4 4 6}prog define coefvar2{p_end}
+{p 8 8 8}syntax varlist(max=2) [if], [proportion]{p_end}
+{p 8 8 8}gettoken dep indep : varlist{p_end}
+{p 8 8 8}qui sum `indep' `if'{p_end}
+{p 8 8 8}local hundred 100{p_end}
+{p 8 8 8}if "`proportion'"=="proportion" {{p_end}
+{p 12 12 8}local hundred 1{p_end}
+{p 8 8 8}}{p_end}
+{p 8 8 8}local variation=`r(sd)'/`r(mean)'*`hundred'{p_end}
+{p 8 8 8} c_local variation=`variation'{p_end}
+{p 4 4 6}end{p_end}
+
+{p 4 6 6}* run them{p_end}
+{p 4 4 6}sysuse auto, clear{p_end}
+{p 4 4 6}reg rep78 headroom length turn gear_ratio{p_end}
+{p 4 4 6}outreg2 using myfile, stats(coef, se, sd, cmd(variation: coefvar2, proportion)){p_end}
+
+
+{title:Send one to the e-mail address below}
+
+{p 4 4 6}Programs like these can made into a sub-option for inclusion the future versions. 
+Please note that it should be something of interest to other people.{p_end}
+
+
+{hline}
+
+
+{title:How to report a possible error}
+
+{p 4 4 6}1. it's best if you send an example using -sysuse- or -webuse- data{p_end}
+{p 4 4 6}2. create a trace log file containing the error{p_end}
+{p 4 4 6}3. Send them to whoever wrote the thing and ask nicely.{p_end}
+
+    cap log close
+    log using mylog.txt, text replace
+    which outreg2                 /* or whatever command you are dealing with */
+    cret list
+    sysuse auto, clear            /* or whatever data you are using */
+    reg rep78 trunk turn foreign  /* or whatever you are doing */
+    set trace on
+    outreg2 using myfile, replace /* or whatever that gets you the error */
+    log close
+
+
+{hline}
+
+{marker s_FAQ}
+{title:Frequently asked questions}
+
+{p 4 7 8}Q: Why isn't adoupdate working with {helpb outreg2}?{p_end}
+{p 4 7 8}A: Stata will refuse to update a package if it is incorrectly dated, i.e., backdated at the SSC. 
+This has been fixed. To force it to update, you would had to uninstall first (scc uninstall outreg2).{p_end}
+
+{p 4 7 8}Q: How do I report the first-stage from {helpb ivregress}?{p_end}
+{p 4 7 8}A: This has been the most frequently asked question with outreg2. What had been requested was a full 
+compatibility with the rest of Stata, i.e., factor variables, post estimation commands, etc. This was impletemented 
+for the first time by {helpb ivregress2}, which was the first to extend the official version in about 5 or 6 years.{p_end}
+
+{p 4 7 8}Q: What error is "could not be openend r(603)"?{p_end}
+{p 4 7 8}A: That usually comes up if you don't have write-acces to the folder. Use -cd- to change the pathway.{p_end}
+
+{p 4 7 8}Q: Should I use LaTeX?{p_end}
+{p 4 7 8}A: You are probably better off with Word/Adobe conversion to pdf. Most people do it that way. 
+LaTeX is great if you actually write lots of equations or white papers - only a small percentage of Stata users do that.{p_end}
+
+{p 4 7 8}Q: Can I use Stata with Excel? Windows? {p_end}
+{p 4 7 8}A: Virutally all empirical researchers use Excel. Stata grew up with PC. Microsoft Office is currently the 
+defacto standard in academia. I am not sure why this was an issue.{p_end}
+
+
+{marker s_Terms}
+{title:Terms of use}
+
+{p 4 4 6}In my experience economists, particularily health economists, are very generous with their time 
+and resources. We often share codes and data sets, some of which are very rare and valuable. We do this out of 
+a sense of professional obligation or desire to help facilitate research. We don't do this to provide material to someone 
+with a long history of shifting through existing programs, claiming something is not needed after he extracted 
+seomthing from it. The program is free to use but may not be republished under false pretense. That is not a part 
+of acceptable use.{p_end}
+
+
+{title:Author}
+
+{p 4 4 6}Roy Wada{p_end}
+{p 4 4 6}roywada@hotmail.com{p_end}
+
+
+{title:Acknowledgements}
+
+{p 4 4 6}outreg2 is based on the earlier works by John Luke Gallup john_gallup@alum.swarthmore.edu{p_end}
+{p 4 4 6}codes from pcorr2 by Richard Williams have been incorporated for stats( ) suboption.{p_end}
+
+
+{title:Also see}
+
+{p 3}STB:   sg97 (STB-46, STB-49, STB-58){p_end}
+{p}Manual:  {bf:[U] Estimation and post-estimation commands}{p_end}
+{p 9}{bf:[U] Overview of model estimation}{p_end}
+{p 9}{bf:[R] Estimation commands}{p_end}
+
+{p }Online:  {help est}, {help postfile}, {help outfile}, {help outsheet}, {help save}, 
+{search modltbl}, {search desrep} {p_end}
+
+{s6hlp}
+{smcl}
+
+
+
+
