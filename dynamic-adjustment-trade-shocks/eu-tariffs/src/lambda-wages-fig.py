@@ -5,7 +5,7 @@ Created on Sat Dec 28 09:38:34 2024
 @author: andre
 """
 
-Path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files'
+Path = r'C:\Users\cbezerradegoes\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files'
 File = 'euenlarge_d_base.dta'
 
 import pandas as pd

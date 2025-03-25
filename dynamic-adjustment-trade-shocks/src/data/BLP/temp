@@ -1,0 +1,21 @@
+#delimit ;
+nl (rDtrade_1 = -({theta}+1) * pDtariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(0 + 1) * pD0tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(1 + 1) * pD1tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(2 + 1) * pD2tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(3 + 1) * pD3tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(4 + 1) * pD4tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(5 + 1) * pD5tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(6 + 1) * pD6tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(7 + 1) * pD7tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(8 + 1) * pD8tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(9 + 1) * pD9tariff_1 
+	+({theta} - ({sigma}-1)) * (1 - {zeta})^(10 + 1) * pD10tariff_1 
+	),
+	variables(rDtrade_1 pDtariff_1
+	pD0tariff_1 pD1tariff_1 pD2tariff_1
+	pD3tariff_1 pD4tariff_1 pD5tariff_1
+	pD6tariff_1 pD7tariff_1 pD8tariff_1
+	pD9tariff_1 pD10tariff_1) 
+	initial(theta 2 zeta 0.3 sigma 1.1);
+#delimit cr

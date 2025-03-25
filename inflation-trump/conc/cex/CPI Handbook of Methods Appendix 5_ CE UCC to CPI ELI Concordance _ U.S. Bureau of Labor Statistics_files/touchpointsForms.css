@@ -1,0 +1,346 @@
+.fba-modal-dialog svg:hover{
+    cursor:pointer;
+}
+.usa-error-message{
+    color: #990000;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    padding: 0 1em;
+}
+.usa-textarea{
+    height:100px;
+
+}
+    
+/*-------------------slider begin---------------------*/
+.fba-modal-dialog .wrapper form::before{content: "Loading...";display: block;}
+.fba-modal-dialog .wrapper form.loaded::before {display:none;}
+.fba-modal-dialog .wrapper form .touchpoints-form-body{position: relative;overflow: hidden;width: 100%;height: 0;  margin: auto}
+.fba-modal-dialog .wrapper .touchpoints-form-body .sliderInner {position: relative;margin: 0;padding: 0;}
+.fba-modal-dialog .wrapper form .section {position: relative;display: block; float: left;width: 500px; }
+
+/*-------------------slider end---------------------*/
+
+
+.fba-modal {position:fixed;top:0;left:0;right:0;bottom:0;background: rgba(0, 0, 0, 0.6);text-align:center;z-index: 2000;}
+
+.fba-modal .fba-modal-dialog {background:#fff;display:inline-block;vertical-align:middle;margin:10px;box-shadow: 1px 0px 6px 4px rgba(0, 0, 0, 0.36);}
+.fba-modal:before {content:"";display:inline-block; width:0;height:100%;vertical-align:middle;}
+.touchpoints-form-wrapper:focus:not(:focus-visible){outline: none;}
+.fba-modal-dialog .wrapper {position: relative;}
+.fba-modal-dialog .wrapper .fba-modal-close {position: absolute;right:2px;top: 0;width:25px;color:#000;font-weight: bold; font-size: 17px;text-decoration: none;font-size: 2.3em; filter:invert(1)}
+.fba-modal-dialog .wrapper h2{padding:10px 30px 10px 45px;font-size: 16px;background-color: #222;margin-bottom: 0px;color: #fff;position: relative; font-weight: bold; line-height: unset;}
+.fba-modal-dialog .wrapper h2::after{ content:'';background: url(/images/bls_emblem_white.png);background-repeat: no-repeat;width: 60px; height: 60px;position: absolute;top: 5px;left: 0;background-size: 60px;}
+.fba-modal-dialog .wrapper .submit-button{display: flex;width: auto;justify-content: center;}
+.fba-modal-dialog .wrapper .submit-button input, 
+.fba-modal-dialog .wrapper .submit-button button, 
+
+.fba-modal-dialog .wrapper button#fba-more-forms-yes,
+.fba-modal-dialog .wrapper button#fba-more-forms-no,
+.fba-modal-dialog .wrapper .continue-section,  .fba-modal-dialog .wrapper form .section .pagination-buttons .next-section,
+.fba-modal-dialog .wrapper form .section .pagination-buttons .previous-section{padding:5px 10px;border:none;background-color: #0059a0;margin: 3px;color: #fff;border-radius: 0;min-width: 50px;text-decoration: none;position: relative;z-index: 100;cursor: pointer;     padding: 10px; font-size: 19px;}
+.fba-modal-dialog .wrapper .submit-button input, 
+.fba-modal-dialog .wrapper .submit-button button {background-color: #222;}
+.fba-modal-dialog .wrapper .usa-label, 
+.fba-modal-dialog .wrapper label:not(.usa-checkbox label, .usa-radio label){font-size: 16px;display: block;margin:5px 10px;text-align: left; left:14px;}
+.fba-modal-dialog .wrapper .usa-radio label{display: inline-flex;width:80%;margin: unset;}
+
+.fba-modal-dialog .wrapper .usa-checkbox input{
+    float:left;
+}
+.fba-modal-dialog .wrapper .usa-checkbox label{
+    display:block;
+    padding-left: 38px;
+    margin-bottom:unset;
+}
+
+.fba-modal-dialog .wrapper label[for$="_other"]{
+    display: inline-block;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	overflow: hidden;
+	position: absolute;
+	color: transparent !important;
+}
+
+#input-error, .sliderInner .disabled{display:none !important;}
+
+.fba-modal-dialog .wrapper label{font-size: 16px;}
+.fba-modal-dialog .usa-banner__inner {display: flex;align-items: baseline;padding: 5px 10px 0;}
+.fba-modal-dialog .usa-banner__inner .usa-banner__header-text{font-size: 0.8em;margin-left: 7px;margin-bottom:unset;}
+.fba-modal-dialog .usa-banner__inner img{margin-bottom: -2px; height:12px; width:auto;}
+.fba-modal-dialog .wrapper .fba-instructions {padding: 0 10px;}
+
+
+.fba-modal-dialog .wrapper form fieldset {border: none;}
+.fba-modal-dialog .wrapper form .usa-label, .fba-modal-dialog .wrapper form .usa-legend {
+    padding-left: 11px !important;
+    text-indent: -14px;
+    text-align: left;
+    font-size: 16px !important;
+    left: 24px;
+    position: relative;
+    margin-right: 46px;
+
+    display: unset;
+    width: unset; 
+    max-width: unset; 
+    margin-bottom: unset;
+    line-height: inherit;
+    color: unset;
+    white-space: unset;
+
+
+}
+.fba-modal-dialog .wrapper form .usa-label::before, .fba-modal-dialog .wrapper form .usa-legend::before {
+    content: attr(data-question-number);
+    display: inline-block;
+    width: 10px;
+    text-align: right;
+}
+
+
+.fba-modal-dialog .wrapper form .question {margin-bottom: 20px;}
+
+.fba-modal-dialog .wrapper form{max-height: calc(100vh - 200px);overflow-y: auto;}
+.fba-modal-dialog .wrapper .question-options{text-align: left;}
+.fba-modal-dialog .wrapper form input[type=checkbox], .fba-modal-dialog .wrapper form input[type=radio] {margin: 5px 2px 5px 18px;vertical-align: middle;cursor: pointer;}
+
+.fba-modal-dialog .wrapper form .section .section-header{position: relative;height: 15px; color: #0059a0;}
+.fba-modal-dialog .wrapper form .section .section-header .section-title-view {display:none; float:right; margin-left:10px;}
+.fba-modal-dialog .wrapper form .section .pagination-buttons .previous-section{    position: absolute;bottom: 0;left: 10px;}
+.fba-modal-dialog .wrapper form .section .pagination-buttons .next-section{	position: absolute; bottom: 0px; right: 10px;}
+
+
+.fba-modal-dialog .wrapper form textarea, 
+.fba-modal-dialog .wrapper form select, 
+.fba-modal-dialog .wrapper form input[type=tel], 
+.fba-modal-dialog .wrapper form input[type=email], 
+.fba-modal-dialog .wrapper form input[type=text] {display: block;width: calc(100% - 50px);margin: auto;min-height: 25px;border-radius: 0;border:1px solid #000;padding: 3px 5px;}
+.fba-modal-dialog .wrapper form input[type=text].other-option {margin-left: 36px; display: block;width: calc(100% - 68px);min-height: 25px;border-radius: 0;border:1px solid #000;padding: 3px 5px;}
+.fba-modal-dialog .wrapper form textarea{
+    height:140px;
+}
+
+.fba-modal-dialog .cr-container{
+    float:right;
+    margin-right: 20px;
+}
+.fba-modal-dialog .cr-container.full, .fba-modal-dialog .asterisk{
+    color:#990000;
+}
+
+.fba-modal-dialog .asterisk-explanation{
+    bottom: 55px;
+    position: absolute;
+    left: 13px;
+    font-size: 16px;
+    margin: unset;
+}
+
+
+
+.fba-modal-dialog .wrapper form  .star_rating{display: flex;justify-content: center;}
+.fba-modal-dialog .wrapper form  .star_rating label, .fba-modal-dialog .wrapper form  .star_rating input{width: 50px;}
+
+
+.fba-modal-dialog h3.usa-alert__heading{
+    margin: unset;
+    font-weight: bold !important;
+    font-size: 17px !important;
+    line-height: unset;
+}
+
+.submit_form_button{
+position: absolute;
+bottom: 3px;
+right: 13px;
+border: none;
+background-color: green;
+color: #fff;
+border-radius: 0;
+min-width: 50px;
+text-decoration: none;
+z-index: 100;
+cursor: pointer;
+padding: 10px;
+font-size: 19px !important;
+}
+ 
+.fixed-tab-button.usa-button {
+    box-sizing: content-box;
+    outline-offset: 4px;
+    position: fixed;
+    bottom: 50%;
+    height: 48px;
+    width: 230px;
+    background-color: #981b1e;
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: #fff !important;
+    text-decoration: none !important;
+    margin-top: -48px;
+    font-weight: bold;
+    font-size: 16px;
+    right: 0px;
+    transform: rotate(90deg) translate(0px, -92px);
+    word-spacing:5px;
+    transition: width .25s steps(1,jump-start), transform .25s;
+    z-index:1000;
+}
+.fixed-tab-button.usa-button span{color: #fff;}
+@-moz-document url-prefix() {
+    .fixed-tab-button.usa-button {
+      letter-spacing: -3px;
+    }
+  }
+
+.fixed-tab-button.usa-button.collapsed{
+    width: 45px;
+    transform: rotate(0deg) translate(0px, 0px); 
+}
+
+
+.fixed-tab-button.usa-button::before {
+    box-sizing: unset;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='forum' viewBox='0 0 24 24'%3E%3Cpath d='M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z'/%3E%3C/svg%3E");
+    filter: invert(1);
+    display:block;
+    padding: 0 8px 0 0;
+    height:20px;
+    width:20px;
+}
+.fixed-tab-button.usa-button.collapsed span{
+    display:none;
+}
+.fixed-tab-button.usa-button.collapsed::before{
+    padding:0px;
+    width:24px;
+}
+
+.usa-skipnav.touchpoints-skipnav, 
+.fba-modal-dialog .wrapper form .section br {display: none;}
+.fba-modal-dialog abbr {
+    color: #981b1e;
+    text-decoration: none;
+}
+
+.fba-modal-dialog label[for$="_other"] {
+    margin-left: 10px;
+}
+
+.fba-modal-dialog .usa-alert__text p{
+    font-size: 16px !important;
+    padding: 5px 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fba-modal-dialog #fba-intro > p{
+    font-size: 18px !important;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: left;
+}
+.fba-modal-dialog #fba-intro > p.pra{
+    font-size:12px !important;
+}
+.fba-modal-dialog #fba-intro > p:last-child{
+    text-align: center;
+}
+.fba-modal-dialog #fba-intro{
+    width: 550px;
+    padding:10px;
+}
+
+.fba-modal-dialog p:has(.usa-hint--required){
+    display:none;
+}
+
+
+@media (max-width:768px){
+     .fba-modal {bottom: auto !important;background-color: transparent;}
+    .fba-modal .fba-modal-dialog{max-width: 100%;width: 100%;margin: 0 !important;box-shadow: 10px 0px 10px 10px rgba(0, 0, 0, 0.36);padding: 0; }
+    .fba-modal-dialog .wrapper form .section{
+        width: 100%;
+        height: auto !important;
+    }
+    .fba-modal-dialog .wrapper form{max-height: none; }
+    .fba-modal-dialog .wrapper .fba-modal-close{filter:none; background-color: #981b1e; display: flex;width: 100%;height: 48px;justify-content: center;align-items: center; font-size: 1.5em; color: white;} 
+    .fba-modal-dialog .wrapper .fba-modal-close:after{content: "Close";padding-left:5px; }
+    .fba-modal-dialog .wrapper h2{padding: 55px 3px 8px 3px; margin-bottom:10px; font-weight: bold; line-height: unset;}
+    .fba-modal-dialog .wrapper h2::after{top: auto;bottom: -23px;}
+
+    .fixed-tab-button.usa-button {
+        bottom: 0%;
+        top: unset;
+        transform: none;
+        float:none;
+        width:100%;
+        margin-top:0px;
+        z-index:100;
+        right:0px;
+        word-spacing:1px;
+
+        
+    }
+    
+    .fba-modal-dialog #fba-intro{
+        width: auto;
+    }
+    
+    .fba-modal{
+        font-size:16px !important;
+    }
+    .touchpoints-form-body{
+        width:100% !important;
+    }
+    .usa-button.next-section, .usa-button.previous-section{
+        display:none;
+    }
+    .fba-modal-dialog .wrapper form .touchpoints-form-body{
+        overflow-y:auto;
+        height: calc(100vh - 133px) !important;
+    }
+    body{
+        margin-bottom:50px;
+    }
+
+    .fba-modal-dialog .wrapper .usa-checkbox {
+        height: 61px;
+    }
+    .fba-modal-dialog .wrapper .usa-checkbox label{
+
+        left: 4px;
+        position: relative;
+    }
+
+    .fba-modal-dialog .wrapper .usa-legend, .fba-modal-dialog .wrapper .usa-label {
+        font-weight: bold;
+    }
+
+    .fba-modal-dialog .asterisk-explanation{
+        position: relative;
+        text-align: left;
+        padding-left: 10px;
+        bottom:unset;
+        left:unset;
+    }
+    .fba-modal-dialog .wrapper form textarea{
+        height: 100px;
+    }
+    .fba-modal-dialog .submit_form_button{
+        position: relative;
+        margin: 20px 0 30px 0;
+        width: 50%;
+    }
+    .fba-modal-dialog .pagination-buttons{
+        clear: both;
+    }
+}
+

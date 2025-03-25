@@ -1,0 +1,1707 @@
+         
+		
+		
+	
+            	
+				
+								    	
+				
+		    		        	        	
+
+
+
+<!DOCTYPE HTML>
+<html lang="en-us">	
+	<head>
+			                                <title>Consumer Expenditure Surveys Public Use Microdata Getting Started Guide :  U.S. Bureau of Labor Statistics</title>
+							<meta charset="UTF-8">
+		
+		
+				
+        <meta property="og:title" content="Consumer Expenditure Surveys Public Use Microdata Getting Started Guide">
+				<meta property="og:url" href="https://www.bls.gov/cex/pumd-getting-started-guide.htm">
+        <link rel="canonical" href="https://www.bls.gov/cex/pumd-getting-started-guide.htm">
+		<meta property="og:type" content="website">
+					<meta name="description" content="Consumer Expenditure Surveys" />
+			<meta property="og:description" content="Consumer Expenditure Surveys" />
+		
+				
+
+								<meta name="date" content="2023-05-04" />
+				
+						
+		                        				<meta name="keywords" content="" />
+				
+		                        					<meta name="surveys" content="" />
+				
+		                        					<meta name="programs" content="" />
+		
+					<meta name="topic" content="Demographics" />
+		
+					<meta name="measure" content="Employment and Unemployment" />
+				
+				        	<meta name="search-priority" content="0.5" />
+        				        	<meta name="change-frequency" content="always" />
+				
+		
+						  		  		  
+										<!-- START include/global/head_cms.stm -->
+	<script language="javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOL&subagency=BLS&yt=true"></script>
+
+	<script src="/javascripts/jquery-latest.js"></script>
+	<link rel="stylesheet" href="/assets/bootstrap/latest/bootstrap.min.css">
+	<script src="/assets/bootstrap/latest/popper.min.js"></script>
+	<script src="/assets/bootstrap/latest/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_combined.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_content.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_tables.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/jquery-tools.css">
+				
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--[if lt IE 9]>
+		<link href="/stylesheets/ie8-styles.css" media="all" rel="Stylesheet"> 
+	<![endif]-->
+	<!--[if lt IE 8]>
+		<link href="/stylesheets/ie7-styles.css" media="all" rel="Stylesheet"> 
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<link href="/stylesheets/ie6-styles.css" media="all" rel="Stylesheet"> 
+		<style>
+		body {
+			behavior:url(/stylesheets/csshover2.htc);
+		}
+		</style>			
+	<![endif]-->
+	<!--[if IE]>
+		<style>
+		body {
+			font-size: expression(1 / (screen.deviceXDPI / 96) * 84 + '%');
+		}
+		</style>	
+	<![endif]-->
+	<noscript>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_noscript.css">
+	</noscript>
+	<!-----This means that the browser will (probably) render the width of the page at the width of its own screen. ------>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!----------->
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta property="og:image" content="https://www.bls.gov/images/bls_emblem_2016.png" />
+	<meta property="og:image:alt" content="BLS Logo">
+	<meta name="robots" content="index, follow">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="Bureau of Labor Statistics">
+	<style type="text/css">
+		td.gsc-table-cell-thumbnail{
+		display:none !important;
+		}
+	</style>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="theme-color" content="#ffffff" />
+    <!-- END include/global/head_cms.stm -->
+
+			
+			
+			<script type="text/javascript" src="/javascripts/bls-latest.js"></script>
+			<script src="/javascripts/jquery-tools.js"></script>
+			<script type="text/javascript" src="/javascripts/jquery-migrate-1.2.1.min.js"></script>
+		  
+		
+
+
+<meta name="date" content="12/18/2020">		    		<link rel="stylesheet" type="text/css" href="/stylesheets/bls_programs.css">
+<noscript>
+	<style>
+
+		#programs-banner.generic #program-browse{
+			display: block;
+			top: 3px;
+			width:100%;
+		}
+		#programs-banner.generic #program-browse > div{
+			display: block;
+			position: static;
+			border: none;
+			border-top: 1px solid #fff;
+			margin: 10px 0 0;
+		}
+	</style>
+</noscript>
+
+<script>
+$(document).ready(function(){
+	/* Nav, tabbable*/
+	$(".main-content #programs-banner-nav > li a").focus(function(){
+		var parentUL = $(this).parent().parent();
+		$(".focus").removeClass("focus");
+		$(this).parent().addClass("focus");
+		if(parentUL.find("span").size() == 1){
+			parentUL.parent().find("ul").parent().addClass("focus");
+		};
+	});
+	$(".main-content #programs-banner-nav a").blur(function(){
+		setTimeout(function(){if( !$(document.activeElement).parents("#programs-banner-nav").size()){$(".focus").removeClass("focus");};},100);
+	});
+	
+	$(".main-content #programs-banner-nav li").click(function(e){
+		e.stopPropagation();
+		if($(this).find("a").attr("target") == "_blank"){
+			window.open($(this).find("a").attr("href"));
+		}else{
+			window.location = $(this).find("a").attr("href");
+		}
+	});
+	$(".main-content #programs-banner-nav li a").click(function(e){
+		$(this).blur();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+	});
+	
+
+	$("#programs-banner.generic #program-browse > a").focus(function(){
+		$(this).parent().addClass("focused");
+		$("#programs-banner.generic #program-browse").hover(function(){
+			$(this).removeClass("focused");
+			$("#programs-banner.generic #program-browse *").blur();
+		});
+	});			
+	$("#programs-banner.generic #program-browse a").each(function(){
+		$(this).blur(function(){
+			setTimeout(function(){
+				if($(document.activeElement).parents("#program-browse").length < 1 ){
+					$("#programs-banner.generic #program-browse").removeClass("focused")
+				};
+			});
+		});
+	});
+
+	/*Notices Archive Page, load*/
+	$(".main-content #archive-left-side .notice-items").hide();
+	var archiveLeftShow = $(".main-content #archive-left-side .notice-items")[0];
+	$(archiveLeftShow).show();
+	var archiveRightCurrent = $(".main-content #archive-right-side a")[0];
+	$(archiveRightCurrent).addClass("current");
+	/*Notices Archive Page, fcns*/
+	$(".main-content #archive-right-side a").click(function(e){
+		e.preventDefault();
+		$(".main-content #archive-right-side a.current").removeClass("current");
+		$(this).addClass("current");
+		$(".main-content #archive-left-side .notice-items").hide();
+		$(".main-content #archive-left-side #notices-"+$(this).text()).show();
+	});	
+
+});
+</script>
+
+        		
+	</head>
+
+	<body class="layout-fixed">
+				<section aria-label="content">
+
+<!-- PERCUSSION INNER START -->
+																									 
+						
+				
+															
+
+
+    								
+    											 
+						
+				
+															
+
+
+    								
+    											 
+						
+				
+															
+
+
+    								
+    					    																								    	        
+			        
+
+<!-- OneColHeadBasic Begin: Name -->
+
+<!-- Header Filename: "/include/cex/cex_header.txt" -->
+
+<!--no_index_start-->
+
+<!-- DOL BANNER BEGIN -->
+<!-- DOL BANNER START -->
+<header > <!-- Header is closed at the end of BLS banner -->
+		<a class="skiplink" href="#startcontent">Skip to Content</a>
+
+		<div id="usa-banner-wrapper">
+<div id="usa-banner" class="bootstrap standard-width">
+	<div class="content">
+	<div class="USA-flag-link">
+	<img src="https://www.dol.gov/themes/opa_theme/img/flag-favicon-57.png" alt="U.S. flag">
+	<p>An official website of the United States government 
+	  
+	<button type="button" data-toggle="collapse" data-target="#usaBanner" aria-expanded="false" aria-controls="usaBanner">Here is how you know <span class="oi" data-glyph="chevron-bottom"></span></button>
+	</p>
+	</div>
+		<a href="https://www.dol.gov/" id="dolHolder" class="dolHolder" target="_blank"><img src="https://www.dol.gov/themes/opa_theme/img/logo-primary.svg" alt="Department of Labor Logo"/>  United States Department of Labor</a>
+	</div>
+	
+	<div class="collapse " id="usaBanner">	
+	<div class="row">
+	<div class="col-md-6">
+		<img src="https://www.dol.gov/themes/opa_theme/img/icon-dot-gov.svg" alt="Dot gov">
+
+		<p>
+			<strong>The .gov means it's official.</strong>
+			<br> Federal government websites often end in .gov or .mil. Before sharing sensitive information,
+			make sure you're on a federal government site.
+		</p>
+	</div>
+
+	<div class="col-md-6">
+	<img class="usa-banner-icon usa-media_block-img" src="https://www.dol.gov/themes/opa_theme/img/icon-https.svg" alt="Https">
+	
+		<p>
+			<strong>The site is secure.</strong>
+			<br> The
+			<strong>https://</strong> ensures that you are connecting to the official website and that any
+			information you provide is encrypted and transmitted securely.
+		</p>
+	</div>
+	</div>
+	</div>		
+</div>
+</div>
+
+
+
+<!-- DOL BANNER END -->
+
+
+<!-- DOL BANNER END -->
+<!-- BLS BANNER BEGIN -->
+
+<div id="bls-banner-wrapper">
+<div id="top"></div>
+		<div class="bootstrap standard-width">
+<div>
+  <div id="bls-banner" class="row">
+    <div id="bls-banner-emblem" class="col-sm-12 col-md-7">
+      <a href="https://www.bls.gov/">U.S. Bureau of Labor Statistics</a>
+    </div>
+    <div id="bls-banner-right" class="col-sm-12 col-md-5 d-none d-md-block">
+      <div id="bls-banner-links"><span class="social-follow"><a title="Follow Us on X, formerly referred to as Twitter" target="_blank" href="https://twitter.com/BLS_gov" aria-label="Follow Us on X, formerly referred to as Twitter">Follow Us</a> </span><span class="social-follow-links"> 
+        <!-- <img src="/images/icons/facebook.png"/>--> 
+        <a target="_blank" href="https://twitter.com/BLS_gov" aria-label="Follow Us on X, formerly referred to as Twitter"><img style="margin-top:-10px;" alt="Follow Us on X, formerly referred to as Twitter" src="/images/icons/twitter.png"/></a> 
+        <!--<img src="/images/icons/linkedin.png"/>--> 
+        </span> | <a href="/schedule/news_release/">Release Calendar</a> | <a href="/blog/" aria-label="Blog page">Blog</a></div>
+      <div id="bls-banner-search1" class="bls-banner-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit1" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_16.png" name="term" id="bls-banner-search-submit1" alt="BLS Search Submit" title="Submit" >
+		  <label for="bls-banner-search-input1" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input1" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+    </div>
+    <div class="clearfloat"></div>
+  </div>
+</div>
+</div>
+</div>
+</header> <!-- Header is opened at the begining of DOL banner -->
+
+<!-- BLS BANNER END -->
+<!-- MAIN NAV BEGIN -->
+
+<div id="main-nav-wrapper">
+	<div id="main-nav-container">
+		<div>
+			<div class="bootstrap standard-width">
+<nav aria-label="top-level navigation menu" class="navbar navbar-expand-md">
+  
+  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+    <span class="navbar-toggler-icon">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+
+
+<ul class="nojs navbar-nav mr-auto">
+     <li class="dropdownSearch"><div id="bls-banner-search" class="dropdown-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_20.png" name="term" id="bls-banner-search-submit" alt="BLS Search Submit" title="Submit">
+		  <label for="bls-banner-search-input" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+	
+	  <div class="bls-banner-links-mob"><span class="social-follow"><a title="Follow Us on X, formerly referred to as Twitter" target="_blank" href="https://twitter.com/BLS_gov" aria-label="Follow Us on X, formerly referred to as Twitter">Follow Us <img  alt="Follow Us on X, formerly referred to as Twitter" src="/images/icons/twitter.png"></a> </span>| <a href="/schedule/news_release/">Release Calendar</a> | <a href="/blog/" aria-label="Blog page">Blog</a></div>
+	</li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://www.bls.gov/" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><!-- ********************************************** Begin Home Tab LIST ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-home">
+	<ul class="main-nav-submenu-inn">
+	
+		<li class="heading"><a href="/bls/about-bls.htm" aria-label="About BLS">About BLS</a></li>
+		<li><a href="/bls/history/home.htm" aria-label="BLS History">History</a></li>	
+		<li><a href="/bls/senior_staff/home.htm" aria-label="Our Leadership">Our Leadership</a></li>
+		<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>		
+		<li><a href="/bls/faqs.htm" aria-label="Questions and Answers">Questions and Answers</a></li>	
+		<li><a href="/bls/topicsaz.htm" aria-label="A-Z Index">A-Z Index</a></li>	
+		<li><a href="/bls/glossary.htm" aria-label="Glossary">Glossary</a></li>	
+		<li><a href="/jobs/" aria-label="Careers at BLS">Careers at BLS </a></li>	
+		<li><a href="/bls/bls-speakers/" aria-label="BLS Speakers Available">BLS Speakers Available</a></li>
+		<li><a href="/errata/" aria-label="Errata">Errata</a></li>  				
+		<li><a href="/bls/contact.htm" aria-label="Contact BLS">Contact BLS</a></li>	
+
+	</ul>	
+	<!-- 2nd column -->	
+<ul class="main-nav-submenu-inn">	
+		<li class="heading"><a href="/bls/overview.htm" aria-label="Overview of BLS Statistics">Overview of BLS Statistics</a></li>
+		<li><a href="/information-guide/home.htm" aria-label="Guide to Programs & Services">Guide to Programs &amp; Services</a></li>
+		<li><a href="/bls/demographics.htm" aria-label="Demographics Data">Demographics</a></li>
+		<li><a href="/bls/industry.htm" aria-label="Statistics by Industries">Industries</a></li>
+		<li><a href="/bls/business.htm" aria-label="Statistics on Business Costs">Business Costs</a></li>
+		<li><a href="/bls/occupation.htm" aria-label="Statistics by Occupations">Occupations</a></li>
+		<li><a href="/bls/geography.htm" aria-label="Statistics by Geography">Geography</a></li>	
+	
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/audience/" aria-label="Resources For">Resources For</a></li>
+		<li><a href="/audience/business.htm" aria-label="Resources for Business Leaders">Business Leaders</a></li>
+		<li><a href="/audience/consumers.htm" aria-label="Resources for Consumers">Consumers</a></li>
+		<li><a href="/audience/developers.htm" aria-label="Developers site">Developers</a></li>
+		<li><a href="/audience/economists.htm" aria-label="Economists or Economic Analyst">Economists</a></li>
+		<li><a href="/audience/investors.htm" aria-label="Resources for Financial Investors">Investors</a></li>
+		<li><a href="/audience/jobseekers.htm" aria-label="Resources for Jobseekers">Jobseekers</a></li>
+		<li><a href="/audience/media.htm" aria-label="Media">Media</a></li>
+		<li><a href="/audience/policy.htm" aria-label="Resources for Public Policymakers">Public Policymakers</a></li>
+		<li><a href="/audience/researcher.htm" aria-label="Researcher">Researcher</a></li>		
+		<li><a href="/audience/students.htm" aria-label="Resources for Students & Teachers">Students &amp; Teachers</a></li>
+		<li><a href="/respondents/" aria-label="Survey Respondents">Survey Respondents</a></li>
+	</ul>
+</div>
+
+<!-- ***********************************************End Home Tab LIST ******************************************** --> 
+
+</div>
+    </li>
+    <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="/bls/proghome.htm" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subjects <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2"><!-- ************************************* Begin SUBJECTS TAB list ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-programs">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/inflation.htm" aria-label="Statistics on Inflation & Prices">Inflation &amp; Prices</a></li>
+		<li><a href="/cpi/" aria-label="Consumer Price Index ">Consumer Price Index</a></li>
+		<li><a href="/ppi/" aria-label="Producer Price Indexes">Producer Price Indexes</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li><a href="/bls/escalation.htm" aria-label="Contract Escalation">Contract Escalation</a></li>
+		<li><a href="/pir/" aria-label="Price Index Research">Price Index Research</a></li>
+		<li class="heading"><a href="/bls/wages.htm" aria-label="Statistics on Pay & Benefits">Pay &amp; Benefits</a></li>
+		<li><a href="/eci/" aria-label="Employment Cost Index">Employment Cost Index</a></li>
+		<li><a href="/ecec/home.htm" aria-label="Employer Costs for Employee Compensation">Employer Costs for Employee Compensation</a></li>
+						<li><a href="/oes/" aria-label="Wage Data by Occupation">Wage Data by Occupation</a></li>
+		<li><a href="/cps/earnings.htm#demographics" aria-label="Earnings by Demographics">Earnings by Demographics</a></li>
+		<li><a href="/ces/" aria-label="Earnings by Industry">Earnings by Industry</a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Wages">County Wages</a></li>  <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/ebs/" aria-label="Employee Benefits Survey">Benefits</a></li>
+		<li><a href="/mwe/" aria-label="Modeled Wage Estimates">Modeled Wage Estimates</a></li>		
+		<li><a href="/crp/" aria-label="Compensation Research & Program Development">Compensation Research</a></li>
+		<li><a href="/wsp/" aria-label="Strikes & Lockouts">Strikes &amp; Lockouts </a></li>
+		<li><a href="/wrp/" aria-label="Wage Records from Unemployment Insurance">Wage Records from Unemployment Insurance</a></li>
+		<li class="heading"><a href="/ors/" aria-label="Occupational Requirements Survey">Occupational Requirements</a></li>		
+	</ul>
+	<!-- 2nd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/unemployment.htm" aria-label="Statistics on Unemployment">Unemployment</a></li>
+		<li><a href="/cps/" aria-label="National Unemployment Rate">National Unemployment Rate </a></li>
+		<li><a href="/lau/" aria-label="State & Local Unemployment Rates">State &amp; Local Unemployment Rates </a></li>
+		<li><a href="/ers/" aria-label="Unemployment Research">Unemployment Research</a></li>
+		<li class="heading"><a href="/bls/employment.htm" aria-label="Statistics on Employment">Employment</a></li>
+		<li><a href="/ces/" aria-label="National Employment Statistics">National Employment </a></li>
+		<li><a href="/sae/" aria-label="State & Local Employment, Hours, and Earnings">State &amp; Local Employment </a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Employment">County Employment </a></li> <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/cps/" aria-label="Worker Characteristics">Worker Characteristics </a></li>
+		<li><a href="/air/" aria-label="American Indian Report">American Indian Report</a></li>
+		<li><a href="/emp/" aria-label="Employment Projections">Employment Projections </a></li>
+		<li><a href="/jlt/" aria-label="Job Openings & Labor Turnover Survey">Job Openings &amp; Labor Turnover Survey </a></li>
+		<li><a href="/brs/" aria-label="Business Response Survey">Business Response Survey</a></li>
+		<li><a href="/oes/" aria-label="Employment by Occupation">Employment by Occupation </a></li>
+		<li><a href="/nls/" aria-label="Work Experience Over Time">Work Experience Over Time </a></li>
+		<li><a href="/bdm/" aria-label="Business Employment Dynamics">Business Employment Dynamics </a></li>
+		<li><a href="/fdi/" aria-label="Foreign Direct Investment">Foreign Direct Investment </a></li>
+		<li><a href="/ers/" aria-label="Employment Research and Program Development">Employment Research</a></li>
+		<li class="heading"><a href="/iif/" aria-label="Workplace Injuries, Illnesses, and Fatalities">Workplace Injuries</a></li>
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/productivity.htm" aria-label="Productivity Statistics">Productivity</a></li>
+		<li><a href="/productivity/" aria-label="Labor and Total Factor Productivity">Labor and Total Factor Productivity</a></li>
+		<li><a href="/dpr/" aria-label="Productivity Research and Program Development">Productivity Research</a></li>
+		<li class="heading"><a href="/bls/spending.htm" aria-label="Statistics on Spending & Time Use">Spending &amp; Time Use</a></li>
+		<li><a href="/cex/" aria-label="Consumer Expenditures Surveys">Consumer Expenditures </a></li>
+		<li><a href="/tus/" aria-label="How Americans Spend Time Survey">How Americans Spend Time</a></li>			
+		<li class="heading"><a href="/bls/international.htm" aria-label="International Data and Technical Cooperation">International</a></li>
+		<li><a href="/itc/" aria-label="International Technical Cooperation">International Technical Cooperation</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li class="heading"><a href="/regions/" aria-label="Geographic Information">Geographic Information</a></li>
+		<li><a href="/regions/northeast/" aria-label="Northeast (Boston-New York) Information Office">Northeast (Boston-New York)</a></li>
+		<li><a href="/regions/mid-atlantic/" aria-label="Mid-Atlantic (Philadelphia) Information Office">Mid-Atlantic (Philadelphia)</a></li>
+		<li><a href="/regions/southeast/" aria-label="Southeast (Atlanta) Information Office">Southeast (Atlanta)</a></li>
+		<li><a href="/regions/midwest/" aria-label="Midwest (Chicago) Information Office">Midwest (Chicago)</a></li>
+		<li><a href="/regions/southwest/" aria-label="Southwest (Dallas) Information Office">Southwest (Dallas)</a></li>
+		<li><a href="/regions/mountain-plains/" aria-label="Mountain-Plains (Kansas City) Information Office">Mountain-Plains (Kansas City)</a></li>
+		<li><a href="/regions/west/" aria-label="West (San Francisco) Information Office">West (San Francisco)</a></li>
+	</ul>
+</div>
+<!-- **************************************End SUBJECT AREAS ******************************************** --> 
+	</div>	
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/data/" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Tools <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown3"><!-- ******************************************** Begin DATA TOOLS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-data">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/tools.htm" aria-label="Data Retrieval Tools Databases, Tables & Calculators by Subject">Data Retrieval Tools</a></li>
+		<li><a href="https://data.bls.gov/toppicks?code=&survey=bls" aria-label="BLS Popular Series Top Picks">BLS Popular Series</a></li>
+		<li><a href="https://data.bls.gov/series-report" aria-label="Series Report">Series Report</a></li>
+		<li><a href="/data/home.htm" aria-label="Top Picks, One Screen, Multi-Screen, and Maps" >Top Picks, One Screen, Multi-Screen, and Maps</a></li>
+		<li><a href="https://data.bls.gov/dataQuery/search" aria-label="Data Finder">Data Finder</a></li>
+		<li><a href="/developers/home.htm" aria-label="Public Data API Programming Interface">Public Data API</a></li>
+
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/apps.htm" aria-label="Charts and Applications">Charts and Applications</a></li>
+		<li><a href="/charts/home.htm" aria-label="Charts for Economic News Releases">Charts for Economic News Releases</a></li>	
+		<li><a href="/data/inflation_calculator.htm" aria-label="CPI Inflation Calculator">CPI Inflation Calculator</a></li>	
+		<li><a href="https://data.bls.gov/iirc/" aria-label="Injury and Illness Calculator">Injury and Illness Calculator</a></li>		
+		<li><a href="https://data.bls.gov/apps/compensation-comparison-matrix/home.htm" aria-label="Pay Measure Comparison">Pay Measure Comparison</a></li>
+		<li><a href="https://data.bls.gov/apps/demographic-comparison-matrix/home.htm" aria-label="Demographic Data Sources">Demographic Data Sources</a></li>
+		<li><a href="https://data.bls.gov/apps/covid-dashboard/home.htm" aria-label="COVID-19 Economic Trends">COVID-19 Economic Trends</a></li>
+		<li><a href="https://data.bls.gov/apps/industry-productivity-viewer/home.htm" aria-label="Industry Productivity Viewer" >Industry Productivity Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/data_views/data_views.htm#tab=Tables" aria-label="Employment and Wages Data Viewer">Employment and Wages Data Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/bls_naics/bls_naics_app.htm" aria-label="Industry Finder from the Quarterly Census of Employment and Wages">Industry Finder from the Quarterly Census of Employment and Wages</a></li>
+	
+    </ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+	    <li class="heading"><a href="/data/tables.htm" aria-label="Customized Tables">Customized Tables</a></li>
+		<li><a href="/eag/eag.us.htm" aria-label="U.S. Economy at a Glance">U.S. Economy at a Glance</a></li>
+		<li><a href="/eag/home.htm" aria-label="Regions, States & Areas at a Glance">Regions, States &amp; Areas at a Glance</a></li>
+		<li><a href="/iag/home.htm" aria-label="Industry at a Glance">Industry at a Glance</a></li>			
+		<li><a href="https://download.bls.gov/pub/time.series/" aria-label="Text Files">Text Files</a></li>
+		<li><a href="/data/#historical-tables" aria-label="Historical News Release Tables">News Release Tables</a></li>
+		
+		<li class="heading"><a href="/bls/moredata.htm" aria-label="More Sources of Data">More Sources of Data</a></li>
+		<li><a href="/rda/home.htm" aria-label="Bureau of Labor Statistics Restricted Data Access">Restricted Data Access</a></li>
+		<li><a href="/data/archived.htm" aria-label="Discontinued Databases">Discontinued Databases </a></li>
+		<li><a href="/help/hlpform1.htm" aria-label="Questions & Answers regarding Bureau of Labor Statistics website data retrieval tools">Questions &amp; Answers</a></li>
+		<li><a href="/help/notice.htm" aria-label="Special Notices">Special Notices </a></li>	
+	</ul>
+</div>
+<!-- *********************************************End DATABASES and TOOLS LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/opub/" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><!-- ********************************************** Begin PUBLICATIONS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-pubs">    
+    <ul class="main-nav-submenu-inn"> 
+		<li class="heading"><a href="/opub/" aria-label="Latest Publications">Latest Publications</a></li>
+		<li><a href="/opub/ted/" aria-label="The Economics Daily">The Economics Daily</a></li>
+		<li><a href="/opub/mlr/" aria-label="Monthly Labor Review">Monthly Labor Review</a></li>
+		<li><a href="/opub/btn/" aria-label="Beyond the Numbers">Beyond the Numbers</a></li>
+		<li><a href="/spotlight/" aria-label="Spotlight on Statistics">Spotlight on Statistics</a></li>
+		<li><a href="/opub/reports" aria-label="Bureau of Labor Statistics Reports">Reports</a></li>
+		<li><a href="/blog/" aria-label="Commissioner's Corner">Commissioner's Corner</a></li>
+		<li><a href="/video/" aria-label="Videos">Videos</a></li>
+		<li><a href="/careeroutlook/" aria-label="Career Outlook">Career Outlook</a></li>		
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+		<li><a href="/ooh/" aria-label="Occupational Outlook Handbook">Occupational Outlook Handbook</a></li>
+		<li><a href="/opub/geographic-profile/" aria-label="Geographic Profile">Geographic Profile</a></li>
+		<li><a href="/opub/hom/" aria-label="Handbook of Methods">Handbook of Methods</a></li>
+		<li><a href="/osmr/research-papers/" aria-label="Research Papers - Office of Survey Methods Research">Research Papers</a></li>
+		<li><a href="/opub/copyright-information.htm" aria-label="Copyright Information">Copyright Information</a></li>
+		<li><a href="/opub/opbinfo.htm" aria-label="Contact & Help">Contact &amp; Help </a></li>
+		<li><a href="/opub/update.htm" aria-label="Weekly Update">Weekly Update</a></li>		
+    </ul>
+</div>
+<!-- ***********************************************End PUBLICATIONS LIST ******************************************** --> </div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/bls/newsrels.htm" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economic Releases <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown5"><!-- ********************************************** Begin ECONOMIC RELEASES LIST ****************************************** -->
+<!-- 1st column -->
+
+<div class="main-nav-submenu" id="submenu-news">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#latest-releases" aria-label="Latest Releases">Latest Releases</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#major" aria-label="Major Economic Indicators">Major Economic Indicators</a></li>
+		<li class="heading"><a href="/schedule/news_release/" aria-label="Schedules for news Releases">Schedules for news Releases</a></li>
+		<li><a href="/schedule/" aria-label="Release Calendar By Month">By Month</a></li>
+		<li><a href="/schedule/schedule/by_prog/all_sched.htm" aria-label="Release Calendar By News Release">By News Release</a></li>
+		<li><a href="/schedule/news_release/current_year.asp" aria-label="Release Calendar Current Year">Current Year</a></li>
+		<li><a href="/bls/archived_sched.htm" aria-label="Schedules for Selected Bureau of Labor Statistics Economic News Releases for Prior Years">Prior Years</a></li>
+		<li class="heading"><a href="/bls/news-release/" aria-label="Archived News Releases">Archived News Releases</a></li>
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#OEUS" aria-label="Employment & Unemployment">Employment &amp; Unemployment</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Monthly">Monthly</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Quarterly, annual, and other">Quarterly, annual, and other</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPLC" aria-label="Inflation & Prices"> Inflation &amp; Prices</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OCWC" aria-label="Pay & Benefits & Workplace Injuries">Pay &amp; Benefits &amp; Workplace Injuries</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPT" aria-label="Productivity & Technology">Productivity &amp; Technology</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OEP" aria-label="Employment Projections">Employment Projections</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#NEWS" aria-label="Regional News Releases">Regional News Releases</a></li>
+    </ul>
+</div></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/k12/" id="navbarDropdown6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classroom <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown6"><!-- ********************************************** Begin Students Tab LIST ****************************************** -->
+<div class="main-nav-submenu" id="submenu-students">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/k12/" aria-label="K-12 Student & Teacher Resources">K-12 Student &amp; Teacher Resources</a></li>		
+        <li><a href="/k12/games/" aria-label="Games & Quizzes">Games &amp; Quizzes</a></li>
+		<li><a href="/k12/students/" aria-label="Student's Desk">Student&apos;s Desk</a></li>
+		<li><a href="/k12/teachers/" aria-label="Teacher's Desk">Teacher&apos;s Desk</a></li>
+		<li><a href="/k12/faq.htm" aria-label="Questions & Answers">Questions &amp; Answers</a></li>
+    </ul>
+</div>
+<!-- ***********************************************End Students Tab LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/beta/" id="navbarDropdown7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Beta <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown7"><!-- ***********************************************Start BETA LIST ******************************************** -->
+
+<div class="main-nav-submenu" id="submenu-beta">
+  <ul class="main-nav-submenu-inn">
+    <li class="heading"><a href="/beta/redesigned-news-releases.htm" aria-label="Redesigned News Releases">Redesigned News Releases</a></li>
+  </ul>
+</div>
+<!-- ***********************************************End BETA LIST ******************************************** --></div>
+    </li>
+</ul>
+
+
+  </div>
+</nav>
+</div>
+
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+</div>
+
+
+<!-- MAIN NAV END -->
+
+<!-- WRAPPER TOP BEGIN -->
+	<div id="wrapper-outer" role="main">
+		<div id="wrapper">
+			<div id="container">
+<!-- WRAPPER TOP END -->
+<!-- SUBDOMAIN TITLE TOP BEGIN -->
+
+<!-- 1COL CMS LAYOUT COL1 BEGIN -->	
+
+<div class="main-content">
+<div id="startcontent" class="hidden"></div>
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColHeadBasic End -->
+
+	<div id="programs-banner"><div id="program-title" aria-level="1" role="heading">Consumer Expenditure Surveys</div><div id="social-search-box"><div class="article-tools-box social-media"><span class="social-media"><span>SHARE ON:</span><a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png" title="Facebook"></a><a href="javascript:void(0);" class="share_twitter"><img alt="share on twitter" src="/images/icons/twitter.png" title="Twitter"></a><a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png" title="LinkedIn"></a></span></div><form method="get" id="search-secondary-nav-form" action="/search/query"><input type="hidden" value="https://www.bls.gov/cex" id="search-secondary-nav-category" name="prefix"><label for="search-secondary-nav-query" class="invisible">Search Consumer Expenditure Surveys</label><input type="text" onclick="this.value=''; this.onclick = null;" value="Search Consumer Expenditure Surveys" id="search-secondary-nav-query"name="query"><input type="submit" value="Go" id="search-secondary-nav-submit" name="submit"></form></div><div class="clearfloat"></div><style>.layout-wide #dol-bar-content, .layout-wide #bls-banner, .layout-wide #main-nav-container{margin:0 !important;}.layout-wide #wrapper, .layout-wide #footer-links-wrapper{max-width:100% !important;}.layout-wide #programs-banner{width:923px !important;}div.p{font-family: Tahoma, Arial, Helvetica, sans-serif;margin: 0 0 1em 0 !important;padding: 0;font-size: 100%;color: #333;line-height: 160%;}</style>
+<div class="bootstrap standard-width">
+<nav class="navbar navbar-expand-md programsNavBar " aria-label="secondary-nav">
+  <ul class="navbar-nav" role="menu">
+			        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link home progNav" href="/cex/">CE Home</a>
+				</li>        							        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link publications progNav" href="javascript:">CE Publications</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cex/publications-overview.htm">Publications Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/news.htm">News Releases</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/csxreport.htm">Additional Publications</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/research_papers/research-paper-catalog.htm">CE Library</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://public.govdelivery.com/accounts/USDOLBLS/subscribers/new?topic_id=USDOLBLS_033">Email Updates</a>
+								</div></li>        												        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link data progNav" href="javascript:">CE Data</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cex/data-overview.htm">Data Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/data.htm">Database</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/csxgeography.htm">Geographic Data </a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/pumd.htm">Public Use Microdata (PUMD)</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/tables.htm">Tables</a>
+								</div></li>        												        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link methods progNav" href="javascript:">CE Methods</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cex/methods-overview.htm">Methods Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/opub/hom/cex/">Handbook of Methods</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/geminiproject.htm">CE Redesign</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/consumption-home.htm">Consumption Research</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/cecomparison.htm">Data Quality and Comparisons</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/pce-ce-distributions.htm">Distribution of Personal Consumption Expenditures</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/ce-improvements.htm">Improvements and Protocol Changes</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/oplc_program_comparisons.htm">OPLC Program Comparisons</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/pir/spmhome.htm">Poverty Research</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/csxsurveyforms.htm">Survey Questionnaires and Materials </a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/technical-notes.htm">Technical Notes</a>
+								</div></li>        																		        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link about progNav" href="javascript:">About CE</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cex/about-overview.htm">About CE Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/conferences.htm">Events</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="/cex/csxgloss.htm">Glossary</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/respondents/cex/">Information for Survey Respondents</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/notices/">Notices</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/ce-products.htm">Products</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cex/csxfaqs.htm">Questions and Answers</a>
+								</div></li>        														        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link contact progNav" href="/cex/contact.htm">Contact CE</a>
+				</li>        				  </ul>
+</nav>
+</div>
+</div>					
+		
+			
+																								
+				
+				
+	
+											        																					        		        		        		        																										        		        		        		        		        																															        		        		        		        		        		        		        		        		        																																				        		        		        		        		        		        																																									        								
+																																																																																																																																																																																																																																																																																																																											                                                                                                                                                																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                																																																																																																																																																																																																																																																																																																																																																																																						                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                																																																																																																																																																																																																																																																																																																																																																																																																																																																																														                                                                                                                                                																														
+							        		
+	<div class="programs-breadcrumbs">
+	<a href="https://www.bls.gov">Bureau of Labor Statistics</a> &gt;
+		<a href="/cex/">Consumer Expenditure Survey</a> &gt;
+						
+				
+		
+			
+				<span><a href="/cex/methods-overview.htm">Methods</a></span>
+				
+				<ul class="gb-info" style="display:none;"><li><a href="/cex/">Consumer Expenditure Survey</a></li><li><a href="/cex/methods-overview.htm">Methods</a></li></ul>
+		</div>
+<style>
+			.programs-breadcrumbs{display:none}
+		.main-content{padding-top:0px;}
+		
+	.programsNavBar .navbar-nav li:nth-child(4){ background: url("/images/regions/triangle.png")no-repeat center bottom ;}
+.main-content #programs-banner #programs-banner-nav > li + li + li + li{
+	background-color:#3b5c72;
+	background-image: url("/images/regions/triangle.png");
+    background-position: center bottom;
+	background-repeat: no-repeat;
+}
+.main-content #programs-banner #programs-banner-nav > li + li + li + li + li {
+	background: url("/images/regions/programs_backgd.jpg") repeat-x scroll 0 0 transparent;
+}
+</style>	
+	
+<div class="cex">
+			<!-- ****************************************** Begin HEADER ************************************************ --><!-- ****************************************** End HEADER ************************************************** --><!-- INSERT CONTENT HERE--><!-- ****************************************** End HEADER ************************************************** --><a name="content" id="content"></a>
+<h1>Consumer Expenditure Surveys Public Use Microdata Getting Started Guide</h1>
+<p>This page provides documentation for Consumer Expenditure Surveys (CE) Public Use Microdata (PUMD), its conventions, files, sample code, and methodology.</p>
+<br />
+<h2 id="toc">Table of Contents</h2>
+<p><a href="/cex/pumd-getting-started-guide.htm#section1">Section 1. CE program</a><br /><a href="/cex/pumd-getting-started-guide.htm#section2">Section 2. CE PUMD</a><br /><a href="/cex/pumd-getting-started-guide.htm#section3">Section 3. Interview Survey</a><br /><a href="/cex/pumd-getting-started-guide.htm#section4">Section 4. Diary Survey</a><br /><a href="/cex/pumd-getting-started-guide.htm#section5">Section 5. Sample code</a><br /><a href="/cex/pumd-getting-started-guide.htm#section6">Section 6. Methodology</a><br /><a href="/cex/pumd-getting-started-guide.htm#section7">Section 7. Considerations</a></p>
+<br />
+<h2 id="section1">Section 1. CE program</h2>
+<p>The Consumer Expenditure Surveys (CE) program provides data on expenditures, income, and demographic characteristics of consumers in the United States. The CE program provides these data in <a href="/cex/tables.htm">tables</a>, <a href="/cex/data.htm">LABSTAT databases</a>, <a href="/cex/news.htm ">news releases</a>, <a href="/cex/csxreport.htm">publications</a>, and <a href="/cex/pumd.htm">public use microdata files</a>.</p>
+<p>CE data are collected by the Census Bureau for the Bureau of Labor Statistics (BLS) in two surveys, the Interview Survey for major and/or recurring items, and the Diary Survey for more minor or frequently purchased items. CE data are primarily used to revise the relative importance of goods and services in the market basket of the Consumer Price Index. The CE program conducts the only Federal household survey to provide information on the complete range of consumers' expenditures and income. For more information, see the <a href="/opub/hom/cex/home.htm">overview section</a> in the CE chapter in the BLS Handbook of Methods.</p>
+<br />
+<h2 id="section2">Section 2. CE PUMD</h2>
+<p>CE PUMD provide the individual responses to the two surveys from respondents. The data have been adjusted to protect the confidentiality of respondents. The CE PUMD allow researchers to analyze expenditure, income, and demographic data beyond what is provided in published tabulations.</p>
+<br />
+<h3 id="section2.1">2.1 CE PUMD files</h3>
+<p>CE PUMD include data from both the Interview and Diary Surveys. Most files are analogous between the two surveys; however, the Interview Survey files contain roughly 50 additional <a href="/cex/pumd-getting-started-guide.htm#section3.3.1">detailed data files</a>, as well as <a href="/cex/pumd-getting-started-guide.htm#section3.3.2">paradata files</a> that provide detail about the collection process. All PUMD files cover a full calendar year. For years prior to 1996, file availability may be limited. <a href="/cex/pumd-getting-started-guide.htm#Interview survey files and content.xlsx">Table 3 Interview Survey files and content</a> lists the major files currently available, and their content. For a more comprehensive list of files provided in the CE PUMD, see the <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a>.</p>
+<ul>
+<li><strong>Are the CE PUMD required for a particular research topic?</strong><br /> A research topic may require the detail that only PUMD files provide, but the CE program does provide a wealth of information that has already been tabulated and may be sufficient for a user's analysis. This information includes <a href="/cex/tables.htm">tables</a>, <a href="/cex/data.htm">LABSTAT databases</a>, <a href="/cex/news.htm ">news releases</a>, and <a href="/cex/csxreport.htm">publications</a>. To learn more about these products, see the <a href="/cex/home.htm#products">introduction to the CE data products</a>.</li>
+<li><strong>What is required in order to use the CE PUMD?</strong><br />Users of CE PUMD need to be familiar with statistical concepts and be proficient with a statistical software package, such as SAS, R, or STATA.</li>
+<li><strong>What to consider when using PUMD files?</strong><br />The files contain individual survey responses. Thus their uses depend on the survey design. For example, the CE survey design supports reliable national averages of major expenditures. However, it may not support reliable estimates for some states. For more information, see <a href="/cex/research_papers/pumd-understanding-constraining-considerations.htm">CE Considerations When Using the public use Microdata</a>.</li>
+<li><strong>What data formats are available?</strong><br /> The data files are available in SAS, STATA, and CSV and can be downloaded from the <a href="/cex/pumd_data.htm">public use microdata data files page</a>. If users' research requires access to CE microdata without the disclosure restrictions applied, they can apply to be visiting researchers on the <a href="/rda/home.htm">BLS onsite researcher page</a>.</li>
+<li><strong>Where can users obtain additional information?</strong><br />If users have comments or questions about this page and its contents, <a href="/cex/#contact">contact us</a>.</li>
+</ul>
+<br />
+<h3 id="section2.2">2.2 CE PUMD file conventions</h3>
+<p>For both the Interview and Diary Surveys, the files use the following conventions:</p>
+<ul>
+<li><strong>How are CE PUMD files named?</strong><br /> CE PUMD file naming conventions consist of three parts:
+<ul>
+<li>File name</li>
+<li>Calendar year (YY)</li>
+<li>Quarter (Q) if applicable. Quarter can be 1-5.</li>
+</ul>
+The detailed annual Interview Survey files do not specify the quarter but only the year, for example intrvw16.zip\expn16\cla16.sas7bdat.</li>
+<li><strong>What types of values do CE PUMD variables use?</strong><br />CE PUMD variables are stored in one of the following three formats:
+<ul>
+<li>Numeric (NUM): Variables that predominantly contain dollar amounts and counts</li>
+<li>String (CHAR): Variables that contain a sequence of alphanumeric characters</li>
+<li>Categorical (CHAR): Coded variables</li>
+</ul>
+</li>
+<li><strong>Where do data users find descriptions for the CE PUMD variables?</strong><br /> The <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a> contains a description for each variable. In addition to the description, the dictionary lists the associated codes, the location of a variable within the files and within the survey, and the duration in which a variable existed in the PUMD.</li>
+<li><strong>How do data users track changes in PUMD?</strong><br />The <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a> tracks detailed changes to files, variables, and codes. For large survey changes, consult the <a href="/opub/hom/cex/history.htm">history page</a> in the chapter <a href="/opub/hom/cex/home.htm">Consumer Expenditures and Income</a> in the BLS Handbook of Methods.</li>
+<li><strong>How do data users identify a unique record in the CE PUMD?</strong><br />Identifying a unique record depends on the file. For a list of the primary key variables for each file, see <a href="/cex/pumd-getting-started-guide.htm#Interview survey files and content.xlsx">Table 3 Interview Survey files and content</a> and <a href="/cex/pumd-getting-started-guide.htm#Diary survey files and content.xlsx">Table 6 Diary Survey files and content</a>.</li>
+<li><strong>How do data users link an interview or diary for a given <a href="/cex/csxfaqs.htm#qc1">Consumer Unit</a> (CU) in different files?</strong><br /> NEWID links data for one CU across interviews and files. Users cannot link CUs across surveys because the Diary and Interview surveys use different samples.</li>
+<li><strong>How is the variable NEWID structured?</strong><br /> NEWID is a unique sequential number concatenated with the number of the interview. The last digit of NEWID indicates the interview number in a series of 4, or the week of diary collection in a series of 2. All values prior to the last digit, identify a CU.</li>
+</ul>
+<br />
+<h2 id="section3">Section 3. Interview Survey</h2>
+<h3 id="section3.1">3.1 Interview Survey overview</h3>
+<p>The Interview Survey is a rotating panel survey in which approximately 10,000 addresses are contacted each calendar quarter that yield approximately 6,000 useable interviews. One-fourth of the addresses that are contacted each quarter are new to the survey. After a housing unit has been in the sample for four consecutive quarters, it is dropped from the survey, and a new address is selected to replace it. For more information, see the chapter <a href="/opub/hom/cex/home.htm">Consumer Expenditures and Income</a> in the BLS Handbook of Methods.</p>
+<p>Before 2015, the Interview Survey included a preliminary bounding interview, and each CU could be contacted up to five times over five quarters. Although data from the bounding interview were not published, its purpose was to minimize telescoping errors.<a name="_ednref1" title="" id="_ednref1" href="#_edn1"><sup><span class="MsoEndnoteReference">ⅰ</span></sup></a> The CE program stopped fielding the bounding interview in 2015 due to concerns about its effectiveness in reducing telescoping errors, cost, and impact on respondent burden. For more information, see Ian Elkin's article <a href="/cex/research_papers/pdf/Recommendation-Regarding-the-Use-of-a-CE-Bounding-Interview.pdf">Recommendation regarding the use of a CE bounding interview</a>.<a name="_ednref2" title="" id="_ednref2" href="#_edn2"><sup><span class="MsoEndnoteReference">ⅱ</span></sup></a></p>
+<br />
+<h3 id="section3.2">3.2 Interview Survey file conventions</h3>
+<p>For the Interview Survey, the files use the following conventions:</p>
+<ul>
+<li><strong>What does an Interview "quarter" refer to?</strong><br />The interview "quarter" refers to the calendar quarter in which the interview occurred. For example, any CU interviewed in April, May, or June would have their data stored in the quarter 2 (YYQ2) datasets. During an interview, the CU is asked to report expenditures for the three months prior to the interview. So, for a CU interviewed in April, their expenditures in the YYQ2 are for January, February, and March. This distinction is important to remember when calculating calendar year estimates.</li>
+<li><strong>How many quarters does a CE PUMD release include?</strong><br />Prior to 2020, each CE PUMD release includes five quarters. Four quarters for the release year (YYQ1-YYQ4) and the first quarter of the next year. Beginning in 2020, each data release contains the last three quarters of a year and the first quarter of the following year.</li>
+<li><strong>Why do some CE PUMD Interview Survey files exist as part of two different data releases?</strong>
+<p>Prior to 2020, each data release contains five quarters of Interview Survey data in order to allow users to calculate a calendar year estimate. For more information on this calculation, see <a href="/cex/pumd-getting-started-guide.htm#section6.1">Section 6.1 Estimation procedures for the Interview Survey</a>. Starting in 2020 the data package does not include the first quarter of the calendar year, you will need to download the prior year's data package for the first quarter of data.</p>
+</li>
+<li><strong>What does the "x" mean in some of the data file names before 2020?</strong>
+<p>Each annual data release of the CE PUMD is processed using new data and new disclosure avoidance guidelines. For quarters that appear in two different data releases, an "x" is added to the end of the file name. This "x" is used as an indicator to inform users that the two files were processed under a different set of rules and conditions and therefore the content may differ slightly. It is at the user's discretion as to which file to use.</p>
+</li>
+<li style="list-style: none;">
+<table class="regular" id="What's the x.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 1: Description of "x" in file names for the fifth quarter</span></caption>
+<thead>
+<tr>
+<th width="106" class="stubhead" style="text-align: left;" rowspan="1" colspan="1">Is the "x" included?</th>
+<th width="125" style="text-align: left;" rowspan="1" colspan="1">What file and release?</th>
+<th width="199" style="text-align: left;" rowspan="1" colspan="1">Did the files, methods, or data change?</th>
+<th width="171" style="text-align: left;" rowspan="1" colspan="1">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="What's the x.xlsx.r.1" style="text-align: left;" headers="What's the x.xlsx.r ">
+<p class="sub0">No</p>
+</th>
+<td style="text-align: left;">Fifth file of previous year's release</td>
+<td style="text-align: left;">No, they stayed the same as in the previous four quarters in the package.</td>
+<td style="text-align: left;">FMLI<em>YY</em>Q.sas7bdat</td>
+</tr>
+<tr class="greenbar">
+<th id="What's the x.xlsx.r.2" style="text-align: left;" headers="What's the x.xlsx.r ">
+<p class="sub0">Yes</p>
+</th>
+<td style="text-align: left;">First file of current year's release</td>
+<td style="text-align: left;">Yes, they changed from the previous year's version.</td>
+<td style="text-align: left;">FMLI<em>YY</em>Q<span style="color: red;">x</span>.sas7bdat</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>What do the flag values in the Interview Survey represent?</strong><br /> In the Interview Survey files, data fields are explained by using flags for selected variables. Variables that have a flag variable associated with them are identified in the <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a>, on the Variable tab, under the column "Flag Name." Table 2 lists the codes for flags in the Interview Survey. Pre-1996 data will contain a subset of the flag values listed below.
+<table class="regular" id="Flag value description.-interviewxlsx.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 2: Interview Survey flag variable codes</span></caption>
+<thead>
+<tr>
+<th class="stubhead" style="text-align: left;" rowspan="1" colspan="1">Flag value</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.1" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">A</p>
+</th>
+<td style="text-align: left;">Valid blank; a blank field where a response is not anticipated</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.2" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">B</p>
+</th>
+<td style="text-align: left;">Invalid blank due to invalid nonresponse; nonresponse that is not consistent with other data reported by the CU</td>
+</tr>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.3" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">C</p>
+</th>
+<td style="text-align: left;">Blank due to "Don't know," refusal, or other nonresponse</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.4" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">D</p>
+</th>
+<td style="text-align: left;">Valid value; unadjusted</td>
+</tr>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.5" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">E</p>
+</th>
+<td style="text-align: left;">Valid value; allocated</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.6" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">F</p>
+</th>
+<td style="text-align: left;">Valid value; imputed or adjusted in some other way</td>
+</tr>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.7" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">G</p>
+</th>
+<td style="text-align: left;">Valid value; allocated and imputed</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.8" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">H</p>
+</th>
+<td style="text-align: left;">Valid blank for an expenditure that is a "parent record" where the expenditure was allocated to other records and the original expenditure was overwritten with a blank</td>
+</tr>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.9" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">T</p>
+</th>
+<td style="text-align: left;">Valid value; topcoded or suppressed</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.10" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">U</p>
+</th>
+<td style="text-align: left;">Valid value; allocated then topcoded or suppressed</td>
+</tr>
+<tr>
+<th id="Flag value description.-interviewxlsx.xlsx.r.11" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">V</p>
+</th>
+<td style="text-align: left;">Valid value; imputed or adjusted in some other way then topcoded or suppressed</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.-interviewxlsx.xlsx.r.12" style="text-align: left;" headers="Flag value description.-interviewxlsx.xlsx.r ">
+<p class="sub0">W</p>
+</th>
+<td style="text-align: left;">Valid value; allocated and imputed or adjusted in some other way then topcoded or suppressed</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<br />
+<h3 id="section3.3">3.3 Interview Survey file types</h3>
+<p>Table 3 summarizes the Interview Survey files currently available. If users encounter a file that is not listed below, consult the <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a> for additional details.</p>
+<blockquote>
+<table class="regular" id="Interview survey files and content.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 3: Interview Survey files and content</span></caption>
+<thead>
+<tr>
+<th class="stubhead" style="text-align: left;" rowspan="1" colspan="1">Name</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Content</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Variable periodicity<a name="_ednref3" title="" id="_ednref3" href="#_edn3"><sup><span class="MsoEndnoteReference">ⅲ</span></sup></a></th>
+<th style="text-align: left;" rowspan="1" colspan="1">Files per release</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Primary keys<a name="_ednref4" title="" id="_ednref4" href="#_edn4"><sup><span class="MsoEndnoteReference">ⅳ</span></sup></a></th>
+<th style="text-align: left;" rowspan="1" colspan="1">First year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="Interview survey files and content.xlsx.r.1" style="text-align: left;" rowspan="3" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0">FMLI</p>
+</th>
+<td style="text-align: left;">CU level Summary Expenditures</td>
+<td style="text-align: left;">Quarterly<a name="_ednref5" title="" id="_ednref5" href="#_edn5"><sup><span class="MsoEndnoteReference">ⅴ</span></sup></a></td>
+<td style="text-align: left;" rowspan="3">5</td>
+<td style="text-align: left;" rowspan="3">NEWID</td>
+<td style="text-align: left;" rowspan="3">1980</td>
+</tr>
+<tr class="greenbar">
+<td style="text-align: left;">CU level income, assets, and liabilities</td>
+<td style="text-align: left;">Annual</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU characteristics and weights</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="greenbar">
+<th id="Interview survey files and content.xlsx.r.4" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0">MTBI</p>
+</th>
+<td style="text-align: left;">Monthly expenditures</td>
+<td style="text-align: left;">Monthly</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">NEWID, SEQNO, ALCNO, UCC, RTYPE, EXPNAME, UCCSEQ, REF_MO, REF_YR</td>
+<td style="text-align: left;">1980</td>
+</tr>
+<tr>
+<th id="Interview survey files and content.xlsx.r.5" rowspan="2" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0" style="text-align: left;">MEMI</p>
+</th>
+<td style="text-align: left;">Member level income</td>
+<td style="text-align: left;">Annual</td>
+<td style="text-align: left;" rowspan="2">5</td>
+<td style="text-align: left;" rowspan="2">NEWID, MEMBNO</td>
+<td style="text-align: left;" rowspan="2">1980</td>
+</tr>
+<tr class="greenbar">
+<td style="text-align: left;">Member characteristics</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr>
+<th id="Interview survey files and content.xlsx.r.7" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0">ITBI</p>
+</th>
+<td style="text-align: left;">Detailed income</td>
+<td style="text-align: left;">Monthly</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">NEWID, UCC, REF_MO, REFYR</td>
+<td style="text-align: left;">1980</td>
+</tr>
+<tr class="greenbar">
+<th id="Interview survey files and content.xlsx.r.8" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0">ITII</p>
+</th>
+<td style="text-align: left;">Imputed income iterations</td>
+<td style="text-align: left;">Monthly</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">NEWID, UCC, REF_MO, REFYR, IMPNUM</td>
+<td style="text-align: left;">2004</td>
+</tr>
+<tr>
+<th id="Interview survey files and content.xlsx.r.9" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0">NTAXI</p>
+</th>
+<td style="text-align: left;">Estimated federal and state income taxes</td>
+<td style="text-align: left;">Annual</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">NEWID and TAXID</td>
+<td style="text-align: left;">2013 Q2</td>
+</tr>
+<tr class="greenbar">
+<th id="Interview survey files and content.xlsx.r.10" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0"><a href="#section3.3.1">Detailed data files</a></p>
+</th>
+<td style="text-align: left;">Detailed expenditure and non-expenditure data</td>
+<td style="text-align: left;">Quarterly, monthly, weekly, or NA</td>
+<td style="text-align: left;">Varies by year*</td>
+<td style="text-align: left;">NEWID, SEQNO, ALCNO</td>
+<td style="text-align: left;">1980</td>
+</tr>
+<tr>
+<th id="Interview survey files and content.xlsx.r.11" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0"><a href="#section3.3.2">FPAR</a></p>
+</th>
+<td style="text-align: left;">Data related to the survey process</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">NEWID</td>
+<td style="text-align: left;">2009</td>
+</tr>
+<tr class="greenbar">
+<th id="Interview survey files and content.xlsx.r.12" style="text-align: left;" headers="Interview survey files and content.xlsx.r ">
+<p class="sub0"><a href="#section3.3.2">MCHI</a></p>
+</th>
+<td style="text-align: left;">Data related to the contact history</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">NEWID</td>
+<td style="text-align: left;">2009</td>
+</tr>
+</tbody>
+</table>
+<p>* For the specific detailed data files available, see <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">PUMD dictionary</a>.</p>
+</blockquote>
+<br />
+<h4 id="section3.3.1">3.3.1 Detailed data files - Detailed expenditure and non-expenditure data</h4>
+<p>The roughly 50 detailed data files include expenditure and non-expenditure information that is directly collected from sections of the Interview Survey (See the <a href="/cex/csxsurveyforms.htm">Survey materials page</a> for more information). For years prior to 1994, there may be fewer files. The <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a> contains additional information related to the content and makeup for each of these files. Each detailed data file consist of five quarters of data. Because these files correspond to specific sections in the survey, they have a number of differences between them. These are the main differences:</p>
+<ul>
+<li>The reference periods may differ due to different questions.</li>
+<li>The number of records per CU differs. Some files having multiple records per CU, some have one record per CU, and some have no records per CU interviewed each quarter.</li>
+<li>The method to identify unique records differs. Users can identify unique records with NEWID and depending on the file these variables:</li>
+<li style="list-style: none;">
+<ul>
+<li><strong>SEQNO</strong> is assigned sequentially during the interview as each expenditure record is recorded into the database.</li>
+<li><strong>ALCNO</strong> is assigned sequentially for each record that has been allocated from one expenditure. For example, a CU may report spending $50 on a pair of men's pants and a shirt. The CE program will allocate out that record into two separate records, one for men's pants and shorts ($30) and one for men's shirts ($20).</li>
+</ul>
+</li>
+</ul>
+<p>Here is an example of the detailed data file VEQ (Vehicles, maintenance and repair) and some of the variables it contains.</p>
+<div style="margin-left: 2em;"><strong>VEQ-Vehicle maintenance and repair</strong>
+<ul>
+<li><strong>VOPSERVY</strong> is an indicator variable that describes the type of maintenance or repair.</li>
+<li><strong>VOPMOA</strong> is an indicator variable for the month in which the expense occurred.</li>
+<li><strong>VOPEXPX</strong> is the total cost of the maintenance or repair expense.</li>
+</ul>
+</div>
+<h4 id="section3.3.2">3.3.2 Interview Survey Paradata files</h4>
+<p>Paradata files provide data about the interview process. Beginning in 2009, the CE program began releasing paradata for the Interview Survey. The CE program does not release paradata for the Diary Survey. Paradata are available in two datasets:</p>
+<div style="margin-left: 2em;"><strong>FPAR - Data related to the survey process</strong>
+<ul>
+<li>Contains data about the survey, including timing for each section and whether the respondent used records.</li>
+<li>Organized by NEWID.</li>
+<li>Unique records are defined by NEWID and QYEAR.</li>
+</ul>
+</div>
+<div style="margin-left: 2em;"><strong>MCHI - Data related to the contact history</strong>
+<ul>
+<li>Contains data about the contact history between the field representative and the respondent, including reasons for interview refusal and time of contact.</li>
+<li>The files are organized by NEWID.</li>
+<li>Unique records are defined by NEWID and QYEAR.</li>
+</ul>
+</div>
+<ul>
+<li><strong>How many quarters are in the paradata files?</strong><br /> Each paradata file has nine quarters. These include four quarters for the first year, four for the second year, and one for the first quarter of the third year.</li>
+</ul>
+<br /><br /><br />
+<h2 id="section4">Section 4. Diary Survey</h2>
+<h3 id="section4.1">4.1 Diary Survey overview</h3>
+<p>The Diary Survey is a panel survey in which approximately 5,000 addresses are contacted each calendar quarter that yield approximately 3,000 useable interviews.<a name="_ednref6" title="" id="_ednref6" href="/cex/pumd-getting-started-guide.htm#_edn6"><sup><span class="MsoEndnoteReference">ⅵ</span></sup></a> After a housing unit has been in the sample for two consecutive weeks, it is dropped from the survey, and a new address is selected to replace it. For more information, see the chapter <a href="/opub/hom/cex/home.htm">Consumer Expenditures and Income</a> in the BLS Handbook of Methods.</p>
+<br />
+<h3 id="section4.2">4.2 Diary Survey file conventions</h3>
+<p>For the Diary Survey, the files use the following conventions:</p>
+<ul>
+<li><strong>What does a Diary Survey "quarter" refer to?</strong><br />A Diary Survey "quarter" refers to the calendar quarter in which the Diary Survey booklet was placed in the home of the CU by the Census Field Representative. All Diary Survey files are organized as quarterly files.</li>
+<li><strong>What does a Diary Survey "week" refer to?</strong><br />The Diary Survey "week" refers to the 7 consecutive days in which the data were recorded. Respondents only record expenditures of that week. Each CU is in the sample for two consecutive weeks. Each Diary Survey week is assigned to the Diary Survey quarter in which it was recorded.</li>
+<li><strong>What do the flag values in the Diary Survey represent?</strong><br />In the Diary Survey files, data fields are explained by using flags for selected variables. Variables that have a flag variable associated with them are <strong></strong> identified in the <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a>, on the Variable tab, under the column "Flag Name." Table 4 lists the codes for flags in the Diary Survey. Pre-1996 data contain a subset of the flag values listed below.
+<table class="regular" id="Flag value description.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 4: Diary Survey flags</span></caption>
+<thead>
+<tr>
+<th width="64" class="stubhead" style="text-align: left;" rowspan="1" colspan="1">Flag value</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="Flag value description.xlsx.r.1" headers="Flag value description.xlsx.r ">
+<p class="sub0" style="text-align: left;">A</p>
+</th>
+<td style="text-align: left;">Valid blank; a blank field where a response is not anticipated</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.xlsx.r.2" style="text-align: left;" headers="Flag value description.xlsx.r ">
+<p class="sub0">B</p>
+</th>
+<td style="text-align: left;">Blank due to invalid nonresponse; nonresponse that is not consistent with other data reported by the CU</td>
+</tr>
+<tr>
+<th id="Flag value description.xlsx.r.3" style="text-align: left;" headers="Flag value description.xlsx.r ">
+<p class="sub0">C</p>
+</th>
+<td style="text-align: left;">Blank due to "Don't know," refusal, or other nonresponse</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.xlsx.r.4" headers="Flag value description.xlsx.r ">
+<p class="sub0" style="text-align: left;">D</p>
+</th>
+<td style="text-align: left;">Valid value; unadjusted</td>
+</tr>
+<tr>
+<th id="Flag value description.xlsx.r.5" headers="Flag value description.xlsx.r ">
+<p class="sub0" style="text-align: left;">E</p>
+</th>
+<td style="text-align: left;">Valid value; allocated</td>
+</tr>
+<tr class="greenbar">
+<th id="Flag value description.xlsx.r.6" headers="Flag value description.xlsx.r ">
+<p class="sub0" style="text-align: left;">T</p>
+</th>
+<td style="text-align: left;">Valid value; topcoded or suppressed</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p>For Diary Survey expenditures located on the EXPD files, the variable ALLOC can be utilized to determine if an expenditure has been adjusted, allocated, topcoded, or any combination of the three. Table 5 lists the allocation codes and its corresponding flag values.</p>
+<table class="regular" id="Alloc code.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 5: Diary Survey allocation codes</span></caption>
+<thead>
+<tr>
+<th width="120" class="stubhead" style="text-align: left;" rowspan="1" colspan="1">ALLOC Code</th>
+<th width="192" style="text-align: left;" rowspan="1" colspan="1">Description</th>
+<th width="192" style="text-align: left;" rowspan="1" colspan="1">Corresponding Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="Alloc code.xlsx.r.1" style="text-align: left;" headers="Alloc code.xlsx.r ">
+<p class="sub0">0</p>
+</th>
+<td style="text-align: left;">Valid value, unadjusted</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr class="greenbar">
+<th id="Alloc code.xlsx.r.2" style="text-align: left;" headers="Alloc code.xlsx.r ">
+<p class="sub0">1</p>
+</th>
+<td style="text-align: left;">Valid value, allocated</td>
+<td style="text-align: left;">E</td>
+</tr>
+<tr>
+<th id="Alloc code.xlsx.r.3" headers="Alloc code.xlsx.r ">
+<p class="sub0" style="text-align: left;">2</p>
+</th>
+<td style="text-align: left;">Topcoded and allocated</td>
+<td style="text-align: left;">T</td>
+</tr>
+<tr class="greenbar">
+<th id="Alloc code.xlsx.r.4" style="text-align: left;" headers="Alloc code.xlsx.r ">
+<p class="sub0">3</p>
+</th>
+<td style="text-align: left;">Topcoded, not allocated</td>
+<td style="text-align: left;">T</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<br />
+<h3 id="section4.3">4.3 Diary Survey file types</h3>
+<p>Table 6 summarizes the Diary Survey files currently available. Data prior to 1994 may include fewer files. If users encounter a file that is not listed below, consult the <a href="/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx">Dictionary for the Interview and Diary Surveys</a> for additional details.</p>
+<blockquote>
+<table class="regular" id="Diary survey files and content.xlsx" cellspacing="0" cellpadding="0" xborder="1"><caption><span class="tableTitle">Table 6: Diary Survey files and content</span></caption>
+<thead>
+<tr>
+<th class="stubhead" style="text-align: left;" rowspan="1" colspan="1">Name</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Content</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Variable periodicity</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Files per release</th>
+<th style="text-align: left;" rowspan="1" colspan="1">Primary keys<a name="_ednref7" title="" id="_ednref7" href="#_edn7"><sup><span class="MsoEndnoteReference">ⅶ</span></sup></a></th>
+<th style="text-align: left;" rowspan="1" colspan="1">First year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th id="Diary survey files and content.xlsx.r.1" style="text-align: left;" rowspan="3" headers="Diary survey files and content.xlsx.r ">
+<p class="sub0">FMLD</p>
+</th>
+<td style="text-align: left;">Summary expenditures</td>
+<td style="text-align: left;">Weekly</td>
+<td style="text-align: left;" rowspan="3">4</td>
+<td style="text-align: left;" rowspan="3">NEWID</td>
+<td style="text-align: left;" rowspan="3">1980</td>
+</tr>
+<tr class="greenbar">
+<td style="text-align: left;">CU level income, assets, and liabilities</td>
+<td style="text-align: left;">Annual</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU characteristics and weights</td>
+<td style="text-align: left;">Annual</td>
+</tr>
+<tr class="greenbar">
+<th id="Diary survey files and content.xlsx.r.4" style="text-align: left;" rowspan="2" headers="Diary survey files and content.xlsx.r ">
+<p class="sub0">MEMD</p>
+</th>
+<td style="text-align: left;">Member level income</td>
+<td style="text-align: left;">Annual</td>
+<td style="text-align: left;" rowspan="2">4</td>
+<td style="text-align: left;" rowspan="2">NEWID and MEMBNO</td>
+<td style="text-align: left;" rowspan="2">1980</td>
+</tr>
+<tr>
+<td style="text-align: left;">Member characteristics</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="greenbar">
+<th id="Diary survey files and content.xlsx.r.6" style="text-align: left;" headers="Diary survey files and content.xlsx.r ">
+<p class="sub0">EXPD</p>
+</th>
+<td style="text-align: left;">Detailed expenditure and non-expenditure data</td>
+<td style="text-align: left;">Weekly</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">NEWID and ALLOC</td>
+<td style="text-align: left;">1980</td>
+</tr>
+<tr>
+<th id="Diary survey files and content.xlsx.r.7" style="text-align: left;" headers="Diary survey files and content.xlsx.r ">
+<p class="sub0">DTBD</p>
+</th>
+<td style="text-align: left;">Detailed income</td>
+<td style="text-align: left;">Annual</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">NEWID and UCC</td>
+<td style="text-align: left;">1980</td>
+</tr>
+<tr class="greenbar">
+<th id="Diary survey files and content.xlsx.r.8" style="text-align: left;" headers="Diary survey files and content.xlsx.r ">
+<p class="sub0">DTID</p>
+</th>
+<td style="text-align: left;">Income imputation iterations</td>
+<td style="text-align: left;">Annual</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">NEWID, UCC, IMPNUM</td>
+<td style="text-align: left;">2004</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<br />
+<h2 id="section5">Section 5. Sample code</h2>
+<p>This section provides sample code for CE PUMD. When using the code, users may want to consider these points:</p>
+<ul>
+<li>The code can integrate data from both surveys or draw solely from one survey. Integration refers to the process of integrating estimates for both the Interview and Diary surveys. Separate or code options within the programs allow for users to decide which type of estimate they want.</li>
+<li>The code may utilize the <a href="/cex/pumd/stubs.zip">hierarchical groupings (zip)</a>, which are available from 1996 forward.</li>
+<li>The code was built for use with the current PUMD structure and may require adjustments for earlier years, particularly for years before 1996.</li>
+</ul>
+<p>The CE program provides these year sample codes:</p>
+<table class="regular" id="BLStable_2021_9_14_9_46" style="width: 95%;"><caption><span class="tableTitle">Section 5. Sample code</span></caption>
+<thead>
+<tr>
+<th style="vertical-align: middle; min-width: 80px;" rowspan="1" scope="col">Purpose</th>
+<th scope="col">Weights</th>
+<th scope="col">Period</th>
+<th scope="col">Estimates</th>
+<th scope="col">Notes</th>
+<th scope="col">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">
+<p>Approximates CE table 1203 Income before taxes</p>
+</th>
+<td>Weighted</td>
+<td>Calendar</td>
+<td>Aggregate annual expenditures; expenditure means and standard errors by income groups</td>
+<td>CE PUMD estimates may not match the table estimates. For more information, see FAQ 26 on the <a href="/cex/csxfaqs.htm#qb6">CE FAQ page</a>.</td>
+<td><a href="/cex/pumd/sas-table.zip">SAS</a></td>
+</tr>
+<tr class="greenbar">
+<th scope="row">
+<p>Aggregates selected UCCs</p>
+</th>
+<td>Weighted</td>
+<td>Calendar</td>
+<td>Aggregate annual expenditures; expenditure means and standard errors</td>
+<td>The code integrates data from both surveys on a UCC level. For a list of UCCs, see <a href="/cex/pumd_doc.htm">introduction of hierarchical grouping files</a>.</td>
+<td><a href="/cex/pumd/sas-ucc.zip">SAS</a> <br /><a href="/cex/pumd/r-ucc.zip">R</a> <br /><a href="/cex/pumd/stata-ucc.zip">STATA</a></td>
+</tr>
+<tr>
+<th scope="row">
+<p>Aggregates selected variables</p>
+</th>
+<td>Weighted and un-weighted</td>
+<td>Collection and calendar</td>
+<td>Computes all items above and regresses on imputed and non-imputed data.</td>
+<td>Code uses the Balanced Repeated Replication (BRR) method in a predefined SAS proc. For more information, see <a href="/cex/pumd/sas-macros.zip">SAS macro for the CE surveys</a>.</td>
+<td><a href="/cex/pumd/sas-macros.zip">SAS</a></td>
+</tr>
+</tbody>
+</table>
+<br />
+<h2 id="section6">Section 6. Methodology</h2>
+<p>This section describes the <a href="/cex/pumd-getting-started-guide.htm#section6.1">estimation procedures for the Interview Survey</a> and the <a href="/cex/pumd-getting-started-guide.htm#section6.2">estimation procedures for the Diary Survey</a>; the <a href="/cex/pumd-getting-started-guide.htm#section6.3">formulas to estimate weighted annual calendar year estimates</a>; and <a href="/cex/pumd-getting-started-guide.htm#section6.4">sampling statements</a>. The CE program integrates information from <em>both</em> the Interview and Diary Surveys in its publications. Therefore any analysis limited to only the one survey may produce results that do not match the published CE estimates. In addition, users may find that estimates do not match the published estimates due to the non-disclosure criteria that are applied to the CE PUMD. For more information on non-disclosure requirements, see the <a href="/cex/pumd_disclosure.htm">Protection of Respondent Confidentiality page</a>.</p>
+<br />
+<h3 id="section6.1">6.1 Estimation procedures for the Interview Survey</h3>
+<p>This section discusses procedures for estimating annual calendar year means with data from the interview surveys. Field representatives interview CUs to collect the cost of all expenses during the prior three months. Data collected by each interview are treated as statistically independent - each quarter's interview is separately weighted to be representative of the population. For more information, see the <a href="/opub/hom/cex/data.htm">collections and data sources section</a> in the Consumer Expenditures and Income chapter in the BLS Handbook of Methods.</p>
+<p>For the Interview Survey, users may want to consider the following general concepts:</p>
+<ul>
+<li><strong>What information does the Interview Survey ask CUs?</strong><br />The Interview Survey asks respondents about all expenses that the CU incurs during the survey period as well as information about financial data and demographic information. For more information on what is included and excluded in expenditures, see the entry on expenditures on the <a href="/cex/csxgloss.htm">glossary page</a>.</li>
+<li><strong>How are Interview Survey data organized?</strong><br /> The Interview Survey data are organized and identified by quarter, but particular files may provide data by month or by year. For more information on the data's periodicity, see <a href="/cex/pumd-getting-started-guide.htm#Interview survey files and content.xlsx">Table 3: Interview Survey files and content</a>.</li>
+<li><strong>How many quarters does a user need for calendar year estimates?</strong><br />To produce calendar year estimates, users need to access all <em>five</em> quarters of data: All four quarters of the year of interest and the first quarter for the subsequent year. For example for estimates of 2017, users need the files for quarter 1 through 4 for 2017 and quarter 1 for 2018.</li>
+<li><strong>Why do users need data from two years to estimate one calendar year?</strong><br />Data users need data from two subsequent years to calculate calendar year estimates because in the Interview Survey, users report expenditures for the three months prior to the interview. Thus in January, February, and March interviews, a CU has the potential to report expenditures from the previous year, which are considered out of scope when developing a current calendar year estimate.<br /><br />
+<p>When calculating data for 2016, interviews conducted in January 2017 cover expenditures made between October 2016 and December 2016, and are used to estimate data for these three months in 2016. Similarly, interviews conducted in March 2017 cover expenditures between December 2016 and February 2017 and are used to estimate data for December 2016. Thus, users have to use the first file for 2017 to estimate data for the last quarter of 2016. Charts 1 illustrates that concept. The green months show those that are in scope for the estimates of 2016 and the yellow months show those months in 2017 that out of scope.</p>
+<p><span class="tableTitle">Chart 1: Months in scope for quarter 5 (FMLI171)<br /><img width="80%" title="Chart 1: Months in scope for quarter 5 (FMLI171)" alt="Chart 1: Months in scope for quarter 5 (FMLI171)" src="/cex/chart-1.png" /></span></p>
+<p>A similar differentiation of scope happens at the beginning of the year. The data collected in January of 2016 are not in scope for 2016 expenditures because the January interview collects data for the last 3 months of 2015. However, data collected in February and March 2016 are partially in scope. Data collected in February includes data for January of 2016, and data collected in March 2016 includes data for January and February 2016. See chart 2.</p>
+<p><span class="tableTitle">Chart 2: Months in scope for quarter 1 (FMLI161)<br /><img width="80%" title="Chart 2: Months in scope for quarter 1 (FMLI161)" alt="Chart 2: Months in scope for quarter 1 (FMLI161)" src="/cex/chart-2.png" /></span></p>
+<p>Finally, for the months April through December all months are in scope. For example, quarter 2 interviews conducted in April, May, and June collect expenditure data for January 2016 through May 2016, which are all in scope for 2016. See chart 3. The same holds true for Quarter 3 and 4.</p>
+<p><span class="tableTitle">Chart 3: Months in scope for quarter 2 (FMLI162)<br /><img width="80%" title="Chart 3: Months in scope for quarter 2 (FMLI162)" alt="Chart 3: Months in scope for quarter 2 (FMLI162)" src="/cex/chart-3.png" /></span></p>
+</li>
+<li style="list-style: none;"></li>
+<li><strong>How much does a CU contribute to a calendar year estimate in each interview months?</strong><br />A CU's contribution depends on the interview month and year. For information on how to identify a CU's contribution to a calendar year estimate, see <a href="/cex/pumd-getting-started-guide.htm#section6.3">Section 6.3 Formulas</a>.</li>
+<li><strong>Is the periodicity of variable values consistent across files?</strong><br />No, it is not. Different files and different variables within files may have different periodicities. For more information, see the <a href="/cex/pumd-getting-started-guide.htm#Interview survey files and content.xlsx">Table 3: Interview Survey files and content</a>.</li>
+</ul>
+<br />
+<h3 id="section6.2">6.2 Diary Survey estimation procedures</h3>
+<p>This section provides users of the Diary Survey with procedures to estimate annual calendar means.</p>
+<p>CUs self-report a detailed description of all expenses using a product-oriented diary for two consecutive 1-week periods. Data entries can start on any day of the week. Data collected each week are treated as statistically independent - each week's diary is separately weighted to be representative of the population. For more information, see the <a href="/opub/hom/cex/data.htm">collections and data sources section</a> in the chapter of Consumer Expenditures and Income in the BLS Handbook of Methods.</p>
+<p>For the Diary Survey, users may want to consider the following concepts:</p>
+<ul>
+<li><strong>What information does the Diary Survey ask CUs?</strong><br />The Diary Survey asks for almost all expenses that the CU incurs during the survey week. In addition, the Diary Survey also asks about income and demographic information. The Diary Survey excludes expenses incurred by family members while away from home overnight or on vacation, and for credit and installment plan payments.</li>
+<li><strong>How are Diary Survey data organized?</strong><br />The Diary Survey data are organized and identified by the day an item was purchased.</li>
+<li><strong>How do users identify the purchase date?</strong><br />Users cannot identify the exact purchase date. However, users can identify the start month of the reference week (STRTMNTH), the day of the week (EXPNWDY), the sequential day of the survey (EXPNSQDY), as well as the reference month (EXPNMO) and year (EXPNYR).</li>
+<li><strong>How many quarters does a user need for annual calendar year estimates?</strong><br />To produce calendar year estimates, users need to access <em>four</em> collection-quarter files of the year of interest. For example for 2017 estimates, users need the files for quarter 1 through 4 for 2017.</li>
+<li><strong>How much does a CU contribute to a calendar year estimate in each interview month?</strong><br />In the Diary Survey, a CU contributes 100 percent of its expenditures to the calendar year. Unlike the Interview Survey, the Diary Survey has no lag between the time an expenditure occurs and the time it is reported, which means that the potential contribution of each CU to the mean is the same.</li>
+</ul>
+<br />
+<h3 id="section6.3">6.3 Formulas</h3>
+<p>The formulas described below can be used to calculate weighted estimates that use data from both surveys. The formulas calculate annual calendar year aggregates, averages, and standard errors for expenditures and reported income. While these formulas can also be used to calculate annual averages of imputed income as well, they cannot be used to calculate standard errors. For more information on this topic, see the <a href="/cex/csximpute.htm">Description of Income Imputation Beginning with 2004 Data</a>.</p>
+<ul>
+<li><strong>What is the impact of different periodicity by different variables?</strong><br />Variable periodicity can be annual, quarterly, monthly or weekly. When working with the PUMD, users need to take the particular periodicity into account. For example, when combining weekly data with annual data, users need to account for the difference in periodicity by inflating the weekly data to represent a quarterly value.</li>
+<li><strong>How to calculate comprehensive estimates of expenditures and income?</strong><br />To gain a complete picture of expenditures and income, users need to integrate data from both surveys. The CE program collects data with two independent surveys. While they complement each other with respect to the data collection, they use independent samples that do not overlap. To see which UCCs the CE tables use to integrate and from which survey, see the <a href="/cex/ce_source_integrate.xlsx">Source Selection File</a>.</li>
+<li><strong>How to integrate data from both surveys?</strong><br />To integrate data from both surveys, users first need to choose which expenditures they would like to integrate. Some items are only collected in one survey while others are collected in both surveys. Once a user has established which UCCs they would like to integrate, users can then develop an estimate for each UCC individually. After estimates have been developed for each UCC individually, sum the results to develop an integrated estimate.<br /><br />
+<p>When integrating data across surveys, keep in mind that estimates created from the Diary Survey will yield a weekly amount and therefore, users will need to adjust their estimates so that each survey result represents the same time period. Inflating the Diary Survey UCC estimate by a multiplier of 13, will result in a quarterly amount, which can then be summed with an Interview Survey estimate.</p>
+</li>
+<li><strong>How to calculate representative statistics?</strong><br />Users can calculate representative statistics with the weight variable FINLWT21. This variable attributes a weight to each NEWID, which allows users to estimate values for the entire population. This variable is available in the FMLI and FMLD files.</li>
+<li><strong>Does the CE program provide sample code that uses the below formulas?</strong><br />Yes, the CE program provides sample code with the same logic in SAS, STATA, and R on the <a href="/cex/pumd_doc.htm">PUMD documentation page</a>.</li>
+</ul>
+<br />
+<h4 id="section6.3.1">6.3.1 Developing a weighted calendar year estimate</h4>
+<p>This section presents the methods to calculate the population, aggregate values, and average values for expenditures or income for a calendar year.</p>
+<blockquote>
+<blockquote><strong>Denominator: Population</strong><br /><img width="45%" title="Denominator: Population" style="border: currentColor;" alt="Denominator: Population" src="/cex/formula-population.png" /></blockquote>
+<blockquote>NEWID = Identifier for one CU for one quarter<br /> FINLWT21 = Weight of each NEWID<br />QNUM = Number of quarters in the analysis (Usually equal to 4 for a 1 year estimate)<br />MO_SCOPE = Indicator for the number of months in scope for each NEWID</blockquote>
+</blockquote>
+<ul>
+<li><strong>How do users calculate representative population weights (FINLWT21)?</strong><br />To make the population weights representative of the U.S. population, data users need to generate two adjustment factors:<br /><br />
+<ul>
+<li><strong>"QNUM"</strong> adjusts the weights from annual to quarterly. The CE sample is designed to be representative of the entire annual U.S. population in the collection of each quarter. Thus, the weight (FINLWT21) needs to be divided by 4 to adjust for this fact. Without this adjustment the population in the denominator would be 4 times as large as the U.S. population. For example for an annual estimate (4 quarters) QNUM is 4.</li>
+<li><strong>"MO_SCOPE/3"</strong> adjusts the weights for CUs that are out of scope. Interviews that were conducted in January, February, or March are not fully in scope. (This applies only to the interview survey. For more information, see <a href="/cex/pumd-getting-started-guide.htm#section6.1">Section 6.1 Estimation procedures for the Interview Survey</a>.) For these months, only the part that is in scope should be used for representative population weights. MO_SCOPE adjusts the CU weights to the months in scope.</li>
+</ul>
+<br /><br /></li>
+<li><strong>How to determine the value for MO_SCOPE?</strong><br />The value for MO_SCOPE depends on the survey. For all four quarters within the Diary Survey, the value for MO_SCOPE is 3. For the Interview Survey, MO_SCOPE depends on the year and month of the interview. Users can identify the year using the FMLI variable QINTRVYR. For a description of what months are in scope, see <a href="/cex/pumd-getting-started-guide.htm#section6.1">Section 6.1 Estimation procedures for the Interview Survey</a>.<br /><br />
+<p>For the first four quarters, MO_SCOPE is defined by the value of QINTRVMO:</p>
+<ul>
+<li>If QINTRVMO is 1 then MO_SCOPE is 0</li>
+<li>If QINTRVMO is 2 then MO_SCOPE is 1</li>
+<li>If QINTRVMO is 3 then MO_SCOPE is 2</li>
+<li>If QINTRVMO is 4-12 then MO_SCOPE is 3</li>
+</ul>
+<br /><br />
+<p>For the fifth quarter, MO_SCOPE is defined by the value of QINTRVMO:</p>
+<ul>
+<li>If QINTRVMO is 1 then MO_SCOPE is 3</li>
+<li>If QINTRVMO is 2 then MO_SCOPE is 2</li>
+<li>If QINTRVMO is 3 then MO_SCOPE is 1</li>
+</ul>
+</li>
+<li style="list-style: none;">
+<blockquote>
+<p><strong>Numerator: Aggregate value</strong><br /><img width="45%" title="Numerator: Aggregate value" style="border: currentColor;" alt="Numerator: Aggregate value" src="/cex/formula-aggregate-value.png" /></p>
+<p>X = Expenditures or income variables by NEWID. This formula can be used for quarterly, annual, weekly, or monthly data.</p>
+</blockquote>
+<br />
+<blockquote><strong>Quotient: Average value</strong><br /><img width="15%" title="Quotient: Average value" style="border: currentColor;" alt="Quotient: Average value" src="/cex/formula-average-value.png" /></blockquote>
+</li>
+</ul>
+<br /><br /> <br />
+<h4 id="section6.3.2">6.3.2 Reliability statement</h4>
+<p><strong>Description of sampling and non-sampling errors</strong><br />Sample surveys are subject to two types of errors, sampling and non-sampling. Sampling errors occur because observations are not taken from every unit in the entire population. <a href="/cex/csxfaqs.htm#qc14">Standard errors</a> measure sampling errors. The primary purpose of standard errors is to provide users with a measure of the variability associated with the mean estimates. The sample estimate and its estimated standard error enable one to construct confidence intervals.</p>
+<p>Non-sampling errors can be attributed to many sources, such as definitional difficulties, differences in the interpretation of questions, inability or unwillingness of the respondent to provide correct information, mistakes in recording or coding the data obtained, and other errors of collection, response, processing, coverage, and estimation of missing data. Estimates using a small number of observations are less reliable. Research articles examining CE measurement error and nonresponse bias are included in the <a href="/cex/research_papers/research-paper-catalog.htm">CE library</a>. The CE program regularly examines CE data in the annual data quality assessment and compares CE results with other sources of federal statistics. For more information, see the <a href="/cex/cecomparison.htm">Data Quality and Comparisons page</a>.</p>
+<p><strong>Estimating sampling error</strong><br />The CE program estimates sampling error using Balanced Repeated Replication (BRR). The CE program implements this method with three steps:</p>
+<ol>
+<li>Selects 44 subsamples that are balanced half-samples of the full sample.</li>
+<li>Estimates a statistic for each half-sample, using the replicate weight variables WTREP01-WTREP44. The replicate weight variables contains a value greater than 0 for CUs assigned to that replicate and a value of missing for CUs not assigned to that replicate.</li>
+<li>Estimates the variance between the values of the full-sample and half-samples with the standard formula for computing sample variances.</li>
+</ol>
+<blockquote>
+<blockquote><strong>Replicate means for expenditures</strong><br /><img width="40%" title="Replicate means for expenditures" style="border: currentColor;" alt="Replicate means for expenditures" src="/cex/formula-replicate-means.png" />
+<p>WTREP = 44 Replicate weights (WTREP01-WTREP44)</p>
+<br />
+<p><strong>Standard error</strong><br /><img width="27%" title="Standard error" style="border: currentColor;" alt="Standard error" src="/cex/formula-standard-error.png" /></p>
+</blockquote>
+</blockquote>
+<p>Note that prior to 1990, 20 replicate weights were used, instead of the 44 that are currently in use. When developing a standard error using data prior to 1990, use the replicate weight variables FINLWT01-FINLWT20 in your calculation.</p>
+<p>Note that this method does not work for imputed income data. For information on calculating sampling errors from imputed income, see the <a href="/cex/csxguide.pdf">User's Guide to Income Imputation in the CE</a>.</p>
+<br />
+<h3 id="section6.4">6.4 Sampling statement</h3>
+<h4 id="section6.4.1">6.4.1 Survey sample design</h4>
+<p>The CE survey sample is a nationwide household survey representing the entire U.S. civilian noninstitutional population. It includes people living in houses, condominiums, apartments, and group quarters such as college dormitories. It excludes military personnel living overseas or on base, nursing home residents, and people in prisons. The civilian noninstitutional population represents more than 98 percent of the total U.S. population. For more information, see <a href="/opub/hom/cex/design.htm">sample design</a> in the chapter Consumer Expenditures and Income of the BLS Handbook of Methods.</p>
+<h4 id="section6.4.2">6.4.2 Weighting</h4>
+<p>Each CU included in the CE sample represents a given number of CUs in the U.S. population, which is considered to be the universe. Weighting is used to adjust the relative contribution of each CU to reflect the inverse of its selection probability, as well as to account for nonresponse and to match certain characteristics to known control totals. For more information, see <a href="/opub/hom/cex/design.htm">sample design</a> in the chapter Consumer Expenditures and Income of the BLS Handbook of Methods.</p>
+<h3 id="section6.5">6.5 State Weight Files</h3>
+<h4 id="section6.5.1">6.5.1 State weights</h4>
+<p>The state weights initiative by CE is an effort to produce research microdata products that can allow users to explore consumer expenditure data at the state level, a feature previously unavailable in the data. The CE program intends to explore the viability of the CE sample to support weight creation for as many states as possible. The first available states are California, Florida, New York, and Texas. Users should take note that the state weights are considered a research product, and may not be consistently available across the five listed states going forward as they are highly dependent on sample composition. New Jersey is available for 2016-2020, but beginning in 2021 it was determined the sample in New Jersey could not support a state estimate (for more information, see the <a href="https://www.bls.gov/cex/research_papers/pdf/krieger-swanson-discontinuation-of-nj-state-weight.pdf">memo regarding this change</a>).</p>
+<p>Care should be taken when analyzing public use microdata using the state weights, as the small number of households for some expenditures can cause the mean dollar estimate to be imprecise. The more aggregated summary variables will produce more precise estimates. Additionally, it should be noted that these weights are only for their respective states and cannot be used to make inferences about any other geographic areas. The provided data must be used in conjunction with the public use microdata&nbsp;to obtain state level estimates.</p>
+<p>For users interested in using the state weights, please visit the <a href="/cex/pumd_data.htm">CE PUMD files page</a>.</p>
+<h4 id="section6.5.2">6.5.2 Documentation</h4>
+<ul>
+<li><a href="/cex/stateweights-documentation.pdf">An Overview of the State-Level Weighting Procedure</a> provides information to the user on how the weights are created and how they differ from the national weight included in the PUMD.</li>
+<li><a href="/cex/ce-state-weights-public-use-microdata.htm">Using the state weights on the PUMD</a> provides a detailed description of the variables included in the files along with tables of descriptive information about the data such as computation targets and population totals.</li>
+</ul>
+<br />
+<h2 id="section7">Section 7. Considerations</h2>
+<p>The following are considerations users should be aware of when working with the Consumer CE PUMD. While PUMD contain a wealth of data, the CE surveys were designed with the specific purpose of finding out how U.S. consumers spend their money, and therefore may not be applicable to every research endeavor.</p>
+<br />
+<h3>7.1 Geographic data</h3>
+<p>The CE surveys are designed to produce national expenditure estimates. The estimates are calculated from a relatively small sample of predominantly urban areas. Within these areas, the CE program surveys only a small percentage of those households. For example, in New York State the CE program successfully interviewed roughly 1,500 households for the Interview Survey in 2017.</p>
+<p>At the subnational level, the current CE sample design allows data users to create estimates for 4 <a href="/cex/csxgeography.htm">regions</a>, 9&nbsp;divisions, 4&nbsp;states, and over 25 metropolitan statistical areas. However, the PUMD do not contain information by county or zip code. For more information, see the <a href="https://www.bls.gov/cex/csxgeography.htm">CE geographic data page</a>.</p>
+<br />
+<h3>7.2 Information on purchasers or consumers</h3>
+<p>Data users cannot identify who bought an item or who consumed it because both CE surveys do not ask these questions. That limits the ability of data users to connect the data with demographic information of the specific purchaser or consumer.</p>
+<p>However, data users may be able to infer some demographic characteristics for purchases by single member households because expenditures by single member household are likely purchased and consumed by that person.</p>
+<p>Inferring demographic information for households with more than one member is more difficult than for single member households. However, in some cases it may be possible. For example a women's garment is more likely to be used by the women in the household.</p>
+<br /><br />
+<h3>7.3 Information on quantity and quality</h3>
+<p>Generally, the CE surveys only provide the total cost and no unit value. Thus an expense of $220 on wine could be one expensive bottle or several cases of bottles.</p>
+<p>However, the CE surveys do provide limited information on the quantity and quality of a few expenditures. For example, the Interview Survey indicates the number purchased for selected large items, like cars or appliances. The Diary Survey may identify the number of meals purchased away from home, but not how many people ate at each meal.</p>
+<p>With respect to quality, the PUMD do contain roughly 50 detailed expenditure files that provide additional information about an expenditure. The information booklets distributed to respondents with the survey also describe what information data users can find in the data. For information on the questions the CE surveys ask, see the <a href="/cex/csxsurveyforms.htm">Survey Materials page</a>.</p>
+<br />
+<h3>7.4 Reported income, income taxes, and other financial assets</h3>
+<p>Reported data on a Consumer Unit's (CU) income, income taxes, and financial assets may have limited analytical use because of two main factors:</p>
+<ul>
+<li><strong>Some respondents are unwilling or unable to calculate specific income items.</strong> Some income items require calculations that respondents may be unable or unwilling to perform, particularly for income taxes. For example, when the CE program asks in July about wages for the last 12 months, respondents have to sum half of the income from the current year and half from the previous year. With the 2004 data, the CE program began to impute missing income values and with the second quarter of the 2013 data, the program started to provide estimated federal and state income taxes using the NBER TAXSIM program instead of providing respondent-reported values. For more information, see Aaron Cobet's presentation <a href="/cex/income-tax-estimates.pdf">New CE income tax estimates</a>.</li>
+<li><strong>The CE sample may underrepresent households with income over $100,000.</strong> These high income households have been shown to be more reluctant to respond to the surveys. For more information, see the John Sabelhaus et al. article <a href="http://www.nber.org/chapters/c12673.pdf">Is the Consumer Expenditure Survey Representative by Income?</a> The CE program began to adjust the weights of high income households to account for their underrepresentation with the 2015 data.</li>
+</ul>
+<br />
+<h3>7.5 Impact of CE methods on some categories of data</h3>
+<p>The available detail for some categories may have limited analytical use due to the following major reasons:</p>
+<ul>
+<li><strong>CE program bundles some products into single categories:</strong> Some items are grouped with others into one Universal Classification Code (UCC) because sparse data preclude them from being presented separately. For example, Apple watches, answering machines, Bluetooth accessories, cell phones, cell phone covers, chargers, cordless telephones, headsets, phone jacks and cords, selfie sticks, smartphones, and smartwatches are all bundled into the category "Telephones and accessories." In this case data users cannot identify expenditures on the individual items that are contained in the bundled UCC.</li>
+<li><strong>PUMD exclude data that could divulge a respondent's identity.</strong> To prevent data users from identifying respondents, the CE program applies a number of methods to mask the identity of its respondents. Thus a published value may differ from the reported value. PUMD flags these items. For more information on these methods, see CE's <a href="/cex/pumd_disclosure.htm">Protecting Respondent Confidentiality</a>.</li>
+</ul>
+<br />
+<h3>7.6 Analyzing individual households over time</h3>
+<p>Trend analysis of individual households is limited because the CE program interviews each household for a fixed time period. The specific duration depends on the survey, the type of data, and the respondent's willingness to participate.</p>
+<ul>
+<li><strong>Interview Survey expenditures: Data users can analyze one sampled address for up to four quarters.</strong> This means that one household can provide data for a maximum of 12 months. However, some households drop out earlier, because they move or do not continue to participate. This attrition biases the sample of households that participate for four quarters toward older and more affluent households, and toward owners over renters. In addition, because the CE surveys sample addresses, not people, if a new household moves into a sampled address, the CE program will continue the survey with the new household.</li>
+<li><strong>Diary Survey expenditures:</strong> Data users can analyze one household for up two weeks because the Diary Survey asks a household to provide their expenditures only for two consecutive weeks.</li>
+<li><strong>Income and assets:</strong> Both CE surveys collect various types of income data and in addition the Interview Survey collects data on some types of assets of the previous 12 months. Data users cannot analyze these trends for individual households over time.</li>
+</ul>
+<br />
+<h3>7.7 Analyzing aggregate data over time</h3>
+<p>Trend analyses of aggregated PUMD variables and to a lesser degree, items in CE tables, over several years are limited by the changes in collection and sampling methods. For example, every ten years the CE program introduces a new sample design. Generally, when the CE program introduces a new sample design, method, item, or question, the program does not create an overlap where both the old and the new version are available during the transition.</p>
+<p>However, longitudinal analysis of major categories across several years is possible if the data user concludes that the changes in the underlying collection methods do not affect the overall trend. Generally, larger categories are less impacted than small categories. For a list of the main survey changes in the history of the CE program, see <a href="/opub/hom/cex/history.htm">Consumer Expenditures and Income: History</a> in the BLS Handbook of Methods.</p>
+<br />
+<div style="padding-bottom: 1em; border-top-color: #cccccc; border-top-width: 1px; border-top-style: solid;"></div>
+<div>
+<div id="edn1">
+<p class="MsoEndnoteText"><a name="_edn1" title="" id="_edn1" href="#_ednref1"><span class="MsoEndnoteReference"><sup>ⅰ</sup></span></a> Telescoping errors refer to the temporal displacement of an event. Respondents of the CE surveys may perceive recent events to be more remote than they are (backwards telescoping) and distant events to be more recent than they are (forward telescoping).</p>
+</div>
+</div>
+<div>
+<div id="edn2">
+<p class="MsoEndnoteText"><a name="_edn2" title="" id="_edn2" href="#_ednref2"><span class="MsoEndnoteReference"><sup>ⅱ</sup></span></a> Ian Elkin, <a href="/cex/research_papers/pdf/Recommendation-Regarding-the-Use-of-a-CE-Bounding-Interview.pdf">Recommendation regarding the use of a CE bounding interview</a>, 2013, Bureau of Labor Statistics.</p>
+</div>
+</div>
+<div>
+<div id="edn3">
+<p class="MsoEndnoteText"><a name="_edn3" title="" id="_edn3" href="#_ednref3"><span class="MsoEndnoteReference"><sup>ⅲ</sup></span></a> Variable periodicity refers to the period that a given value represents.</p>
+</div>
+</div>
+<div>
+<div id="edn4">
+<p class="MsoEndnoteText"><a name="_edn4" title="" id="_edn4" href="#_ednref4"><span class="MsoEndnoteReference"><sup>ⅳ</sup></span></a> Primary keys identify each unique record in the database.</p>
+</div>
+</div>
+<div>
+<div id="edn5">
+<p class="MsoEndnoteText"><a name="_edn5" title="" id="_edn5" href="#_ednref5"><span class="MsoEndnoteReference"><sup>ⅴ</sup></span></a> Quarterly summary expenditures are presented as two variables - one containing expenditures made in the previous calendar quarter and one containing expenditures made in the current calendar quarter.</p>
+</div>
+</div>
+<div>
+<div id="edn6">
+<p class="MsoEndnoteText"><a name="_edn6" title="" id="_edn6" href="#_ednref6"><span class="MsoEndnoteReference"><sup>ⅵ</sup></span></a> For more information on the number of contacted addresses and completed interviews, see the <a href="/cex/cecomparison.htm#dqp">CE Data Quality Profile</a>.</p>
+</div>
+</div>
+<div>
+<div id="edn7">
+<p class="MsoEndnoteText"><a name="_edn7" title="" id="_edn7" href="#_ednref7"><span class="MsoEndnoteReference"><sup>ⅶ</sup></span></a> Primary keys identify each unique record in the database.</p>
+</div>
+</div>
+<p class="update">&nbsp;</p>
+<p class="update"><strong>Last Modified Date:</strong>&nbsp;November 4, 2024</p>
+<!-- ********************************************TRAILER FILES******************************************** -->	
+</div>
+<!-- OneColFootBasic Begin -->
+
+<!-- Footer Filename: -->
+
+<!--no_index_start-->
+
+<!-- 1COL CMS BASIC LAYOUT COL1 END -->
+
+
+
+<div class="clearfloat"></div>
+<div class="social-media"><div>Recommend this page using:</div>
+	<div><a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png"></a><span><a href="javascript:void(0);" class="share_facebook">Facebook</a></span></div>
+	<div><a href="javascript:void(0);" class="share_twitter"><img alt="Share BLS on X, formerly referred to as Twitter" src="/images/icons/twitter.png"></a><span><a href="javascript:void(0);" class="share_twitter">Twitter</a></span></div>
+	<div><a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png"></a><span><a href="javascript:void(0);" class="share_linkedin">LinkedIn</a></span></div>
+	<!--<div><a href="javascript:void(0);" class="share_googleplus"><img src="/images/icons/google.png"></a><span><a href="javascript:void(0);" class="share_googleplus">Google+</a></span></div>-->
+</div>
+</div> 
+
+
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+
+
+
+<!-- WRAPPER BOTTOM BEGIN -->
+
+
+		
+		
+		</div><!-- close id="wrapper-outer" -->
+	</div><!-- close id="wrapper" -->
+</div><!-- close id="container" -->
+
+	
+
+
+<!-- WRAPPER BOTTOM END -->
+
+
+
+<!-- FOOTER LEFT BEGIN -->
+
+<footer >
+	
+<!-- Footer Nav Menu-->
+<div class="footerNav">
+<ul class="footerNavInner">
+   <li class="footerNavItem"><a href="https://www.bls.gov/">Home</a></li>
+   <li class="footerNavItem"><a href="/bls/proghome.htm">Subjects</a></li>
+   <li class="footerNavItem"><a href="/data/">Data Tools</a></li>
+   <li class="footerNavItem"><a href="/opub/">Publications</a></li>
+   <li class="footerNavItem"><a href="/bls/newsrels.htm">Economic Releases</a></li>
+   <li class="footerNavItem"><a href="/k12/" >Classroom</a></li>
+   <li class="footerNavItem"><a href="/beta/">Beta</a></li>
+</ul>
+</div>
+<!-- Footer Nav Menu-->
+<script>/*<![CDATA[*/(function(){var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;sz.src = '//siteimproveanalytics.com/js/siteanalyze_6032860.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);})();/*]]>*/</script> 
+
+<script src="/javascripts/touchpointsForms.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/touchpointsForms.css">
+
+<div id="footer-primary-wrapper">
+<div class="bootstrap standard-width">
+<div id="footer-container" class="row">
+	<div id="footer-links-container" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	
+	
+<div class="bls-lftside-holder">	
+<div class="bls-logo-footer">
+<img src="/images/bls_emblem_trans.png" class="responsiveImg" alt="U.S. Bureau of Labor Statistics Logo "/><div class="d-none d-md-block clearfloat"><br><br></div>
+
+ </div>
+ <div class="address-contact-footer">
+
+<!-- FOOTER LEFT END -->
+
+
+
+<address class="footer-address"  >  
+<strong  >U.S. Bureau of Labor Statistics</strong>
+<span  >Consumer Expenditure Surveys</span> 
+<span  >PSB Suite 3985</span> 
+<span  >2 Massachusetts Avenue NE</span>  
+<span  >Washington, DC 20212-0001</span>
+</address> 	
+
+
+
+<!-- FOOTER CENTER BEGIN -->
+
+
+
+
+
+<!-- FOOTER CENTER END -->
+
+
+
+
+<span class="footer-contact">  
+
+<a href="tel:12026916900" class="number" aria-label="Telephone: 1-202-691-6900">
+<span>Telephone:</span><span> 1-202-691-6900 </span>
+
+</a>
+
+<a href="/cex/home.htm" aria-label="www.bls.gov/CEX" >www.bls.gov/CEX</a>
+<a href="https://data.bls.gov/forms/cex.htm?/cex/pumd-getting-started-guide.htm" aria-label="Contact Us">Contact Us</a>
+
+</span>
+		
+
+
+
+
+<!-- FOOTER RIGHT BEGIN -->
+
+</div> 
+</div>
+</div>
+
+				<div id="quicklinks" class="row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>resources</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli5" role="button" aria-expanded="false" aria-controls="quicklinksli5" aria-label="resources Sub Menu"></a>
+						<div class="collapse" id="quicklinksli5">
+							<ul class="d-sm-block">						
+								<li><a href="https://www.oig.dol.gov/" aria-label="Office of Inspector General (OIG) website">Inspector General (OIG)</a></li>
+								<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>	
+								<li><a href="https://www.dol.gov/grants" aria-label="Department of Labor Grants">Department of Labor Grants</a></li>									
+								<li><a href="/bls/no_fear_act.htm" aria-label="No Fear Act">No Fear Act</a></li>
+								<li><a href="https://www.usa.gov/" aria-label="USA.gov website">USA.gov</a></li>
+								<li><a href="https://www.vote.gov/" aria-label="Register to vote at Vote.gov" title="Public and private decision making about worker rights and benefits depend on you exercising your fundamental right. Register to vote at Vote.gov!">Vote.gov</a></li>						
+							</ul>
+						</div>
+					</div>		
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>about the site</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli6" role="button" aria-expanded="false" aria-controls="quicklinksli6" aria-label="about this site Sub Menu"></a>
+						<div class="collapse" id="quicklinksli6">
+							<ul class="d-sm-block">	
+								<li><a href="/bls/sitemap.htm" aria-label="Sitemap">Sitemap</a></li>						
+								<li><a href="/bls/blsfoia.htm" aria-label="Freedom of Information Act">Freedom of Information Act</a></li>
+								<li><a href="/bls/pss.htm" aria-label="Privacy and Security Statement">Privacy and Security Statement</a></li>
+								<li><a href="/bls/disclaimer.htm" aria-label="Disclaimers">Disclaimers</a></li>
+								<li><a href="/bls/linksite.htm" aria-label="Linking and Copyright Information">Linking and Copyright Info</a></li>	
+								<li><a href="/bls/website-policies.htm" aria-label="Important Website Notices">Important Website Notices</a></li>
+								<li><a href="/help/" aria-label="Help and Tutorials">Help and Tutorials</a></li>
+								<li><a href="/bls/babel.htm" aria-label="Language Services">Babel&nbsp;Notice:&nbsp;accessing&nbsp;language&nbsp;services</a></li>
+								<li><a href="/bls/ada.htm" aria-label="Accessibility Statement">Accessibility Statement</a></li>
+							</ul>
+						</div>
+					</div>				
+                </div>
+				 
+</div>
+</div>
+</div>
+<div id="footer-secondary-wrapper">
+
+<div class="bootstrap standard-width">
+
+<div>
+<span>Connect With BLS</span>
+  <div class="social-media-icons"> 
+    
+           <a class="social-media-icon" href="https://twitter.com/BLS_gov" title="Connect with BLS on X, formerly referred to as Twitter" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+              <span class="sr-only">Twitter</span>
+          </a>
+                  
+           <a class="social-media-icon" href="https://www.youtube.com/channel/UCijn3WBpHtx4AvSya7NER9Q" title="BLS Youtube" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+              <span class="sr-only">Youtube</span>
+          </a>
+          <a class="social-media-icon" href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="email" title="Subscribe to BLS E-mail Updates">
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+              <span class="sr-only">Email</span>
+          </a>
+        </div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- FOOTER RIGHT END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColFootBasic End -->
+
+    		
+<!-- PERCUSSION INNER END -->
+
+		</section>
+
+				
+	</body>
+</html>

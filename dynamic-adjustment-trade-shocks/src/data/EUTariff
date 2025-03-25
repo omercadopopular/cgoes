@@ -1,0 +1,35 @@
+using CSV
+using DataFrames
+using ReadStatTables
+using Statistics
+using FilePathsBase
+using FilePathsBase: /
+
+const iciodir = p"data/work/ICIO"
+const tdir = p"data/work/EUTariff/241227"
+
+function main()
+    seclist = DataFrame(readstat(iciodir/"sectorlist.dta"))
+    for v in (:code, :i32, :i34)
+        seclist[!,v] = disallowmissing(seclist[!,v])
+    end
+
+    raw = DataFrame(readstat(tdir/"data_min.dta"))
+    df = select(raw, :year, :importer=>:dest_iso3, :exporter=>:sorc_iso3, :icio, :ahs_st=>:tariff)
+    dropmissing!(df)
+    df[!,:year] = Int16.(df.year)
+    df[!,:icio] = Int8.(df.icio)
+    df[!,:tariff] .= 1 .+ df.tariff./100
+    df = leftjoin(df, seclist[!,[:code,:i32]], on=:icio=>:code)
+    df = df[df.i32.<33,:]
+    # Simple average for now
+    df = combine(groupby(df, [:sorc_iso3,:dest_iso3,:i32]), :tariff=>mean=>:tariff)
+    sort!(df, [:sorc_iso3,:dest_iso3,:i32])
+    # Only consider one-time tariff change here
+    df[!,:dtariff] = 1.0 ./ df.tariff
+    rename!(df, :i32=>:sorc_i32)
+    writestat(iciodir/"eutariff1.dta", df)
+    return df
+end
+
+@time df = main()

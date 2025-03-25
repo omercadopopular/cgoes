@@ -1,0 +1,1 @@
+import excel data/work/concordance/2007_NAICS_to_ISIC_4.xls, sheet("NAICS 07 to ISIC 4 technical") firstrow allstring clear

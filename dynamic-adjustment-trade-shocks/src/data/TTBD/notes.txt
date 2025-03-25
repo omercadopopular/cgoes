@@ -1,0 +1,5 @@
+GAD:
+ARG: AD_DUTY dominated by minimum price
+AUS: Only margin no duty columns
+IND: Dominated by SD, no duty columns
+THA: Only margin no duty columns

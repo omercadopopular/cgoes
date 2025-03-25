@@ -1,0 +1,714 @@
+,ucc,eli,ucc name,eli title,ce source,eli4
+0,010110,FA011,Flour,Flour And Prepared Flour Mixes,D,FA01
+1,010120,FA011,Prepared Flour Mixes,Flour And Prepared Flour Mixes,D,FA01
+2,010210,FA021,Cereal,Breakfast Cereal & Cereal Bars,D,FA02
+3,010310,FA031,Rice,"Rice, Pasta, Cornmeal",D,FA03
+4,010320,FA031,Pasta Cornmeal Oth Cereal Prods,"Rice, Pasta, Cornmeal",D,FA03
+5,020110,FB011,White Bread,Bread,D,FB01
+6,020210,FB011,Bread Other Than White,Bread,D,FB01
+7,020310,FB021,"Fresh Biscuits, Rolls, Muffins","Fresh Biscuits, Rolls, And Muffins",D,FB02
+8,020410,FB031,Cakes And Cupcakes,Cakes And Cupcakes (Excluding Frozen),D,FB03
+9,020510,FB032,Cookies,Cookies,D,FB03
+10,020610,FB041,Crackers,Crackers And Bread & Cracker Products,D,FB04
+11,020620,FB041,Bread And Cracker Products,Crackers And Bread & Cracker Products,D,FB04
+12,020710,FB042,"Doughnuts,Sweetrolls,Coffecake","Sweet Rolls, Coffee Cake And Doughnuts(Excluding Frozen)",D,FB04
+13,020810,FB043,Frozen & Refrig. Bakery Prod.,Frozen Bakery Products And Frozen/Refrig Doughs And Batters,D,FB04
+14,020820,FB044,"Fresh Pies, Tarts, Turnovers","Pies, Tarts, Turnovers (Excluding Frozen)",D,FB04
+15,030110,FC011,Ground Beef Exclude Canned,Uncooked Ground Beef,D,FC01
+16,030210,FC021,Chuck Roast,Uncooked Beef Roasts,D,FC02
+17,030310,FC021,Round Roast,Uncooked Beef Roasts,D,FC02
+18,030410,FC021,Other Roast,Uncooked Beef Roasts,D,FC02
+19,030510,FC031,Round Steak,Uncooked Beef Steaks,D,FC03
+20,030610,FC031,Sirloin Steak,Uncooked Beef Steaks,D,FC03
+21,030710,FC031,Other Steak,Uncooked Beef Steaks,D,FC03
+22,030810,FC041,Other Beef (Exclude Canned),Uncooked Other Beef And Veal,D,FC04
+23,040110,FD011,Bacon,"Bacon, Breakfast Sausage And Related Products",D,FD01
+24,040210,FD031,Pork Chops,Pork Chops,D,FD03
+25,040310,FD021,Ham (Exclude Canned),Ham,D,FD02
+26,040410,FD041,Other Pork,"Other Pork Including Roasts, Steaks, And Ribs",D,FD04
+27,040510,FD011,Pork Sausage,"Bacon, Breakfast Sausage And Related Products",D,FD01
+28,040610,FD021,Canned Ham,Ham,D,FD02
+29,050110,FE011,Frankfurters,Frankfurters,D,FE01
+30,050210,FE012,"Bologna, Liverwurst, Salami",Lunchmeats,D,FE01
+31,050310,FE012,Other Lunchmeat,Lunchmeats,D,FE01
+32,050410,FE013,Lamb And Organ Meats,"Lamb, Organ Meats, And Game",D,FE01
+33,050900,FE013,"Mutton, Goat, Game","Lamb, Organ Meats, And Game",D,FE01
+34,060110,FF011,Fresh & Frozen Whole Chicken,Chicken,D,FF01
+35,060210,FF011,Fresh Or Frozen Chicken Parts,Chicken,D,FF01
+36,060310,FF021,Other Poultry,Other Uncooked Poultry Including Turkey,D,FF02
+37,070110,FG021,Canned Fish And Seafood,Processed Fish And Seafood,D,FG02
+38,070230,FG011,Fresh Fish & Shellfish,Fresh Fish And Seafood,D,FG01
+39,070240,FG021,Frozen Fish & Shellfish,Processed Fish And Seafood,D,FG02
+40,080110,FH011,Eggs,Eggs,D,FH01
+41,090110,FJ011,Fresh Milk All Types,Milk,D,FJ01
+42,090210,FJ041,Cream,Other Dairy And Related Products,D,FJ04
+43,100110,FS011,Butter,Butter And Margarine,D,FS01
+44,100210,FJ021,Cheese,Cheese And Cheese Products,D,FJ02
+45,100410,FJ031,Ice Cream And Related Products,Ice Cream And Related Products,D,FJ03
+46,100510,FJ041,Other Dairy Products,Other Dairy And Related Products,D,FJ04
+47,110110,FK011,Apples,Apples,D,FK01
+48,110210,FK021,Bananas,Bananas,D,FK02
+49,110310,FK031,Oranges,Citrus Fruits,D,FK03
+50,110410,FK041,Other Fresh Fruits,Other Fresh Fruits,D,FK04
+51,110510,FK031,Citrus Fruits Excl. Oranges,Citrus Fruits,D,FK03
+52,120110,FL011,Potatoes,Potatoes,D,FL01
+53,120210,FL021,Lettuce,Lettuce,D,FL02
+54,120310,FL031,Tomatoes,Tomatoes,D,FL03
+55,120410,FL041,Other Fresh Vegetables,Other Fresh Vegetables Including Fresh Herbs,D,FL04
+56,130110,FN021,Frozen Orange Juice,Frozen Noncarbonated Juices And Drinks,D,FN02
+57,130121,FM021,Frozen Fruits,Frozen Fruits And Vegetables,D,FM02
+58,130122,FN021,Frozen Fruit Juices,Frozen Noncarbonated Juices And Drinks,D,FN02
+59,130211,FN031,Fresh Fruit Juice,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+60,130212,FN031,Canned/Bottle Fruit Juice,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+61,130310,FM011,Canned Fruits,Canned Fruits And Vegetables,D,FM01
+62,130320,FM031,Dried Fruits,Dried Fruits And Vegetables,D,FM03
+63,140110,FM021,Frozen Vegetables,Frozen Fruits And Vegetables,D,FM02
+64,140210,FM011,Canned Beans,Canned Fruits And Vegetables,D,FM01
+65,140220,FM011,Canned Corn,Canned Fruits And Vegetables,D,FM01
+66,140230,FM011,Canned Vegetables Misc,Canned Fruits And Vegetables,D,FM01
+67,140310,FM031,Other Processed Vegetables,Dried Fruits And Vegetables,D,FM03
+68,140320,FM031,Other Peas,Dried Fruits And Vegetables,D,FM03
+69,140330,FM031,Other Beans,Dried Fruits And Vegetables,D,FM03
+70,140340,FM031,Other Vegetables Misc,Dried Fruits And Vegetables,D,FM03
+71,140410,FN021,Frozen Vegetable Juices,Frozen Noncarbonated Juices And Drinks,D,FN02
+72,140420,FN031,Fresh & Canned Vegetable Juices,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+73,150110,FR021,Candy And Chewing Gum,Candy And Chewing Gum,D,FR02
+74,150211,FR011,Sugar,Sugar And Artificial Sweeteners,D,FR01
+75,150212,FR011,Artificial Sweeteners,Sugar And Artificial Sweeteners,D,FR01
+76,150310,FR031,Other Sweets,Other Sweets,D,FR03
+77,160110,FS011,Margarine,Butter And Margarine,D,FS01
+78,160211,FS032,Fats & Oils,Other Fats And Oils,D,FS03
+79,160212,FS021,Salad Dressings,"Mayonnaise, Salad Dressing, And Sandwich Spreads",D,FS02
+80,160310,FJ041,Non-Diary Cream Substitutes,Other Dairy And Related Products,D,FJ04
+81,160320,FS031,Peanut Butter,Peanut Butter And Other Nut Butters,D,FS03
+82,170110,FN011,Cola Drinks,Carbonated Drinks,D,FN01
+83,170210,FN011,Other Carbonated Drinks,Carbonated Drinks,D,FN01
+84,170310,FP011,Roasted Coffee,Coffee,D,FP01
+85,170410,FP011,Instant/Freeze Dried Coffee,Coffee,D,FP01
+86,170510,FN031,Noncarb Frut Flav/Lemade Nonfroz,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+87,170520,FP021,Tea,Tea,D,FP02
+88,170531,FP022,Other Noncarb. Beverages/Ice,Other Beverage Materials,D,FP02
+89,170532,FN031,Bottled Water,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+90,170533,FN031,Sports Drinks,Nonfrozen Noncarbonated Juices And Drinks,D,FN03
+91,180110,FT011,Soup,Soups And Soup Bases,D,FT01
+92,180210,FT021,Frozen Meals,Frozen Prepared Foods,D,FT02
+93,180220,FT021,Froz/Prep. Food Oth Than Meals,Frozen Prepared Foods,D,FT02
+94,180310,FT031,Potato Chips And Other Snacks,Snacks,D,FT03
+95,180320,FT031,Nuts,Snacks,D,FT03
+96,180410,FT041,Salt/Other Seasonings & Spices,Salt And Other Seasonings And Spices,D,FT04
+97,180420,FT042,"Olives, Pickles, Relishes","Olives, Pickles, Relishes",D,FT04
+98,180510,FT043,Sauces And Gravies,Sauces And Gravies,D,FT04
+99,180520,FT044,Other Condiments,"Other Condiments(Excluding Olives, Pickles, Relishes)",D,FT04
+100,180611,FT061,Prepared Salads,Prepared Salads,D,FT06
+101,180612,FT062,Prepared Desserts,Other Miscellaneous Foods,D,FT06
+102,180620,FT051,Baby Food,Baby Food,D,FT05
+103,180710,FT062,Misc. Prepared Foods,Other Miscellaneous Foods,D,FT06
+104,180720,MF021,Vitamin Supplement,Nonprescription Drugs,D,MF02
+105,190111,FV021,Lunch At Fast Food,Limited Service Meals And Snacks,D,FV02
+106,190112,FV011,Lunch At Full Service,Full Service Meals And Snacks,D,FV01
+107,190113,FV041,Lunch At Vending Machine,Food From Vending Machines And Mobile Vendors,D,FV04
+108,190114,FV031,Lunch At Employer/School,Food At Employee Sites And Schools,D,FV03
+109,190211,FV021,Dinner At Fast Food,Limited Service Meals And Snacks,D,FV02
+110,190212,FV011,Dinner At Full Service,Full Service Meals And Snacks,D,FV01
+111,190213,FV041,Dinner At Vending Machine,Food From Vending Machines And Mobile Vendors,D,FV04
+112,190214,FV031,Dinner At Employer/School,Food At Employee Sites And Schools,D,FV03
+113,190311,FV021,Snacks At Fast Food,Limited Service Meals And Snacks,D,FV02
+114,190312,FV011,Snacks At Full Service,Full Service Meals And Snacks,D,FV01
+115,190313,FV041,Snacks At Vend Machine,Food From Vending Machines And Mobile Vendors,D,FV04
+116,190314,FV031,Snacks At Employer/School,Food At Employee Sites And Schools,D,FV03
+117,190321,FV021,Breakfast At Fast Food,Limited Service Meals And Snacks,D,FV02
+118,190322,FV011,Breakfast At Full Service,Full Service Meals And Snacks,D,FV01
+119,190323,FV041,Breakfast At Vending Machine,Food From Vending Machines And Mobile Vendors,D,FV04
+120,190324,FV031,Breakfast At Employer/School,Food At Employee Sites And Schools,D,FV03
+121,190901,FV051,Food Or Board While At School,"Board, Catered Events And Other Food Away From Home",I,FV05
+122,190902,FV051,Food And Bev For Catered Affairs,"Board, Catered Events, And Other Food Away From Home",I,FV05
+123,200111,FW011,Beer And Alc At Home,"Beer, Ale, And Other Malt Beverages At Home",D,FW01
+124,200112,FW011,Non Alcoholic Beer,"Beer, Ale, And Other Malt Beverages At Home",D,FW01
+125,200210,FW021,Whiskey At Home,Distilled Spirits At Home,D,FW02
+126,200310,FW031,Wine At Home,Wine At Home,D,FW03
+127,200410,FW021,Other Alcoholic Bev. At Home,Distilled Spirits At Home,D,FW02
+128,200511,FX011,Beer At Fast Food,Alcoholic Beverages Away From Home,D,FX01
+129,200512,FX011,Beer At Full Service,Alcoholic Beverages Away From Home,D,FX01
+130,200513,FX011,Beer At Vending Machine,Alcoholic Beverages Away From Home,D,FX01
+131,200514,FX011,Beer At Employer,Alcoholic Beverages Away From Home,D,FX01
+132,200515,FX011,Beer At Board,Alcoholic Beverages Away From Home,D,FX01
+133,200516,FX011,Beer At Catered Affairs,Alcoholic Beverages Away From Home,D,FX01
+134,200521,FX011,Wine At Fast Food,Alcoholic Beverages Away From Home,D,FX01
+135,200522,FX011,Wine At Full Service,Alcoholic Beverages Away From Home,D,FX01
+136,200523,FX011,Wine At Vending Machine,Alcoholic Beverages Away From Home,D,FX01
+137,200524,FX011,Wine At Employer,Alcoholic Beverages Away From Home,D,FX01
+138,200525,FX011,Wine At Board,Alcoholic Beverages Away From Home,D,FX01
+139,200526,FX011,Wine At Catered Affairs,Alcoholic Beverages Away From Home,D,FX01
+140,200531,FX011,Alc. Bev Exc Beer/Wine Fast Fd,Alcoholic Beverages Away From Home,D,FX01
+141,200532,FX011,Alc. Bev Exc B/W Full Serv,Alcoholic Beverages Away From Home,D,FX01
+142,200533,FX011,Alc. Bev B/W Vend Mach,Alcoholic Beverages Away From Home,D,FX01
+143,200534,FX011,Alc Bev Exc B/W At Emp,Alcoholic Beverages Away From Home,D,FX01
+144,200535,FX011,Alc Bev Exc B/W At Board,Alcoholic Beverages Away From Home,D,FX01
+145,200536,FX011,Oth Alc. Bev Away From Home,Alcoholic Beverages Away From Home,D,FX01
+146,210110,HA011,Rent Of Dwelling,Rent Of Primary Residence,I,HA01
+147,210210,HB021,Lodging Away From Home,Rental Of Lodging Away From Home,I,HB02
+148,210310,HB011,Housing For Someone At School,Lodging While At School,I,HB01
+149,220121,HD011,Homeowners Insurance Ownd,Tenants' And Household Insurance,I,HD01
+150,230112,HP043,Painting/Papering Labor/Mat Ownd,Inside Home Maintenance And Repair Services,I,HP04
+151,230117,HP043,Repl Dishwash/Disp/Hood Rntr,Inside Home Maintenance And Repair Services,I,HP04
+152,230118,HP043,Repl Dishwash/Disp/Hood Ownd,Inside Home Maintenance And Repair Services,I,HP04
+153,230141,HP041,Repair-Displ/Dwshr/Rang Hd Rntr,Appliance Repair,I,HP04
+154,230142,HP041,Repair-Displ/Dwshr/Rang Hd Ownd,Appliance Repair,I,HP04
+155,230150,HP043,Rep/Maint Labor/Mat Rntr,Inside Home Maintenance And Repair Services,I,HP04
+156,240111,HM011,Paint/Wallpaper And Supp Rntr,"Paint, Wallpaper Tools And Supplies",I,HM01
+157,240112,HM011,Paint/Wallpaper And Supp Ownd,"Paint, Wallpaper Tools And Supplies",I,HM01
+158,240121,HM011,Equip For Paint/Wpaper Rntr,"Paint, Wallpaper Tools And Supplies",I,HM01
+159,240122,HM011,Equip For Paint/Wpaper Ownd,"Paint, Wallpaper Tools And Supplies",I,HM01
+160,240211,HM090,"Mat For Panl/Roof/Siding,Etc Rntr","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+161,240212,HM090,"Mat For Panel/Siding, Etc Ownd","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+162,240221,HM090,"Mat For Patio,Masonry,Etc Rntr","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+163,240222,HM090,"Mat For Patio,Masonry,Etc Ownd","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+164,240311,HM090,Plumbing Supp/Equip Rntr,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+165,240312,HM090,Plumbing Supp/Equip Ownd,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+166,240321,HM090,"Elec Supp, Heat/Cool Equip Rntr","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+167,240322,HM090,"Elec Supp,Heat/Cool Equip Ownd","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+168,250111,HE011,Fuel Oil Rntr,Fuel Oil,I,HE01
+169,250112,HE011,Fuel Oil Ownd,Fuel Oil,I,HE01
+170,250113,HE011,Fuel Oil Ownv,Fuel Oil,I,HE01
+171,250114,HE011,Fuel Oil Rntv,Fuel Oil,I,HE01
+172,250211,HE021,"Gas, Bottled Or Tank Rntr",Other Household Fuels,I,HE02
+173,250212,HE021,"Gas, Bottled Or Tank Ownd",Other Household Fuels,I,HE02
+174,250213,HE021,"Gas,Bottled Or Tank - Ownv & Rvs",Other Household Fuels,I,HE02
+175,250214,HE021,"Gas, Bottled Or Tank Rntv",Other Household Fuels,I,HE02
+176,250911,HE021,Other Fuels Rntr,Other Household Fuels,I,HE02
+177,250912,HE021,Other Fuels Ownd,Other Household Fuels,I,HE02
+178,250913,HE021,Other Fuels Ownv,Other Household Fuels,I,HE02
+179,250914,HE021,Other Fuels Rntv,Other Household Fuels,I,HE02
+180,260111,HF011,Electricity Rntr,Electricity,I,HF01
+181,260112,HF011,Electricity Ownd,Electricity,I,HF01
+182,260113,HF011,Electricity Ownv,Electricity,I,HF01
+183,260114,HF011,Electricity Rntv,Electricity,I,HF01
+184,260211,HF021,Utility--Natural Gas Rntr,Utility (Piped) Gas Service,I,HF02
+185,260212,HF021,Utility--Natural Gas Ownd,Utility (Piped) Gas Service,I,HF02
+186,260213,HF021,Utility--Natural Gas Ownv,Utility (Piped) Gas Service,I,HF02
+187,260214,HF021,Utility--Natural Gas Rntv,Utility (Piped) Gas Service,I,HF02
+188,270102,ED031,Cellular Phone Service (1),Wireless Phone Service,I,ED03
+189,270102,EE041,Cellular Phone Service (1),"Phones, Accessories, And Smartwatches",I,EE04
+190,270106,ED041,Residential Telephone Incl Voip,Land-Line Telephone Services,I,ED04
+191,270211,HG011,Water And Sewerage Maint Rntr,Residential Water And Sewerage Service,I,HG01
+192,270212,HG011,Water And Sewerage Maint Ownd,Residential Water And Sewerage Service,I,HG01
+193,270213,HG011,Water And Sewerage Maint Ownv,Residential Water And Sewerage Service,I,HG01
+194,270214,HG011,Water And Sewerage Maint Rntv,Residential Water And Sewerage Service,I,HG01
+195,270310,RA021,Cable/Satellite/Com Antenna Serv,Cable And Satellite Television Service,I,RA02
+196,270311,RA061,Satellite Radio Service,Recorded Music And Music Subscriptions,I,RA06
+197,270411,HG021,Trash/Garbage Collect Rntr,Garbage And Trash Collection,I,HG02
+198,270412,HG021,Trash/Garbage Collect Ownd,Garbage And Trash Collection,I,HG02
+199,270413,HG021,Trash/Garbage Collect Ownv,Garbage And Trash Collection,I,HG02
+200,270414,HG021,Trash/Garbage Collect Rntv,Garbage And Trash Collection,I,HG02
+201,270901,HP090,Septic Tank Cleaning Rntr,Usampled Household Operations,I,HP09
+202,270902,HP090,Septic Tank Cleaning Ownd,Usampled Household Operations,I,HP09
+203,280110,HH031,Bathroom Linens,Bathroom Linens,D,HH03
+204,280120,HH032,Bedroom Linens,Bedroom Linens,D,HH03
+205,280140,HH033,Kitchen/Dining Room/Othr Linens,Kitchen And Dining Room Linens,D,HH03
+206,280210,HH021,Curtains And Drapes,Curtains And Drapes,I,HH02
+207,280220,HJ021,Slipcovers/Decorative Pillows,"Sofas, Sofa Sleepers, Furniture Covers And Decorative Pillows",I,HJ02
+208,290110,HJ011,Mattress And Springs,Mattresses And Foundations,I,HJ01
+209,290120,HJ012,Other Bedroom Furniture,Bedroom Furniture Other Than Mattresses And Springs,I,HJ01
+210,290210,HJ021,Sofas,"Sofas, Sofa Sleepers, Furniture Covers And Decorative Pillows",I,HJ02
+211,290310,HJ022,Living Room Chairs,Living Room Chairs,I,HJ02
+212,290320,HJ023,Living Room Tables,Living Room Tables,I,HJ02
+213,290410,HJ024,Kitchen/Dining Room Furniture,Kitchen And Dining Room Furniture,I,HJ02
+214,290420,HJ031,Infants Furniture,Infants Furniture,I,HJ03
+215,290430,HJ032,Outdoor Furniture,Outdoor Furniture,I,HJ03
+216,290440,HJ033,"Wall Units, Cabinets, Occas Furn",Occasional Furniture,I,HJ03
+217,300111,HK011,Purch/Inst Refrig/Freezer Rntr,Refrigerators And Freezers,I,HK01
+218,300112,HK011,Purch/Inst Refrig/Freezer Ownd,Refrigerators And Freezers,I,HK01
+219,300216,HK012,Purch/Inst Clths Washr/Dryr Rntr,Washers And Dryers,I,HK01
+220,300217,HK012,Purch/Inst Clths Washr/Dryr Ownd,Washers And Dryers,I,HK01
+221,300311,HK013,"Stoves, Ovens Rntr",Ranges And Cooktops,I,HK01
+222,300312,HK013,"Stoves, Ovens Ownd",Ranges And Cooktops,I,HK01
+223,300321,HK014,Microwave Ovens Rntr,Microwave Ovens,I,HK01
+224,300322,HK014,Microwave Ovens Ownd,Microwave Ovens,I,HK01
+225,300331,HK090,Purch/Inst Port Dishwasher Rntr,Unsampled Appliances,I,HK09
+226,300332,HK090,Purch/Inst Port Dishwasher Ownd,Unsampled Appliances,I,HK09
+227,300411,HK023,Purch/Inst Window A/C Rntr,Other Electric Appliances,I,HK02
+228,300412,HK023,Purch/Inst Window A/C Ownd,Other Electric Appliances,I,HK02
+229,310140,RA011,Televisions,Televisions,I,RA01
+230,310210,RA031,Vcrs/Video Disc Players,Other Video Equipment,I,RA03
+231,310220,RA041,Video Cassettes/Tapes/Discs,Prerecorded Video Discs/Digital Files/Downloads And Other Media,D,RA04
+232,310231,RE012,Video Game Software,"Video Game Consoles, Software, And Accessories",I,RE01
+233,310232,RE012,Video Game Hardware/ Accessories,"Video Game Consoles, Software, And Accessories",I,RE01
+234,310241,RA042,Streaming Video Files,Rental Of Video Discs And Other Media,D,RA04
+235,310242,RA041,Downloading Video Files,Prerecorded Video Discs/Digital Files/Downloads And Other Media,D,RA04
+236,310312,RA051,Phonographs,"Audio Media Players, Recorders, Systems, And Other Equipment",D,RA05
+237,310314,RA051,Digital Audio Players,"Audio Media Players, Recorders, Systems, And Other Equipment",I,RA05
+238,310315,RA031,Digital Media Players & Recorders,Other Video Equipment,D,RA03
+239,310316,RA051,Radios/Speakers/Sound Comp Systms,"Audio Media Players, Recorders, Systems, And Other Equipment",I,RA05
+240,310331,RA051,Misc Sound Equipment,"Audio Media Players, Recorders, Systems, And Other Equipment",D,RA05
+241,310332,RA051,Sound Equip Accessories,"Audio Media Players, Recorders, Systems, And Other Equipment",D,RA05
+242,310334,RA031,Satellite Dishes,Other Video Equipment,I,RA03
+243,310335,RA031,Misc Video Equipment,Other Video Equipment,D,RA03
+244,310340,RA061,"Records,Cds,Audio Tapes",Recorded Music And Music Subscriptions,I,RA06
+245,310350,RA061,Streaming/Downloading Audio,Recorded Music And Music Subscriptions,I,RA06
+246,310400,EE021,Apps/Games/Ringtones For Devices,Computer Software And Blank Media,I,EE02
+247,310900,RA090,Access. For Electronic Equip.,Unsampled Video And Audio,D,RA09
+248,320111,HH011,Floor Coverings (Non-Perm.),Floor Coverings,I,HH01
+249,320120,HH022,Window Coverings,Window Coverings,I,HH02
+250,320130,GE013,Infants Equipment,Infants' Equipment,D,GE01
+251,320140,HN012,Laundry And Cleaning Equip.,Laundry And Cleaning Equipment,D,HN01
+252,320150,HM021,Barbeque Grills And Outdoor Equip,Lawn And Garden And Outdoor Equipment And Grills,D,HM02
+253,320221,HL011,Lamps/Light Fixtures/Ceiling Fans,Lamps And Lighting Fixtures,D,HL01
+254,320232,EE041,Telephones And Accessories,"Phones, Accessories, And Smartwatches",I,EE04
+255,320233,HL012,Clocks And Other Hh Decor Items,Household Decorative Items And Clocks,D,HL01
+256,320330,HL032,Flatware,Flatware,D,HL03
+257,320345,HL031,Dishes/Cups/Glasses/Serving Piecs,Dishes,D,HL03
+258,320370,HL041,Nonelectric Cookware,Nonelectric Cookingware,D,HL04
+259,320380,HL042,Tableware/Non-Elec. Kitware,Nonelectric Kitchenware,D,HL04
+260,320410,HM021,Lawn And Garden Equipment,Lawn And Garden And Outdoor Equipment And Grills,D,HM02
+261,320420,HM012,Power Tools,Power Tools,I,HM01
+262,320430,HM013,Other Hardware,"Miscellaneous Hardware, Supplies And Equipment",D,HM01
+263,320511,HK021,Electric Floor Cleaning Equip,Floor Cleaning Equipment,I,HK02
+264,320512,RE021,Sewing Machines,Sewing Items,I,RE02
+265,320521,HK022,Small Electric Kitchen Appliances,Small Electric Kitchen Appliances,I,HK02
+266,320522,HK023,Portable Heating/Cooling Equip,Other Electric Appliances,I,HK02
+267,320611,HM013,Constrct Mat-Rntr/Udr Cn/Sec Hm,"Miscellaneous Hardware, Supplies And Equipment",I,HM01
+268,320612,HM013,Construction Mat Ownd,"Miscellaneous Hardware, Supplies And Equipment",I,HM01
+269,320624,HH011,Flooring Inst/Rep/Repl Rntr,Floor Coverings,I,HH01
+270,320625,HH011,Flooring Inst/Rep/Repl Ownd,Floor Coverings,I,HH01
+271,320631,HM090,Lndscping Mat-Rntr/Udr Cn/Sc Hm,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+272,320632,HM090,Landscaping Materials Ownd,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+273,320901,HM090,Office Furniture Home Use,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+274,320902,HM014,Hand Tools,Nonpowered Hand Tools,D,HM01
+275,320903,HL021,"Indoor Plants, Fresh Flowers",Indoor Plants And Fresh Cut Flowers,I,HL02
+276,320904,HM090,Closet And Storage Items,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",D,HM09
+277,320905,HM090,Misc. Household Equip/Parts,"Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",D,HM09
+278,330110,HN011,Soaps And Detergents,Laundry And Cleaning Products,D,HN01
+279,330210,HN011,Other Laundry /Cleaning Prods.,Laundry And Cleaning Products,D,HN01
+280,330310,HN021,Paper Towels/Napkins/Toilet Ti,Household Paper Products,D,HN02
+281,330410,GE011,"Stationery, Giftwrap, Etc.","Stationery, Stationery Supplies, Gift Wrap",D,GE01
+282,330510,HN031,Misc Household Products,Miscellaneous Household Products,D,HN03
+283,330511,HM022,Mat For Termte/Pst Cntrl Maintce,"Lawn & Garden Materials, Other Decorative Items & Pesticides",I,HM02
+284,330610,HM022,Lawn And Garden Supplies,"Lawn & Garden Materials, Other Decorative Items & Pesticides",D,HM02
+285,340110,EC011,Postage,Postage,D,EC01
+286,340120,EC021,Delivery Services,Delivery Services,D,EC02
+287,340210,EB031,Babysitting/Childcare,Day Care And Preschool,I,EB03
+288,340310,HP011,Domestic Service,Domestic Services,I,HP01
+289,340410,HP021,Gardening/Lawn Care Service,Gardening And Lawncare Services,I,HP02
+290,340420,HP090,Water Softening Service,Usampled Household Operations,I,HP09
+291,340510,HP031,"Moving, Storage,Freight","Moving, Freight, And Storage Expenses",I,HP03
+292,340520,GD031,"Hshld Lndry,Drycln Not Coin-Op",Laundry And Dry Cleaning Services,D,GD03
+293,340530,GD031,"Coin-Op Hshld Lndry, Dry Cln",Laundry And Dry Cleaning Services,D,GD03
+294,340610,RA090,Repair Of Tv/Radio/Sound Equip,Unsampled Video And Audio,I,RA09
+295,340620,HP041,Repair Of Household Appliances,Appliance Repair,I,HP04
+296,340630,HP042,Reupholstery Of Furniture,Reupholstery Of Furniture,I,HP04
+297,340901,HM090,"Rental/Repair-Tools,Lawn/Garden","Unsampled Tools, Hardware, Outdoor Equipment, And Supplies",I,HM09
+298,340902,RA090,Rental Of Televisions,Unsampled Video And Audio,I,RA09
+299,340903,HP090,Misc. Home Services,Usampled Household Operations,I,HP09
+300,340904,HJ090,Rental Of Furniture,Unsampled Furniture,I,HJ09
+301,340905,RA090,Rental Of Vcr/Radio/Sound Equip,Unsampled Video And Audio,I,RA09
+302,340906,MD031,"Care Of Invalids, Elderly, Etc","Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+303,340907,HK090,Rental Of Household Equipment,Unsampled Appliances,I,HK09
+304,340908,EE090,Rntl Off Equip Non-Bus Use,Unsampled Information And Information Processing,I,EE09
+305,340910,MD022,Adult Day Care Centers,Adult Day Care,I,MD02
+306,340911,HP090,Mngmt/Spec Ser/Security Ownd,Usampled Household Operations,I,HP09
+307,340914,HP090,Serv For Termt/Pst Cntrl,Usampled Household Operations,I,HP09
+308,350110,HD011,Renters Insurance,Tenants' And Household Insurance,I,HD01
+309,360110,AA011,Mens Suits,Men's Suits,I,AA01
+310,360120,AA012,Mens Sportcoats/Tailored Jackets,Men's Sport Coats And Tailored Jackets,D,AA01
+311,360210,AA013,Mens Coats And Jackets,Men's Outerwear,D,AA01
+312,360311,AA021,Mens Underwear,"Men's Underwear, Hosiery, Nightwear, And Swimwear",D,AA02
+313,360312,AA021,Mens Hosiery,"Men's Underwear, Hosiery, Nightwear, And Swimwear",D,AA02
+314,360320,AA021,Mens Nightwear/Loungewear,"Men's Underwear, Hosiery, Nightwear, And Swimwear",D,AA02
+315,360330,AA022,Mens Accessories,Men's Accessories,D,AA02
+316,360360,AA021,Mens Swimwear,"Men's Underwear, Hosiery, Nightwear, And Swimwear",D,AA02
+317,360420,AA033,Mens Sweaters/Shirts/Vests,"Men's Shirts, Sweaters, And Vests",D,AA03
+318,360513,AA041,Mens Pants And Shorts,Men's Pants And Shorts,D,AA04
+319,360901,AA090,Mens Uniforms,Unsampled Men's Apparel,D,AA09
+320,360902,AA090,Mens Costumes,Unsampled Men's Apparel,D,AA09
+321,370110,AB011,Boys Coats And Jackets,Boys' Outerwear,D,AB01
+322,370125,AB012,Boys Sweaters/Shirts/Vests,Boys' Shirts And Sweaters,D,AB01
+323,370211,AB013,Boys Underwear,"Boys' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AB01
+324,370212,AB013,Boys Nightwear,"Boys' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AB01
+325,370213,AB013,Boys Hosiery,"Boys' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AB01
+326,370220,AB013,Boys Accessories,"Boys' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AB01
+327,370311,AB014,"Boys Suits, Sportcoats,Vests","Boys' Suits, Sport Coats, And Pants",D,AB01
+328,370314,AB014,Boys Pants And Shorts,"Boys' Suits, Sport Coats, And Pants",D,AB01
+329,370360,AB013,Boys Swimwear,"Boys' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AB01
+330,370902,AB090,Boys Costumes,Unsampled Boys' Apparel,D,AB09
+331,370903,AB090,Boys Uniforms,Unsampled Boys' Apparel,D,AB09
+332,380110,AC011,Womens Coats And Jackets,Women's Outerwear,D,AC01
+333,380210,AC021,Womens Dresses,Women's Dresses,D,AC02
+334,380311,AC031,"Womens Sportcoats, Tail. Jkts",Women's Tops,D,AC03
+335,380315,AC031,Womens Sweaters/Shirts/Tops,Women's Tops,D,AC03
+336,380320,AC032,Womens Skirts,"Women's Skirts, Pants, And Shorts",D,AC03
+337,380333,AC032,Womens Pants And Shorts,"Women's Skirts, Pants, And Shorts",D,AC03
+338,380360,AC041,Womens Swimwear,"Women's Undergarments, Nightwear, Shapewear, And Swimwear",D,AC04
+339,380410,AC041,Womens Sleepwear,"Women's Undergarments, Nightwear, Shapewear, And Swimwear",D,AC04
+340,380420,AC041,Womens Undergarments,"Women's Undergarments, Nightwear, Shapewear, And Swimwear",D,AC04
+341,380430,AC042,Womens Hosiery,Women's Hosiery And Accessories,D,AC04
+342,380510,AC033,Womens Suits,Women's Suits And Suit Coordinates,D,AC03
+343,380901,AC042,Womens Accessories,Women's Hosiery And Accessories,D,AC04
+344,380902,AC090,Womens Uniforms,Unsampled Women's Apparel,D,AC09
+345,380903,AC090,Womens Costumes,Unsampled Women's Apparel,D,AC09
+346,390110,AD011,Girls Coats And Jackets,Girls' Outerwear,D,AD01
+347,390120,AD012,"Girls Dresses, Suits",Girls' Dresses,D,AD01
+348,390210,AD013,Girls Shirts/Blouses/Sweaters,Girls' Tops,D,AD01
+349,390223,AD014,"Girls Skirts, Pants, And Shorts","Girls' Skirts, Pants, And Shorts",D,AD01
+350,390310,AD016,Girls Underwear And Sleepwear,"Girls' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AD01
+351,390321,AD016,Girls Hosiery,"Girls' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AD01
+352,390322,AD016,Girls Accessories,"Girls' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AD01
+353,390360,AD016,Girls Swimwear,"Girls' Underwear, Nightwear, Hosiery, Accessories, & Swimwear",D,AD01
+354,390901,AD090,Girls Uniforms,Unsampled Girls' Apparel,D,AD09
+355,390902,AD090,Girls Costumes,Unsampled Girls' Apparel,D,AD09
+356,400110,AE011,Mens Footwear,Men's Footwear,D,AE01
+357,400210,AE021,Boys Footwear,Boys' Footwear,D,AE02
+358,400220,AE022,Girls Footwear,Girls' Footwear,D,AE02
+359,400310,AE031,Womens Footwear,Women's Footwear,D,AE03
+360,410110,AF011,Infant Coat/Jacket/Snowsuit,Infants' & Toddlers' Outer/Play/Dress/Sleep Wear & Accessories,D,AF01
+361,410120,AF011,Infant Dresses/Outerwear,Infants' & Toddlers' Outer/Play/Dress/Sleep Wear & Accessories,D,AF01
+362,410130,AF012,Infant Undergarments,Infants' & Toddlers' Underwear & Diapers,D,AF01
+363,410140,AF011,"Infant Nightwear, Loungewear",Infants' & Toddlers' Outer/Play/Dress/Sleep Wear & Accessories,D,AF01
+364,410901,AF011,Infants Accessories,Infants' & Toddlers' Outer/Play/Dress/Sleep Wear & Accessories,D,AF01
+365,420115,RE021,Sewing/Ndlwrk/Quilt Matrls/Items,Sewing Items,I,RE02
+366,430110,AG011,Watches,Watches,I,AG01
+367,430120,AG021,Jewelry,Jewelry,I,AG02
+368,430130,GE012,Luggage,Luggage,D,GE01
+369,440110,GD041,"Shoe Repair, Oth Shoe Service",Shoe Repair And Other Shoe Services,I,GD04
+370,440120,GD031,Coin-Op Apparel Ldry/Dry Clng,Laundry And Dry Cleaning Services,I,GD03
+371,440130,GD042,"Alter/Repair Of Apparel, Access","Clothing, Alterations, Rentals And Repairs",I,GD04
+372,440140,GD042,Clothing Rental,"Clothing, Alterations, Rentals And Repairs",I,GD04
+373,440150,GD043,Watch And Jewelry Repair,Watch And Jewelry Repair,I,GD04
+374,440210,GD031,Apparel Lndry/Dry Clng N/Coin-Op,Laundry And Dry Cleaning Services,I,GD03
+375,440900,GD031,Clothing Storage Outside The Home,Laundry And Dry Cleaning Services,I,GD03
+376,450110,TA011,New Cars,New Car And Truck Purchase,I,TA01
+377,450116,TA011,Trade-In Allowance/New Cars (1),New Car And Truck Purchase,I,TA01
+378,450116,TA021,Trade-In Allowance/New Cars (1),Used Cars And Trucks,I,TA02
+379,450210,TA011,New Trucks,New Car And Truck Purchase,I,TA01
+380,450216,TA011,Trade-In Allow/New Trucks (1),New Car And Truck Purchase,I,TA01
+381,450216,TA021,Trade-In Allow/New Trucks (1),Used Cars And Trucks,I,TA02
+382,450220,TA012,New Motorcycles,New Motorcycles,I,TA01
+383,450226,TA012,Trade-In Allow/New Motorcycles (1),New Motorcycles,I,TA01
+384,450226,TA090,Trade-In Allow/New Motorcycles (1),Unsampled New And Used Motor Vehicles,I,TA09
+385,450350,TA031,Car/Truck Lease Payments,Vehicle Leasing,I,TA03
+386,450352,TA031,Tradein Allow For Car/Truck Lease,Vehicle Leasing,I,TA03
+387,450353,TA031,Cash Dwnpymnt For Car/Truck Lease,Vehicle Leasing,I,TA03
+388,450354,TA031,Termntion Fee For Car/Truck Lease,Vehicle Leasing,I,TA03
+389,450900,TA090,Aircraft,Unsampled New And Used Motor Vehicles,I,TA09
+390,460110,TA021,Used Cars,Used Cars And Trucks,I,TA02
+391,460901,TA021,Used Trucks,Used Cars And Trucks,I,TA02
+392,460902,TA090,Used Motorcycles,Unsampled New And Used Motor Vehicles,I,TA09
+393,460903,TA090,Used Aircraft,Unsampled New And Used Motor Vehicles,I,TA09
+394,470111,TB011,Gasoline (1),Regular Unleaded Gasoline,I,TB01
+395,470111,TB012,Gasoline (1),Mid-Grade Unleaded Gasoline,I,TB01
+396,470111,TB013,Gasoline (1),Premium Unleaded Gasoline,I,TB01
+397,470111,TB021,Gasoline (1),Automotive Diesel Fuel,I,TB02
+398,470111,TB022,Gasoline (1),Alternative Motor Fuels,I,TB02
+399,470112,TB021,Diesel Fuel,Automotive Diesel Fuel,I,TB02
+400,470113,TB011,Gasoline On Out Of Town Trips (1),Regular Unleaded Gasoline,I,TB01
+401,470113,TB012,Gasoline On Out Of Town Trips (1),Mid-Grade Unleaded Gasoline,I,TB01
+402,470113,TB013,Gasoline On Out Of Town Trips (1),Premium Unleaded Gasoline,I,TB01
+403,470113,TB021,Gasoline On Out Of Town Trips (1),Automotive Diesel Fuel,I,TB02
+404,470113,TB022,Gasoline On Out Of Town Trips (1),Alternative Motor Fuels,I,TB02
+405,470211,TC022,Motoroil,"Motor Oil, Coolant And Fluids",I,TC02
+406,470212,TC022,Motor Oil On Out Of Town Trips,"Motor Oil, Coolant And Fluids",I,TC02
+407,470220,TC022,Coolant/Additives/Brk/Trns Fld,"Motor Oil, Coolant And Fluids",I,TC02
+408,480110,TC011,Tires Purchased/Replaced/Install,Tires,I,TC01
+409,480212,TC021,Vehicle Products & Services,Vehicle Parts And Equipment Other Than Tires,D,TC02
+410,480213,TC021,Parts/Equip/Accessories,Vehicle Parts And Equipment Other Than Tires,I,TC02
+411,480216,TD021,Vehicle Clean Srvcs Incl Carwash,Motor Vehicle Maintenance And Servicing,I,TD02
+412,490110,TD011,Body Work And Painting,Motor Vehicle Body Work,I,TD01
+413,490300,TD031,Vehicle Or Engine Repairs,Motor Vehicle Repair,I,TD03
+414,490311,TD021,Motor Tune-Up,Motor Vehicle Maintenance And Servicing,I,TD02
+415,490312,TD021,"Lube, Oil Change And Oil Filters",Motor Vehicle Maintenance And Servicing,I,TD02
+416,490313,TD021,"Frnt End Align, Wheel Bal/Rotat",Motor Vehicle Maintenance And Servicing,I,TD02
+417,490314,TD021,Shock Absorber Replacement,Motor Vehicle Maintenance And Servicing,I,TD02
+418,490318,TD021,Tire Repair And Oth Repair Work,Motor Vehicle Maintenance And Servicing,I,TD02
+419,490501,TD021,Vehicle Accessories Incl. Labor,Motor Vehicle Maintenance And Servicing,I,TD02
+420,490900,TD090,Auto Repair Service Policy,Unsampled Vehicle Maintenance And Repair,I,TD09
+421,500110,TE011,Vehicle Insurance,Motor Vehicle Insurance,I,TE01
+422,520111,TF011,Vehicle Registration State,State Vehicle Registration And Driver's License,I,TF01
+423,520112,TF011,Vehicle Registration Local,State Vehicle Registration And Driver's License,I,TF01
+424,520310,TF011,Drivers License,State Vehicle Registration And Driver's License,I,TF01
+425,520410,TD021,Vehicle Inspection,Motor Vehicle Maintenance And Servicing,I,TD02
+426,520516,TA041,Auto/Truck Rental,Automobile And Truck Rental,I,TA04
+427,520517,TA041,Auto/Truck Rental Out-Of-Town Trp,Automobile And Truck Rental,I,TA04
+428,520531,TF031,Prkng Fee In Hme City Excl Rsdnc,Parking Fees And Tolls,I,TF03
+429,520532,TF031,"Parking Fees, Out-Of-Town Trip",Parking Fees And Tolls,I,TF03
+430,520541,TF031,Tolls Or Electronic Toll Passes,Parking Fees And Tolls,I,TF03
+431,520542,TF031,Tolls On Out-Of-Town Trips,Parking Fees And Tolls,I,TF03
+432,520550,TD021,Towing Charges,Motor Vehicle Maintenance And Servicing,I,TD02
+433,520901,TF090,Docking/Landing Fees,Unsampled Motor Vehicle Fees,I,TF09
+434,520902,TA090,Motorcycle Rental,Unsampled New And Used Motor Vehicles,I,TA09
+435,520903,TA090,Aircraft Rental,Unsampled New And Used Motor Vehicles,I,TA09
+436,520904,TA090,Rental Non-Camper Trailer,Unsampled New And Used Motor Vehicles,I,TA09
+437,520905,TA090,Motorcycle Rental Out-Of-Town,Unsampled New And Used Motor Vehicles,I,TA09
+438,520906,TA090,Aircraft Rental/Out-Of-Town Tr,Unsampled New And Used Motor Vehicles,I,TA09
+439,520907,RC090,Boat/Trailer Rent Out Of Town,Unsampled Sporting Goods,I,RC09
+440,530110,TG011,Airline Fares,Airline Fares,I,TG01
+441,530210,TG021,Intercity Bus Fares,Intercity Bus Fares,I,TG02
+442,530311,TG031,Intracity Mass Transit Fares,Intracity Mass Transit,I,TG03
+443,530312,TG031,Local Trans. Out Of Town Trips,Intracity Mass Transit,I,TG03
+444,530411,TG032,Taxi Fares On Trips,Taxi Fares,I,TG03
+445,530412,TG032,Taxi Fares And Limousine Service,Taxi Fares,D,TG03
+446,530510,TG022,Intercity Train Fares,Intercity Train Fares,I,TG02
+447,530901,TG023,Ship Fares,Ship Fares,I,TG02
+448,530902,TG090,School Bus,Unsampled Public Transportation,I,TG09
+449,540000,MF011,Prescription Drugs,Prescription Drugs,I,MF01
+450,550110,MC031,Eyeglasses And Contact Lenses,Eyeglasses And Eyecare,I,MC03
+451,550210,MF021,Over-The-Counter Drugs,Nonprescription Drugs,D,MF02
+452,550310,MF021,Topicals And Dressings (1),Nonprescription Drugs,D,MF02
+453,550310,MG011,Topicals And Dressings (1),Dressings And First Aid Kits,D,MG01
+454,550320,MG012,Medical Equip. For General Use,Medical Equipment For General Use,I,MG01
+455,550330,MG013,Supportive/Conval Med. Equip.,Supportive And Convalescent Medical Equipment,I,MG01
+456,550340,MC041,Hearing Aids,Services By Other Medical Professionals,I,MC04
+457,550410,MF021,Nonprescrip Vitamins,Nonprescription Drugs,D,MF02
+458,560110,MC011,Physicians Services,Physicians' Services,I,MC01
+459,560210,MC021,Dental Services,Dental Services,I,MC02
+460,560310,MC031,Eyecare Services,Eyeglasses And Eyecare,I,MC03
+461,560330,MC041,"Lab Tests, X-Rays",Services By Other Medical Professionals,I,MC04
+462,560410,MD031,Non Physcns Servc Inside Home,"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+463,560420,MC041,Non Physcns Servc Outside Home,Services By Other Medical Professionals,I,MC04
+464,570111,MD011,Hospital Rooms & Services,Hospital Services,I,MD01
+465,570220,MD021,Care In Convl Or Nursing Home,Nursing And Convalescent Home Care,I,MD02
+466,570230,MD011,Other Medical Care Service,Hospital Services,I,MD01
+467,570901,MG090,Rental Of Medical/Surgical Equip,Unsampled Rent Or Repair Of Medical Equipment,I,MG09
+468,570902,MG090,Repair Of Medical Equipment,Unsampled Rent Or Repair Of Medical Equipment,D,MG09
+469,570903,MG090,Rental Of Suportive/Conval Equip,Unsampled Rent Or Repair Of Medical Equipment,I,MG09
+470,580115,MC011,Fee For Serv Hlth Pln (No Bcbs) (1),Physicians' Services,I,MC01
+471,580115,MC021,Fee For Serv Hlth Pln (No Bcbs) (1),Dental Services,I,MC02
+472,580115,MC031,Fee For Serv Hlth Pln (No Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+473,580115,MC041,Fee For Serv Hlth Pln (No Bcbs) (1),Services By Other Medical Professionals,I,MC04
+474,580115,MD011,Fee For Serv Hlth Pln (No Bcbs) (1),Hospital Services,I,MD01
+475,580115,MD021,Fee For Serv Hlth Pln (No Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+476,580115,MD031,Fee For Serv Hlth Pln (No Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+477,580115,ME011,Fee For Serv Hlth Pln (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+478,580115,MF011,Fee For Serv Hlth Pln (No Bcbs) (1),Prescription Drugs,I,MF01
+479,580115,MG013,Fee For Serv Hlth Pln (No Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+480,580116,MC011,Fee For Serv Hlth Pln (Bcbs) (1),Physicians' Services,I,MC01
+481,580116,MC021,Fee For Serv Hlth Pln (Bcbs) (1),Dental Services,I,MC02
+482,580116,MC031,Fee For Serv Hlth Pln (Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+483,580116,MC041,Fee For Serv Hlth Pln (Bcbs) (1),Services By Other Medical Professionals,I,MC04
+484,580116,MD011,Fee For Serv Hlth Pln (Bcbs) (1),Hospital Services,I,MD01
+485,580116,MD021,Fee For Serv Hlth Pln (Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+486,580116,MD031,Fee For Serv Hlth Pln (Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+487,580116,ME011,Fee For Serv Hlth Pln (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+488,580116,MF011,Fee For Serv Hlth Pln (Bcbs) (1),Prescription Drugs,I,MF01
+489,580116,MG013,Fee For Serv Hlth Pln (Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+490,580311,MC011,Hlth Maint. Org (No Bcbs) (1),Physicians' Services,I,MC01
+491,580311,MC021,Hlth Maint. Org (No Bcbs) (1),Dental Services,I,MC02
+492,580311,MC031,Hlth Maint. Org (No Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+493,580311,MC041,Hlth Maint. Org (No Bcbs) (1),Services By Other Medical Professionals,I,MC04
+494,580311,MD011,Hlth Maint. Org (No Bcbs) (1),Hospital Services,I,MD01
+495,580311,MD021,Hlth Maint. Org (No Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+496,580311,MD031,Hlth Maint. Org (No Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+497,580311,ME011,Hlth Maint. Org (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+498,580311,MF011,Hlth Maint. Org (No Bcbs) (1),Prescription Drugs,I,MF01
+499,580311,MG013,Hlth Maint. Org (No Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+500,580312,MC011,Hlth Maint. Org (Bcbs) (1),Physicians' Services,I,MC01
+501,580312,MC021,Hlth Maint. Org (Bcbs) (1),Dental Services,I,MC02
+502,580312,MC031,Hlth Maint. Org (Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+503,580312,MC041,Hlth Maint. Org (Bcbs) (1),Services By Other Medical Professionals,I,MC04
+504,580312,MD011,Hlth Maint. Org (Bcbs) (1),Hospital Services,I,MD01
+505,580312,MD021,Hlth Maint. Org (Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+506,580312,MD031,Hlth Maint. Org (Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+507,580312,ME011,Hlth Maint. Org (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+508,580312,MF011,Hlth Maint. Org (Bcbs) (1),Prescription Drugs,I,MF01
+509,580312,MG013,Hlth Maint. Org (Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+510,580401,MC041,Long Term Care Ins (No Bcbs) (1),Services By Other Medical Professionals,I,MC04
+511,580401,MD021,Long Term Care Ins (No Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+512,580401,MD022,Long Term Care Ins (No Bcbs) (1),Adult Day Care,I,MD02
+513,580401,MD031,Long Term Care Ins (No Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+514,580401,ME041,Long Term Care Ins (No Bcbs) (1),"Medicare And Commercial Medicare Supplements, Retained Earnings",I,ME04
+515,580402,MC041,Long Term Care Ins (Bcbs) (1),Services By Other Medical Professionals,I,MC04
+516,580402,MD021,Long Term Care Ins (Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+517,580402,MD022,Long Term Care Ins (Bcbs) (1),Adult Day Care,I,MD02
+518,580402,MD031,Long Term Care Ins (Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+519,580402,ME041,Long Term Care Ins (Bcbs) (1),"Medicare And Commercial Medicare Supplements, Retained Earnings",I,ME04
+520,580411,MC021,Dental Care Ins (No Bcbs) (1),Dental Services,I,MC02
+521,580411,ME011,Dental Care Ins (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+522,580412,MC021,Dental Care Ins (Bcbs) (1),Dental Services,I,MC02
+523,580412,ME011,Dental Care Ins (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+524,580421,ME011,Prescript Drug Ins (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+525,580421,MF011,Prescript Drug Ins (No Bcbs) (1),Prescription Drugs,I,MF01
+526,580422,ME011,Prescript Drug Ins (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+527,580422,MF011,Prescript Drug Ins (Bcbs) (1),Prescription Drugs,I,MF01
+528,580431,MC031,Vision Care Ins (No Bcbs)  (1),Eyeglasses And Eyecare,I,MC03
+529,580431,ME011,Vision Care Ins (No Bcbs)  (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+530,580432,MC031,Vision Care Ins (Bcbs)  (1),Eyeglasses And Eyecare,I,MC03
+531,580432,ME011,Vision Care Ins (Bcbs)  (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+532,580441,MC011,Oth Sngle Srvc Ins (No Bcbs) (1),Physicians' Services,I,MC01
+533,580441,MC021,Oth Sngle Srvc Ins (No Bcbs) (1),Dental Services,I,MC02
+534,580441,MC031,Oth Sngle Srvc Ins (No Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+535,580441,MC041,Oth Sngle Srvc Ins (No Bcbs) (1),Services By Other Medical Professionals,I,MC04
+536,580441,MD011,Oth Sngle Srvc Ins (No Bcbs) (1),Hospital Services,I,MD01
+537,580441,MD021,Oth Sngle Srvc Ins (No Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+538,580441,MD031,Oth Sngle Srvc Ins (No Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+539,580441,ME011,Oth Sngle Srvc Ins (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+540,580441,MF011,Oth Sngle Srvc Ins (No Bcbs) (1),Prescription Drugs,I,MF01
+541,580441,MG013,Oth Sngle Srvc Ins (No Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+542,580442,MC011,Oth Sngle Srvc Ins (Bcbs) (1),Physicians' Services,I,MC01
+543,580442,MC021,Oth Sngle Srvc Ins (Bcbs) (1),Dental Services,I,MC02
+544,580442,MC031,Oth Sngle Srvc Ins (Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+545,580442,MC041,Oth Sngle Srvc Ins (Bcbs) (1),Services By Other Medical Professionals,I,MC04
+546,580442,MD011,Oth Sngle Srvc Ins (Bcbs) (1),Hospital Services,I,MD01
+547,580442,MD021,Oth Sngle Srvc Ins (Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+548,580442,MD031,Oth Sngle Srvc Ins (Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+549,580442,ME011,Oth Sngle Srvc Ins (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+550,580442,MF011,Oth Sngle Srvc Ins (Bcbs) (1),Prescription Drugs,I,MF01
+551,580442,MG013,Oth Sngle Srvc Ins (Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+552,580901,MC011,Medicare Payments (1),Physicians' Services,I,MC01
+553,580901,MC021,Medicare Payments (1),Dental Services,I,MC02
+554,580901,MC031,Medicare Payments (1),Eyeglasses And Eyecare,I,MC03
+555,580901,MC041,Medicare Payments (1),Services By Other Medical Professionals,I,MC04
+556,580901,MD011,Medicare Payments (1),Hospital Services,I,MD01
+557,580901,MD021,Medicare Payments (1),Nursing And Convalescent Home Care,I,MD02
+558,580901,MG013,Medicare Payments (1),Supportive And Convalescent Medical Equipment,I,MG01
+559,580903,MC011,Coml Medicare Supplement (No Bcbs) (1),Physicians' Services,I,MC01
+560,580903,MC021,Coml Medicare Supplement (No Bcbs) (1),Dental Services,I,MC02
+561,580903,MC031,Coml Medicare Supplement (No Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+562,580903,MC041,Coml Medicare Supplement (No Bcbs) (1),Services By Other Medical Professionals,I,MC04
+563,580903,MD011,Coml Medicare Supplement (No Bcbs) (1),Hospital Services,I,MD01
+564,580903,MD021,Coml Medicare Supplement (No Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+565,580903,MD031,Coml Medicare Supplement (No Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+566,580903,ME011,Coml Medicare Supplement (No Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+567,580903,MF011,Coml Medicare Supplement (No Bcbs) (1),Prescription Drugs,I,MF01
+568,580903,MG013,Coml Medicare Supplement (No Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+569,580904,MC011,Coml Medicare Supplement (Bcbs) (1),Physicians' Services,I,MC01
+570,580904,MC021,Coml Medicare Supplement (Bcbs) (1),Dental Services,I,MC02
+571,580904,MC031,Coml Medicare Supplement (Bcbs) (1),Eyeglasses And Eyecare,I,MC03
+572,580904,MC041,Coml Medicare Supplement (Bcbs) (1),Services By Other Medical Professionals,I,MC04
+573,580904,MD011,Coml Medicare Supplement (Bcbs) (1),Hospital Services,I,MD01
+574,580904,MD021,Coml Medicare Supplement (Bcbs) (1),Nursing And Convalescent Home Care,I,MD02
+575,580904,MD031,Coml Medicare Supplement (Bcbs) (1),"Care Of Invalids,The Elderly, And Convalescents In The Home",I,MD03
+576,580904,ME011,Coml Medicare Supplement (Bcbs) (1),"Commercial Health Insurance, Retained Earnings",I,ME01
+577,580904,MF011,Coml Medicare Supplement (Bcbs) (1),Prescription Drugs,I,MF01
+578,580904,MG013,Coml Medicare Supplement (Bcbs) (1),Supportive And Convalescent Medical Equipment,I,MG01
+579,580907,MF011,Medicare Pres. Drug Premiums,Prescription Drugs,I,MF01
+580,590230,RG022,"Books, Digital Books, Book Subscr",Books Purchased At Retail Outlets Other Than Book Clubs,I,RG02
+581,590310,RG012,Magazine/Newspaper Subscription,Subscriptions To Newspapers And Magazines,I,RG01
+582,590410,RG011,Magazine/Newspaper Single Copy,Single Copy Newspapers And Magazines,I,RG01
+583,590900,RG090,Newsletters,Unsampled Recreational Reading Materials,D,RG09
+584,600110,RC011,Outboard Motor,Outboard Motors And Powered Sports Vehicles,I,RC01
+585,600121,RC012,Boat W/O Motor/Boat Trailers,Unpowered Boats And Trailers,I,RC01
+586,600122,RC012,Trail/Oth Attachable Campers,Unpowered Boats And Trailers,I,RC01
+587,600132,RC011,Purchase Of Boat With Motor,Outboard Motors And Powered Sports Vehicles,I,RC01
+588,600141,TA090,Purchase Of Motor Home,Unsampled New And Used Motor Vehicles,I,TA09
+589,600142,RC011,Purchase Of Other Vehicle,Outboard Motors And Powered Sports Vehicles,I,RC01
+590,600210,RC021,General Sport/Exercise Equip,General Sports Equipment Excluding Water,I,RC02
+591,600310,RC013,Bicycles,Bicycles And Accessories,I,RC01
+592,600311,TG031,Bike-Sharing/E-Scooters,Intracity Mass Transit,I,TG03
+593,600410,RC023,Camping Equipment,"Hunting, Fishing And Camping Gear",D,RC02
+594,600420,RC023,"Hunting, Fishing Equipment","Hunting, Fishing And Camping Gear",D,RC02
+595,600430,RC021,Winter Sport Equipment,General Sports Equipment Excluding Water,I,RC02
+596,600901,RC022,Water Sport Equipment,Water Sports Equipment,I,RC02
+597,600902,RC021,Other Sport Equipment,General Sports Equipment Excluding Water,I,RC02
+598,600903,EE042,Global Positioning System Device,"Calculators,Typewriters,& Other Information Processing Equipment",D,EE04
+599,610110,RE011,Toys Games Arts Crafts Tricycles,"Toys, Games, Hobbies, And Playground Equipment",D,RE01
+600,610120,RE011,Playground Equipment,"Toys, Games, Hobbies, And Playground Equipment",I,RE01
+601,610130,RE031,Music Instruments/Accessories,Music Instruments And Accessories,I,RE03
+602,610210,RD011,Film,Film And Photographic Supplies,I,RD01
+603,610220,RD011,Other Photographic Supplies,Film And Photographic Supplies,D,RD01
+604,610230,RD012,Photographic Equipment,Photographic Equipment,I,RD01
+605,610310,RB011,Pet Food,Pet Food,D,RB01
+606,610320,RB012,Pet-Purchase/Supplies/Medicine,"Purchase Of Pets, Pet Supplies, Accessories",I,RB01
+607,610901,RE090,Fireworks,Unsampled Recreational Goods,D,RE09
+608,610902,RE090,Souvenirs,Unsampled Recreational Goods,D,RE09
+609,610903,RE090,Visual Goods,Unsampled Recreational Goods,D,RE09
+610,620111,RF011,Social/Recre/Civic Club Membership,Club Dues And Fees For Participant Sports/Group Exercises,I,RF01
+611,620112,GD051,Credit Card Memberships,Checking Account And Other Bank Services,I,GD05
+612,620114,TF032,Auto Service Clubs/Gps Services,Automobile Service Clubs,I,TF03
+613,620115,RF011,Shopping Club Memb Fees,Club Dues And Fees For Participant Sports/Group Exercises,I,RF01
+614,620121,RF011,Fees For Participant Sports,Club Dues And Fees For Participant Sports/Group Exercises,D,RF01
+615,620122,RF011,Partic. Sports Out-Of-Town Tri,Club Dues And Fees For Participant Sports/Group Exercises,I,RF01
+616,620212,RF021,"Movie, Oth Adm. Out-Of-Town","Admission To Movies, Theaters, Concerts & Other Recurring Events",I,RF02
+617,620213,RF021,Tkts To Play/Theatr/Opera/Concert,"Admission To Movies, Theaters, Concerts & Other Recurring Events",I,RF02
+618,620215,RF021,Tickets To Movies,"Admission To Movies, Theaters, Concerts & Other Recurring Events",I,RF02
+619,620216,RF021,Tkts To Parks Or Museums,"Admission To Movies, Theaters, Concerts & Other Recurring Events",I,RF02
+620,620221,RF022,Admission To Sporting Events,Admission To Sporting Events,I,RF02
+621,620222,RF022,Adm To Sprts Events Out-Of-Tow,Admission To Sporting Events,I,RF02
+622,620310,RF031,Fees For Recreational Lessons,Fees For Lessons Or Instructions,I,RF03
+623,620320,RD021,Photographer Fees,Photographer's Fees,I,RD02
+624,620330,RD022,Film Processing,Photo Processing,I,RD02
+625,620410,RB021,Pet Services,Pet Services,I,RB02
+626,620420,RB022,Vet Services,Veterinarian Services,D,RB02
+627,620510,RF021,Admissions Misc,"Admission To Movies, Theaters, Concerts & Other Recurring Events",D,RF02
+628,620610,RF090,Misc. Entertainment Services,Unsampled Recreation Services,D,RF09
+629,620710,RF090,Camp Fees,Unsampled Recreation Services,D,RF09
+630,620810,RF090,Ren/Rep Sp/Phot/Equp/Passp,Unsampled Recreation Services,D,RF09
+631,620903,RF090,"Oth Ent Serv, Out-Of-Town Trip",Unsampled Recreation Services,I,RF09
+632,620904,RE090,Rent/Rep Music Instruments,Unsampled Recreational Goods,I,RE09
+633,620905,RD090,Rent/Rep Photo Equip,Unsampled Photography,I,RD09
+634,620906,RC090,Rental Of Boat,Unsampled Sporting Goods,I,RC09
+635,620908,RC090,Rent/Repair Of Misc Sports Equ,Unsampled Sporting Goods,I,RC09
+636,620909,TA090,Rental Camper On Trips,Unsampled New And Used Motor Vehicles,I,TA09
+637,620912,RA042,Rntl Video Cass/Tapes/Discs/Films,Rental Of Video Discs And Other Media,D,RA04
+638,620913,RF090,Pinball/Electronic Video Games,Unsampled Recreation Services,D,RF09
+639,620915,RF090,Sport Veh Rental,Unsampled Recreation Services,D,RF09
+640,620917,RE090,Rental Of Video Hardwr/Accessor,Unsampled Recreational Goods,I,RE09
+641,620918,RA042,Rental Of Video Software,Rental Of Video Discs And Other Media,I,RA04
+642,620919,TA090,Rental Other Vehicles On Trips,Unsampled New And Used Motor Vehicles,I,TA09
+643,620921,TA090,Rental Of Motor Home,Unsampled New And Used Motor Vehicles,I,TA09
+644,620922,TA090,Rental Of Other Rvs,Unsampled New And Used Motor Vehicles,I,TA09
+645,620930,RF011,Online Gaming Services,Club Dues And Fees For Participant Sports/Group Exercises,D,RF01
+646,630110,GA011,Cigarettes,Cigarettes,I,GA01
+647,630210,GA021,Other Tobacco Products,Tobacco Products Other Than Cigarettes,I,GA02
+648,630220,GA090,Smoking Accessories,Unsampled Tobacco And Smoking Products,D,GA09
+649,640110,GB011,Hair Care Products,Products For The Hair,D,GB01
+650,640120,GB011,Non-Elec Articles For The Hair,Products For The Hair,D,GB01
+651,640130,GB090,Wigs And Hairpieces,Unsampled Personal Care Products,I,GB09
+652,640210,GB012,"Oral Hygiene Products,Articles",Nonelectric Dental And Shaving Products,D,GB01
+653,640220,GB012,Shaving Needs,Nonelectric Dental And Shaving Products,D,GB01
+654,640310,GB021,"Cosmetics, Perfume, Bath Prep",Cosmetics/Perfume/Bath/Nail Preparations And Implements,D,GB02
+655,640410,GB013,"Deod,Fem Hyg, Misc. Pers. Care","Deodorant, Suntan, Sanitary & Footcare Products",D,GB01
+656,640420,GB014,Electric Personal Care Appliances,Electric Personal Care Appliances,I,GB01
+657,640430,GB013,Adult Diapers,"Deodorant, Suntan, Sanitary & Footcare Products",D,GB01
+658,650310,GC011,Pers. Care Serv.,Haircuts And Other Personal Care Services,I,GC01
+659,650900,GB090,Repair Of Pers. Care App.,Unsampled Personal Care Products,D,GB09
+660,660115,EA011,School Bk/Supl/Equip For College,College Textbooks,I,EA01
+661,660215,EA012,School Book for Elem/HS,Elementary And High School Books And Supplies,I,EA01
+662,660415,EA090,School Book for Voc/Tech,Unsampled Educational Books And Supplies,I,EA09
+663,660903,EA090,"School Book Day Care, Nurs",Unsampled Educational Books And Supplies,I,EA09
+664,660905,EA090,School Book Other Schools,Unsampled Educational Books And Supplies,I,EA09
+665,660906,EA090,School Supl/Equip,Unsampled Educational Books And Supplies,I,EA09
+666,670110,EB011,College Tuition,College Tuition And Fixed Fees,I,EB01
+667,670210,EB021,Elem./H.S. Tuition,Elementary And High School Tuition And Fixed Fees,I,EB02
+668,670310,EB031,Day Care/Nurs/Prsch Exp Incl Tuit,Day Care And Preschool,I,EB03
+669,670410,EB041,Voc/ Tech School Tuition,Technical And Business School Tuition And Fixed Fees,I,EB04
+670,670901,EB041,Other School Tuition,Technical And Business School Tuition And Fixed Fees,I,EB04
+671,670902,EB090,Oth Sch Expenses Includ Rentals,"Unsmapled Tuition, Other School Fees, And Childcare",I,EB09
+672,670903,EB090,Test Prep/Tutoring Services,"Unsmapled Tuition, Other School Fees, And Childcare",I,EB09
+673,680110,GD011,Legal Fees,Legal Services,I,GD01
+674,680140,GD021,Funeral Expense,Funeral Expenses,I,GD02
+675,680210,GD051,Safe Deposit Box Rental,Checking Account And Other Bank Services,I,GD05
+676,680220,GD051,Check Accts / Oth Bank Serv Chgs,Checking Account And Other Bank Services,I,GD05
+677,680320,FV051,Rental Of Party Supp Cat Affairs,"Board, Catered Events And Other Food Away From Home",I,FV05
+678,680901,GD021,"Cemetery Lots,Vaults,Maint Fees",Funeral Expenses,I,GD02
+679,680902,GD052,Accounting Fees,Tax Return Preparation And Other Accounting Fees,I,GD05
+680,680903,GD090,Misc. Pers. Services,Unsampled Items,D,GD09
+681,680904,GD090,Dating Services,Unsampled Items,I,GD09
+682,680905,RF011,Vacation Clubs,Club Dues And Fees For Participant Sports/Group Exercises,I,RF01
+683,690111,EE011,Compter/Compter Hrdwar N-Bus Use,Personal Computers And Peripheral Equipment,I,EE01
+684,690113,EE090,"Repair-Cmptr,Cmptr Sys N-B",Unsampled Information And Information Processing,I,EE09
+685,690114,EE031,Computer Information Services,Internet Access And Other Information Services,I,EE03
+686,690116,EE031,Internet Services Away From Home,Internet Access And Other Information Services,I,EE03
+687,690117,EE021,Portable Memory,Computer Software And Blank Media,I,EE02
+688,690118,EE011,Digital Book Readers,Personal Computers And Peripheral Equipment,I,EE01
+689,690119,EE021,Computer Software,Computer Software And Blank Media,I,EE02
+690,690120,EE011,Computer Accessories,Personal Computers And Peripheral Equipment,D,EE01
+691,690230,EE042,Typwrits/Oth Off Mach Non-Bus Use,"Calculators,Typewriters,& Other Information Processing Equipment",I,EE04
+692,690244,HK023,Oth Hh Appl Rntr,Other Electric Appliances,I,HK02
+693,690245,HK023,Oth Hh Appl Ownd,Other Electric Appliances,I,HK02
+694,690310,EE011,Installation For Computers,Personal Computers And Peripheral Equipment,I,EE01
+695,690320,RA011,Installation For Tvs,Televisions,I,RA01
+696,690330,RA031,Installation Satellite Tv Equip,Other Video Equipment,I,RA03
+697,690340,RA051,Installation Of Sound Systems,"Audio Media Players, Recorders, Systems, And Other Equipment",I,RA05
+698,690350,RA031,Install Of Other Video/Sound Syst,Other Video Equipment,I,RA03
+699,800700,FV051,Meals As Pay,"Board, Catered Events And Other Food Away From Home",I,FV05
+700,800710,HA011,Rent As Pay,Rent Of Primary Residence,I,HA01
+701,860100,TA021,Amt Auto Sold Or Reimbursed,Used Cars And Trucks,I,TA02
+702,860200,TA021,Amt Truck Sold Or Reimbursed,Used Cars And Trucks,I,TA02
+703,860301,TA090,Amt Motor Home Sold/Reimb,Unsampled New And Used Motor Vehicles,I,TA09
+704,860302,RC011,Amt Oth Vehicle Sold/Reimb,Outboard Motors And Powered Sports Vehicles,I,RC01
+705,860500,TA090,Amt Motorcycle Sold/Reim,Unsampled New And Used Motor Vehicles,I,TA09
+706,860600,RC011,Amt Boat With Motor Sold/Reim,Outboard Motors And Powered Sports Vehicles,I,RC01
+707,860800,TA090,Amt Plane Sold/Reim,Unsampled New And Used Motor Vehicles,I,TA09
+708,910104,HC011,Rental Equivalence Of Owned Home,Owners' Equivalent Rent Of Primary Residence,I,HC01
+709,910105,HC090,Rent Equiv Vac Home Not Avail Rnt,Unsampled Owners' Equivalent Rent Of Secondary Residence,I,HC09
+710,910106,HC090,Rent Equiv Vac Home Avail For Rnt,Unsampled Owners' Equivalent Rent Of Secondary Residence,I,HC09
+711,910107,HC090,Rental Equivalence For Timeshares,Unsampled Owners' Equivalent Rent Of Secondary Residence,I,HC09
+712,950024,TF011,Vehicle Personal Property Taxes,State Vehicle Registration And Driver's License,I,TF01

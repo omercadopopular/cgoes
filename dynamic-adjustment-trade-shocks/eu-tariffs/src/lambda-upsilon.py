@@ -5,7 +5,8 @@ Created on Sat Dec 28 09:38:34 2024
 @author: andre
 """
 
-Path = r'C:\Users\andre\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files'
+Path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files'
+outpath = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files'
 File = 'euenlarge_isd_base.dta'
 
 import pandas as pd
@@ -34,7 +35,6 @@ cols = {
     }
 
 mdf = pd.melt(df[['dlambda','dupsilon','horz']].rename(columns=cols), id_vars=['horz'])
-outpath = r'C:\Users\andre\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\figs'
 
 #######################3
 
