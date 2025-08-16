@@ -5,9 +5,9 @@ Created on Sat Dec 28 09:38:34 2024
 @author: andre
 """
 
-path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks'
+path = r'/u/main/tradeadj/'
 
-data = r'data\work\model\euenlarge'
+data = r'data/work/model/euenlarge'
 infile = 'd_nhorz5.dta'
 infile_w = 'welfare_nhorz5.dta'
 

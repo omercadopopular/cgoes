@@ -5,9 +5,9 @@ Created on Fri Dec 27 16:05:33 2024
 @author: cbezerradegoes
 """
 
-path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks'
+path = r'/u/main/tradeadj/'
 
-data = r'data\work\ICIO'
+data = r'data/work/ICIO'
 infile_x = 'xtau.dta'
 infile_m = 'mtau.dta'
 

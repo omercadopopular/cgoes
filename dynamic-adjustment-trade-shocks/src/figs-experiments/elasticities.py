@@ -5,7 +5,7 @@ Created on Fri Mar 14 10:43:51 2025
 @author: andre
 """
 
-path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks'
+path = r'/u/main/tradeadj/'
 
 data = r'figdata'
 infile = 'gmmelasbase.dta'

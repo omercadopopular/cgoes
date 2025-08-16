@@ -5,12 +5,12 @@ Created on Sat Dec 28 09:38:34 2024
 @author: andre
 """
 
-path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks'
+path = r'/u/main/tradeadj/'
 
-data = r'data\work\model\tradewar'
+data = r'data/work/model/tradewar'
 infile = 'isd_nhorz5.dta'
 
-data_0 = r'data\work\ICIO'
+data_0 = r'data/work/ICIO'
 infile_0 = 'paraisd_i32.dta'
 
 out = r'figs'

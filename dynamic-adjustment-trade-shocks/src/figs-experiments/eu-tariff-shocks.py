@@ -5,8 +5,9 @@ Created on Fri Dec 27 16:05:33 2024
 @author: cbezerradegoes
 """
 
-path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks'
-file = path + r'\eu-tariffs\trottner\temp_files\out\icio_wits_bilateral_eu.dta'
+path = r'/u/main/tradeadj/'
+file = path + r'data/EUTariff/241227/icio_wits_bilateral_eu.dta'
+
 
 import pandas as pd
 import matplotlib.pyplot as plt
