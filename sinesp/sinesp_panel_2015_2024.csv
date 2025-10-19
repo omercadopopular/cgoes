@@ -1,0 +1,1729 @@
+uf,ano,pop,evento,total,total_vitima,regiao,total_rate,total_vitima_rate
+AC,2017,829619.0,Furto de veículo,0.0,0.0,Norte,0.0,0.0
+AC,2018,869265.0,Furto de veículo,0.0,0.0,Norte,0.0,0.0
+AC,2019,881935.0,Furto de veículo,1938.0,0.0,Norte,219.7440854484741,0.0
+AC,2020,894470.0,Furto de veículo,752.0,0.0,Norte,84.07213210057353,0.0
+AC,2021,906876.0,Furto de veículo,599.0,0.0,Norte,66.05092647726921,0.0
+AC,2022,898127.6666666666,Furto de veículo,522.0,0.0,Norte,58.12091302535683,0.0
+AC,2023,889379.3333333334,Furto de veículo,672.0,0.0,Norte,75.55831070207013,0.0
+AC,2024,880631.0,Furto de veículo,578.0,0.0,Norte,65.63475507902857,0.0
+AC,2017,829619.0,Homicídio doloso,0.0,450.0,Norte,0.0,54.24176640120345
+AC,2018,869265.0,Homicídio doloso,0.0,358.0,Norte,0.0,41.184218851558505
+AC,2019,881935.0,Homicídio doloso,0.0,270.0,Norte,0.0,30.61450106867286
+AC,2020,894470.0,Homicídio doloso,0.0,268.0,Norte,0.0,29.96187686562993
+AC,2021,906876.0,Homicídio doloso,0.0,161.0,Norte,0.0,17.753254028114096
+AC,2022,898127.6666666666,Homicídio doloso,0.0,197.0,Norte,0.0,21.93452081608294
+AC,2023,889379.3333333334,Homicídio doloso,0.0,180.0,Norte,0.0,20.238833223768783
+AC,2024,880631.0,Homicídio doloso,0.0,156.0,Norte,0.0,17.714570574962725
+AC,2017,829619.0,Lesão corporal seguida de morte,0.0,1.0,Norte,0.0,0.12053725866934098
+AC,2018,869265.0,Lesão corporal seguida de morte,0.0,0.0,Norte,0.0,0.0
+AC,2019,881935.0,Lesão corporal seguida de morte,0.0,2.0,Norte,0.0,0.22677408199016935
+AC,2020,894470.0,Lesão corporal seguida de morte,0.0,2.0,Norte,0.0,0.22359609601216363
+AC,2021,906876.0,Lesão corporal seguida de morte,0.0,1.0,Norte,0.0,0.11026865855971489
+AC,2022,898127.6666666666,Lesão corporal seguida de morte,0.0,6.0,Norte,0.0,0.6680564715558256
+AC,2023,889379.3333333334,Lesão corporal seguida de morte,0.0,0.0,Norte,0.0,0.0
+AC,2024,880631.0,Lesão corporal seguida de morte,0.0,3.0,Norte,0.0,0.34066481874928317
+AC,2017,829619.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2018,869265.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2019,881935.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2020,894470.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2021,906876.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2022,898127.6666666666,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2023,889379.3333333334,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AC,2024,880631.0,Roubo a instituição financeira,1.0,0.0,Norte,0.11355493958309439,0.0
+AC,2017,829619.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2018,869265.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2019,881935.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2020,894470.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2021,906876.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2022,898127.6666666666,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2023,889379.3333333334,Roubo de carga,1.0,0.0,Norte,0.11243796235427102,0.0
+AC,2024,880631.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AC,2017,829619.0,Roubo de veículo,0.0,0.0,Norte,0.0,0.0
+AC,2018,869265.0,Roubo de veículo,0.0,0.0,Norte,0.0,0.0
+AC,2019,881935.0,Roubo de veículo,1947.0,0.0,Norte,220.76456881742988,0.0
+AC,2020,894470.0,Roubo de veículo,1061.0,0.0,Norte,118.6177289344528,0.0
+AC,2021,906876.0,Roubo de veículo,1001.0,0.0,Norte,110.3789272182746,0.0
+AC,2022,898127.6666666666,Roubo de veículo,665.0,0.0,Norte,74.04292559743733,0.0
+AC,2023,889379.3333333334,Roubo de veículo,638.0,0.0,Norte,71.73541998202491,0.0
+AC,2024,880631.0,Roubo de veículo,371.0,0.0,Norte,42.12888258532802,0.0
+AC,2017,829619.0,Roubo seguido de morte (latrocínio),0.0,25.0,Norte,0.0,3.0134314667335245
+AC,2018,869265.0,Roubo seguido de morte (latrocínio),0.0,20.0,Norte,0.0,2.3007943492490783
+AC,2019,881935.0,Roubo seguido de morte (latrocínio),0.0,13.0,Norte,0.0,1.4740315329361007
+AC,2020,894470.0,Roubo seguido de morte (latrocínio),0.0,12.0,Norte,0.0,1.3415765760729819
+AC,2021,906876.0,Roubo seguido de morte (latrocínio),0.0,8.0,Norte,0.0,0.8821492684777191
+AC,2022,898127.6666666666,Roubo seguido de morte (latrocínio),0.0,6.0,Norte,0.0,0.6680564715558256
+AC,2023,889379.3333333334,Roubo seguido de morte (latrocínio),0.0,4.0,Norte,0.0,0.44975184941708407
+AC,2024,880631.0,Roubo seguido de morte (latrocínio),0.0,1.0,Norte,0.0,0.11355493958309439
+AC,2017,829619.0,Tentativa de homicídio,0.0,0.0,Norte,0.0,0.0
+AC,2018,869265.0,Tentativa de homicídio,0.0,120.0,Norte,0.0,13.80476609549447
+AC,2019,881935.0,Tentativa de homicídio,0.0,195.0,Norte,0.0,22.110472994041512
+AC,2020,894470.0,Tentativa de homicídio,0.0,183.0,Norte,0.0,20.45904278511297
+AC,2021,906876.0,Tentativa de homicídio,0.0,303.0,Norte,0.0,33.411403543593615
+AC,2022,898127.6666666666,Tentativa de homicídio,0.0,428.0,Norte,0.0,47.65469497098223
+AC,2023,889379.3333333334,Tentativa de homicídio,0.0,347.0,Norte,0.0,39.015972936932044
+AC,2024,880631.0,Tentativa de homicídio,0.0,263.0,Norte,0.0,29.864949110353827
+AL,2017,3375823.0,Furto de veículo,1201.0,0.0,Nordeste,35.5765097873911,0.0
+AL,2018,3322820.0,Furto de veículo,1464.0,0.0,Nordeste,44.0589619660409,0.0
+AL,2019,3337357.0,Furto de veículo,1462.0,0.0,Nordeste,43.807120424935064,0.0
+AL,2020,3351543.0,Furto de veículo,1640.0,0.0,Nordeste,48.932685631662785,0.0
+AL,2021,3365351.0,Furto de veículo,1562.0,0.0,Nordeste,46.41417789704551,0.0
+AL,2022,3316935.3333333335,Furto de veículo,2059.0,0.0,Nordeste,62.075373592852685,0.0
+AL,2023,3268519.6666666665,Furto de veículo,1785.0,0.0,Nordeste,54.611878833221034,0.0
+AL,2024,3220104.0,Furto de veículo,1583.0,0.0,Nordeste,49.159902909968125,0.0
+AL,2017,3375823.0,Homicídio doloso,0.0,1672.0,Nordeste,0.0,49.52866308452783
+AL,2018,3322820.0,Homicídio doloso,0.0,1333.0,Nordeste,0.0,40.116527527822754
+AL,2019,3337357.0,Homicídio doloso,0.0,1025.0,Nordeste,0.0,30.712926426510556
+AL,2020,3351543.0,Homicídio doloso,0.0,1185.0,Nordeste,0.0,35.35684906921976
+AL,2021,3365351.0,Homicídio doloso,0.0,1020.0,Nordeste,0.0,30.308874170926007
+AL,2022,3316935.3333333335,Homicídio doloso,0.0,1076.0,Nordeste,0.0,32.43958328601723
+AL,2023,3268519.6666666665,Homicídio doloso,0.0,1096.0,Nordeste,0.0,33.53199955249874
+AL,2024,3220104.0,Homicídio doloso,0.0,1023.0,Nordeste,0.0,31.769160250724823
+AL,2017,3375823.0,Lesão corporal seguida de morte,0.0,19.0,Nordeste,0.0,0.5628257168696345
+AL,2018,3322820.0,Lesão corporal seguida de morte,0.0,10.0,Nordeste,0.0,0.30094919375710993
+AL,2019,3337357.0,Lesão corporal seguida de morte,0.0,8.0,Nordeste,0.0,0.23971064528008243
+AL,2020,3351543.0,Lesão corporal seguida de morte,0.0,9.0,Nordeste,0.0,0.26853303090546654
+AL,2021,3365351.0,Lesão corporal seguida de morte,0.0,4.0,Nordeste,0.0,0.11885833008206277
+AL,2022,3316935.3333333335,Lesão corporal seguida de morte,0.0,4.0,Nordeste,0.0,0.12059324641642094
+AL,2023,3268519.6666666665,Lesão corporal seguida de morte,0.0,4.0,Nordeste,0.0,0.12237956041057936
+AL,2024,3220104.0,Lesão corporal seguida de morte,0.0,6.0,Nordeste,0.0,0.18632938563474968
+AL,2017,3375823.0,Roubo a instituição financeira,21.0,0.0,Nordeste,0.6220705291717012,0.0
+AL,2018,3322820.0,Roubo a instituição financeira,22.0,0.0,Nordeste,0.6620882262656418,0.0
+AL,2019,3337357.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.11985532264004121,0.0
+AL,2020,3351543.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+AL,2021,3365351.0,Roubo a instituição financeira,1.0,0.0,Nordeste,0.029714582520515693,0.0
+AL,2022,3316935.3333333335,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+AL,2023,3268519.6666666665,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+AL,2024,3220104.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+AL,2017,3375823.0,Roubo de carga,77.0,0.0,Nordeste,2.2809252736295713,0.0
+AL,2018,3322820.0,Roubo de carga,84.0,0.0,Nordeste,2.5279732275597233,0.0
+AL,2019,3337357.0,Roubo de carga,39.0,0.0,Nordeste,1.1685893957404017,0.0
+AL,2020,3351543.0,Roubo de carga,19.0,0.0,Nordeste,0.5669030652448738,0.0
+AL,2021,3365351.0,Roubo de carga,15.0,0.0,Nordeste,0.44571873780773535,0.0
+AL,2022,3316935.3333333335,Roubo de carga,26.0,0.0,Nordeste,0.7838561017067361,0.0
+AL,2023,3268519.6666666665,Roubo de carga,17.0,0.0,Nordeste,0.5201131317449622,0.0
+AL,2024,3220104.0,Roubo de carga,22.0,0.0,Nordeste,0.6832077473274155,0.0
+AL,2017,3375823.0,Roubo de veículo,3134.0,0.0,Nordeste,92.83662087733865,0.0
+AL,2018,3322820.0,Roubo de veículo,3480.0,0.0,Nordeste,104.73031942747427,0.0
+AL,2019,3337357.0,Roubo de veículo,2435.0,0.0,Nordeste,72.96192765712509,0.0
+AL,2020,3351543.0,Roubo de veículo,1526.0,0.0,Nordeste,45.53126724019355,0.0
+AL,2021,3365351.0,Roubo de veículo,1599.0,0.0,Nordeste,47.51361745030459,0.0
+AL,2022,3316935.3333333335,Roubo de veículo,1714.0,0.0,Nordeste,51.67420608943637,0.0
+AL,2023,3268519.6666666665,Roubo de veículo,1683.0,0.0,Nordeste,51.49120004275126,0.0
+AL,2024,3220104.0,Roubo de veículo,1578.0,0.0,Nordeste,49.00462842193917,0.0
+AL,2017,3375823.0,Roubo seguido de morte (latrocínio),0.0,59.0,Nordeste,0.0,1.7477219629109702
+AL,2018,3322820.0,Roubo seguido de morte (latrocínio),0.0,46.0,Nordeste,0.0,1.3843662912827057
+AL,2019,3337357.0,Roubo seguido de morte (latrocínio),0.0,20.0,Nordeste,0.0,0.599276613200206
+AL,2020,3351543.0,Roubo seguido de morte (latrocínio),0.0,23.0,Nordeste,0.0,0.6862510789806366
+AL,2021,3365351.0,Roubo seguido de morte (latrocínio),0.0,24.0,Nordeste,0.0,0.7131499804923765
+AL,2022,3316935.3333333335,Roubo seguido de morte (latrocínio),0.0,25.0,Nordeste,0.0,0.7537077901026309
+AL,2023,3268519.6666666665,Roubo seguido de morte (latrocínio),0.0,17.0,Nordeste,0.0,0.5201131317449622
+AL,2024,3220104.0,Roubo seguido de morte (latrocínio),0.0,4.0,Nordeste,0.0,0.12421959042316645
+AL,2017,3375823.0,Tentativa de homicídio,0.0,686.0,Nordeste,0.0,20.320970619608907
+AL,2018,3322820.0,Tentativa de homicídio,0.0,587.0,Nordeste,0.0,17.665717673542353
+AL,2019,3337357.0,Tentativa de homicídio,0.0,530.0,Nordeste,0.0,15.88083024980546
+AL,2020,3351543.0,Tentativa de homicídio,0.0,503.0,Nordeste,0.0,15.008012727272185
+AL,2021,3365351.0,Tentativa de homicídio,0.0,504.0,Nordeste,0.0,14.97614959033991
+AL,2022,3316935.3333333335,Tentativa de homicídio,0.0,663.0,Nordeste,0.0,19.98833059352177
+AL,2023,3268519.6666666665,Tentativa de homicídio,0.0,696.0,Nordeste,0.0,21.294043511440808
+AL,2024,3220104.0,Tentativa de homicídio,0.0,745.0,Nordeste,0.0,23.135898716314752
+AM,2017,4063614.0,Furto de veículo,3466.0,0.0,Norte,85.29353427761593,0.0
+AM,2018,4080611.0,Furto de veículo,2534.0,0.0,Norte,62.09854357594978,0.0
+AM,2019,4144597.0,Furto de veículo,2073.0,0.0,Norte,50.016925650431155,0.0
+AM,2020,4207714.0,Furto de veículo,1998.0,0.0,Norte,47.4842158949016,0.0
+AM,2021,4269995.0,Furto de veículo,1905.0,0.0,Norte,44.61363537896414,0.0
+AM,2022,4273733.0,Furto de veículo,2016.0,0.0,Norte,47.171875266891966,0.0
+AM,2023,4277471.0,Furto de veículo,1608.0,0.0,Norte,37.59230629500469,0.0
+AM,2024,4281209.0,Furto de veículo,1912.0,0.0,Norte,44.660281710143096,0.0
+AM,2017,4063614.0,Homicídio doloso,0.0,1191.0,Norte,0.0,29.308886129440445
+AM,2018,4080611.0,Homicídio doloso,0.0,1094.0,Norte,0.0,26.80971060461289
+AM,2019,4144597.0,Homicídio doloso,0.0,1058.0,Norte,0.0,25.52721048632714
+AM,2020,4207714.0,Homicídio doloso,0.0,938.0,Norte,0.0,22.292389644353204
+AM,2021,4269995.0,Homicídio doloso,0.0,1464.0,Norte,0.0,34.28575443296772
+AM,2022,4273733.0,Homicídio doloso,0.0,1319.0,Norte,0.0,30.86294815328894
+AM,2023,4277471.0,Homicídio doloso,0.0,1254.0,Norte,0.0,29.316388118119328
+AM,2024,4281209.0,Homicídio doloso,0.0,1049.0,Norte,0.0,24.50242443197704
+AM,2017,4063614.0,Lesão corporal seguida de morte,0.0,36.0,Norte,0.0,0.8859109157513484
+AM,2018,4080611.0,Lesão corporal seguida de morte,0.0,28.0,Norte,0.0,0.6861717522204396
+AM,2019,4144597.0,Lesão corporal seguida de morte,0.0,23.0,Norte,0.0,0.554939358398416
+AM,2020,4207714.0,Lesão corporal seguida de morte,0.0,19.0,Norte,0.0,0.4515516026041694
+AM,2021,4269995.0,Lesão corporal seguida de morte,0.0,15.0,Norte,0.0,0.35128846755089876
+AM,2022,4273733.0,Lesão corporal seguida de morte,0.0,36.0,Norte,0.0,0.8423549154802136
+AM,2023,4277471.0,Lesão corporal seguida de morte,0.0,34.0,Norte,0.0,0.7948621977799499
+AM,2024,4281209.0,Lesão corporal seguida de morte,0.0,24.0,Norte,0.0,0.5605893101691601
+AM,2017,4063614.0,Roubo a instituição financeira,1.0,0.0,Norte,0.02460863654864857,0.0
+AM,2018,4080611.0,Roubo a instituição financeira,3.0,0.0,Norte,0.07351840202361852,0.0
+AM,2019,4144597.0,Roubo a instituição financeira,2.0,0.0,Norte,0.048255596382470956,0.0
+AM,2020,4207714.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AM,2021,4269995.0,Roubo a instituição financeira,1.0,0.0,Norte,0.02341923117005992,0.0
+AM,2022,4273733.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AM,2023,4277471.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AM,2024,4281209.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AM,2017,4063614.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AM,2018,4080611.0,Roubo de carga,2.0,0.0,Norte,0.04901226801574569,0.0
+AM,2019,4144597.0,Roubo de carga,8.0,0.0,Norte,0.19302238552988382,0.0
+AM,2020,4207714.0,Roubo de carga,15.0,0.0,Norte,0.3564881073190811,0.0
+AM,2021,4269995.0,Roubo de carga,19.0,0.0,Norte,0.4449653922311385,0.0
+AM,2022,4273733.0,Roubo de carga,22.0,0.0,Norte,0.5147724483490195,0.0
+AM,2023,4277471.0,Roubo de carga,22.0,0.0,Norte,0.5143225985634969,0.0
+AM,2024,4281209.0,Roubo de carga,16.0,0.0,Norte,0.37372620677944013,0.0
+AM,2017,4063614.0,Roubo de veículo,4465.0,0.0,Norte,109.87756218971585,0.0
+AM,2018,4080611.0,Roubo de veículo,3124.0,0.0,Norte,76.55716264059475,0.0
+AM,2019,4144597.0,Roubo de veículo,2505.0,0.0,Norte,60.44013446904488,0.0
+AM,2020,4207714.0,Roubo de veículo,1928.0,0.0,Norte,45.82060472741256,0.0
+AM,2021,4269995.0,Roubo de veículo,2341.0,0.0,Norte,54.82442016911027,0.0
+AM,2022,4273733.0,Roubo de veículo,1419.0,0.0,Norte,33.20282291851176,0.0
+AM,2023,4277471.0,Roubo de veículo,1205.0,0.0,Norte,28.17085142131881,0.0
+AM,2024,4281209.0,Roubo de veículo,846.0,0.0,Norte,19.760773183462895,0.0
+AM,2017,4063614.0,Roubo seguido de morte (latrocínio),0.0,77.0,Norte,0.0,1.8948650142459398
+AM,2018,4080611.0,Roubo seguido de morte (latrocínio),0.0,56.0,Norte,0.0,1.3723435044408792
+AM,2019,4144597.0,Roubo seguido de morte (latrocínio),0.0,47.0,Norte,0.0,1.1340065149880676
+AM,2020,4207714.0,Roubo seguido de morte (latrocínio),0.0,46.0,Norte,0.0,1.0932301957785155
+AM,2021,4269995.0,Roubo seguido de morte (latrocínio),0.0,69.0,Norte,0.0,1.6159269507341343
+AM,2022,4273733.0,Roubo seguido de morte (latrocínio),0.0,56.0,Norte,0.0,1.3103298685247768
+AM,2023,4277471.0,Roubo seguido de morte (latrocínio),0.0,36.0,Norte,0.0,0.8416187976493587
+AM,2024,4281209.0,Roubo seguido de morte (latrocínio),0.0,24.0,Norte,0.0,0.5605893101691601
+AM,2017,4063614.0,Tentativa de homicídio,0.0,326.0,Norte,0.0,8.022415514859432
+AM,2018,4080611.0,Tentativa de homicídio,0.0,335.0,Norte,0.0,8.209554892637403
+AM,2019,4144597.0,Tentativa de homicídio,0.0,304.0,Norte,0.0,7.334850650135586
+AM,2020,4207714.0,Tentativa de homicídio,0.0,351.0,Norte,0.0,8.341821711266498
+AM,2021,4269995.0,Tentativa de homicídio,0.0,272.0,Norte,0.0,6.370030878256297
+AM,2022,4273733.0,Tentativa de homicídio,0.0,321.0,Norte,0.0,7.510997996365238
+AM,2023,4277471.0,Tentativa de homicídio,0.0,243.0,Norte,0.0,5.6809268841331715
+AM,2024,4281209.0,Tentativa de homicídio,0.0,480.0,Norte,0.0,11.211786203383204
+AP,2017,797722.0,Furto de veículo,721.0,0.0,Norte,90.38236378086602,0.0
+AP,2018,829494.0,Furto de veículo,632.0,0.0,Norte,76.19102730098108,0.0
+AP,2019,845731.0,Furto de veículo,768.0,0.0,Norte,90.80901610559386,0.0
+AP,2020,861773.0,Furto de veículo,627.0,0.0,Norte,72.75697892600488,0.0
+AP,2021,877613.0,Furto de veículo,479.0,0.0,Norte,54.579866068529064,0.0
+AP,2022,852687.6666666666,Furto de veículo,491.0,0.0,Norte,57.58263185855861,0.0
+AP,2023,827762.3333333334,Furto de veículo,280.0,0.0,Norte,33.82613447418683,0.0
+AP,2024,802837.0,Furto de veículo,381.0,0.0,Norte,47.45670665402815,0.0
+AP,2017,797722.0,Homicídio doloso,0.0,265.0,Norte,0.0,33.21959279047087
+AP,2018,829494.0,Homicídio doloso,0.0,298.0,Norte,0.0,35.92551603748791
+AP,2019,845731.0,Homicídio doloso,0.0,225.0,Norte,0.0,26.604203937185698
+AP,2020,861773.0,Homicídio doloso,0.0,234.0,Norte,0.0,27.15332227860469
+AP,2021,877613.0,Homicídio doloso,0.0,271.0,Norte,0.0,30.879214414554024
+AP,2022,852687.6666666666,Homicídio doloso,0.0,190.0,Norte,0.0,22.282484833250784
+AP,2023,827762.3333333334,Homicídio doloso,0.0,303.0,Norte,0.0,36.604709805995036
+AP,2024,802837.0,Homicídio doloso,0.0,216.0,Norte,0.0,26.904589599134074
+AP,2017,797722.0,Lesão corporal seguida de morte,0.0,22.0,Norte,0.0,2.757852986378713
+AP,2018,829494.0,Lesão corporal seguida de morte,0.0,37.0,Norte,0.0,4.460550648949842
+AP,2019,845731.0,Lesão corporal seguida de morte,0.0,19.0,Norte,0.0,2.2465772213623483
+AP,2020,861773.0,Lesão corporal seguida de morte,0.0,14.0,Norte,0.0,1.6245577431643832
+AP,2021,877613.0,Lesão corporal seguida de morte,0.0,22.0,Norte,0.0,2.506799694170437
+AP,2022,852687.6666666666,Lesão corporal seguida de morte,0.0,10.0,Norte,0.0,1.172762359644778
+AP,2023,827762.3333333334,Lesão corporal seguida de morte,0.0,16.0,Norte,0.0,1.9329219699535332
+AP,2024,802837.0,Lesão corporal seguida de morte,0.0,3.0,Norte,0.0,0.37367485554352875
+AP,2017,797722.0,Roubo a instituição financeira,8.0,0.0,Norte,1.002855631410441,0.0
+AP,2018,829494.0,Roubo a instituição financeira,18.0,0.0,Norte,2.1699976130026255,0.0
+AP,2019,845731.0,Roubo a instituição financeira,6.0,0.0,Norte,0.709445438324952,0.0
+AP,2020,861773.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AP,2021,877613.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AP,2022,852687.6666666666,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AP,2023,827762.3333333334,Roubo a instituição financeira,1.0,0.0,Norte,0.12080762312209582,0.0
+AP,2024,802837.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+AP,2017,797722.0,Roubo de carga,1.0,0.0,Norte,0.12535695392630514,0.0
+AP,2018,829494.0,Roubo de carga,3.0,0.0,Norte,0.36166626883377095,0.0
+AP,2019,845731.0,Roubo de carga,10.0,0.0,Norte,1.18240906387492,0.0
+AP,2020,861773.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AP,2021,877613.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AP,2022,852687.6666666666,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+AP,2023,827762.3333333334,Roubo de carga,1.0,0.0,Norte,0.12080762312209582,0.0
+AP,2024,802837.0,Roubo de carga,1.0,0.0,Norte,0.12455828518117626,0.0
+AP,2017,797722.0,Roubo de veículo,267.0,0.0,Norte,33.470306698323476,0.0
+AP,2018,829494.0,Roubo de veículo,357.0,0.0,Norte,43.03828599121874,0.0
+AP,2019,845731.0,Roubo de veículo,701.0,0.0,Norte,82.8868753776319,0.0
+AP,2020,861773.0,Roubo de veículo,647.0,0.0,Norte,75.077775701954,0.0
+AP,2021,877613.0,Roubo de veículo,493.0,0.0,Norte,56.17510223754662,0.0
+AP,2022,852687.6666666666,Roubo de veículo,450.0,0.0,Norte,52.77430618401502,0.0
+AP,2023,827762.3333333334,Roubo de veículo,270.0,0.0,Norte,32.61805824296587,0.0
+AP,2024,802837.0,Roubo de veículo,166.0,0.0,Norte,20.67667534007526,0.0
+AP,2017,797722.0,Roubo seguido de morte (latrocínio),0.0,22.0,Norte,0.0,2.757852986378713
+AP,2018,829494.0,Roubo seguido de morte (latrocínio),0.0,19.0,Norte,0.0,2.2905530359472164
+AP,2019,845731.0,Roubo seguido de morte (latrocínio),0.0,16.0,Norte,0.0,1.891854502199872
+AP,2020,861773.0,Roubo seguido de morte (latrocínio),0.0,13.0,Norte,0.0,1.5085179043669272
+AP,2021,877613.0,Roubo seguido de morte (latrocínio),0.0,20.0,Norte,0.0,2.2789088128822157
+AP,2022,852687.6666666666,Roubo seguido de morte (latrocínio),0.0,22.0,Norte,0.0,2.580077191218512
+AP,2023,827762.3333333334,Roubo seguido de morte (latrocínio),0.0,13.0,Norte,0.0,1.5704991005872457
+AP,2024,802837.0,Roubo seguido de morte (latrocínio),0.0,4.0,Norte,0.0,0.49823314072470504
+AP,2017,797722.0,Tentativa de homicídio,0.0,293.0,Norte,0.0,36.72958750040741
+AP,2018,829494.0,Tentativa de homicídio,0.0,110.0,Norte,0.0,13.261096523904936
+AP,2019,845731.0,Tentativa de homicídio,0.0,241.0,Norte,0.0,28.496058439385575
+AP,2020,861773.0,Tentativa de homicídio,0.0,257.0,Norte,0.0,29.822238570946176
+AP,2021,877613.0,Tentativa de homicídio,0.0,370.0,Norte,0.0,42.15981303832099
+AP,2022,852687.6666666666,Tentativa de homicídio,0.0,255.0,Norte,0.0,29.905440170941844
+AP,2023,827762.3333333334,Tentativa de homicídio,0.0,197.0,Norte,0.0,23.799101755052877
+AP,2024,802837.0,Tentativa de homicídio,0.0,338.0,Norte,0.0,42.100700391237574
+BA,2017,15344447.0,Furto de veículo,5520.0,0.0,Nordeste,35.97392594206882,0.0
+BA,2018,14812617.0,Furto de veículo,5333.0,0.0,Nordeste,36.00309114857962,0.0
+BA,2019,14873064.0,Furto de veículo,5289.0,0.0,Nordeste,35.56093082097946,0.0
+BA,2020,14930634.0,Furto de veículo,4255.0,0.0,Nordeste,28.498454921606143,0.0
+BA,2021,14985284.0,Furto de veículo,4663.0,0.0,Nordeste,31.117194709155996,0.0
+BA,2022,14940360.333333334,Furto de veículo,6784.0,0.0,Nordeste,45.407204703518865,0.0
+BA,2023,14895436.666666666,Furto de veículo,6692.0,0.0,Nordeste,44.92651105002852,0.0
+BA,2024,14850513.0,Furto de veículo,6639.0,0.0,Nordeste,44.70552633434279,0.0
+BA,2017,15344447.0,Homicídio doloso,0.0,6131.0,Nordeste,0.0,39.9558224548594
+BA,2018,14812617.0,Homicídio doloso,0.0,5444.0,Nordeste,0.0,36.752452318182534
+BA,2019,14873064.0,Homicídio doloso,0.0,4905.0,Nordeste,0.0,32.979082185083044
+BA,2020,14930634.0,Homicídio doloso,0.0,5248.0,Nordeste,0.0,35.14921067651916
+BA,2021,14985284.0,Homicídio doloso,0.0,5447.0,Nordeste,0.0,36.34899411983116
+BA,2022,14940360.333333334,Homicídio doloso,0.0,4936.0,Nordeste,0.0,33.03802512036691
+BA,2023,14895436.666666666,Homicídio doloso,0.0,4614.0,Nordeste,0.0,30.97592976461919
+BA,2024,14850513.0,Homicídio doloso,0.0,4205.0,Nordeste,0.0,28.31552014398425
+BA,2017,15344447.0,Lesão corporal seguida de morte,0.0,68.0,Nordeste,0.0,0.44315705870664485
+BA,2018,14812617.0,Lesão corporal seguida de morte,0.0,72.0,Nordeste,0.0,0.4860721100127006
+BA,2019,14873064.0,Lesão corporal seguida de morte,0.0,74.0,Nordeste,0.0,0.4975437475425373
+BA,2020,14930634.0,Lesão corporal seguida de morte,0.0,91.0,Nordeste,0.0,0.6094851698862889
+BA,2021,14985284.0,Lesão corporal seguida de morte,0.0,56.0,Nordeste,0.0,0.37369995790536903
+BA,2022,14940360.333333334,Lesão corporal seguida de morte,0.0,63.0,Nordeste,0.0,0.4216765766983621
+BA,2023,14895436.666666666,Lesão corporal seguida de morte,0.0,81.0,Nordeste,0.0,0.5437907045804409
+BA,2024,14850513.0,Lesão corporal seguida de morte,0.0,93.0,Nordeste,0.0,0.6262409924828859
+BA,2017,15344447.0,Roubo a instituição financeira,28.0,0.0,Nordeste,0.18247643593803023,0.0
+BA,2018,14812617.0,Roubo a instituição financeira,11.0,0.0,Nordeste,0.07426101680749594,0.0
+BA,2019,14873064.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.026894256623920938,0.0
+BA,2020,14930634.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.02679055691807863,0.0
+BA,2021,14985284.0,Roubo a instituição financeira,14.0,0.0,Nordeste,0.09342498947634226,0.0
+BA,2022,14940360.333333334,Roubo a instituição financeira,4.0,0.0,Nordeste,0.026773115980848385,0.0
+BA,2023,14895436.666666666,Roubo a instituição financeira,7.0,0.0,Nordeste,0.046994258420531926,0.0
+BA,2024,14850513.0,Roubo a instituição financeira,2.0,0.0,Nordeste,0.013467548225438407,0.0
+BA,2017,15344447.0,Roubo de carga,417.0,0.0,Nordeste,2.717595492362807,0.0
+BA,2018,14812617.0,Roubo de carga,304.0,0.0,Nordeste,2.0523044644980697,0.0
+BA,2019,14873064.0,Roubo de carga,274.0,0.0,Nordeste,1.8422565787385843,0.0
+BA,2020,14930634.0,Roubo de carga,220.0,0.0,Nordeste,1.4734806304943247,0.0
+BA,2021,14985284.0,Roubo de carga,223.0,0.0,Nordeste,1.4881266180874517,0.0
+BA,2022,14940360.333333334,Roubo de carga,334.0,0.0,Nordeste,2.23555518440084,0.0
+BA,2023,14895436.666666666,Roubo de carga,301.0,0.0,Nordeste,2.020753112082873,0.0
+BA,2024,14850513.0,Roubo de carga,180.0,0.0,Nordeste,1.2120793402894567,0.0
+BA,2017,15344447.0,Roubo de veículo,13526.0,0.0,Nordeste,88.14915258920703,0.0
+BA,2018,14812617.0,Roubo de veículo,13348.0,0.0,Nordeste,90.11236839513234,0.0
+BA,2019,14873064.0,Roubo de veículo,11523.0,0.0,Nordeste,77.47562976936024,0.0
+BA,2020,14930634.0,Roubo de veículo,10494.0,0.0,Nordeste,70.28502607457929,0.0
+BA,2021,14985284.0,Roubo de veículo,11455.0,0.0,Nordeste,76.44166103225004,0.0
+BA,2022,14940360.333333334,Roubo de veículo,12916.0,0.0,Nordeste,86.45039150215943,0.0
+BA,2023,14895436.666666666,Roubo de veículo,12528.0,0.0,Nordeste,84.10629564177485,0.0
+BA,2024,14850513.0,Roubo de veículo,11072.0,0.0,Nordeste,74.55634697602703,0.0
+BA,2017,15344447.0,Roubo seguido de morte (latrocínio),0.0,176.0,Nordeste,0.0,1.1469947401819043
+BA,2018,14812617.0,Roubo seguido de morte (latrocínio),0.0,137.0,Nordeste,0.0,0.924887209329722
+BA,2019,14873064.0,Roubo seguido de morte (latrocínio),0.0,142.0,Nordeste,0.0,0.9547461101491931
+BA,2020,14930634.0,Roubo seguido de morte (latrocínio),0.0,108.0,Nordeste,0.0,0.723345036788123
+BA,2021,14985284.0,Roubo seguido de morte (latrocínio),0.0,137.0,Nordeste,0.0,0.9142302541613493
+BA,2022,14940360.333333334,Roubo seguido de morte (latrocínio),0.0,87.0,Nordeste,0.0,0.5823152725834524
+BA,2023,14895436.666666666,Roubo seguido de morte (latrocínio),0.0,69.0,Nordeste,0.0,0.4632291187166719
+BA,2024,14850513.0,Roubo seguido de morte (latrocínio),0.0,75.0,Nordeste,0.0,0.5050330584539403
+BA,2017,15344447.0,Tentativa de homicídio,0.0,3234.0,Nordeste,0.0,21.076028350842492
+BA,2018,14812617.0,Tentativa de homicídio,0.0,3017.0,Nordeste,0.0,20.36777160983775
+BA,2019,14873064.0,Tentativa de homicídio,0.0,3065.0,Nordeste,0.0,20.607724138079416
+BA,2020,14930634.0,Tentativa de homicídio,0.0,2575.0,Nordeste,0.0,17.24642101601312
+BA,2021,14985284.0,Tentativa de homicídio,0.0,2260.0,Nordeste,0.0,15.08146258689525
+BA,2022,14940360.333333334,Tentativa de homicídio,0.0,2632.0,Nordeste,0.0,17.616710315398237
+BA,2023,14895436.666666666,Tentativa de homicídio,0.0,3011.0,Nordeste,0.0,20.214244586317378
+BA,2024,14850513.0,Tentativa de homicídio,0.0,3071.0,Nordeste,0.0,20.679420300160672
+CE,2017,9020460.0,Furto de veículo,4997.0,0.0,Nordeste,55.39628799418212,0.0
+CE,2018,9075649.0,Furto de veículo,4184.0,0.0,Nordeste,46.10138624796971,0.0
+CE,2019,9132078.0,Furto de veículo,4602.0,0.0,Nordeste,50.39378770089348,0.0
+CE,2020,9187103.0,Furto de veículo,4200.0,0.0,Nordeste,45.716261154359536,0.0
+CE,2021,9240580.0,Furto de veículo,4052.0,0.0,Nordeste,43.850061359784775,0.0
+CE,2022,9238272.0,Furto de veículo,5904.0,0.0,Nordeste,63.908055532463216,0.0
+CE,2023,9235964.0,Furto de veículo,6081.0,0.0,Nordeste,65.84044719100247,0.0
+CE,2024,9233656.0,Furto de veículo,5637.0,0.0,Nordeste,61.04840812783149,0.0
+CE,2017,9020460.0,Homicídio doloso,0.0,5004.0,Nordeste,0.0,55.47388935819238
+CE,2018,9075649.0,Homicídio doloso,0.0,4402.0,Nordeste,0.0,48.50341832303123
+CE,2019,9132078.0,Homicídio doloso,0.0,2155.0,Nordeste,0.0,23.598133962500103
+CE,2020,9187103.0,Homicídio doloso,0.0,3934.0,Nordeste,0.0,42.82089794791677
+CE,2021,9240580.0,Homicídio doloso,0.0,3202.0,Nordeste,0.0,34.65150455923762
+CE,2022,9238272.0,Homicídio doloso,0.0,2881.0,Nordeste,0.0,31.18548577049907
+CE,2023,9235964.0,Homicídio doloso,0.0,2893.0,Nordeste,0.0,31.323205677285014
+CE,2024,9233656.0,Homicídio doloso,0.0,3178.0,Nordeste,0.0,34.41756981200079
+CE,2017,9020460.0,Lesão corporal seguida de morte,0.0,41.0,Nordeste,0.0,0.4545222749172437
+CE,2018,9075649.0,Lesão corporal seguida de morte,0.0,33.0,Nordeste,0.0,0.3636103599863767
+CE,2019,9132078.0,Lesão corporal seguida de morte,0.0,31.0,Nordeste,0.0,0.33946271593387617
+CE,2020,9187103.0,Lesão corporal seguida de morte,0.0,30.0,Nordeste,0.0,0.3265447225311396
+CE,2021,9240580.0,Lesão corporal seguida de morte,0.0,23.0,Nordeste,0.0,0.24890212519127589
+CE,2022,9238272.0,Lesão corporal seguida de morte,0.0,16.0,Nordeste,0.0,0.1731925624185995
+CE,2023,9235964.0,Lesão corporal seguida de morte,0.0,11.0,Nordeste,0.0,0.11909964135849814
+CE,2024,9233656.0,Lesão corporal seguida de morte,0.0,12.0,Nordeste,0.0,0.12995935737696965
+CE,2017,9020460.0,Roubo a instituição financeira,56.0,0.0,Nordeste,0.6208109120820889,0.0
+CE,2018,9075649.0,Roubo a instituição financeira,41.0,0.0,Nordeste,0.45175832604368016,0.0
+CE,2019,9132078.0,Roubo a instituição financeira,14.0,0.0,Nordeste,0.15330574267981503,0.0
+CE,2020,9187103.0,Roubo a instituição financeira,8.0,0.0,Nordeste,0.08707859267497055,0.0
+CE,2021,9240580.0,Roubo a instituição financeira,7.0,0.0,Nordeste,0.0757528207103883,0.0
+CE,2022,9238272.0,Roubo a instituição financeira,7.0,0.0,Nordeste,0.07577174605813727,0.0
+CE,2023,9235964.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.03248172037049949,0.0
+CE,2024,9233656.0,Roubo a instituição financeira,1.0,0.0,Nordeste,0.010829946448080803,0.0
+CE,2017,9020460.0,Roubo de carga,310.0,0.0,Nordeste,3.4366318347401354,0.0
+CE,2018,9075649.0,Roubo de carga,244.0,0.0,Nordeste,2.6885129647477553,0.0
+CE,2019,9132078.0,Roubo de carga,90.0,0.0,Nordeste,0.9855369172273823,0.0
+CE,2020,9187103.0,Roubo de carga,63.0,0.0,Nordeste,0.6857439173153931,0.0
+CE,2021,9240580.0,Roubo de carga,45.0,0.0,Nordeste,0.48698241885249627,0.0
+CE,2022,9238272.0,Roubo de carga,70.0,0.0,Nordeste,0.7577174605813728,0.0
+CE,2023,9235964.0,Roubo de carga,107.0,0.0,Nordeste,1.1585146932144819,0.0
+CE,2024,9233656.0,Roubo de carga,62.0,0.0,Nordeste,0.6714566797810098,0.0
+CE,2017,9020460.0,Roubo de veículo,11133.0,0.0,Nordeste,123.41942650374814,0.0
+CE,2018,9075649.0,Roubo de veículo,9319.0,0.0,Nordeste,102.68136196100136,0.0
+CE,2019,9132078.0,Roubo de veículo,5128.0,0.0,Nordeste,56.153703461577976,0.0
+CE,2020,9187103.0,Roubo de veículo,8609.0,0.0,Nordeste,93.70745054235269,0.0
+CE,2021,9240580.0,Roubo de veículo,7805.0,0.0,Nordeste,84.46439509208297,0.0
+CE,2022,9238272.0,Roubo de veículo,7697.0,0.0,Nordeste,83.31644705849753,0.0
+CE,2023,9235964.0,Roubo de veículo,7794.0,0.0,Nordeste,84.38750952255769,0.0
+CE,2024,9233656.0,Roubo de veículo,6587.0,0.0,Nordeste,71.33685725350826,0.0
+CE,2017,9020460.0,Roubo seguido de morte (latrocínio),0.0,88.0,Nordeste,0.0,0.9755600047004256
+CE,2018,9075649.0,Roubo seguido de morte (latrocínio),0.0,53.0,Nordeste,0.0,0.5839802751296354
+CE,2019,9132078.0,Roubo seguido de morte (latrocínio),0.0,37.0,Nordeste,0.0,0.4051651770823683
+CE,2020,9187103.0,Roubo seguido de morte (latrocínio),0.0,48.0,Nordeste,0.0,0.5224715560498233
+CE,2021,9240580.0,Roubo seguido de morte (latrocínio),0.0,43.0,Nordeste,0.0,0.4653387557923854
+CE,2022,9238272.0,Roubo seguido de morte (latrocínio),0.0,44.0,Nordeste,0.0,0.4762795466511486
+CE,2023,9235964.0,Roubo seguido de morte (latrocínio),0.0,24.0,Nordeste,0.0,0.2598537629639959
+CE,2024,9233656.0,Roubo seguido de morte (latrocínio),0.0,41.0,Nordeste,0.0,0.44402780437131295
+CE,2017,9020460.0,Tentativa de homicídio,0.0,1311.0,Nordeste,0.0,14.533626888207476
+CE,2018,9075649.0,Tentativa de homicídio,0.0,1263.0,Nordeste,0.0,13.916360141296783
+CE,2019,9132078.0,Tentativa de homicídio,0.0,1174.0,Nordeste,0.0,12.855781564721633
+CE,2020,9187103.0,Tentativa de homicídio,0.0,1050.0,Nordeste,0.0,11.429065288589884
+CE,2021,9240580.0,Tentativa de homicídio,0.0,1015.0,Nordeste,0.0,10.984159003006305
+CE,2022,9238272.0,Tentativa de homicídio,0.0,1018.0,Nordeste,0.0,11.019376783883393
+CE,2023,9235964.0,Tentativa de homicídio,0.0,1099.0,Nordeste,0.0,11.899136895726315
+CE,2024,9233656.0,Tentativa de homicídio,0.0,1107.0,Nordeste,0.0,11.98875071802545
+DF,2017,3039444.0,Furto de veículo,5798.0,0.0,Centro-Oeste,190.7585729495263,0.0
+DF,2018,2974703.0,Furto de veículo,5300.0,0.0,Centro-Oeste,178.1690474645704,0.0
+DF,2019,3015268.0,Furto de veículo,5143.0,0.0,Centro-Oeste,170.56526982012875,0.0
+DF,2020,3055149.0,Furto de veículo,4288.0,0.0,Centro-Oeste,140.35322008844742,0.0
+DF,2021,3094325.0,Furto de veículo,3742.0,0.0,Centro-Oeste,120.93105927787158,0.0
+DF,2022,3057156.0,Furto de veículo,3713.0,0.0,Centro-Oeste,121.45274889472438,0.0
+DF,2023,3019987.0,Furto de veículo,3236.0,0.0,Centro-Oeste,107.15277913447973,0.0
+DF,2024,2982818.0,Furto de veículo,3315.0,0.0,Centro-Oeste,111.13651587190368,0.0
+DF,2017,3039444.0,Homicídio doloso,0.0,493.0,Centro-Oeste,0.0,16.220071828926606
+DF,2018,2974703.0,Homicídio doloso,0.0,434.0,Centro-Oeste,0.0,14.589691811249729
+DF,2019,3015268.0,Homicídio doloso,0.0,386.0,Centro-Oeste,0.0,12.801515487180577
+DF,2020,3055149.0,Homicídio doloso,0.0,357.0,Centro-Oeste,0.0,11.685191131430907
+DF,2021,3094325.0,Homicídio doloso,0.0,288.0,Centro-Oeste,0.0,9.307361056126943
+DF,2022,3057156.0,Homicídio doloso,0.0,258.0,Centro-Oeste,0.0,8.439216055706677
+DF,2023,3019987.0,Homicídio doloso,0.0,234.0,Centro-Oeste,0.0,7.748377724804776
+DF,2024,2982818.0,Homicídio doloso,0.0,207.0,Centro-Oeste,0.0,6.939746239965027
+DF,2017,3039444.0,Lesão corporal seguida de morte,0.0,5.0,Centro-Oeste,0.0,0.16450377108444833
+DF,2018,2974703.0,Lesão corporal seguida de morte,0.0,8.0,Centro-Oeste,0.0,0.2689344112672761
+DF,2019,3015268.0,Lesão corporal seguida de morte,0.0,6.0,Centro-Oeste,0.0,0.19898728736550117
+DF,2020,3055149.0,Lesão corporal seguida de morte,0.0,5.0,Centro-Oeste,0.0,0.16365813909567095
+DF,2021,3094325.0,Lesão corporal seguida de morte,0.0,7.0,Centro-Oeste,0.0,0.2262205812253076
+DF,2022,3057156.0,Lesão corporal seguida de morte,0.0,5.0,Centro-Oeste,0.0,0.16355069875400535
+DF,2023,3019987.0,Lesão corporal seguida de morte,0.0,1.0,Centro-Oeste,0.0,0.03311272531967853
+DF,2024,2982818.0,Lesão corporal seguida de morte,0.0,12.0,Centro-Oeste,0.0,0.40230412985304503
+DF,2017,3039444.0,Roubo a instituição financeira,2.0,0.0,Centro-Oeste,0.06580150843377933,0.0
+DF,2018,2974703.0,Roubo a instituição financeira,3.0,0.0,Centro-Oeste,0.10085040422522853,0.0
+DF,2019,3015268.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+DF,2020,3055149.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+DF,2021,3094325.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+DF,2022,3057156.0,Roubo a instituição financeira,1.0,0.0,Centro-Oeste,0.03271013975080107,0.0
+DF,2023,3019987.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+DF,2024,2982818.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+DF,2017,3039444.0,Roubo de carga,82.0,0.0,Centro-Oeste,2.697861845784953,0.0
+DF,2018,2974703.0,Roubo de carga,63.0,0.0,Centro-Oeste,2.1178584887297993,0.0
+DF,2019,3015268.0,Roubo de carga,35.0,0.0,Centro-Oeste,1.160759176298757,0.0
+DF,2020,3055149.0,Roubo de carga,30.0,0.0,Centro-Oeste,0.9819488345740257,0.0
+DF,2021,3094325.0,Roubo de carga,22.0,0.0,Centro-Oeste,0.7109789695652525,0.0
+DF,2022,3057156.0,Roubo de carga,22.0,0.0,Centro-Oeste,0.7196230745176236,0.0
+DF,2023,3019987.0,Roubo de carga,17.0,0.0,Centro-Oeste,0.562916330434535,0.0
+DF,2024,2982818.0,Roubo de carga,18.0,0.0,Centro-Oeste,0.6034561947795675,0.0
+DF,2017,3039444.0,Roubo de veículo,4855.0,0.0,Centro-Oeste,159.73316172299934,0.0
+DF,2018,2974703.0,Roubo de veículo,3993.0,0.0,Centro-Oeste,134.2318880237792,0.0
+DF,2019,3015268.0,Roubo de veículo,3424.0,0.0,Centro-Oeste,113.55541198991267,0.0
+DF,2020,3055149.0,Roubo de veículo,2218.0,0.0,Centro-Oeste,72.59875050283964,0.0
+DF,2021,3094325.0,Roubo de veículo,2033.0,0.0,Centro-Oeste,65.70092023300721,0.0
+DF,2022,3057156.0,Roubo de veículo,1554.0,0.0,Centro-Oeste,50.831557172744866,0.0
+DF,2023,3019987.0,Roubo de veículo,1283.0,0.0,Centro-Oeste,42.483626585147555,0.0
+DF,2024,2982818.0,Roubo de veículo,1024.0,0.0,Centro-Oeste,34.32995241412651,0.0
+DF,2017,3039444.0,Roubo seguido de morte (latrocínio),0.0,36.0,Centro-Oeste,0.0,1.184427151808028
+DF,2018,2974703.0,Roubo seguido de morte (latrocínio),0.0,32.0,Centro-Oeste,0.0,1.0757376450691043
+DF,2019,3015268.0,Roubo seguido de morte (latrocínio),0.0,25.0,Centro-Oeste,0.0,0.8291136973562548
+DF,2020,3055149.0,Roubo seguido de morte (latrocínio),0.0,32.0,Centro-Oeste,0.0,1.047412090212294
+DF,2021,3094325.0,Roubo seguido de morte (latrocínio),0.0,23.0,Centro-Oeste,0.0,0.7432961954545821
+DF,2022,3057156.0,Roubo seguido de morte (latrocínio),0.0,20.0,Centro-Oeste,0.0,0.6542027950160214
+DF,2023,3019987.0,Roubo seguido de morte (latrocínio),0.0,18.0,Centro-Oeste,0.0,0.5960290557542135
+DF,2024,2982818.0,Roubo seguido de morte (latrocínio),0.0,8.0,Centro-Oeste,0.0,0.26820275323536336
+DF,2017,3039444.0,Tentativa de homicídio,0.0,966.0,Centro-Oeste,0.0,31.782128573515422
+DF,2018,2974703.0,Tentativa de homicídio,0.0,894.0,Centro-Oeste,0.0,30.053420459118104
+DF,2019,3015268.0,Tentativa de homicídio,0.0,936.0,Centro-Oeste,0.0,31.04201682901818
+DF,2020,3055149.0,Tentativa de homicídio,0.0,819.0,Centro-Oeste,0.0,26.807203183870904
+DF,2021,3094325.0,Tentativa de homicídio,0.0,675.0,Centro-Oeste,0.0,21.81412747529752
+DF,2022,3057156.0,Tentativa de homicídio,0.0,628.0,Centro-Oeste,0.0,20.541967763503074
+DF,2023,3019987.0,Tentativa de homicídio,0.0,710.0,Centro-Oeste,0.0,23.510034976971756
+DF,2024,2982818.0,Tentativa de homicídio,0.0,690.0,Centro-Oeste,0.0,23.13248746655009
+ES,2017,4016356.0,Furto de veículo,0.0,0.0,Sudeste,0.0,0.0
+ES,2018,3972388.0,Furto de veículo,5814.0,0.0,Sudeste,146.3603253257235,0.0
+ES,2019,4018650.0,Furto de veículo,5609.0,0.0,Sudeste,139.57423512871236,0.0
+ES,2020,4064052.0,Furto de veículo,5390.0,0.0,Sudeste,132.62625576641244,0.0
+ES,2021,4108508.0,Furto de veículo,4683.0,0.0,Sudeste,113.98298360378026,0.0
+ES,2022,4106381.6666666665,Furto de veículo,4658.0,0.0,Sudeste,113.43319686552921,0.0
+ES,2023,4104255.3333333335,Furto de veículo,4083.0,0.0,Sudeste,99.48211474172415,0.0
+ES,2024,4102129.0,Furto de veículo,3942.0,0.0,Sudeste,96.09644162823744,0.0
+ES,2017,4016356.0,Homicídio doloso,0.0,1365.0,Sudeste,0.0,33.986031118755406
+ES,2018,3972388.0,Homicídio doloso,0.0,1075.0,Sudeste,0.0,27.061807658265003
+ES,2019,4018650.0,Homicídio doloso,0.0,953.0,Sudeste,0.0,23.714431463302354
+ES,2020,4064052.0,Homicídio doloso,0.0,1081.0,Sudeste,0.0,26.59906910639923
+ES,2021,4108508.0,Homicídio doloso,0.0,1023.0,Sudeste,0.0,24.89954990960222
+ES,2022,4106381.6666666665,Homicídio doloso,0.0,968.0,Sudeste,0.0,23.57306452679955
+ES,2023,4104255.3333333335,Homicídio doloso,0.0,938.0,Sudeste,0.0,22.854328588718406
+ES,2024,4102129.0,Homicídio doloso,0.0,813.0,Sudeste,0.0,19.818976926371647
+ES,2017,4016356.0,Lesão corporal seguida de morte,0.0,10.0,Sudeste,0.0,0.24898191295791508
+ES,2018,3972388.0,Lesão corporal seguida de morte,0.0,14.0,Sudeste,0.0,0.35243284392159074
+ES,2019,4018650.0,Lesão corporal seguida de morte,0.0,10.0,Sudeste,0.0,0.24883978450474664
+ES,2020,4064052.0,Lesão corporal seguida de morte,0.0,20.0,Sudeste,0.0,0.49211968744494416
+ES,2021,4108508.0,Lesão corporal seguida de morte,0.0,17.0,Sudeste,0.0,0.41377551169426957
+ES,2022,4106381.6666666665,Lesão corporal seguida de morte,0.0,26.0,Sudeste,0.0,0.63316082406693
+ES,2023,4104255.3333333335,Lesão corporal seguida de morte,0.0,12.0,Sudeste,0.0,0.2923794702181459
+ES,2024,4102129.0,Lesão corporal seguida de morte,0.0,11.0,Sudeste,0.0,0.26815343934820185
+ES,2017,4016356.0,Roubo a instituição financeira,0.0,0.0,Sudeste,0.0,0.0
+ES,2018,3972388.0,Roubo a instituição financeira,49.0,0.0,Sudeste,1.2335149537255676,0.0
+ES,2019,4018650.0,Roubo a instituição financeira,40.0,0.0,Sudeste,0.9953591380189866,0.0
+ES,2020,4064052.0,Roubo a instituição financeira,31.0,0.0,Sudeste,0.7627855155396633,0.0
+ES,2021,4108508.0,Roubo a instituição financeira,35.0,0.0,Sudeste,0.851890759370555,0.0
+ES,2022,4106381.6666666665,Roubo a instituição financeira,26.0,0.0,Sudeste,0.63316082406693,0.0
+ES,2023,4104255.3333333335,Roubo a instituição financeira,20.0,0.0,Sudeste,0.4872991170302432,0.0
+ES,2024,4102129.0,Roubo a instituição financeira,19.0,0.0,Sudeste,0.4631741225105305,0.0
+ES,2017,4016356.0,Roubo de carga,0.0,0.0,Sudeste,0.0,0.0
+ES,2018,3972388.0,Roubo de carga,36.0,0.0,Sudeste,0.9062558843698046,0.0
+ES,2019,4018650.0,Roubo de carga,20.0,0.0,Sudeste,0.4976795690094933,0.0
+ES,2020,4064052.0,Roubo de carga,25.0,0.0,Sudeste,0.6151496093061801,0.0
+ES,2021,4108508.0,Roubo de carga,27.0,0.0,Sudeste,0.6571728715144282,0.0
+ES,2022,4106381.6666666665,Roubo de carga,35.0,0.0,Sudeste,0.8523318785516366,0.0
+ES,2023,4104255.3333333335,Roubo de carga,25.0,0.0,Sudeste,0.6091238962878041,0.0
+ES,2024,4102129.0,Roubo de carga,12.0,0.0,Sudeste,0.29253102474349296,0.0
+ES,2017,4016356.0,Roubo de veículo,0.0,0.0,Sudeste,0.0,0.0
+ES,2018,3972388.0,Roubo de veículo,5403.0,0.0,Sudeste,136.0139039791682,0.0
+ES,2019,4018650.0,Roubo de veículo,3956.0,0.0,Sudeste,98.44101875007777,0.0
+ES,2020,4064052.0,Roubo de veículo,3715.0,0.0,Sudeste,91.41123194289837,0.0
+ES,2021,4108508.0,Roubo de veículo,3810.0,0.0,Sudeste,92.73439409148041,0.0
+ES,2022,4106381.6666666665,Roubo de veículo,3254.0,0.0,Sudeste,79.242512365915,0.0
+ES,2023,4104255.3333333335,Roubo de veículo,2670.0,0.0,Sudeste,65.05443212353748,0.0
+ES,2024,4102129.0,Roubo de veículo,1928.0,0.0,Sudeste,46.9999846421212,0.0
+ES,2017,4016356.0,Roubo seguido de morte (latrocínio),0.0,45.0,Sudeste,0.0,1.1204186083106178
+ES,2018,3972388.0,Roubo seguido de morte (latrocínio),0.0,34.0,Sudeste,0.0,0.8559083352381489
+ES,2019,4018650.0,Roubo seguido de morte (latrocínio),0.0,26.0,Sudeste,0.0,0.6469834397123412
+ES,2020,4064052.0,Roubo seguido de morte (latrocínio),0.0,39.0,Sudeste,0.0,0.959633390517641
+ES,2021,4108508.0,Roubo seguido de morte (latrocínio),0.0,43.0,Sudeste,0.0,1.0466086472266818
+ES,2022,4106381.6666666665,Roubo seguido de morte (latrocínio),0.0,28.0,Sudeste,0.0,0.6818655028413092
+ES,2023,4104255.3333333335,Roubo seguido de morte (latrocínio),0.0,27.0,Sudeste,0.0,0.6578538079908284
+ES,2024,4102129.0,Roubo seguido de morte (latrocínio),0.0,39.0,Sudeste,0.0,0.9507258304163521
+ES,2017,4016356.0,Tentativa de homicídio,0.0,0.0,Sudeste,0.0,0.0
+ES,2018,3972388.0,Tentativa de homicídio,0.0,2239.0,Sudeste,0.0,56.36408125288869
+ES,2019,4018650.0,Tentativa de homicídio,0.0,2318.0,Sudeste,0.0,57.68106204820027
+ES,2020,4064052.0,Tentativa de homicídio,0.0,2467.0,Sudeste,0.0,60.702963446333854
+ES,2021,4108508.0,Tentativa de homicídio,0.0,2552.0,Sudeste,0.0,62.11500622610446
+ES,2022,4106381.6666666665,Tentativa de homicídio,0.0,2553.0,Sudeste,0.0,62.171522455495094
+ES,2023,4104255.3333333335,Tentativa de homicídio,0.0,2568.0,Sudeste,0.0,62.569206626683226
+ES,2024,4102129.0,Tentativa de homicídio,0.0,2767.0,Sudeste,0.0,67.45277878877042
+GO,2017,6778772.0,Furto de veículo,11961.0,0.0,Centro-Oeste,176.4478876115025,0.0
+GO,2018,6921161.0,Furto de veículo,10512.0,0.0,Centro-Oeste,151.8820325087077,0.0
+GO,2019,7018354.0,Furto de veículo,8118.0,0.0,Centro-Oeste,115.66814669080527,0.0
+GO,2020,7113540.0,Furto de veículo,5727.0,0.0,Centro-Oeste,80.50843883635996,0.0
+GO,2021,7206589.0,Furto de veículo,5278.0,0.0,Centro-Oeste,73.23853212664133,0.0
+GO,2022,7254553.666666667,Furto de veículo,5387.0,0.0,Centro-Oeste,74.25680817211773,0.0
+GO,2023,7302518.333333333,Furto de veículo,4454.0,0.0,Centro-Oeste,60.99265755580666,0.0
+GO,2024,7350483.0,Furto de veículo,3547.0,0.0,Centro-Oeste,48.25533233666413,0.0
+GO,2017,6778772.0,Homicídio doloso,0.0,2246.0,Centro-Oeste,0.0,33.132844709926815
+GO,2018,6921161.0,Homicídio doloso,0.0,2081.0,Centro-Oeste,0.0,30.06720982216712
+GO,2019,7018354.0,Homicídio doloso,0.0,1625.0,Centro-Oeste,0.0,23.15357703529916
+GO,2020,7113540.0,Homicídio doloso,0.0,1469.0,Centro-Oeste,0.0,20.650758975137553
+GO,2021,7206589.0,Homicídio doloso,0.0,1188.0,Centro-Oeste,0.0,16.4849140141057
+GO,2022,7254553.666666667,Homicídio doloso,0.0,1134.0,Centro-Oeste,0.0,15.63156125249332
+GO,2023,7302518.333333333,Homicídio doloso,0.0,1004.0,Centro-Oeste,0.0,13.748681676252781
+GO,2024,7350483.0,Homicídio doloso,0.0,890.0,Centro-Oeste,0.0,12.108047865698078
+GO,2017,6778772.0,Lesão corporal seguida de morte,0.0,37.0,Centro-Oeste,0.0,0.5458215735829439
+GO,2018,6921161.0,Lesão corporal seguida de morte,0.0,61.0,Centro-Oeste,0.0,0.8813550212168162
+GO,2019,7018354.0,Lesão corporal seguida de morte,0.0,36.0,Centro-Oeste,0.0,0.512940783551243
+GO,2020,7113540.0,Lesão corporal seguida de morte,0.0,23.0,Centro-Oeste,0.0,0.32332706359983915
+GO,2021,7206589.0,Lesão corporal seguida de morte,0.0,24.0,Centro-Oeste,0.0,0.33302856594152935
+GO,2022,7254553.666666667,Lesão corporal seguida de morte,0.0,26.0,Centro-Oeste,0.0,0.3583955842723336
+GO,2023,7302518.333333333,Lesão corporal seguida de morte,0.0,27.0,Centro-Oeste,0.0,0.3697354634052043
+GO,2024,7350483.0,Lesão corporal seguida de morte,0.0,28.0,Centro-Oeste,0.0,0.38092734858375976
+GO,2017,6778772.0,Roubo a instituição financeira,40.0,0.0,Centro-Oeste,0.5900773768464259,0.0
+GO,2018,6921161.0,Roubo a instituição financeira,30.0,0.0,Centro-Oeste,0.4334532891230243,0.0
+GO,2019,7018354.0,Roubo a instituição financeira,5.0,0.0,Centro-Oeste,0.07124177549322819,0.0
+GO,2020,7113540.0,Roubo a instituição financeira,4.0,0.0,Centro-Oeste,0.05623079366953725,0.0
+GO,2021,7206589.0,Roubo a instituição financeira,5.0,0.0,Centro-Oeste,0.06938095123781861,0.0
+GO,2022,7254553.666666667,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+GO,2023,7302518.333333333,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+GO,2024,7350483.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+GO,2017,6778772.0,Roubo de carga,544.0,0.0,Centro-Oeste,8.025052325111393,0.0
+GO,2018,6921161.0,Roubo de carga,435.0,0.0,Centro-Oeste,6.285072692283853,0.0
+GO,2019,7018354.0,Roubo de carga,176.0,0.0,Centro-Oeste,2.507710497361632,0.0
+GO,2020,7113540.0,Roubo de carga,160.0,0.0,Centro-Oeste,2.24923174678149,0.0
+GO,2021,7206589.0,Roubo de carga,282.0,0.0,Centro-Oeste,3.91308564981297,0.0
+GO,2022,7254553.666666667,Roubo de carga,85.0,0.0,Centro-Oeste,1.171677871659552,0.0
+GO,2023,7302518.333333333,Roubo de carga,41.0,0.0,Centro-Oeste,0.5614501481338288,0.0
+GO,2024,7350483.0,Roubo de carga,14.0,0.0,Centro-Oeste,0.19046367429187988,0.0
+GO,2017,6778772.0,Roubo de veículo,14680.0,0.0,Centro-Oeste,216.5583973026383,0.0
+GO,2018,6921161.0,Roubo de veículo,10236.0,0.0,Centro-Oeste,147.89426224877587,0.0
+GO,2019,7018354.0,Roubo de veículo,4046.0,0.0,Centro-Oeste,57.64884472912024,0.0
+GO,2020,7113540.0,Roubo de veículo,2541.0,0.0,Centro-Oeste,35.72061167857354,0.0
+GO,2021,7206589.0,Roubo de veículo,1793.0,0.0,Centro-Oeste,24.880009113881755,0.0
+GO,2022,7254553.666666667,Roubo de veículo,1356.0,0.0,Centro-Oeste,18.69170816435709,0.0
+GO,2023,7302518.333333333,Roubo de veículo,942.0,0.0,Centro-Oeste,12.899659501026017,0.0
+GO,2024,7350483.0,Roubo de veículo,704.0,0.0,Centro-Oeste,9.577601907248816,0.0
+GO,2017,6778772.0,Roubo seguido de morte (latrocínio),0.0,120.0,Centro-Oeste,0.0,1.7702321305392774
+GO,2018,6921161.0,Roubo seguido de morte (latrocínio),0.0,105.0,Centro-Oeste,0.0,1.5170865119305852
+GO,2019,7018354.0,Roubo seguido de morte (latrocínio),0.0,59.0,Centro-Oeste,0.0,0.8406529508200926
+GO,2020,7113540.0,Roubo seguido de morte (latrocínio),0.0,46.0,Centro-Oeste,0.0,0.6466541271996783
+GO,2021,7206589.0,Roubo seguido de morte (latrocínio),0.0,34.0,Centro-Oeste,0.0,0.47179046841716654
+GO,2022,7254553.666666667,Roubo seguido de morte (latrocínio),0.0,33.0,Centro-Oeste,0.0,0.45488670311488494
+GO,2023,7302518.333333333,Roubo seguido de morte (latrocínio),0.0,16.0,Centro-Oeste,0.0,0.21910249683271366
+GO,2024,7350483.0,Roubo seguido de morte (latrocínio),0.0,18.0,Centro-Oeste,0.0,0.2448818669467027
+GO,2017,6778772.0,Tentativa de homicídio,0.0,2405.0,Centro-Oeste,0.0,35.47840228289135
+GO,2018,6921161.0,Tentativa de homicídio,0.0,2076.0,Centro-Oeste,0.0,29.994967607313278
+GO,2019,7018354.0,Tentativa de homicídio,0.0,1933.0,Centro-Oeste,0.0,27.54207040568202
+GO,2020,7113540.0,Tentativa de homicídio,0.0,1750.0,Centro-Oeste,0.0,24.60097223042255
+GO,2021,7206589.0,Tentativa de homicídio,0.0,1606.0,Centro-Oeste,0.0,22.28516153758734
+GO,2022,7254553.666666667,Tentativa de homicídio,0.0,1681.0,Centro-Oeste,0.0,23.171652967761258
+GO,2023,7302518.333333333,Tentativa de homicídio,0.0,1561.0,Centro-Oeste,0.0,21.376187347241626
+GO,2024,7350483.0,Tentativa de homicídio,0.0,1513.0,Centro-Oeste,0.0,20.58368137168673
+MA,2017,7000229.0,Furto de veículo,3130.0,0.0,Nordeste,44.71282296622011,0.0
+MA,2018,7035055.0,Furto de veículo,2980.0,0.0,Nordeste,42.35929925210251,0.0
+MA,2019,7075181.0,Furto de veículo,2537.0,0.0,Nordeste,35.857739893862785,0.0
+MA,2020,7114598.0,Furto de veículo,1836.0,0.0,Nordeste,25.806096142044847,0.0
+MA,2021,7153262.0,Furto de veículo,2978.0,0.0,Nordeste,41.63135643570723,0.0
+MA,2022,7105828.0,Furto de veículo,3374.0,0.0,Nordeste,47.48215127075972,0.0
+MA,2023,7058394.0,Furto de veículo,3191.0,0.0,Nordeste,45.208584275686505,0.0
+MA,2024,7010960.0,Furto de veículo,3024.0,0.0,Nordeste,43.132466880427216,0.0
+MA,2017,7000229.0,Homicídio doloso,0.0,1768.0,Nordeste,0.0,25.256316614785028
+MA,2018,7035055.0,Homicídio doloso,0.0,1572.0,Nordeste,0.0,22.34524108198159
+MA,2019,7075181.0,Homicídio doloso,0.0,1350.0,Nordeste,0.0,19.080783940368452
+MA,2020,7114598.0,Homicídio doloso,0.0,1796.0,Nordeste,0.0,25.2438718252247
+MA,2021,7153262.0,Homicídio doloso,0.0,1774.0,Nordeste,0.0,24.799874518785973
+MA,2022,7105828.0,Homicídio doloso,0.0,1632.0,Nordeste,0.0,22.967063092436234
+MA,2023,7058394.0,Homicídio doloso,0.0,1717.0,Nordeste,0.0,24.325646882279454
+MA,2024,7010960.0,Homicídio doloso,0.0,1914.0,Nordeste,0.0,27.300112965984685
+MA,2017,7000229.0,Lesão corporal seguida de morte,0.0,31.0,Nordeste,0.0,0.44284265557598185
+MA,2018,7035055.0,Lesão corporal seguida de morte,0.0,14.0,Nordeste,0.0,0.19900341930517954
+MA,2019,7075181.0,Lesão corporal seguida de morte,0.0,13.0,Nordeste,0.0,0.18374088238873323
+MA,2020,7114598.0,Lesão corporal seguida de morte,0.0,13.0,Nordeste,0.0,0.1827229029665485
+MA,2021,7153262.0,Lesão corporal seguida de morte,0.0,9.0,Nordeste,0.0,0.1258167252926008
+MA,2022,7105828.0,Lesão corporal seguida de morte,0.0,9.0,Nordeste,0.0,0.12665659793622924
+MA,2023,7058394.0,Lesão corporal seguida de morte,0.0,14.0,Nordeste,0.0,0.19834540265108463
+MA,2024,7010960.0,Lesão corporal seguida de morte,0.0,8.0,Nordeste,0.0,0.11410705523922544
+MA,2017,7000229.0,Roubo a instituição financeira,74.0,0.0,Nordeste,1.057108274600731,0.0
+MA,2018,7035055.0,Roubo a instituição financeira,38.0,0.0,Nordeste,0.5401521381140588,0.0
+MA,2019,7075181.0,Roubo a instituição financeira,39.0,0.0,Nordeste,0.5512226471661997,0.0
+MA,2020,7114598.0,Roubo a instituição financeira,30.0,0.0,Nordeste,0.42166823761511196,0.0
+MA,2021,7153262.0,Roubo a instituição financeira,13.0,0.0,Nordeste,0.18173526986709002,0.0
+MA,2022,7105828.0,Roubo a instituição financeira,18.0,0.0,Nordeste,0.2533131958724585,0.0
+MA,2023,7058394.0,Roubo a instituição financeira,7.0,0.0,Nordeste,0.09917270132554232,0.0
+MA,2024,7010960.0,Roubo a instituição financeira,15.0,0.0,Nordeste,0.21395072857354772,0.0
+MA,2017,7000229.0,Roubo de carga,57.0,0.0,Nordeste,0.8142590763816441,0.0
+MA,2018,7035055.0,Roubo de carga,37.0,0.0,Nordeste,0.5259376081636888,0.0
+MA,2019,7075181.0,Roubo de carga,42.0,0.0,Nordeste,0.5936243892559073,0.0
+MA,2020,7114598.0,Roubo de carga,28.0,0.0,Nordeste,0.39355702177410445,0.0
+MA,2021,7153262.0,Roubo de carga,36.0,0.0,Nordeste,0.5032669011704032,0.0
+MA,2022,7105828.0,Roubo de carga,145.0,0.0,Nordeste,2.040578522305916,0.0
+MA,2023,7058394.0,Roubo de carga,87.0,0.0,Nordeste,1.2325750021888833,0.0
+MA,2024,7010960.0,Roubo de carga,209.0,0.0,Nordeste,2.981046818124765,0.0
+MA,2017,7000229.0,Roubo de veículo,4479.0,0.0,Nordeste,63.98362110725235,0.0
+MA,2018,7035055.0,Roubo de veículo,4093.0,0.0,Nordeste,58.18007108686429,0.0
+MA,2019,7075181.0,Roubo de veículo,3401.0,0.0,Nordeste,48.069441615698594,0.0
+MA,2020,7114598.0,Roubo de veículo,2268.0,0.0,Nordeste,31.87811876370246,0.0
+MA,2021,7153262.0,Roubo de veículo,5371.0,0.0,Nordeste,75.08462572739542,0.0
+MA,2022,7105828.0,Roubo de veículo,5036.0,0.0,Nordeste,70.87140302298339,0.0
+MA,2023,7058394.0,Roubo de veículo,4996.0,0.0,Nordeste,70.78097368891564,0.0
+MA,2024,7010960.0,Roubo de veículo,4269.0,0.0,Nordeste,60.89037735203168,0.0
+MA,2017,7000229.0,Roubo seguido de morte (latrocínio),0.0,96.0,Nordeste,0.0,1.3713837075901374
+MA,2018,7035055.0,Roubo seguido de morte (latrocínio),0.0,71.0,Nordeste,0.0,1.0092316264762677
+MA,2019,7075181.0,Roubo seguido de morte (latrocínio),0.0,76.0,Nordeste,0.0,1.0741774662725945
+MA,2020,7114598.0,Roubo seguido de morte (latrocínio),0.0,75.0,Nordeste,0.0,1.0541705940377797
+MA,2021,7153262.0,Roubo seguido de morte (latrocínio),0.0,97.0,Nordeste,0.0,1.356024705931364
+MA,2022,7105828.0,Roubo seguido de morte (latrocínio),0.0,95.0,Nordeste,0.0,1.3369307559935308
+MA,2023,7058394.0,Roubo seguido de morte (latrocínio),0.0,57.0,Nordeste,0.0,0.8075491393651304
+MA,2024,7010960.0,Roubo seguido de morte (latrocínio),0.0,62.0,Nordeste,0.0,0.8843296781039971
+MA,2017,7000229.0,Tentativa de homicídio,0.0,0.0,Nordeste,0.0,0.0
+MA,2018,7035055.0,Tentativa de homicídio,0.0,0.0,Nordeste,0.0,0.0
+MA,2019,7075181.0,Tentativa de homicídio,0.0,0.0,Nordeste,0.0,0.0
+MA,2020,7114598.0,Tentativa de homicídio,0.0,965.0,Nordeste,0.0,13.563661643286098
+MA,2021,7153262.0,Tentativa de homicídio,0.0,1092.0,Nordeste,0.0,15.265762668835562
+MA,2022,7105828.0,Tentativa de homicídio,0.0,1266.0,Nordeste,0.0,17.816361443029578
+MA,2023,7058394.0,Tentativa de homicídio,0.0,1244.0,Nordeste,0.0,17.62440577842495
+MA,2024,7010960.0,Tentativa de homicídio,0.0,1432.0,Nordeste,0.0,20.425162887821354
+MG,2017,21119536.0,Furto de veículo,31221.0,0.0,Sudeste,147.82995232471018,0.0
+MG,2018,21040662.0,Furto de veículo,25811.0,0.0,Sudeste,122.67199577655873,0.0
+MG,2019,21168791.0,Furto de veículo,24149.0,0.0,Sudeste,114.0783146283602,0.0
+MG,2020,21292666.0,Furto de veículo,19790.0,0.0,Sudeste,92.94280011718588,0.0
+MG,2021,21411923.0,Furto de veículo,18363.0,0.0,Sudeste,85.76062972017974,0.0
+MG,2022,21382179.0,Furto de veículo,22774.0,0.0,Sudeste,106.50925707805551,0.0
+MG,2023,21352435.0,Furto de veículo,23201.0,0.0,Sudeste,108.65739668567075,0.0
+MG,2024,21322691.0,Furto de veículo,24379.0,0.0,Sudeste,114.3335988876826,0.0
+MG,2017,21119536.0,Homicídio doloso,0.0,3749.0,Sudeste,0.0,17.751336961190813
+MG,2018,21040662.0,Homicídio doloso,0.0,2893.0,Sudeste,0.0,13.74956738528474
+MG,2019,21168791.0,Homicídio doloso,0.0,2786.0,Sudeste,0.0,13.160883869088225
+MG,2020,21292666.0,Homicídio doloso,0.0,2695.0,Sudeste,0.0,12.656940187762302
+MG,2021,21411923.0,Homicídio doloso,0.0,2543.0,Sudeste,0.0,11.876560549932858
+MG,2022,21382179.0,Homicídio doloso,0.0,2643.0,Sudeste,0.0,12.360760799916603
+MG,2023,21352435.0,Homicídio doloso,0.0,2657.0,Sudeste,0.0,12.443545665869022
+MG,2024,21322691.0,Homicídio doloso,0.0,2853.0,Sudeste,0.0,13.380112294456644
+MG,2017,21119536.0,Lesão corporal seguida de morte,0.0,63.0,Sudeste,0.0,0.2983020081501791
+MG,2018,21040662.0,Lesão corporal seguida de morte,0.0,54.0,Sudeste,0.0,0.2566459173195216
+MG,2019,21168791.0,Lesão corporal seguida de morte,0.0,31.0,Sudeste,0.0,0.14644199567183597
+MG,2020,21292666.0,Lesão corporal seguida de morte,0.0,30.0,Sudeste,0.0,0.14089358279512768
+MG,2021,21411923.0,Lesão corporal seguida de morte,0.0,36.0,Sudeste,0.0,0.16813062516617494
+MG,2022,21382179.0,Lesão corporal seguida de morte,0.0,32.0,Sudeste,0.0,0.1496573384779914
+MG,2023,21352435.0,Lesão corporal seguida de morte,0.0,16.0,Sudeste,0.0,0.07493290577866178
+MG,2024,21322691.0,Lesão corporal seguida de morte,0.0,10.0,Sudeste,0.0,0.046898395704369586
+MG,2017,21119536.0,Roubo a instituição financeira,83.0,0.0,Sudeste,0.39300105835658516,0.0
+MG,2018,21040662.0,Roubo a instituição financeira,91.0,0.0,Sudeste,0.4324958977051197,0.0
+MG,2019,21168791.0,Roubo a instituição financeira,30.0,0.0,Sudeste,0.1417180603275832,0.0
+MG,2020,21292666.0,Roubo a instituição financeira,24.0,0.0,Sudeste,0.11271486623610215,0.0
+MG,2021,21411923.0,Roubo a instituição financeira,11.0,0.0,Sudeste,0.05137324657855345,0.0
+MG,2022,21382179.0,Roubo a instituição financeira,20.0,0.0,Sudeste,0.09353583654874463,0.0
+MG,2023,21352435.0,Roubo a instituição financeira,8.0,0.0,Sudeste,0.03746645288933089,0.0
+MG,2024,21322691.0,Roubo a instituição financeira,4.0,0.0,Sudeste,0.018759358281747834,0.0
+MG,2017,21119536.0,Roubo de carga,657.0,0.0,Sudeste,3.110863799280439,0.0
+MG,2018,21040662.0,Roubo de carga,531.0,0.0,Sudeste,2.5236848536419623,0.0
+MG,2019,21168791.0,Roubo de carga,368.0,0.0,Sudeste,1.7384082066850204,0.0
+MG,2020,21292666.0,Roubo de carga,332.0,0.0,Sudeste,1.5592223162660794,0.0
+MG,2021,21411923.0,Roubo de carga,304.0,0.0,Sudeste,1.4197697236254774,0.0
+MG,2022,21382179.0,Roubo de carga,344.0,0.0,Sudeste,1.6088163886384077,0.0
+MG,2023,21352435.0,Roubo de carga,248.0,0.0,Sudeste,1.1614600395692576,0.0
+MG,2024,21322691.0,Roubo de carga,214.0,0.0,Sudeste,1.0036256680735092,0.0
+MG,2017,21119536.0,Roubo de veículo,21536.0,0.0,Sudeste,101.97193726225802,0.0
+MG,2018,21040662.0,Roubo de veículo,15324.0,0.0,Sudeste,72.83040809267312,0.0
+MG,2019,21168791.0,Roubo de veículo,9869.0,0.0,Sudeste,46.62051791243062,0.0
+MG,2020,21292666.0,Roubo de veículo,7342.0,0.0,Sudeste,34.48135616272758,0.0
+MG,2021,21411923.0,Roubo de veículo,5320.0,0.0,Sudeste,24.845970163445852,0.0
+MG,2022,21382179.0,Roubo de veículo,5476.0,0.0,Sudeste,25.610112047046282,0.0
+MG,2023,21352435.0,Roubo de veículo,4368.0,0.0,Sudeste,20.456683277574665,0.0
+MG,2024,21322691.0,Roubo de veículo,4732.0,0.0,Sudeste,22.192320847307688,0.0
+MG,2017,21119536.0,Roubo seguido de morte (latrocínio),0.0,81.0,Sudeste,0.0,0.3835311533359445
+MG,2018,21040662.0,Roubo seguido de morte (latrocínio),0.0,82.0,Sudeste,0.0,0.38972157815186614
+MG,2019,21168791.0,Roubo seguido de morte (latrocínio),0.0,79.0,Sudeste,0.0,0.37319089219596907
+MG,2020,21292666.0,Roubo seguido de morte (latrocínio),0.0,106.0,Sudeste,0.0,0.4978239925427845
+MG,2021,21411923.0,Roubo seguido de morte (latrocínio),0.0,93.0,Sudeste,0.0,0.43433744834595195
+MG,2022,21382179.0,Roubo seguido de morte (latrocínio),0.0,77.0,Sudeste,0.0,0.36011297071266685
+MG,2023,21352435.0,Roubo seguido de morte (latrocínio),0.0,63.0,Sudeste,0.0,0.29504831650348073
+MG,2024,21322691.0,Roubo seguido de morte (latrocínio),0.0,46.0,Sudeste,0.0,0.21573262024010006
+MG,2017,21119536.0,Tentativa de homicídio,0.0,5778.0,Sudeste,0.0,27.358555604630705
+MG,2018,21040662.0,Tentativa de homicídio,0.0,4560.0,Sudeste,0.0,21.672321906981825
+MG,2019,21168791.0,Tentativa de homicídio,0.0,3513.0,Sudeste,0.0,16.59518486435999
+MG,2020,21292666.0,Tentativa de homicídio,0.0,3268.0,Sudeste,0.0,15.348007619149241
+MG,2021,21411923.0,Tentativa de homicídio,0.0,2611.0,Sudeste,0.0,12.194140619691188
+MG,2022,21382179.0,Tentativa de homicídio,0.0,2844.0,Sudeste,0.0,13.300795957231488
+MG,2023,21352435.0,Tentativa de homicídio,0.0,2754.0,Sudeste,0.0,12.89782640715216
+MG,2024,21322691.0,Tentativa de homicídio,0.0,3665.0,Sudeste,0.0,17.18826202565145
+MS,2017,2713147.0,Furto de veículo,3647.0,0.0,Centro-Oeste,134.4195504335003,0.0
+MS,2018,2748023.0,Furto de veículo,3727.0,0.0,Centro-Oeste,135.62477461069284,0.0
+MS,2019,2778986.0,Furto de veículo,3523.0,0.0,Centro-Oeste,126.77285887730274,0.0
+MS,2020,2809394.0,Furto de veículo,2929.0,0.0,Centro-Oeste,104.25735941630117,0.0
+MS,2021,2839188.0,Furto de veículo,2895.0,0.0,Centro-Oeste,101.96577331265136,0.0
+MS,2022,2860090.3333333335,Furto de veículo,3577.0,0.0,Centro-Oeste,125.06597985075295,0.0
+MS,2023,2880992.6666666665,Furto de veículo,2859.0,0.0,Centro-Oeste,99.23662885639649,0.0
+MS,2024,2901895.0,Furto de veículo,2728.0,0.0,Centro-Oeste,94.00753645462706,0.0
+MS,2017,2713147.0,Homicídio doloso,0.0,625.0,Centro-Oeste,0.0,23.035979989289192
+MS,2018,2748023.0,Homicídio doloso,0.0,502.0,Centro-Oeste,0.0,18.267678254512425
+MS,2019,2778986.0,Homicídio doloso,0.0,455.0,Centro-Oeste,0.0,16.372878452788175
+MS,2020,2809394.0,Homicídio doloso,0.0,472.0,Centro-Oeste,0.0,16.800776252814664
+MS,2021,2839188.0,Homicídio doloso,0.0,489.0,Centro-Oeste,0.0,17.223234248665463
+MS,2022,2860090.3333333335,Homicídio doloso,0.0,448.0,Centro-Oeste,0.0,15.66384092064225
+MS,2023,2880992.6666666665,Homicídio doloso,0.0,453.0,Centro-Oeste,0.0,15.723747069586432
+MS,2024,2901895.0,Homicídio doloso,0.0,421.0,Centro-Oeste,0.0,14.50776130769721
+MS,2017,2713147.0,Lesão corporal seguida de morte,0.0,16.0,Centro-Oeste,0.0,0.5897210877258033
+MS,2018,2748023.0,Lesão corporal seguida de morte,0.0,7.0,Centro-Oeste,0.0,0.25472858123822106
+MS,2019,2778986.0,Lesão corporal seguida de morte,0.0,10.0,Centro-Oeste,0.0,0.359843482478861
+MS,2020,2809394.0,Lesão corporal seguida de morte,0.0,9.0,Centro-Oeste,0.0,0.32035378448163554
+MS,2021,2839188.0,Lesão corporal seguida de morte,0.0,11.0,Centro-Oeste,0.0,0.38743471725014333
+MS,2022,2860090.3333333335,Lesão corporal seguida de morte,0.0,6.0,Centro-Oeste,0.0,0.20978358375860154
+MS,2023,2880992.6666666665,Lesão corporal seguida de morte,0.0,15.0,Centro-Oeste,0.0,0.520653876476372
+MS,2024,2901895.0,Lesão corporal seguida de morte,0.0,14.0,Centro-Oeste,0.0,0.48244336890204503
+MS,2017,2713147.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2018,2748023.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2019,2778986.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2020,2809394.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2021,2839188.0,Roubo a instituição financeira,1.0,0.0,Centro-Oeste,0.035221337931831215,0.0
+MS,2022,2860090.3333333335,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2023,2880992.6666666665,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2024,2901895.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2017,2713147.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2018,2748023.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2019,2778986.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2020,2809394.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2021,2839188.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2022,2860090.3333333335,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2023,2880992.6666666665,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2024,2901895.0,Roubo de carga,0.0,0.0,Centro-Oeste,0.0,0.0
+MS,2017,2713147.0,Roubo de veículo,895.0,0.0,Centro-Oeste,32.98752334466212,0.0
+MS,2018,2748023.0,Roubo de veículo,783.0,0.0,Centro-Oeste,28.493211301361015,0.0
+MS,2019,2778986.0,Roubo de veículo,532.0,0.0,Centro-Oeste,19.143673267875407,0.0
+MS,2020,2809394.0,Roubo de veículo,408.0,0.0,Centro-Oeste,14.522704896500812,0.0
+MS,2021,2839188.0,Roubo de veículo,510.0,0.0,Centro-Oeste,17.962882345233922,0.0
+MS,2022,2860090.3333333335,Roubo de veículo,467.0,0.0,Centro-Oeste,16.328155602544488,0.0
+MS,2023,2880992.6666666665,Roubo de veículo,374.0,0.0,Centro-Oeste,12.98163665347754,0.0
+MS,2024,2901895.0,Roubo de veículo,315.0,0.0,Centro-Oeste,10.854975800296012,0.0
+MS,2017,2713147.0,Roubo seguido de morte (latrocínio),0.0,26.0,Centro-Oeste,0.0,0.9582967675544303
+MS,2018,2748023.0,Roubo seguido de morte (latrocínio),0.0,30.0,Centro-Oeste,0.0,1.091693919592376
+MS,2019,2778986.0,Roubo seguido de morte (latrocínio),0.0,20.0,Centro-Oeste,0.0,0.719686964957722
+MS,2020,2809394.0,Roubo seguido de morte (latrocínio),0.0,18.0,Centro-Oeste,0.0,0.6407075689632711
+MS,2021,2839188.0,Roubo seguido de morte (latrocínio),0.0,14.0,Centro-Oeste,0.0,0.493098731045637
+MS,2022,2860090.3333333335,Roubo seguido de morte (latrocínio),0.0,12.0,Centro-Oeste,0.0,0.4195671675172031
+MS,2023,2880992.6666666665,Roubo seguido de morte (latrocínio),0.0,6.0,Centro-Oeste,0.0,0.2082615505905488
+MS,2024,2901895.0,Roubo seguido de morte (latrocínio),0.0,22.0,Centro-Oeste,0.0,0.7581252939889279
+MS,2017,2713147.0,Tentativa de homicídio,0.0,993.0,Centro-Oeste,0.0,36.599565006982665
+MS,2018,2748023.0,Tentativa de homicídio,0.0,720.0,Centro-Oeste,0.0,26.200654070217027
+MS,2019,2778986.0,Tentativa de homicídio,0.0,706.0,Centro-Oeste,0.0,25.404949863007587
+MS,2020,2809394.0,Tentativa de homicídio,0.0,590.0,Centro-Oeste,0.0,21.000970316018332
+MS,2021,2839188.0,Tentativa de homicídio,0.0,604.0,Centro-Oeste,0.0,21.273688110826054
+MS,2022,2860090.3333333335,Tentativa de homicídio,0.0,826.0,Centro-Oeste,0.0,28.88020669743415
+MS,2023,2880992.6666666665,Tentativa de homicídio,0.0,739.0,Centro-Oeste,0.0,25.65088098106926
+MS,2024,2901895.0,Tentativa de homicídio,0.0,696.0,Centro-Oeste,0.0,23.98432748255881
+MT,2017,3344544.0,Furto de veículo,2817.0,0.0,Centro-Oeste,84.22672866615001,0.0
+MT,2018,3441998.0,Furto de veículo,2438.0,0.0,Centro-Oeste,70.83095341717224,0.0
+MT,2019,3484466.0,Furto de veículo,2363.0,0.0,Centro-Oeste,67.81526925503076,0.0
+MT,2020,3526220.0,Furto de veículo,1860.0,0.0,Centro-Oeste,52.747701504727445,0.0
+MT,2021,3567234.0,Furto de veículo,2494.0,0.0,Centro-Oeste,69.91411272711574,0.0
+MT,2022,3656955.6666666665,Furto de veículo,2301.0,0.0,Centro-Oeste,62.92118936452334,0.0
+MT,2023,3746677.3333333335,Furto de veículo,2239.0,0.0,Centro-Oeste,59.75961634272927,0.0
+MT,2024,3836399.0,Furto de veículo,2043.0,0.0,Centro-Oeste,53.253063615124496,0.0
+MT,2017,3344544.0,Homicídio doloso,0.0,965.0,Centro-Oeste,0.0,28.852961719146165
+MT,2018,3441998.0,Homicídio doloso,0.0,916.0,Centro-Oeste,0.0,26.612450094392848
+MT,2019,3484466.0,Homicídio doloso,0.0,804.0,Centro-Oeste,0.0,23.07383685190213
+MT,2020,3526220.0,Homicídio doloso,0.0,751.0,Centro-Oeste,0.0,21.297593457016294
+MT,2021,3567234.0,Homicídio doloso,0.0,711.0,Centro-Oeste,0.0,19.931409041290813
+MT,2022,3656955.6666666665,Homicídio doloso,0.0,876.0,Centro-Oeste,0.0,23.95435110096586
+MT,2023,3746677.3333333335,Homicídio doloso,0.0,873.0,Centro-Oeste,0.0,23.30064540741521
+MT,2024,3836399.0,Homicídio doloso,0.0,855.0,Centro-Oeste,0.0,22.286524420426552
+MT,2017,3344544.0,Lesão corporal seguida de morte,0.0,17.0,Centro-Oeste,0.0,0.5082905173321086
+MT,2018,3441998.0,Lesão corporal seguida de morte,0.0,26.0,Centro-Oeste,0.0,0.7553752210198844
+MT,2019,3484466.0,Lesão corporal seguida de morte,0.0,21.0,Centro-Oeste,0.0,0.6026748431466974
+MT,2020,3526220.0,Lesão corporal seguida de morte,0.0,25.0,Centro-Oeste,0.0,0.7089744825904226
+MT,2021,3567234.0,Lesão corporal seguida de morte,0.0,8.0,Centro-Oeste,0.0,0.22426339286965755
+MT,2022,3656955.6666666665,Lesão corporal seguida de morte,0.0,11.0,Centro-Oeste,0.0,0.3007966462450051
+MT,2023,3746677.3333333335,Lesão corporal seguida de morte,0.0,2.0,Centro-Oeste,0.0,0.05338063094482293
+MT,2024,3836399.0,Lesão corporal seguida de morte,0.0,6.0,Centro-Oeste,0.0,0.15639666259948456
+MT,2017,3344544.0,Roubo a instituição financeira,7.0,0.0,Centro-Oeste,0.20929609537204474,0.0
+MT,2018,3441998.0,Roubo a instituição financeira,9.0,0.0,Centro-Oeste,0.2614760380453446,0.0
+MT,2019,3484466.0,Roubo a instituição financeira,3.0,0.0,Centro-Oeste,0.08609640616381391,0.0
+MT,2020,3526220.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MT,2021,3567234.0,Roubo a instituição financeira,6.0,0.0,Centro-Oeste,0.16819754465224318,0.0
+MT,2022,3656955.6666666665,Roubo a instituição financeira,1.0,0.0,Centro-Oeste,0.027345149658636828,0.0
+MT,2023,3746677.3333333335,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MT,2024,3836399.0,Roubo a instituição financeira,0.0,0.0,Centro-Oeste,0.0,0.0
+MT,2017,3344544.0,Roubo de carga,20.0,0.0,Centro-Oeste,0.5979888439201279,0.0
+MT,2018,3441998.0,Roubo de carga,17.0,0.0,Centro-Oeste,0.4938991829745398,0.0
+MT,2019,3484466.0,Roubo de carga,82.0,0.0,Centro-Oeste,2.3533017684775803,0.0
+MT,2020,3526220.0,Roubo de carga,89.0,0.0,Centro-Oeste,2.5239491580219044,0.0
+MT,2021,3567234.0,Roubo de carga,229.0,0.0,Centro-Oeste,6.419539620893948,0.0
+MT,2022,3656955.6666666665,Roubo de carga,283.0,0.0,Centro-Oeste,7.7386773533942215,0.0
+MT,2023,3746677.3333333335,Roubo de carga,143.0,0.0,Centro-Oeste,3.81671511255484,0.0
+MT,2024,3836399.0,Roubo de carga,85.0,0.0,Centro-Oeste,2.2156193868260314,0.0
+MT,2017,3344544.0,Roubo de veículo,2585.0,0.0,Centro-Oeste,77.29005807667652,0.0
+MT,2018,3441998.0,Roubo de veículo,2288.0,0.0,Centro-Oeste,66.47301944974983,0.0
+MT,2019,3484466.0,Roubo de veículo,1837.0,0.0,Centro-Oeste,52.71969937430871,0.0
+MT,2020,3526220.0,Roubo de veículo,1322.0,0.0,Centro-Oeste,37.49057063938155,0.0
+MT,2021,3567234.0,Roubo de veículo,1443.0,0.0,Centro-Oeste,40.45150948886448,0.0
+MT,2022,3656955.6666666665,Roubo de veículo,949.0,0.0,Centro-Oeste,25.950547026046348,0.0
+MT,2023,3746677.3333333335,Roubo de veículo,1077.0,0.0,Centro-Oeste,28.74546976378715,0.0
+MT,2024,3836399.0,Roubo de veículo,774.0,0.0,Centro-Oeste,20.175169475333508,0.0
+MT,2017,3344544.0,Roubo seguido de morte (latrocínio),0.0,45.0,Centro-Oeste,0.0,1.3454748988202876
+MT,2018,3441998.0,Roubo seguido de morte (latrocínio),0.0,37.0,Centro-Oeste,0.0,1.0749570452975277
+MT,2019,3484466.0,Roubo seguido de morte (latrocínio),0.0,41.0,Centro-Oeste,0.0,1.1766508842387902
+MT,2020,3526220.0,Roubo seguido de morte (latrocínio),0.0,27.0,Centro-Oeste,0.0,0.7656924411976564
+MT,2021,3567234.0,Roubo seguido de morte (latrocínio),0.0,30.0,Centro-Oeste,0.0,0.8409877232612158
+MT,2022,3656955.6666666665,Roubo seguido de morte (latrocínio),0.0,29.0,Centro-Oeste,0.0,0.7930093401004679
+MT,2023,3746677.3333333335,Roubo seguido de morte (latrocínio),0.0,15.0,Centro-Oeste,0.0,0.400354732086172
+MT,2024,3836399.0,Roubo seguido de morte (latrocínio),0.0,20.0,Centro-Oeste,0.0,0.5213222086649486
+MT,2017,3344544.0,Tentativa de homicídio,0.0,1333.0,Centro-Oeste,0.0,39.85595644727652
+MT,2018,3441998.0,Tentativa de homicídio,0.0,1290.0,Centro-Oeste,0.0,37.478232119832725
+MT,2019,3484466.0,Tentativa de homicídio,0.0,1248.0,Centro-Oeste,0.0,35.81610496414659
+MT,2020,3526220.0,Tentativa de homicídio,0.0,1126.0,Centro-Oeste,0.0,31.932210695872637
+MT,2021,3567234.0,Tentativa de homicídio,0.0,1032.0,Centro-Oeste,0.0,28.929977680185825
+MT,2022,3656955.6666666665,Tentativa de homicídio,0.0,1103.0,Centro-Oeste,0.0,30.16170007347642
+MT,2023,3746677.3333333335,Tentativa de homicídio,0.0,1621.0,Centro-Oeste,0.0,43.26500138077898
+MT,2024,3836399.0,Tentativa de homicídio,0.0,1729.0,Centro-Oeste,0.0,45.068304939084804
+PA,2017,8366628.0,Furto de veículo,5165.0,0.0,Norte,61.73335303063552,0.0
+PA,2018,8513497.0,Furto de veículo,4468.0,0.0,Norte,52.481371638470065,0.0
+PA,2019,8602865.0,Furto de veículo,3810.0,0.0,Norte,44.28757164037794,0.0
+PA,2020,8690745.0,Furto de veículo,3097.0,0.0,Norte,35.6356100656503,0.0
+PA,2021,8777124.0,Furto de veículo,3198.0,0.0,Norte,36.43562515466342,0.0
+PA,2022,8739518.0,Furto de veículo,3440.0,0.0,Norte,39.36143846834574,0.0
+PA,2023,8701912.0,Furto de veículo,2619.0,0.0,Norte,30.096833891218388,0.0
+PA,2024,8664306.0,Furto de veículo,2768.0,0.0,Norte,31.947163454291662,0.0
+PA,2017,8366628.0,Homicídio doloso,0.0,3949.0,Norte,0.0,47.19942132003478
+PA,2018,8513497.0,Homicídio doloso,0.0,3882.0,Norte,0.0,45.59818368409597
+PA,2019,8602865.0,Homicídio doloso,0.0,2978.0,Norte,0.0,34.61637489371274
+PA,2020,8690745.0,Homicídio doloso,0.0,2534.0,Norte,0.0,29.157454280386776
+PA,2021,8777124.0,Homicídio doloso,0.0,2426.0,Norte,0.0,27.640033341217464
+PA,2022,8739518.0,Homicídio doloso,0.0,2499.0,Norte,0.0,28.594254282673255
+PA,2023,8701912.0,Homicídio doloso,0.0,2445.0,Norte,0.0,28.09727333487169
+PA,2024,8664306.0,Homicídio doloso,0.0,2084.0,Norte,0.0,24.05270543307219
+PA,2017,8366628.0,Lesão corporal seguida de morte,0.0,40.0,Norte,0.0,0.4780898589013399
+PA,2018,8513497.0,Lesão corporal seguida de morte,0.0,22.0,Norte,0.0,0.25841319965226983
+PA,2019,8602865.0,Lesão corporal seguida de morte,0.0,32.0,Norte,0.0,0.37196910564096963
+PA,2020,8690745.0,Lesão corporal seguida de morte,0.0,42.0,Norte,0.0,0.4832727228793389
+PA,2021,8777124.0,Lesão corporal seguida de morte,0.0,28.0,Norte,0.0,0.3190111020420812
+PA,2022,8739518.0,Lesão corporal seguida de morte,0.0,32.0,Norte,0.0,0.3661529159846115
+PA,2023,8701912.0,Lesão corporal seguida de morte,0.0,23.0,Norte,0.0,0.2643097287124944
+PA,2024,8664306.0,Lesão corporal seguida de morte,0.0,35.0,Norte,0.0,0.403956185296318
+PA,2017,8366628.0,Roubo a instituição financeira,32.0,0.0,Norte,0.38247188712107194,0.0
+PA,2018,8513497.0,Roubo a instituição financeira,29.0,0.0,Norte,0.3406355813598102,0.0
+PA,2019,8602865.0,Roubo a instituição financeira,25.0,0.0,Norte,0.2906008637820075,0.0
+PA,2020,8690745.0,Roubo a instituição financeira,6.0,0.0,Norte,0.06903896041133413,0.0
+PA,2021,8777124.0,Roubo a instituição financeira,2.0,0.0,Norte,0.022786507288720087,0.0
+PA,2022,8739518.0,Roubo a instituição financeira,4.0,0.0,Norte,0.04576911449807644,0.0
+PA,2023,8701912.0,Roubo a instituição financeira,2.0,0.0,Norte,0.02298345467065169,0.0
+PA,2024,8664306.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+PA,2017,8366628.0,Roubo de carga,129.0,0.0,Norte,1.5418397949568212,0.0
+PA,2018,8513497.0,Roubo de carga,115.0,0.0,Norte,1.3507962709095922,0.0
+PA,2019,8602865.0,Roubo de carga,162.0,0.0,Norte,1.8830935973074088,0.0
+PA,2020,8690745.0,Roubo de carga,143.0,0.0,Norte,1.6454285564701299,0.0
+PA,2021,8777124.0,Roubo de carga,86.0,0.0,Norte,0.9798198134149637,0.0
+PA,2022,8739518.0,Roubo de carga,162.0,0.0,Norte,1.8536491371720958,0.0
+PA,2023,8701912.0,Roubo de carga,156.0,0.0,Norte,1.792709464310832,0.0
+PA,2024,8664306.0,Roubo de carga,121.0,0.0,Norte,1.3965342405958423,0.0
+PA,2017,8366628.0,Roubo de veículo,8618.0,0.0,Norte,103.0044601002937,0.0
+PA,2018,8513497.0,Roubo de veículo,6787.0,0.0,Norte,79.72047209272525,0.0
+PA,2019,8602865.0,Roubo de veículo,4024.0,0.0,Norte,46.77511503435193,0.0
+PA,2020,8690745.0,Roubo de veículo,2574.0,0.0,Norte,29.61771401646234,0.0
+PA,2021,8777124.0,Roubo de veículo,2600.0,0.0,Norte,29.622459475336115,0.0
+PA,2022,8739518.0,Roubo de veículo,2037.0,0.0,Norte,23.307921558145427,0.0
+PA,2023,8701912.0,Roubo de veículo,1530.0,0.0,Norte,17.582342823048545,0.0
+PA,2024,8664306.0,Roubo de veículo,1257.0,0.0,Norte,14.507797854784908,0.0
+PA,2017,8366628.0,Roubo seguido de morte (latrocínio),0.0,228.0,Norte,0.0,2.725112195737638
+PA,2018,8513497.0,Roubo seguido de morte (latrocínio),0.0,202.0,Norte,0.0,2.3727030149890225
+PA,2019,8602865.0,Roubo seguido de morte (latrocínio),0.0,138.0,Norte,0.0,1.6041167680766815
+PA,2020,8690745.0,Roubo seguido de morte (latrocínio),0.0,109.0,Norte,0.0,1.2542077808059033
+PA,2021,8777124.0,Roubo seguido de morte (latrocínio),0.0,110.0,Norte,0.0,1.2532579008796048
+PA,2022,8739518.0,Roubo seguido de morte (latrocínio),0.0,87.0,Norte,0.0,0.9954782403331625
+PA,2023,8701912.0,Roubo seguido de morte (latrocínio),0.0,64.0,Norte,0.0,0.7354705494608541
+PA,2024,8664306.0,Roubo seguido de morte (latrocínio),0.0,67.0,Norte,0.0,0.7732875547100946
+PA,2017,8366628.0,Tentativa de homicídio,0.0,1362.0,Norte,0.0,16.278959695590626
+PA,2018,8513497.0,Tentativa de homicídio,0.0,1662.0,Norte,0.0,19.52194262827602
+PA,2019,8602865.0,Tentativa de homicídio,0.0,1575.0,Norte,0.0,18.307854418266473
+PA,2020,8690745.0,Tentativa de homicídio,0.0,1270.0,Norte,0.0,14.613246620399057
+PA,2021,8777124.0,Tentativa de homicídio,0.0,1111.0,Norte,0.0,12.657904798884006
+PA,2022,8739518.0,Tentativa de homicídio,0.0,1399.0,Norte,0.0,16.007747795702237
+PA,2023,8701912.0,Tentativa de homicídio,0.0,1796.0,Norte,0.0,20.639142294245218
+PA,2024,8664306.0,Tentativa de homicídio,0.0,1556.0,Norte,0.0,17.95873783774488
+PB,2017,4025558.0,Furto de veículo,1170.0,0.0,Nordeste,29.06429369543303,0.0
+PB,2018,3996496.0,Furto de veículo,1059.0,0.0,Nordeste,26.498212434092263,0.0
+PB,2019,4018127.0,Furto de veículo,1052.0,0.0,Nordeste,26.18135265510523,0.0
+PB,2020,4039277.0,Furto de veículo,1073.0,0.0,Nordeste,26.56415987316542,0.0
+PB,2021,4059905.0,Furto de veículo,1142.0,0.0,Nordeste,28.128737002466803,0.0
+PB,2022,4088283.3333333335,Furto de veículo,1481.0,0.0,Nordeste,36.22547360954272,0.0
+PB,2023,4116661.6666666665,Furto de veículo,1793.0,0.0,Nordeste,43.55470877090134,0.0
+PB,2024,4145040.0,Furto de veículo,1766.0,0.0,Nordeste,42.60513770675313,0.0
+PB,2017,4025558.0,Homicídio doloso,0.0,1185.0,Nordeste,0.0,29.436912845374483
+PB,2018,3996496.0,Homicídio doloso,0.0,1099.0,Nordeste,0.0,27.499089202141075
+PB,2019,4018127.0,Homicídio doloso,0.0,845.0,Nordeste,0.0,21.029698663083572
+PB,2020,4039277.0,Homicídio doloso,0.0,1050.0,Nordeste,0.0,25.994751040842207
+PB,2021,4059905.0,Homicídio doloso,0.0,1042.0,Nordeste,0.0,25.665625180884778
+PB,2022,4088283.3333333335,Homicídio doloso,0.0,973.0,Nordeste,0.0,23.799720339017597
+PB,2023,4116661.6666666665,Homicídio doloso,0.0,933.0,Nordeste,0.0,22.663995138455633
+PB,2024,4145040.0,Homicídio doloso,0.0,953.0,Nordeste,0.0,22.99133422114141
+PB,2017,4025558.0,Lesão corporal seguida de morte,0.0,6.0,Nordeste,0.0,0.14904765997657965
+PB,2018,3996496.0,Lesão corporal seguida de morte,0.0,10.0,Nordeste,0.0,0.25021919201220266
+PB,2019,4018127.0,Lesão corporal seguida de morte,0.0,9.0,Nordeste,0.0,0.22398495617485462
+PB,2020,4039277.0,Lesão corporal seguida de morte,0.0,11.0,Nordeste,0.0,0.27232596328501363
+PB,2021,4059905.0,Lesão corporal seguida de morte,0.0,7.0,Nordeste,0.0,0.17241782751074225
+PB,2022,4088283.3333333335,Lesão corporal seguida de morte,0.0,3.0,Nordeste,0.0,0.07338043269995148
+PB,2023,4116661.6666666665,Lesão corporal seguida de morte,0.0,3.0,Nordeste,0.0,0.0728745824387641
+PB,2024,4145040.0,Lesão corporal seguida de morte,0.0,7.0,Nordeste,0.0,0.16887653677648468
+PB,2017,4025558.0,Roubo a instituição financeira,76.0,0.0,Nordeste,1.8879370263700088,0.0
+PB,2018,3996496.0,Roubo a instituição financeira,76.0,0.0,Nordeste,1.9016658592927405,0.0
+PB,2019,4018127.0,Roubo a instituição financeira,30.0,0.0,Nordeste,0.7466165205828487,0.0
+PB,2020,4039277.0,Roubo a instituição financeira,16.0,0.0,Nordeste,0.3961104920509289,0.0
+PB,2021,4059905.0,Roubo a instituição financeira,11.0,0.0,Nordeste,0.2709423003740235,0.0
+PB,2022,4088283.3333333335,Roubo a instituição financeira,11.0,0.0,Nordeste,0.26906158656648876,0.0
+PB,2023,4116661.6666666665,Roubo a instituição financeira,4.0,0.0,Nordeste,0.09716610991835213,0.0
+PB,2024,4145040.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+PB,2017,4025558.0,Roubo de carga,2.0,0.0,Nordeste,0.04968255332552655,0.0
+PB,2018,3996496.0,Roubo de carga,6.0,0.0,Nordeste,0.1501315152073216,0.0
+PB,2019,4018127.0,Roubo de carga,17.0,0.0,Nordeste,0.42308269499694756,0.0
+PB,2020,4039277.0,Roubo de carga,12.0,0.0,Nordeste,0.2970828690381967,0.0
+PB,2021,4059905.0,Roubo de carga,19.0,0.0,Nordeste,0.46799124610058607,0.0
+PB,2022,4088283.3333333335,Roubo de carga,21.0,0.0,Nordeste,0.5136630288996603,0.0
+PB,2023,4116661.6666666665,Roubo de carga,29.0,0.0,Nordeste,0.704454296908053,0.0
+PB,2024,4145040.0,Roubo de carga,13.0,0.0,Nordeste,0.3136278540134715,0.0
+PB,2017,4025558.0,Roubo de veículo,3261.0,0.0,Nordeste,81.00740319727103,0.0
+PB,2018,3996496.0,Roubo de veículo,3776.0,0.0,Nordeste,94.48276690380774,0.0
+PB,2019,4018127.0,Roubo de veículo,3219.0,0.0,Nordeste,80.11195265853966,0.0
+PB,2020,4039277.0,Roubo de veículo,3510.0,0.0,Nordeste,86.89673919367253,0.0
+PB,2021,4059905.0,Roubo de veículo,3888.0,0.0,Nordeste,95.7657876231094,0.0
+PB,2022,4088283.3333333335,Roubo de veículo,4284.0,0.0,Nordeste,104.78725789553071,0.0
+PB,2023,4116661.6666666665,Roubo de veículo,3647.0,0.0,Nordeste,88.59120071805755,0.0
+PB,2024,4145040.0,Roubo de veículo,3317.0,0.0,Nordeste,80.02335321251424,0.0
+PB,2017,4025558.0,Roubo seguido de morte (latrocínio),0.0,37.0,Nordeste,0.0,0.9191272365222413
+PB,2018,3996496.0,Roubo seguido de morte (latrocínio),0.0,34.0,Nordeste,0.0,0.8507452528414892
+PB,2019,4018127.0,Roubo seguido de morte (latrocínio),0.0,26.0,Nordeste,0.0,0.6470676511718022
+PB,2020,4039277.0,Roubo seguido de morte (latrocínio),0.0,26.0,Nordeste,0.0,0.6436795495827594
+PB,2021,4059905.0,Roubo seguido de morte (latrocínio),0.0,22.0,Nordeste,0.0,0.541884600748047
+PB,2022,4088283.3333333335,Roubo seguido de morte (latrocínio),0.0,34.0,Nordeste,0.0,0.8316449039327835
+PB,2023,4116661.6666666665,Roubo seguido de morte (latrocínio),0.0,25.0,Nordeste,0.0,0.6072881869897008
+PB,2024,4145040.0,Roubo seguido de morte (latrocínio),0.0,16.0,Nordeste,0.0,0.3860035126319649
+PB,2017,4025558.0,Tentativa de homicídio,0.0,1296.0,Nordeste,0.0,32.1942945549412
+PB,2018,3996496.0,Tentativa de homicídio,0.0,1140.0,Nordeste,0.0,28.524987889391106
+PB,2019,4018127.0,Tentativa de homicídio,0.0,805.0,Nordeste,0.0,20.034209968973105
+PB,2020,4039277.0,Tentativa de homicídio,0.0,931.0,Nordeste,0.0,23.048679256213426
+PB,2021,4059905.0,Tentativa de homicídio,0.0,848.0,Nordeste,0.0,20.887188247015633
+PB,2022,4088283.3333333335,Tentativa de homicídio,0.0,722.0,Nordeste,0.0,17.660224136454993
+PB,2023,4116661.6666666665,Tentativa de homicídio,0.0,703.0,Nordeste,0.0,17.076943818150387
+PB,2024,4145040.0,Tentativa de homicídio,0.0,785.0,Nordeste,0.0,18.93829733850578
+PE,2017,9473266.0,Furto de veículo,6889.0,0.0,Nordeste,72.7204324253114,0.0
+PE,2018,9496294.0,Furto de veículo,5572.0,0.0,Nordeste,58.67552120858938,0.0
+PE,2019,9557071.0,Furto de veículo,6254.0,0.0,Nordeste,65.43845912623229,0.0
+PE,2020,9616621.0,Furto de veículo,4843.0,0.0,Nordeste,50.36072441661161,0.0
+PE,2021,9674793.0,Furto de veículo,4836.0,0.0,Nordeste,49.985565582643474,0.0
+PE,2022,9629538.333333334,Furto de veículo,6910.0,0.0,Nordeste,71.75837263226362,0.0
+PE,2023,9584283.666666666,Furto de veículo,7953.0,0.0,Nordeste,82.97959739714159,0.0
+PE,2024,9539029.0,Furto de veículo,7237.0,0.0,Nordeste,75.86726070336928,0.0
+PE,2017,9473266.0,Homicídio doloso,0.0,5006.0,Nordeste,0.0,52.84344385558265
+PE,2018,9496294.0,Homicídio doloso,0.0,3840.0,Nordeste,0.0,40.436827250714856
+PE,2019,9557071.0,Homicídio doloso,0.0,3183.0,Nordeste,0.0,33.30518314659376
+PE,2020,9616621.0,Homicídio doloso,0.0,3432.0,Nordeste,0.0,35.68821106706815
+PE,2021,9674793.0,Homicídio doloso,0.0,3041.0,Nordeste,0.0,31.432197050624236
+PE,2022,9629538.333333334,Homicídio doloso,0.0,3144.0,Nordeste,0.0,32.649540311987955
+PE,2023,9584283.666666666,Homicídio doloso,0.0,3332.0,Nordeste,0.0,34.76524814878358
+PE,2024,9539029.0,Homicídio doloso,0.0,3200.0,Nordeste,0.0,33.546391357023865
+PE,2017,9473266.0,Lesão corporal seguida de morte,0.0,37.0,Nordeste,0.0,0.3905727971747019
+PE,2018,9496294.0,Lesão corporal seguida de morte,0.0,15.0,Nordeste,0.0,0.1579563564481049
+PE,2019,9557071.0,Lesão corporal seguida de morte,0.0,18.0,Nordeste,0.0,0.1883422232606622
+PE,2020,9616621.0,Lesão corporal seguida de morte,0.0,13.0,Nordeste,0.0,0.13518261767828846
+PE,2021,9674793.0,Lesão corporal seguida de morte,0.0,16.0,Nordeste,0.0,0.16537821532719096
+PE,2022,9629538.333333334,Lesão corporal seguida de morte,0.0,15.0,Nordeste,0.0,0.15577070759536238
+PE,2023,9584283.666666666,Lesão corporal seguida de morte,0.0,21.0,Nordeste,0.0,0.21910870682006459
+PE,2024,9539029.0,Lesão corporal seguida de morte,0.0,28.0,Nordeste,0.0,0.29353092437395883
+PE,2017,9473266.0,Roubo a instituição financeira,40.0,0.0,Nordeste,0.4222408618104886,0.0
+PE,2018,9496294.0,Roubo a instituição financeira,38.0,0.0,Nordeste,0.40015610300186577,0.0
+PE,2019,9557071.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.041853827391258265,0.0
+PE,2020,9616621.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.04159465159331952,0.0
+PE,2021,9674793.0,Roubo a instituição financeira,5.0,0.0,Nordeste,0.051680692289747185,0.0
+PE,2022,9629538.333333334,Roubo a instituição financeira,1.0,0.0,Nordeste,0.010384713839690826,0.0
+PE,2023,9584283.666666666,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+PE,2024,9539029.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.03144974189720987,0.0
+PE,2017,9473266.0,Roubo de carga,671.0,0.0,Nordeste,7.083090456870946,0.0
+PE,2018,9496294.0,Roubo de carga,582.0,0.0,Nordeste,6.128706630186471,0.0
+PE,2019,9557071.0,Roubo de carga,573.0,0.0,Nordeste,5.995560773797746,0.0
+PE,2020,9616621.0,Roubo de carga,530.0,0.0,Nordeste,5.511291336114837,0.0
+PE,2021,9674793.0,Roubo de carga,392.0,0.0,Nordeste,4.051766275516179,0.0
+PE,2022,9629538.333333334,Roubo de carga,350.0,0.0,Nordeste,3.634649843891789,0.0
+PE,2023,9584283.666666666,Roubo de carga,391.0,0.0,Nordeste,4.079595446030726,0.0
+PE,2024,9539029.0,Roubo de carga,314.0,0.0,Nordeste,3.2917396519079665,0.0
+PE,2017,9473266.0,Roubo de veículo,19716.0,0.0,Nordeste,208.12252078638983,0.0
+PE,2018,9496294.0,Roubo de veículo,15539.0,0.0,Nordeste,163.63225485647348,0.0
+PE,2019,9557071.0,Roubo de veículo,13232.0,0.0,Nordeste,138.45246101028232,0.0
+PE,2020,9616621.0,Roubo de veículo,9522.0,0.0,Nordeste,99.01606811789712,0.0
+PE,2021,9674793.0,Roubo de veículo,9273.0,0.0,Nordeste,95.84701192056512,0.0
+PE,2022,9629538.333333334,Roubo de veículo,10756.0,0.0,Nordeste,111.69798205971453,0.0
+PE,2023,9584283.666666666,Roubo de veículo,12929.0,0.0,Nordeste,134.89792716555309,0.0
+PE,2024,9539029.0,Roubo de veículo,11662.0,0.0,Nordeste,122.25563000175384,0.0
+PE,2017,9473266.0,Roubo seguido de morte (latrocínio),0.0,250.0,Nordeste,0.0,2.639005386315554
+PE,2018,9496294.0,Roubo seguido de morte (latrocínio),0.0,129.0,Nordeste,0.0,1.3584246654537022
+PE,2019,9557071.0,Roubo seguido de morte (latrocínio),0.0,136.0,Nordeste,0.0,1.4230301313027809
+PE,2020,9616621.0,Roubo seguido de morte (latrocínio),0.0,124.0,Nordeste,0.0,1.2894341993929053
+PE,2021,9674793.0,Roubo seguido de morte (latrocínio),0.0,124.0,Nordeste,0.0,1.2816811687857301
+PE,2022,9629538.333333334,Roubo seguido de morte (latrocínio),0.0,103.0,Nordeste,0.0,1.069625525488155
+PE,2023,9584283.666666666,Roubo seguido de morte (latrocínio),0.0,81.0,Nordeste,0.0,0.8451335834488205
+PE,2024,9539029.0,Roubo seguido de morte (latrocínio),0.0,76.0,Nordeste,0.0,0.7967267947293168
+PE,2017,9473266.0,Tentativa de homicídio,0.0,4086.0,Nordeste,0.0,43.13190403394141
+PE,2018,9496294.0,Tentativa de homicídio,0.0,3756.0,Nordeste,0.0,39.55227165460547
+PE,2019,9557071.0,Tentativa de homicídio,0.0,3821.0,Nordeste,0.0,39.98086861549945
+PE,2020,9616621.0,Tentativa de homicídio,0.0,3535.0,Nordeste,0.0,36.75927334559613
+PE,2021,9674793.0,Tentativa de homicídio,0.0,2817.0,Nordeste,0.0,29.116902036043566
+PE,2022,9629538.333333334,Tentativa de homicídio,0.0,2351.0,Nordeste,0.0,24.41446223711313
+PE,2023,9584283.666666666,Tentativa de homicídio,0.0,2422.0,Nordeste,0.0,25.27053751991411
+PE,2024,9539029.0,Tentativa de homicídio,0.0,2385.0,Nordeste,0.0,25.002544808281847
+PI,2017,3219257.0,Furto de veículo,2596.0,0.0,Nordeste,80.63972525337368,0.0
+PI,2018,3264531.0,Furto de veículo,3219.0,0.0,Nordeste,98.60528204510847,0.0
+PI,2019,3273227.0,Furto de veículo,2877.0,0.0,Nordeste,87.894912268535,0.0
+PI,2020,3281480.0,Furto de veículo,2150.0,0.0,Nordeste,65.51921693869839,0.0
+PI,2021,3289290.0,Furto de veículo,1918.0,0.0,Nordeste,58.31045605586616,0.0
+PI,2022,3318075.3333333335,Furto de veículo,2357.0,0.0,Nordeste,71.03515632456003,0.0
+PI,2023,3346860.6666666665,Furto de veículo,2052.0,0.0,Nordeste,61.31118694115541,0.0
+PI,2024,3375646.0,Furto de veículo,1826.0,0.0,Nordeste,54.09334983585364,0.0
+PI,2017,3219257.0,Homicídio doloso,0.0,546.0,Nordeste,0.0,16.960435280563186
+PI,2018,3264531.0,Homicídio doloso,0.0,512.0,Nordeste,0.0,15.683723021775565
+PI,2019,3273227.0,Homicídio doloso,0.0,472.0,Nordeste,0.0,14.420020365223676
+PI,2020,3281480.0,Homicídio doloso,0.0,603.0,Nordeste,0.0,18.375854797225642
+PI,2021,3289290.0,Homicídio doloso,0.0,665.0,Nordeste,0.0,20.217128924479145
+PI,2022,3318075.3333333335,Homicídio doloso,0.0,732.0,Nordeste,0.0,22.060981938726325
+PI,2023,3346860.6666666665,Homicídio doloso,0.0,649.0,Nordeste,0.0,19.391306201174395
+PI,2024,3375646.0,Homicídio doloso,0.0,584.0,Nordeste,0.0,17.300392280470167
+PI,2017,3219257.0,Lesão corporal seguida de morte,0.0,10.0,Nordeste,0.0,0.31063068279419753
+PI,2018,3264531.0,Lesão corporal seguida de morte,0.0,8.0,Nordeste,0.0,0.2450581722152432
+PI,2019,3273227.0,Lesão corporal seguida de morte,0.0,11.0,Nordeste,0.0,0.33605979664716196
+PI,2020,3281480.0,Lesão corporal seguida de morte,0.0,6.0,Nordeste,0.0,0.18284432634055367
+PI,2021,3289290.0,Lesão corporal seguida de morte,0.0,5.0,Nordeste,0.0,0.15200848815397852
+PI,2022,3318075.3333333335,Lesão corporal seguida de morte,0.0,8.0,Nordeste,0.0,0.2411036277456429
+PI,2023,3346860.6666666665,Lesão corporal seguida de morte,0.0,13.0,Nordeste,0.0,0.38842369894494166
+PI,2024,3375646.0,Lesão corporal seguida de morte,0.0,10.0,Nordeste,0.0,0.29623959384366727
+PI,2017,3219257.0,Roubo a instituição financeira,14.0,0.0,Nordeste,0.4348829559118766,0.0
+PI,2018,3264531.0,Roubo a instituição financeira,19.0,0.0,Nordeste,0.5820131590112025,0.0
+PI,2019,3273227.0,Roubo a instituição financeira,7.0,0.0,Nordeste,0.21385623423001218,0.0
+PI,2020,3281480.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.09142216317027684,0.0
+PI,2021,3289290.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.09120509289238711,0.0
+PI,2022,3318075.3333333335,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+PI,2023,3346860.6666666665,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+PI,2024,3375646.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.08887187815310017,0.0
+PI,2017,3219257.0,Roubo de carga,29.0,0.0,Nordeste,0.9008289801031729,0.0
+PI,2018,3264531.0,Roubo de carga,25.0,0.0,Nordeste,0.7658067881726349,0.0
+PI,2019,3273227.0,Roubo de carga,14.0,0.0,Nordeste,0.42771246846002436,0.0
+PI,2020,3281480.0,Roubo de carga,12.0,0.0,Nordeste,0.36568865268110734,0.0
+PI,2021,3289290.0,Roubo de carga,17.0,0.0,Nordeste,0.516828859723527,0.0
+PI,2022,3318075.3333333335,Roubo de carga,19.0,0.0,Nordeste,0.5726211158959019,0.0
+PI,2023,3346860.6666666665,Roubo de carga,9.0,0.0,Nordeste,0.26890871465419036,0.0
+PI,2024,3375646.0,Roubo de carga,25.0,0.0,Nordeste,0.7405989846091682,0.0
+PI,2017,3219257.0,Roubo de veículo,3125.0,0.0,Nordeste,97.07208837318673,0.0
+PI,2018,3264531.0,Roubo de veículo,3902.0,0.0,Nordeste,119.52712349798486,0.0
+PI,2019,3273227.0,Roubo de veículo,4043.0,0.0,Nordeste,123.51725071313416,0.0
+PI,2020,3281480.0,Roubo de veículo,4026.0,0.0,Nordeste,122.68854297451149,0.0
+PI,2021,3289290.0,Roubo de veículo,4511.0,0.0,Nordeste,137.1420580125194,0.0
+PI,2022,3318075.3333333335,Roubo de veículo,4672.0,0.0,Nordeste,140.80451860345545,0.0
+PI,2023,3346860.6666666665,Roubo de veículo,4544.0,0.0,Nordeste,135.76902215429345,0.0
+PI,2024,3375646.0,Roubo de veículo,3555.0,0.0,Nordeste,105.31317561142372,0.0
+PI,2017,3219257.0,Roubo seguido de morte (latrocínio),0.0,45.0,Nordeste,0.0,1.397838072573889
+PI,2018,3264531.0,Roubo seguido de morte (latrocínio),0.0,46.0,Nordeste,0.0,1.4090844902376483
+PI,2019,3273227.0,Roubo seguido de morte (latrocínio),0.0,37.0,Nordeste,0.0,1.1303829523586357
+PI,2020,3281480.0,Roubo seguido de morte (latrocínio),0.0,42.0,Nordeste,0.0,1.2799102843838754
+PI,2021,3289290.0,Roubo seguido de morte (latrocínio),0.0,41.0,Nordeste,0.0,1.2464696028626239
+PI,2022,3318075.3333333335,Roubo seguido de morte (latrocínio),0.0,25.0,Nordeste,0.0,0.7534488367051341
+PI,2023,3346860.6666666665,Roubo seguido de morte (latrocínio),0.0,21.0,Nordeste,0.0,0.6274536675264442
+PI,2024,3375646.0,Roubo seguido de morte (latrocínio),0.0,19.0,Nordeste,0.0,0.5628552283029677
+PI,2017,3219257.0,Tentativa de homicídio,0.0,663.0,Nordeste,0.0,20.594814269255295
+PI,2018,3264531.0,Tentativa de homicídio,0.0,625.0,Nordeste,0.0,19.145169704315872
+PI,2019,3273227.0,Tentativa de homicídio,0.0,637.0,Nordeste,0.0,19.460917314931105
+PI,2020,3281480.0,Tentativa de homicídio,0.0,541.0,Nordeste,0.0,16.486463425039922
+PI,2021,3289290.0,Tentativa de homicídio,0.0,572.0,Nordeste,0.0,17.38977104481514
+PI,2022,3318075.3333333335,Tentativa de homicídio,0.0,601.0,Nordeste,0.0,18.112910034391422
+PI,2023,3346860.6666666665,Tentativa de homicídio,0.0,587.0,Nordeste,0.0,17.53882394466775
+PI,2024,3375646.0,Tentativa de homicídio,0.0,663.0,Nordeste,0.0,19.64068507183514
+PR,2017,11320892.0,Furto de veículo,19404.0,0.0,Sul,171.39992149028538,0.0
+PR,2018,11348937.0,Furto de veículo,17696.0,0.0,Sul,155.92649778565163,0.0
+PR,2019,11433957.0,Furto de veículo,16047.0,0.0,Sul,140.3451141192852,0.0
+PR,2020,11516840.0,Furto de veículo,12092.0,0.0,Sul,104.99407823673856,0.0
+PR,2021,11597484.0,Furto de veículo,11675.0,0.0,Sul,100.66838635000488,0.0
+PR,2022,11673211.0,Furto de veículo,13784.0,0.0,Sul,118.0823339867668,0.0
+PR,2023,11748938.0,Furto de veículo,12531.0,0.0,Sul,106.6564484381482,0.0
+PR,2024,11824665.0,Furto de veículo,11022.0,0.0,Sul,93.21194300219076,0.0
+PR,2017,11320892.0,Homicídio doloso,0.0,2177.0,Sul,0.0,19.229933471673434
+PR,2018,11348937.0,Homicídio doloso,0.0,1888.0,Sul,0.0,16.635919293586703
+PR,2019,11433957.0,Homicídio doloso,0.0,1691.0,Sul,0.0,14.78928073631902
+PR,2020,11516840.0,Homicídio doloso,0.0,1929.0,Sul,0.0,16.749386116330523
+PR,2021,11597484.0,Homicídio doloso,0.0,1838.0,Sul,0.0,15.848265020240596
+PR,2022,11673211.0,Homicídio doloso,0.0,1933.0,Sul,0.0,16.559282617267865
+PR,2023,11748938.0,Homicídio doloso,0.0,1756.0,Sul,0.0,14.94603171793059
+PR,2024,11824665.0,Homicídio doloso,0.0,1554.0,Sul,0.0,13.142021359590313
+PR,2017,11320892.0,Lesão corporal seguida de morte,0.0,35.0,Sul,0.0,0.3091629175510198
+PR,2018,11348937.0,Lesão corporal seguida de morte,0.0,38.0,Sul,0.0,0.33483312137515614
+PR,2019,11433957.0,Lesão corporal seguida de morte,0.0,52.0,Sul,0.0,0.45478568792938434
+PR,2020,11516840.0,Lesão corporal seguida de morte,0.0,44.0,Sul,0.0,0.3820492426742058
+PR,2021,11597484.0,Lesão corporal seguida de morte,0.0,39.0,Sul,0.0,0.336279834488239
+PR,2022,11673211.0,Lesão corporal seguida de morte,0.0,37.0,Sul,0.0,0.31696505785768797
+PR,2023,11748938.0,Lesão corporal seguida de morte,0.0,35.0,Sul,0.0,0.29789926544850265
+PR,2024,11824665.0,Lesão corporal seguida de morte,0.0,61.0,Sul,0.0,0.5158708513095297
+PR,2017,11320892.0,Roubo a instituição financeira,0.0,0.0,Sul,0.0,0.0
+PR,2018,11348937.0,Roubo a instituição financeira,0.0,0.0,Sul,0.0,0.0
+PR,2019,11433957.0,Roubo a instituição financeira,17.0,0.0,Sul,0.14867993643845256,0.0
+PR,2020,11516840.0,Roubo a instituição financeira,9.0,0.0,Sul,0.07814643600154209,0.0
+PR,2021,11597484.0,Roubo a instituição financeira,12.0,0.0,Sul,0.10347071830407355,0.0
+PR,2022,11673211.0,Roubo a instituição financeira,11.0,0.0,Sul,0.0942328550387721,0.0
+PR,2023,11748938.0,Roubo a instituição financeira,10.0,0.0,Sul,0.08511407584242933,0.0
+PR,2024,11824665.0,Roubo a instituição financeira,2.0,0.0,Sul,0.016913798403591137,0.0
+PR,2017,11320892.0,Roubo de carga,849.0,0.0,Sul,7.499409057166167,0.0
+PR,2018,11348937.0,Roubo de carga,695.0,0.0,Sul,6.123921561992987,0.0
+PR,2019,11433957.0,Roubo de carga,625.0,0.0,Sul,5.466174133766639,0.0
+PR,2020,11516840.0,Roubo de carga,472.0,0.0,Sul,4.098346421414207,0.0
+PR,2021,11597484.0,Roubo de carga,550.0,0.0,Sul,4.742407922270037,0.0
+PR,2022,11673211.0,Roubo de carga,474.0,0.0,Sul,4.060579389852543,0.0
+PR,2023,11748938.0,Roubo de carga,364.0,0.0,Sul,3.0981523606644275,0.0
+PR,2024,11824665.0,Roubo de carga,103.0,0.0,Sul,0.8710606177849435,0.0
+PR,2017,11320892.0,Roubo de veículo,11372.0,0.0,Sul,100.45144852543422,0.0
+PR,2018,11348937.0,Roubo de veículo,7890.0,0.0,Sul,69.52192967499953,0.0
+PR,2019,11433957.0,Roubo de veículo,5792.0,0.0,Sul,50.65612893244219,0.0
+PR,2020,11516840.0,Roubo de veículo,4460.0,0.0,Sul,38.72590050743086,0.0
+PR,2021,11597484.0,Roubo de veículo,4039.0,0.0,Sul,34.826519269179414,0.0
+PR,2022,11673211.0,Roubo de veículo,3506.0,0.0,Sul,30.03458088781227,0.0
+PR,2023,11748938.0,Roubo de veículo,3021.0,0.0,Sul,25.7129623119979,0.0
+PR,2024,11824665.0,Roubo de veículo,2182.0,0.0,Sul,18.452954058317932,0.0
+PR,2017,11320892.0,Roubo seguido de morte (latrocínio),0.0,73.0,Sul,0.0,0.64482551374927
+PR,2018,11348937.0,Roubo seguido de morte (latrocínio),0.0,80.0,Sul,0.0,0.7049118344740128
+PR,2019,11433957.0,Roubo seguido de morte (latrocínio),0.0,99.0,Sul,0.0,0.8658419827886356
+PR,2020,11516840.0,Roubo seguido de morte (latrocínio),0.0,59.0,Sul,0.0,0.5122933026767759
+PR,2021,11597484.0,Roubo seguido de morte (latrocínio),0.0,41.0,Sul,0.0,0.35352495420558455
+PR,2022,11673211.0,Roubo seguido de morte (latrocínio),0.0,54.0,Sul,0.0,0.46259765200851766
+PR,2023,11748938.0,Roubo seguido de morte (latrocínio),0.0,51.0,Sul,0.0,0.4340817867963896
+PR,2024,11824665.0,Roubo seguido de morte (latrocínio),0.0,46.0,Sul,0.0,0.3890173632825962
+PR,2017,11320892.0,Tentativa de homicídio,0.0,967.0,Sul,0.0,8.54172975062389
+PR,2018,11348937.0,Tentativa de homicídio,0.0,810.0,Sul,0.0,7.13723232404938
+PR,2019,11433957.0,Tentativa de homicídio,0.0,822.0,Sul,0.0,7.189112220729884
+PR,2020,11516840.0,Tentativa de homicídio,0.0,1297.0,Sul,0.0,11.261769721555567
+PR,2021,11597484.0,Tentativa de homicídio,0.0,1450.0,Sul,0.0,12.502711795075552
+PR,2022,11673211.0,Tentativa de homicídio,0.0,1221.0,Sul,0.0,10.459846909303705
+PR,2023,11748938.0,Tentativa de homicídio,0.0,1108.0,Sul,0.0,9.43063960334117
+PR,2024,11824665.0,Tentativa de homicídio,0.0,1000.0,Sul,0.0,8.456899201795569
+RJ,2017,16718956.0,Furto de veículo,15708.0,0.0,Sudeste,93.95323487901996,0.0
+RJ,2018,17159960.0,Furto de veículo,15794.0,0.0,Sudeste,92.03984158471232,0.0
+RJ,2019,17264943.0,Furto de veículo,15595.0,0.0,Sudeste,90.32754987954492,0.0
+RJ,2020,17366189.0,Furto de veículo,12895.0,0.0,Sudeste,74.25348186640143,0.0
+RJ,2021,17463349.0,Furto de veículo,14428.0,0.0,Sudeste,82.6187462668243,0.0
+RJ,2022,17382125.666666668,Furto de veículo,16864.0,0.0,Sudeste,97.01920422966296,0.0
+RJ,2023,17300902.333333332,Furto de veículo,16577.0,0.0,Sudeste,95.81581168781814,0.0
+RJ,2024,17219679.0,Furto de veículo,17336.0,0.0,Sudeste,100.67551201157698,0.0
+RJ,2017,16718956.0,Homicídio doloso,0.0,5722.0,Sudeste,0.0,34.22462503041458
+RJ,2018,17159960.0,Homicídio doloso,0.0,5307.0,Sudeste,0.0,30.926645516656215
+RJ,2019,17264943.0,Homicídio doloso,0.0,4403.0,Sudeste,0.0,25.502545823638112
+RJ,2020,17366189.0,Homicídio doloso,0.0,3830.0,Sudeste,0.0,22.05434940273885
+RJ,2021,17463349.0,Homicídio doloso,0.0,3506.0,Sudeste,0.0,20.07633243772429
+RJ,2022,17382125.666666668,Homicídio doloso,0.0,3344.0,Sudeste,0.0,19.238153400379087
+RJ,2023,17300902.333333332,Homicídio doloso,0.0,3576.0,Sudeste,0.0,20.66944215452963
+RJ,2024,17219679.0,Homicídio doloso,0.0,3231.0,Sudeste,0.0,18.763415973085213
+RJ,2017,16718956.0,Lesão corporal seguida de morte,0.0,39.0,Sudeste,0.0,0.23326815382491584
+RJ,2018,17159960.0,Lesão corporal seguida de morte,0.0,56.0,Sudeste,0.0,0.3263410870421609
+RJ,2019,17264943.0,Lesão corporal seguida de morte,0.0,45.0,Sudeste,0.0,0.26064377971013286
+RJ,2020,17366189.0,Lesão corporal seguida de morte,0.0,32.0,Sudeste,0.0,0.18426610467040294
+RJ,2021,17463349.0,Lesão corporal seguida de morte,0.0,44.0,Sudeste,0.0,0.2519562542098884
+RJ,2022,17382125.666666668,Lesão corporal seguida de morte,0.0,33.0,Sudeste,0.0,0.18985019803005682
+RJ,2023,17300902.333333332,Lesão corporal seguida de morte,0.0,41.0,Sudeste,0.0,0.23698185915428266
+RJ,2024,17219679.0,Lesão corporal seguida de morte,0.0,69.0,Sudeste,0.0,0.40070433368705655
+RJ,2017,16718956.0,Roubo a instituição financeira,82.0,0.0,Sudeste,0.4904612465036693,0.0
+RJ,2018,17159960.0,Roubo a instituição financeira,79.0,0.0,Sudeste,0.4603740335059056,0.0
+RJ,2019,17264943.0,Roubo a instituição financeira,57.0,0.0,Sudeste,0.33014878763283495,0.0
+RJ,2020,17366189.0,Roubo a instituição financeira,67.0,0.0,Sudeste,0.38580715665365617,0.0
+RJ,2021,17463349.0,Roubo a instituição financeira,111.0,0.0,Sudeste,0.6356169140294912,0.0
+RJ,2022,17382125.666666668,Roubo a instituição financeira,73.0,0.0,Sudeste,0.4199716501877014,0.0
+RJ,2023,17300902.333333332,Roubo a instituição financeira,50.0,0.0,Sudeste,0.28900226726132033,0.0
+RJ,2024,17219679.0,Roubo a instituição financeira,40.0,0.0,Sudeste,0.2322923673548154,0.0
+RJ,2017,16718956.0,Roubo de carga,10599.0,0.0,Sudeste,63.39510672795598,0.0
+RJ,2018,17159960.0,Roubo de carga,9182.0,0.0,Sudeste,53.50828323609146,0.0
+RJ,2019,17264943.0,Roubo de carga,7456.0,0.0,Sudeste,43.18577825597223,0.0
+RJ,2020,17366189.0,Roubo de carga,4985.0,0.0,Sudeste,28.705204118186206,0.0
+RJ,2021,17463349.0,Roubo de carga,4523.0,0.0,Sudeste,25.899957677075573,0.0
+RJ,2022,17382125.666666668,Roubo de carga,4229.0,0.0,Sudeste,24.329590529366975,0.0
+RJ,2023,17300902.333333332,Roubo de carga,3645.0,0.0,Sudeste,21.068265283350254,0.0
+RJ,2024,17219679.0,Roubo de carga,3974.0,0.0,Sudeste,23.07824669670091,0.0
+RJ,2017,16718956.0,Roubo de veículo,54366.0,0.0,Sudeste,325.1758064319327,0.0
+RJ,2018,17159960.0,Roubo de veículo,52097.0,0.0,Sudeste,303.5962787792046,0.0
+RJ,2019,17264943.0,Roubo de veículo,39749.0,0.0,Sudeste,230.22954665995712,0.0
+RJ,2020,17366189.0,Roubo de veículo,25425.0,0.0,Sudeste,146.4051784764061,0.0
+RJ,2021,17463349.0,Roubo de veículo,24332.0,0.0,Sudeste,139.33180857806826,0.0
+RJ,2022,17382125.666666668,Roubo de veículo,25198.0,0.0,Sudeste,144.9650087867082,0.0
+RJ,2023,17300902.333333332,Roubo de veículo,22248.0,0.0,Sudeste,128.5944488405971,0.0
+RJ,2024,17219679.0,Roubo de veículo,30934.0,0.0,Sudeste,179.6433022938465,0.0
+RJ,2017,16718956.0,Roubo seguido de morte (latrocínio),0.0,237.0,Sudeste,0.0,1.4175526270898735
+RJ,2018,17159960.0,Roubo seguido de morte (latrocínio),0.0,174.0,Sudeste,0.0,1.0139883775952858
+RJ,2019,17264943.0,Roubo seguido de morte (latrocínio),0.0,117.0,Sudeste,0.0,0.6776738272463454
+RJ,2020,17366189.0,Roubo seguido de morte (latrocínio),0.0,87.0,Sudeste,0.0,0.500973472072658
+RJ,2021,17463349.0,Roubo seguido de morte (latrocínio),0.0,110.0,Sudeste,0.0,0.6298906355247209
+RJ,2022,17382125.666666668,Roubo seguido de morte (latrocínio),0.0,64.0,Sudeste,0.0,0.36819432345223135
+RJ,2023,17300902.333333332,Roubo seguido de morte (latrocínio),0.0,65.0,Sudeste,0.0,0.37570294743971644
+RJ,2024,17219679.0,Roubo seguido de morte (latrocínio),0.0,97.0,Sudeste,0.0,0.5633089908354273
+RJ,2017,16718956.0,Tentativa de homicídio,0.0,6001.0,Sudeste,0.0,35.89338951546975
+RJ,2018,17159960.0,Tentativa de homicídio,0.0,6242.0,Sudeste,0.0,36.37537616637801
+RJ,2019,17264943.0,Tentativa de homicídio,0.0,5409.0,Sudeste,0.0,31.329382321157965
+RJ,2020,17366189.0,Tentativa de homicídio,0.0,4352.0,Sudeste,0.0,25.060190235174797
+RJ,2021,17463349.0,Tentativa de homicídio,0.0,3979.0,Sudeste,0.0,22.78486217048059
+RJ,2022,17382125.666666668,Tentativa de homicídio,0.0,3571.0,Sudeste,0.0,20.54409264137372
+RJ,2023,17300902.333333332,Tentativa de homicídio,0.0,3256.0,Sudeste,0.0,18.819827644057177
+RJ,2024,17219679.0,Tentativa de homicídio,0.0,4055.0,Sudeste,0.0,23.54863874059441
+RN,2017,3507003.0,Furto de veículo,1329.0,0.0,Nordeste,37.895604879722086,0.0
+RN,2018,3479010.0,Furto de veículo,1043.0,0.0,Nordeste,29.979793102060643,0.0
+RN,2019,3506853.0,Furto de veículo,859.0,0.0,Nordeste,24.49489613622242,0.0
+RN,2020,3534165.0,Furto de veículo,1053.0,0.0,Nordeste,29.79487375377211,0.0
+RN,2021,3560903.0,Furto de veículo,1138.0,0.0,Nordeste,31.958185887119086,0.0
+RN,2022,3522625.6666666665,Furto de veículo,1716.0,0.0,Nordeste,48.71366311322511,0.0
+RN,2023,3484348.3333333335,Furto de veículo,2383.0,0.0,Nordeste,68.39155480532227,0.0
+RN,2024,3446071.0,Furto de veículo,2371.0,0.0,Nordeste,68.80299332195999,0.0
+RN,2017,3507003.0,Homicídio doloso,0.0,1883.0,Nordeste,0.0,53.6925688401179
+RN,2018,3479010.0,Homicídio doloso,0.0,1498.0,Nordeste,0.0,43.05822633450321
+RN,2019,3506853.0,Homicídio doloso,0.0,1074.0,Nordeste,0.0,30.62574906903711
+RN,2020,3534165.0,Homicídio doloso,0.0,1222.0,Nordeste,0.0,34.57676707227874
+RN,2021,3560903.0,Homicídio doloso,0.0,1063.0,Nordeste,0.0,29.851978557124415
+RN,2022,3522625.6666666665,Homicídio doloso,0.0,985.0,Nordeste,0.0,27.962096833640288
+RN,2023,3484348.3333333335,Homicídio doloso,0.0,814.0,Nordeste,0.0,23.36161376900224
+RN,2024,3446071.0,Homicídio doloso,0.0,636.0,Nordeste,0.0,18.45580082360462
+RN,2017,3507003.0,Lesão corporal seguida de morte,0.0,280.0,Nordeste,0.0,7.984025106337234
+RN,2018,3479010.0,Lesão corporal seguida de morte,0.0,166.0,Nordeste,0.0,4.77147234414388
+RN,2019,3506853.0,Lesão corporal seguida de morte,0.0,128.0,Nordeste,0.0,3.6499961646524675
+RN,2020,3534165.0,Lesão corporal seguida de morte,0.0,57.0,Nordeste,0.0,1.612827923993362
+RN,2021,3560903.0,Lesão corporal seguida de morte,0.0,19.0,Nordeste,0.0,0.533572523598649
+RN,2022,3522625.6666666665,Lesão corporal seguida de morte,0.0,79.0,Nordeste,0.0,2.2426453298046525
+RN,2023,3484348.3333333335,Lesão corporal seguida de morte,0.0,81.0,Nordeste,0.0,2.3246814684142274
+RN,2024,3446071.0,Lesão corporal seguida de morte,0.0,72.0,Nordeste,0.0,2.0893359422948627
+RN,2017,3507003.0,Roubo a instituição financeira,62.0,0.0,Nordeste,1.7678912735461019,0.0
+RN,2018,3479010.0,Roubo a instituição financeira,58.0,0.0,Nordeste,1.6671409395201509,0.0
+RN,2019,3506853.0,Roubo a instituição financeira,11.0,0.0,Nordeste,0.31367154539982145,0.0
+RN,2020,3534165.0,Roubo a instituição financeira,4.0,0.0,Nordeste,0.1131809069469026,0.0
+RN,2021,3560903.0,Roubo a instituição financeira,7.0,0.0,Nordeste,0.19657935079950226,0.0
+RN,2022,3522625.6666666665,Roubo a instituição financeira,10.0,0.0,Nordeste,0.283879155671475,0.0
+RN,2023,3484348.3333333335,Roubo a instituição financeira,2.0,0.0,Nordeste,0.05739954242998093,0.0
+RN,2024,3446071.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.08705566426228595,0.0
+RN,2017,3507003.0,Roubo de carga,17.0,0.0,Nordeste,0.48474438145618925,0.0
+RN,2018,3479010.0,Roubo de carga,36.0,0.0,Nordeste,1.0347771348745765,0.0
+RN,2019,3506853.0,Roubo de carga,19.0,0.0,Nordeste,0.5417963056906007,0.0
+RN,2020,3534165.0,Roubo de carga,9.0,0.0,Nordeste,0.25465704063053085,0.0
+RN,2021,3560903.0,Roubo de carga,12.0,0.0,Nordeste,0.33699317279914676,0.0
+RN,2022,3522625.6666666665,Roubo de carga,30.0,0.0,Nordeste,0.8516374670144249,0.0
+RN,2023,3484348.3333333335,Roubo de carga,27.0,0.0,Nordeste,0.7748938228047424,0.0
+RN,2024,3446071.0,Roubo de carga,35.0,0.0,Nordeste,1.015649416393336,0.0
+RN,2017,3507003.0,Roubo de veículo,6992.0,0.0,Nordeste,199.37251265539265,0.0
+RN,2018,3479010.0,Roubo de veículo,6956.0,0.0,Nordeste,199.9419375052098,0.0
+RN,2019,3506853.0,Roubo de veículo,5234.0,0.0,Nordeste,149.2506244202423,0.0
+RN,2020,3534165.0,Roubo de veículo,7476.0,0.0,Nordeste,211.53511508376096,0.0
+RN,2021,3560903.0,Roubo de veículo,4204.0,0.0,Nordeste,118.05994153730107,0.0
+RN,2022,3522625.6666666665,Roubo de veículo,3290.0,0.0,Nordeste,93.39624221591527,0.0
+RN,2023,3484348.3333333335,Roubo de veículo,3313.0,0.0,Nordeste,95.08234203526341,0.0
+RN,2024,3446071.0,Roubo de veículo,2769.0,0.0,Nordeste,80.35237811408993,0.0
+RN,2017,3507003.0,Roubo seguido de morte (latrocínio),0.0,75.0,Nordeste,0.0,2.138578153483188
+RN,2018,3479010.0,Roubo seguido de morte (latrocínio),0.0,94.0,Nordeste,0.0,2.7019180743947273
+RN,2019,3506853.0,Roubo seguido de morte (latrocínio),0.0,62.0,Nordeste,0.0,1.767966892253539
+RN,2020,3534165.0,Roubo seguido de morte (latrocínio),0.0,64.0,Nordeste,0.0,1.8108945111504415
+RN,2021,3560903.0,Roubo seguido de morte (latrocínio),0.0,54.0,Nordeste,0.0,1.5164692775961603
+RN,2022,3522625.6666666665,Roubo seguido de morte (latrocínio),0.0,33.0,Nordeste,0.0,0.9368012137158674
+RN,2023,3484348.3333333335,Roubo seguido de morte (latrocínio),0.0,32.0,Nordeste,0.0,0.9183926788796949
+RN,2024,3446071.0,Roubo seguido de morte (latrocínio),0.0,23.0,Nordeste,0.0,0.6674267593441923
+RN,2017,3507003.0,Tentativa de homicídio,0.0,315.0,Nordeste,0.0,8.982028244629388
+RN,2018,3479010.0,Tentativa de homicídio,0.0,244.0,Nordeste,0.0,7.013489469705462
+RN,2019,3506853.0,Tentativa de homicídio,0.0,206.0,Nordeste,0.0,5.874212577487565
+RN,2020,3534165.0,Tentativa de homicídio,0.0,252.0,Nordeste,0.0,7.130397137654863
+RN,2021,3560903.0,Tentativa de homicídio,0.0,378.0,Nordeste,0.0,10.615284943173123
+RN,2022,3522625.6666666665,Tentativa de homicídio,0.0,443.0,Nordeste,0.0,12.575846596246341
+RN,2023,3484348.3333333335,Tentativa de homicídio,0.0,586.0,Nordeste,0.0,16.81806593198441
+RN,2024,3446071.0,Tentativa de homicídio,0.0,555.0,Nordeste,0.0,16.105297888522898
+RO,2017,1805788.0,Furto de veículo,2559.0,0.0,Norte,141.7109871147665,0.0
+RO,2018,1757589.0,Furto de veículo,2513.0,0.0,Norte,142.97995720273627,0.0
+RO,2019,1777225.0,Furto de veículo,0.0,0.0,Norte,0.0,0.0
+RO,2020,1796460.0,Furto de veículo,0.0,0.0,Norte,0.0,0.0
+RO,2021,1815278.0,Furto de veículo,2258.0,0.0,Norte,124.38866113069183,0.0
+RO,2022,1792261.0,Furto de veículo,2688.0,0.0,Norte,149.97815608329367,0.0
+RO,2023,1769244.0,Furto de veículo,2320.0,0.0,Norte,131.1294541623428,0.0
+RO,2024,1746227.0,Furto de veículo,1875.0,0.0,Norte,107.37435625494281,0.0
+RO,2017,1805788.0,Homicídio doloso,0.0,669.0,Norte,0.0,37.0475382492297
+RO,2018,1757589.0,Homicídio doloso,0.0,430.0,Norte,0.0,24.46533290775033
+RO,2019,1777225.0,Homicídio doloso,0.0,361.0,Norte,0.0,20.312565938471494
+RO,2020,1796460.0,Homicídio doloso,0.0,375.0,Norte,0.0,20.874386293042985
+RO,2021,1815278.0,Homicídio doloso,0.0,421.0,Norte,0.0,23.192040007095333
+RO,2022,1792261.0,Homicídio doloso,0.0,472.0,Norte,0.0,26.335450026530737
+RO,2023,1769244.0,Homicídio doloso,0.0,418.0,Norte,0.0,23.625910275801417
+RO,2024,1746227.0,Homicídio doloso,0.0,417.0,Norte,0.0,23.880056831099278
+RO,2017,1805788.0,Lesão corporal seguida de morte,0.0,8.0,Norte,0.0,0.44301988937793363
+RO,2018,1757589.0,Lesão corporal seguida de morte,0.0,0.0,Norte,0.0,0.0
+RO,2019,1777225.0,Lesão corporal seguida de morte,0.0,4.0,Norte,0.0,0.22506998269774509
+RO,2020,1796460.0,Lesão corporal seguida de morte,0.0,1.0,Norte,0.0,0.055665030114781286
+RO,2021,1815278.0,Lesão corporal seguida de morte,0.0,3.0,Norte,0.0,0.16526394304343467
+RO,2022,1792261.0,Lesão corporal seguida de morte,0.0,3.0,Norte,0.0,0.16738633491439026
+RO,2023,1769244.0,Lesão corporal seguida de morte,0.0,0.0,Norte,0.0,0.0
+RO,2024,1746227.0,Lesão corporal seguida de morte,0.0,6.0,Norte,0.0,0.34359794001581695
+RO,2017,1805788.0,Roubo a instituição financeira,5.0,0.0,Norte,0.27688743086120854,0.0
+RO,2018,1757589.0,Roubo a instituição financeira,3.0,0.0,Norte,0.17068836912383953,0.0
+RO,2019,1777225.0,Roubo a instituição financeira,1.0,0.0,Norte,0.05626749567443627,0.0
+RO,2020,1796460.0,Roubo a instituição financeira,1.0,0.0,Norte,0.055665030114781286,0.0
+RO,2021,1815278.0,Roubo a instituição financeira,2.0,0.0,Norte,0.11017596202895644,0.0
+RO,2022,1792261.0,Roubo a instituição financeira,7.0,0.0,Norte,0.3905681148002439,0.0
+RO,2023,1769244.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+RO,2024,1746227.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+RO,2017,1805788.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2018,1757589.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2019,1777225.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2020,1796460.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2021,1815278.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2022,1792261.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2023,1769244.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2024,1746227.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RO,2017,1805788.0,Roubo de veículo,1671.0,0.0,Norte,92.53577939381589,0.0
+RO,2018,1757589.0,Roubo de veículo,1724.0,0.0,Norte,98.08891612316646,0.0
+RO,2019,1777225.0,Roubo de veículo,0.0,0.0,Norte,0.0,0.0
+RO,2020,1796460.0,Roubo de veículo,0.0,0.0,Norte,0.0,0.0
+RO,2021,1815278.0,Roubo de veículo,1838.0,0.0,Norte,101.25170910461098,0.0
+RO,2022,1792261.0,Roubo de veículo,1551.0,0.0,Norte,86.53873515073977,0.0
+RO,2023,1769244.0,Roubo de veículo,969.0,0.0,Norte,54.76915563935783,0.0
+RO,2024,1746227.0,Roubo de veículo,779.0,0.0,Norte,44.610465878720234,0.0
+RO,2017,1805788.0,Roubo seguido de morte (latrocínio),0.0,22.0,Norte,0.0,1.2183046957893173
+RO,2018,1757589.0,Roubo seguido de morte (latrocínio),0.0,17.0,Norte,0.0,0.9672340917017574
+RO,2019,1777225.0,Roubo seguido de morte (latrocínio),0.0,14.0,Norte,0.0,0.7877449394421078
+RO,2020,1796460.0,Roubo seguido de morte (latrocínio),0.0,14.0,Norte,0.0,0.7793104216069381
+RO,2021,1815278.0,Roubo seguido de morte (latrocínio),0.0,18.0,Norte,0.0,0.9915836582606081
+RO,2022,1792261.0,Roubo seguido de morte (latrocínio),0.0,13.0,Norte,0.0,0.7253407846290245
+RO,2023,1769244.0,Roubo seguido de morte (latrocínio),0.0,7.0,Norte,0.0,0.39564921514499984
+RO,2024,1746227.0,Roubo seguido de morte (latrocínio),0.0,10.0,Norte,0.0,0.5726632333596949
+RO,2017,1805788.0,Tentativa de homicídio,0.0,625.0,Norte,0.0,34.61092885765107
+RO,2018,1757589.0,Tentativa de homicídio,0.0,740.0,Norte,0.0,42.103131050547084
+RO,2019,1777225.0,Tentativa de homicídio,0.0,737.0,Norte,0.0,41.469144312059534
+RO,2020,1796460.0,Tentativa de homicídio,0.0,783.0,Norte,0.0,43.58571857987375
+RO,2021,1815278.0,Tentativa de homicídio,0.0,712.0,Norte,0.0,39.222642482308494
+RO,2022,1792261.0,Tentativa de homicídio,0.0,707.0,Norte,0.0,39.44737959482464
+RO,2023,1769244.0,Tentativa de homicídio,0.0,628.0,Norte,0.0,35.49538673015141
+RO,2024,1746227.0,Tentativa de homicídio,0.0,832.0,Norte,0.0,47.64558101552662
+RR,2017,522636.0,Furto de veículo,588.0,0.0,Norte,112.50660115261866,0.0
+RR,2018,576568.0,Furto de veículo,680.0,0.0,Norte,117.9392543464084,0.0
+RR,2019,605761.0,Furto de veículo,591.0,0.0,Norte,97.5632303829398,0.0
+RR,2020,631181.0,Furto de veículo,732.0,0.0,Norte,115.97307270022387,0.0
+RR,2021,652713.0,Furto de veículo,619.0,0.0,Norte,94.83494276963995,0.0
+RR,2022,674073.0,Furto de veículo,671.0,0.0,Norte,99.54411465820468,0.0
+RR,2023,695433.0,Furto de veículo,698.0,0.0,Norte,100.36912254667236,0.0
+RR,2024,716793.0,Furto de veículo,643.0,0.0,Norte,89.70511709796273,0.0
+RR,2017,522636.0,Homicídio doloso,0.0,212.0,Norte,0.0,40.56360449720265
+RR,2018,576568.0,Homicídio doloso,0.0,336.0,Norte,0.0,58.27586685351945
+RR,2019,605761.0,Homicídio doloso,0.0,174.0,Norte,0.0,28.72419980817517
+RR,2020,631181.0,Homicídio doloso,0.0,167.0,Norte,0.0,26.458337624231405
+RR,2021,652713.0,Homicídio doloso,0.0,199.0,Norte,0.0,30.48813184355145
+RR,2022,674073.0,Homicídio doloso,0.0,175.0,Norte,0.0,25.961579828890937
+RR,2023,695433.0,Homicídio doloso,0.0,142.0,Norte,0.0,20.418933240153976
+RR,2024,716793.0,Homicídio doloso,0.0,108.0,Norte,0.0,15.067111425474298
+RR,2017,522636.0,Lesão corporal seguida de morte,0.0,6.0,Norte,0.0,1.1480265423736598
+RR,2018,576568.0,Lesão corporal seguida de morte,0.0,9.0,Norte,0.0,1.5609607192906994
+RR,2019,605761.0,Lesão corporal seguida de morte,0.0,9.0,Norte,0.0,1.4857344728366468
+RR,2020,631181.0,Lesão corporal seguida de morte,0.0,5.0,Norte,0.0,0.7921657971326767
+RR,2021,652713.0,Lesão corporal seguida de morte,0.0,7.0,Norte,0.0,1.0724468487681416
+RR,2022,674073.0,Lesão corporal seguida de morte,0.0,4.0,Norte,0.0,0.5934075389460786
+RR,2023,695433.0,Lesão corporal seguida de morte,0.0,8.0,Norte,0.0,1.1503624360650127
+RR,2024,716793.0,Lesão corporal seguida de morte,0.0,4.0,Norte,0.0,0.5580411639064555
+RR,2017,522636.0,Roubo a instituição financeira,1.0,0.0,Norte,0.1913377570622766,0.0
+RR,2018,576568.0,Roubo a instituição financeira,5.0,0.0,Norte,0.8672003996059442,0.0
+RR,2019,605761.0,Roubo a instituição financeira,1.0,0.0,Norte,0.16508160809296074,0.0
+RR,2020,631181.0,Roubo a instituição financeira,4.0,0.0,Norte,0.6337326377061414,0.0
+RR,2021,652713.0,Roubo a instituição financeira,4.0,0.0,Norte,0.6128267707246523,0.0
+RR,2022,674073.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+RR,2023,695433.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+RR,2024,716793.0,Roubo a instituição financeira,0.0,0.0,Norte,0.0,0.0
+RR,2017,522636.0,Roubo de carga,1.0,0.0,Norte,0.1913377570622766,0.0
+RR,2018,576568.0,Roubo de carga,1.0,0.0,Norte,0.17344007992118884,0.0
+RR,2019,605761.0,Roubo de carga,1.0,0.0,Norte,0.16508160809296074,0.0
+RR,2020,631181.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RR,2021,652713.0,Roubo de carga,7.0,0.0,Norte,1.0724468487681416,0.0
+RR,2022,674073.0,Roubo de carga,6.0,0.0,Norte,0.8901113084191178,0.0
+RR,2023,695433.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+RR,2024,716793.0,Roubo de carga,2.0,0.0,Norte,0.27902058195322776,0.0
+RR,2017,522636.0,Roubo de veículo,287.0,0.0,Norte,54.91393627687339,0.0
+RR,2018,576568.0,Roubo de veículo,650.0,0.0,Norte,112.73605194877274,0.0
+RR,2019,605761.0,Roubo de veículo,476.0,0.0,Norte,78.57884545224931,0.0
+RR,2020,631181.0,Roubo de veículo,593.0,0.0,Norte,93.95086353993545,0.0
+RR,2021,652713.0,Roubo de veículo,682.0,0.0,Norte,104.48696440855322,0.0
+RR,2022,674073.0,Roubo de veículo,327.0,0.0,Norte,48.51106630884192,0.0
+RR,2023,695433.0,Roubo de veículo,285.0,0.0,Norte,40.981661784816076,0.0
+RR,2024,716793.0,Roubo de veículo,243.0,0.0,Norte,33.90100070731717,0.0
+RR,2017,522636.0,Roubo seguido de morte (latrocínio),0.0,7.0,Norte,0.0,1.3393642994359363
+RR,2018,576568.0,Roubo seguido de morte (latrocínio),0.0,14.0,Norte,0.0,2.4281611188966434
+RR,2019,605761.0,Roubo seguido de morte (latrocínio),0.0,17.0,Norte,0.0,2.806387337580333
+RR,2020,631181.0,Roubo seguido de morte (latrocínio),0.0,16.0,Norte,0.0,2.5349305508245656
+RR,2021,652713.0,Roubo seguido de morte (latrocínio),0.0,13.0,Norte,0.0,1.99168700485512
+RR,2022,674073.0,Roubo seguido de morte (latrocínio),0.0,7.0,Norte,0.0,1.0384631931556374
+RR,2023,695433.0,Roubo seguido de morte (latrocínio),0.0,9.0,Norte,0.0,1.2941577405731393
+RR,2024,716793.0,Roubo seguido de morte (latrocínio),0.0,6.0,Norte,0.0,0.8370617458596833
+RR,2017,522636.0,Tentativa de homicídio,0.0,146.0,Norte,0.0,27.935312531092382
+RR,2018,576568.0,Tentativa de homicídio,0.0,193.0,Norte,0.0,33.473935424789445
+RR,2019,605761.0,Tentativa de homicídio,0.0,118.0,Norte,0.0,19.47962975496937
+RR,2020,631181.0,Tentativa de homicídio,0.0,133.0,Norte,0.0,21.0716102037292
+RR,2021,652713.0,Tentativa de homicídio,0.0,205.0,Norte,0.0,31.407371999638436
+RR,2022,674073.0,Tentativa de homicídio,0.0,202.0,Norte,0.0,29.967080716776966
+RR,2023,695433.0,Tentativa de homicídio,0.0,211.0,Norte,0.0,30.34080925121471
+RR,2024,716793.0,Tentativa de homicídio,0.0,267.0,Norte,0.0,37.24924769075591
+RS,2017,11322895.0,Furto de veículo,16893.0,0.0,Sul,149.19329376453638,0.0
+RS,2018,11329605.0,Furto de veículo,14405.0,0.0,Sul,127.14476806561217,0.0
+RS,2019,11377239.0,Furto de veículo,13093.0,0.0,Sul,115.080644785611,0.0
+RS,2020,11422973.0,Furto de veículo,9411.0,0.0,Sul,82.3866081098152,0.0
+RS,2021,11466630.0,Furto de veículo,8916.0,0.0,Sul,77.75606259206062,0.0
+RS,2022,11387725.0,Furto de veículo,8953.0,0.0,Sul,78.61974187118146,0.0
+RS,2023,11308820.0,Furto de veículo,8556.0,0.0,Sul,75.65776093350146,0.0
+RS,2024,11229915.0,Furto de veículo,6634.0,0.0,Sul,59.07435630634782,0.0
+RS,2017,11322895.0,Homicídio doloso,0.0,3025.0,Sul,0.0,26.715782492021695
+RS,2018,11329605.0,Homicídio doloso,0.0,2410.0,Sul,0.0,21.271703647214533
+RS,2019,11377239.0,Homicídio doloso,0.0,1860.0,Sul,0.0,16.348430405654657
+RS,2020,11422973.0,Homicídio doloso,0.0,1833.0,Sul,0.0,16.04661063280111
+RS,2021,11466630.0,Homicídio doloso,0.0,1637.0,Sul,0.0,14.2762084413642
+RS,2022,11387725.0,Homicídio doloso,0.0,1761.0,Sul,0.0,15.464019371735793
+RS,2023,11308820.0,Homicídio doloso,0.0,1670.0,Sul,0.0,14.767234777810593
+RS,2024,11229915.0,Homicídio doloso,0.0,1399.0,Sul,0.0,12.45779687557742
+RS,2017,11322895.0,Lesão corporal seguida de morte,0.0,24.0,Sul,0.0,0.2119599272094283
+RS,2018,11329605.0,Lesão corporal seguida de morte,0.0,29.0,Sul,0.0,0.25596655841046534
+RS,2019,11377239.0,Lesão corporal seguida de morte,0.0,29.0,Sul,0.0,0.2548948826688092
+RS,2020,11422973.0,Lesão corporal seguida de morte,0.0,28.0,Sul,0.0,0.24512007513280476
+RS,2021,11466630.0,Lesão corporal seguida de morte,0.0,35.0,Sul,0.0,0.30523353417699883
+RS,2022,11387725.0,Lesão corporal seguida de morte,0.0,36.0,Sul,0.0,0.31612986790601283
+RS,2023,11308820.0,Lesão corporal seguida de morte,0.0,29.0,Sul,0.0,0.256437011111681
+RS,2024,11229915.0,Lesão corporal seguida de morte,0.0,35.0,Sul,0.0,0.3116675415619798
+RS,2017,11322895.0,Roubo a instituição financeira,215.0,0.0,Sul,1.898807681251129,0.0
+RS,2018,11329605.0,Roubo a instituição financeira,81.0,0.0,Sul,0.7149410769395755,0.0
+RS,2019,11377239.0,Roubo a instituição financeira,52.0,0.0,Sul,0.457052893061313,0.0
+RS,2020,11422973.0,Roubo a instituição financeira,13.0,0.0,Sul,0.1138057491688022,0.0
+RS,2021,11466630.0,Roubo a instituição financeira,13.0,0.0,Sul,0.11337245555145671,0.0
+RS,2022,11387725.0,Roubo a instituição financeira,3.0,0.0,Sul,0.0263441556588344,0.0
+RS,2023,11308820.0,Roubo a instituição financeira,3.0,0.0,Sul,0.02652796666672562,0.0
+RS,2024,11229915.0,Roubo a instituição financeira,2.0,0.0,Sul,0.0178095738035417,0.0
+RS,2017,11322895.0,Roubo de carga,414.0,0.0,Sul,3.6563087443626383,0.0
+RS,2018,11329605.0,Roubo de carga,396.0,0.0,Sul,3.4952674872601475,0.0
+RS,2019,11377239.0,Roubo de carga,307.0,0.0,Sul,2.6983699648042903,0.0
+RS,2020,11422973.0,Roubo de carga,9.0,0.0,Sul,0.07878859557840152,0.0
+RS,2021,11466630.0,Roubo de carga,172.0,0.0,Sul,1.5000047965269656,0.0
+RS,2022,11387725.0,Roubo de carga,122.0,0.0,Sul,1.071328996792599,0.0
+RS,2023,11308820.0,Roubo de carga,86.0,0.0,Sul,0.7604683777794677,0.0
+RS,2024,11229915.0,Roubo de carga,39.0,0.0,Sul,0.3472866891690632,0.0
+RS,2017,11322895.0,Roubo de veículo,17859.0,0.0,Sul,157.72468083471585,0.0
+RS,2018,11329605.0,Roubo de veículo,16121.0,0.0,Sul,142.2909271770728,0.0
+RS,2019,11377239.0,Roubo de veículo,11127.0,0.0,Sul,97.80052963640827,0.0
+RS,2020,11422973.0,Roubo de veículo,7887.0,0.0,Sul,69.04507259187253,0.0
+RS,2021,11466630.0,Roubo de veículo,4942.0,0.0,Sul,43.098975025792235,0.0
+RS,2022,11387725.0,Roubo de veículo,4406.0,0.0,Sul,38.690783277608126,0.0
+RS,2023,11308820.0,Roubo de veículo,3594.0,0.0,Sul,31.78050406673729,0.0
+RS,2024,11229915.0,Roubo de veículo,2286.0,0.0,Sul,20.356342857448166,0.0
+RS,2017,11322895.0,Roubo seguido de morte (latrocínio),0.0,96.0,Sul,0.0,0.8478397088377132
+RS,2018,11329605.0,Roubo seguido de morte (latrocínio),0.0,95.0,Sul,0.0,0.8385111396204898
+RS,2019,11377239.0,Roubo seguido de morte (latrocínio),0.0,73.0,Sul,0.0,0.6416319460283818
+RS,2020,11422973.0,Roubo seguido de morte (latrocínio),0.0,75.0,Sul,0.0,0.6565716298200127
+RS,2021,11466630.0,Roubo seguido de morte (latrocínio),0.0,67.0,Sul,0.0,0.5843041939959692
+RS,2022,11387725.0,Roubo seguido de morte (latrocínio),0.0,53.0,Sul,0.0,0.4654134166394078
+RS,2023,11308820.0,Roubo seguido de morte (latrocínio),0.0,42.0,Sul,0.0,0.37139153333415864
+RS,2024,11229915.0,Roubo seguido de morte (latrocínio),0.0,30.0,Sul,0.0,0.2671436070531255
+RS,2017,11322895.0,Tentativa de homicídio,0.0,4458.0,Sul,0.0,39.371556479151316
+RS,2018,11329605.0,Tentativa de homicídio,0.0,3631.0,Sul,0.0,32.04877839959998
+RS,2019,11377239.0,Tentativa de homicídio,0.0,3276.0,Sul,0.0,28.794332262862717
+RS,2020,11422973.0,Tentativa de homicídio,0.0,2711.0,Sul,0.0,23.73287584589406
+RS,2021,11466630.0,Tentativa de homicídio,0.0,2472.0,Sul,0.0,21.558208471015462
+RS,2022,11387725.0,Tentativa de homicídio,0.0,2545.0,Sul,0.0,22.348625383911184
+RS,2023,11308820.0,Tentativa de homicídio,0.0,2502.0,Sul,0.0,22.124324200049166
+RS,2024,11229915.0,Tentativa de homicídio,0.0,2138.0,Sul,0.0,19.03843439598608
+SC,2017,7001161.0,Furto de veículo,11988.0,0.0,Sul,171.2287433469963,0.0
+SC,2018,7075494.0,Furto de veículo,9133.0,0.0,Sul,129.07932647529628,0.0
+SC,2019,7164788.0,Furto de veículo,8899.0,0.0,Sul,124.20465197295441,0.0
+SC,2020,7252502.0,Furto de veículo,7640.0,0.0,Sul,105.34295612741643,0.0
+SC,2021,7338473.0,Furto de veículo,7561.0,0.0,Sul,103.03233383838845,0.0
+SC,2022,7578462.333333333,Furto de veículo,8106.0,0.0,Sul,106.96101192383487,0.0
+SC,2023,7818451.666666667,Furto de veículo,7112.0,0.0,Sul,90.96430218174059,0.0
+SC,2024,8058441.0,Furto de veículo,5957.0,0.0,Sul,73.92248699221103,0.0
+SC,2017,7001161.0,Homicídio doloso,0.0,934.0,Sul,0.0,13.340644501676222
+SC,2018,7075494.0,Homicídio doloso,0.0,731.0,Sul,0.0,10.331434101986378
+SC,2019,7164788.0,Homicídio doloso,0.0,642.0,Sul,0.0,8.96048843315392
+SC,2020,7252502.0,Homicídio doloso,0.0,602.0,Sul,0.0,8.300583715799045
+SC,2021,7338473.0,Homicídio doloso,0.0,583.0,Sul,0.0,7.944432036474073
+SC,2022,7578462.333333333,Homicídio doloso,0.0,543.0,Sul,0.0,7.165041879427872
+SC,2023,7818451.666666667,Homicídio doloso,0.0,516.0,Sul,0.0,6.599772205536859
+SC,2024,8058441.0,Homicídio doloso,0.0,500.0,Sul,0.0,6.204674080259445
+SC,2017,7001161.0,Lesão corporal seguida de morte,0.0,26.0,Sul,0.0,0.37136697756272136
+SC,2018,7075494.0,Lesão corporal seguida de morte,0.0,22.0,Sul,0.0,0.3109323532745558
+SC,2019,7164788.0,Lesão corporal seguida de morte,0.0,14.0,Sul,0.0,0.19540005928996085
+SC,2020,7252502.0,Lesão corporal seguida de morte,0.0,15.0,Sul,0.0,0.20682517564283331
+SC,2021,7338473.0,Lesão corporal seguida de morte,0.0,15.0,Sul,0.0,0.20440219647874974
+SC,2022,7578462.333333333,Lesão corporal seguida de morte,0.0,20.0,Sul,0.0,0.26390577824780376
+SC,2023,7818451.666666667,Lesão corporal seguida de morte,0.0,16.0,Sul,0.0,0.20464409939649175
+SC,2024,8058441.0,Lesão corporal seguida de morte,0.0,30.0,Sul,0.0,0.37228044481556666
+SC,2017,7001161.0,Roubo a instituição financeira,35.0,0.0,Sul,0.4999170851805864,0.0
+SC,2018,7075494.0,Roubo a instituição financeira,12.0,0.0,Sul,0.16959946542248497,0.0
+SC,2019,7164788.0,Roubo a instituição financeira,16.0,0.0,Sul,0.22331435347424095,0.0
+SC,2020,7252502.0,Roubo a instituição financeira,8.0,0.0,Sul,0.11030676034284445,0.0
+SC,2021,7338473.0,Roubo a instituição financeira,15.0,0.0,Sul,0.20440219647874974,0.0
+SC,2022,7578462.333333333,Roubo a instituição financeira,8.0,0.0,Sul,0.1055623112991215,0.0
+SC,2023,7818451.666666667,Roubo a instituição financeira,5.0,0.0,Sul,0.06395128106140367,0.0
+SC,2024,8058441.0,Roubo a instituição financeira,4.0,0.0,Sul,0.049637392642075555,0.0
+SC,2017,7001161.0,Roubo de carga,209.0,0.0,Sul,2.985219165792645,0.0
+SC,2018,7075494.0,Roubo de carga,151.0,0.0,Sul,2.1341266065662694,0.0
+SC,2019,7164788.0,Roubo de carga,38.0,0.0,Sul,0.5303715895013223,0.0
+SC,2020,7252502.0,Roubo de carga,15.0,0.0,Sul,0.20682517564283331,0.0
+SC,2021,7338473.0,Roubo de carga,17.0,0.0,Sul,0.23165582267591636,0.0
+SC,2022,7578462.333333333,Roubo de carga,23.0,0.0,Sul,0.30349164498497433,0.0
+SC,2023,7818451.666666667,Roubo de carga,7.0,0.0,Sul,0.08953179348596514,0.0
+SC,2024,8058441.0,Roubo de carga,23.0,0.0,Sul,0.28541500769193445,0.0
+SC,2017,7001161.0,Roubo de veículo,3001.0,0.0,Sul,42.86431921791257,0.0
+SC,2018,7075494.0,Roubo de veículo,2218.0,0.0,Sul,31.347634525589307,0.0
+SC,2019,7164788.0,Roubo de veículo,1704.0,0.0,Sul,23.782978645006665,0.0
+SC,2020,7252502.0,Roubo de veículo,1348.0,0.0,Sul,18.58668911776929,0.0
+SC,2021,7338473.0,Roubo de veículo,1408.0,0.0,Sul,19.18655284280531,0.0
+SC,2022,7578462.333333333,Roubo de veículo,1279.0,0.0,Sul,16.876774518947048,0.0
+SC,2023,7818451.666666667,Roubo de veículo,1071.0,0.0,Sul,13.698364403352668,0.0
+SC,2024,8058441.0,Roubo de veículo,1289.0,0.0,Sul,15.995649778908849,0.0
+SC,2017,7001161.0,Roubo seguido de morte (latrocínio),0.0,65.0,Sul,0.0,0.9284174439068035
+SC,2018,7075494.0,Roubo seguido de morte (latrocínio),0.0,44.0,Sul,0.0,0.6218647065491116
+SC,2019,7164788.0,Roubo seguido de morte (latrocínio),0.0,28.0,Sul,0.0,0.3908001185799217
+SC,2020,7252502.0,Roubo seguido de morte (latrocínio),0.0,19.0,Sul,0.0,0.26197855581425555
+SC,2021,7338473.0,Roubo seguido de morte (latrocínio),0.0,23.0,Sul,0.0,0.3134167012674163
+SC,2022,7578462.333333333,Roubo seguido de morte (latrocínio),0.0,25.0,Sul,0.0,0.3298822228097547
+SC,2023,7818451.666666667,Roubo seguido de morte (latrocínio),0.0,10.0,Sul,0.0,0.12790256212280735
+SC,2024,8058441.0,Roubo seguido de morte (latrocínio),0.0,19.0,Sul,0.0,0.23577761504985892
+SC,2017,7001161.0,Tentativa de homicídio,0.0,1435.0,Sul,0.0,20.496600492404045
+SC,2018,7075494.0,Tentativa de homicídio,0.0,1260.0,Sul,0.0,17.807943869360923
+SC,2019,7164788.0,Tentativa de homicídio,0.0,1393.0,Sul,0.0,19.442305899351105
+SC,2020,7252502.0,Tentativa de homicídio,0.0,1618.0,Sul,0.0,22.309542279340288
+SC,2021,7338473.0,Tentativa de homicídio,0.0,1552.0,Sul,0.0,21.148813929001307
+SC,2022,7578462.333333333,Tentativa de homicídio,0.0,1629.0,Sul,0.0,21.495125638283618
+SC,2023,7818451.666666667,Tentativa de homicídio,0.0,1678.0,Sul,0.0,21.462049924207072
+SC,2024,8058441.0,Tentativa de homicídio,0.0,1661.0,Sul,0.0,20.611927294621875
+SE,2017,2288116.0,Furto de veículo,858.0,0.0,Nordeste,37.49809887260961,0.0
+SE,2018,2278308.0,Furto de veículo,662.0,0.0,Nordeste,29.05665081279616,0.0
+SE,2019,2298696.0,Furto de veículo,861.0,0.0,Nordeste,37.45601854268681,0.0
+SE,2020,2318822.0,Furto de veículo,841.0,0.0,Nordeste,36.26841560068,0.0
+SE,2021,2338474.0,Furto de veículo,666.0,0.0,Nordeste,28.4801113888801,0.0
+SE,2022,2322675.0,Furto de veículo,908.0,0.0,Nordeste,39.092856297157375,0.0
+SE,2023,2306876.0,Furto de veículo,857.0,0.0,Nordeste,37.149807792009625,0.0
+SE,2024,2291077.0,Furto de veículo,771.0,0.0,Nordeste,33.65229540517407,0.0
+SE,2017,2288116.0,Homicídio doloso,0.0,1101.0,Nordeste,0.0,48.118189812054986
+SE,2018,2278308.0,Homicídio doloso,0.0,932.0,Nordeste,0.0,40.90755069112693
+SE,2019,2298696.0,Homicídio doloso,0.0,751.0,Nordeste,0.0,32.67069677765133
+SE,2020,2318822.0,Homicídio doloso,0.0,747.0,Nordeste,0.0,32.21463311974787
+SE,2021,2338474.0,Homicídio doloso,0.0,542.0,Nordeste,0.0,23.177508067226746
+SE,2022,2322675.0,Homicídio doloso,0.0,560.0,Nordeste,0.0,24.110131637013357
+SE,2023,2306876.0,Homicídio doloso,0.0,435.0,Nordeste,0.0,18.85667023281702
+SE,2024,2291077.0,Homicídio doloso,0.0,355.0,Nordeste,0.0,15.494896068530217
+SE,2017,2288116.0,Lesão corporal seguida de morte,0.0,5.0,Nordeste,0.0,0.21852038970052218
+SE,2018,2278308.0,Lesão corporal seguida de morte,0.0,6.0,Nordeste,0.0,0.2633533306295725
+SE,2019,2298696.0,Lesão corporal seguida de morte,0.0,4.0,Nordeste,0.0,0.17401170054674478
+SE,2020,2318822.0,Lesão corporal seguida de morte,0.0,2.0,Nordeste,0.0,0.0862506910836623
+SE,2021,2338474.0,Lesão corporal seguida de morte,0.0,6.0,Nordeste,0.0,0.2565775800800009
+SE,2022,2322675.0,Lesão corporal seguida de morte,0.0,3.0,Nordeste,0.0,0.12916141948400015
+SE,2023,2306876.0,Lesão corporal seguida de morte,0.0,3.0,Nordeste,0.0,0.13004600160563465
+SE,2024,2291077.0,Lesão corporal seguida de morte,0.0,5.0,Nordeste,0.0,0.21823797279620022
+SE,2017,2288116.0,Roubo a instituição financeira,6.0,0.0,Nordeste,0.2622244676406266,0.0
+SE,2018,2278308.0,Roubo a instituição financeira,3.0,0.0,Nordeste,0.13167666531478625,0.0
+SE,2019,2298696.0,Roubo a instituição financeira,1.0,0.0,Nordeste,0.043502925136686195,0.0
+SE,2020,2318822.0,Roubo a instituição financeira,2.0,0.0,Nordeste,0.0862506910836623,0.0
+SE,2021,2338474.0,Roubo a instituição financeira,1.0,0.0,Nordeste,0.042762930013333485,0.0
+SE,2022,2322675.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+SE,2023,2306876.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+SE,2024,2291077.0,Roubo a instituição financeira,0.0,0.0,Nordeste,0.0,0.0
+SE,2017,2288116.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2018,2278308.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2019,2298696.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2020,2318822.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2021,2338474.0,Roubo de carga,4.0,0.0,Nordeste,0.17105172005333394,0.0
+SE,2022,2322675.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2023,2306876.0,Roubo de carga,7.0,0.0,Nordeste,0.3034406704131475,0.0
+SE,2024,2291077.0,Roubo de carga,0.0,0.0,Nordeste,0.0,0.0
+SE,2017,2288116.0,Roubo de veículo,2985.0,0.0,Nordeste,130.45667265121173,0.0
+SE,2018,2278308.0,Roubo de veículo,2260.0,0.0,Nordeste,99.19642120380563,0.0
+SE,2019,2298696.0,Roubo de veículo,1897.0,0.0,Nordeste,82.5250489842937,0.0
+SE,2020,2318822.0,Roubo de veículo,2005.0,0.0,Nordeste,86.46631781137147,0.0
+SE,2021,2338474.0,Roubo de veículo,1851.0,0.0,Nordeste,79.15418345468028,0.0
+SE,2022,2322675.0,Roubo de veículo,1606.0,0.0,Nordeste,69.14441323043474,0.0
+SE,2023,2306876.0,Roubo de veículo,774.0,0.0,Nordeste,33.55186841425374,0.0
+SE,2024,2291077.0,Roubo de veículo,539.0,0.0,Nordeste,23.526053467430383,0.0
+SE,2017,2288116.0,Roubo seguido de morte (latrocínio),0.0,58.0,Nordeste,0.0,2.5348365205260572
+SE,2018,2278308.0,Roubo seguido de morte (latrocínio),0.0,32.0,Nordeste,0.0,1.4045510966910533
+SE,2019,2298696.0,Roubo seguido de morte (latrocínio),0.0,25.0,Nordeste,0.0,1.0875731284171548
+SE,2020,2318822.0,Roubo seguido de morte (latrocínio),0.0,29.0,Nordeste,0.0,1.2506350207131034
+SE,2021,2338474.0,Roubo seguido de morte (latrocínio),0.0,17.0,Nordeste,0.0,0.7269698102266692
+SE,2022,2322675.0,Roubo seguido de morte (latrocínio),0.0,11.0,Nordeste,0.0,0.4735918714413338
+SE,2023,2306876.0,Roubo seguido de morte (latrocínio),0.0,6.0,Nordeste,0.0,0.2600920032112693
+SE,2024,2291077.0,Roubo seguido de morte (latrocínio),0.0,7.0,Nordeste,0.0,0.3055331619146803
+SE,2017,2288116.0,Tentativa de homicídio,0.0,548.0,Nordeste,0.0,23.949834711177232
+SE,2018,2278308.0,Tentativa de homicídio,0.0,468.0,Nordeste,0.0,20.541559789106653
+SE,2019,2298696.0,Tentativa de homicídio,0.0,723.0,Nordeste,0.0,31.452614873824114
+SE,2020,2318822.0,Tentativa de homicídio,0.0,738.0,Nordeste,0.0,31.82650500987139
+SE,2021,2338474.0,Tentativa de homicídio,0.0,633.0,Nordeste,0.0,27.068934698440092
+SE,2022,2322675.0,Tentativa de homicídio,0.0,625.0,Nordeste,0.0,26.908629059166692
+SE,2023,2306876.0,Tentativa de homicídio,0.0,738.0,Nordeste,0.0,31.991316394986118
+SE,2024,2291077.0,Tentativa de homicídio,0.0,672.0,Nordeste,0.0,29.33118354380931
+SP,2017,45094866.0,Furto de veículo,104829.0,0.0,Sudeste,232.46326976556492,0.0
+SP,2018,45538936.0,Furto de veículo,99346.0,0.0,Sudeste,218.15617299446788,0.0
+SP,2019,45919049.0,Furto de veículo,90652.0,0.0,Sudeste,197.41698047797112,0.0
+SP,2020,46289333.0,Furto de veículo,65724.0,0.0,Sudeste,141.98519559571102,0.0
+SP,2021,46649132.0,Furto de veículo,79670.0,0.0,Sudeste,170.78560004074674,0.0
+SP,2022,46423819.333333336,Furto de veículo,96662.0,0.0,Sudeste,208.21638845771255,0.0
+SP,2023,46198506.666666664,Furto de veículo,94258.0,0.0,Sudeste,204.02823987384298,0.0
+SP,2024,45973194.0,Furto de veículo,93996.0,0.0,Sudeste,204.45827627290808,0.0
+SP,2017,45094866.0,Homicídio doloso,0.0,3383.0,Sudeste,0.0,7.501962640270402
+SP,2018,45538936.0,Homicídio doloso,0.0,2970.0,Sudeste,0.0,6.5218915084006355
+SP,2019,45919049.0,Homicídio doloso,0.0,2722.0,Sudeste,0.0,5.927823113235642
+SP,2020,46289333.0,Homicídio doloso,0.0,2858.0,Sudeste,0.0,6.174208645434575
+SP,2021,46649132.0,Homicídio doloso,0.0,2701.0,Sudeste,0.0,5.790032706289154
+SP,2022,46423819.333333336,Homicídio doloso,0.0,2849.0,Sudeste,0.0,6.136935824998687
+SP,2023,46198506.666666664,Homicídio doloso,0.0,2507.0,Sudeste,0.0,5.426582331088336
+SP,2024,45973194.0,Homicídio doloso,0.0,2377.0,Sudeste,0.0,5.170404301254336
+SP,2017,45094866.0,Lesão corporal seguida de morte,0.0,49.0,Sudeste,0.0,0.108659819501404
+SP,2018,45538936.0,Lesão corporal seguida de morte,0.0,80.0,Sudeste,0.0,0.17567384534412486
+SP,2019,45919049.0,Lesão corporal seguida de morte,0.0,104.0,Sudeste,0.0,0.22648552673640956
+SP,2020,46289333.0,Lesão corporal seguida de morte,0.0,122.0,Sudeste,0.0,0.26355964126767606
+SP,2021,46649132.0,Lesão corporal seguida de morte,0.0,76.0,Sudeste,0.0,0.16291835826655895
+SP,2022,46423819.333333336,Lesão corporal seguida de morte,0.0,94.0,Sudeste,0.0,0.20248226309226977
+SP,2023,46198506.666666664,Lesão corporal seguida de morte,0.0,82.0,Sudeste,0.0,0.1774949146985415
+SP,2024,45973194.0,Lesão corporal seguida de morte,0.0,138.0,Sudeste,0.0,0.3001749236740001
+SP,2017,45094866.0,Roubo a instituição financeira,97.0,0.0,Sudeste,0.21510209166604463,0.0
+SP,2018,45538936.0,Roubo a instituição financeira,54.0,0.0,Sudeste,0.11857984560728428,0.0
+SP,2019,45919049.0,Roubo a instituição financeira,21.0,0.0,Sudeste,0.04573265443715962,0.0
+SP,2020,46289333.0,Roubo a instituição financeira,29.0,0.0,Sudeste,0.06264942292428366,0.0
+SP,2021,46649132.0,Roubo a instituição financeira,18.0,0.0,Sudeste,0.03858592695786923,0.0
+SP,2022,46423819.333333336,Roubo a instituição financeira,16.0,0.0,Sudeste,0.034465066058258685,0.0
+SP,2023,46198506.666666664,Roubo a instituição financeira,10.0,0.0,Sudeste,0.02164572130470018,0.0
+SP,2024,45973194.0,Roubo a instituição financeira,2.0,0.0,Sudeste,0.004350361212666669,0.0
+SP,2017,45094866.0,Roubo de carga,10584.0,0.0,Sudeste,23.470521012303262,0.0
+SP,2018,45538936.0,Roubo de carga,8738.0,0.0,Sudeste,19.18797575771204,0.0
+SP,2019,45919049.0,Roubo de carga,7325.0,0.0,Sudeste,15.951985416771153,0.0
+SP,2020,46289333.0,Roubo de carga,5918.0,0.0,Sudeste,12.784802926410713,0.0
+SP,2021,46649132.0,Roubo de carga,6529.0,0.0,Sudeste,13.995973172662676,0.0
+SP,2022,46423819.333333336,Roubo de carga,6331.0,0.0,Sudeste,13.637395825927232,0.0
+SP,2023,46198506.666666664,Roubo de carga,6063.0,0.0,Sudeste,13.12380082703972,0.0
+SP,2024,45973194.0,Roubo de carga,4711.0,0.0,Sudeste,10.247275836436337,0.0
+SP,2017,45094866.0,Roubo de veículo,67964.0,0.0,Sudeste,150.71338719578412,0.0
+SP,2018,45538936.0,Roubo de veículo,58970.0,0.0,Sudeste,129.49358324928804,0.0
+SP,2019,45919049.0,Roubo de veículo,46517.0,0.0,Sudeste,101.30218506920734,0.0
+SP,2020,46289333.0,Roubo de veículo,31891.0,0.0,Sudeste,68.89492229235621,0.0
+SP,2021,46649132.0,Roubo de veículo,33041.0,0.0,Sudeste,70.82875625638651,0.0
+SP,2022,46423819.333333336,Roubo de veículo,41721.0,0.0,Sudeste,89.86981381353816,0.0
+SP,2023,46198506.666666664,Roubo de veículo,37471.0,0.0,Sudeste,81.10868230084206,0.0
+SP,2024,45973194.0,Roubo de veículo,31696.0,0.0,Sudeste,68.94452449834135,0.0
+SP,2017,45094866.0,Roubo seguido de morte (latrocínio),0.0,338.0,Sudeste,0.0,0.7495309998260112
+SP,2018,45538936.0,Roubo seguido de morte (latrocínio),0.0,278.0,Sudeste,0.0,0.6104666125708339
+SP,2019,45919049.0,Roubo seguido de morte (latrocínio),0.0,199.0,Sudeste,0.0,0.43337134442832215
+SP,2020,46289333.0,Roubo seguido de morte (latrocínio),0.0,183.0,Sudeste,0.0,0.3953394619015141
+SP,2021,46649132.0,Roubo seguido de morte (latrocínio),0.0,173.0,Sudeste,0.0,0.37085363131729865
+SP,2022,46423819.333333336,Roubo seguido de morte (latrocínio),0.0,178.0,Sudeste,0.0,0.38342385989812783
+SP,2023,46198506.666666664,Roubo seguido de morte (latrocínio),0.0,167.0,Sudeste,0.0,0.361483545788493
+SP,2024,45973194.0,Roubo seguido de morte (latrocínio),0.0,170.0,Sudeste,0.0,0.36978070307666683
+SP,2017,45094866.0,Tentativa de homicídio,0.0,6661.0,Sudeste,0.0,14.771082810180653
+SP,2018,45538936.0,Tentativa de homicídio,0.0,6101.0,Sudeste,0.0,13.397326630556323
+SP,2019,45919049.0,Tentativa de homicídio,0.0,6061.0,Sudeste,0.0,13.19931516874402
+SP,2020,46289333.0,Tentativa de homicídio,0.0,5480.0,Sudeste,0.0,11.838580607761187
+SP,2021,46649132.0,Tentativa de homicídio,0.0,5203.0,Sudeste,0.0,11.153476553432977
+SP,2022,46423819.333333336,Tentativa de homicídio,0.0,5284.0,Sudeste,0.0,11.38208806573993
+SP,2023,46198506.666666664,Tentativa de homicídio,0.0,4395.0,Sudeste,0.0,9.51329451341573
+SP,2024,45973194.0,Tentativa de homicídio,0.0,4279.0,Sudeste,0.0,9.307597814500337
+TO,2017,1550194.0,Furto de veículo,1537.0,0.0,Norte,99.1488807207356,0.0
+TO,2018,1555229.0,Furto de veículo,1696.0,0.0,Norte,109.05146444671493,0.0
+TO,2019,1572866.0,Furto de veículo,1775.0,0.0,Norte,112.85131727686911,0.0
+TO,2020,1590248.0,Furto de veículo,1496.0,0.0,Norte,94.07337723424271,0.0
+TO,2021,1607363.0,Furto de veículo,1276.0,0.0,Norte,79.38468161827788,0.0
+TO,2022,1597356.0,Furto de veículo,1368.0,0.0,Norte,85.64152261612314,0.0
+TO,2023,1587349.0,Furto de veículo,860.0,0.0,Norte,54.17838169173886,0.0
+TO,2024,1577342.0,Furto de veículo,1270.0,0.0,Norte,80.5151958167601,0.0
+TO,2017,1550194.0,Homicídio doloso,0.0,291.0,Norte,0.0,18.771844040165295
+TO,2018,1555229.0,Homicídio doloso,0.0,688.0,Norte,0.0,44.23785821895039
+TO,2019,1572866.0,Homicídio doloso,0.0,418.0,Norte,0.0,26.57569049111622
+TO,2020,1590248.0,Homicídio doloso,0.0,425.0,Norte,0.0,26.725391259728042
+TO,2021,1607363.0,Homicídio doloso,0.0,354.0,Norte,0.0,22.02364991604261
+TO,2022,1597356.0,Homicídio doloso,0.0,400.0,Norte,0.0,25.04138088190735
+TO,2023,1587349.0,Homicídio doloso,0.0,344.0,Norte,0.0,21.671352676695548
+TO,2024,1577342.0,Homicídio doloso,0.0,221.0,Norte,0.0,14.010912027955891
+TO,2017,1550194.0,Lesão corporal seguida de morte,0.0,7.0,Norte,0.0,0.4515563858459006
+TO,2018,1555229.0,Lesão corporal seguida de morte,0.0,8.0,Norte,0.0,0.5143937002203534
+TO,2019,1572866.0,Lesão corporal seguida de morte,0.0,10.0,Norte,0.0,0.6357820691654598
+TO,2020,1590248.0,Lesão corporal seguida de morte,0.0,10.0,Norte,0.0,0.6288327355230128
+TO,2021,1607363.0,Lesão corporal seguida de morte,0.0,1.0,Norte,0.0,0.06221370032780398
+TO,2022,1597356.0,Lesão corporal seguida de morte,0.0,2.0,Norte,0.0,0.12520690440953677
+TO,2023,1587349.0,Lesão corporal seguida de morte,0.0,6.0,Norte,0.0,0.37798870947724794
+TO,2024,1577342.0,Lesão corporal seguida de morte,0.0,2.0,Norte,0.0,0.12679558396340174
+TO,2017,1550194.0,Roubo a instituição financeira,14.0,0.0,Norte,0.9031127716918012,0.0
+TO,2018,1555229.0,Roubo a instituição financeira,4.0,0.0,Norte,0.2571968501101767,0.0
+TO,2019,1572866.0,Roubo a instituição financeira,2.0,0.0,Norte,0.12715641383309195,0.0
+TO,2020,1590248.0,Roubo a instituição financeira,4.0,0.0,Norte,0.2515330942092051,0.0
+TO,2021,1607363.0,Roubo a instituição financeira,1.0,0.0,Norte,0.06221370032780398,0.0
+TO,2022,1597356.0,Roubo a instituição financeira,3.0,0.0,Norte,0.18781035661430515,0.0
+TO,2023,1587349.0,Roubo a instituição financeira,1.0,0.0,Norte,0.06299811824620799,0.0
+TO,2024,1577342.0,Roubo a instituição financeira,2.0,0.0,Norte,0.12679558396340174,0.0
+TO,2017,1550194.0,Roubo de carga,6.0,0.0,Norte,0.3870483307250576,0.0
+TO,2018,1555229.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+TO,2019,1572866.0,Roubo de carga,1.0,0.0,Norte,0.06357820691654598,0.0
+TO,2020,1590248.0,Roubo de carga,2.0,0.0,Norte,0.12576654710460256,0.0
+TO,2021,1607363.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+TO,2022,1597356.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+TO,2023,1587349.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+TO,2024,1577342.0,Roubo de carga,0.0,0.0,Norte,0.0,0.0
+TO,2017,1550194.0,Roubo de veículo,1006.0,0.0,Norte,64.89510345156799,0.0
+TO,2018,1555229.0,Roubo de veículo,852.0,0.0,Norte,54.782929073467635,0.0
+TO,2019,1572866.0,Roubo de veículo,705.0,0.0,Norte,44.82263587616491,0.0
+TO,2020,1590248.0,Roubo de veículo,576.0,0.0,Norte,36.220765566125536,0.0
+TO,2021,1607363.0,Roubo de veículo,429.0,0.0,Norte,26.68967744062791,0.0
+TO,2022,1597356.0,Roubo de veículo,418.0,0.0,Norte,26.168243021593184,0.0
+TO,2023,1587349.0,Roubo de veículo,209.0,0.0,Norte,13.166606713457469,0.0
+TO,2024,1577342.0,Roubo de veículo,301.0,0.0,Norte,19.082735386491958,0.0
+TO,2017,1550194.0,Roubo seguido de morte (latrocínio),0.0,16.0,Norte,0.0,1.032128881933487
+TO,2018,1555229.0,Roubo seguido de morte (latrocínio),0.0,27.0,Norte,0.0,1.7360787382436926
+TO,2019,1572866.0,Roubo seguido de morte (latrocínio),0.0,31.0,Norte,0.0,1.970924414412925
+TO,2020,1590248.0,Roubo seguido de morte (latrocínio),0.0,17.0,Norte,0.0,1.0690156503891217
+TO,2021,1607363.0,Roubo seguido de morte (latrocínio),0.0,22.0,Norte,0.0,1.3687014072116879
+TO,2022,1597356.0,Roubo seguido de morte (latrocínio),0.0,19.0,Norte,0.0,1.1894655918905992
+TO,2023,1587349.0,Roubo seguido de morte (latrocínio),0.0,21.0,Norte,0.0,1.3229604831703679
+TO,2024,1577342.0,Roubo seguido de morte (latrocínio),0.0,6.0,Norte,0.0,0.38038675189020515
+TO,2017,1550194.0,Tentativa de homicídio,0.0,359.0,Norte,0.0,23.158391788382616
+TO,2018,1555229.0,Tentativa de homicídio,0.0,386.0,Norte,0.0,24.819496035632053
+TO,2019,1572866.0,Tentativa de homicídio,0.0,602.0,Norte,0.0,38.27408056376068
+TO,2020,1590248.0,Tentativa de homicídio,0.0,559.0,Norte,0.0,35.15174991573641
+TO,2021,1607363.0,Tentativa de homicídio,0.0,457.0,Norte,0.0,28.431661049806422
+TO,2022,1597356.0,Tentativa de homicídio,0.0,450.0,Norte,0.0,28.17155349214577
+TO,2023,1587349.0,Tentativa de homicídio,0.0,418.0,Norte,0.0,26.333213426914938
+TO,2024,1577342.0,Tentativa de homicídio,0.0,414.0,Norte,0.0,26.24668588042416
