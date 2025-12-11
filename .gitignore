@@ -1318,3 +1318,6 @@ inflation-trump/data/yougov/download.xlsx
 inflation-trump/data/yougov/source.txt
 inflation-trump/lit/data_comparisons_database.xlsx
 inflation-trump/lit/DCPI.pdf
+trade-liberalization-narrative/selenium-drive/*
+trade-liberalization-narrative/output_pdfs_text/*
+algos/*

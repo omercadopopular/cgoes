@@ -1,0 +1,35 @@
+# Gold-Standard Sample (GSS) Selection Method – Summary
+
+**Objective:**  
+Select 8–12 documents from the WTO TPR corpus to serve as a gold-standard set for prompt tuning and evaluation of trade reform extraction and classification.
+
+**Inputs:**
+1. Country-level trade reform episodes (Salinas & Aksoy 2006; Sachs & Warner; Wacziarg & Welch)
+2. User's `global_tpr_manifest.json` (list of available TPRs)
+
+---
+
+## Steps:
+
+### 1. Cross-reference countries  
+Identify countries listed in Salinas & Aksoy with documented reform episodes between 1980–2001.  
+Retain only those for which a TPR document exists within ±5 years of the reform year.
+
+### 2. Apply selection filters  
+From the intersection, choose candidates that maximize:
+
+- **Regional diversity** (e.g., Africa, Asia, Latin America)  
+- **Reform type coverage** (tariff cuts, NTB removals, FTA-driven changes)  
+- **Document variation** (older OCR-era and newer structured TPRs)  
+- **Reform density** (include both low- and high-episode countries)
+
+### 3. Score and rank candidates  
+Assign a composite score to each candidate based on:
+
+- Reform proximity to available TPR year  
+- Number of available TPRs  
+- Regional representation  
+- Richness of reform episode tags
+
+### 4. Select top-ranked 8–12 countries  
+Choose final GSS to cover the full motive taxonomy and document formats needed for prompt tuning and benchmarking.

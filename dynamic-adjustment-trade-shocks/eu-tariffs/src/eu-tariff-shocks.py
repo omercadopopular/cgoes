@@ -5,7 +5,8 @@ Created on Fri Dec 27 16:05:33 2024
 @author: cbezerradegoes
 """
 
-file = r'C:\Users\cbezerradegoes\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\icio_wits_bilateral_eu.dta'
+#file = r'C:\Users\cbezerradegoes\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\icio_wits_bilateral_eu.dta'
+file = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\icio_wits_bilateral_eu.dta'
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -58,7 +59,8 @@ for exp in (nms, eu15):
 
         
 #create tables
-path = r'C:\Users\cbezerradegoes\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\data_min.dta'
+#path = r'C:\Users\cbezerradegoes\OneDrive\UCSD\Research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\data_min.dta'
+path = r'C:\Users\andre\OneDrive\research\cgoes\dynamic-adjustment-trade-shocks\eu-tariffs\trottner\temp_files\out\data_min.dta'
 frame = pd.concat(frames)
 frame.to_stata( path, write_index=False )
 frame.groupby('group')['ahs_st'].describe().to_latex()

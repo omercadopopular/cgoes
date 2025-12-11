@@ -1,0 +1,3283 @@
+Trade, Growth, and Product Innovation
+Carlos G ´oes *
+World Bank Group
+This version: October 18,2025
+First version: September 29,2023
+For the most recent version click here.
+Abstract
+Can trade integration induce product innovation? I document that countries that
+joined the European Union (EU) started producing more product varieties, investing
+more in R&D, and trading more compared to candidate countries that did not join at
+a given horizon. Additionally, I show that a plausibly exogenous increase in market ac-
+cess increases the probability of a given country starting production of and exporting a
+given product. To rationalize this reduced-form evidence, I propose a new quantitative
+framework that integrates the forces of specialization and market size. This is a dynamic
+general equilibrium model of frictional trade and endogenous growth with arbitrarily
+many asymmetric countries that nests the Eaton-Kortum model of trade and the Romer
+growth model as special cases. The key result is an analytical expression to decompose
+gains from trade into dynamic and static components. In this framework, the product
+innovation growth rate increases with higher market access. Finally, a quantitative ver-
+sion of the model suggests that: (a) the EU enlargement increased its long-run yearly
+growth rate by about 0.10pp; and (b) dynamic gains can account for between 65-90% of
+total welfare gains from trade.
+Keywords: Trade; Growth; Market Access; Extensive Margin.
+JEL Codes: F 12, F14, F43, O30
+*cbezerradegoes@ifc.org . I am particularly grateful for guidance and supervision from Marc Muendler, Fabian
+Trottner, Fabian Eckert, Valerie Ramey, Kyle Handley, and Johannes Wieland. I benefited from helpful discus-
+sions with Jim Hamilton, Titan Alon, Ana Maria Santacreu, Thomas Sampson, Ezra Oberfield, Costas Arkolakis,
+Andr ´es Rodriguez-Claire, Treb Allen, Mayara F ´elix, Ernest Liu, Fernando Parro, Chris Tonetti, Juan Herre ˜no,
+Rafael Dix-Carneiro, AV Ludovice, and Raymond Riezman as well as with seminar participants at multiple
+conferences. All errors and omissions are solely my responsibility.
+1
+
+1Introduction
+Over the last decades, the trade literature converged to a broad consensus regarding how to
+summarize the static gains from trade. But there is no similar consensus on how to measure
+dynamic gains from trade1. In this paper, I address this topic by examining the mechanisms
+through which trade integration can induce product innovation. Economic theory presents
+conflicting viewpoints regarding this question. Canonical trade theory typically suggests that
+increased economic integration should cause countries to produce a smaller range of pro-
+duced goods2. Models that emphasize growth and innovation, such as those common in
+macroeconomics , often emphasize the role of market size for having an incentive to innovate
+and produce a large range of goods3.
+This paper integrates these two traditions by conceiving a global marketplace in which
+the economic forces of specialization and market access are jointly operating and developing
+tractable and intuitive ways of modeling them in a dynamic framework fit for policy evalu-
+ation. First, I show that after large events of trade integration —the expansion waves of the
+European Union (EU) —the countries that joined the EU started producing more product
+varieties, investing more in research and development (R&D), and trading more compared
+to candidate countries that did not join at a given horizon. Additionally, I show that a plausi-
+bly exogenous increase in market access increases the probability of a given country starting
+production of and exporting a given product. These facts are all suggestive of a dynamic
+market access effect . Second, to rationalize this reduced-form evidence, I propose a new dy-
+namic general equilibrium model of frictional trade and endogenous growth with arbitrarily
+many asymmetric countries that nests the Eaton and Kortum ( 2002 ) model of trade and the
+P . M. Romer ( 1990 ) growth model as special cases. Third, I provide analytical expressions
+decomposing gains from trade into dynamic and static components; growth and welfare into
+“Romer” and “Eaton-Kortum” parts; and show analytically that the product innovation and
+R&D growth rates increase with higher market access, which is consistent the facts I used
+as motivation for the model. Lastly, I use a numerical version of the model to estimate the
+welfare effects of 2004 enlargement of the EU, in this framework: (a) the enlargement in-
+creased its long-run yearly growth rate by about 0.10pp; and (b) dynamic gains can account
+for between 65-90% of total welfare gains from trade.
+My focus on product innovation stems from two key reasons, one theoretical and one
+empirical. From a theoretical standpoint, the new product margin can have large welfare
+implications. Empirically, around trade liberalization episodes, the bulk of trade creation
+1For a comprehensive review of the literature and the different mechanisms that link trade, growth, and
+innovation, see the paper by Melitz and S. Redding ( 2021 )
+2In the class of Ricardian models, this follows naturally: as a country opens up to trade, it specializes
+in a smaller set of goods. But this also happens in the class of Melitz models. As a country opens up to
+trade, due to the selection effect, the least productive firms of each country exit the market, which results in a
+smaller range of firms (or, equivalently, goods) in either market. This result holds with asymmetric populations
+and symmetric productivity distributions or even with asymmetric productivity distributions, as long as the
+countries are not too dissimilar —for the latter see Demidova ( 2008 ).
+3This is true of a very large class of endogenous growth models in macroeconomics, both with and without
+scale effects. See, for instance, Chapter 13of Acemoglu ( 2008 ).
+2
+
+comes from the extensive margin4.
+The paper starts by documenting a set of facts related to the Eastwards enlargement of
+the EU. Compared to countries that selected into being candidates of the EU but were not
+yet members, New Member States (NMS) started: (a) producing more product varieties; (b)
+spending more on private R&D per capita; and (c) having larger trading values.
+Later, in order to go beyond correlational analysis, I exploit the fact that, once NMS join
+the EU, they not only have preferential access to the European market, but they also have
+to adhere to the Common Commercial Policy of the European Union. NMS have immediate
+preferential access to third-party markets via pre-existing trade agreements between the EU
+and these third-party markets.
+Importantly, the NMS did not get to negotiate the tariff variation that they face —these
+were only a byproduct of the EU accession process. In this context, through an event-study
+design, a plausibly exogenous increase in market access leads to a higher probability of
+initiating production and exporting a given product —i.e, leads to product innovation in the
+extensive margin.
+I develop a dynamic general equilibrium model that is consistent with both the styl-
+ized facts and the market access mechanism to rationalize this reduced-form evidence. Like
+much of the trade and growth literature, the model presented in this paper incorporates
+forward-looking dynamics. However, unlike much of the literature, it shies away from styl-
+ized simplifications, such as symmetric countries or two-country cases. It encompasses an
+arbitrary number of asymmetric countries, costly trade, and is fit for counterfactual quan-
+titative exercises. Therefore, it fits neatly into the tradition of quantitative trade models in
+international trade or policy counterfactuals using dynamic stochastic general equilibrium
+models in macroeconomics.5
+In the model, in each source country, there are producers of final goods varieties that
+combine labor and intermediate goods using a constant returns to scale technology. They
+source differentiated intermediate varieties from foreign countries. These countries differ in
+their product spaces: some countries have a measure of intermediate goods that are larger
+than others.
+Intermediate goods are non-rival in the same spirit as in the endogenous growth literature.
+As new varieties are invented, they can be simultaneously and immediately sourced by final
+goods producers everywhere, inducing increasing returns.
+In this framework, international trade induces substitutability across non-rival goods.
+Trade also implies that the measure of intermediate varieties that effectively diffuses to each
+country will be a price-weighted average of the measure of varieties imported from all trade
+partners. If there are no trade costs, all countries will share the same effective measure of
+varieties. Conversely, in autarky, each country will only take advantage of its own varieties.
+4For the former, P . Romer ( 1994 ) has shown that in a simple trade model, adding extensive margin can
+make welfare costs of a 10% tariff increase from 1% to 20%. For the latter, Kehoe and Ruhl ( 2013 ) provide an
+extensive documentation of the empirical facts.
+5In the trade literature, this is the modern world of “trade theory with numbers” (Costinot and Rodr ´ıguez-
+Clare, 2014 ). In the macroeconomics literature, this is the use of macro models as “the leading tool” for
+assessing the effect of policy changes in “an open and transparent manner.” (Christiano, Eichenbaum, and
+Trabandt, 2018 ).
+3
+
+At each destination, final good varieties from every source are aggregated into a final
+composite good with some probability. Those actually sourced for aggregation will be only
+the lowest-cost varieties at each destination. Prices depend on productivities, taken to be the
+realization of a random variable.
+The final composite good is used for household consumption and as an input for the pro-
+duction of intermediate varieties and research & development (R&D). Once a new blueprint
+is invented, each intermediate goods producer has perpetual rights over the production of its
+variety. They produce under monopolistic competition and set prices optimal prices accord-
+ingly through market-specific price discrimination. Since this model embeds an input-output
+structure, the optimal monopolist prices will depend on the price of the final composite good
+at the intermediate source countries.
+Forward-looking households use equity markets to invest their savings in the R&D of
+new goods. For each unit of the final good invested in a new R&D project, there is a risky
+return on investment with probability determined by a Poisson process. At an aggregate
+level: domestic households hold a balanced portfolio of infinitely many small firms, such
+that they face no idiosyncratic risk; savings equal investment; investment flows determine
+the growth of varieties; and a non-arbitrage condition connects the real interest rate (the
+asset market) to real returns on R&D (the equity market).
+Over the balanced growth path (BGP), I prove that the equilibrium will be characterized
+by a stable distribution of income and measures of varieties, the real interest rates will
+equalize across countries, and all countries will grow at the same rate. Even though there
+are no international capital markets, trade acts as a vehicle that will integrate R&D stocks
+and returns. Countries with larger labor forces will have larger equilibrium measures of
+varieties, which is a fact also observed in the cross-section of countries in the data.
+Exploiting the linearity of income in the measure of varieties, I derive an analytical de-
+composition for the BGP growth rate across labor and capital income shares of GDP , whose
+elements can be further interpreted as “Romer” and “Eaton-Kortum” components, giving
+intuitive meaning to the results. The Eaton-Kortum component of growth is very much
+Ricardian, i.e., related to technology, while the Romerian is related to market access, both
+domestically and internationally.
+Another contribution of the paper is to provide a formula for welfare gains from trade
+that decomposes welfare into static and dynamic components. The welfare formula sub-
+sumes the static results of Arkolakis, Costinot, and Rodr ´ıguez-Clare ( 2012 ) into a dynamic
+framework. Like the growth formula, the static component of welfare also has Ricardian
+and Romerian margins, with the Romerian margin augmenting the Ricardian one through
+an extensive margin. One of the technical contributions of the model is a tractable way of
+integrating a new product margin into the Eaton-Kortum framework, which is one of the
+workhorse models in the international trade literature and lacks such a margin.
+By comparing the static and dynamic components of welfare, the model clarifies that
+they work through different mechanisms, rationalizing the two forces of market access and
+specialization. The reason is that the former operates on households as consumers and the
+latter on households as producers and investors
+An additional theoretical insight lies in accounting for market access as an avenue for
+growth and product innovation. Increased market access is related to a higher steady-state
+4
+
+equilibrium product innovation growth rate. This finding highlights the positive impact of
+trade integration on fostering product innovation and is consistent with the reduced-form
+evidence presented in the beginning of the paper.
+The final contribution is to set up and calibrate a quantitative version of the model that
+solves for the endogenous balanced growth path of the model with an experiment of asym-
+metric country groups and costly trade. I then use this framework and apply trade cost
+shocks to replicate the policy scenario of the 2004 Eastwards enlargement of the European
+Union.
+The outcome of the numerical exercise is a set of results and decompositions of both static
+and dynamic welfare as a result of the EU enlargement. This toolkit suggests that: (a) the
+EU enlargement increased its long-run yearly growth rate by about 0.10pp; (b) the share of
+“Eaton-Kortum” share in static gains from trade can vary widely across countries, being as
+large as 90% for some countries and as small as 10% for some other countries; (c) dynamic
+gains can account for a large share of total welfare gains from trade; and (d) the share of
+dynamic gains also varies across countries, ranging from 65-90% of total welfare gains from
+trade.
+Related Literature This paper adds to the theoretical literature on trade and growth —and
+in particular to trade and product innovation. The literature can be traced back to the seminal
+paper by P . M. Romer ( 1990 ). While Romer does not develop a full model, he mentions in
+the paper that a natural extension of his model “pertain to its implications for growth, trade,
+and research.”6Extensions of the Romer model of endogenous growth of product innovation
+to a two-country framework were later done by Rivera-Batiz and P . M. Romer ( 1991 a) and
+Rivera-Batiz and P . M. Romer ( 1991 b) as well as Grossman and Helpman ( 1990 ), in a very
+similar framework. I extend the Romer growth model to a multiple asymmetric country
+framework and combine it with a modern quantitative Ricardian trade model of Eaton and
+Kortum ( 2002 ).
+The model is also related to the work by Acemoglu and Ventura ( 2002 ), who proposed a
+model with Armington trade that features an AK-model of trade and growth with a stable
+distribution of income over the balanced growth path. While groundbreaking, they restrict
+their analysis to the costless trade case, while in this paper trade costs can be positive with
+much more heterogeneity across countries.
+Since modeling the complete state space of dynamics and countries is nontrivial, most of
+the trade and growth literature has to make compromises. Part of the literature simplifies
+by assuming a world of symmetric countries (Perla, Tonetti, and Waugh, 2015 ; Sampson,
+2016 ) or a two-country world (Eaton and Kortum, 2006 ; Hsu, Riezman, and Wang, 2019 ;
+Helpman, 2023 ). Another part, while adding the heterogeneity to the cross-section, rules out
+forward-looking dynamics and models growth as some external diffusion process (Buera and
+Oberfield, 2020 , Cai, Li, and Santacreu, 2022 ). My model departs from most of the literature
+by having both asymmetric countries and forward-looking dynamics in a theoretical and
+quantitative framework.
+As will be clear in the next section, it is a “true macro model” combined with a “true trade
+6This is in section VII of P . M. Romer ( 1990 ).
+5
+
+model.” In this sense, it is more similar to the very recent models of Sampson ( 2023 ) and
+Kleinman et al. ( 2023 ). However, unlike mine, the latter is a model of convergence rather
+than a model of long-run growth and the former is a model of firm-productivity growth
+rather than product innovation.
+My paper makes two sets of contributions to the empirical literature. First, it documents
+a collection of facts using production-and-trade data around the enlargement episodes of
+the European Union. This first part of the analysis is more akin to papers like Hummels
+and Klenow ( 2005 ), Andrew B Bernard et al. ( 2009 ), Kehoe and Ruhl ( 2013 ), and Arkolakis,
+Ganapati, and Muendler ( 2020 ), which provide noncausal documentation of novel stylized
+facts regarding the extensive margin. But the paper also goes beyond that, using plausi-
+bly exogenous variation in an event-study design using a very detailed source-destination-
+product-year dataset. In doing so, it relates more papers like Goldberg et al. ( 2010 ), Bas
+(2012 ), Argente et al. ( 2020 ), and Rachapalli ( 2021 ), which estimate well-identified empirical
+effects regarding product innovation.
+The paper is organized as follows. Section 2introduces the empirical evidence that mo-
+tivates the work, first summarizing some stylizing facts and then providing some causal
+evidence on the relationship between market access and product innovation. Later, Section
+3lays down the theory, introduces the model, defines the equilibrium, and states the main
+results regarding the existence of the balanced growth path and the equilibrium growth rate
+being decreasing in trade costs. Afterward, Section 4uses a numerical version of the model
+to estimate the dynamic welfare effects of the 2004 enlargement of the European Union and
+decomposes them using the key results of the previous section. Finally, I conclude by trying
+to relate the main takeaways to the general literature and where the main advances were.
+2Empirical Evidence
+This section describes the evidence related to international trade and product innovation in
+the context of the different enlargement waves of the European Union (EU). First, it describes
+the data. Then it presents some stylized facts comparing new member states (NMS) of the
+EU relative to candidate countries. Finally, it uses an event-study approach to isolate some
+plausibly exogenous variation of trade costs on the probability of initiating production of a
+new product.
+Data sources Production data comes from Eurostat’s Prodcom ( Production Communautaire ),
+which is an annual full coverage survey of the European mining, quarry and manufacturing
+sectors, reporting the value of production of 4,000+ different product-lines of EU members
+and candidate countries. Data are really high-quality and coverage error is estimated to be
+below 10%. These data allows one to create a time-series of product counts for products
+actually produced in each member state and candidate countries of the European Union.
+Bilateral tariff data come from WITS (World Integrated Trade Solution Trade Stats). It
+consolidates tariff data from the UNCTAD’s Trade Analysis Information System (TRAINS)
+as well as from the WTO. Bilateral trade flow data comes from UNCOMTRADE.
+6
+
+I matched all of these to the production data using Eurostat’s concordance between Prod-
+com product-codes, which are finer than Harmonized System (HS) 6-digit level, to a HS- 6
+digit level. WITS and UNCOMTRADE data come natively at an HS- 6digit level. Combined,
+these constitute a novel production-and-trade matched database.
+I also collected data on (a) the dates of accession of new member states to the European
+Union; (b) trade agreements existent and entered into force between the European Union
+and third parties before 2004 ; and (c) expenditure in private research & development expen-
+ditures per capita. The first two come from hand collecting documents and tables from the
+European Commission’s official websites while the latter comes from Eurostat.
+Further details on the data used, data matching, and data construction are on Appendix
+D.
+Institutional Context Throughout this paper, the institutional setting will be expansion of
+the European Union —or its enlargement , how it is typically called in EU language. The
+enlargement happened in different waves as the EU included more members from the six
+original members that created the group in 1957 , as shown in Figure 1.
+I use this setting in three ways. First, I exploit the staggered nature of the EU expansion to
+summarize some stylized facts regarding some key statistics of New Member States (NMS)
+of the EU relative to candidate countries who are not yet members of the EU at a given
+horizon.
+Then, focusing on the largest expansion wave in 2004 , I show that that the adoption of the
+EU’s Common Commercial Policy induced a plausibly exogenous variation in market access
+between 9NMS that joined the EU in 20047and12third-party countries with previously
+existing trade agreements with the EU. Finally, in the numerical quantification exercise, I
+will also use the enlargement waves as natural country groups to estimate the welfare effects
+of the 2004 enlargement.
+Stylized Facts My stylized facts compare two groups: countries that became new members
+of the European Union relative to countries that self-selected into becoming candidates for EU
+membership but were not yet members at a given time horizon , exploiting the staggered nature of
+the enlargement. Here, one can think of countries that became EU members as individual
+members of a “treatment group” and candidate countries that applied for EU membership
+but had not yet become members by that time as individual members of a “control group.”
+Of course, since treatment assignment, in this case, is not random, this is not actually a true
+experiment.
+In this paper, to avoid the potential biases of the Two-Way Fixed Effects (TWFE) estimator
+in summarizing the data, I adopt the Callaway-Sant’Anna (CS) estimator8. In a nutshell, CS
+calculates group-specific treatment effects by: (a) comparing the treated group with either
+7While ten countries joined the EU in 2004 , I do not have product-level PRODCOM data for Malta.
+8Goodman-Bacon ( 2021 ) shows that the TWFE estimator is a weighted average of all possible two period-two
+group comparisons and that, as emphasized by Borusyak, Jaravel, and Spiess ( 2022 ), it is biased if treatment
+effects are heterogeneous. Sun and Abraham ( 2021 ) proposed a new estimator that accommodates treatment
+effect heterogeneity, which was later generalized by Callaway and Sant’Anna ( 2021 ).
+7
+
+1957
+Belgium
+France
+Germany
+Italy
+Luxembourg
+Netherlands
+1973Denmark
+Ireland
+UK
+1981
+Greece
+1986Portugal
+Spain
+1995
+Austria
+Finland
+Sweden
+2004Cyprus
+Czechia
+Estonia
+Hungary
+Latvia
+Lithuania
+Malta
+Poland
+Slovakia
+Slovenia
+Future? 2007
+Bulgaria
+Romania
+2013Croatia
+Albania
+Moldova
+Montenegro
+N. Macedonia
+Serbia
+Turkey
+Ukraine
+Figure 1:Institutional Context: Timeline of European Union Enlargement. The EU en-
+largement comes in waves. The future cohorts serve as comparison groups, for some time,
+to previous cohorts. The largest expansion wave is 2004 .
+the not-yet-treated groups or the never-treated groups; and then (b) aggregating them into an
+average treatment on the treated given a specific set of weights. This estimator is consistent
+even if true treatment effects are heterogeneous.
+Therefore, even if the objective is to simply summarize the data rather than to make causal
+claims, one would still want to avoid making “forbidden comparisons.” The CS estimator,
+in this case, will simply recover the average difference in outcomes for NMS relative to
+countries that are candidate countries but are not yet members, at different horizons around
+EU enlargement events. In Appendix D, I formal description of the CS estimator used here.
+Given the weighting scheme of the CS estimator, in the estimates reported below, the
+event that will have the largest weight will be the 2004 EU expansion, which enlarged mem-
+bership by ten countries, but only nine are observed in PRODCOM data. The other episodes
+of expansion – Bulgaria and Romania, in 2007 ; and Croatia, in 2013 – influence the estimates
+with proportional weights for the horizons in which data is available. It is important to
+highlight that throughout the sample, there is readily available data for candidate countries
+that never became EU members, which serve as a natural comparison group.
+Here, I run the staggered difference-in-differences event study regressions for a set of
+variables, using similar models. First, using the measure of produced varieties as the dependent
+variable. Then with log of real private research and development expenditures and the log of real
+value of yearly trade as dependent variables.
+The frame of reference is to take these variables as aggregate macro moments . Relative to
+a candidate country that did not fully integrate its economy with the European Union and
+8
+
+did not have preferential access to the trade partners of the EU, what happens, on average , to
+these variables in New Member States?
+As shown in Figure 2, fifteen years after membership, the expected differential increase
+in varieties is 306, or about 17% relative to the year of membership9. The differential effect
+seems to cumulatively increase after the year of membership.
+The effects regarding private R&D, shown in Figure 3show a clear break in trend in
+the differential averages around the year of membership. Fifteen years after the expected
+differential growth in private R&D expenditures is about 60%.
+Finally, the results relative to trade also show a differential growth, as illustrated by
+Figure 4. There are no signs of pre-treatment trends and, seven years after membership, the
+expected differential growth in the value of yearly trade is about 50%.
+-200-1000100200300400500600
+-4-3-2-10123456789101112131415
+Figure 2:Staggered difference-in-differences: Measure of Varieties. X-axis: years around
+EU enlargement event. Y-axis: in number of produced varieties. This plot shows the esti-
+mated coefficients θ(t)time-specific average treatment on the treated coefficient described
+by equation (D. 2) at the and aggregate level. The bars around the red line denote 95% boot-
+strapped standard errors.
+9The average treatment on the treated is 306.23 and the conditional average number of produced varieties
+in treatment year zero is 1804.6.
+9
+
+-1-0.500.511.52
+-15-14-13-12-11-10-9-8-7-6-5-4-3-2-10123456789101112131415Figure 3:Staggered difference-in-differences: Log of Private Research and Development
+Expenditures Per Capita. X-axis: years around EU enlargement event. Y-axis: in log value
+private yearly R&D expenditures per capita (thousand euro). This plot shows the estimated
+coefficients θ(t)time-specific average treatment on the treated coefficient described by equa-
+tion (D. 2) at the aggregate level. The bars around the red line denote 95% bootstrapped
+standard errors.
+-0.2-0.100.10.20.30.40.50.60.7
+-4-3-2-1012345678
+Figure 4:Staggered difference-in-differences: Log of Real Value of Yearly Trade. X-axis:
+years around EU enlargement event. Y-axis: in log real value of yearly trade (thousand US
+Dollars). This plot shows the estimated coefficients θ(t)time-specific average treatment on
+the treated coefficient described by equation (D. 2) at the aggregate level. The bars around
+the red line denote 95% bootstrapped standard errors.
+10
+
+Causal Evidence Once NMS joins the EU, they not only have preferential access to the
+European market, but they also have to adhere to the Common Commercial Policy of the
+European Union. This means that these countries have immediate preferential access to
+third-party markets via previously existing trade agreements between the EU and these
+third parties. Furthermore, since these trade agreements previously existed, while the NMS
+had immediate access to them, they did not get to negotiate the tariff variation that they
+faced —these were only a byproduct of the EU accession process.
+Figure 5illustrates how this happened in a specific example: the Free Trade Agreement
+between the EU and Mexico. The EU joined a FTA with Mexico in 2000 , but the NMS
+only joined the EU in 2004 , so in 2004 the latter immediately adhered to these previously
+negotiated tariff schedule. The product-level bilateral tariff variation ∆τsdip,2004 which was a
+by-product of the EU accession process is my measure of the market accession shock.
+Preferential Tariffs
+NMSEU
+2000 : FTA EU-MX enters into force
+2004
+∆τsdip,2004MFN Tariffs
+Figure 5:Event Study Design, Constructing the Trade Shock :I use the fact that when the NMS
+joined the EU in 2004 , they had immediate preferential access to third-party markets via previously signed EU
+trade agreements which the NMS did not get to negotiate. The product-level bilateral tariff variation ∆τsdip,2004
+which was a by-product of the EU accession process is my measure of the market accession shock. In the
+example above, the EU joined a FTA with Mexico in 2000 , but the NMS only joined the EU in 2004 , so in 2004
+they immediately adhered to these previously negotiated tariff schedule.
+I focus on the largest wave of enlargement was in 2004 . The source of variation is at the
+source-country ×destination-country ×HS-6-code product level. The metric of the tariff
+shock change is simply ∆τsdip,2004≡ −(τsdip,2004−τsdip,2003), which is the change in the level
+of effectively applied bilateral tariffs at the product level between 2003 and2004 . In each
+year, there are about 300thousand observations.10
+I estimate a sequence of cross-sectional local-projection linear probability models, which
+estimate what is the marginal effect of a decrease in the tariffs on exports of a given product
+p,conditional on that country s not producing that particular product before joining the EU in
+2003 . The fact the data is highly granular permits me to exploit within industry ×source ×
+destination ×horizon (across product) variation.
+Formally, I estimate the following equation:
+P
+Xsdip,h>0Ys·ip,2003=0
+=αh+βh·∆τsdip,2004+γsdi,h+νsdip,h (1)
+forh∈ {2000,· · ·, 2010}
+10Leading up to 2004 there were no large changes in bilateral tariffs between NMS and third parties but
+between 2003 and2004 there was a median drop of about 2.5percentage points. In the years after the enlarge-
+ment, there was also not a large change in the distribution of bilateral tariff rates, which is shown in Figure
+15in Appendix D. Figure 16in Appendix D plots the distribution of ∆τsdip,2004, excluding the zero-valued
+observations.
+11
+
+where Xsdip,his the market value of exports between country sand country dof product pof
+industry iat horizon h;Ys·ip,2003 is the market value of production in country sof product pof
+industry iin 2003; αhare horizon (time) fixed-effects; γsdi,haresource ×destination ×industry
+interactions fixed-effects for each h. These types of cross-sectional event studies with local
+projections can be interpreted as differences in differences with continuous treatments11.
+This strategy takes seriously the assertion in Baier and Bergstrand ( 2007 ) that countries
+engage endogenously in free trade agreements (FTAs). The identification assumption is
+that conditional on the very saturated fixed effects that this model includes, the unobserved
+components νsdip,hare uncorrelated with the change in tariffs ∆τsdip,2004. Intuitively, the
+identification is robust to a NMS (say, Poland’s) policymakers endogenously targeting EU
+accession to have preferential access to a third-party’s (say, Mexico’s) car industry (relative
+to other industries and countries), but not if they want to have preferential access to compact
+cars relative to SUVs in Mexico. For further details on the methodology, see Appendix D.
+As shown in Figure 6, an increase in market access by 1percentage point increases the
+probability of starting to produce and export a given product by about 1percent by 2010 . To
+benchmark this result, it is about one-third of the conditional mean E[Xsdip,h>0|Xs·ip,h>
+0,h>2003] = 2.9%. There are no signs of a pre-existing trend before 2004 : both the
+magnitude of the coefficients and the standard errors are very small before the treatment
+date.
+-0.01-0.00500.0050.010.015
+2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+Figure 6:Entry Regressions. This plot shows the coefficients βhof the local projection linear probability
+models specified in equation ( 1). Each year is a different cross-sectional regression with approximately 300
+thousand observations. The whiskers show 95% confidence intervals with robust standard errors clustered at
+the source-destination-industry level.
+11See Chodorow-Reich ( 2019 ) and Dube et al. ( 2023 ).
+12
+
+Summary of Empirical Evidence I have documented the following novel facts: as New
+Member States go through a large trade integration event with the European Union, they
+start producing new product varieties; investing more in research and development; and trading
+more in real values relative to candidate countries that are not yet members at a given horizon.
+Furthermore, I have shown that as they are exposed to a plausibly exogenous new market
+accession shock , as it happened due to the idiosyncrasies of the Common Commercial Policy
+of the EU, they increase their probability of starting production of a new product variety , which
+suggests that market access increases the rate of product innovation.
+To rationalize this reduced-form evidence, I develop a dynamic general equilibrium
+model that is consistent with both the stylized facts and the market access mechanism. This
+is what I do in the following section.
+13
+
+3Theory
+Here I present a dynamic multi-country model of the world economy with intertemporal
+optimization, investment in research and development, and trade in final and intermediate
+goods. In this economy, time is continuous with t∈ T ≡ [0,∞)and countries indexed by
+s∈K≡ {1,· · ·,N}.
+Every country has the ability to produce final goods ω∈[0, 1]. However, they differ in
+their ability to produce non-rival intermediate inputs ν∈[0,Ms(t)], where the upper bound
+of the interval Ms(t)defines the product space of a particular country. Intermediate goods
+arenon-rival in the same spirit as in the endogenous growth literature: new blueprints can
+be simultaneously used by multiple producers at the same time, inducing increasing returns
+to scale12.
+As intermediate goods are invented, trade acts as a mechanism that diffuses new blueprints:
+producers expand their production function by sourcing newly minted inputs from around
+the world. Exporters are monopolists in their intermediate varieties and therefore have the
+incentive to invest in the development of new varieties, thereby propelling growth. There-
+fore, international trade will work as a vehicle that integrates global research and develop-
+ment stocks and induces growth-rate convergence over the balanced growth path.
+My goal is to make this model easily accessible and recognizable for someone who is
+familiar with either modern trade theory or modern growth theory. This model will recover,
+as special cases, the Eaton and Kortum ( 2002 ) model of trade and the P . M. Romer ( 1990 )
+model of growth. Some functional form assumptions will be such that this nesting is clear.
+3.1Demand
+In each country s∈K, there is a representative household the maximizes its lifetime utility
+according to:
+max
+Cs(t)Z∞
+0exp{−ρt}log 
+Cs(t)
+dt
+s.t.Ps(t)Is(t) +Ps(t)Cs(t) = rs(t)As(t) +ws(t)Ls
+where Ps(t)Cs(t)are aggregate consumption good prices and quantities in country s;Is(t)are
+instantaneous investment flows; and ws(t),rs(t)are wages and interest rates. At any instant,
+the state of asset holdings is simply the cumulative investment flows: As(t)≡Rt
+0I(s)ds13.
+Households choose a sequence of consumption quantities for the aggregate good, satis-
+fying the Euler Equation:
+˙Cs(t)
+Cs(t)=rs(t)
+Ps(t)−ρ (2)
+12See Jones ( 2005 ) and Jones ( 2019 ) for extensive reviews.
+13This, of course, implies that one can write investments as Is(t) = ˙As(t), which clarifies the optimal control
+problem at hand.
+14
+
+3.2Production and Trade in Varieties
+There are three kinds of producers in each country: those who produce varieties of the final good ,
+those who produce varieties of intermediate goods , and those who invest in research and development .
+This section will focus on the two first ones.
+Final Goods Producers. In each country, a local assembler for the final composite good
+Yd(t)who operates under perfect competition uses the least expensive variety ω∈[0, 1]
+available at d∈Kwith the following technology:
+Yd(t) =Z1
+0yd(t,ω)σ−1
+σdωσ
+σ−1
+where σ>1 is a constant elasticity of substitution across sourced varieties ω. Under these
+assumptions, the ideal price index of the final good satisfies Ps(t)satisfies:
+Ps(t) =Z1
+0ps(t,ω)1−σdω1
+1−σ
+A producer of each variety ω∈[0, 1]of the final good is endowed with a constant returns
+to scale technology that combines labor and intermediate inputs ν∈[0,Ms(t)]coming from
+multiple countries k∈K:
+ys(t,ω) =zs(t,ω)[ℓs(t,ω)]1−α 
+1
+α∑
+k∈KZMk(t)
+0[xks(t,ω,ν)]αdν!
+(3)
+where zs(t,ω)is total factor productivity; ℓs(t,ω)is factor demand for labor for variety
+ω∈[0, 1]located in country s; and xks(t,ω,ν)is the demand for a intermediate good of
+variety ν∈[0,Mk(t)]sourced from country kfor production as an input of a final good in
+country s.
+Non-rival intermediate goods varieties are differentiated across countries: an input ν∈
+[0,Mk(t)]is different from ν∈[0,Mn(t)], even if it is indexed by the same symbol. For
+instance, the first one may be a twelve-core computer chip from Estonia while the second
+one may be a large language model from Malta. Additionally, note that countries differ in
+their ability to produce intermediate goods, which is denoted by the upper bound of the
+integral Mk(t). Optimal demand for an intermediate good satisfies:
+xks(t,ω,ν) ="
+pks(t,ω,ν)
+pss(t,ω)#−1
+1−α
+·ℓs(t,ω)·zs(t,ω)1
+1−α (4)
+Intermediate Goods Producers. Each intermediate goods producer in country shas per-
+petual rights over the production of each variety ν∈[0,Ms(t)]. They are endowed with a
+linear technology that transforms one unit of the final good into one unit of the intermediate
+good.
+15
+
+Assumption 1(Trade Costs) .Trade is subject to iceberg trade costs, which implies that shipping a
+final or intermediate good variety from source region s to a consumer in region d requires producing
+τsd≥1, where τdd=1andτsd=τdsfor all s ,d∈K.
+Given assumption ( 1), intermediate goods producers face heterogeneous marginal costs
+and set optimal prices accordingly through market-specific price discrimination. They take
+marginal costs and demand curves as given and choose optimal prices to maximize profits,
+with the optimal price being a mark-up over marginal costs for every variety νandω:
+pM
+ks(t) =τksPk(t)
+α∀ω∈[0, 1],ν∈[0,Mk(t)]
+Note that this is the standard result of profit maximization under monopolistic com-
+petition with two variations. First, as in most trade models, prices are differentiated by
+destination and are inclusive of trade costs τks. Second, since intermediate goods use one
+unit of the final good at the origin country kto produce one unit of the intermediate good,
+its marginal cost is Pk(t). Optimal monopolist prices being independent of variety νimply
+that demand for is symmetric:
+¯xks(t,ω)≡"
+zs(ω)·pss(t,ω)
+pM
+ks(t)# 1
+1−α
+·ℓs(t,ω)∀ν∈[0,Mk(t)]
+Given the result above, rewrite the final goods firm maximization problem in the following
+way:
+max
+ℓs(t,ω)1
+α[pss(t,ω)·zs(t,ω)]1
+1−α·˜Ms(t)·ℓs(t,ω)−ℓs(t,ω)ws(t) (5)
+which comes from substituting for ¯xks(t)and defining:
+˜Ms(t)|{z}
+effective
+measure of
+input varieties≡∑
+k∈KMk(t)|{z}
+measure of
+varieties
+in each k·
+pM
+ks(t)|{z}
+optimal monopolist
+price from ktos
+1−η
+where η=1
+1−α(6)
+The effective measure of input varieties is a key object in this model that captures the
+diffusion of non-rival intermediate goods to country s. It measures input varieties sourced
+from each country weighted by marginal cost. The first term on the right-hand side captures
+heterogeneity in the source-country measure of varieties since final goods producers are
+sourcing intermediate varieties internationally. The second term captures the substitutability
+across intermediate goods, controlled by the elasticity of substitution η. The exponent 1 −
+η<0 down-weights the relative importance of intermediate goods coming from source
+countries kwith relatively more expensive intermediate inputs.
+This object also makes explicit how the model nests both the Eaton-Kortum model of
+trade and the Romer growth model. If α→0, then there is no intermediate sector. The
+16
+
+technology ( 5) collapses into a linear production function as in Eaton and Kortum ( 2002 ). If
+the world is in autarky —i.e., if τsd→∞for all d̸=s—then, after setting Ps(t) = 1 as the
+num ´eraire of the home economy, ˜Ms(t) =αα
+1−αMsand the final goods technology becomes
+linear in labor with an extensive margin Ms, as in P . M. Romer ( 1990 )14.
+Even outside the limiting cases expressed above, one should observe that the final goods
+producer’s technology in this model is related to those in both the Eaton-Kortum and the
+Romer models. It is equivalent to a simple Eaton-Kortum model that uses the final good as
+an intermediate input with an added extensive margin shifter ˜Ms(t). It also is related to the
+technology of the Romer model, which is linear in labor (or human capital), except that in
+this model the measure of varieties component is a weighted average of inputs coming from
+domestic and international suppliers.
+Note that with a slight redefinition, one can also interpret a transformation of ˜Ms(t)as
+the price of a composite basket of intermediate goods, as it is standard in many models that
+resort to a constant elasticity of substitution:
+PM
+s(t)≡˜Ms(t)1
+1−η= 
+∑
+k∈KMk(t)·pM
+ks(t)1−η! 1
+1−η
+(7)
+which is how, due to notational convenience, this object will appear throughout the rest of
+the paper. Define the value in final goods in country d∈Kto be Pd(t)Yd(t). Then, using the
+definitions above and the properties of C.E.S. and Cobb-Douglas, intermediate goods sales
+by country sin country dequal:
+Ms(t)pM
+sd(t)xsd(t) =α·Ms 
+pM
+sd(t)
+PM
+d(t)!1−η
+·Pd(t)Yd(t) =α·λM
+sd(t)·Pd(t)Yd(t)
+The last equation follows from defining intermediate trade shares λM
+sd(t)≡MspM
+sd(t)1−η
+∑k∈KMkpM
+kd(t)1−η.
+In the standard P . M. Romer ( 1990 ) model, assemblers source intermediate goods exclu-
+sively from domestic suppliers. One important implication of that assumption is symmetry:
+the price of all intermediate goods will be the same. Conversely, in this framework, when
+sourcing intermediate goods from multiple countries k∈K, the prices of these goods will
+no longer be necessarily the same.
+Economically, it is this lack of symmetry in prices that will induce substitutability across
+varieties sourced from different countries, which is reflected in the composite price of in-
+termediate goods above. The more dissimilar countries are in terms of their relative unit
+costs, the more substitution across intermediate goods will occur. Hence, accommodating
+asymmetric countries in a dynamic framework will be an important feature of this model.
+Trade in final goods. The factory gate price pss(t,ω)for a variety has three components: the
+unit production cost ws(t), the price of intermediate goods PM
+s(t), and a producer-specific
+14For a more detailed description of the nesting, see Appendix B. 11.
+17
+
+productivity zs(t,ω). Destination prices also include iceberg trade costs. Under perfect com-
+petition, consumers in country dchoose the lowest price variety ωavailable at the domestic
+market:
+pd(t,ω) =min
+s∈K
+psd(t,ω)	=min
+s∈K
+τsdpss(t,ω)	=min
+s∈K(
+PM
+s(t)αws(t)1−ατsd
+zs(t,ω))
+(8)
+Assumption 2(Productivity draws) .Following Eaton and Kortum ( 2002 ), assume that z s(t,ω)
+is an iid random variable drawn from a market-specific Fr ´echet distribution
+Fs(t)(z) =expn
+−Tsz−θo
+.
+where T sis the the scale parameter and θis the shape parameter.
+Given assumption ( 2), both prices and demanded quantities (which are functions of
+productivity draws) are also random variables. By the law of large numbers, the share of
+varieties sourced from stodequals15:
+λF
+sd(t)≡EF
+sd(t)
+EF
+d(t)=Ts(PM
+s(t)αws(t)1−ατsd)−θ
+∑n∈KTn(PMn(t)αwn(t)1−ατnd)−θ(9)
+where EF
+sd(t)denotes the expenditure on final goods going from country sto country d;EF
+d(t)
+denotes total expenditure on final goods in country d.
+3.3Research and Development
+The research sector creates new varieties of the intermediate good. One can think of this sector
+as investing in the invention of new machines, which result in new blueprints. These firms
+useψunits of the final good as inputs to research and development (R&D), but success is
+not guaranteed.
+Assumption 3(Research and Development Process) .The success rate of R&D follows a Poisson
+process with flow arrival rate equal to ψIs(t)dt, where I s(t)is the research input, measured in units
+of the final good per time unit.
+Once researching firms invent a new machine, they hold perpetual monopoly rights over
+the new variety ν. They can either set up their own shop to produce and enjoy the profits of
+producing such variety at the market or, alternatively, they can sell the rights to this patent
+to an intermediate variety producer. In either case, domestic households, that finance the
+invention of new varieties through capital markets, will collect the profits.
+The economic value of a new variety is the present value of producing the new varieties
+and selling them as intermediate inputs to final goods producers, which is, at period t:
+15Since there are infinitely many varieties ωand productivities are iid random variables, by the law of large
+numbers, the share of varieties sourced from stodconverges almost surely to the probability of sourcing a
+specific variety from stod.
+18
+
+Vs(t,ν) =Z∞
+texp(
+−Zτ
+trs(k)
+Ps(k)dk)
+πs(τ,ν)dτ (10)
+where πs(τ,ν)is the flow profit per variety per unit of time. Research firms will only in-
+vest if the expected return of their investment is positive, that is ψVs(t,ν)Is(t,ν)−Ps(t)Is(t,ν)≥
+0. With free entry, this condition holds with equality and in equilibrium it pins down the
+value of each variety: Vs(t,ν) =Ps(t)/ψ.
+Since the only asset market in this economy is the domestic equity market, domestic
+households save by funding investments in new varieties through a balanced portfolio of
+infinitely many small firms, such that they face no idiosyncratic risk. At the aggregate
+level, then, ˙Ms(t) =ψIs(t), where Ik(t)is the level of aggregate investment in the domestic
+economy measured in units of the final good. The value of aggregate assets is simply the
+value of all invented varieties Ps(t)As(t) = Ms(t)Vs(t)and, since the arrival rate of ideas is
+constant, the total stock of assets is at any instant a function of the total measure of varieties
+As(t) =Ms(t)/ψ.
+Taking the derivative of both sides of ( 10) with respect to time and noting that both
+Vs(t,ν)andπs(τ,ν)are independent of νpins down the real interest rate in this economy.
+The result is a non-arbitrage condition relating returns on assets to returns on R&D:
+rs(t)
+Ps(t)=ψ·πs(t,ν)
+Ps(t)|{z}
+flow dividend rate+˙Ps(t)
+Ps(t)|{z}
+capital gains(11)
+3.4Market Clearing and Equilibrium
+Factor Market Clearing LetYd(t)denote the total output of the final good and Xd(t),Id(t)
+denote the use of the final good as inputs for the production of intermediate inputs and
+R&D, respectively. Then total output in the final good for a given country must satisfy:
+Yd(t) =Cd(t) +Id(t) +Xd(t) (12)
+where Id(t)and Cd(t)are pinned down by the dynamic problem, described below, and Xd(t)
+can be expressed as a function of aggregate demand in all destinations.
+Expenditure Determination Flow aggregate profits Πs(t)≡RMs(t)
+0π(t,ν)dνare a constant
+fraction of revenue:
+Πs(t) =α
+η·∑
+d∈KλM
+sd(t)·Pd(t)Yd(t) (13)
+On the expenditure side, GDP of each destination country s∈Kcountry will be ex-
+hausted as the combination of the total expenditures of labor and capital income:
+Ps(t)Ys(t) =ws(t)Ls+Πs(t) (14)
+19
+
+From the income side, nominal GDP must equal the sum of total flow payments received
+domestically and from the rest of the world:
+Ps(t)Ys(t) =∑
+d∈K"
+(1−α)λF
+sd(t) +α
+ηλM
+sd(t)#
+Pd(t)Yd(t) (15)
+Trade Balance Since savings equals investment and there is no access to international cap-
+ital markets in this economy, GDP accounting requires that trade balances in each country
+and net exports are equal to zero at any instant:
+∑
+d̸=s∈KλF
+sd(t)Pd(t)Yd(t) +α∑
+d̸=s∈KλM
+sd(t)"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+=
+[1−λF
+ss(t)]Ps(t)Ys(t) +α[1−λM
+ss(t)]"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+(16)
+Dynamic Equilibrium The dynamics in each of the countries of this world economy are
+governed by the following system of differential equations:
+˙Cs(t) ="
+rs(t)
+Ps(t)−ρ#
+Cs(t) (17)
+˙Ms(t) =rs(t)
+Ps(t)Ms(t) +ψws(t)
+Ps(t)Ls−ψCs(t)
+As it is clear from the system above, the dynamics of the model are essentially neoclassi-
+cal. However, since openness to trade impacts the cross-sectional distribution of wages and
+prices, it will also impact the path of consumption product measures over time.
+The first equation —the Euler Equation —states that the household in a country s∈K
+will choose an upward-sloping consumption path if the real interest rate is greater than the
+rate of time preference. The higher this gap, the more a household will be willing to defer
+current consumption and take advantage of higher returns in the asset and R&D markets.
+The second equation is less obvious to interpret in its current form, but it states that the
+growth in the product measure in each country is proportional to the net investment rate.
+Since expected profits of new varieties are always positive, the net investment rate is also
+always positive, which means that new varieties are always created, inducing growth in this
+model.
+A more explicit way to observe the net investment rate is by writing the second equation
+in its equivalent asset representation. Since Ms(t) =ψAs(t), then:
+˙As(t) =Is(t) =rs(t)
+Ps(t)As(t)
+|{z}
+real capital income+ws(t)
+Ps(t)Ls
+|{z}
+real labor income− Cs(t)|{z}
+real consumption
+20
+
+which, along with the discussion regarding the non-arbitrage condition in the previous sec-
+tion, helps clarify that asset markets and varieties markets are two sides of the same coin.
+The assumption of log preferences substantially simplifies the dynamic problem. In Ap-
+pendix B. 2, I show that instantaneous consumption is always well-defined as a constant
+fraction of lifetime wealth:
+Cs(t) =ρ
+As(t)|{z}
+wealth at t+Z∞
+tws(τ)
+Ps(τ)Ls·exp−¯rs(τ)·τ	
+dτ
+| {z }
+PV of future labor income
+
+where ¯rs(τ)≡1
+τRτ
+trs(ν)
+Ps(ν)dνis the average real interest rate between periods tandτ. Once
+there is an explicit solution for consumption at every t, the differential equation for ˙Ms(t)
+becomes autonomous, and also has an explicit solution as a function of the path of prices.
+It also shows that there is a unique initial choice of consumption that is consistent with the
+optimal choices described by ( 17) and the transversality condition. Since the other conditions
+to satisfy the Maximum Principle are satisfied, this is equivalent to showing that the solution
+to the dynamic problem is unique.
+Definition 1(Dynamic Equilibrium) .The dynamic equilibrium of the world economy is defined by
+a collection of paths of consumption quantities, assets stocks, and profit flows [Cs(t),As(t),Πs(t)];
+paths of final goods varieties output quantities [ys(t,ω)]; paths of intermediate goods varieties out-
+put quantities [xks(t,ω,ν)]; paths of prices [ws(t),rs(t),Ps(t), pss(t,ω),psk(t,ω,ν)]; and a vector
+of fundamentals (θ,σ,T,τ)′where T≡ {Ts}is a collection of location parameters of the Fr ´echet
+distribution and τ≡[τsd]is a matrix of trade costs, such that: (a) households maximize utility given
+the path for prices; (b) final goods firms maximize profits given the path for prices; (c) intermediate
+goods firms choose prices to maximize profits given demand functions and final goods prices; (d) trade
+balances; and (e) factors and goods markets clear.
+Homogeneity of Income in Equilibrium One of the key properties of this model is that
+real income, real wages, and real profits are a function of the measure of varieties Ms(t)and
+of terms that are homogeneous of degree zero in the distribution of the measure of varieties
+{Mk(t)}k∈K. Note that for real aggregate labor and aggregate capital income, respectively,
+can be expressed as:
+ws(t)Ls
+Ps(t)=Ms(t)· 
+Ts
+λFss(t)! 1
+θ(1−α)
+·
+λM
+ss(t)−1
+·Ls≡Ms(t)× Rw
+s(t)
+Πs(t)
+Ps(t)=Ms(t)·α
+η∑
+d∈K 
+τsdPs(t)1−η
+∑k′∈KMk′ 
+τk′dPk′(t)1−ηPd(t)Yd(t)
+Ps(t)≡Ms(t)× Rπ
+s(t)
+which, of course, means that Real GDP is also a function of Ms(t)times a term that is
+homogeneous of degree zero in the distribution of the measure of varieties:
+21
+
+Ys(t) =ws(t)Ls
+Ps(t)+Πs(t)
+Ps(t)=Ms(t)×Rw
+s(t) +Rπ
+s(t)≡Ms(t)× R s(t) (18)
+This property is important because it is the mechanism that induces increasing returns
+to scale in this model. It will also be important to characterize the existence of the Balanced
+Growth Path (BGP).
+Intuitively, even though Rs(t)is a complicated function, the fact that real income is a
+function of Ms(t)times a term that is homogeneous of degree zero in {Mk(t)}k∈Kmeans
+that this model falls within the broader class of AK-models in macroeconomics, a property
+that is inherited from the Romer side of production. Many of the well-behaved properties of
+AK-models about long-run growth will carry through to this model.
+Furthermore, as it will become clear below, trade will influence both the returns to idea
+creation ( Rs) as well as the stock of ideas ( Ms). But it is important to bear in mind that some
+of the mechanisms behind growth in this economy are increasing returns to scale exemplified
+by the linearity of the production function.
+3.5Balanced Growth Path
+Autarky Under autarky, which is a special case in which trade costs are prohibitively high
+such that countries are isolated as single-country economies, the BGP exists and is unique
+for each individual economy.
+Proposition 1(Growth rates under autarky) .Ifτsd→∞for all s ̸=d, then growth rates in real
+consumption gautarky
+s in every country s ∈Kare proportional to domestic market size:
+gautarky
+s =α·ψ
+η·Ys(t∗)
+Ms(t∗)−ρ
+Proof. Appendix B. 9.
+Intuitively, Proposition ( 1) characterizes the BGP in a collection of closed AKeconomies
+with expanding varieties each of them as in the original P . M. Romer ( 1990 ) model. Growth
+happens endogenously in each of the countries as households invest in the equity market
+to fund new intermediate varieties. However, the mass of non-rival goods available for pro-
+duction will be completely different across different countries, since final good producers
+only have access to domestic intermediate inputs and are therefore less productive than they
+would be if they were trading internationally. Similarly, in general, BGPs will be character-
+ized by different growth rates. Note that growth rates gautarky
+s are indeed constant because
+Ys(t∗)
+Ms(t∗)=Ms(t∗)×R s(t∗)
+Ms(t∗)is homogeneous of degree zero in Ms(t∗)for each s∈K.
+Zero gravity Now move on to characterize the equilibrium growth rates under the polar
+opposite case: zero gravity. This is one in which trade is costless and even geographical
+barriers are nonexistent. The term comes from Eaton and Kortum ( 2002 ).
+22
+
+Proposition 2(BGP under zero gravity) .Ifτsd=1for all (s,d), then there is a unique world
+equilibrium growth rate gzero gravitythat satisfies:
+gzero gravity=α·ψ
+η·∑d∈KYd(t∗)
+∑d∈KMd(t∗)−ρ (19)
+Proof. Appendix B. 9
+By comparing gzero gravityand gautarky
+s , it is immediately clear that while the latter is pro-
+portional to domestic value added per variety Ys(t∗)/Ms(t∗), the former is proportional to
+global value added per variety ∑d∈KYd(t∗)/∑d∈KMd(t∗). Intuitively, under zero gravity,
+growth happens as if the world were a single integrated Romer economy.
+It is clear that the growth rate must be common under zero gravity because the expression
+on the right-hand side of ( 19) is the same for each country. Since gzero gravitymust be a
+constant, each element in the sumYd(t∗)
+∑d∈KMd(t∗)=Md(t∗)×R d(t∗)
+∑d∈KMd(t∗)must be homogeneous of degree
+zero in [Mk(t∗)]k∈K. This, in turn, implies that returns equalize and Rd(t∗) =R(t∗).
+In the absence of trade costs, the world economy is fully integrated in terms of final goods
+varieties suppliers and the law of one price holds in the final good. As the final good serves
+as an input for intermediate varieties, the price of intermediate varieties equalizes globally.
+A corollary is that the effective measure of input varieties ˜Ms(t∗)also equalizes globally,
+indicating that non-rival inputs fully diffuse across the world.
+Note, however, that income levels need not be the same in this world economy. In fact,
+those countries that have a higher relative wage at the start of the BGP will have a higher
+wage relative forever. Therefore, under zero gravity, this model features a stable global distri-
+bution of income as in the model of Armington trade and capital accumulation-driven growth
+of Acemoglu and Ventura ( 2002 ).
+Using the linearity of income in equilibrium, the growth rate over the BGP be decom-
+posed into the following expression, which relates how growth affects labor and capital
+income, respectively:
+gzero gravity=ψρ
+T1
+θ(1−α)
+s· 
+ws(t∗)θ(1−α)
+∑k∈Kwk(t∗)θ(1−α)!−1
+θ(1−α)
+·Ls· 
+Ms(t∗)
+∑k∈KMk(t∗)!−1
++α
+η∑d∈KYd(t∗)
+∑d∈KMd(t∗)
+
+The second term within the square brackets, which is related to capital income, shows
+that profits per variety equalize under zero gravity, with every country having the same level
+of market access due to the absence of trade frictions and equalization of global prices. The
+first term within the brackets relates to labor income and shows how wages ws(t∗)and the
+measure of varieties Ms(t∗), which are endogenous objects, interact with parameters such as
+the labor force size Lsand technology Ts.
+Since growth rates must be equal for all countries, those countries with better technology
+and higher labor forces will have a proportionately higher real wage and a higher share in
+the global measure of varieties. The relationship between the size of a country’s labor force
+and the measure of varieties can also be observed in the data, as seen in Figure 7.
+23
+
+AUT
+BGRCZEDEU
+DNKESP
+ESTFINFRAGBR
+GRC
+HRVHUN
+IRLITA
+LTU
+LUXLVANLD
+NORPOL
+PRT ROU
+SVKSVNSWE
+01000200030004000Number of produced varieties
+1 2 3 4 5 6
+ln EmploymentMeasure of Varieties
+Line of Best FitFigure 7:Measures of Variety and Labor Force. Long Run Averages between 2000 -2020
+for the cross-country correlation between the Size of the Labor Force ( lnof Employment)
+and the Measure of Produced Varieties. Data come from the Penn World Tables 10.10and
+Prodcom, respectively.
+24
+
+Costly but finite trade I now arrive at the more realistic case of a BGP of positive but finite
+trade costs.
+Proposition 3(Balanced growth with costly trade) .Given a vector of fundamentals (θ,σ,T,τ),
+ifτsd∈(1,∞)for all s ̸=d, there exists a balanced growth path world equilibrium growth rate
+satisfying:
+gs=ψρ
+ 
+Ts
+λFss(t∗)! 1
+θ(1−α)
+| {z }
+Eaton-Kortum×α1−η·Ls
+λMss(t∗)|{z }
+Romer
+Domestic+α
+η·∑
+d∈KλM
+sd(t∗)·Pd(t∗)Yd(t∗)
+Ps(t∗)Ms(t∗)
+| {z }
+Romer
+Global
+(20)
+and where g s=gs′(∀s,s′∈K). Furthermore, the growth rate can be decomposed into “Eaton-
+Kortum” and “Romer” components.
+Proof. Appendix B. 9.
+Like in the previous subsection, equation ( 20) shows how growth affects both components
+of GDP . One can further interpret these components and relate them to the two canonical
+models that are the building blocks of this framework.
+I termed the capital income part, which is the second term within the square brackets, the
+Romer Global component. The reason is that this component is increasing in each country’s
+market access —i.e., proportional to each country’s share of the global intermediate goods
+market (λM
+sd). Intuitively, profits will be related to a firm’s sales and to markets all over
+the world and, therefore, to its market share in each of those destination markets. This
+component is also decreasing in the price of the final good (Pd)in the source country since
+due to the input-output structure embedded in the lab-equipment version of the Romer
+model the price of the final good is the marginal cost of R&D investment.
+Real labor income can be partitioned into two components: an Eaton-Kortum component
+and a Romer Domestic component. The Eaton-Kortum component is very much Ricardian:
+real labor income improves with technological improvements ( Ts) and as the domestic trade
+share in final ( λF
+ss) decreases, consistent with the Ricardian intuition that specialization leads
+to gains from trade.
+The Romer Domestic component incorporates domestic market size effects, by integrating
+the size of the domestic labor force Ls. But it also adjusts for the diffusion of differentiated
+intermediate goods, which is embedded in the summary statistic of domestic intermediate
+trade share ( λM
+ss)16.
+The different components of ( 20) make it clear why a BGP requires common growth rates.
+Both λM
+ss(t∗)andλF
+ss(t∗)are homogeneous of degree zero in [Mk(t∗)]k∈Kand prices Ps(t∗),
+Pd(t∗)must be constant along a BGP . For a BGP , gsmust be a constant, and thereforeYd(t∗)
+Ms(t∗)=
+16To see that, note that: λM
+ss(t∗) =Ms(t∗)
+pMss(t∗)
+PMs(t∗)1−η
+=Ms(t∗)
+˜Ms(t∗)pM
+ss(t∗)1−η.
+25
+
+Md(t∗)×R d(t)
+Ms(t∗)must be homogeneous of degree zero in [Mk(t∗)]k∈K. This can only happen if
+Rd(t∗)is homogeneous of degree zero in each d, which implies that Rd(t∗) =R(t∗).
+Intuitively, along the BGP , the real interest rate equalizes globally17. Even though there
+are no international equity markets, the fact that households can invest in new varieties
+through equity markets and earn expected profits that are linked to exports means that
+trade acts as a vehicle to integrate international R&D and equity markets. In a balanced
+growth equilibrium, then, prices and the endogenous distribution of the measure of varieties
+[Ms(t∗)]s∈Kwill adjust to make sure that returns and, therefore, growth rates equalize.
+How are growth rates related to market access? After characterizing the existence of the
+BGP , one can turn to the discussion of what happens to the equilibrium growth rates after
+there is a change in trade costs. Here, these trade costs are directly related to market access,
+since the mechanism that propels growth is the incentive to have equity claims in the profits
+of variety exporters. The growth rate is a general equilibrium object that depends on the
+whole distribution of prices across countries and periods. Therefore, characterizing changes
+to it is not a trivial task.
+Nonetheless, in order to connect the theory to the empirical and quantitative analysis,
+to gain some intuition, first consider what happens to the long-run equilibrium growth rate
+after a permanent change in trade costs in a world of symmetric countries. While that is an
+important restriction, it allows for a closed-formed intuitive solution: in that case, g∗can be
+shown to unambiguously increase in the long run after an episode of trade liberalization.
+Proposition 4(Effects of changes in trade costs over the long run in symmetric economies) .
+Suppose there exist a collection of symmetric economies that grow over the BGP with costly trade with
+trade costs τ>1. Then∂g∗
+∂τ<0.
+Proof. Appendix B. 9
+In this model, the long-run growth rate will change after a permanent change in trade
+costs if there is a change in the effective market size, represented by how much of the global
+market exporters can tap into —that is why foreign aggregate demand ∑kPk(t∗)Yk(t∗)is
+modulated by intermediate trade share ∑kλM
+sd(t∗)in the profit formula.
+In a symmetric world, it can be shown in closed form that real profits increase when trade
+costs go down. The intuition translates to numerical exercises with asymmetric countries.
+As an example plot in Figure 8shows how these results look like in a numerical exercise
+with two asymmetric countries.
+17One way to see that is through the Euler equation. Since the Euler Equation governs the growth rate in
+consumption and over the BGP gc=gMfor all countries, a corollary is that the real interest rate must equalize
+globally.
+26
+
+Figure 8:Long-run growth in two asymmetric economies as a function of changing trade
+costs. Results from a numerical simulation of the equilibrium growth rate g∗of two asym-
+metric economies that differ in their populations but are otherwise equal. Parameters are
+the following: L= [1, 1.03 ],σ=0.77,θ=2.12,α=1/3,ρ=0.03, T= [1, 1],ψ=2.46.
+3.6Welfare
+With log preferences, at any moment, consumption over the BGP is a fraction of assets plus
+real labor income. Since such consumption flow grows at a constant rate g∗and the measure
+of products is simply a linear transformation of assets, as shown in Appendix B. 10, welfare
+along the BGP can be decomposed between a product measure component, a real income
+component, and a growth component.
+Z∞
+t∗exp{−ρ(t−t∗)}log 
+exp{g∗t}Cs(t∗)
+dt=log 
+1
+ψMs(t∗)!
+| {z }
+product measure| {z }
+transitional+1
+ρlog 
+ws(t∗)Ls
+Ps(t∗)!
+| {z }
+real income| {z }
+static+g∗
+ρ2
+|{z}
+growth|{z}
+dynamic
+(21)
+Consider what happens to welfare after a change in trade costs from τtoτ+dτ, as in
+Arkolakis, Costinot, and Rodr ´ıguez-Clare ( 2012 ) —hereinafter ACR. In this dynamic setting,
+to make a comparison to the static framework, I need to compare what happens across the
+two BGPs, comparing the preserved value of discounted lifetime utility across the beginning
+of the two initial equilibria. For that, let me introduce some notation: suppose t∗is the initial
+period of the original BGP; t∗∗is the first period of the final BGP and let ˆx≡x(t∗∗)/x(t∗).
+Then, relative level changes in the first component of welfare across two BGPs can be ex-
+pressed as log
+bMs
+. Changes in the equilibrium product measure will depend on whether
+the measure of varieties in country sexpands or contracts, relative to the distribution of vari-
+eties across countries , across BGPs. There is no general prediction in the model regarding the
+direction of this effect.
+27
+
+Countries that have started with a measure of varieties above optimal (relative to other
+countries) will see a shift in exports (and therefore R&D expenditures) towards other coun-
+tries and will see their measures of varieties shrink. The opposite is true for countries that
+started with a measure of varieties below optimal.
+Importantly, however, this first component will not compound over time, as highlighted
+by the fact is not multiplied by the factor ρ−1orρ−2. This means that it will only change
+the (relative) income level that a given country arrives with at the BGP and it will have no
+impact going forward. Therefore, this is a transitional effect of welfare. For most reasonable
+calibrations of ρ, the transitional effect will have a very small weight on total welfare changes.
+The second component will be familiar to most trade economists. It looks like the tradi-
+tional static welfare formula in ACR . In the same spirit as ACR, one can also write the static
+welfare component in changes:
+1
+ρlogcws
+Ps
+=1
+ρlog 
+cλF
+dd−1
+(1−α)θ!
+|{z}
+Eaton-Kortum+1
+ρηlog
+∑
+k∈Kµk·bMk· 
+bpM
+ks
+bPs!1−η
+
+| {z }
+Romer(22)
+where µk≡Mk(t∗)· 
+pM
+ks(t∗)
+Ps(t∗)!1−η
+∑k∈KMk(t∗)· 
+pM
+ks(t∗)
+Ps(t∗)!1−η.
+This component preserves the standard feature that changes in consumer welfare are
+decreasing in changes in domestic trade sharecλFss18. This captures the Ricardian intuition of
+the model: at the margin, there are static gains from specialization in this model.
+Like the growth formula, the static component of welfare also has Eaton-Kortum and
+Romer components. Here, the Romer component impacts welfare by augmenting Ricardian
+gains through an extensive margin. It is represented by the weighted change in the measure
+of varieties, accounting for previous weights µk, changes in the measures of varieties in each
+country k∈Kacross equilibria bMk, and changes in the prices of foreign intermediate goods
+relative to the domestic consumer price index
+pM
+ks(t∗)
+Ps(t∗)
+at the domestic market.
+Note that this welfare impact from product innovation resembles how the change in the
+measure of varieties shows up in the ACR formula in Melitz-type models. This highlights
+that the nested structure of production featured in this model effectively adds an extensive
+margin to the Eaton-Kortum framework.
+While they do not compound over time, both of these effects have an impact in every
+period over the BGP as it is made clear by it being multiplied by the factor ρ−1. For that
+reason, these can be understood as a level effect orstatic effect of welfare.
+The third and last component is the common growth rate g∗. Importantly, since it com-
+pounds the BGP level of consumption, it is multiplied by a factor ρ−2rather than ρ−1and it
+18The elasticity of this effect is −1
+(1−α)θrather than the standard −1
+θdue to the input-output structure of the
+model.
+28
+
+will in general have a larger weight on welfare. This is a metric of dynamic gains from trade ,
+which is a growth effect of welfare.
+Changes in the growth component of welfare will be defined as the change in the growth
+rage:g∗∗−g∗
+ρ2. Since growth rates equalize along the BGP , changes in the growth component
+of welfare will also be shared across all countries. However, since the other components will
+differ, the share of the dynamic component of welfare in total gains from trade will therefore
+be different across countries.
+The discount rate ρwill have an important role in attributing weights across the dynamic,
+static components, and transitional components of welfare. Intuitively, the lower the ρ, the
+more patient the agent is, and the more relevant the dynamic component of welfare will
+become.
+Welfare as buyers and as sellers Comparing the dynamic and static components of welfare
+yields important insights regarding the economic mechanisms behind this model. In fact,
+the forces of specialization and innovation are reflected in these two components.
+To see that, note that, as made clear by ( 22), since 1 −η<1 country s’sstatic welfare is
+decreasing in the price of foreign intermediate goods. The static welfare formula captures
+the effect of sas final producers and consumers. As spurchases more foreign intermediate
+varieties for a cheaper price, it becomes more productive by increasing its effective measure
+of varieties ˜Ms(t). The other side of the coin is that it decreases the local price index Ps(t),
+which directly benefits consumers and increases welfare.
+By contrast, the growth component of welfare is increasing in the price of foreign interme-
+diate goods coming from k, in each destination markets d, relative to the price of intermediate
+goods from the source country sat those same destination market:
+gs∝α
+η·∑
+d∈KPd(t)Yd(t)
+∑
+k∈KMk(t) 
+pM
+kd(t)
+pM
+sd(t)!1−η
+−1
+The intuition for this contrast is quite straightforward and underscores the different un-
+derlying economic mechanisms of the model. The Romerian part of growth captures the
+effect of das forward-looking investors in the R&D market and intermediate good produc-
+ers. Since the intermediate goods are substitutes, all else equal, demand for intermediate
+goods from sand maximized profits are higher when the price of intermediate goods of for-
+eign competitors from third-party countries krelative to domestic producers from sat each
+destination market dis higher.
+Intuitively, the growth effect captures that, from a seller’s perspective , the domestically pro-
+duced and exported intermediate variety sis more attractive and competitive when foreign
+varieties kare more expensive. In other words, this captures the market access forces . Con-
+versely, the static effect captures that, from a buyer’s perspective , when foreign varieties k
+relative to one’s domestic purchasing power at dare more expensive, the domestic consumer
+is worse off. In other words, this channel augments the Ricardian specialization forces . Both
+channels are economically sensible and the model captures both mechanisms.
+29
+
+Along the BGP , prices and measures of varieties will adjust to make sure that growth
+rates equalize such that gs=gs′for every s,s′∈K. While the economic mechanisms are
+still operating under the hood and take over if there is any shock that drives the system off
+the BGP , these different effects will wash out once differences in prices, measures of varieties
+and wages endogenously adjust towards a BGP .
+4Quantification and Policy Exercise
+This section describes a numerical quantification of the model, which solves for three en-
+dogenous objects along the Balanced Growth Path: (a) the distribution of wages; (b) the
+distribution of Measures of Varieties; and (c) the common equilibrium growth rate. I cali-
+brate the model to EU- 15countries and the New Member States (NMS) that joined in the
+2004 expansion.
+To simplify the exercise, I group these countries into six sets: corresponding to the six
+waves of the expansion of the European Union of to 200419. The country groups are asym-
+metric both in terms of labor force and productivity. The groups are:
+1.1957 : Belgium, France, Germany, Italy, Luxembourg, and the Netherlands —the origi-
+nal members;
+2.1973 : Denmark, Ireland, and the United Kingdom;
+3.1981 : Greece;
+4.1986 : Portugal and Spain;
+5.1995 : Austria, Finland, and Sweden;
+6.2004 : Czech Republic, Estonia, Hungary, Latvia, Lithuania, Poland, Slovakia, and
+Slovia —the New Member States (NMS).
+The solution method is straightforward. I calibrate the model to a baseline scenario
+and then change iceberg trade costs to induce a trade liberalization shock. By comparing
+the endogenous equilibria along the Balanced Growth Path of these two scenarios, which
+include distributions of the measures of varieties [Ms(t∗)]s∈Kand wages [ws(t∗)]s∈Kas well
+as a common equilibrium growth rate g∗, I can infer the welfare consequences of a change
+in this parameter along the BGP .
+19This simplification is just a matter of computational tractability. As described in Appendix E, each guess
+of my solution algorithm solves for a static version of an Eaton-Kortum model with input-output linkages,
+which itself has multiple steps for solutions. So the problem grows quite fast in complexity in the number
+of countries. Improving the solution algorithms for this new class of dynamic models is a fruitful avenue of
+future research.
+30
+
+Model Calibration My estimates of the short-term ( σ) and long-term ( θ) elasticities of trade
+come from Boehm, Levchenko, and Pandalai-Nayar ( 2020 ), which are σ=0.76 and θ=2.12,
+respectively. The results are not very sensitive to using a θ=4.0. The vector of labor force
+{Ls}comes from Penn World Tables. The share of intermediate goods α=0.36 is set to
+equal the average share of intermediate goods in the sample of countries between 2000 -2003
+from the World Input-Output Database.
+I use observed trade flows to infer trade costs. The strategy goes back to Head and Ries
+(2001 ). According to the handbook chapter by Head and Mayer ( 2014 ), the index is called
+the Head-Ries Index (HRI) since 2011 (when the working paper version of Eaton, Kortum,
+et al. ( 2016 ) was published). As shown in Appendix E, I can write trade costs as:
+τsd= 
+EF
+sd(t∗)
+EF
+dd(t∗)·EF
+ds(t∗)
+EFss(t∗)!−1
+2θ(1−α)
+(23)
+where each flow EF
+sd(t∗)defined to be an average between 2000 −2003. The data on bilateral
+expenditure values EF
+sd(t∗)comes from the World Input-Output Database.
+Figure 9plots the change in trade costs before and after the 2004 enlargement of the Euro-
+pean Union, calculated from an average of for the years 2000 -2003 for the immediate ”before”
+period and an average for the years 2004 -2007 for the immediate ”after” period. Calculations
+confirm that there were large reductions ( −15−20%) in trade costs between NMS and the
+Western European countries during this period, which is consistent with bilateral tariff data
+between the NMS and Western Europe from TRAINS and the WTO20. Changes in trade costs
+across the other groups have been comparatively small except for one calculated increase in
+trade costs between Greece ( g1981 ) and Austria, Finland, and Sweden ( g1995 ).
+This is important because these changes in trade costs will act as the main shock across
+calibrations of BGPs in my numerical exercise. It is relevant that the key driver of changes
+across equilibria is the enlargement of the EU.
+The location parameter of the Fr ´echet distribution {Ts}andψare free parameters that I
+vary to match the distribution of wages and the average growth rate of the EU- 15countries
+in the 1989 −2003 period —i.e., fifteen years prior to the 2004 expansion of the European
+Union. The rationale is that I am calibrating this model to BGP growth rate and the EU- 15
+countries were very likely closer to the BGP than the transition economies of Eastern Europe,
+so it is reasonable to match the model to their growth rate.
+Model Validation To validate the model, there are some untargeted moments one can look
+at. First, compare the relative change in real wages across the two BGPs. The predicted
+changes in the distribution of wages across equilibria in the model can be compared with
+the relative income growth of each country group around the EU enlargement.
+Since the wages distribution is only pinned down up up to the distribution, if real wages
+of a given group take a larger share of the distribution in the later BGP , an implication is that
+it must have grown faster than average between those periods. To compare the data with the
+model, a natural comparison is to use GDP per capita growth rate net of the average of the
+20See the Appendices from Caliendo et al. ( 2021 ) for a detailed description of the data.
+31
+
+Figure 9:Changes in Trade Costs Before and After 2004 EU Enlargement (in percentage
+terms). This matrix shows the bilateral changes in trade costs, calculated using the method inferred from
+equation ( 23), before and after the 2004 EU Enlargement. The before period is an average for the years 2000 -
+2003 and the after period is an average for the years 2004 -2007 . Underlying data comes from the World
+Input-Output Database.
+32
+
+EU, which yields a income that is normalized for the periods of 1998 -2003 and2005 -2010 .
+The way to interpret the data is to see whether or not each group’s income per capita grew
+faster (slower) than average across these periods.
+Here, one can see that the model in fact matches the data quite correctly. It predicts
+relative a catch-up of the New Member States ( g2004 ). The model predicts that real wages
+in NMS would grow about 5.1% faster than the average of the Western European countries,
+which is very close to observed in the data (5%). As seen in Figure 10, most of the other coun-
+try groups also fall very close to the 45-degree line, suggesting that the model’s predictions
+are reasonable.
+g1957g1973g1981
+g1986g1995g2004
+0.02.04.06.08Model
+0 .02 .04 .06 .08
+DataRelative Real Income Growth
+45 Degree Line
+Figure 10:Model Validation: Changes in Real Wages, Relative to the Average. In the model,
+the distribution of wages λw·[ws(t∗)]s∈Kis normalized with a choice of λwsuch that ∑s∈Kws(t∗)Ls=1. What
+is shown in the chart is the percentage change across equilibriaws(t∗∗)/Ps(t∗∗)
+ws(t∗)/Ps(t∗)−1, where Lsis assumed to be
+fixed. In the data, for consistency, I calculated annual GDP per capita then subtracted it from the average of the
+group for the periods of 1998 -2003 and2005 -2010 . I then calculated changes and plotted the data. Data comes
+from the Penn World Tables 10.01.
+One exception is the 1981 wave, for which the model substantially over-predicts relative
+real income growth. The reason being that such a wave consists of a single country: Greece.
+And the aftermath of the EU enlargement 2005 −2010 includes the first years of the Greek
+debt crisis. Naturally, the model cannot anticipate the negative shocks of the deep recession
+of the late 2010 s in Greece.
+33
+
+Second, compare the (endogenous) distribution of the number of produced varieties in
+the model to the distribution of the number of produced varieties in the data for the 2000 -
+2003 period. Once again, the observations fall mostly along the 45-degree line, suggesting
+that the model does a good job in replicating the empirical distribution. As one exception,
+now the model underestimates the actual share of total produced varieties in the NMS ( g2004 ).
+g1957
+g1973
+g1981g1986
+g1995g2004
+.05.1.15.2.25Model
+0 .1 .2 .3 .4
+DataMeasure
+45 Degree Line
+Figure 11:Model Validation: Distribution in the Number of Produced Varieties Across
+Regions. In the model, the distribution of measures of varieties λM·[Ms(t∗)]s∈Kis normalized with a choice
+ofλMsuch that ∑s∈KMs(t∗) = 1. For consistency in the comparison, what I show in the data bars are the
+relative shares of each country group in the total universe of the product measure, or: Ms(t)/∑s′∈KMs′(t).
+This assumes, as in the model, that product varieties in the data are differentiated across countries, so the
+global product space is ∑s′∈KMs′(t). Data comes from Prodcom (Eurostat) and are averages for the 2000 -2003
+period.
+Finally, compare the changes in trade shares across equilibria. The model captures
+changes in trade shares really well, as shown in ( 12). Trade expands particularly in ex-
+ports from NMS to Western European countries, which is captured by the upper quadrant
+observations that lie close to the 45-degree line. Here, the exceptions are the trade flows from
+Western Europe towards the NMS. The model predicts a symmetrical response in terms of
+trade expansion, while in reality, the gains were much more a relative market access from
+the NMS into the EU market than the other way around.
+34
+
+.511.52Model
+.5 1 1.5 2
+DataTrade Shares Growth
+45 Degree LineFigure 12:Model Validation: Changes in Trade Shares. The model object is plotted is ˆλF
+sd: the
+change in the final sector trade share. In the data, this is total trade shares renormalized to account for the
+fact that there is no rest-of-the-world in the sample. The before and after periods are 1998 -2003 and2005 -2010 ,
+respectively.
+35
+
+Results The main result of this exercise relates to the theoretical welfare decomposition in
+equation ( 21). One can compare two paths of consumption along the BGP and decompose
+them into:
+Z∞
+τexp{−ρ(t−τ)}h
+log 
+exp{g∗∗t}Cs(t∗∗,τ)−log 
+exp{g∗t}Cs(t∗,τ)i
+dt=
+log
+ˆMs
+|{z}
+transitional+1
+ρlogcws
+Ps
+|{z}
+static+g∗∗−g∗
+ρ2
+|{z}
+dynamic
+where Cs(t∗,τ),Cs(t∗∗,τ)are the paths of consumption along the original and new BGPs,
+respectively.
+For all countries, the transitional component is negligible. They never contribute with
+more than 0.03% of total absolute value of welfare, in the largest case.
+Static gains from trade can be as large as 5-6% of domestic income in the case of NMS
+(g2004 ) or Greece ( g1981 ) or even negative or close to zero in the case of the Western European
+countries such as Portugal and Spain ( g1986 ). In the case of Greece and the NMS, they
+account for 38% and 32% of total welfare gains from trade, respectively.
+These changes can be further decomposed into “Eaton-Kortum” and ”Romer” parts of
+static welfare using equation ( 22). Results in Figure 13show a wide variation of the Ricardian
+component share in total changes in static welfare. While for most country groups that share
+is about 10% of total changes in static welfare, for Portugal and Spain ( g1986 ) it accounts for
+nearly 25% of static welfare changes while for Greece ( g1981 ) the Ricardian share accounts
+for more than 90% of changes in total welfare.
+Finally, the main numerical outcome of the exercise is the differences in growth rates
+across BGPs g∗∗−g∗. In the current calibration, the trade liberalization embedded in the 2004
+enlargement of the European Union induced the EU long-run yearly growth rate to increase 0.10pp.
+One implication is that the dynamic part of welfare accounts for the most of gains from
+trade for all countries. Therefore, not accounting for this channel ignores the majority of
+gains from trade.
+However, the share of total welfare gains it accounts for varies across country groups.
+According to this model, in the current parametrization, the share of dynamic gains in total
+welfare gains is between 65% and 90%. This is in line with estimates from Hsu, Riezman,
+and Wang ( 2019 ) (78%) and Perla, Tonetti, and Waugh ( 2015 ) (85%).
+However, in this model, the change in the equilibrium measure of varieties (and hence the
+real wage) between one BGP and the other can actually decrease, which implies a negative
+static welfare share. Therefore, for some countries, such as Portugal and Spain ( g1986 ) the
+share of dynamic welfare in total welfare is larger than 100%. These decompositions are in
+Figure 14.
+In monetary terms, a back-of-the-envelope calculation suggests an additional 0.10% yearly
+growth rate to the aggregate GDP of the Western European plus the New Member States
+since the year of accession —that is, between 2004 and2023 —would have induced an addi-
+tional current production level of approximately $332 billion in the continent, which accounts
+for 2.0% of the total level of production of the European Union.
+36
+
+Figure 13:Static Welfare Decomposition. Static Welfare Decomposition Across its Eaton-Kortum and
+Romer Components, according to equation ( 22).
+Figure 14:Total Welfare Decomposition. Welfare Decomposition Across its Transitional Static and
+Dynamic Components, according to equation ( 21).
+37
+
+5Conclusion
+I focus on the long-lasting question of the relationship between trade and growth and, in
+particular, trade and product innovation. I make several contributions: theoretical, empirical,
+and quantitative.
+On the theoretical front, my main contribution is a new framework that reconciles the
+forces of specialization and market size, rationalizes foreign market access as a rationale for
+growth in a dynamic framework, and provides an analytical formula for dynamic gains from
+trade. In all of those points, I maintain active dialogues with the literature, such as nesting
+the Eaton-Kortum model of trade and Romer growth model as special cases of my model
+and subsuming the ACR static welfare formula in my dynamic welfare formula.
+In my empirical work, I rely on the eastward expansion of the European Union and doc-
+ument several new facts that are consistent with the mechanisms of my model. Compared
+to countries that selected into becoming candidates but had not joined at given horizon,
+countries started producing more product varieties, investing more in R&D, and trading
+more.
+I go beyond these facts and exploit plausibly exogenous variation to show that a plausibly
+exogenous increase in market access leads to a higher probability of initiating production and
+exporting a given product, which is consistent with the main mechanism of the theoretical
+model.
+Finally, I solve for a quantitative model and replicate the 2004 expansion of the European
+Union in the computer. The results of the simulation imply that: (a) the EU expansion
+increased its long-run yearly growth rate by about 0.10pp; and (b) dynamic gains from trade
+account for somewhere between 65-90% of total welfare gains from trade.
+This paper points to the fact that dynamic gains from trade are likely too large to be
+ignored. The big generalizable takeaway is that the previous literature has largely underes-
+timated gains from trade, perhaps by as much as one order of magnitude. Advancing on
+this agenda, perhaps by understanding the transition dynamics, is a fruitful avenue of future
+research.
+38
+
+References
+Acemoglu ,Daron (Dec. 2008 ).Introduction to Modern Economic Growth . en. Google-Books-ID:
+DsPH 5fWNdrsC. Princeton University Press. isbn :978-1-4008 -3577 -5.
+Acemoglu ,Daron and Ventura ,Jaume (May 2002 ). The World Income Distribution*. The
+Quarterly Journal of Economics .2002 .117, pp. 659–694.
+Alvarez ,Fernando and Lucas ,Robert E. (Sept. 2007 ). General equilibrium analysis of
+the Eaton–Kortum model of international trade. Journal of Monetary Economics .2007 .54,
+pp.1726 –1768 .
+Argente ,David ,Baslandze ,Salome ,Hanley ,Douglas , and Moreira ,Sara (2020 ). Patents
+to Products: Product Innovation and Firm Dynamics. SSRN Electronic Journal .2020 .
+Arkolakis ,Costas ,Costinot ,Arnaud , and Rodr ´ıguez-Clare ,Andr ´es(Feb. 2012 ). New
+Trade Models, Same Old Gains? American Economic Review .2012 .102, pp. 94–130.
+Arkolakis ,Costas ,Ganapati ,Sharat , and Muendler ,Marc-Andreas (2020 ).The Extensive
+Margin of Exporting Products: A Firm-level Analysis . en. Tech. rep. w 16641 . National Bureau
+of Economic Research. doi:10.3386/w16641 .url:https://www.nber.org/papers/w16641
+(visited on 01/23/2021 ).
+Baier ,Scott L. and Bergstrand ,Jeffrey H. (Mar. 2007 ). Do free trade agreements actually
+increase members’ international trade? Journal of International Economics .2007 .71, pp. 72–
+95.
+Bas,Maria (Mar. 2012 ). Input-trade liberalization and firm export decisions: Evidence from
+Argentina. Journal of Development Economics .2012 .97, pp. 481–493.
+Bernard ,A. B. ,Redding ,S. J., and Schott ,P . K. (Aug. 2011 ). Multiproduct Firms and Trade
+Liberalization. The Quarterly Journal of Economics .2011 .126, pp. 1271 –1318 .
+Bernard ,Andrew B ,Jensen ,J. Bradford ,Redding ,Stephen J , and Schott ,Peter K (Apr.
+2009 ). The Margins of US Trade. American Economic Review .2009 .99, pp. 487–493.
+Boehm ,Christoph E. ,Levchenko ,Andrei A. , and Pandalai-Nayar ,Nitya (Apr. 2020 ). The
+Long and Short (Run) of Trade Elasticities. Working Paper. doi:10.3386/w27064 .url:
+https://www.nber.org/papers/w27064 (visited on 02/16/2023 ).
+Borusyak ,Kirill ,Jaravel ,Xavier , and Spiess ,Jann (Apr. 2022 ). Revisiting Event Study De-
+signs: Robust and Efficient Estimation. arXiv: 2108 .12419 [econ]. url:http://arxiv.org/
+abs/2108.12419 (visited on 10/18/2022 ).
+Buera ,Francisco J. and Oberfield ,Ezra (2020 ). The Global Diffusion of Ideas. Econometrica .
+2020 .88, pp. 83–114.
+Cai,Jie,Li,Nan , and Santacreu ,Ana Maria (Jan. 2022 ). Knowledge Diffusion, Trade, and
+Innovation across Countries and Sectors. American Economic Journal: Macroeconomics .2022 .
+14, pp. 104–145.
+Caliendo ,Lorenzo ,Opromolla ,Luca David ,Parro ,Fernando , and Sforza ,Alessandro
+(Dec. 2021 ). Goods and Factor Market Integration: A Quantitative Assessment of the EU
+Enlargement. Journal of Political Economy .2021 .129, pp. 3491 –3545 .
+Callaway ,Brantly and Sant’Anna ,Pedro H. C. (Dec. 2021 ). Difference-in-Differences with
+multiple time periods. Journal of Econometrics .2021 .225, pp. 200–230.
+39
+
+Chodorow-Reich ,Gabriel (May 2019 ). Geographic Cross-Sectional Fiscal Spending Mul-
+tipliers: What Have We Learned? American Economic Journal: Economic Policy .2019 .11,
+pp.1–34.
+— (June 2020 ). Regional data in macroeconomics: Some advice for practitioners. Journal of
+Economic Dynamics and Control .2020 .115, p.103875 .
+Christiano ,Lawrence J. ,Eichenbaum ,Martin S. , and Trabandt ,Mathias (Aug. 2018 ). On
+DSGE Models. Journal of Economic Perspectives .2018 .32, pp. 113–140.
+Costinot ,Arnaud and Rodr ´ıguez-Clare ,Andr ´es(2014 ). Trade Theory with Numbers: Quan-
+tifying the Consequences of Globalization. en. In: Handbook of International Economics .
+Vol.4. Elsevier, pp. 197–261.isbn :978-0-444-54314 -1.doi:10.1016/B978-0-444-54314-1.
+00004-5 .url:https://linkinghub.elsevier.com/retrieve/pii/B9780444543141000045
+(visited on 07/09/2023 ).
+Demidova ,Svetlana (2008 ). Productivity Improvements and Falling Trade Costs: Boon or
+Bane? International Economic Review .2008 .49, pp. 1437 –1462 .
+Dube ,Arindrajit ,Girardi ,Daniele ,Jord `a,`Oscar , and Taylor ,Alan M. (Apr. 2023 ). A Local
+Projections Approach to Difference-in-Differences Event Studies. Working Paper. doi:
+10.3386/w31184 .url:https://www.nber.org/papers/w31184 (visited on 07/02/2023 ).
+Eaton ,Jonathan and Kortum ,Samuel (2002 ). Technology, Geography, and Trade. Econo-
+metrica .2002 .70, pp. 1741 –1779 .
+— (July 2006 ).Innovation, Diffusion, and Trade . en. Tech. rep. w 12385 . Cambridge, MA: Na-
+tional Bureau of Economic Research, w 12385 .doi:10.3386/w12385 .url:http://www.
+nber.org/papers/w12385.pdf (visited on 01/23/2021 ).
+Eaton ,Jonathan ,Kortum ,Samuel ,Neiman ,Brent , and Romalis ,John (Nov. 2016 ). Trade
+and the Global Recession. American Economic Review .2016 .106, pp. 3401 –3438 .
+Goldberg ,P . K. ,Khandelwal ,A. K. ,Pavcnik ,N., and Topalova ,P .(Nov. 2010 ). Imported
+Intermediate Inputs and Domestic Product Growth: Evidence from India. The Quarterly
+Journal of Economics .2010 .125, pp. 1727 –1767 .
+Goodman-Bacon ,Andrew (Dec. 2021 ). Difference-in-differences with variation in treat-
+ment timing. Journal of Econometrics .2021 .225, pp. 254–277.
+Grossman ,Gene M. and Helpman ,Elhanan (1990 ). Comparative Advantage and Long-
+Run Growth. The American Economic Review .1990 .80, pp. 796–815.
+Head ,Keith and Mayer ,Thierry (2014 ). Gravity Equations: Workhorse,Toolkit, and Cook-
+book. en. In: Handbook of International Economics . Vol. 4. Elsevier, pp. 131–195.isbn :978-
+0-444-54314 -1.doi:10.1016/B978-0-444-54314-1.00003-3 .url:https://linkinghub.
+elsevier.com/retrieve/pii/B9780444543141000033 (visited on 09/26/2023 ).
+Head ,Keith and Ries ,John (2001 ). Increasing Returns versus National Product Differ-
+entiation as an Explanation for the Pattern of U.S.-Canada Trade. The American Economic
+Review .2001 .91, pp. 858–876.
+Helpman ,Elhanan (Nov. 2023 ). Foreign Competition and Innovation. Working Paper. doi:
+10.3386/w31840 .url:https://www.nber.org/papers/w31840 (visited on 11/08/2023 ).
+Hsu ,Wen-Tai ,Riezman ,Raymond , and Wang ,Ping (Nov. 2019 ).Innovation, Growth, and
+Dynamic Gains from Trade . en. Tech. rep. w 26470 . Cambridge, MA: National Bureau of
+Economic Research, w 26470 .doi:10.3386/w26470 .url:http://www.nber.org/papers/
+w26470.pdf (visited on 10/18/2023 ).
+40
+
+Hummels ,David and Klenow ,Peter J (May 2005 ). The Variety and Quality of a Nation’s
+Exports. American Economic Review .2005 .95, pp. 704–723.
+Jones ,Charles I. (2005 ). Growth and Ideas. en. In: Handbook of Economic Growth . Vol. 1.
+Elsevier, pp. 1063 –1111 .isbn :978-0-444-52043 -2.doi:10.1016/S1574-0684(05)01016-6 .
+url:https://linkinghub.elsevier.com/retrieve/pii/S1574068405010166 (visited on
+12/07/2022 ).
+— (July 2019 ). Paul Romer: Ideas, Nonrivalry, and Endogenous Growth. The Scandinavian
+Journal of Economics .2019 .121, pp. 859–883.
+Kehoe ,Timothy and Ruhl ,Kim J. (2013 ). How Important Is the New Goods Margin in
+International Trade? en. doi:10.1086/670272 .url:https://www.journals.uchicago.
+edu/doi/epdf/10.1086/670272 (visited on 05/29/2023 ).
+Kleinman ,Benny ,Liu,Ernest ,Redding ,Stephen J , and Yogo ,Motohiro (2023 ). Neoclas-
+sical Growth in an Interdependent World. 2023 .
+Melitz ,Marc and Redding ,Stephen (June 2021 ).Trade and Innovation . en. Tech. rep. w 28945 .
+Cambridge, MA: National Bureau of Economic Research, w 28945 .doi:10.3386/w28945 .
+url:http://www.nber.org/papers/w28945.pdf (visited on 06/28/2021 ).
+Perla ,Jesse ,Tonetti ,Christopher , and Waugh ,Michael E. (Jan. 2015 ).Equilibrium Technology
+Diffusion, Trade, and Growth . en. Tech. rep. w 20881 . National Bureau of Economic Re-
+search. doi:10.3386/w20881 .url:https://www.nber.org/papers/w20881 (visited on
+01/22/2021 ).
+Rachapalli ,Swapnika (2021 ). Learning between Buyers and Sellers Along the Global Value
+Chain. 2021 , p.81.
+Rivera-Batiz ,Luis A. and Romer ,Paul M. (1991 a). Economic Integration and Endogenous
+Growth. The Quarterly Journal of Economics .1991 .106, pp. 531–555.
+— (May 1991 b). International trade with endogenous technological change. European Eco-
+nomic Review .1991 .35, pp. 971–1001 .
+Romer ,Paul (Feb. 1994 ). New goods, old theory, and the welfare costs of trade restrictions.
+Journal of Development Economics .1994 .43, pp. 5–38.
+Romer ,Paul M. (1990 ). Endogenous Technological Change. The Journal of Political Economy .
+1990 .98, S71–S102.
+Sampson ,Thomas (Feb. 2016 ). Dynamic Selection: An Idea Flows Theory of Entry, Trade,
+and Growth *. The Quarterly Journal of Economics .2016 .131, pp. 315–380.
+— (2023 ). Technology Gaps, Trade and Income. American Economic Review .2023 . VOL. 113,
+p.66.
+Sun,Liyang and Abraham ,Sarah (Dec. 2021 ). Estimating dynamic treatment effects in
+event studies with heterogeneous treatment effects. Journal of Econometrics .2021 .225,
+pp.175–199.
+41
+
+A Timeline of EU Trade Agreements
+Partner SignedProvisional
+applicationFull entry into force
+Switzerland 1972 1973
+Iceland 1992 1994
+Norway 1992 1994
+Turkey 1995 1995
+Tunisia 1995 1998
+Israel 1995 1996 2000
+Mexico 1997 2000
+Morocco 1996 2000
+Jordan 1997 2002
+Egypt 2001 2004
+North Macedonia 2001 2001 2004
+South Africa 1999 2000 2004
+Chile 2002 2003 2005
+42
+
+B Mathematical derivations
+B.1Optimal control problem
+In the dynamic optimal control problem, the household chooses an optimal path of Cs(t)at
+every instant, taking as given prices. The problem of choosing varieties cs(t,ω)is separable
+and can be solved conditional on a path for Cs(t), such that only aggregates matter for the
+dynamic path. Therefore, the current-value Hamiltonian for this problem is:
+H(t,C,L,µ) =log 
+Cs(t)+µs(t)"
+rs(t)
+Ps(t)As(t) +ws(t)
+Ps(t)Ls−Cs(t)#
+with optimality conditions satisfying:
+1
+Cs(t)=µs(t)
+˙µs(t)
+µs(t)=ρ−rs(t)
+Ps(t)
+and a transversality condition:
+lim
+t→∞"
+exp{−Zt
+0rs(ν)
+Ps(ν)dν}Ps(t)As(t)#
+=0
+Taking time derivatives of the first optimality condition and then replacing for˙µ(t)
+µ(t)yields
+the Euler equation:
+˙Cs(t)
+Cs(t)="
+rs(t)
+Ps(t)−ρ#
+B.2Solution to the dynamic problem
+Growth in each of the s∈Kof the national economies evolve according to the following
+system of differential equations:
+˙Cs(t) ="
+rs(t)
+Ps(t)−ρ#
+Cs(t)
+˙Ms(t) =rs(t)
+Ps(t)Ms(t) +ψws(t)
+Ps(t)Ls−ψCs(t)
+In this section, I will first derive this system of equations, then solve it. First, one sees that
+consumption evolves according to a first-order differential equation. Let a(t)≡h
+rs(t)
+Ps(t)−ρi
+and write the Euler equation as:
+43
+
+˙Cs(t) =a(t)Cs(t)
+Multiplying both sides by the integration factor exp {−Rt
+0a(τ)dτ}:
+˙Cs(t)exp{−Zt
+0a(τ)dτ} −a(t)Cs(t)exp{−Zt
+0a(τ)dτ}=0
+Now, using Leibnitz lemma, note that the time derivative of
+exp{−Rt
+0a(τ)dτ}Cs(t)is˙Cs(t)exp{−Rt
+0a(τ)dτ} − a(t)Cs(t)exp{−Rt
+0a(τ)dτ}. Therefore,
+integrating both sides with respect to time:
+exp{−Zt
+0a(τ)dτ}Cs(t) =C(0)
+where C(0)is the constant of integration. Dividing both sides by exp {−Rt
+0a(s)ds}and
+replacing for a(t)yields the solution for the consumption path:
+Cs(t) =C(0)exp
+
+Zt
+0"
+rs(τ)
+Ps(τ)−ρ#
+dτ
+
+
+which can be rewritten as:
+Cs(t) =Cs(0)expn¯rs(t)−ρ
+to
+where ¯rs(t)≡1
+tRt
+0rs(ν)
+Ps(ν)dνis the average real interest rate between periods 0 and t. Now
+recall that the budget constraint is:
+Ps(t)Is(t) +Ps(t)Cs(t) =rs(t)As(t) +ws(t)Ls (B.1)
+and that ψIs(t) = ˙Ms(t)andψAs(t) =Ms(t). Replacing above and solving for ˙Ms(t)results
+in:
+˙Ms(t) =rs(t)
+Ps(t)Ms(t) +ψws(t)
+Ps(t)Ls−ψCs(t)
+which, after replacement, yields the following equation:
+˙Ms(t) =rs(t)
+Ps(t)Ms(t) +ψws(t)
+Ps(t)Ls−ψCs(0)expn¯rs(t)−ρ
+to
+In turn, this equation has a solution satisfying:
+44
+
+Ms(t) = Ms(0)·exp(Zt
+0rs(ν)
+Ps(ν)dν)
++Zt
+0ψws(ξ)
+Ps(ξ)Ls·exp(
+−Zξ
+0rs(υ)
+Ps(υ)dυ)
+dξ·exp(Zt
+0rs(ν)
+Ps(ν)dν)
+−Zt
+0ψCs(0)expn¯rs(ξ)−ρ
+ξo
+·exp(
+−Zξ
+0rs(υ)
+Ps(υ)dυ)
+dξ·exp(Zt
+0rs(ν)
+Ps(ν)dν)
+which, using the definition of ¯r(t), becomes:
+Ms(t) = Ms(0)·exp¯r(t)·t	
++Zt
+0ψws(ξ)
+Ps(ξ)Ls·exp−¯r(ξ)·ξ	
+dξ·exp¯r(t)·t	
+−ψCs(0)·Zt
+0expn¯rs(ξ)−ρ
+ξo
+·exp−¯r(ξ)·ξ	
+dξ·exp¯r(t)·t	
+simplifying the last integral:
+Ms(t) = Ms(0)·exp¯r(t)·t	
++Zt
+0ψws(ξ)
+Ps(ξ)Ls·exp−¯r(ξ)·ξ	
+dξ·exp¯r(t)·t	
+−ψCs(0)·Zt
+0exp−ρξ	
+dξ·exp¯r(t)·t	
+Finally, note that both Ps(t)and rs(t)are functions of wages. Therefore, given the ini-
+tial measure of varieties Ms(0)and the wages for all countries, which are defined at every
+instance through the trade equilibrium, paths for consumption Cs(t), varieties Ms(t)and
+assets As(t) =1/ψMs(t)follow the equations above.
+As a final step, one needs to pin down the starting values. Ms(0)is given and calibrated
+to reflect the technological level of country s. Choice of Cs(0), by contrast, is an endogenous
+object that guarantees that, given lifetime income and the initial level of assets, consumption
+as governed by the euler equation will be optimal. Start from the equation above, multiply
+both sides by exp−¯r(t)·t	
+:
+exp−¯r(t)·t	
+Ms(t) = Ms(0) +Zt
+0ψws(ξ)
+Ps(ξ)Ls·exp−¯r(ξ)·ξ	
+dξ
+−ψCs(0)·Zt
+0exp−ρξ	
+dξ
+Now evaluate this equation taking the limit t→∞.
+45
+
+lim
+t→∞
+exp−¯r(t)·t	
+Ms(t)
+=Ms(0) +Z∞
+0ψws(t)
+Ps(t)Ls·exp−¯r(t)·t	
+dt
+−ψCs(0)·Z∞
+0exp−ρt	
+dt
+Recall that the transversality condition is:
+lim
+t→∞"
+exp{−Zt
+0rs(ν)
+Ps(ν)dν}Ps(t)As(t)#
+=0
+which states that the value of assets cannot grow faster than the interest rate, the standard
+no-Ponzi scheme condition. Using the fact that ψAs(t) = Ms(t), noting that prices Ps(t)are
+always positive and finite, and dividing both sides by Ps(t)/ψ, we can rewrite this as:
+lim
+t→∞
+exp{−¯rs(t)t}Ms(t)=0
+Using the fact that lim t→∞
+exp−¯r(t)·t	
+Ms(t)
+=0, we can then solve for Cs(0)as:
+Cs(0) ="
+1
+ψMs(0) +Z∞
+0ws(t)
+Ps(t)Ls·exp−¯rs(t)·t	
+dt#
+·Z∞
+0exp−ρt	
+dt−1
+Using the fact thatR∞
+0exp−ρt	
+dt=1
+ρ, then:
+Cs(0) = ρ"
+1
+ψMs(0) +Z∞
+0ws(t)
+Ps(t)Ls·exp−¯rs(t)·t	
+dt#
+(B.2)
+=ρ
+As(0)|{z}
+initial wealth+Z∞
+0ws(t)
+Ps(t)Ls·exp−¯rs(t)·t	
+dt
+| {z }
+PV of real labor income
+
+Therefore, at any instant t, consumption is proportional to lifetime wealth:
+Cs(t) = ρ"
+As(0) +Z∞
+0ws(τ)
+Ps(τ)Ls·exp−¯rs(τ)·τ	
+dτ#
+·expn¯rs(t)−ρ
+to
+(B.3)
+=ρ"
+As(t) +Z∞
+tws(τ)
+Ps(τ)Ls·exp−¯rs(τ)·τ	
+dτ#
+46
+
+B.3Final varieties producers problem
+Each final goods producer chooses intermediate inputs and labor to maximize profits ac-
+cording to:
+max
+ℓs(t,ω),{xks(t,ω,ν)}pss(t,ω)zs(t,ω)[ℓs(t,ω)]1−α 
+1
+α∑
+k∈KZMk(t)
+0[xks(t,ω,ν)]αdν!
+−ws(t)ℓs(t,ω)−∑
+k∈KZMk(t)
+0pks(t,ν)xks(t,ω,ν)dν
+There are infinitely many first order conditions for this problem: one for each variety ν
+and one for labor. These satisfy:
+ws(t)ℓs(t,ω) = ( 1−α)·pss(t,ω)zs(t,ω)[ℓs(t,ω)]1−α 
+1
+α∑
+k∈KZMk(t)
+0[xks(t,ω,ν)]αdν!
+pks(t,ν)xks(t,ω,ν) = α·pss(t,ω)zs(t,ω)[ℓs(t,ω)]1−α1
+α[xks(t,ω,ν)]α
+Solving for xks(t,ω,ν)yields equation ( 4):
+xks(t,ω,ν) ="
+pks(t,ω,ν)
+pss(t,ω)#−1
+1−α
+·ℓs(t,ω)·zs(t,ω)1
+1−α
+B.4Intermediate varieties producers problem
+Each intermediate varieties producer holds perpetual rights over variety ν, which they sell
+to final goods varieties in every country d∈K. For each destination, they take demand as
+given and choose prices to maximize profits at every moment:
+max
+pks(t,ω,ν)1
+τkspks(t,ω,ν)xks(t,ω,ν)−Pk(t)xks(t,ω,ν)
+Replacing for xks(t,ω,ν):
+max
+pks(t,ω,ν)
+pks(t,ω,ν)−τksPk(t)"
+pks(t,ω,ν)
+pss(t,ω)#−1
+1−α
+·ℓs(t,ω)·zs(t,ω)1
+1−α
+which, after taking the FOC and solving for pks(t,ω,ν)yields the optimal price as a mark-up
+over marginal price, which is independent of ωorν:
+pks(t,ω,ν) =τksPk(t)
+α∀ω∈[0, 1],∀ν∈[0,Ms(t)]
+47
+
+Flow aggregate profits Πs(t)≡RMs(t)
+0π(t,ν)dνare a constant fraction of revenue:
+Πs(t) =α
+η·∑
+d∈KλM
+sd(t)·Pd(t)Yd(t)
+=α
+η·∑
+d∈KMs
+pM
+sd1−η
+PM
+d·Pd(t)Yd(t)
+=α
+η·∑
+d∈KMs(τsdPsd)1−η
+∑k′∈KMk′(τk′dPk′)1−η·Pd(t)Yd(t)
+Profits per variety πs(t,ν) =1
+Ms(t)Πs(t)are independent of ν.
+B.5Trade in Final Goods
+Trade shares In this model, since there are infinitely many varieties in the unit interval,
+the expenditure share of destination region d∈Kon goods coming from source country
+s∈Kconverge to their expected values. Let λsd(t,ω)denote the probability that consumers
+in region d∈ D source variety ωfrom region s∈ D. For each each n, let A−1
+n(t,ω)≡˜xsd(t)
+˜xnd(t),
+with xsd(t)≡(PM
+s(t))αws(t)1−ατsd. This probability will satisfy:
+λsd(t,ω) = Pr
+sis the lowest cost supplier of ωtod
+=Pr˜xsd(t)
+zs(t,ω)<min
+(n̸=s)˜xnd(t)
+zn(t,ω)
+=Z∞
+0Pr(zs(t,ω) =z)Pr(zn(t,ω)<zAn(t))dz
+=Z∞
+0fs(t)(z)Π(n̸=s)Fn(t)(Anz)dz
+=Z∞
+0θTsz−(1+θ)exp
+
+− 
+∑
+n∈KTnAn(t)−θ!
+z−θ
+
+dz
+=Ts ˜xsd(t)−θ
+∑n∈KTn ˜xnd(t)−θ
+=Ts ˜xsd(t)−θ
+∑n∈KTn ˜xnd(t)−θ
+=Ts(ws(t)1−αPM
+s(t)ατsd)−θ
+∑n∈KTn(wn(t)1−αPMn(t)ατnd)−θ(B.4)
+Now note that λsd(t,ω)is independent of ω, so the probability of sourcing each variety
+48
+
+from stodis identical. A corollary is that aggregate expenditure trade shares of final goods
+from sindwill be equal to the probability of sourcing an arbitrary variety from sind.
+Price distributions and ideal price index Recall that, under the assumption of perfect
+competition, prices equal their marginal costs, such that the price of a variety ωproduced in
+country sand shipped to dsatisfies psd(t,ω) =τsdPMs(t)αws(t)1−α
+zs(t,ω).
+Since zs(t,ω)is a random variable, psd(t,ω)is also a random variable. We can derive the
+distribution of prices through the following steps. First, note that zs(t,ω) =τsdPMs(t)αws(t)1−α
+psd(ω).
+Then, note that:
+psd(t,ω)<p=τsdPM
+s(t)αw1−α
+s
+z⇐⇒ zs(t,ω)>z=τsdPM
+s(t)αw1−α
+s
+p
+Therefore:
+Gsd(t,ω)(p) = Pr(psd(t,ω)<p)
+=Pr 
+zs(t,ω)>τsdPM
+s(t)αw1−α
+s
+p!
+=1−exp{−Ts(τsdPM
+s(t)αws(t))−θpθ} ∀ ω∈[0, 1]
+which is the distribution of prices of any variety ωconditional on sbeing the lowest cost
+supplier of such a variety to d. To derive the unconditional distribution of prices at d, realize
+that:
+Gn(t,ω)≡Pr(ps(t,ω)<p)
+=Pr((∃s)for which psd(t,ω)<p)
+=1−Pr((∄s)for which psd(t,ω)<p)
+=1−∏
+s∈KPr(psd(t,ω)>p)
+=1−∏
+s∈Kexp{−Ts(τsdPM
+s(t)αws(t))−θpθ
+=1−exp{−∑
+s∈KTs(τsdPM
+s(t)αws(t))−θpθ}
+Recall that the price index is defined as:
+49
+
+Pd(t) ="Z1
+0pd(t,ω)1−σdω# 1
+1−σ
+=Z∞
+0p1−σdGn(t,p)1
+1−σ
+=
+Z∞
+0p1−σθpθ−1exp(
+−∑
+s∈KTs(τsdPM
+s(t)αws(t)1−α)−θpθ)
+dp
+1
+1−σ
+Using a change of variables, let ν≡∑s∈KTs(τsdPM
+s(t)αws(t)1−α)−θpθand note that dν=
+θpθ−1∑s∈KTs(τsdPM
+s(t)αws(t)1−α)−θpθdp. Then:
+Pd(t) =
+Z∞
+0 
+ν
+∑s∈KTs(τsdPMs(t)αws(t)1−α)−θ!1−σ
+θ
+exp{−ν}dν
+1
+1−σ
+=Γθ+1−σ
+θ 1
+1−σ 
+∑
+s∈KTs(τsdPM
+s(t)αws(t)1−α)−θ!−1
+θ
+(B.5)
+=Γθ+1−σ
+θ 1
+1−σ
+∑
+s∈KTs(τsdws(t)1−α)−θ
+∑
+n∈KMn(t)"
+τnsPn(t)
+α#−α
+1−α
+(1−α)θ
+−1
+θ
+.
+which shows that, given parameters Ts.τsdand the vector of state variables Ms(t) = [ M1(t),· · ·,MN(t)]′,
+the closed form solution for the ideal price index Pd(t)is a function of the vector of wages
+w(t) = [ w1(t),· · ·,wN(t)]′.
+B.6Market Clearing and Trade Balance
+Market Clearing LetYd(t)denote the total output of the final good and Xd(t),Id(t)denote
+the use of the final good as inputs for the production of intermediate inputs and R&D,
+respectively. Then total output in the final good for a given country must satisfy:
+Yd(t) =Cd(t) +Id(t) +Xd(t)
+where Id(t)and Cd(t)are pinned down by the dynamic problem, described below, and Xd(t)
+can be expressed as a function of aggregate demand in all destinations:
+Xd(t)≡∑
+k∈KMd(t)· 
+pM
+dk(t)
+PM
+k(t)!−η
+·α· 
+PM
+k(t)
+Pk(t)!−1
+·Yk(t)
+50
+
+Combining the equations, one can express aggregate output as a function of the state
+variable Md(t), parameters, and wages (both rd(t)and Pd(t)are functions of wages in every
+country):
+Yd(t) =Id(t) +Cd(t) +∑
+k∈KMd(t)· 
+pM
+dk(t)
+PM
+k(t)!−η
+·α· 
+PM
+k(t)
+Pk(t)!−1
+·Yk(t)
+Expenditure Determination Flow aggregate profits Πs(t)≡RMs(t)
+0π(t,ν)dνare a constant
+fraction of revenue:
+Πs(t) =α
+η·∑
+d∈KλM
+sd(t)·Pd(t)Yd(t)
+On the expenditure side, GDP of each destination country s∈Kcountry will be ex-
+hausted as the combination of the total expenditures of labor and capital income:
+Ps(t)Ys(t) =ws(t)Ls+Πs(t)
+From the income side, nominal GDP must equal the sum of total flow payments received
+domestically and from the rest of the world:
+Ps(t)Ys(t) =∑
+d∈K"
+(1−α)λF
+sd(t) +α
+ηλM
+sd(t)#
+Pd(t)Yd(t)
+Trade Balance Total exports are equal to:
+EXd(t) =∑
+d̸=s∈KλF
+sd(t)Pd(t)Yd(t)
+| {z }
+exports in final goods+α∑
+d̸=s∈KλM
+sd(t)"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+| {z }
+exports in intermediates
+Total imports are equal to:
+IMd(t) = [ 1−λF
+ss(t)]Ps(t)Ys(t)| {z }
+imports in final goods+α[1−λM
+ss(t)]"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+| {z }
+imports in intermediates
+Since there are no international capital markets in this economy, trade will be balanced
+at any instant. This means that:
+∑
+d̸=s∈KλF
+sd(t)Pd(t)Yd(t) +α∑
+d̸=s∈KλM
+sd(t)"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+=
+[1−λF
+ss(t)]Ps(t)Ys(t) +α[1−λM
+ss(t)]"
+∑
+k′∈KλF
+dk′(t)Pk′(t)Yk′(t)#
+51
+
+B.7Homogeneity of Income in Equilibrium
+The trade share for final goods is:
+λF
+sd(t)≡EF
+sd(t)
+EF
+d(t)=Ts(PM
+s(t)αws(t)1−ατsd)−θ
+∑n∈KTn(PMn(t)αwn(t)1−ατnd)−θ=Ts(PM
+s(t)αws(t)1−ατsd)−θ
+Ps(t)−θ
+Evaluating it at λss(t), noting that λM
+s(t) =Ms(t)(pMss(t))1−η
+(PMs(t))1−η=Ms(t)(1
+αPs(t))1−η
+(PMs(t))1−ηand solving it
+forPs(t)allows me to write it linear in Ms(t):
+Ps(t) = T−1
+θsλF
+ss(t)1
+θ(PM
+s(t)αws(t)1−α)
+Ps(t) = 
+Ts
+λFss(t)!−1
+θ 
+Ms(t)
+λMss(t)! α
+1−η
+·α−α·Ps(t)α(ws(t)1−α)
+Ps(t) = α−α
+1−α· 
+Ts
+λFss(t)!−1
+θ(1−α) 
+Ms(t)
+λMss(t)! 1
+1−ηα
+1−α
+·ws(t)
+Ps(t) = α−α
+1−α· 
+Ts
+λFss(t)!−1
+θ(1−α)λM
+ss(t)
+Ms(t)·ws(t)
+∵α
+1−α=1−η
+which allows me to write real wages as a linear function of Ms(t):
+ws(t)
+Ps(t)=Ms(t)×α1−η× 
+Ts
+λFss(t)! 1
+θ(1−α)
+×
+λM
+ss(t)−1
+≡Ms(t)× Rw
+s(t) (B.6)
+Similarly, I can write aggregate profits as a linear function of Ms(t):
+Πs(t) =α
+η∑
+d∈KλM
+sd(t)Pd(t)Yd(t)
+Πs(t) =α
+η∑
+d∈KMs(t)
+α−1τsdPs(t)1−η
+(PM
+d(t))1−ηPd(t)Yd(t)
+Therefore:
+Πs(t)
+Ps(t)=Ms(t)×α
+η∑
+d∈K 
+α−1τsdPs(t)
+PM
+d(t)!1−ηPd(t)Yd(t)
+Ps(t)≡Ms(t)× Rπ
+s(t) (B.7)
+The budget constraint then is:
+52
+
+Cs(t) +Is(t) =ws(t)
+Ps(t)Ls+Πs(t)
+Ps(t)
+=Ms(t)×
+α1−η 
+Ts
+λFss(t)! 1
+θ(1−α)
+λM
+ss(t)−1
+Ls+α
+η∑
+d∈K 
+α−1τsdPs(t)
+PM
+d(t)!1−ηPd(t)Yd(t)
+Ps(t)
+
+=Ms(t)×Rw
+s(t) +Rπ
+s(t)=Ms(t)× R s(t) (B.8)
+B.8Phase Plane
+˙Ps(t)
+Ps(t)=ψ·πs(t,ν)
+Ps(t)−rs(t)
+Ps(t)
+˙Ms(t) =rs(t)
+Ps(t)Ms(t) +ψws(t)
+Ps(t)Ls−ψCs(t)
+B.9Balanced Growth Path
+Autarky
+Proof of Proposition (1)
+Proof. Without loss of generality, choose an arbitrary country s∈K. Since this world econ-
+omy is under autarky, evaluate ( 2) replacing for the real interest rate using equations ( 11)
+and ( 13) and taking the limit τsd→∞(∀s̸=d). By assumption ( 1),τss=1(∀s). Therefore,
+(2) collapses to:
+gautarky
+s =α·ψ
+η·Ys(t∗)
+Ms(t∗)−ρ (B.9)
+for a BGP inclusive of each period t≥t∗.
+The next step in the proof is to show that gMs=gYs=gCs=gws=gAs=gautarky
+s . Since
+real wages, real profits, assets, and real output are linear functions of Ms(t)in each period,
+it follows that gMs=gYs=gws=gAs. Since, with log preferences, consumption is a constant
+fraction of output, gCs=gYs. Since the choice of swas arbitrary, this holds for any s∈K.
+To show uniqueness, one needs to solve for growth rate in terms of parameters. In order
+to do so, a few intermediate steps are necessary. First, note that one can express the demand
+for intermediates as:
+¯xss(t,ω)≡xss(t,ω,ν) =
+αzs(ω)pss(t,ω)1
+1−α·ℓs(t,ω)
+which, in turn, implies that the optimal price of intermediate varieties is pss(t,ω,ν) =1
+αand
+I can rewrite the production function of the final goods producer as:
+53
+
+ys(ω) = zs(ω)ℓs(t,ω)1−α 
+1
+αZMs(t)
+0[¯xss(t,ω)]αdν!
+=zs(ω)ℓs(t,ω)1−α 
+1
+αZMs(t)
+0
+αzs(ω)pss(t,ω)1
+1−α·ℓs(t,ω)α
+dν!
+=
+zs(ω)1
+1−α·
+α·pss(t,ω)α
+1−α·ℓs(t,ω)·1
+α·Ms(t)
+Replacing for pss(t,ω)using the assumption of pricing under perfect competition:
+ys(ω) =
+zs(ω)1
+1−α·"
+αws(t)1−αα−α(1−η)Mα
+s
+α·zs(ω)#α
+1−α
+·ℓs(t,ω)·1
+α·Ms(t)
+=α−(1−α)·zs(ω)·ws(t)α·Ms(t)1−α·ℓs(t,ω)
+By GDP expenditure clearing, total expenditure is equal wages plus profits:
+Ys(t) =ws(t)Ls+α
+ηYs(t) =⇒1−α
+ηYs(t) =ws(t)Ls=⇒Ys(t) =ws(t)Ls
+where the last equation states that, in the last equation, GDP is labor income because labor
+is the only factor of income in this economy. Hence, value added is equal to labor income.
+Integrating the production function over ωand using the fact above gives us:
+Ys(t) ="Z1
+0zs(ω)ℓs(t,ω)σ−1
+σdω#σ
+σ−1
+·α−(1−α)·ws(t)α·Ms(t)1−α=Lsws(t)
+solving for ws(t):
+ws(t) = Z∞
+0zℓs(t,z)σ−1
+σdFs(z)σ
+σ−1! 1
+1−α
+·α−1·Ms(t)L−1
+1−αs
+The term in the integral denotes the joint product of productivity and labor allocation
+across firms. In aggregate terms, since both the distribution of productivity and the pop-
+ulation are fixed for every t; and relative wages are fixed along the BGP , this term will be
+constant.
+Following Alvarez and Lucas ( 2007 ), note that all goods enter symmetrically in the defi-
+nition of the aggregate final good and they differ only by their productivity level. Therefore,
+one can express the BGP growth rate of the economy fully in terms of exogenous objects:
+gautarky
+s =ψ
+η· Z∞
+0zℓs(t,z)σ−1
+σdFs(z)σ
+σ−1! 1
+1−α
+·L−α
+1−αs−ρ (B.10)
+54
+
+Since neither the productivity distribution Fs(z)nor the demand functions ℓs(t∗,z)will
+change along the BGP and all other terms in the growth rate are parameters, this pins down
+the uniqueness of the BGP under autarky, which completes the proof.
+Zero gravity
+Proof of Proposition (2)
+Proof. Without loss of generality, choose an arbitrary country s∈K. Since this world econ-
+omy is under zero gravity, evaluate ( 2) replacing for the real interest rate using equations
+(11) and ( 13) and evaluating τsd=1(∀s,d).Therefore, ( 2) collapses to:
+gzero gravity
+s ="
+α·ψ
+η·Ps(t∗)·∑k∈KYk(t∗)
+∑k∈KMk(t∗)−ρ#
+(B.11)
+for a BGP inclusive of each period t≥t∗. Since there are no trade costs, the law of one price
+holds, and Ps(t∗) =Pd(t∗)≡P(t∗)for every s,d∈K. Choosing P(t∗)to be num ´eraire of this
+economy shows that the growth rate will follow the stated equation.
+Since the choice of the sof arbitrary and the expression in the right-hand side of the
+equation is equal for every s∈K, it follows that the gzero gravity
+s =gzero gravityfor all s∈K,
+which shows that the growth rate must be common across all countries. Furthermore, since
+Yk(t∗) = Mk(t∗)Rk(t∗)and the fact that gsmust be constant along a BGP ,∑k∈KYk(t∗)
+∑k∈KMk(t∗)will
+only be homogeneous of degree zero in [Mn(t∗)]n∈KifRk(t∗) =R(t∗).
+With log preferences, households will consume a constant fraction (1−ρ)of their income
+and invest a fraction ρ. The non-arbitrage condition shows that real interest rate and returns
+to R&D equalize globally along the BGP:
+rs(t∗)
+Ps(t∗)=ψπs(t∗,ν)
+Ps(t∗)=ψΠs(t∗)
+Ms(t∗)Ps(t∗)=ψ
+Ms(t∗)Ms(t∗)× Rπ
+s(t∗) =ψρR(t∗)
+The next step in the proof is to show that gMs=gYs=gCs=gws=gAs=gzero gravity
+s .
+Since real wages, real profits, assets, and real output are linear functions of Ms(t)in each
+period, it follows that gMs=gYs=gws=gAs. Since, with log preferences, consumption is a
+constant fraction of output, gCs=gYs. Since the choice of swas arbitrary, this holds for any
+s∈K.
+For uniqueness, one needs to show that the cross-sectional equilibrium is unique. Start
+from equation ( 15). Evaluating it under zero gravity and noting that prices of final goods
+and intermediate goods equalize in that situation results in:
+Ps(t∗)Ys(t∗) =∑
+d∈K"
+(1−α)Tsws(t∗)−(1−α)θ
+∑k∈KTkwk(t∗)−(1−α)θ+α
+ηMs(t∗)
+∑k∈KMk(t∗)#
+Pd(t∗)Yd(t∗)
+55
+
+Recall that Ps(t∗)Ys(t∗) = ws(t∗)Ls+Πs(t∗)and note that, under zero gravity, Πs(t∗) =
+α
+ηMs(t∗)
+∑k∈KMk(t∗)Pd(t∗)Yd(t∗). So, given Ms(t∗)the expenditure determination system becomes a
+simple system in wages:
+ws(t∗)Ls=∑
+d∈K"
+(1−α)Tsws(t∗)−(1−α)θ
+∑k∈KTkwk(t∗)−(1−α)θ#
+wd(t∗)Ld
+Define the excess demand function:
+Zs(w,t)≡1
+ws(t∗)
+∑
+d∈K"
+(1−α)Tsws(t∗)−(1−α)θ
+∑k∈KTkwk(t∗)−(1−α)θ#
+wd(t∗)Ld−ws(t∗)Ls
+
+and note:
+∂Zs(w,t∗)
+∂wd(t∗)=1
+ws(t∗)(1−α)λF
+sd(t∗) 
+Ld+λF
+dd(t∗)
+wd(t∗)!
+>0
+which shows that it satisfies the gross substitution property and the cross-section equilibrium
+is unique. Therefore, the BGP under zero gravity will be unique.
+General case
+Proof of Proposition (3)
+Proof. Without loss of generality, choose an arbitrary country s∈K. From ( 18), real GDP is
+a linear function of Ms(t):
+Cs(t) +Is(t) =ws(t)
+Ps(t)Ls+Πs(t)
+Ps(t)=Ms(t)× R s(t)
+Over the BGP , with log preferences, consumption is a constant fraction of GDP: Cs(t∗) =
+(1−ρ)Ms(t)× R s(t). From the Poisson arrival process, gMs=˙Ms(t∗)
+Ms(t)=ψρIs(t∗)
+Ms(t∗). Since trade
+is balanced, Is(t∗) =ρ
+1−ρCs(t∗)and varieties grow at the following rate:
+gMs=ψρ
+α1−η 
+Ts
+λFss(t∗)! 1
+θ(1−α)
+λM
+ss(t∗)−1
+Ls+α
+η∑
+d∈KλM
+sd(t∗)Pd(t∗)Yd(t∗)
+Ps(t∗)Ms(t∗)
+
+The following statements are true:
+1.λF
+ss(t∗),λM
+ss(t∗)are homogeneous of degree zero in {Mn(t∗)};
+56
+
+2.
+PMs(t∗)
+PM
+d(t∗)
+,
+Pd(t∗)
+Ps(t∗)
+are homogeneous of degree zero in {Mn(t∗)};
+3.Yd(t∗)
+Ms(t∗)=Ms(t∗)×R s(t∗)
+Ms(t∗)is homogeneous of degree zero in {Mn(t∗)}if and only if Rs(t∗)
+is homogeneous of degree zero in {Mn(t)}for all s∈K.
+Therefore, for gMsto be consistent with a BGP it must also be homogeneous of degree zero
+in[Mn(t∗)]n∈K. As a result, if gMsis consistent with a BGP , Rs(t∗)must be homogeneous of
+degree zero in [Mn(t∗)]n∈Kfor all s∈K. As a result, it must be that varieties grow at the
+same rate across countries, which implies that Rs(t∗) =R(t∗).
+With log preferences, households will consume a constant fraction (1−ρ)of their income
+and invest a fraction ρ. The non-arbitrage condition shows that real interest rate and returns
+to R&D equalize globally along the BGP:
+rs(t∗)
+Ps(t∗)=ψπs(t∗,ν)
+Ps(t∗)=ψΠs(t∗)
+Ms(t∗)Ps(t∗)=ψ
+Ms(t∗)Ms(t∗)× Rπ
+s(t∗) =ψρR(t∗)
+The next step in the proof is to show that gMs=gYs=gCs=gws=gAs=gs. Since real
+wages, real profits, assets, and real output are linear functions of Ms(t)in each period, it
+follows that gMs=gYs=gws=gAs. Since, with log preferences, consumption is a constant
+fraction of output, gCs=gYs. Since the choice of swas arbitrary, this holds for any s∈K.
+Changes in trade costs
+Proof of Proposition 4
+Proof. The equilibrium growth rate of varieties:
+gMs=ψρ
+ 
+Ts
+λFss(t∗)! 1
+θ(1−α)
+λM
+ss(t∗)−1
+Ls+α
+η∑
+d∈KλM
+sd(t∗)Pd(t∗)Yd(t∗)
+Ps(t∗)Ms(t∗)
+
+Recall that:
+∑
+d∈KλM
+sd(t∗) =∑
+d∈KMs(τsdPs(t∗))1−η
+∑k′∈KMk′(τk′dPk′(t∗))1−ηPd(t∗)Yd(t∗)
+Ps(t∗)Md(t∗)
+Since these economies are symmetric, then: Ps(t∗) = Ps′(t∗),ws(t∗) = ws′(t∗),Ms(t∗) =
+Ms′(t∗)for every s,s′andτsd=τfor every sd. Evaluated with symmetric economies, the
+expression above becomes:
+∑
+d∈KλM
+sd(t∗) =(N−1)τ1−η
+[1+ (N−1)τ1−η]+1
+[1+ (N−1)τ1−η]=1
+57
+
+Therefore, denoting Ps(t∗) = P(t∗),Ms(t∗) = M(t∗)and noting that Yd(t∗) = Md(t∗)×
+R(t∗)the growth rate becomes to:
+g∗=ψρ
+(Ts)1
+θ(1−α) 
+1
+1+ (N−1)τ1−θ!−1
+θ(1−α) 
+1
+1+ (N−1)τ1−η!−1
+Ls+α
+ηR
+
+Then, take the derivative of g∗wrtτ:
+∂g∗
+∂τ=ψρ(Ts)1
+θ(1−α) 
+1
+1+ (N−1)τ1−θ!−1
+θ(1−α) 
+1
+1+ (N−1)τ1−η!−1
+Ls×
+
+(1−η)τ−η
+1+ (N−1)τ1−η−θτ−θ−1
+1+ (N−1)τ−θ
+<0
+which is negative because (1−η)<0 and every other term in the parenthesis is positive.
+B.10 Welfare
+Recall that Cs(t∗)can be expressed as a constant fraction of total lifetime wealth:
+Cs(t∗) =ρ"
+As(t∗) +Z∞
+t∗ws(τ)
+Ps(τ)Ls·exp−¯rs(τ)·τ	
+dτ#
+where ¯rs=1
+τRτ
+t∗rs(t)dtis the average interest rate between t∗andτ. Since this holds
+along the BGP ,ws(τ)
+Ps(τ)=exp{(τ−t∗)gws}ws(t∗)
+Ps(t∗). Furthermore, sincers(t∗)
+Ps(t∗)is constant along the
+BGP , ¯rs(τ) =rs(t∗)
+Ps(t∗)for all τ≥t∗. Replacing those above results in:
+Cs(t∗) = ρ
+As(t∗) +ws(t∗)
+Ps(t∗)LsZ∞
+t∗·exp
+
+− 
+rs(t∗)
+Ps(t∗)−gws!
+·(τ−t∗)
+
+dτ
+
+=ρ
+As(t∗) +ws(t∗)
+Ps(t∗)Ls
+rs(t∗)
+Ps(t∗)−gws
+
+=ρAs(t∗) +ρws(t∗)
+Ps(t∗)Ls
+rs(t∗)
+Ps(t∗)−gws
+Since gws=gCsand gCs=rs(t∗)
+Ps(t∗)−ρ,rs(t∗)
+Ps(t∗)−gws=ρ. Hence, over the BGP , real consump-
+tion is a fraction of assets plus real labor income:
+58
+
+Cs(t∗) =ρAs(t∗) +ws(t∗)Ls
+Ps(t∗)
+Welfare over the BGP is:
+Z∞
+t∗exp{−ρ(t−t∗)}log 
+exp{g∗t}Cs(t∗)
+dt=Z∞
+t∗exp{−ρ(t−t∗)}log 
+Cs(t∗)
+dt
++Z∞
+t∗exp{−ρ(t−t∗)}g∗tdt
+=log 
+Cs(t∗)
+ρ+g∗
+ρ2
+=log 
+As(t∗)+1
+ρlog 
+ws(t∗)Ls
+Ps(t∗)!
++g∗
+ρ2
+Finally, using the fact that ψAs(t∗) =Ms(t∗), I can write:
+Z∞
+t∗exp{−ρ(t−t∗)}log 
+exp{g∗t}Cs(t∗)
+dt=log 
+1
+ψMs(t∗)!
++1
+ρlog 
+ws(t∗)Ls
+Ps(t∗)!
++g∗
+ρ2
+Static welfare For real labor income, start from equation ( 9) evaluated at s=dand use
+the fact that, as shown in equation (B. 5) of Appendix B. 5,
+Ps(t) =γ·"
+∑
+n∈KTn(wn(t)1−αPM
+n(t)ατnd)−θ#−1
+θ
+where γ≡Γ
+θ+1−σ
+θ 1
+1−σ. Then, own trade share in a given country can be represented by:
+λF
+dd(t) =γθ·Td(wd(t)1−α(Pd(t)M)α)−θ
+[Pd(t)]−θ
+Solving forwd(t)
+Pd(t)delivers:
+wd(t)
+Pd(t)=γ1
+1−αλdd(t)−1
+(1−α)θT1
+(1−α)θ
+d 
+PM
+d(t)
+Pd(t)!−α
+Replacing for the definition of PM
+d(t) =
+∑k∈KMk
+τkdPk(t)
+α−α
+1−α−1−α
+α
+results in:
+wd(t)
+Pd(t)=γ1
+1−αλdd(t)−1
+(1−α)θT1
+(1−α)θ
+d
+∑
+k∈KMk 
+τkdPk(t)
+αPd(t)!−α
+1−α
+1−α
+59
+
+Consider what happens to welfare after a change in trade costs from τtoτ+dτ, as in Arko-
+lakis, Costinot, and Rodr ´ıguez-Clare ( 2012 ). In this dynamic setting, to compare the static
+component of welfare, I need to compare what happens across the two BGPs, comparing the
+two initial equilibria. Suppose t∗is the initial period of the original BGP while t∗∗is the first
+period of the final BGP . To fit this framework to the general trade literature, I will compare
+the static component of these BGP as if they happened in the same period, and compound
+the difference over time.
+Let ˆx≡x(t∗∗)/x(t∗). Then cumulative changes in static welfare are:
+1
+ρlog
+\ws(t∗∗)
+Ps(t∗∗)
+=1
+ρlog
+cλF
+dd(t∗∗)−1
+(1−α)θ
++1
+ρηlog
+∑
+k∈Kµk(t∗)bMk(t∗∗)· 
+bτkdbPk(t∗∗)
+bPd(t∗∗)!1−η
+
+where µk(t)≡Mk(t)·
+τkdPk(t)
+Pd(t)1−η
+∑k∈KMk(t)·
+τkdPk(t)
+Pd(t)1−η
+60
+
+B.11 Nesting of Romer and Eaton-Kortum
+In this subsection, I will briefly describe how to recover the canonical P . M. Romer ( 1990 )
+and Eaton and Kortum ( 2002 ) models from the framework described above.
+Eaton-Kortum Setting α=0 implies that the value of new varieties is zero since the de-
+mand for and profits of varieties is also zero. Therefore, Is(t) = 0 and As(t) = 0 for all
+tand s. While the Eaton-Kortum model is a static model, here it can be thought of as an
+infinite sequence of static models with no intertemporal decision, since there are no longer
+asset markets that permit households to save:
+max
+Cs(t),cs(t,ω)ω∈[0,1]Z∞
+0exp{−ρt}log 
+Cs(t)
+dt
+s.t.Ps(t)Cs(t) = ws(t)Ls
+Cs(t) =Z1
+0cs(t,ω)σ−1
+σdωσ
+σ−1
+Ps(t)Cs(t) =Z1
+0ps(t,ω)cs(t,ω)dω
+Furthermore, since α=0, the intermediate and research and development sectors disap-
+pear. The problem of the final goods producer becomes:
+max
+ℓs(t,ω)pss(t,ω)·zs(t,ω)·ℓs(t,ω)−ℓs(t,ω)ws(t)
+which is identical to the one in the standard Eaton-Kortum model. Equilibrium will take
+the form of a system of labor market determination equations that solve for Nwages using
+trade expenditure shares.
+Romer Setting τsd→∞fors̸=dimplies trade costs are prohibitively high internationally,
+such that varieties of both final goods and intermediate goods become sold only locally.
+Normalizing the price of the domestic final good to be the num ´eraire in each country, I write
+the dynamic household problem as:
+max
+Cs(t),cs(t,ω)ω∈[0,1]Z∞
+0exp{−ρt}log 
+Cs(t)
+dt
+s.t.Is(t) = ˙A(t) = rs(t)As(t) +ws(t)Ls−Cs(t)
+Cs(t) =Z1
+0cs(t,ω)σ−1
+σdωσ
+σ−1
+Furthermore, redefine assumption ( 2) in the following terms:
+Assumption 4(Productivity draws to recover Romer) .To recover the Romer model as a special
+case of the general model, I need to specify productivity terms z s(ω)which are homogeneous across
+61
+
+firms in each country. In order to do so, redefine the cumulative distribution function F s(t)(z)of the
+baseline case to be one of a degenerate random variable with a point mass concentrated at a certain
+scalar for each country. Formally:
+Fs(t)(z) =(
+0for z<Ts
+1for z≥Ts
+Using the symmetry assumption above, the num ´eraire normalization and the unavail-
+ability of foreign intermediate goods in the domestic market, the final goods assembler
+technology becomes:
+ys(t,ω) =Ts[ℓs(t,ω)]1−α 
+1
+αZMs(t)
+0[xss(t,ω,ν)]αdν!
+which is identical to the single-country Romer model. Profits and demand per variety
+ν∈[0,Ms(t)]will be constant and growth will be driven by the domestic R&D sector.
+Equilibrium will take the following form: labor markets will clear; total final goods pro-
+duced being equal to total final goods used for consumption, intermediate production; and
+R&D production; and optimized household optimal dynamics will be described by an Euler
+equation and an asset/measure accumulation equation.
+62
+
+C Qualitative evidence: life among product innovators
+As an initial exploratory part of this research, I conducted a qualitative survey of managers
+in firms of New Member States. I first collected a list of notable firms from publicly available
+sources, restricted the sample to those who were active for at least two years before the
+time their respective countries joined the European Union, and then crawled through their
+English-language websites to collect the publicly available contact information. I sent the
+questionnaire below to 221firms.
+My goal was to assess if the description of the world that macro theorists set forth aligns
+with the practical intuitions of entrepreneurs. And it turns out that, at among the group of
+managers that responded to my email, they do. I will highlight two illustrative cases in the
+text.
+For instance, the dynamic mechanism that propels growth, as I have described in the
+theory section is that increased access to foreign markets increases expected profits, thereby
+increasing the incentive to invest in research and development. This is entirely consistent
+with the description of the facts by one Czech biotech entrepreneur:
+“Once we joined the EU [...] this allowed us to increase our exports and fund our
+own genetic programmes.” — CEO of a Czech Biotech company
+In their comments, they went on to specify the importance of having access of not only to
+the European market itself, but also third party markets. They mentioned that after the Czech
+Republic joined the EU, his firm had immediate access to the standards for labeling and
+certification in existing trade agreements between the EU and third parties, which facilitated
+their firm’s exports. These kinds of non-tariff barriers are typically considered part of trade
+costs τin most trade models.
+In this firm’s particular case, product innovation came through the invention of breeding
+of new varieties of farm animals, that were then commercialized. But we see a similar story
+in a very different market: alcoholic beverages:
+“In2004 , we first started producing the ultra-luxury variation of our signature
+vodka, which became a popular export product [...] and later started production
+of18new products.” — Spokesperson of a Latvian liquor manufacturer
+In this case, the firm reported having used the European market’s exports as a platform
+for global expansion. For context, 2004 marks the year Latvia accessed the EU —and also
+the year that this manufacturer decided to expand its product line by introducing the ultra-
+luxury versions of its signature product, which they claimed was adequate to the Western
+European market.
+Once again, this is qualitatively consistent with the theoretical mechanism proposed in
+the model, with market access likely inducing product innovation. Of course, these indi-
+vidual experiences are not necessarily representative of a large universe of firms, which is
+why in the next two sections I will perform a detailed quantitative exploration of the data,
+first detailing some stylized facts, then going into causal inference. Nonetheless, the type
+of qualitative evidence presented here is useful to show to that the big picture is consistent
+with the individual experiences.
+63
+
+C.1Qualitative Questionnaire
+1. After your country joined the European Union, did your company:
+• start producing more products/services or varieties;
+• start producing fewer products/services or varieties; or
+• keep producing about the same number of products/services or varieties?
+2. If your company changed the number of products/services or varieties after EU acces-
+sion, how was the change implemented and what were the results? Please include any
+important information or relevant anecdotes.
+3. If your company changed the number of products/services or product/service vari-
+eties after EU accession, was the decision primarily motivated by access to new tech-
+nologies/imports, access to new markets/exports, or both? Explain.
+4. After your country joined the European Union, did your company:
+• stay in the same industry;
+• expanded to another industry; or
+• move completely to a new industry?
+5. If your company expanded to another industry or moved to a new industry. Please
+explain whether the change was related to your country’s EU accession.
+64
+
+D Data and Empirical Appendix
+D.1Extensive Description of the Data
+Production data Production data comes from Eurostat’s Prodcom ( Production Communau-
+taire), which is an annual full coverage survey of the European mining, quarry and manu-
+facturing sectors, reporting the value of production of 4,000+ different product-lines of EU
+members and candidate countries. Prodcom reports, for each product line, country, and year,
+the value (in euros) and volume (in kg, m2, number of items, etc.) of production. Product
+lines follow the Statistical Classification of Products by Activity in the EU (CPA).
+The target population of the full coverage sample is every enterprise that manufactures
+some good in the Prodcom List. Data quality is good for member countries since European
+Law21mandates National Statistical Institutes to collect enterprise-level information on the
+value and volume of production covering at least 90% of national production in each NACE
+class, defined as the first four digits of each product code. In practice, reporting goes beyond
+this minimum threshold and, according to Eurostat, the coverage error is estimated to be
+below 10%.
+Letn,i,p,tindex countries, sectors, products, and periods, respectively; and denote Yinpt
+as the market value of production of product p22. The set of varieties produced in each
+sector is Mnit={k:Ynikt>0}. The measure of varieties is simply the cardinality of the
+set of produced varieties Mnit=|M nit|=∑k1{k:Ynikt>0}. The overall measure over varieties
+produced in a country is, then: Mnt=∑iMnit. These measures can be directly calculated
+from Prodcom’s table.
+Oftentimes, the value of production is labeled as confidential information by the National
+Statistical Institute, particularly in cases in which production is concentrated on a few enter-
+prises. In those cases, while the value and volume are not publicly available, Eurostat reports
+this number as confidential , which still allows one to infer that Ynikt>0 for that particular
+variety k, implying that the variety is produced.
+Typically, production information at the variety level is not available, which pushed re-
+searchers to use product-level trade data instead. Some exceptions include Goldberg et al.
+(2010 ) and Rachapalli ( 2021 ), who use firm-product links from the Indian Survey of Manufac-
+turers; A. B. Bernard, S. J. Redding, and Schott ( 2011 ), who use US Manufacturing Censuses
+firm-product data.
+Tariff and trade flow data Bilateral tariff data come from WITS (World Integrated Trade
+Solution Trade Stats). It consolidates tariff data from the UNCTAD’s Trade Analysis Infor-
+mation System (TRAINS) as well as from the WTO.
+21“PRODCOM statistics are compiled under the legal basis provided by Council Regulation (EEC) NO
+3924 /1991 of19December 1991 and by Commission Regulation (EC) No 0912 /2004 of29April 2004 imple-
+menting the Council Regulation (EEC) No 3924 /91on the establishment of a Community survey of industrial
+production. Additionally, a Commission Regulation updating the PRODCOM classification is available annu-
+ally since 2003 .”
+22To construct sector codes, I use Eurostat concordances to map Prodcom product codes to Harmonized
+System (HS) product codes. I then used the respective HS- 2division codes as sector codes.
+65
+
+To construct effective tariff rates, one starts from baseline tables of most favored nation
+tariffs at the source-country ×destination-country ×HS6-code×. Then, one superimposes
+every bilateral product level preferential tariff available in the WITS database on each of these
+tables. Furthermore, whenever there are gaps between two identical bilateral preferential
+tariffs, one fills in those gaps. The result is a dataset of effectively applied tariff rates.
+Bilateral trade flow data comes from UNCOMTRADE. These data, which are widely used
+in research, come natively in a source-country ×destination-country ×HS-6product-code
+×year format, which makes it readily compatible with the tariff data mentioned above.
+Lets,d,i,p,tindex source countries, destination countries, sectors, products, and periods,
+respectively; and denote Xsdipt as the market value of bilateral trade of product p.
+The set of traded varieties in each sector is Xnit={k:Xsdikt>0}. Analogously as with
+production, one can observe the total number of traded varieties ∑k1{k:Xnikt>0}. To make
+sure these are comparable to PRODCOM’s codes, whenever possible, I used concordances
+and restricted the set of goods to create a dataset that matched both trade and production.
+Other data I also collected data on (a) the dates of accession of new member states to the
+European Union; (b) trade agreements existent and entered into force between the European
+Union and third parties before 2004 ; and (c) expenditure in private research & development
+expenditures per capita. The first two come from hand collecting documents and tables from
+the European Commission’s official websites while the latter comes from Eurostat.
+D.2Formal Description of the Callaway & Sant’Anna Estimator
+Formally, let a “treatment” group gbe defined as being treated for all periods t≥g. Note
+that, since the EU enlargement happened simultaneously for more than one country, there is
+more than one country nfor each gn=g. If some country cluster is in group g, then Gnt=g
+(∀t). If it is never treated, it is in the control group, and then Gnt=∞(∀t).
+The parameter of interest is the average treatment on the treated for a given treatment
+group gand horizon t, i.e.:
+ATT(g,t) =E[Mnt(g)−Mnt(0)|Gnt=g] (D.1)
+where Mnt(g)is the potential outcome of country nat period tif treated at period g;Mnt(0)
+is the potential outcome country nat period tif untreated; Xng−1are pre-treatment time-
+invariant covariates; and Gnt=gis a group indicator.
+Note that the ATT(g,t)is group and period-specific. It can be recovered under as-
+sumptions similar to the standard difference-in-differences framework: parallel trends and
+no-anticipation23. The next step is to summarize the ATT across groups by appropriately
+weighting the results as:
+23Formally, parallel trends is the assumption that potential outcomes evolve almost surely equally to the
+untreated group: E[Mnt(0)−Mnt−1(0)|Gnt=g] =E[Mnt(0)−Mnt−1(0)|Gnt>g]for all t≥g. No anticipation
+means that potential outcomes for a treated group are equal to the untreated group for any date before the
+treatment —i.e., for all t<g,E[Mnt(g)|Gnt=1] =E[Mnt(0)|Gnt=1]almost surely.
+66
+
+θ(t) =∑
+g1{g≤t}wgtATT(g,t) (D.2)
+for some weights wgt. Callaway and Sant’Anna ( 2021 ) propose the weights wgt=P(Gnt=
+g|Gnt≤t), which is the share of country clusters from group g≥tout of all country clusters
+being treated at time t.
+D.3Further Details on Causal Inference
+Since the largest wave of enlargement was in 2004 , in this analysis I will focus exclusively on
+that wave. The source of variation is at the source-country ×destination-country ×HS-code
+product level. In each year, there are about 300 thousand observations. Figure 15shows
+the interquartile range of bilateral product-level tariff rates between NMS and the set of
+countries that had concluded trade agreements with the EU prior to 2004 .
+It shows that there is not much change in tariffs leading up to membership and then a
+median drop of about 2.5percentage points between 2003 and2004 . In the years immedi-
+ately after membership, there is also not a large change in the distribution of bilateral tariff
+rates. There are some changes after 2007 , possibly because some future provisions in trade
+agreements kick in.
+02468101214161820
+2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010Tariff rate (pp)IQR
+Median
+Figure 15:Distribution of Tariff Changes Over Time :Interquartile Range Bilateral HS 6-Product-
+Level Tariff Rates Between New Member States ( 2004 EU Enlargement) and Set of Countries that Concluded
+Trade Agreements with EU prior to 2004 . Data were constructed from WITS Preferential and MFN databases.
+The metric of the tariff shock change is simply ∆τsdip,2004≡(τsdip,2004−τsdip,2003), which
+is the change in the level of effectively applied bilateral tariffs at the product level between
+67
+
+80
+ 60
+ 40
+ 20
+ 0 20 40 60 80
+sdip,2004, in percentage points
+0.0000.0250.0500.0750.1000.1250.1500.175Distribution of T ariff Changes in 2004 
+ (non-zero changes)Figure 16:Tariff Shock: Distribution of the (non-zero) observations of the changes in Bilateral HS 6-
+Product-Level Tariff Rates Between New Member States ( 2004 EU Enlargement) and Set of Countries that
+Concluded Trade Agreements with EU prior to 2004 . Data were constructed from WITS Preferential and MFN
+databases.
+68
+
+2003 and2004 . Figure 16plots the distribution of ∆τsdip,2004, excluding the zero-valued
+observations. The average ∆τsdip,2004 is 2.14% and the standard deviation is 12%.
+I estimate a sequence of cross-sectional local-projection linear probability models, which
+estimate what is the marginal effect of an increase in the tariffs on exports of a given product
+p,conditional on that country s not producing that particular product before joining the EU in
+2003 . The fact the data is highly granular permits me to exploit within industry ×source ×
+destination ×horizon (across product) variation.
+Formally, I estimate the following equation:
+P
+Xsdip,h>0Ys·ip,2003=0
+=αh+βh·∆τsdip,2004+γsdi,h+νsdip,h (D.3)
+forh∈ {2000,· · ·, 2010}
+where Xsdip,his the market value of exports between country sand country dof product pof
+industry iat horizon h;Ys·ip,2003 is the market value of production in country sof product pof
+industry iin 2003; αhare horizon (time) fixed-effects; γsdi,haresource ×destination ×industry
+interactions fixed-effects for each h.
+Note that, since these are local projections, the right-hand side coefficients, the regressor
+τsdip,2004 is fixed for all horizons, and the coefficients βhchange. As initially argued by
+Chodorow-Reich ( 2020 ) and later formalized by Dube et al. ( 2023 ), these types of cross-
+sectional event studies with local projections can be interpreted as differences in differences
+with continuous treatments. If consistently estimated, the estimated coefficients βh, then, are
+simply the average treatment on treated compared to the potential outcomes of not being
+treated, normalized to a treatment of intensity of one unit.
+This strategy takes the assertion in Baier and Bergstrand ( 2007 ) (henceforth B&B) that
+countries engage endogenously in free trade agreements (FTAs) and one needs to look for
+a plausibly exogenous source of variation to check whether or not FTA “actually increase
+members’ international trade” seriously. Here, I rely on their strategy of running dynamic
+panels with fixed effects to control for unobserved heterogeneity.
+Importantly, while they estimate their models at the aggregate country level with source ×
+destination ×period fixed effects, I have enough variability and data availability to estimate
+it at the product-level adding industry ×source ×destination ×period fixed effects. Hence,
+this approach adds granularity to B&B’s strategy, thereby controlling for more unobserved
+heterogeneity.
+The identification assumption is that conditional on the very saturated fixed effects that
+this model includes, the unobserved components νsdip,hare uncorrelated with the change in
+tariffs ∆τsdip,2004. Intuitively, the identification is robust to a NMS (say, Poland’s) policymak-
+ers endogenously targeting EU accession to have preferential access to a third-party’s (say,
+Mexico’s) car industry (relative to other industries and countries), but not if they want to
+have preferential access to compact cars relative to SUVs in Mexico.
+The identification strategy is plausible. In general, neither lobbyists of industry trade
+groups nor trade negotiations work in such a disaggregated product-level setting. Typically,
+lobbyists consolidate the interests of the producers of many products under the same um-
+brella and try to influence negotiations. Similarly, even when governments are negotiating
+tariffs schedule changes —which was not the case in this particular case —these negotiations
+69
+
+typically also happen in blocs, with governments exchanging positions in some products for
+others. Hence, the fact that this is a highly disaggregated dataset at the product level adds a
+lot of strength to the identification strategy.
+As shown in Figure 6, an increase in market access by 1percentage point increases the
+probability of starting to produce and export a given product by about 1percent by 2010 . To
+benchmark this result, it is about one-third of the conditional mean E[Xsdip,h>0|Xs·ip,h>
+0,h>2003] = 2.9%. There are no signs of a pre-existing trend before 2004 : both the
+magnitude of the coefficients and the standard errors are very small before the treatment
+date.
+The related set of continuation regressions, is very similar to the model estimated in
+equation ( 1), except that now it conditions in initial production being active:
+P
+Xsdip,h>0Ys·ip,2003=1
+=αh+βh·∆τsdip,2004+γsdi,h+νsdip,h (D.4)
+forh∈ {2000,· · ·, 2010}
+In this case, there are no effects observed on the extensive margin. When countries
+already have the ability to produce a given product, additional market access produces very
+noisy results in the extensive margin. The coefficients are large and bounce between positive
+and negative and the confidence bands are even larger. One potential explanation is that
+the countries possibly already had market access before 2004 , as illustrated by the positive
+(albeit insignificant results) for 2000 -03, since they already had the production capacity. It is
+possible that most of the effects concentrate on the intensive margin, something that futures
+iteration of this paper would need to check.
+70
+
+-0.01-0.00500.0050.010.015
+2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010Figure 17:Entry Regressions. This plot shows the coefficients βhof the local projection linear probability
+models specified in equation ( 1). Each year is a different cross-sectional regression with approximately 300
+thousand observations. The whiskers show 95% confidence intervals with robust standard errors clustered at
+the source-destination-industry level.
+-0.2-0.15-0.1-0.0500.050.10.150.2
+2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+Figure 18:Continuation Regressions. This plot shows the coefficients βhof the local projection linear
+probability models specified in equation (D. 4). Each year is a different cross-sectional regression with approx-
+imately 300thousand observations. The whiskers show 95% confidence intervals with robust standard errors
+clustered at the source-destination-industry level.
+71
+
+E Computational Appendix
+This computation appendix explains how I solve for the BGP growth rate.
+1.Inner loop (Prices of Final Goods) . Given parameters {θ,ψ,α,L,T,τ}and guesses for
+wages w, measures of varieties Mand some common return R, use the input-output
+structure of the model to solve for the prices of the final goods.
+Ps(t) = γ·"
+∑
+n∈KTn
+PM
+n(t)αwn(t)1−ατns−θ#−1
+θ
+Ps(t) = γ·
+∑
+n∈KTn
+wn(t)1−ατns−θ
+∑
+k∈KMk(t) 
+τknPk(t)
+α!−α
+1−α
+θ(1−α)
+−1
+θ
+with γ≡Γ
+θ+1−σ
+θ 1
+1−σ. The last equation makes it explicit that, given parameters,
+wages, and measures of varieties, this is a system of |N|equations and |N|unknowns
+in final goods prices. A simple grid search algorithm finds a fixed point for final goods
+prices.
+2.Intermediate loop . Given parameters {θ,ψ,α,L,T,τ}and guesses the measures of
+varieties M, some common return R, and the prices from the following step, use the
+expenditure determination equation to solve for final demand.
+Ps(t)Ys(t) =∑
+d∈K"
+(1−α)λF
+sd(t) +α
+ηλM
+sd(t)#
+Pd(t)Yd(t)
+Update the guess for usages using a constant fraction (1−ρ)of income over the BGP
+and taking advantage of returns Rgand measures Mg
+k:
+ws(t)Ls(t) = ( 1−α)∑
+k∈Kλsk(t)F(1−ρ)RgMk(t)g
+Re-normalize ws(t) =ws(t)
+Ls·∑k∈Kwk(t)Lkto ensure it always maps onto a compact space, it
+is an operator and converges according to the contraction mapping theorem.
+3.Outer loop (Growth rates) . Given parameters {θ,ψ,α,L,T,τ}, prices, wages, and trade
+shares calculated in the previous steps, update the guesses for Mg
+susing:
+Mg′
+s= 
+λF
+ss(t∗)
+Ts!−1
+θ(1−α)
+λM
+ss(t∗)−1
+LsMg
+s
+Rg+α
+η∑
+k∈K 
+λM
+sk(t∗)∑l∈KλF
+kl(t∗)(1−ρ)Mg
+l
+Ps(t∗)Mg
+s!
+72
+
+Again, to make sure it always maps onto a compact space, it is an operator and con-
+verges according to the contraction mapping theorem, renormalize the measure of va-
+rieties: Mg′
+s=Mg′
+s
+Ps(t∗)·∑k∈KMg′
+sPs(t∗)
+And update the guesses for the global return rates:
+Rg′=1
+∑k∈KMg′
+sPs(t∗)
+A test of this algorithm is, starting from a random guess, knowing that a group of sym-
+metric countries will eventually converge towards the same measure of varieties within some
+tolerance criterion <ε. One numerical illustration of this convergence is the Figure below,
+for a group of 4symmetric countries, starting for a random guess, that eventually converge
+to 0.25 (the sum of the measure of varieties is normalized to sum to 1).
+0 10 20 30 400.10.20.30.4
+IterationsEquilibrium measure of varieties
+73
+
+E.1Calibration of Trade Shares
+I use observed trade flows to infer trade costs. The strategy goes back to Head and Ries
+(2001 ). According to the handbook chapter by Head and Mayer ( 2014 ), the index is called
+the Head-Ries Index (HRI) since 2011 (when the working paper version of Eaton, Kortum,
+et al. ( 2016 ) was published).
+Expenditure in final goods is defined as:
+EF
+sd(t) =λF
+sd(t)Pd(t)Yd(t) =Ts
+˜Ms(t)1−αθ
+(ws(t)1−ατsd)−θ
+∑N
+n=1Tn
+˜Mn(t)1−αθ
+(wn(t)1−ατnd)−θ·Pd(t)Yd(t)
+The ratio between EF
+sd(t)and EF
+dd(t)is, then:
+EF
+sd(t)
+EF
+dd(t)=Ts
+˜Ms(t)1−αθ
+(ws(t)1−ατsd)−θ
+Td
+˜Md(t)1−αθ
+(wd(t)1−ατdd)−θ
+Analogously, the ratio between EF
+ds(t)and EF
+ss(t)is:
+EF
+ds(t)
+EFss(t)=Ts
+˜Md(t)1−αθ
+(wd(t)1−ατds)−θ
+Td
+˜Ms(t)1−αθ
+(ws(t)1−ατss)−θ
+Therefore:
+EF
+sd(t)
+EF
+dd(t)·EF
+ds(t)
+EFss(t)=τsdτds
+τssτdd−(1−α)θ
+Using Assumption ( 1),τss=τdd=1 and τsd=τds. Hence, I can express the trade cost τsd
+as:
+τsd= 
+EF
+sd(t)
+EF
+dd(t)·EF
+ds(t)
+EFss(t)!−1
+2θ(1−α)
+(F.1)
+74

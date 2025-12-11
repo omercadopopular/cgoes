@@ -1,0 +1,2397 @@
+[
+  {
+    "country": "Tunisia",
+    "dates": "25 and 27 November 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_tun_25nov25_e.htm"
+  },
+  {
+    "country": "Nepal",
+    "dates": "17 and 19 November 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_npl_17nov25_e.htm"
+  },
+  {
+    "country": "Guatemala",
+    "dates": "12 and 14 November 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_gtm_12nov25_e.htm"
+  },
+  {
+    "country": "United Kingdom",
+    "dates": "28 and 30 October 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_gbr_28oct25_e.htm"
+  },
+  {
+    "country": "Sri Lanka",
+    "dates": "15 and 17 October 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tpr_lka_15oct25_e.htm"
+  },
+  {
+    "country": "Zambia",
+    "dates": "23 and 25 September 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp574_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "30 June and 2 July 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp573_e.htm"
+  },
+  {
+    "country": "Colombia",
+    "dates": "18 and 20 June 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp572_e.htm"
+  },
+  {
+    "country": "Cabo Verde",
+    "dates": "14 and 16 May 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp571_e.htm"
+  },
+  {
+    "country": "Sierra Leone",
+    "dates": "15 and 17 April 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp570_e.htm"
+  },
+  {
+    "country": "Cambodia",
+    "dates": "26 and 28 March 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp569_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "12 and 14 March 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp568_e.htm"
+  },
+  {
+    "country": "Ukraine",
+    "dates": "26 and 28 February 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp567_e.htm"
+  },
+  {
+    "country": "Madagascar",
+    "dates": "12 and 14 February 2025",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp566_e.htm"
+  },
+  {
+    "country": "Solomon Islands",
+    "dates": "11 and 13 December 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp565_e.htm"
+  },
+  {
+    "country": "Brunei Darussalam",
+    "dates": "27 and 29 November 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp564_e.htm"
+  },
+  {
+    "country": "Paraguay",
+    "dates": "20 and 22 November 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp563_e.htm"
+  },
+  {
+    "country": "Nigeria",
+    "dates": "13 and 15 November 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp562_e.htm"
+  },
+  {
+    "country": "Maldives",
+    "dates": "23 and 25 October 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp561_e.htm"
+  },
+  {
+    "country": "Malawi",
+    "dates": "9 and 11 October 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp560_e.htm"
+  },
+  {
+    "country": "Kazakhstan",
+    "dates": "25 and 27 September 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp559_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "17 and 19 July 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp558_e.htm"
+  },
+  {
+    "country": "Jamaica",
+    "dates": "10 and 12 July 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp557_e.htm"
+  },
+  {
+    "country": "Mozambique",
+    "dates": "1 and 3 July 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp556_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "19 and 21 June 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp555_e.htm"
+  },
+  {
+    "country": "Iceland",
+    "dates": "12 and 14 June 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp554_e.htm"
+  },
+  {
+    "country": "Morocco",
+    "dates": "22 and 24 April 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp553_e.htm"
+  },
+  {
+    "country": "Angola",
+    "dates": "18 and 20 March 2024",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp552_e.htm"
+  },
+  {
+    "country": "Chile",
+    "dates": "11 and 13 December 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp551_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "6 and 8 December 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp550_e.htm"
+  },
+  {
+    "country": "Albania",
+    "dates": "22 and 24 November 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp549_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "13 and 15 November 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp539_e.htm"
+  },
+  {
+    "country": "Chinese Taipei",
+    "dates": "7 and 9 November 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp548_e.htm"
+  },
+  {
+    "country": "Southern African Customs Union, Botswana, Eswatini, Lesotho, Namibia, South Africa,",
+    "dates": "25 and 27 October 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp547_e.htm"
+  },
+  {
+    "country": "Jordan",
+    "dates": "27 and 29 September 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp546_e.htm"
+  },
+  {
+    "country": "Cameroon, Central African Republic, Chad, Gabon, Congo,",
+    "dates": "20 and 22 September 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp545_e.htm"
+  },
+  {
+    "country": "Fiji",
+    "dates": "19 and 21 July 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp544_e.htm"
+  },
+  {
+    "country": "Honduras",
+    "dates": "12 and 14 July 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp543_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "5 and 7 June 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp542_e.htm"
+  },
+  {
+    "country": "Liberia",
+    "dates": "24 and 26 May 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp541_e.htm"
+  },
+  {
+    "country": "Organization of Eastern Caribbean States (OECS), Antigua and Barbuda, Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,",
+    "dates": "3 and 5 May 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp537_e.htm"
+  },
+  {
+    "country": "El Salvador",
+    "dates": "18 and 20 April 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp540_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "1 and 3 March 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp538_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "8 and 10 February 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp536_e.htm"
+  },
+  {
+    "country": "Dominican Republic",
+    "dates": "24 and 26 January 2023",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp535_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "14 and 16 December 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp534_e.htm"
+  },
+  {
+    "country": "Seychelles",
+    "dates": "5 and 7 December 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp533_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "23 and 25 November 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp532_e.htm"
+  },
+  {
+    "country": "Barbados",
+    "dates": "25 and 27 October 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp531_e.htm"
+  },
+  {
+    "country": "Djibouti",
+    "dates": "12 and 14 October 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp530_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "5 and 7 October 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp529_e.htm"
+  },
+  {
+    "country": "Moldova, Republic of",
+    "dates": "20 and 22 July 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp528_e.htm"
+  },
+  {
+    "country": "Ghana",
+    "dates": "21 and 23 June 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp527_e.htm"
+  },
+  {
+    "country": "New Zealand",
+    "dates": "1 and 3 June 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp526_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "18 and 20 May 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp525_e.htm"
+  },
+  {
+    "country": "Pakistan",
+    "dates": "30 March and 1 April 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp524_e.htm"
+  },
+  {
+    "country": "United Arab Emirates",
+    "dates": "22 and 24 March 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp523_e.htm"
+  },
+  {
+    "country": "Guyana",
+    "dates": "2 and 4 March 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp522_e.htm"
+  },
+  {
+    "country": "Panama",
+    "dates": "24 and 26 January 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp521_e.htm"
+  },
+  {
+    "country": "Georgia",
+    "dates": "12 and 14 January 2022",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp520_e.htm"
+  },
+  {
+    "country": "Tajikistan",
+    "dates": "6 and 8 December 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp499_e.htm"
+  },
+  {
+    "country": "Bahrain, Kingdom of",
+    "dates": "24 and 26 November 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp519_e.htm"
+  },
+  {
+    "country": "Oman",
+    "dates": "17 and 19 November 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp518_e.htm"
+  },
+  {
+    "country": "Mauritius",
+    "dates": "9 and 11 November 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp517_e.htm"
+  },
+  {
+    "country": "Russian Federation",
+    "dates": "27 and 29 October 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp516_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "20 and 22 October 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp515_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "13 and 15 October 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp514_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "22 and 24 September 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp513_e.htm"
+  },
+  {
+    "country": "Argentina",
+    "dates": "15 and 17 September 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp512_e.htm"
+  },
+  {
+    "country": "Kyrgyz Republic",
+    "dates": "18 and 20 May 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp511_e.htm"
+  },
+  {
+    "country": "Viet Nam",
+    "dates": "27 and 29 April 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp510_e.htm"
+  },
+  {
+    "country": "Tonga",
+    "dates": "14 and 16 April 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp509_e.htm"
+  },
+  {
+    "country": "Qatar",
+    "dates": "6 and 8 April 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp508_e.htm"
+  },
+  {
+    "country": "Mongolia",
+    "dates": "17 and 19 March 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp506_e.htm"
+  },
+  {
+    "country": "Saudi Arabia, Kingdom of",
+    "dates": "3 and 5 March 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp507_e.htm"
+  },
+  {
+    "country": "Myanmar",
+    "dates": "15 and 17 February 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp505_e.htm"
+  },
+  {
+    "country": "Nicaragua",
+    "dates": "27 and 29 January 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp504_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "6 and 8 January 2021",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp503_e.htm"
+  },
+  {
+    "country": "Macao, China",
+    "dates": "15 and 17 December 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp502_e.htm"
+  },
+  {
+    "country": "Indonesia",
+    "dates": "9 and 11 December 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp501_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "24 and 26 November 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp500_e.htm"
+  },
+  {
+    "country": "Zimbabwe",
+    "dates": "30 September and 2 October 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp498_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "6 and 8 July 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp497_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "11 and 13 March 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp496_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "18 and 20 February 2020",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp495_e.htm"
+  },
+  {
+    "country": "Lao People’s Democratic Republic",
+    "dates": "18 and 20 November 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp494_e.htm"
+  },
+  {
+    "country": "Peru",
+    "dates": "22 and 24 October 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp493_e.htm"
+  },
+  {
+    "country": "Costa Rica",
+    "dates": "18 and 20 September 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp492_e.htm"
+  },
+  {
+    "country": "Suriname",
+    "dates": "11 and 13 September 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp491_e.htm"
+  },
+  {
+    "country": "North Macedonia",
+    "dates": "15 and 17 July 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp490_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "12 and 14 June 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp489_e.htm"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "dates": "22 and 24 May 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp488_e.htm"
+  },
+  {
+    "country": "Papua New Guinea",
+    "dates": "8 and 10 May 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp487_e.htm"
+  },
+  {
+    "country": "Samoa",
+    "dates": "10 and 12 April 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp486_e.htm"
+  },
+  {
+    "country": "Bangladesh",
+    "dates": "3 and 5 April 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp485_e.htm"
+  },
+  {
+    "country": "Burundi, Kenya, Rwanda, Tanzania, Uganda,",
+    "dates": "20 and 22 March 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp484_e.htm"
+  },
+  {
+    "country": "Ecuador",
+    "dates": "5 and 7 March 2019",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp483_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "17 and 19 December 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp482_e.htm"
+  },
+  {
+    "country": "Nepal",
+    "dates": "3 and 5 December 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp481_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "26 and 28 November 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp480_e.htm"
+  },
+  {
+    "country": "Armenia",
+    "dates": "20 and 22 November 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp479_e.htm"
+  },
+  {
+    "country": "Vanuatu",
+    "dates": "23 and 25 October 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp478_e.htm"
+  },
+  {
+    "country": "Chinese Taipei",
+    "dates": "12 and 14 September 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp477_e.htm"
+  },
+  {
+    "country": "Israel",
+    "dates": "17 and 19 July 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp476_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "11 and 13 July 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp475_e.htm"
+  },
+  {
+    "country": "Uruguay",
+    "dates": "27 and 29 June 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp474_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "18 and 20 June 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp473_e.htm"
+  },
+  {
+    "country": "Colombia",
+    "dates": "12 and 14 June 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp472_e.htm"
+  },
+  {
+    "country": "Guinea",
+    "dates": "29 and 31 May 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp470_e.htm"
+  },
+  {
+    "country": "Mauritania",
+    "dates": "29 and 31 May 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp471_e.htm"
+  },
+  {
+    "country": "Montenegro",
+    "dates": "11 and 13 April 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp469_e.htm"
+  },
+  {
+    "country": "Philippines",
+    "dates": "26 and 28 March 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp468_e.htm"
+  },
+  {
+    "country": "Egypt",
+    "dates": "20 and 22 February 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp467_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "14 and 16 February 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp466_e.htm"
+  },
+  {
+    "country": "Gambia",
+    "dates": "23 and 25 January 2018",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp465_e.htm"
+  },
+  {
+    "country": "Cambodia",
+    "dates": "21 and 23 November 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp464_e.htm"
+  },
+  {
+    "country": "Bolivia, Plurinational State of",
+    "dates": "14 and 16 November 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp463_e.htm"
+  },
+  {
+    "country": "Benin, Burkina Faso, Côte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo,",
+    "dates": "25 and 27 October 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp462_e.htm"
+  },
+  {
+    "country": "Iceland",
+    "dates": "4 and 6 October 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp461_e.htm"
+  },
+  {
+    "country": "Paraguay",
+    "dates": "20 and 22 September 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp460_e.htm"
+  },
+  {
+    "country": "Jamaica",
+    "dates": "13 and 15 September 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp459_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "17 and 19 July 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp458_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "5 and 7 July 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp457_e.htm"
+  },
+  {
+    "country": "Nigeria",
+    "dates": "13 and 15 June 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp456_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "16 and 18 May 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp455_e.htm"
+  },
+  {
+    "country": "Mozambique",
+    "dates": "3 and 5 May 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp454_e.htm"
+  },
+  {
+    "country": "Belize",
+    "dates": "24 and 26 April 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp453_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "5 and 7 April 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp452_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "8 and 10 March 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp451_e.htm"
+  },
+  {
+    "country": "Sierra Leone",
+    "dates": "14 and 16 February 2017",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp403_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "19 and 21 December 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp450_e.htm"
+  },
+  {
+    "country": "Solomon Islands",
+    "dates": "13 and 15 December 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp449_e.htm"
+  },
+  {
+    "country": "Guatemala",
+    "dates": "16 and 18 November 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp448_e.htm"
+  },
+  {
+    "country": "Sri Lanka",
+    "dates": "1 and 3 November 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp447_e.htm"
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "dates": "25 and 27 October 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp439_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "11 and 13 October 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp446_e.htm"
+  },
+  {
+    "country": "Russian Federation",
+    "dates": "28 and 30 September 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp445_e.htm"
+  },
+  {
+    "country": "El Salvador",
+    "dates": "14 and 16 September 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp444_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "26 and 28 July 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp443_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "20 and 22 July 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp442_e.htm"
+  },
+  {
+    "country": "Tunisia",
+    "dates": "13 and 15 July 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp441_e.htm"
+  },
+  {
+    "country": "Zambia",
+    "dates": "21 and 23 June 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp440_e.htm"
+  },
+  {
+    "country": "United Arab Emirates",
+    "dates": "1 and 3 June 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp438_e.htm"
+  },
+  {
+    "country": "Albania",
+    "dates": "11 and 13 May 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp437_e.htm"
+  },
+  {
+    "country": "Honduras",
+    "dates": "2 and 4 May 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp436_e.htm"
+  },
+  {
+    "country": "Malawi",
+    "dates": "27 and 29 April 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp435_e.htm"
+  },
+  {
+    "country": "Ukraine",
+    "dates": "19 and 21 April 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp434_e.htm"
+  },
+  {
+    "country": "Saudi Arabia, Kingdom of",
+    "dates": "4 and 6 April 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp433_e.htm"
+  },
+  {
+    "country": "Maldives",
+    "dates": "21 and 23 March 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp432_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "15 and 17 March 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp431_e.htm"
+  },
+  {
+    "country": "Fiji",
+    "dates": "23 and 25 February 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp430_e.htm"
+  },
+  {
+    "country": "Morocco",
+    "dates": "2 and 4 February 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp429_e.htm"
+  },
+  {
+    "country": "Georgia",
+    "dates": "19 and 21 January 2016",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp428_e.htm"
+  },
+  {
+    "country": "Haiti",
+    "dates": "2 and 4 December 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp427_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "24 and 26 November 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp426_e.htm"
+  },
+  {
+    "country": "Jordan",
+    "dates": "17 and 19 November 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp425_e.htm"
+  },
+  {
+    "country": "Southern African Customs Union, Namibia, Botswana, Eswatini, South Africa, Lesotho,",
+    "dates": "4 and 6 November 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp424_e.htm"
+  },
+  {
+    "country": "Moldova, Republic of",
+    "dates": "19 and 21 October 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp423_e.htm"
+  },
+  {
+    "country": "Cabo Verde",
+    "dates": "6 and 8 October 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp422_e.htm"
+  },
+  {
+    "country": "Angola",
+    "dates": "22 and 24 September 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp421_e.htm"
+  },
+  {
+    "country": "Guyana",
+    "dates": "15 and 17 September 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp420_e.htm"
+  },
+  {
+    "country": "Dominican Republic",
+    "dates": "22 and 24 July 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp419_e.htm"
+  },
+  {
+    "country": "Madagascar",
+    "dates": "14 and 16 July 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp418_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "6 and 8 July 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp417_e.htm"
+  },
+  {
+    "country": "New Zealand",
+    "dates": "29 June and 1 July 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp416_e.htm"
+  },
+  {
+    "country": "Chile",
+    "dates": "23 and 25 June 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp415_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "15 and 17 June 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp414_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "2 and 4 June 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp413_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "21 and 23 April 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp412_e.htm"
+  },
+  {
+    "country": "Pakistan",
+    "dates": "24 and 26 March 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp411_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "9 and 11 March 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp410_e.htm"
+  },
+  {
+    "country": "Brunei Darussalam",
+    "dates": "10 and 12 February 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp409_e.htm"
+  },
+  {
+    "country": "Barbados",
+    "dates": "27 and 29 January 2015",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp408_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "16 and 18 December 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp407_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "19 and 21 November 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp406_e.htm"
+  },
+  {
+    "country": "Mauritius",
+    "dates": "22 and 24 October 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp404_e.htm"
+  },
+  {
+    "country": "Djibouti",
+    "dates": "22 and 24 October 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp405_e.htm"
+  },
+  {
+    "country": "Djibouti, Mauritius,",
+    "dates": "22 and 24 October 2014",
+    "tpr_documents_url": "https://www.wto.org/english/news_e/news14_e/tpr_22oct14_e.htm"
+  },
+  {
+    "country": "Mongolia",
+    "dates": "24 and 26 September 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp397_e.htm"
+  },
+  {
+    "country": "Chinese Taipei",
+    "dates": "16 and 18 September 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp402_e.htm"
+  },
+  {
+    "country": "Panama",
+    "dates": "23 and 25 July 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp401_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "1 and 3 July 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp400_e.htm"
+  },
+  {
+    "country": "Organization of Eastern Caribbean States (OECS), Antigua and Barbuda, Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,",
+    "dates": "17 and 19 June 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp399_e.htm"
+  },
+  {
+    "country": "Ghana",
+    "dates": "26 and 28 May 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp398_e.htm"
+  },
+  {
+    "country": "Oman",
+    "dates": "22 and 24 April 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp395_e.htm"
+  },
+  {
+    "country": "Bahrain, Kingdom of",
+    "dates": "22 and 24 April 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp394_e.htm"
+  },
+  {
+    "country": "Qatar",
+    "dates": "22 and 24 April 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp396_e.htm"
+  },
+  {
+    "country": "Qatar, Oman, Bahrain, Kingdom of,",
+    "dates": "22 and 24 April 2014",
+    "tpr_documents_url": "https://www.wto.org/english/news_e/news14_e/tpr_22apr14_e.htm"
+  },
+  {
+    "country": "Myanmar",
+    "dates": "11 and 13 March 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp393_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "3 and 5 March 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp392_e.htm"
+  },
+  {
+    "country": "Tonga",
+    "dates": "11 and 13 February 2014",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp391_e.htm"
+  },
+  {
+    "country": "North Macedonia",
+    "dates": "27 and 29 November 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp390_e.htm"
+  },
+  {
+    "country": "Kyrgyz Republic",
+    "dates": "19 and 21 November 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp388_e.htm"
+  },
+  {
+    "country": "Peru",
+    "dates": "13 and 15 November 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp389_e.htm"
+  },
+  {
+    "country": "Costa Rica",
+    "dates": "24 and 26 September 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp386_e.htm"
+  },
+  {
+    "country": "Viet Nam",
+    "dates": "17 and 19 September 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp387_e.htm"
+  },
+  {
+    "country": "Cameroon, Congo, Gabon, Central African Republic, Chad,",
+    "dates": "29 and 31 July 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp385_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "16 and 18 July 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp384_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "24 and 26 June 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp383_e.htm"
+  },
+  {
+    "country": "Suriname",
+    "dates": "10 and 12 June 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp382_e.htm"
+  },
+  {
+    "country": "Macao, China",
+    "dates": "13 and 15 May 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp381_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "23 and 25 April 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp380_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "17 and 19 April 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp379_e.htm"
+  },
+  {
+    "country": "Indonesia",
+    "dates": "10 and 12 April 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp378_e.htm"
+  },
+  {
+    "country": "Argentina",
+    "dates": "20 and 22 March 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp377_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "19 and 21 February 2013",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp376_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "18 and 20 December 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp375_e.htm"
+  },
+  {
+    "country": "Nicaragua",
+    "dates": "4 and 6 December 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp374_e.htm"
+  },
+  {
+    "country": "Burundi, Kenya, Rwanda, Tanzania, Uganda,",
+    "dates": "21 and 23 November 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp371_e.htm"
+  },
+  {
+    "country": "Iceland",
+    "dates": "13 and 15 November 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp373_e.htm"
+  },
+  {
+    "country": "Israel",
+    "dates": "30 October and 1 November 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp372_e.htm"
+  },
+  {
+    "country": "Bangladesh",
+    "dates": "15 and 17 October 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp370_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "9 and 11 October 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp369_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "19 and 21 September 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp368_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "24 and 26 July 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp367_e.htm"
+  },
+  {
+    "country": "Côte d'Ivoire, Guinea-Bissau, Togo,",
+    "dates": "2 and 4 July 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp366_e.htm"
+  },
+  {
+    "country": "Colombia",
+    "dates": "26 and 28 June 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp365_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "12 and 14 June 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp364_e.htm"
+  },
+  {
+    "country": "Uruguay",
+    "dates": "25 and 27 April 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp363_e.htm"
+  },
+  {
+    "country": "United Arab Emirates",
+    "dates": "27 and 29 March 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp362_e.htm"
+  },
+  {
+    "country": "Philippines",
+    "dates": "20 and 22 March 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp361_e.htm"
+  },
+  {
+    "country": "Nepal",
+    "dates": "13 and 15 March 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp357_e.htm"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "dates": "7 and 9 March 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp360_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "21 and 23 February 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp359_e.htm"
+  },
+  {
+    "country": "Kuwait, the State of",
+    "dates": "7 and 9 February 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp358_e.htm"
+  },
+  {
+    "country": "Saudi Arabia, Kingdom of",
+    "dates": "25 and 27 January 2012",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp356_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "28 and 30 November 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp355_e.htm"
+  },
+  {
+    "country": "Ecuador",
+    "dates": "14 and 16 November 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp354_e.htm"
+  },
+  {
+    "country": "Cambodia",
+    "dates": "1 and 3 November 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp353_e.htm"
+  },
+  {
+    "country": "Zimbabwe",
+    "dates": "19 and 21 October 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp352_e.htm"
+  },
+  {
+    "country": "Mauritania",
+    "dates": "28 and 30 September 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp350_e.htm"
+  },
+  {
+    "country": "Guinea",
+    "dates": "28 and 30 September 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp351_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "14 and 16 September 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp349_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "6 and 8 July 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp348_e.htm"
+  },
+  {
+    "country": "Nigeria",
+    "dates": "28 and 30 June 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp347_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "20 and 22 June 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp346_e.htm"
+  },
+  {
+    "country": "Paraguay",
+    "dates": "27 and 29 April 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp345_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "5 and 7 April 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp344_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "15 and 17 February 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp343_e.htm"
+  },
+  {
+    "country": "Jamaica",
+    "dates": "18 and 20 January 2011",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp342_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "1 and 3 December 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp341_e.htm"
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "dates": "24 and 26 November 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp340_e.htm"
+  },
+  {
+    "country": "Papua New Guinea",
+    "dates": "16 and 18 November 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp339_e.htm"
+  },
+  {
+    "country": "Sri Lanka",
+    "dates": "4 and 5 November 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp337_e.htm"
+  },
+  {
+    "country": "Belize",
+    "dates": "3 and 5 November 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp338_e.htm"
+  },
+  {
+    "country": "Benin, Burkina Faso, Mali,",
+    "dates": "4 and 6 October 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp336_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "29 September and 1 October 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp335_e.htm"
+  },
+  {
+    "country": "Honduras",
+    "dates": "20 and 22 September 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp334_e.htm"
+  },
+  {
+    "country": "Gambia",
+    "dates": "14 and 16 September 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp333_e.htm"
+  },
+  {
+    "country": "Chinese Taipei",
+    "dates": "5 and 7 July 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp332_e.htm"
+  },
+  {
+    "country": "Malawi",
+    "dates": "9 and 11 June 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp331_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "31 May and 2 June 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp330_e.htm"
+  },
+  {
+    "country": "Albania",
+    "dates": "28 and 30 April 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp329_e.htm"
+  },
+  {
+    "country": "Armenia",
+    "dates": "6 and 8 April 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp328_e.htm"
+  },
+  {
+    "country": "Croatia",
+    "dates": "24 and 26 March 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp327_e.htm"
+  },
+  {
+    "country": "El Salvador",
+    "dates": "10 and 12 February 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp326_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "25 and 27 January 2010",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp325_e.htm"
+  },
+  {
+    "country": "Georgia",
+    "dates": "8 and 10 December 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp324_e.htm"
+  },
+  {
+    "country": "Niger, Senegal,",
+    "dates": "11 and 13 November 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp323_e.htm"
+  },
+  {
+    "country": "Botswana, Lesotho, Namibia, South Africa, Eswatini,",
+    "dates": "4 and 6 November 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp322_e.htm"
+  },
+  {
+    "country": "Maldives",
+    "dates": "26 and 28 October 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp321_e.htm"
+  },
+  {
+    "country": "Chile",
+    "dates": "7 and 9 October 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp320_e.htm"
+  },
+  {
+    "country": "Zambia",
+    "dates": "27 and 29 July 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp319_e.htm"
+  },
+  {
+    "country": "Guyana",
+    "dates": "8 and 10 July 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp318_e.htm"
+  },
+  {
+    "country": "Morocco",
+    "dates": "24 and 26 June 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp317_e.htm"
+  },
+  {
+    "country": "New Zealand",
+    "dates": "10 and 12 June 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp316_e.htm"
+  },
+  {
+    "country": "Solomon Islands",
+    "dates": "6 and 8 May 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp315_e.htm"
+  },
+  {
+    "country": "Mozambique",
+    "dates": "22 and 24 April 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp309_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "6 and 8 April 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp314_e.htm"
+  },
+  {
+    "country": "Fiji",
+    "dates": "25 and 27 March 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp313_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "9 and 11 March 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp312_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "18 and 20 February 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp311_e.htm"
+  },
+  {
+    "country": "Guatemala",
+    "dates": "4 and 6 February 2009",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp310_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "15 and 16 December 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp308_e.htm"
+  },
+  {
+    "country": "Dominican Republic",
+    "dates": "24 and 26 November 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp307_e.htm"
+  },
+  {
+    "country": "Jordan",
+    "dates": "10 and 12 November 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp306_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "22 and 24 October 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp305_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "8 and 10 October 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp304_e.htm"
+  },
+  {
+    "country": "Barbados",
+    "dates": "17 and 19 September 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp303_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "14 and 16 July 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp302_e.htm"
+  },
+  {
+    "country": "Oman",
+    "dates": "25 and 27 June 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp301_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "9 and 11 June 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp300_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "21 and 23 May 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp299_e.htm"
+  },
+  {
+    "country": "Mauritius",
+    "dates": "23 and 25 April 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp298_e.htm"
+  },
+  {
+    "country": "Madagascar",
+    "dates": "2 and 4 April 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp297_e.htm"
+  },
+  {
+    "country": "Brunei Darussalam",
+    "dates": "25 and 27 February 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp296_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "11 February and NaN undefined 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp295_e.htm"
+  },
+  {
+    "country": "Ghana",
+    "dates": "28 and 30 January 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp294_e.htm"
+  },
+  {
+    "country": "Pakistan",
+    "dates": "16 and 18 January 2008",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp293_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "10 and 12 December 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp292_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "26 and 28 November 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp291_e.htm"
+  },
+  {
+    "country": "Organization of Eastern Caribbean States (OECS), Antigua and Barbuda, Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,",
+    "dates": "5 and 7 November 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp290_e.htm"
+  },
+  {
+    "country": "Peru",
+    "dates": "17 and 19 October 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp289_e.htm"
+  },
+  {
+    "country": "Cameroon, Gabon,",
+    "dates": "1 and 3 October 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp288_e.htm"
+  },
+  {
+    "country": "Panama",
+    "dates": "17 and 19 September 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp287_e.htm"
+  },
+  {
+    "country": "Bahrain, Kingdom of",
+    "dates": "18 and 20 July 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp286_e.htm"
+  },
+  {
+    "country": "Indonesia",
+    "dates": "27 and 29 June 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp285_e.htm"
+  },
+  {
+    "country": "Central African Republic",
+    "dates": "11 and 13 June 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp284_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "23 and 25 May 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp283_e.htm"
+  },
+  {
+    "country": "Costa Rica",
+    "dates": "7 and 9 May 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp282_e.htm"
+  },
+  {
+    "country": "Macao, China",
+    "dates": "30 April and 2 May 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp281_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "21 and 23 March 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp280_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "5 and 7 March 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp279_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "26 and 28 February 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp278_e.htm"
+  },
+  {
+    "country": "Argentina",
+    "dates": "12 and 14 February 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp277_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "31 January and 2 February 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp276_e.htm"
+  },
+  {
+    "country": "Chad",
+    "dates": "22 and 24 January 2007",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp275_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "13 and 15 December 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp274_e.htm"
+  },
+  {
+    "country": "Colombia",
+    "dates": "22 and 24 November 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp273_e.htm"
+  },
+  {
+    "country": "Kenya, Tanzania, Uganda,",
+    "dates": "25 and 27 October 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp272_e.htm"
+  },
+  {
+    "country": "Kyrgyz Republic",
+    "dates": "9 and 11 October 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp271_e.htm"
+  },
+  {
+    "country": "Congo",
+    "dates": "27 and 29 September 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp270_e.htm"
+  },
+  {
+    "country": "Bangladesh",
+    "dates": "13 and 15 September 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp269_e.htm"
+  },
+  {
+    "country": "Nicaragua",
+    "dates": "24 and 26 July 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp268_e.htm"
+  },
+  {
+    "country": "Togo",
+    "dates": "3 and 5 July 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp267_e.htm"
+  },
+  {
+    "country": "Chinese Taipei",
+    "dates": "20 and 22 June 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp266_e.htm"
+  },
+  {
+    "country": "Iceland",
+    "dates": "7 and 9 June 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp265_e.htm"
+  },
+  {
+    "country": "Uruguay",
+    "dates": "17 and 19 May 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp264_e.htm"
+  },
+  {
+    "country": "United Arab Emirates",
+    "dates": "24 and 26 April 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp263_e.htm"
+  },
+  {
+    "country": "China",
+    "dates": "19 and 21 April 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp262_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "22 and 24 March 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp261_e.htm"
+  },
+  {
+    "country": "Djibouti",
+    "dates": "27 February and 1 March 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp260_e.htm"
+  },
+  {
+    "country": "Angola",
+    "dates": "14 and 16 February 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp259_e.htm"
+  },
+  {
+    "country": "Israel",
+    "dates": "1 and 3 February 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp258_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "16 and 18 January 2006",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp257_e.htm"
+  },
+  {
+    "country": "Romania",
+    "dates": "28 and 30 November 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp256_e.htm"
+  },
+  {
+    "country": "Bolivia, Plurinational State of",
+    "dates": "3 and 5 November 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp253_e.htm"
+  },
+  {
+    "country": "Guinea",
+    "dates": "12 and 14 October 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp253_e.htm"
+  },
+  {
+    "country": "Tunisia",
+    "dates": "5 and 7 October 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp252_e.htm"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "dates": "14 and 16 September 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp251_e.htm"
+  },
+  {
+    "country": "Egypt",
+    "dates": "26 and 28 July 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp250_e.htm"
+  },
+  {
+    "country": "Philippines",
+    "dates": "5 and 7 July 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp249_e.htm"
+  },
+  {
+    "country": "Ecuador",
+    "dates": "15 and 17 June 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp248_e.htm"
+  },
+  {
+    "country": "Nigeria",
+    "dates": "11 and 13 May 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp247_e.htm"
+  },
+  {
+    "country": "Paraguay",
+    "dates": "27 and 29 April 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp246_e.htm"
+  },
+  {
+    "country": "Mongolia",
+    "dates": "15 and 17 March 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp245_e.htm"
+  },
+  {
+    "country": "Qatar",
+    "dates": "21 and 23 February 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp244_e.htm"
+  },
+  {
+    "country": "Sierra Leone",
+    "dates": "9 and 11 February 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp243_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "25 and 27 January 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp242_e.htm"
+  },
+  {
+    "country": "Jamaica",
+    "dates": "17 and 19 January 2005",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp241_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "15 and 17 December 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp239_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "29 November and 1 December 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp239_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "25 and 27 October 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp238_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "11 and 13 October 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp237_e.htm"
+  },
+  {
+    "country": "Rwanda",
+    "dates": "28 and 30 September 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp236_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "15 and 17 September 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp235_e.htm"
+  },
+  {
+    "country": "Belize",
+    "dates": "12 and 14 July 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp233_e.htm"
+  },
+  {
+    "country": "Suriname",
+    "dates": "12 and 14 July 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp234_e.htm"
+  },
+  {
+    "country": "Benin",
+    "dates": "28 and 30 June 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp230_e.htm"
+  },
+  {
+    "country": "Burkina Faso",
+    "dates": "28 and 30 June 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp231_e.htm"
+  },
+  {
+    "country": "Mali",
+    "dates": "28 and 30 June 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp232_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "14 June and 16 May 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp229_e.htm"
+  },
+  {
+    "country": "Sri Lanka",
+    "dates": "3 May and 5 March 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp228_e.htm"
+  },
+  {
+    "country": "Gambia",
+    "dates": "4 and 6 February 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp227_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "14 and 16 January 2004",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp226_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "17 and 19 December 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp225_e.htm"
+  },
+  {
+    "country": "Chile",
+    "dates": "2 and 4 December 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp224_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "12 and 14 November 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp223_e.htm"
+  },
+  {
+    "country": "Haiti",
+    "dates": "4 and 6 November 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp222_e.htm"
+  },
+  {
+    "country": "Guyana",
+    "dates": "29 and 31 October 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp221_e.htm"
+  },
+  {
+    "country": "Bulgaria",
+    "dates": "15 and 17 October 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp220_e.htm"
+  },
+  {
+    "country": "Honduras",
+    "dates": "29 September and 1 October 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp219_e.htm"
+  },
+  {
+    "country": "Niger",
+    "dates": "22 and 24 September 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp217_e.htm"
+  },
+  {
+    "country": "Senegal",
+    "dates": "22 and 24 September 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp218_e.htm"
+  },
+  {
+    "country": "Indonesia",
+    "dates": "28 and 30 June 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp216_e.htm"
+  },
+  {
+    "country": "Morocco",
+    "dates": "13 and 18 June 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp215_e.htm"
+  },
+  {
+    "country": "New Zealand",
+    "dates": "12 and 14 May 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp214_e.htm"
+  },
+  {
+    "country": "Southern African Customs Union, Botswana, Lesotho, Namibia, South Africa, Eswatini,",
+    "dates": "23 and 25 April 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp213_e.htm"
+  },
+  {
+    "country": "Burundi",
+    "dates": "2 and 4 April 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp212_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "12 and 14 March 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp211_e.htm"
+  },
+  {
+    "country": "El Salvador",
+    "dates": "3 and 5 February 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp210_e.htm"
+  },
+  {
+    "country": "Maldives",
+    "dates": "15 and 17 January 2003",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp209_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "16 and 18 December 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp208_e.htm"
+  },
+  {
+    "country": "Venezuela, Bolivarian Republic of",
+    "dates": "27 and 29 November 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp207_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "6 and 8 November 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp206_e.htm"
+  },
+  {
+    "country": "Zambia",
+    "dates": "23 and 25 October 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp205_e.htm"
+  },
+  {
+    "country": "Dominican Republic",
+    "dates": "7 and 9 October 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp204_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "23 and 25 September 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp202_e.htm"
+  },
+  {
+    "country": "Mauritania",
+    "dates": "11 and 13 September 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp200_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "24 and 26 July 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp198_e.htm"
+  },
+  {
+    "country": "Barbados",
+    "dates": "9 and 11 July 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp194_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "19 and 21 June 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp195_e.htm"
+  },
+  {
+    "country": "Slovenia",
+    "dates": "13 and 15 May 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp192_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "15 and 16 April 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp190_e.htm"
+  },
+  {
+    "country": "Malawi",
+    "dates": "6 and 8 February 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp188_e.htm"
+  },
+  {
+    "country": "Pakistan",
+    "dates": "23 and 25 January 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp185_e.htm"
+  },
+  {
+    "country": "Guatemala",
+    "dates": "16 and 18 January 2002",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp184_e.htm"
+  },
+  {
+    "country": "Uganda",
+    "dates": "19 and 21 December 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp182_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "3 and 5 December 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp180_e.htm"
+  },
+  {
+    "country": "Slovak Republic",
+    "dates": "21 and 23 November 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp178_e.htm"
+  },
+  {
+    "country": "Mauritius",
+    "dates": "2 and 5 November 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp176_e.htm"
+  },
+  {
+    "country": "Czech Republic",
+    "dates": "17 and 19 October 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp174_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "14 and 17 September 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp172_e.htm"
+  },
+  {
+    "country": "Cameroon",
+    "dates": "18 and 20 July 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp170_e.htm"
+  },
+  {
+    "country": "Gabon",
+    "dates": "26 and 28 June 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp168_e.htm"
+  },
+  {
+    "country": "Organization of Eastern Caribbean States (OECS), Antigua and Barbuda, Dominica, Grenada, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,",
+    "dates": "5 and 7 June 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp166_e.htm"
+  },
+  {
+    "country": "Brunei Darussalam",
+    "dates": "28 and 29 May 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp164_e.htm"
+  },
+  {
+    "country": "Costa Rica",
+    "dates": "9 and 11 May 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp162_e.htm"
+  },
+  {
+    "country": "Macao, China",
+    "dates": "19 and 21 March 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp160_e.htm"
+  },
+  {
+    "country": "Ghana",
+    "dates": "26 and 28 February 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp157_e.htm"
+  },
+  {
+    "country": "Madagascar",
+    "dates": "19 and 21 February 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp156_e.htm"
+  },
+  {
+    "country": "Mozambique",
+    "dates": "24 and 26 January 2001",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp154_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "13 and 15 December 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp151_e.htm"
+  },
+  {
+    "country": "Switzerland, Liechtenstein,",
+    "dates": "4 and 6 December 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp150_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "14 and 16 November 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp142_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "31 October and 1 November 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp140_e.htm"
+  },
+  {
+    "country": "Bahrain, Kingdom of",
+    "dates": "11 and 13 October 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp139_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "26 and 28 September 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp138_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "12 and 14 July 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp137_e.htm"
+  },
+  {
+    "country": "Poland",
+    "dates": "3 and 5 July 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp136_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "21 and 23 June 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp135_e.htm"
+  },
+  {
+    "country": "Peru",
+    "dates": "30 and 31 May 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp134_e.htm"
+  },
+  {
+    "country": "Bangladesh",
+    "dates": "2 and 4 May 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp132_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "29 March and 31 February 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp130_e.htm"
+  },
+  {
+    "country": "Tanzania",
+    "dates": "1 March and 3 February 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp128_e.htm"
+  },
+  {
+    "country": "Iceland",
+    "dates": "2 and 4 February 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp125_e.htm"
+  },
+  {
+    "country": "Kenya",
+    "dates": "26 and 28 January 2000",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp124_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "15 and 17 December 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp122_e.htm"
+  },
+  {
+    "country": "Papua New Guinea",
+    "dates": "15 and 17 November 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp120_e.htm"
+  },
+  {
+    "country": "Nicaragua",
+    "dates": "25 and 27 October 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp118_e.htm"
+  },
+  {
+    "country": "Romania",
+    "dates": "4 and 5 October 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp115_e.htm"
+  },
+  {
+    "country": "Philippines",
+    "dates": "27 and 29 September 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp114_e.htm"
+  },
+  {
+    "country": "Israel",
+    "dates": "6 and 16 September 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp112_e.htm"
+  },
+  {
+    "country": "Bolivia, Plurinational State of",
+    "dates": "19 and 21 July 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp109_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "12 and 14 July 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp108_e.htm"
+  },
+  {
+    "country": "Egypt",
+    "dates": "24 and 25 June 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp106_e.htm"
+  },
+  {
+    "country": "Guinea",
+    "dates": "24 and 26 February 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp104_e.htm"
+  },
+  {
+    "country": "Togo",
+    "dates": "27 and 28 January 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp102_e.htm"
+  },
+  {
+    "country": "Argentina",
+    "dates": "20 and 22 January 1999",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp100_e.htm"
+  },
+  {
+    "country": "Hong Kong, China",
+    "dates": "7 and 8 December 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp095_e.htm"
+  },
+  {
+    "country": "Canada",
+    "dates": "7 and 8 December 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp098rev1_e.htm"
+  },
+  {
+    "country": "Indonesia",
+    "dates": "3 and 4 December 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp094_e.htm"
+  },
+  {
+    "country": "Uruguay",
+    "dates": "23 and 25 November 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp091_e.htm"
+  },
+  {
+    "country": "Mali",
+    "dates": "18 and 20 November 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp088_e.htm"
+  },
+  {
+    "country": "Burkina Faso",
+    "dates": "18 and 20 November 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp089_e.htm"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "dates": "12 and 13 November 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp087_e.htm"
+  },
+  {
+    "country": "Jamaica",
+    "dates": "29 and 30 October 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp085_e.htm"
+  },
+  {
+    "country": "Türkiye",
+    "dates": "12 and 13 October 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp083_e.htm"
+  },
+  {
+    "country": "Solomon Islands",
+    "dates": "21 and 22 September 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp081_e.htm"
+  },
+  {
+    "country": "Hungary",
+    "dates": "7 and 8 July 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp077_e.htm"
+  },
+  {
+    "country": "Australia",
+    "dates": "30 June and 2 July 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp076_e.htm"
+  },
+  {
+    "country": "Nigeria",
+    "dates": "23 and 24 June 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp075_e.htm"
+  },
+  {
+    "country": "Southern African Customs Union, Botswana, Lesotho, Namibia, South Africa, Eswatini,",
+    "dates": "21 and 23 April 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp072_e.htm"
+  },
+  {
+    "country": "India",
+    "dates": "16 and 17 April 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp071_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "27 and 28 January 1998",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp069_e.htm"
+  },
+  {
+    "country": "Malaysia",
+    "dates": "4 and 5 December 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp067_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "25 and 26 November 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp065_e.htm"
+  },
+  {
+    "country": "Mexico",
+    "dates": "7 and 8 October 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp063_e.htm"
+  },
+  {
+    "country": "Chile",
+    "dates": "23 and 24 September 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp060_e.htm"
+  },
+  {
+    "country": "Benin",
+    "dates": "15 and 16 September 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp059_e.htm"
+  },
+  {
+    "country": "Paraguay",
+    "dates": "17 and 18 July 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp057_e.htm"
+  },
+  {
+    "country": "Cyprus",
+    "dates": "25 and 26 June 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp055_e.htm"
+  },
+  {
+    "country": "Fiji",
+    "dates": "9 and 10 April 1997",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp053_e.htm"
+  },
+  {
+    "country": "El Salvador",
+    "dates": "25 and 26 November 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp051_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "18 and 19 November 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp048_e.htm"
+  },
+  {
+    "country": "United States",
+    "dates": "11 and 12 November 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp046_e.htm"
+  },
+  {
+    "country": "Brazil",
+    "dates": "30 and 31 October 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp045_e.htm"
+  },
+  {
+    "country": "New Zealand",
+    "dates": "21 and 22 October 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp043_e.htm"
+  },
+  {
+    "country": "Korea, Republic of",
+    "dates": "30 September and 1 October 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp040_e.htm"
+  },
+  {
+    "country": "Colombia",
+    "dates": "25 and 26 September 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp039_e.htm"
+  },
+  {
+    "country": "Zambia",
+    "dates": "9 and 10 September 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp037_e.htm"
+  },
+  {
+    "country": "Norway",
+    "dates": "11 and 12 June 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp035_e.htm"
+  },
+  {
+    "country": "Singapore",
+    "dates": "3 and 4 June 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp033_e.htm"
+  },
+  {
+    "country": "Switzerland",
+    "dates": "28 and 29 March 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp031_e.htm"
+  },
+  {
+    "country": "Czech Republic",
+    "dates": "6 and 7 March 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp029_e.htm"
+  },
+  {
+    "country": "Dominican Republic",
+    "dates": "14 and 15 February 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp025_e.htm"
+  },
+  {
+    "country": "Venezuela, Bolivarian Republic of",
+    "dates": "12 and 13 February 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp026_e.htm"
+  },
+  {
+    "country": "Morocco",
+    "dates": "17 and 18 January 1996",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp023_e.htm"
+  },
+  {
+    "country": "Thailand",
+    "dates": "19 and 20 December 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp021_e.htm"
+  },
+  {
+    "country": "Slovak Republic",
+    "dates": "5 and 6 December 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp019_e.htm"
+  },
+  {
+    "country": "Sri Lanka",
+    "dates": "7 and 8 November 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp017_e.htm"
+  },
+  {
+    "country": "Mauritius",
+    "dates": "17 and 18 October 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp015_e.htm"
+  },
+  {
+    "country": "Uganda",
+    "dates": "27 and 28 July 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp012_e.htm"
+  },
+  {
+    "country": "European Union",
+    "dates": "24 and 25 July 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp010_e.htm"
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "dates": "4 and 5 July 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp008_e.htm"
+  },
+  {
+    "country": "Costa Rica",
+    "dates": "6 and 7 June 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp007_e.htm"
+  },
+  {
+    "country": "Japan",
+    "dates": "4 and 5 April 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp005_e.htm"
+  },
+  {
+    "country": "Pakistan",
+    "dates": "15 and 16 February 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp001_e.htm"
+  },
+  {
+    "country": "Cameroon",
+    "dates": "13 and 14 February 1995",
+    "tpr_documents_url": "https://www.wto.org/english/tratop_e/tpr_e/tp002_e.htm"
+  }
+]
